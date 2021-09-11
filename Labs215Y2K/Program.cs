@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace _215Labs2020
+namespace Labs215Y2K
 {
     class Program
     {
