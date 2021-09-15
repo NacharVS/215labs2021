@@ -11,8 +11,8 @@ namespace bot2
             Console.WriteLine($"Рад знакмоству, {name}");
             Console.WriteLine($"{name}, Сколько тебе лет?");
             int num = int.Parse(Console.ReadLine());
-            if (num>18.23)
-                Console.WriteLine("Тебе больше 18");
+            if (num>17,5)
+                Console.WriteLine("Тебе больше 17,5");
             else if (num<10)
                 Console.WriteLine("Ты ещё очень маленький");
             else 
