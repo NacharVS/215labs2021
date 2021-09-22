@@ -4,6 +4,9 @@ namespace Labs215Y2K
 {
     class ArrayOperations
     {
+        // 1. Найти максимальный и минимальный элемент массива
+        // 2. сумма и произведение 2х массивов по элементно
+        // 3. найти одинаковые элементы двух массивов
         static void OperationOne()
         {
             int[] array = new int[10];
