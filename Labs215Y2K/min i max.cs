@@ -9,6 +9,7 @@ namespace ConsoleApp3
             int[] array = new int[10];
             for (int i = 0; i < array.Length; i++)
                 array[i] = new Random().Next(10, 100);
+            Console.Write($" {array[i]}");
             int min, max;
             min = array[0];
             max = array[0];
