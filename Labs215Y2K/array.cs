@@ -42,7 +42,7 @@ namespace Labs215Y2K
         }
         public static void ex2()
         {
-            Console.WriteLine("print hello ");
+            Console.WriteLine("print hellhdfho ");
         }
 
     }
