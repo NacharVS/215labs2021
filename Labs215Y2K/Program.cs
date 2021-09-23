@@ -1,4 +1,7 @@
-﻿using System;
+﻿using _3_задание;
+using ConsoleApp6;
+using ConsoleApp7;
+using System;
 
 namespace Labs215Y2K
 {
@@ -6,7 +9,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            
+            sameNumbers.ex3();
         }
     }
 }
