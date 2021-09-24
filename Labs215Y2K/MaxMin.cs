@@ -14,9 +14,14 @@ namespace МинимумМаксимум
                 Array[i] = new Random().Next(10, 100);
 
                 Console.Write($" {Array[i]}");
+              
             }
-            Console.WriteLine();
-            Console.WriteLine();
+
+
+
+
+
+
             Console.WriteLine($" Максимальное: {Array.Max()}");
             Console.WriteLine($" Минимальное: {Array.Min()}");
         }

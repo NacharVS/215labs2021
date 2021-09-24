@@ -4,7 +4,7 @@ using System.Text;
 
 namespace ZadachanazamokFullEdition
 {
-    class Class2
+    class Cl
     {
     }
 }

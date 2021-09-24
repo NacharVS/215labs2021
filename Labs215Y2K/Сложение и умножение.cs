@@ -28,7 +28,7 @@ namespace МинимумМаксимум
             for (int i = 0; i < Array.Length - 1; i++)
             {
                 sum1 += Array[i];
-                sum2 += Array2[i];
+                sum2 += Array2[i+1];
                 mult1 *= Array[i];
                 mult2 *= Array2[i];
                 sum = sum1 + sum2;
