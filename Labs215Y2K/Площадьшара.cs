@@ -1,10 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace ZadachanazamokFullEdition
+namespace Плоащдьшара
 {
-    class Class2
+    class Площадьшара
     {
+        static void площадь(string[] args)
+        {
+
+            Console.WriteLine("Vvedite r");
+            int r = int.Parse(Console.ReadLine());
+            double result = 4 * Math.PI * Math.Pow(r, 2);
+            Console.WriteLine(result);
+        }
     }
 }

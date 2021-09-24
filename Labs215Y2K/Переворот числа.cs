@@ -1,10 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace ZadachanazamokFullEdition
+namespace zadanie2
 {
-    class Class1
+    class Переворот
     {
+        static void ПереворотЧисла(string[] args)
+        {
+            int number = int.Parse(Console.ReadLine());
+            while (number > 0)
+            {
+                {
+                    Console.Write(number % 10);
+                    number = number / 10;
+                }
+            }
+
+
+        }
     }
 }
