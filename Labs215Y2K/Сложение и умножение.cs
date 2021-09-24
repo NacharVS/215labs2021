@@ -3,9 +3,9 @@ using System.Linq;
 
 namespace МинимумМаксимум
 {
-    class Multplus
+    class MultPlus
     {
-         public static void Ex1();
+        static void PlusMult(string[] args)
         {
             int[] Array = new int[10];
             int[] Array2 = new int[10];

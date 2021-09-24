@@ -1,12 +1,22 @@
 ﻿using System;
+using System.Linq;
 
-namespace Labs215Y2K
+namespace Deletor
 {
-    class Program
+    public class MainClass
     {
-        static void Main(string[] args)
+        public static void Main()
         {
-            Multplus.ex1();
+            int[] FirstArray = new int[] { 1, 2, 3, 2 };
+            int[] SecondArray = { 1, 3, 5, 2 };
+            var result = FirstArray.Distinct().ToArray();
+            Console.WriteLine(result);
+            SecondArray.Distinct().ToArray();
+            for (int i = 0; i < FirstArray.Length; i++)
+            {
+                Console.WriteLine(result);
+
+            }
         }
     }
 }
