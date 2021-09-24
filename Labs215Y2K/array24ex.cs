@@ -72,6 +72,11 @@ namespace Labs215Y2K
                 Console.WriteLine();
             }
         }
+        public static void ex2()
+        {
+            
+            }
+        }
     }
 }
     
