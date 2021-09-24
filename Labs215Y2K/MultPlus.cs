@@ -25,6 +25,7 @@ namespace Multplus
                int mult = Array[i] * Array2[i];
                 Console.WriteLine("summ " + sum);
                 Console.WriteLine("mult " + mult);
+                Console.WriteLine();
             }
         }
     }

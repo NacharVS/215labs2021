@@ -29,6 +29,7 @@ namespace MaxMin
 
             Console.WriteLine($" Максимальное: {maxValue}");
             Console.WriteLine($" Минимальное: {minValue}");
+            Console.WriteLine();
         }
     }
 }

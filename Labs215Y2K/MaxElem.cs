@@ -34,6 +34,7 @@ namespace MaxElement
                 Console.Write($" максимальное значение: {maxValue}");
                 maxValue = 0;
                 Console.WriteLine();
+                Console.WriteLine();
             }
         }
     }

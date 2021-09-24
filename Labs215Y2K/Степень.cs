@@ -17,6 +17,7 @@ namespace Возведениевстепень
                 i++;
             }
             Console.WriteLine(chislo);
+            Console.WriteLine();
         }
     }
 }

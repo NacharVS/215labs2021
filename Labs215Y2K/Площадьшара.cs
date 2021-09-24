@@ -10,6 +10,7 @@ namespace Плоащдьшара
             int r = int.Parse(Console.ReadLine());
             double result = 4 * Math.PI * Math.Pow(r, 2);
             Console.WriteLine(result);
+            Console.WriteLine();
         }
     }
 }

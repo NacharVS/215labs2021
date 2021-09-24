@@ -15,7 +15,7 @@ namespace zadanie2
                 }
             }
 
-
+            Console.WriteLine();
         }
     }
 }

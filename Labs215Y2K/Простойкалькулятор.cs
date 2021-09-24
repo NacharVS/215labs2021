@@ -21,6 +21,7 @@ namespace Zadachi
             Console.WriteLine(result2 + P);
             Console.WriteLine(result3 + M);
             Console.WriteLine(result4 + D);
+            Console.WriteLine();
         }
     }
 }

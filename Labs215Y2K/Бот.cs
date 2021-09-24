@@ -50,6 +50,7 @@ namespace ЧатБот
             else
             {
                 Console.WriteLine("See you soon!");
+                Console.WriteLine();
             }
         }
     }

@@ -31,6 +31,7 @@ namespace ZadaChaNaZaMok
             else
             {
                 Console.WriteLine("Number must be between 1 - 25");
+                Console.WriteLine();
             }
         }
     }

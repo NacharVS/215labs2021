@@ -16,6 +16,7 @@ namespace Задача
             string result = "Потенциальная энергия=";
             string result2 = "Н/кг";
             Console.WriteLine(result + F + result2);
+            Console.WriteLine();
         }
     }
 }

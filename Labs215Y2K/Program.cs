@@ -10,6 +10,7 @@ namespace Deletor
             MaxMin.Maxmin.ex1();
             //Multplus.MultPlus.ex2();
             //MaxElement.MaxElem.ex3();
+            Console.WriteLine();
         }
     }
 }

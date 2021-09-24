@@ -14,6 +14,7 @@ namespace ПереворотЧисла
             string resultb = "b=";
             Console.WriteLine(resulta + a);
             Console.WriteLine(resultb + b);
+            Console.WriteLine();
         }
     }
 }
