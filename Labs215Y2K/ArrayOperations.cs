@@ -4,9 +4,28 @@ namespace Labs215Y2K
 {
     class ArrayOperations
     {
-        // 1. Найти максимальный и минимальный элемент массива
-        // 2. сумма и произведение 2х массивов по элементно
-        // 3. найти одинаковые элементы двух массивов
+        // 1. найти Максимальный элемент в каждой строке матрицы
+        // 2. найти сумму элементов главной диагонали матрицы
+        // 3. произведение 2х матриц*
+        static void TwoDimensionalArray()
+        {
+            int[,] array = new int[10, 10];
+
+            int summ = 0;
+
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = new Random().Next(0, 2);
+                    summ += array[i, j];
+                    Console.Write($" {array[i, j]}");
+                }
+                Console.Write($"     {summ}");
+                summ = 0;
+                Console.WriteLine();
+            }
+        }
         static void OperationOne()
         {
             int[] array = new int[10];
