@@ -9,7 +9,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            array24ex.ex2();
+            array25.ex1();
         }
     }
 }
