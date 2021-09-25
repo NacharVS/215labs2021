@@ -6,7 +6,8 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            ArrayEx.Ex3();
+            Array25sent.ex1();
+          
         }
     }
 }
