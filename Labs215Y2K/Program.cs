@@ -7,9 +7,10 @@ namespace Deletor
     {
         public static void Main()
         {
-            MaxMin.Maxmin.ex1();
+            //MaxMin.Maxmin.ex1();
             //Multplus.MultPlus.ex2();
             //MaxElement.MaxElem.ex3();
+            SumMatrix.SumMatrix.ex4();
             Console.WriteLine();
         }
     }
