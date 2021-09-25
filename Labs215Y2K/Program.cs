@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Threading;
+using System.ComponentModel.DataAnnotations;
 
 namespace Labs215Y2K
 {
@@ -7,8 +7,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            
-
+           
         }
     }
 }

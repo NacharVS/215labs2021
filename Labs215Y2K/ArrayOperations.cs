@@ -7,6 +7,29 @@ namespace Labs215Y2K
         // 1. найти Максимальный элемент в каждой строке матрицы
         // 2. найти сумму элементов главной диагонали матрицы
         // 3. произведение 2х матриц*
+        static void HomeWork()
+        {
+            int[,] array1 = new int[10, 10];
+            int sum = 0;
+
+            for (int i = 0; i < array1.GetLength(0); i++)
+            {
+                for (int j = 0; j < array1.GetLength(0); j++)
+                {
+                    array1[i, j] = new Random().Next(0, 2);
+                    Console.Write($"{array1[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+
+            for (int i = 0; i < array1.GetLength(0); i++)
+            {
+                sum += array1[i, i];
+            }
+
+            Console.WriteLine($" summ - {sum}");
+
+        }
         static void TwoDimensionalArray()
         {
             int[,] array = new int[10, 10];
