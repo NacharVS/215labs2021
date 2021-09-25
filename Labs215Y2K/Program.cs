@@ -4,9 +4,9 @@ namespace Labs215Y2K
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
-            
+            SumMath.SumMatrix.ex1();
         }
     }
 }

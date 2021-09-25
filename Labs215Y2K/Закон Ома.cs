@@ -2,9 +2,9 @@
 
 namespace Закон_Ома
 {
-    class Program
+    class Programsda
     {
-        static void Main(string[] args)
+        static void Mggggain(string[] args)
         {
             Console.WriteLine("Закон Ома для участка цепи находится по формуле: I = U/R");
             Console.WriteLine();

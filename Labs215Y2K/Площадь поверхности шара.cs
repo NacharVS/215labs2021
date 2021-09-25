@@ -2,9 +2,9 @@
 
 namespace Площадь_поверхности_шара
 {
-    class Program
+    class Programsdasd
     {
-        static void Main(string[] args)
+        static void Mgggain(string[] args)
         {
             
             Console.WriteLine("Площадь поверхности шара находится по формуле: S = 4пR^2");

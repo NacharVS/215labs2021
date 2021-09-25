@@ -2,9 +2,9 @@
 
 namespace ConsoleApp1
 {
-    class Program
+    class Programsd
     {
-        static void Main(string[] args)
+        static void Maingg(string[] args)
         {
             Console.WriteLine("Введите число");
             int num = int.Parse(Console.ReadLine());

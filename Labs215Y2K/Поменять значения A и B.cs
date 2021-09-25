@@ -2,9 +2,9 @@
 
 namespace Поменять_значения_A_и_B
 {
-    class Program
+    class Programgsd
     {
-        static void Main(string[] args)
+        static void Maign(string[] args)
         {
             int a = 5;
             int b = 2;
