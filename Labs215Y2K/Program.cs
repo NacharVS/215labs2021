@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Array25sent.ex1();
+            Array25sent.ex2();
           
         }
     }
