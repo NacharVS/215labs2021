@@ -96,7 +96,7 @@ namespace Labs215Y2K
                 }
                 Console.WriteLine(sum);
             }
-            Console.WriteLine($" Сумма диагоналей равна {sum}");
+            Console.WriteLine($" Сумма диагонали равна {sum}");
         }
     }
 }
