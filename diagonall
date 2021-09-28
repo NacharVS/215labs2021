@@ -1,0 +1,35 @@
+namespace ех2_диагональ
+{
+    class Program
+    {
+        static void Main5678(string[] args)
+        {
+            Console.WriteLine("щас вычисlим диагональ матрицы");
+            {
+                int[,] array = new int[5, 5];
+                int summ = 0;
+                int s = -1;
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        array[i, j] = new Random().Next(10, 100);
+                        Console.Write(array[i, j] + "\f");
+                    }
+                    Console.WriteLine();
+
+                }
+
+                for (int i = 0; i < array.GetLength(0); i++)
+                {
+                    for (int j = 0; j < array.GetLength(1); j++)
+                    {
+                        s++;
+                        summ += array[j, s];
+                    }
+                }
+                Console.WriteLine(summ);
+            }
+        }
+    }
+}
