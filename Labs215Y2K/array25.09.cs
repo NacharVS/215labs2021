@@ -45,7 +45,7 @@ namespace Labs215Y2K
                 Console.WriteLine("");
             }
             int a = 1;
-            for (int i = 0; i < array.GetLength(0); i++)
+            for (int i = 0; i <array.GetLength(1);i++)
             {
                 int b = array[0, i];
                 array[0, i] = array[a, i];
@@ -56,9 +56,9 @@ namespace Labs215Y2K
             {
                 for (int j = 0; j < array.GetLength(0); j++)
                 {
-                    Console.Write($" {array[i, j]} ");
+                    Console.Write($"{ array[i,j]} ");
                 }
-                Console.WriteLine();
+                Console.WriteLine( );
             }
         }
     }
