@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         public static void Main(string[] args)
         {
-            SumMath.SumMatrix.ex1();
+         
         }
     }
 }
