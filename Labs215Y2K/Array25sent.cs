@@ -10,7 +10,6 @@ namespace Labs215Y2K
         {
             int[,] array = new int[10, 10];
             int sum = 0;
-            int a = 0;
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -24,7 +23,7 @@ namespace Labs215Y2K
             {
                 for (int j = 0; j < array.GetLength(1); j++)
                 {
-                    sum = sum + a + array[i, j];
+                    sum = sum + array[i, j];
 
                 }
                 Console.WriteLine("");
