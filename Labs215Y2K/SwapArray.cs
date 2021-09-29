@@ -18,7 +18,7 @@ namespace SwapArray
                     Console.Write($" {array[i, j]}");
                 }
                     Console.WriteLine();
-                }
+            }
                 Console.WriteLine();
             
          for (int i = 1; i < array.GetLength(0); i++)

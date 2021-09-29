@@ -11,7 +11,9 @@ namespace Deletor
             //Multplus.MultPlus.ex2();  // - Сумма и умножение массива
             //MaxElement.MaxElem.ex3(); // - Максимальный элемент в каждой строке
             //SumMatrix.SumMatrix.ex4(); // - Сумма каждой строки матрицы
-            SwapArray.Swap.ex5();
+            // SwapArray.Swap.ex5(); // - Меняет местами строки массива
+             TwoIdentElementDeletor.Deletor.ex7(); // - находит одинаковые числа в массиве
+            // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
 
             Console.WriteLine();
         }

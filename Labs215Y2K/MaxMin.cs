@@ -11,8 +11,9 @@ namespace MaxMin
             for (int i = 0; i < Array.Length; i++)
             {
                 Array[i] = new Random().Next(10, 100);
-                Console.WriteLine($" {Array[i]}");
+                Console.Write($" {Array[i]}");
             }
+            Console.WriteLine();
             int maxValue = Array[0];
             int minValue = Array[0];
             for (int i = 0; i < Array.Length; i++)
@@ -29,7 +30,7 @@ namespace MaxMin
 
             Console.WriteLine($" Максимальное: {maxValue}");
             Console.WriteLine($" Минимальное: {minValue}");
-            Console.WriteLine();
+
         }
     }
 }
