@@ -4,7 +4,7 @@ namespace Labs215Y2K
 {
     class Program
     {
-        public void main337sdfsdfa()
+        public static void main337sdfsdfa()
         {
             Random z = new Random();
             int[,] array = new int[3, 3];
