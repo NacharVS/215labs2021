@@ -98,6 +98,24 @@ namespace Labs215Y2K
             Console.WriteLine($"Русский размер твоей обуви: {q}");
             Console.WriteLine($"Отличный выбор, Ждем тебя снова, {name}!");
         }
+        public static void n3()
+        {
+            Console.WriteLine("Введите число");
+
+            int a = int.Parse(Console.ReadLine());
+
+            Console.WriteLine("Введие степень");
+
+            int b = int.Parse(Console.ReadLine());
+
+            int c = 1;
+
+            for (int i = 1; i <= b; i++)
+            {
+                c = a * c;
+            }
+            Console.WriteLine($"Число {a} в {b} степени равно  {c}");
+        }
     }
     
 }
