@@ -8,19 +8,17 @@ namespace Labs215Y2K
     {
         public static void n1()
         {
-            int number, result = 0;
-
-            Console.Write("enter number: ");
-            number = Int32.Parse(Console.ReadLine());
-
-            while (number > 0)
+            Console.WriteLine("Введите число, которое хотите перевернуть:");
+            int a = int.Parse(Console.ReadLine());
+            int b = 0;
+            while (a > 0)
             {
-                result *= 10;
-                result += number % 10;
-                number /= 10;
+                b *= 10;
+                b += a % 10;
+                a /= 10;
             }
 
-            Console.WriteLine(result);
+            Console.WriteLine($"Перевернутое число:  {b}");
         }
         public static void n2()
         {
