@@ -135,6 +135,33 @@ namespace Labs215Y2K
                 }
             }
         }
+        public static void n5()
+        {
+            double num1, num2;
+            string znak;
+            Console.WriteLine("Введите первое число");
+            num1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            num2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Какой способ: '-'  '+'  '*'  '/' ");
+            znak = Console.ReadLine();
+            if (znak == "-")
+            {
+                Console.WriteLine(num1 - num2);
+            }
+            else if (znak == "+")
+            {
+                Console.WriteLine(num1 + num2);
+            }
+            else if (znak == "*")
+            {
+                Console.WriteLine(num1 * num2);
+            }
+            else if (znak == "/")
+            {
+                Console.WriteLine(num1 / num2);
+            }
+        }
     }
     
 }
