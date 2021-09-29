@@ -8,7 +8,9 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Program.main337sdfsdfa();
+            Homework.arraySUMstr();
+            
+
         }
     }
 }
