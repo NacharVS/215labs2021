@@ -29,6 +29,7 @@ namespace Labs215Y2K
                 Console.WriteLine("");
                 Console.Write($"Сумма строки = {sum}");
                 sum = 0;
+              
             }
         }
         public static void ex2()
@@ -53,6 +54,7 @@ namespace Labs215Y2K
                 array[0, i] = array[a, i];
 
                 array[a, i] = b;
+ 
             }
 
             Console.WriteLine();
