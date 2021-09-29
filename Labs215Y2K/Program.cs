@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Massiv.ex1();    
+            IdenticalElements.ex3();
         }
     }
 }
