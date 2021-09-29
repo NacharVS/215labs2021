@@ -116,6 +116,27 @@ namespace Labs215Y2K
             }
             Console.WriteLine($"Число {a} в {b} степени равно  {c}");
         }
+        public static void n4()
+        {
+            Console.WriteLine("Введите сумму попыток замка");
+            int mama = int.Parse(Console.ReadLine());
+            for (int a = 0; a <= 9; a++)
+            {
+                for (int b = a + 1; b <= 9; b++)
+                {
+                    for (int c = b + 1; c <= 9; c++)
+                    {
+                        if ((a + b + c == mama) && (a != b) && (a != c) && (b != c))
+                        {
+                            Console.Write(a);
+                            Console.Write(b);
+                            Console.WriteLine(c);
+                        }
+                        else Console.Write("");
+                    }
+                }
+            }
+        }
     }
     
 }
