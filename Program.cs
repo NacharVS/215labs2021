@@ -1,27 +1,27 @@
 ﻿using System;
 
-namespace abdullin3
+namespace _22._09
 {
-   
-class Program
+    class Program
+    {
+        static void Main(string[] args, string sum)
         {
-            static void Main(string[] args)
+            int[] array = new int[10];
+            for (int i = 0; i < array.Length; i++)
             {
-                int number, result = 0;
-
-                Console.Write("enter number: ");
-                number = Int32.Parse(Console.ReadLine());
-
-                while (number > 0)
+                array[i] = new Random().Next(10, 100);
                 {
-                    result *= 10;
-                    result += number % 10;
-                    number /= 10;
+                    int[] numbers = new int[] { i };
+
+                    for (int i1 = 0; i1 < numbers.Length; i1++)
+                    {
+                        int value = numbers[i1];
+                        sum += value;
+                    }
                 }
-
-                Console.WriteLine(result);
-
+                Console.Write($" {array[i]}");
+                Console.WriteLine("Сумма элементов массива: " + sum);
             }
         }
-    
+    }
 }
