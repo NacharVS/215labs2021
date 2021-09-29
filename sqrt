@@ -1,0 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Labs215Y2K
+{
+     classs Square
+        //площадь шара 
+    {
+        public static void ex()
+        {
+            Console.WriteLine("r =");
+            int r = int.Parse(Console.ReadLine());
+            double sqrt = 4 * Math.PI * Math.Pow(r, 2);
+            Console.WriteLine(sqrt);
+        }
+    }
+}
