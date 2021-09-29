@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            IdenticalElements.ex3();
+            MaxElement.ex5();
         }
     }
 }
