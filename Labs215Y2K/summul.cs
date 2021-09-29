@@ -3,6 +3,7 @@
 namespace ConsoleApp7
 {
     class summul
+        //22-23 сентября. сумма и произведение элементов двувх массивов
     {
         public static void ex2()
         {

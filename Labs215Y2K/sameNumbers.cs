@@ -3,6 +3,7 @@
 namespace _3_задание
 {
     class sameNumbers
+        //одинаковые числа в двух массивах
     {
         public static void ex3()
         {

@@ -5,8 +5,10 @@ using System.Text;
 namespace Labs215Y2K
 {
     class array24ex
+        //задания 24 сентября
     {
         public static void ex3()
+            //произведение двух двумерных массивов
         {
             int[,] array = new int[10, 10];
             for (int i = 0; i < array.GetLength(0); i++)
@@ -43,6 +45,7 @@ namespace Labs215Y2K
             }
         }
         public static void ex1()
+            //наибольший элемент каждой строки массива
         {
             int[,] array = new int[10, 10];
             for (int i = 0; i < array.GetLength(0); i++)
@@ -73,6 +76,7 @@ namespace Labs215Y2K
             }
         }
         public static void ex2()
+            //сумма элементов диагонали массива 
         {
             int[,] array = new int[10, 10];
             for (int i = 0; i < array.GetLength(0); i++)

@@ -3,6 +3,7 @@
 namespace ConsoleApp6
 {
     class minmax
+        // минимальный и максимальный элемент массива 22-23 сентября
     {
         public static void ex1()
         {

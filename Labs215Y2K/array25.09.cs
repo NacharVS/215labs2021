@@ -5,8 +5,10 @@ using System.Text;
 namespace Labs215Y2K
 {
     class array25
+        //задания 25 числа
     {
         public static void ex1()
+            //сумма элементов каждоый строки массива
         {
             int[,] array = new int[10, 10];
             int sum = 0;
@@ -33,6 +35,7 @@ namespace Labs215Y2K
             }
         }
         public static void ex2()
+            //переворот первых двух строчек массива
         {
             int[,] array = new int[2, 10];
             for (int i = 0; i < array.GetLength(0); i++)

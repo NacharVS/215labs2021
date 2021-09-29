@@ -5,6 +5,7 @@ using System.Text;
 namespace Labs215Y2K
 {
     class doorcodecombination
+        //комбинации цифр в дверном замке
     {
         public static void ex1()
         {
