@@ -5,8 +5,9 @@ namespace Labs215Y2K
     class Program
     {
         static void Main(string[] args)
-        {
-            MaxMin.Ex2();
-        }
+            {
+                sum.Ex3();
+            }
+        
     }
 }
