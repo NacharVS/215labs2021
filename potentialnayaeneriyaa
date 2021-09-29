@@ -1,0 +1,20 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Labs215Y2K
+{
+    class main5446
+        //потенциальная энергия
+    {
+        public static void ex()
+        {
+            Console.WriteLine("Введите массу и высоту ");
+            int massa = int.Parse(Console.ReadLine());
+            int visota = int.Parse(Console.ReadLine());
+            int g = 10;
+            int energia = massa * g * visota;
+            Console.WriteLine($" = {F}");
+        }
+    }
+}
