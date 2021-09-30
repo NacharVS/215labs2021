@@ -4,9 +4,66 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class bot
+    class oldhomeExercises
     {
-        public static void bott()
+        public static void simplecalculator()
+            //калькулятор switch
+        {
+            double num1, num2;
+            string znak;
+            Console.WriteLine("Введите первое число");
+            num1 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Введите второе число");
+            num2 = double.Parse(Console.ReadLine());
+            Console.WriteLine("Какой способ: '-' '+' '*' '/' '^' ");
+            znak = Console.ReadLine();
+            switch (znak)
+            {
+                case "-":
+                    Console.WriteLine(num1 - num2);
+                    break;
+                case "+":
+                    Console.WriteLine(num1 + num2);
+                    break;
+                case "*":
+                    Console.WriteLine(num1 * num2);
+                    break;
+                case "/":
+                    Console.WriteLine(num1 / num2);
+                    break;
+                case "^":
+                    Console.WriteLine(Math.Pow(num1, num2));
+                    break;
+                default:
+                    Console.WriteLine("Не могу выполнить действие");
+                    break;
+            }
+        }
+        public static void sphereSquare()
+            //площадь шара
+        {
+            Console.WriteLine("Введите радиус");
+            int r = int.Parse(Console.ReadLine());
+            double square = 4 * Math.PI * Math.Pow(r, 2);
+            Console.WriteLine(square);
+            Console.WriteLine();
+        }
+        public static void spaw2numbers()
+            // перемещение 2 чисел местами
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            string resultfirst = "a = ";
+            string resultsecond = "b = ";
+            Console.WriteLine(resultfirst + a);
+            Console.WriteLine(resultsecond + b);
+            Console.WriteLine();
+        }
+        public static void bot()
+            //бот
         {
             Console.ReadLine();
             Console.WriteLine("Привет!Как тебя зовут?Сколько тебе лет?");
@@ -89,6 +146,16 @@ namespace Labs215Y2K
             {
                 Console.WriteLine("Пока! Мне пора бежать. Приятно было познакомиться");
             }
+        }
+        public static void potentialEnergy()
+            //потенциальная энергия
+        {
+            Console.WriteLine("Введите массу и высоту ");
+            int m = int.Parse(Console.ReadLine());
+            int h = int.Parse(Console.ReadLine());
+            int g = 10;
+            int F = m * g * h;
+            Console.WriteLine($"Потенциальная энергия равна {F}");
         }
     }
 }
