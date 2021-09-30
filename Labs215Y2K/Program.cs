@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
             {
-                chatbot.Ex4();
+                calculator.Ex5();
             }
         
     }
