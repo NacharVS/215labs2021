@@ -7,7 +7,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Diagonale.Ex2();
+            SumMassive.Massive();
         }
     }
 }
