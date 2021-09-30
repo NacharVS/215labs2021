@@ -13,19 +13,28 @@ namespace Labs215Y2K
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = new Random().Next(1, 100);
-                array2[i] = new Random().Next(1, 100);
+                Console.Write($"{array}");
             }
+            Console.WriteLine();
+            for (int j = 0; j < array.Length; j++)
+            {
+                array2[j] = new Random().Next(1, 100);
+                Console.Write($"{array2}");
+            }
+            Console.WriteLine();
             for (int i = 0; i < array.Length; i++)
             {
                 for (int j = 0; j < array.Length; j++)
                 {
-                    if (array[i]==array2[j])
+                    if (array[i] == array2[j])
                     {
-                        Console.WriteLine($"Found a identical elem:{array[i]}");
+                        Console.Write($"{array[i]}");
                     }
                 }
-                Console.WriteLine();
             }
+            Console.WriteLine();
+
         }
-    }
+    } 
+    
 }

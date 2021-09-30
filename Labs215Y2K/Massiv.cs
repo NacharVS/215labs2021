@@ -8,10 +8,9 @@ namespace Labs215Y2K
     {
         public static void ex1()
         {
-            int[] mas = new int[10];
-            Random r = new Random();
+            int[] mas = new int[10];         
             for (int i = 0; i < mas.Length; i++)
-                mas[i] = r.Next(0, 100);
+                mas[i] = new Random().Next(0, 100);
             for (int i = 0; i < mas.Length; i++)
                 Console.Write(mas[i] + " ");
             Console.WriteLine();
