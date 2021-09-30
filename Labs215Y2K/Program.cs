@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
             {
-                perevorot.Ex7();
+                _2Darray.Ex8();
             }
         
     }
