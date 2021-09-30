@@ -9,24 +9,29 @@ namespace Labs215Y2K
         public static void Ex1() 
         {
             int[] array = new int[10];
+            Random z = new Random();
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = new Random().Next(0, 100);
-                Console.Write($" {array[i]}");
+                array[i] = z.Next(100);
+                Console.WriteLine(array[i]);
             }
-            Console.WriteLine();
-            Console.Write("Для вывода минимального элемента нажмите ENTER");
-            Console.ReadLine();
+
+            int max = array[0];
             int min = array[0];
+
 
             for (int i = 0; i < array.Length; i++)
             {
-                if (min > array[i])
+                if (array[i] > max)
+                    max = array[i];
+                if (array[i] < min)
                     min = array[i];
             }
-            Console.WriteLine("");
-            Console.WriteLine("минимальный элемент:" + min);
-            Console.ReadLine();
+
+
+            Console.WriteLine("min" + min);
+            Console.WriteLine("max" + max);
+            Console.ReadKey();
         }
     }
 }

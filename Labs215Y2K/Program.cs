@@ -7,7 +7,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Ohm_s_law_Закон_Ома_.Ex();
+            maxmin.Ex1();
         }
     }
 }
