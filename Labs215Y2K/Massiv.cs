@@ -8,23 +8,23 @@ namespace Labs215Y2K
     {
         public static void ex1()
         {
-            int[] mas = new int[10];         
-            for (int i = 0; i < mas.Length; i++)
-                mas[i] = new Random().Next(0, 100);
-            for (int i = 0; i < mas.Length; i++)
-                Console.Write(mas[i] + " ");
+            int[] array = new int[10];         
+            for (int i = 0; i < array.Length; i++)
+                array[i] = new Random().Next(0, 100);
+            for (int i = 0; i < array.Length; i++)
+                Console.Write(array[i] + " ");
             Console.WriteLine();
             int min, max;
-            min = max = mas[0];
-            for (int i = 1; i < mas.Length; i++)
+            min = max = array[0];
+            for (int i = 1; i < array.Length; i++)
             {
-                if (min > mas[i])
+                if (min > array[i])
                 {
-                    min = mas[i];
+                    min = array[i];
                 }
-                if (max < mas[i])
+                if (max < array[i])
                 {
-                    max = mas[i];
+                    max = array[i];
                 }
             }
             Console.WriteLine();

@@ -12,13 +12,13 @@ namespace Labs215Y2K
             int[] array2 = new int[10];
             for (int i = 0; i < array.Length; i++)
             {
-                array[i] = new Random().Next(1, 100);
+                array[i] = new Random().Next(0, 100);
                 Console.Write($"{array}");
             }
             Console.WriteLine();
             for (int j = 0; j < array.Length; j++)
             {
-                array2[j] = new Random().Next(1, 100);
+                array2[j] = new Random().Next(0, 100);
                 Console.Write($"{array2}");
             }
             Console.WriteLine();
@@ -28,7 +28,7 @@ namespace Labs215Y2K
                 {
                     if (array[i] == array2[j])
                     {
-                        Console.Write($"{array[i]}");
+                        Console.Write($"{}");
                     }
                 }
             }
