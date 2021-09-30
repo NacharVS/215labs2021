@@ -2,9 +2,9 @@
 
 namespace Поменять_значения_A_и_B
 {
-    class Programgsd
+    class exchange
     {
-        static void Maign(string[] args)
+       public static void ex5()
         {
             int a = 5;
             int b = 2;

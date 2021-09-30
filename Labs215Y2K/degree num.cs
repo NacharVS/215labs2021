@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace ConsoleApp1
+namespace degree
 {
-    class Programsd
+    class num
     {
-        static void Maingg(string[] args)
+       public static void ex6()
         {
             Console.WriteLine("Введите число");
             int num = int.Parse(Console.ReadLine());

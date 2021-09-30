@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SumMath
+namespace SumMatrix
 {
     class SumMatrix
     {
