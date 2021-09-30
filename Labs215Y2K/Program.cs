@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
             {
-                _2Darray.Ex8();
+            ArrayMinMax.Ex9();
             }
         
     }
