@@ -7,7 +7,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            maxmin.Ex1();
+            CalculationWithSqrt.Ex();
         }
     }
 }
