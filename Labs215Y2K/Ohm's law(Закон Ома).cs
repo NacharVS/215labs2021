@@ -12,7 +12,7 @@ namespace Labs215Y2K
             Console.WriteLine("Введите напряжение U ");
             int U = int.Parse(Console.ReadLine());
             Console.WriteLine("Введите сопротивление R ");
-            int R = int.Parse(Console.ReadLine());
+            double R = double.Parse(Console.ReadLine());
             double I = U / R;
             Console.WriteLine($"Закон Ома для участка цепи = {I}");
         }
