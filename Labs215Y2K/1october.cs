@@ -15,31 +15,29 @@ namespace Labs215Y2K
             //4 3 2 1 2
             //5 4 3 2 1
             int[,] array = new int[5, 5];
-            int a = 1;
             for (int i = 0; i < array.GetLength(0); i++)
             {
-                for (int j = 0; j < array.GetLength(1); j++)
+                array[i, 0] = new Random().Next(1, 10);
+            }
+            for (int j = 1; j < array.GetLength(1); j++)
+            {
+                array[0, j] = array[j, 0];
+            }
+            for (int i = 1; i < array.GetLength(0);i++)
+            {
+                for (int j = 1; j < array.GetLength(1); j++)
                 {
-                    if (i == j)
-                    {
-                        array[i, j] = a;
-                    
-                        Console.Write($" {array[i, j]}");
-                    }
-                   
-                    else
-                    {
-                        array[i, j] = new Random().Next(2, 6);
-                        Console.Write($" {array[i, j]}");
-                    }
+                    array[i, j] = array[i - 1, j - 1];
+                }
+            }
+            for (int i = 0; i <array.GetLength(0);i++)
+            {
+                for (int j = 0; j<array.GetLength(1);j++)
+                {
+                    Console.Write($" {array[i, j]}");
                 }
                 Console.WriteLine();
-               
-                }
-                Console.WriteLine("   ");
-                
-           
             }
         }
     }
-
+}
