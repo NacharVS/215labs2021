@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class Diagonal
     {
-        static void main002(string[] args)
+        public void main002(string[] args)
         {
             int R = 0, C = 0;
             Console.WriteLine("Введите число строк и столбцов матрицы");

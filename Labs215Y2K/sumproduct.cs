@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class sumproduct
     {
-        static void arr2()
+        public void Arrays()
         {
             int[] array1 = new int[10];
             int[] array2 = new int[10];

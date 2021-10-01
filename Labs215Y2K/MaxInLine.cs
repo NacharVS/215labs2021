@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class MaxInLine
     {
-        static void main3(string[] args)
+        public void Main3(string[] args)
         {
             int[,] array = new int[5, 5];
 

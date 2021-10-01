@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class ex1
     {
-        public void main337()
+        public void Main337()
         {
             Random z = new Random();
             int[,] array = new int[3, 3];

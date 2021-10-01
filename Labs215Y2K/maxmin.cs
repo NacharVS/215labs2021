@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class maxmin
     {
-        static void arr()
+        public void Arrs()
         {
             int[] Myarray = new int[10];
             for (int i = 0; i < Myarray.Length; i++)
