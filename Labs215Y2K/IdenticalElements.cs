@@ -28,7 +28,7 @@ namespace Labs215Y2K
                 {
                     if (array[i] == array2[j])
                     {
-                        Console.Write($"{}");
+                        Console.Write($"{array[i]}");
                     }
                 }
             }
