@@ -65,5 +65,32 @@ namespace Labs215Y2K
             Console.WriteLine("max" + max);
             Console.ReadKey();
         }
+        public static void summadiagonali()
+        {
+            int[,] array = new int[7, 7];
+            int sum = 0;
+
+
+            Random z = new Random();
+            for (int y = 0; y < array.GetLength(0); y++)
+            {
+                for (int x = 0; x < array.GetLength(1); x++)
+                {
+                    array[y, x] = z.Next(100);
+                    Console.Write(array[y, x] + "\t");
+                }
+                Console.WriteLine();
+
+            }
+
+
+            for (int y = 0; y < array.GetLength(0); y++)
+            {
+
+                sum += array[y, y];
+            }
+            Console.WriteLine(sum);
+            Console.ReadKey();
+        }
     }
 }
