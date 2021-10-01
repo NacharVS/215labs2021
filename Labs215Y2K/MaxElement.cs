@@ -25,7 +25,7 @@ namespace Labs215Y2K
                 {
                     if (array[i,j] > max)
                     {
-                        max = array[i, j];
+                        max = array[i,j];
                     }
                 }
                 Console.WriteLine($"Max elements: {max}");
