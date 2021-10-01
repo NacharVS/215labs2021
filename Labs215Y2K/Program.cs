@@ -12,6 +12,7 @@ namespace Labs215Y2K
             //Площадь_поверхности_шара.ball.ex4();
             //Поменять_значения_A_и_B.exchange.ex5();
             //degree.num.ex6();
+            massiv.MinMax.ex8();
         }
     }
 }
