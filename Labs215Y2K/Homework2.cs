@@ -4,13 +4,11 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    internal class Program2
+    class Homework2
     {
-        static void Main(string[] args)
+        public static void Ex2()
         {
-            Homework2.Ex2();
             
-
         }
     }
 }
