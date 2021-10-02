@@ -81,5 +81,19 @@ namespace Labs215Y2K
             Console.WriteLine(max);
             Console.WriteLine(min);
         }
+        public static void ex5()
+        {
+            int number = int.Parse(Console.ReadLine());
+            while (number >= 0)
+            {
+                if (number % 10 > 0)
+                {
+                    Console.Write(number % 10);
+                    number = number / 10;
+                }
+                else
+                    number = number / 10;
+            }
+        }
     }
 }
