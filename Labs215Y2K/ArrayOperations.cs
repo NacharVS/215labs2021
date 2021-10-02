@@ -174,6 +174,45 @@ public static class ArrayM2
             Console.WriteLine();
         }
 
+        
+    }
+    public static void MaxElementMatritci()
+    {
+        Console.WriteLine();
+        Console.WriteLine(" длина и ширина Матрицы ");
+
+        int A = int.Parse(Console.ReadLine());
+        int[,] array = new int[A, A];
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = new Random().Next(0, 10);
+                Console.Write($" {array[i, j]}");
+            }
+            Console.WriteLine();
+        }
+
+        int maxValue = array[0, 0];
+
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+
+                if (array[i, j] > maxValue)
+                {
+                    maxValue = array[i, j];
+                    
+                }
+               
+            }
+            Console.Write($" максимальное значение: {maxValue}");
+            maxValue = 0;
+            Console.WriteLine();
+            Console.WriteLine();
+        }
     }
 }
 
