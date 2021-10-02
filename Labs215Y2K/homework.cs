@@ -101,5 +101,18 @@ namespace Labs215Y2K
             Double S = 4 * Math.PI * Math.Pow(R, 2);
             Console.WriteLine($"Площадь поверхности шара " + S);
         }
+        public static void ex7()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            Console.WriteLine("a = " + a);
+            Console.WriteLine("b = " + b);
+            a = a + b;
+            b = a - b;
+            a = a - b;
+            Console.WriteLine();
+            Console.WriteLine("a = " + a);
+            Console.WriteLine("b = " + b);
+        }
     }
 }
