@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Labs215Y2K
 {
-    class Program
+    class Sball
     {
         static void Main(string[] args)
         {
