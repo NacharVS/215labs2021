@@ -6,95 +6,27 @@ namespace ALL_Homework
     {
         public static void Main()
         {
-            while (true)
+            int[,] qq = new int[10, 10];
+            int[,] qqnya = new int[1, qq.GetLength(0)];
+
+            for (int i = 0; i < qq.GetLength(0); i++)
             {
-
-                Console.WriteLine("Циклы - C");
-                
-                Console.WriteLine("Массивы двумерные - М2");
-                Console.WriteLine("Очистить консоль - 1");
-                string Vvod = Console.ReadLine();
-                if (Vvod == "С")
+                for (int j = 0; j < qq.GetLength(1); j++)
                 {
-                    Console.WriteLine("Квадрат Числа - 1");
-                    Console.WriteLine("Переворот числа - 2");
-                    Console.WriteLine("Подбор домофона по сумме - 3");
-
-
-
-
-                    string vvod = Console.ReadLine();
-
-                    if (vvod == "1")
-                    {
-                        Cycle.Cycles.Sgrt();
-                    }
-                    if (vvod == "2")
-                    {
-                        Cycle.Cycles.Reversenubmer();
-
-                    }
-                    if (vvod == "3")
-                    {
-                        Cycle.Cycles.HackDoor();
-                    }
-                    if (vvod == "5")
-                    {
-                        Console.Clear();
-
-                    }
-
+                    qq[i, j] = new Random().Next(10, 100);
+                    Console.Write(" " + qq[i,j]);
                 }
-                if (Vvod == "M2")
-                {
-                    Console.WriteLine("Поменять столбцы местами - 1"); 
-                    Console.WriteLine("Сумма строки матрицы - 2");
-                    Console.WriteLine("Умножение матриц - 3");
-                    Console.WriteLine("Максимальный элемент  в строке матрицы - 4"); 
-                    Console.WriteLine("Сумма элементов главной матрицы - 5"); 
-                    Console.WriteLine("Минимальный элемент в строке в матрицы - 6");
-
-
-
-
-                    string vvod = Console.ReadLine();
-
-                    if (vvod == "1")
-                    {
-                        ArrayM2.CreateArray();
-                    }
-                    if (vvod == "2")
-                    {
-                        ArrayM2.sumMatrix();
-                    }
-                    if (vvod == "3")
-                    {
-                        ArrayM2.MatrixNAmatritcy();
-                    }
-                    if (vvod == "4")
-                    {
-                        ArrayM2.MaxElementMatritci();
-                    }
-                    if (vvod == "5")
-                    {
-                        ArrayM2.MIDDioganal();
-                    }
-                    if (vvod == "6")
-                    {
-                        ArrayM2.MinElementMatritci();
-                    }
-                    if (vvod == "7")
-                    {
-                        Console.Clear();
-
-                    }
-                }
-                if (Vvod == "1")
-                {
-                    Console.Clear();
-
-                }
+                Console.WriteLine();
             }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < qqnya.GetLength(1); i++)
+            {
+                qqnya[0, i] = qq[i, 5];
+                Console.Write(" " +qqnya[0,i]);
+            }
+            
         }
 
     }

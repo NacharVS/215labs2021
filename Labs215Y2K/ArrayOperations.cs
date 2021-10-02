@@ -11,7 +11,7 @@ public static class ArrayM2
         int[,] array = new int[A, A];
         int[,] array1 = new int[array.GetLength(1), array.GetLength(0)];
         int swap = 0;
-
+        int[,] qq = new int[0, array.GetLength(0)];
 
         for (int i = 0; i < array.GetLength(0); i++)
         {
@@ -23,7 +23,8 @@ public static class ArrayM2
             Console.WriteLine();
         }
         Console.WriteLine("Какой столбец с каким поменять");
-        Console.WriteLine("Первый  - "); int Vvod1 = int.Parse(Console.ReadLine()) - 1;
+        Console.WriteLine("Первый  - "); 
+        int Vvod1 = int.Parse(Console.ReadLine()) - 1;
         Console.WriteLine("Второй - ");
         int Vvod2 = int.Parse(Console.ReadLine()) - 1;
 
@@ -120,7 +121,7 @@ public static class ArrayM2
 
             for (int j = 0; j < array.GetLength(1); j++)
             {
-                array[i, j] = new Random().Next(0, 10);
+                array[i, j] = new Random().Next();
                 Console.Write($" {array[i, j]}");
             }
             Console.WriteLine();
