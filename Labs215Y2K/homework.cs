@@ -114,5 +114,12 @@ namespace Labs215Y2K
             Console.WriteLine("a = " + a);
             Console.WriteLine("b = " + b);
         }
+        public static void ex8()
+        {
+            int g = 10;
+            int m = int.Parse(Console.ReadLine());
+            int F = m * g;
+            Console.WriteLine("Сила тяжести = " + F);
+        }
     }
 }
