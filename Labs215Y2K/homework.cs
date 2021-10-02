@@ -95,5 +95,11 @@ namespace Labs215Y2K
                     number = number / 10;
             }
         }
+        public static void ex6()
+        {
+            Double R = Double.Parse(Console.ReadLine());
+            Double S = 4 * Math.PI * Math.Pow(R, 2);
+            Console.WriteLine($"Площадь поверхности шара " + S);
+        }
     }
 }
