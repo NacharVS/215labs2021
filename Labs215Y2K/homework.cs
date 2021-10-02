@@ -36,6 +36,13 @@ namespace Labs215Y2K
                 Console.WriteLine(a);
             }
         }
+        public static void ex3()
+        {
+            int U = int.Parse(Console.ReadLine());
+            int R = int.Parse(Console.ReadLine());
+            int I = U / R;
+            Console.WriteLine("Сила тока = " + I);
+        }
 
     }
 }
