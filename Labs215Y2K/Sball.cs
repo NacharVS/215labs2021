@@ -1,28 +1,17 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Labs215Y2K
 {
-    class Sball
+    class SBal
     {
-        static void Main(string[] args)
+        public static void ex9()
         {
-            //Заполнить двумерный массив по следующему правилу, массив произвольной размерности, массив передается через параметр:
-            //1 2 3 4 5
-            //2 1 2 3 4
-            //3 2 1 2 3
-            //4 3 2 1 2
-            //5 4 3 2 1
-
-            int[,] arrayGlobal = new int[5, 5];
-            ArrayOperations.TwoDimensionalArrayGeneration(arrayGlobal);
-            int[,] arrayGlobal2 = new int[5, 5];
-            Console.WriteLine();
-            ArrayOperations.TwoDimensionalArrayGeneration(arrayGlobal2);
-            Console.WriteLine(arrayGlobal[1,1]);
-
-
-
-        }       
+            Console.WriteLine("Введите радиус");
+            int r = int.Parse(Console.ReadLine());
+            double S = 4 * Math.PI * Math.Pow(r, 2);
+            Console.WriteLine(S);
+            {
     }
 }
