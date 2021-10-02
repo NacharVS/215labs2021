@@ -47,8 +47,9 @@ namespace ALL_Homework
                 }
                 if (Vvod == "M2")
                 {
-                    Console.WriteLine("Поменять столбцы местами - 1");
-                    
+                    Console.WriteLine("Поменять столбцы местами - 1"); 
+                    Console.WriteLine("Сумма строки матрицы - 2");
+                    Console.WriteLine("Умножение матриц - 3");
 
 
 
@@ -59,7 +60,14 @@ namespace ALL_Homework
                     {
                         ArrayM2.CreateArray();
                     }
-                   
+                    if (vvod == "2")
+                    {
+                        ArrayM2.sumMatrix();
+                    }
+                    if (vvod == "3")
+                    {
+                        ArrayM2.MatrixNAmatritcy();
+                    }
                 }
                 if (Vvod == "1")
                 {
