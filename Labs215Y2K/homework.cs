@@ -18,6 +18,24 @@ namespace Labs215Y2K
             String delaesh = Console.ReadLine();
             Console.WriteLine("Я сейчас занят, пока.");
         }
+        public static void ex2()
+        {
+            int a = int.Parse(Console.ReadLine());
+            int b = int.Parse(Console.ReadLine());
+            int c = a;
+            if (b == 0)
+            {
+                Console.WriteLine(1);
+            }
+            else
+            {
+                for (int i = 2; i <= b; i++)
+                {
+                    a = a * c;
+                }
+                Console.WriteLine(a);
+            }
+        }
 
     }
 }
