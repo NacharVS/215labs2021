@@ -6,7 +6,8 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            massiviUprajneniya.MaxMin();
+            sumdiagonal.diagonale1();
+
         }
     }
 }
