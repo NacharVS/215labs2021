@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Labs215Y2K
+namespace ALL_Homework
 {
     class Program
     {
@@ -8,36 +8,68 @@ namespace Labs215Y2K
         {
             while (true)
             {
+
+                Console.WriteLine("Циклы - С");
+                Console.WriteLine("Массивы - М1");
+                Console.WriteLine("Массивы двумерные - М2");
+                Console.WriteLine("Очистить консоль - 1");
                 string Vvod = Console.ReadLine();
-                
-                if (Vvod == "Sgrt")
+                if (Vvod == "С")
                 {
-                    Cycle.Cycles.Sgrt();
-                }
-                if (Vvod == "revers")
-                {
-                    Cycle.Cycles.Reversenubmer();
+                    Console.WriteLine("Квадрат Числа - 1");
+                    Console.WriteLine("Переворот числа - 2");
+                    Console.WriteLine("Подбор домофона по сумме - 3");
+
+
+
+
+                    string vvod = Console.ReadLine();
+
+                    if (vvod == "1")
+                    {
+                        Cycle.Cycles.Sgrt();
+                    }
+                    if (vvod == "2")
+                    {
+                        Cycle.Cycles.Reversenubmer();
+
+                    }
+                    if (vvod == "3")
+                    {
+                        Cycle.Cycles.HackDoor();
+                    }
+                    if (vvod == "5")
+                    {
+                        Console.Clear();
+
+                    }
 
                 }
-                if (Vvod == "HackDoor")
+                if (Vvod == "M2")
                 {
-                    Cycle.Cycles.HackDoor();
+                    Console.WriteLine("Поменять столбцы местами - 1");
+                    
+
+
+
+
+                    string vvod = Console.ReadLine();
+
+                    if (vvod == "1")
+                    {
+                        ArrayM2.CreateArray();
+                    }
+                   
                 }
-                if (Vvod == "clear")
+                if (Vvod == "1")
                 {
                     Console.Clear();
 
                 }
-                if(Vvod == "ОдинаковыеЦифры") 
-                {
-                    Cycle.Cycles.ReversoNumber();
-
-                }
             }
         }
-       
+
     }
 }
-    
-    
- 
+
+

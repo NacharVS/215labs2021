@@ -1,32 +1,69 @@
 ﻿using System;
-
-namespace Labs215Y2K
+using System.Collections.Generic;
+using System.Text;
+public static class ArrayM2
 {
-    class ArrayOperations
+    public static void CreateArray()
     {
-        // 1. Найти максимальный и минимальный элемент массива
-        // 2. сумма и произведение 2х массивов по элементно
-        // 3. найти одинаковые элементы двух массивов
-        static void OperationOne()
+        int[,] array = new int[10, 10];
+        int[,] array1 = new int[array.GetLength(1), array.GetLength(0)];
+        int swap = 0;
+
+
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            int[] array = new int[10];
-
-            for (int i = 0; i < array.Length; i++)
+            for (int j = 0; j < array.GetLength(1); j++)
             {
-                array[i] = new Random().Next(10, 100);
-
-                Console.Write($" {array[i]}");
+                array[i, j] = new Random().Next(0, 10);
+                Console.Write($" {array[i, j]}");
             }
-
             Console.WriteLine();
-
-            for (int i = 0; i < array.Length - 1; i++)
-            {
-                if (array[i] < array[i + 1])
-                {
-                    Console.Write($" {array[i + 1]}");
-                }
-            }
         }
+        Console.WriteLine("Какой столбец с каким поменять");
+        Console.WriteLine("Первый  - ");
+        int Vvod1 = int.Parse(Console.ReadLine()) - 1;
+        Console.WriteLine("Второй - ");
+        int Vvod2 = int.Parse(Console.ReadLine()) - 1;
+
+        Console.WriteLine("Перый столбик - №", Vvod1);
+
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            Console.Write($" {array[i, Vvod1]}");
+            swap = array[i, Vvod1];
+            array1[i, Vvod2] = swap;
+        }
+
+        Console.WriteLine();
+
+        Console.WriteLine("Второй столбик -№", Vvod2);
+
+        for (int j = 0; j < array.GetLength(0); j++)
+        {
+            Console.Write($" {array[j, Vvod2]}");
+            swap = array[j, Vvod2];
+            array1[j, Vvod1] = swap;
+        }
+
+        Console.WriteLine();
+        Console.WriteLine();
+        Console.WriteLine("Замена");
+
+        for (int i = 0; i < array1.GetLength(0); i++)
+        {
+            for (int j = 0; j < array1.GetLength(1); j++)
+            {
+
+                Console.Write($" {array1[i, j]}");
+            }
+            Console.WriteLine();
+        }
+
+
+
     }
+
+
+
+
 }
