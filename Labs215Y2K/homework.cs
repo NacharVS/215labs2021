@@ -43,6 +43,43 @@ namespace Labs215Y2K
             int I = U / R;
             Console.WriteLine("Сила тока = " + I);
         }
+        public static void ex4()
+        {
+            int[] array = new int[10];
+            int a = 0;
+            int b = 0;
+            int max = 0;
+            int min = 10000000;
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(1, 100);
 
+                Console.Write($" {array[i]}");
+            }
+
+            Console.WriteLine();
+
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                if (array[i] > array[i + 1])
+                {
+                    a = array[i];
+                    if (a > max)
+                    {
+                        max = a;
+                    }
+                }
+                if (array[i] < array[i + 1])
+                {
+                    b = array[i];
+                    if (min > b)
+                    {
+                        min = b;
+                    }
+                }
+            }
+            Console.WriteLine(max);
+            Console.WriteLine(min);
+        }
     }
 }
