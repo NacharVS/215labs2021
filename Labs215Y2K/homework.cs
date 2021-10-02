@@ -121,5 +121,24 @@ namespace Labs215Y2K
             int F = m * g;
             Console.WriteLine("Сила тяжести = " + F);
         }
+        public static void ex9()
+        {
+            int[,] array = new int[10, 10];
+            int sum = 0;
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = new Random().Next(10, 100);
+                    Console.Write(array[i, j] + "   ");
+                }
+                Console.WriteLine();
+            }
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                sum += array[i, i];
+            }
+            Console.WriteLine(sum);
+        }
     }
 }
