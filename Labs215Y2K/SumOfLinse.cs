@@ -10,9 +10,9 @@ namespace Labs215Y2K
         {
             int[,] Array = new int[10, 10];          
             int sum_str = 0;           
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < Array.GetLength(0); i++)
             {
-                for (int j = 0; j < 10; j++)
+                for (int j = 0; j < Array.GetLength(1); j++)
                 {
                     Array[i, j] = new Random().Next(0, 2);
                     sum_str += Array[i, j];
