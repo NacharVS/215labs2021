@@ -38,11 +38,11 @@ public static class ArrayM2
 
         Console.WriteLine("Второй столбик -№", Vvod2);
 
-        for (int j = 0; j < array.GetLength(0); j++)
+        for (int i = 0; i < array.GetLength(0); i++)
         {
-            Console.Write($" {array[j, Vvod2]}");
-            swap = array[j, Vvod2];
-            array1[j, Vvod1] = swap;
+            Console.Write($" {array[i, Vvod2]}");
+            swap = array[i, Vvod2];
+            array1[i, Vvod1] = swap;
         }
 
         Console.WriteLine();
@@ -53,17 +53,30 @@ public static class ArrayM2
         {
             for (int j = 0; j < array1.GetLength(1); j++)
             {
-
-                Console.Write($" {array1[i, j]}");
+                if (j  == Vvod1 && j!= Vvod2) 
+                {
+                 Console.Write($" {array1[i, Vvod1]}");
+                }
+                if (j  == Vvod2 && j != Vvod1)
+                {
+                    Console.Write($" {array1[i, Vvod2]}");
+                }
+                if (j != Vvod2 && j != Vvod1)
+                {
+                    Console.Write($" {array[i, j]}");
+                }
+                
             }
             Console.WriteLine();
         }
-
-
-
+            Console.WriteLine();
     }
 
 
 
-
 }
+
+
+
+
+
