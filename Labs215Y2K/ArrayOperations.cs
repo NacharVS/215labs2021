@@ -5,7 +5,10 @@ public static class ArrayM2
 {
     public static void CreateArray()
     {
-        int[,] array = new int[10, 10];
+        Console.WriteLine("Ширина И Длина Матрицы");
+        int A = int.Parse(Console.ReadLine()); 
+       
+        int[,] array = new int[A, A];
         int[,] array1 = new int[array.GetLength(1), array.GetLength(0)];
         int swap = 0;
 
@@ -20,12 +23,11 @@ public static class ArrayM2
             Console.WriteLine();
         }
         Console.WriteLine("Какой столбец с каким поменять");
-        Console.WriteLine("Первый  - ");
-        int Vvod1 = int.Parse(Console.ReadLine()) - 1;
+        Console.WriteLine("Первый  - ");int Vvod1 = int.Parse(Console.ReadLine()) - 1;
         Console.WriteLine("Второй - ");
         int Vvod2 = int.Parse(Console.ReadLine()) - 1;
 
-        Console.WriteLine("Перый столбик - №", Vvod1);
+        Console.Write("Перый столбик - №", Vvod1);
 
         for (int i = 0; i < array.GetLength(0); i++)
         {
@@ -36,7 +38,7 @@ public static class ArrayM2
 
         Console.WriteLine();
 
-        Console.WriteLine("Второй столбик -№", Vvod2);
+        Console.Write("Второй столбик -№", Vvod2);
 
         for (int i = 0; i < array.GetLength(0); i++)
         {
