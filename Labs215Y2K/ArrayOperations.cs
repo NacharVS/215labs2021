@@ -6,8 +6,8 @@ public static class ArrayM2
     public static void CreateArray()
     {
         Console.WriteLine("Ширина И Длина Матрицы");
-        int A = int.Parse(Console.ReadLine()); 
-       
+        int A = int.Parse(Console.ReadLine());
+
         int[,] array = new int[A, A];
         int[,] array1 = new int[array.GetLength(1), array.GetLength(0)];
         int swap = 0;
@@ -23,7 +23,7 @@ public static class ArrayM2
             Console.WriteLine();
         }
         Console.WriteLine("Какой столбец с каким поменять");
-        Console.WriteLine("Первый  - ");int Vvod1 = int.Parse(Console.ReadLine()) - 1;
+        Console.WriteLine("Первый  - "); int Vvod1 = int.Parse(Console.ReadLine()) - 1;
         Console.WriteLine("Второй - ");
         int Vvod2 = int.Parse(Console.ReadLine()) - 1;
 
@@ -55,11 +55,11 @@ public static class ArrayM2
         {
             for (int j = 0; j < array1.GetLength(1); j++)
             {
-                if (j  == Vvod1 && j!= Vvod2) 
+                if (j == Vvod1 && j != Vvod2)
                 {
-                 Console.Write($" {array1[i, Vvod1]}");
+                    Console.Write($" {array1[i, Vvod1]}");
                 }
-                if (j  == Vvod2 && j != Vvod1)
+                if (j == Vvod2 && j != Vvod1)
                 {
                     Console.Write($" {array1[i, Vvod2]}");
                 }
@@ -67,11 +67,11 @@ public static class ArrayM2
                 {
                     Console.Write($" {array[i, j]}");
                 }
-                
+
             }
             Console.WriteLine();
         }
-            Console.WriteLine();
+        Console.WriteLine();
     }
 
 
@@ -110,8 +110,8 @@ public static class ArrayM2
     public static void MatrixNAmatritcy()
     {
         Console.WriteLine("Ширина  Матрицы 1");
-        int b = int.Parse(Console.ReadLine()); 
-        
+        int b = int.Parse(Console.ReadLine());
+
         Console.WriteLine("Длина Матрицы 1");
         int B = int.Parse(Console.ReadLine());
         int[,] array = new int[B, b];
@@ -128,15 +128,15 @@ public static class ArrayM2
         }
         Console.WriteLine();
         Console.WriteLine("Ширина  Матрицы 2");
-        
-        int a = int.Parse(Console.ReadLine()); 
-        
-        Console.WriteLine();
-        Console.WriteLine(" Длина Матрицы 2"); 
 
-        int A= int.Parse(Console.ReadLine());
+        int a = int.Parse(Console.ReadLine());
+
+        Console.WriteLine();
+        Console.WriteLine("Длина Матрицы 2");
+
+        int A = int.Parse(Console.ReadLine());
         int[,] arraytwo = new int[A, a];
-       
+
         for (int i = 0; i < arraytwo.GetLength(0); i++)
         {
 
@@ -174,12 +174,12 @@ public static class ArrayM2
             Console.WriteLine();
         }
 
-        
+
     }
     public static void MaxElementMatritci()
     {
-        Console.WriteLine();
-        Console.WriteLine(" длина и ширина Матрицы ");
+       
+        Console.WriteLine("длина и ширина Матрицы ");
 
         int A = int.Parse(Console.ReadLine());
         int[,] array = new int[A, A];
@@ -204,13 +204,74 @@ public static class ArrayM2
                 if (array[i, j] > maxValue)
                 {
                     maxValue = array[i, j];
-                    
+
                 }
-               
+
             }
-            Console.Write($" максимальное значение: {maxValue}");
-            maxValue = 0;
+            Console.Write($"максимальное значение строки ({i}): {maxValue}"); 
             Console.WriteLine();
+            maxValue = array[i, 0];
+          
+            
+        }
+    }
+    public static void MIDDioganal ( )
+    {
+        int A = int.Parse(Console.ReadLine());
+        int[,] array = new int[A, A];
+        int Summ = 0;
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = new Random().Next(10, 100);
+                Console.Write($" {array[i, j]}");
+            }
+            Console.WriteLine();
+        }
+        Console.WriteLine(); 
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            Summ =Summ+ array[i, i];
+        }
+        Console.WriteLine("Сумма главной диоганали матрицы равна =",Summ);
+    }
+    public static void MinElementMatritci()
+    {
+        Console.WriteLine();
+        Console.WriteLine("длина и ширина Матрицы ");
+
+        int A = int.Parse(Console.ReadLine());
+        int[,] array = new int[A, A];
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                array[i, j] = new Random().Next(10, 100);
+                Console.Write($" {array[i, j]}");
+            }
+            Console.WriteLine();
+        }
+
+        int minValue = array[0, 0];
+
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+
+                if (array[i, j] < minValue)
+                {
+                    minValue = array[i, j];
+
+                }
+
+            }
+            Console.Write($"Минимальное значениеc строки ({i}): {minValue}");
+            minValue = array[i, 0];
+           
             Console.WriteLine();
         }
     }

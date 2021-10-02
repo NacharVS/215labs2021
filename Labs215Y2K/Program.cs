@@ -9,7 +9,7 @@ namespace ALL_Homework
             while (true)
             {
 
-                Console.WriteLine("Циклы - С");
+                Console.WriteLine("Циклы - C");
                 
                 Console.WriteLine("Массивы двумерные - М2");
                 Console.WriteLine("Очистить консоль - 1");
@@ -50,7 +50,9 @@ namespace ALL_Homework
                     Console.WriteLine("Поменять столбцы местами - 1"); 
                     Console.WriteLine("Сумма строки матрицы - 2");
                     Console.WriteLine("Умножение матриц - 3");
-                    Console.WriteLine("Максимальный элемент в Матрице - 4");
+                    Console.WriteLine("Максимальный элемент  в строке матрицы - 4"); 
+                    Console.WriteLine("Сумма элементов главной матрицы - 5"); 
+                    Console.WriteLine("Минимальный элемент в строке в матрицы - 6");
 
 
 
@@ -72,6 +74,19 @@ namespace ALL_Homework
                     if (vvod == "4")
                     {
                         ArrayM2.MaxElementMatritci();
+                    }
+                    if (vvod == "5")
+                    {
+                        ArrayM2.MIDDioganal();
+                    }
+                    if (vvod == "6")
+                    {
+                        ArrayM2.MinElementMatritci();
+                    }
+                    if (vvod == "7")
+                    {
+                        Console.Clear();
+
                     }
                 }
                 if (Vvod == "1")
