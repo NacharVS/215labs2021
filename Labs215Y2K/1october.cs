@@ -14,7 +14,7 @@ namespace Labs215Y2K
             //3 2 1 2 3
             //4 3 2 1 2
             //5 4 3 2 1
-            int[,] array = new int[5, 5];
+            int[,] array = new int[5, 5.];
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 array[i, 0] = new Random().Next(1, 10);
