@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            
+            //Я наконец-то разобрался с этой штукой
         }
     }
 }
