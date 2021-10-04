@@ -8,7 +8,10 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Homework2.Ex2();
+            int[,] array = new int[5, 5];
+            int[] array2 = new int[5];
+
+            ArrayOperations.ArrayGeneration(array, 200, 500);
             
 
         }
