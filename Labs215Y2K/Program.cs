@@ -6,8 +6,9 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Dzstaroe.n1();
-          
+            int[,] qq = new int[10,10];
+            int[] qq1 = new int[10];
+            ArrayOperations.ArrayGeneration(qq, 0, 2);
         }
     }
 }
