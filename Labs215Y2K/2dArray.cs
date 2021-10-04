@@ -6,16 +6,9 @@ namespace Labs215Y2K
 {
     class _2dArray
     {
-        static void ex1()
+        static void test123()
         {
-            int[,] arr = new int[10, 10];
-            for (int i = 0; i < arr.GetLength(0); i++)
-            {
-                for (int j = 0; i < arr.GetLength(1); i++)
-                {
-
-                }
-            }
+           
         }
     }
 }
