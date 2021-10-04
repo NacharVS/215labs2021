@@ -6,7 +6,10 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            _1october.arrayex();
+            int[,] a = new int[10, 10];
+            int[] b = new int[10];
+            //ArrayOperations.TwoDemitionalsArray(a,100,1000);
+            ArrayOperations.TwoDemitionalsArray(a, 10,100);
         }
     }
 }
