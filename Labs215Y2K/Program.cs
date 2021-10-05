@@ -6,7 +6,10 @@ namespace Labs215Y2K
     {
         public static void Main(string[] args)
         {
-            Labs215Y2K.ArrayOperations.OperationOne();
+            //int[] qq = new int[10];
+            int[,] qqnya = new int[10, 5];
+            //ArrayOperations.ArrayGeneration(qq, 11, 50);
+            ArrayOperations.ArrayGeneration(qqnya, 2);
         }
     }
 }
