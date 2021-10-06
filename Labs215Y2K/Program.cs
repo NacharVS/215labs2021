@@ -8,7 +8,7 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            
+            Console.WriteLine(ArrayOperations.SumOfSomeInts(1, 2, 5, 3, 4, 33, 3));
         }       
     }
 }

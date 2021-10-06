@@ -4,6 +4,17 @@ namespace Labs215Y2K
 {
     class ArrayOperations
     {
+
+        public static int SumOfSomeInts(params int[] integers)
+        {
+            int resuilt = 0;
+            for (int i = 0; i < integers.Length; i++)
+            {
+                resuilt += integers[i];
+            }
+            return resuilt;
+        }
+
         // 1. Найти сумму эл-ов в каждой строке матрицы
         // 2. Поменять местами  две строки матрицы
 
