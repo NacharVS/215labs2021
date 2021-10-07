@@ -18,9 +18,10 @@ namespace Deletor
             //TwoIdentElementDeletor.Deletor.ex7(); // - находит одинаковые числа в массиве
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
-            Labs215Y2K.ArrayOperations.ArrayGeneration(array,5);
-            Console.WriteLine();
-            Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
+            //Labs215Y2K.ArrayOperations.ArrayGeneration(array,5);
+            //Console.WriteLine();
+            //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
+            Magazin.Ashan.catalog();
         }
     }
 }
