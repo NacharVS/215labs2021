@@ -7,7 +7,11 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            SumMassive.Massive();
+            Shop.Practice();
+        }
+        static void buy(string[] args) 
+        {
+            Shop.BuyProducts();
         }
     }
 }
