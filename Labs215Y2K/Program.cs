@@ -6,8 +6,9 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            int[] array = new int[10];
-            Internetmarket.catalog();
+            string[] array = new string[10];
+            Internetmarket.catalog1();
+            Internetmarket.catalog(array);
             
         }
     }
