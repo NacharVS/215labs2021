@@ -15,6 +15,7 @@ namespace Labs215Y2K
             a = a - b;
             Console.WriteLine($"a=" + a);
             Console.WriteLine($"b=" + b);
-            {
+            
+        }
     }
 }

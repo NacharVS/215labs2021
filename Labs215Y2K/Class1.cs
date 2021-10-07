@@ -12,6 +12,8 @@ namespace Labs215Y2K
             int r = int.Parse(Console.ReadLine());
             double S = 4 * Math.PI * Math.Pow(r, 2);
             Console.WriteLine(S);
-            {
+           
+          
+        }
     }
 }

@@ -20,6 +20,5 @@ namespace Labs215Y2K
             Console.WriteLine($"Произвидение =" + mult);
             Console.WriteLine($"Деление =" + del);
         }
-    {
     }
 }
