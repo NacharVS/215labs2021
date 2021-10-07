@@ -6,10 +6,11 @@ namespace Labs215Y2K
     {
         public static void Main(string[] args)
         {
-            //int[] qq = new int[10];
-            int[,] qqnya = new int[10, 5];
-            //ArrayOperations.ArrayGeneration(qq, 11, 50);
-            ArrayOperations.ArrayGeneration(qqnya, 2);
+            ////int[] qq = new int[10];
+            //int[,] qqnya = new int[10, 5];
+            ////ArrayOperations.ArrayGeneration(qq, 11, 50);
+            //ArrayOperations.ArrayGeneration(qqnya, 2);
+            Magazin.Ashan.catalog();
         }
     }
 }
