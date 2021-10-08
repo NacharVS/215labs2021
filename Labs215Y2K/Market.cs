@@ -47,7 +47,7 @@ namespace Labs215Y2K
                 a[7] = "Апельсины 100 гр. - 13 р.";
                 a[8] = "Орех грецкий 100 гр. - 75 р.";
                 a[9] = "Сок Яблочный 2 л. - 150 р.";
-                Console.Write(a[j]);
+                Console.Write(a);
                 Console.WriteLine();
             }
             Console.WriteLine("");
@@ -94,18 +94,14 @@ namespace Labs215Y2K
             string z = Console.ReadLine();
             switch (z)
             {
-                case "1":
+                
 
             }
         }
         public static void allprice()
         {
-
+            
         }
-        public static void listofproducts(int b = 0 )
-        {
-            int[] d = new int[10];
-            d[0] = return ref Market.chooseproducts(c0);
-        }
+        
     }
 }
