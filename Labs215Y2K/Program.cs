@@ -8,7 +8,7 @@ namespace Deletor
         public static void Main()
         {
             int[,] array = new int[5, 5];
-            int[]  arraytwo = new int[10];
+            int[] arraytwo = new int[10];
 
             //MaxMin.Maxmin.ex1(); // - максимальный элемент массива
             //Multplus.MultPlus.ex2();  // - Сумма и умножение массива
