@@ -36,21 +36,23 @@ namespace Labs215Y2K
             prices[8] = 30;
             prices[9] = 4;
 
-
+            Console.WriteLine("Приветствуем Вас в онлайн-магазине 'ScamShop'");
             Console.WriteLine("Введите 'Д', чтобы посмотреть список товаров");
-            Console.WriteLine("Введите 'З', чтобы посмотреть корзину");
+            Console.WriteLine("Введите 'Я', чтобы посмотреть корзину");
             string a = Console.ReadLine();
             if (a == "Д")
             {
                 Shop.buy(prices, products);
-                Console.WriteLine("Если Вы хотите вернуться в корзину, введите 'З'");
+                Console.WriteLine("Если Вы хотите вернуться в корзину, введите 'Я'");
                 string b = Console.ReadLine();
-                if (b == "З")
+                if (b == "Я")
                     Shop.basket(prices, products);
 
             }
-            if (a == "З")
+            if (a == "Я")
                 Shop.basket(prices, products);
+            else
+                Console.WriteLine("ОШИБКА! Вы ввели некорректный символ. Соблюдайте регистр букв!");
 
 
 
