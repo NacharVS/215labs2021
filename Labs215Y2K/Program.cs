@@ -1,4 +1,6 @@
-﻿
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Labs215Y2K
 {
@@ -6,7 +8,12 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            Market.catalog();
+
+            int[] priceproducts = new int[10] { 30, 8, 40, 250, 50, 70, 36, 13, 75, 150 };
+            int[] productschoose = new int[10];
+
+
+            Market.catalog(productschoose, priceproducts);
         }
     }
 }
