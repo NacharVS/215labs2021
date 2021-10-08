@@ -15,9 +15,9 @@ namespace Labs215Y2K
                 Console.WriteLine("напишите Д или Н");
                 string a = Console.ReadLine();
                 if (a == "Д")
-                    Catalog.pay();
+                    Catalog.pay ();
                 if (a == "Н")
-                    Catalog.pay();
+                    Catalog.pay ();
             }
         }
     }
@@ -45,7 +45,7 @@ namespace Labs215Y2K
         for (int i = 0; i < products.Length; i++)
         {
 
-            Console.WriteLine(z + "." + products[i]);
+            Console.WriteLine(f + "." + products[i]);
             if (i % 2 != 0)
                 Console.WriteLine(prices[i] + " руб за 100г");
             else
@@ -59,23 +59,21 @@ namespace Labs215Y2K
 
     public static void basket(int[] prices, string[] products)
     {
-
-
-        int totalsum = 0;
-        int localsum = 0;
-        int grSUM = 0;
-        int grammcount = 0;
+        int total = 0;
+        int local = 0;
+        int gr = 0;
+        int gramm = 0;
         Console.WriteLine("Приветствуем в нашем онлайн-магазине 'Идель'");
         Console.WriteLine("На данный момент Ваша корзина пуста. давайте сделаем заказ!");
         Console.WriteLine("Введите количество продуктов, которое Вы собираетесь приобрести.");
         Console.WriteLine("Оно не должно превышать 4, так как наш ассортимент мал. Также нельзя ввести число 0. Наример: 1.");
 
-        int countNUMB = int.Parse(Console.ReadLine());
+        int NUMB = int.Parse(Console.ReadLine());
 
-        if (countNUMB != 0)
+        if (NUMB != 0)
         {
 
-            for (int i = 0; i < countNUMB; i++)
+            for (int i = 0; i < NUMB; i++)
             {
                 Console.WriteLine("Введите номер товара, который хотите приобрести");
                 int a = int.Parse(Console.ReadLine());
@@ -85,50 +83,51 @@ namespace Labs215Y2K
                     {
                         Console.WriteLine("Введите количество приобретаемого товара. Цена указана за штуку.");
                         int count = int.Parse(Console.ReadLine());
-                        localsum += prices[a] * count;
-                        totalsum += localsum;
-                        Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х" + count + " = " + localsum + " руб");
-                        localsum = 0;
+                        local += prices[a] * count;
+                        total += local;
+                        Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х" + count + " = " + local + " руб");
+                        local = 0;
 
                     }
                     if (a % 2 != 0)
                     {
 
                         Console.WriteLine("Введите количество грамм, кратное 100.");
-                        grammcount = int.Parse(Console.ReadLine());
-                        if (grammcount % 100 == 0)
+                        gramm = int.Parse(Console.ReadLine());
+                        if (gramm % 100 == 0)
                         {
-                            localsum += prices[a] * grammcount / 100;
-                            totalsum += localsum;
-                            Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
-                            localsum = 0;
+                            local += prices[a] * gramm / 100;
+                            total += local;
+                            Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + gramm + " г" + " = " + local + " руб");
+                            local = 0;
                         }
-                        //не факт
+                        //не факт что правильно
                         else
                         {
                             Console.WriteLine("Ошибка! Вы ввели НЕВЕРНОЕ число.");
                             Console.WriteLine("Введите количество грамм, кратное 100.");
-                            grammcount = int.Parse(Console.ReadLine());
-                            if (grammcount % 100 == 0)
+                            gramm = int.Parse(Console.ReadLine());
+                            if (gramm % 100 == 0)
                             {
-                                localsum += prices[a] * grammcount / 100;
-                                totalsum += localsum;
+                                local += prices[a] * gramm / 100;
+                                total += local;
 
-                                Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
-                                localsum = 0;
+                                Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + gramm + " г" + " = " + local + " руб");
+                                local = 0;
 
                             }
-                            if (grammcount % 100 != 0)
+                            if (gramm % 100 != 0)
                             {
                                 Console.WriteLine("Ошибка! Вы ввели НЕВЕРНОЕ число.");
                                 Console.WriteLine("Введите количество грамм, кратное 100.");
-                                grammcount = int.Parse(Console.ReadLine());
-                                if (grammcount % 100 == 0)
+                                gramm = int.Parse(Console.ReadLine());
+                                if (gramm % 100 == 0)
                                 {
-                                    localsum += prices[a] * grammcount / 100;
-                                    totalsum += localsum;
-                                    Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
-                                    localsum = 0;
+                                    local += prices[a] * gramm / 100;
+                                    total += local;
+
+                                    Console.WriteLine("Вы добавили в корзину:" + products[a] + "\t" + "х " + gramm + " г" + " = " + local + " руб");
+                                    local = 0;
                                 }
                                 else
                                     Console.WriteLine("ОШИБКА! Товар не был добавлен.");
@@ -139,7 +138,7 @@ namespace Labs215Y2K
                 else
                     Console.WriteLine("Ошибка! Введите число от 0 до 4. нас нет столько ассортимента!");
             }
-            Console.WriteLine($"Итого к оплате: {totalsum} рублей.");
+            Console.WriteLine($"Итого к оплате: {total} рублей.");
             Console.ReadKey();
         }
         else
