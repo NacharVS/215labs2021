@@ -11,7 +11,7 @@ namespace Labs215Y2K
         {
 
             Console.WriteLine("Ваша корзина:");
-
+            // krivo rabotaet
 
             for (int i = 0; i < numb; i++)
             {

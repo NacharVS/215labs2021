@@ -10,6 +10,7 @@ namespace Labs215Y2K
 
 //        static void Main(string[] args)
 //        {
+//
 //            string[] products = new string[10];
 //            products[0] = " Зубная паста";
 //            products[1] = " Конфеты 'коровка' (на развес)";
