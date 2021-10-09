@@ -7,11 +7,13 @@ namespace Magazin
         public static void catalog()
         {
             string[] korzina = new string[1000];
+            int[] korzinakolvo = new int[10];
             int Sum = 0;
             int sumtwo = 0;
+            int massivelength = 0;
+            int yesno = 1;
 
-
-            string[] catalog = new string[] { "0. Гречка ", "1. Макароны ", "2. Молоко ", "3. Хлеб ", "4. Батон ", "5. Конфеты ", "6. Чипсы ", "7. Сухари ", "8. Солёный попкорн ", "9. Семечки Белочка " };
+            string[] catalog = new string[] { "0. Гречка ", "1. Макароны ", "2. Молоко ", "3. Хлеб   ", "4. Батон  ", "5. Конфеты ", "6. Чипсы ", "7. Сухари ", "8. Попкорн ", "9. Семечки " };
             int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
             string priceteg = "руб.";
 
@@ -27,46 +29,26 @@ namespace Magazin
             }
             Console.WriteLine();
             Console.WriteLine();
+            Console.WriteLine("Введите кол-во видов товаров: ");
+            massivelength = int.Parse(Console.ReadLine());
+            int cycleoperation = massivelength;
             Console.WriteLine("Выберите номер товара: ");
-            int[] numberofproduct = new int[10];
-            numberofproduct[0] = int.Parse(Console.ReadLine()); 
+            int[] numberofproduct = new int[massivelength];
+            numberofproduct[0] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Кол-во товара (товары на развес указывать в граммах с шагом в 100): ");
+            int[] countofproduct = new int[massivelength];
+            countofproduct[0] = int.Parse(Console.ReadLine());
             Console.WriteLine("Для продолжения введите - 1, для завершения - 0");
-            int yesno = int.Parse(Console.ReadLine());
+            yesno = int.Parse(Console.ReadLine());
             int counter = 0;
             if (yesno == 1)
             {
-                Deletor.MainClass.magaz(numberofproduct,yesno,catalog,korzina,counter);
+                Deletor.MainClass.magaz(numberofproduct,yesno,catalog,korzina,counter,cycleoperation, countofproduct, korzinakolvo,price);
             }
             else
             {
-                Console.WriteLine("aboba");
+                Console.WriteLine("Выберите больше товаров");
             }
-            /*Console.WriteLine("Кол-во товара (товары на развес указывать в граммах с шагом в 100): ");
-            int countofproduct = int.Parse(Console.ReadLine());
-            if (numberofproduct < 6)
-            {
-                Sum += price[numberofproduct] * countofproduct;
-                Console.WriteLine(Sum);
-            }
-            Console.WriteLine();
-            if (numberofproduct > 5 && countofproduct % 100 == 0)
-            {
-                int check = countofproduct / 100;
-                sumtwo += price[numberofproduct] * check;
-                Console.WriteLine(sumtwo);
-            }
-            else
-            {
-                Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
-            }
-            if (numberofproduct != 0)
-            {
-                int counter = 0;
-                korzina[counter] = catalog[numberofproduct];
-                Console.Write($"Корзина: {korzina[counter]}");
-                counter++;
-
-            }*/
         }
     }
 }
