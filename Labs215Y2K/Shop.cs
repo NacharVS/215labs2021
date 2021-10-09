@@ -24,9 +24,13 @@ namespace Labs215Y2K
                 Console.Write($" = {Price[i]} " + PriceTeg);
                 Console.WriteLine();
             }
-            Console.WriteLine();
-            Console.WriteLine("выберите номер товара");
-            int NumProduct = int.Parse(Console.ReadLine());
+            Console.WriteLine();          
+            Console.WriteLine("Выберите номер товара: ");
+            int[] numproduct = new int[10];
+            numproduct[0] = int.Parse(Console.ReadLine());
+            Console.WriteLine("Для продолжения введите - 1, для завершения - 0");
+            int yesno = int.Parse(Console.ReadLine());
+            int counter = 0;
 
         }
     }
