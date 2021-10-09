@@ -16,21 +16,18 @@ namespace ALL_Homework
                 { 3, 2300, 0 },
                 { 4, 1000, 0 },
                 { 5, 1500, 0 } };
+            
             while (i == "1")
             {
                 Console.WriteLine("Онлайн Магазин книг");
                 Console.WriteLine("___________________________________________________________");
                 Console.Write("Каталог");
-                Console.Write("        Товары со Скидкой");
-                Console.Write("        Возврат");
                 Console.WriteLine("        Корзина");
                 Console.WriteLine("Инструкции");
                 Console.WriteLine("Чтобы зайти в каталог нажмите цифру 1 ");
-                Console.WriteLine("Чтобы посмотреть товары со скидкой нажмите цифру 2");
-                Console.WriteLine("Чтобы произвести возврат товара нажмите цифру 3 ");
                 Console.WriteLine("Чтобы зайти в корзину нажмите цифру 4 ");
                 Console.WriteLine("Чтобы закрыть приложение нажмите цифру 0 ");
-
+              
                 string Vvod = Console.ReadLine();
 
 
@@ -44,6 +41,7 @@ namespace ALL_Homework
                     Console.WriteLine("");
                     Console.WriteLine("Чтобы добавить товар в корзину введите номер книги");
                     Console.WriteLine("Чтобы выйти из католога - 9");
+                    Console.WriteLine("Нажмите правую стрелку, чтобы перейти в корзину ");
                     Console.WriteLine("");
 
                     Console.Write("Название книг");
@@ -81,7 +79,8 @@ namespace ALL_Homework
 
 
 
-
+                    string keyinf = string.Concat(Console.ReadKey());
+                  
                     int Vvod1 = int.Parse(Console.ReadLine()) - 1;
                     if (Vvod1 == 8)
                     {
@@ -115,28 +114,19 @@ namespace ALL_Homework
                     {
                         Vvod = "0";
                     }
+                    if (keyinf == "RightArrow")
+                    {
+                        Vvod = "2";
+                    }
+
                     Console.WriteLine("Товар добавлен в корзину");
                     Console.WriteLine($"Всего  книг № { Vvod1 + 1} В количестве { num[Vvod1, 2]}  книг");
                     System.Threading.Thread.Sleep(2000);
                     Console.Clear();
 
                 }
+            
                 while (Vvod == "2")
-                {
-
-                    Console.Write("Корзина ");
-                    Console.WriteLine("________________________________________________");
-                    string Vvod1 = Console.ReadLine();
-                    System.Threading.Thread.Sleep(500);
-                    Console.Clear();
-                    if (Vvod1 == "0")
-                    {
-                        Vvod = "0";
-                    }
-
-
-                }
-                while (Vvod == "3")
                 {
 
                     Console.Write("Каталог");
@@ -188,32 +178,16 @@ namespace ALL_Homework
                         Console.WriteLine("  Ташевцев,       2002г.");
 
                     }
-
-                    System.Threading.Thread.Sleep(500);
-                    Console.Clear();
-
-                }
-                while (Vvod == "4")
-                {
-
-                    Console.Write("Корзина");
-                    Console.WriteLine("____________________________________________________________________________");
-                    Console.Write("Список покупок");
-
-
-                    string Vvod1 = Console.ReadLine();
-                    System.Threading.Thread.Sleep(500);
-                    Console.Clear();
-
-                    if (Vvod1 == "0")
+                    string keyinf = string.Concat(Console.ReadKey());
+                    if (keyinf == "LeftArrow")
                     {
-                        Vvod = "0";
+                        Vvod = "2";
                     }
 
+                    System.Threading.Thread.Sleep(500);
+                    Console.Clear();
 
                 }
-
-
                 System.Threading.Thread.Sleep(500);
                 Console.Clear();
                 Vvod = "0";
