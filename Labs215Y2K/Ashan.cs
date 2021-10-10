@@ -30,9 +30,9 @@ namespace Magazin
             Console.WriteLine();
             Console.WriteLine("Введите кол-во видов товаров: ");
             massivelength = int.Parse(Console.ReadLine());
+            int cycleoperation = massivelength;
             int[] Sum = new int[massivelength];
             int[] sumtwo = new int[massivelength];
-            int cycleoperation = massivelength;
             Console.WriteLine("Выберите номер товара: ");
             int[] numberofproduct = new int[massivelength];
             numberofproduct[0] = int.Parse(Console.ReadLine());

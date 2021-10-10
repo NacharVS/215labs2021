@@ -24,7 +24,7 @@ namespace Deletor
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
             Magazin.Ashan.catalog();
         }
-        public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
+        public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int  cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
         {
             int cou = 1;
             while (cycleoperation > 1)
@@ -33,12 +33,11 @@ namespace Deletor
                 numberofproduct[cou] = int.Parse(Console.ReadLine());
                 Console.WriteLine("Выберите кол-во товара(товары на развес указывать в граммах с шагом в 100): ");
                 countofproduct[cou] = int.Parse(Console.ReadLine());
-                cou++;
-                cycleoperation--;
                 if (numberofproduct[cou] < 6)
                 {
                     Sum[cou] += price[numberofproduct[cou]] * countofproduct[cou];
                     Console.WriteLine(Sum);
+                    korzinaprice[cou] = Sum[cou];
                 }
                 Console.WriteLine();
                 if (numberofproduct[cou] > 5 && countofproduct[cou] % 100 == 0)
@@ -46,6 +45,7 @@ namespace Deletor
                     int check = countofproduct[cou] / 100;
                     sumtwo[cou] += price[numberofproduct[cou]] * check;
                     Console.WriteLine(sumtwo);
+                    korzinaprice[cou] = sumtwo[cou];
                 }
                 else
                 {
@@ -58,7 +58,17 @@ namespace Deletor
                     counter++;
 
                 }
+                cou++;
+                cycleoperation--;
             }
+            //if (numberofproduct[cou] < 6)
+            //{
+            //    korzinaprice[counter] = Sum[counter];
+            //}
+            //else
+            //{
+            //    korzinaprice[counter] = sumtwo[counter];
+            //}
             Console.WriteLine();
             Console.Write($"Товар:       Кол-во:         Цена:");
             Console.WriteLine();
@@ -69,14 +79,6 @@ namespace Deletor
                 Console.Write($"{  countofproduct[counter]}          ");
                 korzinakolvo[counter] = price[numberofproduct[i]];
                 Console.Write($"{  korzinakolvo[counter]}         ");
-                if (numberofproduct[cou]<6)
-                {
-                    korzinaprice[counter] = Sum[counter];
-                }
-                else
-                {
-                    korzinaprice[counter] = sumtwo[counter];
-                }
                 Console.Write($"{korzinaprice[counter]}");
                 counter++;
                 Console.WriteLine();
