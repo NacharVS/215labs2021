@@ -8,8 +8,7 @@ namespace Magazin
         {
             string[] korzina = new string[1000];
             int[] korzinakolvo = new int[10];
-            int Sum = 0;
-            int sumtwo = 0;
+            int[] korzinaprice = new int[10];
             int massivelength = 0;
             int yesno = 1;
 
@@ -31,6 +30,8 @@ namespace Magazin
             Console.WriteLine();
             Console.WriteLine("Введите кол-во видов товаров: ");
             massivelength = int.Parse(Console.ReadLine());
+            int[] Sum = new int[massivelength];
+            int[] sumtwo = new int[massivelength];
             int cycleoperation = massivelength;
             Console.WriteLine("Выберите номер товара: ");
             int[] numberofproduct = new int[massivelength];
@@ -43,11 +44,17 @@ namespace Magazin
             int counter = 0;
             if (yesno == 1)
             {
-                Deletor.MainClass.magaz(numberofproduct,yesno,catalog,korzina,counter,cycleoperation, countofproduct, korzinakolvo,price);
+                Deletor.MainClass.magaz(numberofproduct,yesno,catalog,korzina,counter,cycleoperation, countofproduct, korzinakolvo,price,Sum,sumtwo,korzinaprice);
             }
             else
             {
                 Console.WriteLine("Выберите больше товаров");
+            }
+            Console.WriteLine("Для того чтобы удалить строчку в корзине введите её номер.Чтобы пропустить введите 0");
+            int Delet = int.Parse(Console.ReadLine());
+            if (Delet > 0) 
+            {
+                korzina[Delet] = "Товар был удален";
             }
         }
     }

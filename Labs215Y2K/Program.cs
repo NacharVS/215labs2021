@@ -24,7 +24,7 @@ namespace Deletor
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
             Magazin.Ashan.catalog();
         }
-        public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price)
+        public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
         {
             int cou = 1;
             while (cycleoperation > 1)
@@ -37,14 +37,14 @@ namespace Deletor
                 cycleoperation--;
                 if (numberofproduct[cou] < 6)
                 {
-                    Sum += price[numberofproduct[cou]] * countofproduct[cou];
+                    Sum[cou] += price[numberofproduct[cou]] * countofproduct[cou];
                     Console.WriteLine(Sum);
                 }
                 Console.WriteLine();
                 if (numberofproduct[cou] > 5 && countofproduct[cou] % 100 == 0)
                 {
                     int check = countofproduct[cou] / 100;
-                    sumtwo += price[numberofproduct[cou]] * check;
+                    sumtwo[cou] += price[numberofproduct[cou]] * check;
                     Console.WriteLine(sumtwo);
                 }
                 else
@@ -69,6 +69,15 @@ namespace Deletor
                 Console.Write($"{  countofproduct[counter]}          ");
                 korzinakolvo[counter] = price[numberofproduct[i]];
                 Console.Write($"{  korzinakolvo[counter]}         ");
+                if (numberofproduct[cou]<6)
+                {
+                    korzinaprice[counter] = Sum[counter];
+                }
+                else
+                {
+                    korzinaprice[counter] = sumtwo[counter];
+                }
+                Console.Write($"{korzinaprice[counter]}");
                 counter++;
                 Console.WriteLine();
             }
