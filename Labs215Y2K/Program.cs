@@ -13,7 +13,7 @@ namespace Labs215Y2K
             int[] productschoose = new int[10];
 
 
-            Shop.catalog(productschoose, priceproducts);
+            Market.catalog(productschoose, priceproducts);
         }
     }
 }
