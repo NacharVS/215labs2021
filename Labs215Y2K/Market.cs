@@ -18,7 +18,7 @@ namespace Labs215Y2K
             {
                 case "1":
                     Console.WriteLine("");
-                    Market.catalog1(productschoose,priceproducts);
+                    Market.catalog1(productschoose, priceproducts);
                     break;
                 case "2":
                     Console.WriteLine("");
@@ -31,7 +31,7 @@ namespace Labs215Y2K
                     Console.WriteLine("Ваша итоговая цена равна ");
                     break;
             }
-    
+
         }
         public static void catalog1(int[] productschoose, int[] priceproducts)
         {
@@ -54,13 +54,13 @@ namespace Labs215Y2K
             }
             Console.WriteLine("");
             Console.WriteLine("Выберите товары по списку, помните , что выбор веса должен быть кратным 100(5 кг = 50*100)");
-            Market.chooseproducts(productschoose,priceproducts);
-         
+            Market.chooseproducts(productschoose, priceproducts);
+
         }
- 
+
         public static void chooseproducts(int[] productschoose, int[] priceproducts)
         {
-            
+
             Console.Write("Сколько буханок хлеба вы хотите купить:");
             productschoose[0] = int.Parse(Console.ReadLine());
             Console.Write("Сколько грамм гречки вы хотите купить(X*100gr.):");
@@ -169,7 +169,8 @@ namespace Labs215Y2K
             else
             {
                 Console.WriteLine($"Кол-во пачек жевательной резинки - {productschoose[6]}");
-            }if (productschoose[6] == 0)
+            }
+            if (productschoose[6] == 0)
             {
                 Console.Write("");
             }
@@ -298,6 +299,201 @@ namespace Labs215Y2K
             Console.WriteLine("");
             Console.WriteLine($"Итоговая цена за покупку равна {a0 + a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9} р. Досвидания!");
         }
+
+        public static void Delete(int[] priceproducts, int[] productschoose)
+        {
+            Console.WriteLine("Вы хотите удалить продукт (Да/Нет)");
+            string answer = Console.ReadLine();
+            while (answer == "Да")
+            {
+                int a0 = priceproducts[0] * productschoose[0];
+                int a1 = priceproducts[1] * productschoose[1];
+                int a2 = priceproducts[2] * productschoose[2];
+                int a3 = priceproducts[3] * productschoose[3];
+                int a4 = priceproducts[4] * productschoose[4];
+                int a5 = priceproducts[5] * productschoose[5];
+                int a6 = priceproducts[6] * productschoose[6];
+                int a7 = priceproducts[7] * productschoose[7];
+                int a8 = priceproducts[8] * productschoose[8];
+                int a9 = priceproducts[9] * productschoose[9];
+                if (productschoose[0] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(0.) Кол-во хлеба - {productschoose[0]}");
+                }
+                if (productschoose[1] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(1.) Кол-во сотен грамм гречки - {productschoose[1]}");
+                }
+                if (productschoose[2] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(2.) Кол-во бутылок лимонада - {productschoose[2]}");
+                }
+                if (productschoose[3] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(3.)  Кол-во сотен грамм вырезки - {productschoose[3]}");
+                }
+                if (productschoose[4] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(4.) Кол-во упаковок чая - {productschoose[4]}");
+                }
+                if (productschoose[5] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(5.) Кол-во сотен грамм сыра - {productschoose[5]}");
+                }
+                if (productschoose[6] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(6.) Кол-во пачек жевательной резинки - {productschoose[6]}");
+                }
+
+                if (productschoose[7] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(7.) Кол-во сотен грамм апельсинов - {productschoose[7]}");
+                }
+                if (productschoose[8] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(8.) Кол-во сотен грамм ореха - {productschoose[8]}");
+                }
+                if (productschoose[9] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"(9.)Кол-во упаковок сока - {productschoose[9]}");
+                }
+                Console.WriteLine("Введите кодовый номер товара");
+                int nn = int.Parse(Console.ReadLine());
+                productschoose[nn] = 0;
+                Console.WriteLine("Проверьте список ваших продуктов");
+                if (productschoose[0] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во хлеба - {productschoose[0]}");
+                }
+                if (productschoose[1] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во сотен грамм гречки - {productschoose[1]}");
+                }
+                if (productschoose[2] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во бутылок лимонада - {productschoose[2]}");
+                }
+                if (productschoose[3] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во сотен грамм вырезки - {productschoose[3]}");
+                }
+                if (productschoose[4] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во упаковок чая - {productschoose[4]}");
+                }
+                if (productschoose[5] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во сотен грамм сыра - {productschoose[5]}");
+                }
+                if (productschoose[6] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во пачек жевательной резинки - {productschoose[6]}");
+                }
+                if (productschoose[6] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во пачек жевательной резинки - {productschoose[6]}");
+                }
+                if (productschoose[7] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во сотен грамм апельсинов - {productschoose[7]}");
+                }
+                if (productschoose[8] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во сотен грамм ореха - {productschoose[8]}");
+                }
+                if (productschoose[9] == 0)
+                {
+                    Console.Write("");
+                }
+                else
+                {
+                    Console.WriteLine($"Кол-во упаковок сока - {productschoose[9]}");
+                }
+                Console.WriteLine("Вы хотите изменить количество или удалить продукт (Да/Нет)");
+
+                answer = Console.ReadLine();
+            }
+        }
         public static void cheque2(int[] priceproducts, int[] productschoose)
         {
             Console.WriteLine("Вы хотите завершить покупку и узнать итоговую цену?(Да/Нет)");
@@ -307,28 +503,11 @@ namespace Labs215Y2K
                 Console.WriteLine();
                 Market.cheque(productschoose, priceproducts);
             }
-            if (a == "Нет")
-            {
-                Console.WriteLine("Вы хотите убрать товары или уйти из магазина?(Убрать товары/Покинуть магазин)");
-                    string b = Console.ReadLine();
-                if (b == "Убрать товары")
-                {
-                    Console.WriteLine("Введите кодовый номер товара");
-                    int nn = int.Parse(Console.ReadLine());
-                    productschoose[nn] = 0;
-                }
-                if (b == "Покинуть магазин")
-                {
-                    Console.WriteLine("Досвидания.Всего доброго !");
-                }
-                else
-                {
-                    Console.WriteLine("");
-                }
-            }
             else
             {
-                Console.WriteLine("");
+                Market.Delete(priceproducts, productschoose);
+                Console.WriteLine();
+                Market.cheque(productschoose, priceproducts);
             }
         }
     }
