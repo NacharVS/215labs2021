@@ -36,7 +36,6 @@ namespace Deletor
                 if (numberofproduct[cou] < 6)
                 {
                     Sum[cou] += price[numberofproduct[cou]] * countofproduct[cou];
-                    Console.WriteLine(Sum);
                     korzinaprice[cou] = Sum[cou];
                 }
                 Console.WriteLine();
@@ -44,20 +43,19 @@ namespace Deletor
                 {
                     int check = countofproduct[cou] / 100;
                     sumtwo[cou] += price[numberofproduct[cou]] * check;
-                    Console.WriteLine(sumtwo);
                     korzinaprice[cou] = sumtwo[cou];
                 }
                 else
                 {
                     Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
                 }
-                if (numberofproduct[cou] != 0)
-                {
-                    korzina[counter] = catalog[numberofproduct[cou]];
-                    Console.Write($"Корзина: {korzina[counter]}");
-                    counter++;
+                //if (numberofproduct[cou] != 0)
+                //{
+                //    korzina[counter] = catalog[numberofproduct[cou]];
+                //    Console.Write($"Корзина: {korzina[counter]}");
+                //    counter++;
 
-                }
+                //}
                 cou++;
                 cycleoperation--;
             }
@@ -79,7 +77,7 @@ namespace Deletor
                 Console.Write($"{  countofproduct[counter]}          ");
                 korzinakolvo[counter] = price[numberofproduct[i]];
                 Console.Write($"{  korzinakolvo[counter]}         ");
-                Console.Write($"{korzinaprice[counter]}");
+                //Console.Write($"{korzinaprice[counter]}");
                 counter++;
                 Console.WriteLine();
             }
