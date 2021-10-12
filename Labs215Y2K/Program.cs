@@ -42,7 +42,7 @@ namespace ALL_Homework
                     Console.Write("Инструкции");
                     Console.WriteLine("Чтобы добавить товар в корзину введите номер книги");
                     Console.WriteLine("Чтобы выйти из католога - 9");
-                    Console.WriteLine("Нажмите правую стрелку, чтобы перейти в корзину ");
+                    Console.WriteLine("После заказа подождите пару секуд для его оформления");
                     Console.WriteLine("");
 
                     Console.Write("Название книг");
@@ -92,27 +92,27 @@ namespace ALL_Homework
                     Console.WriteLine("Количество");
                     int k = int.Parse(Console.ReadLine());
 
-                    if (Vvod1 == 0)
+                    if (Vvod1 == 0 && num[Vvod1, 2] + k >=0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 1)
+                    if (Vvod1 == 1 && num[Vvod1, 2] + k >= 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 2)
+                    if (Vvod1 == 2 && num[Vvod1, 2] + k >= 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 3)
+                    if (Vvod1 == 3 && num[Vvod1, 2] + k >= 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 4)
+                    if (Vvod1 == 4 && num[Vvod1, 2] + k >= 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 7)
+                    if (Vvod1 == 7 && num[Vvod1, 2] + k >= 0)
                     {
                         Vvod = "0";
                     }
@@ -121,7 +121,7 @@ namespace ALL_Homework
                     {
                         Console.WriteLine("Товар добавлен в корзину");
                         Console.WriteLine($"Всего  книг № { Vvod1 + 1} В количестве { num[Vvod1, 2]}  книг");
-                        System.Threading.Thread.Sleep(2000);
+                        System.Threading.Thread.Sleep(1500);
                     }
 
                     System.Threading.Thread.Sleep(2000);
