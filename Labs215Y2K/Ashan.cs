@@ -50,12 +50,13 @@ namespace Magazin
             {
                 Console.WriteLine("Выберите больше товаров");
             }
-            Console.WriteLine("Для того чтобы удалить строчку в корзине введите её номер.Чтобы пропустить введите 0");
-            int Delet = int.Parse(Console.ReadLine());
-            if (Delet > 0) 
-            {
-                korzina[Delet] = "Товар был удален";
-            }
+            //Console.WriteLine("Для того чтобы удалить строчку в корзине введите её номер.Чтобы пропустить введите 0");
+            //int Delet = int.Parse(Console.ReadLine());
+            //if (Delet > 0) 
+            //{
+            //    korzina[Delet] = "Товар был удален";
+            
         }
     }
 }
+
