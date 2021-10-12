@@ -16,14 +16,19 @@ namespace ALL_Homework
                 { 3, 2300, 0,  0},
                 { 4, 1000, 0,  0},
                 { 5, 1500, 0,  0} };
+            float[] CKIDKA = new float[5] { 0.15f, 0.3f, 0.0f, 0.0f, 0.0f };
+
 
             while (i == "1")
             {
+
+                // ТЕКСТ МЕНЮ
                 Console.WriteLine("Онлайн Магазин книг");
                 Console.WriteLine("___________________________________________________________");
                 Console.Write("Каталог");
                 Console.WriteLine("        Корзина");
-                Console.WriteLine("Инструкции");
+                Console.WriteLine("Инструкции"); 
+                Console.WriteLine("ИСОЛЬЗУЙТЕ ТОЛЬКО ЦИФРЫ");
                 Console.WriteLine("Чтобы зайти в каталог нажмите цифру 1 ");
                 Console.WriteLine("Чтобы зайти в корзину нажмите цифру 2 ");
                 Console.WriteLine("Чтобы закрыть приложение нажмите цифру 0 ");
@@ -33,6 +38,10 @@ namespace ALL_Homework
 
                 while (Vvod == "1")
                 {
+                    
+                    // ТЕКСТ КАТАЛОГА
+
+
                     Console.Clear();
                     Console.Write("Каталог");
                     Console.WriteLine("_____________________________________________________________________");
@@ -60,7 +69,8 @@ namespace ALL_Homework
 
                     Console.Write("2.Психология влияния");
                     Console.Write("  3400р.");
-                    Console.WriteLine("  Роберт Чалдини, 2021г.");
+                    Console.Write("  Роберт Чалдини, 2021г."); 
+                    Console.WriteLine("   Скидка 30%");
 
 
 
@@ -80,7 +90,7 @@ namespace ALL_Homework
 
 
 
-
+                    // МОЗГИ КАТОЛОГА
 
 
                     int Vvod1 = int.Parse(Console.ReadLine()) - 1;
@@ -132,14 +142,18 @@ namespace ALL_Homework
                 while (Vvod == "2")
                 {
 
+                    Console.Clear();
+                    // ТЕКСТ КОРЗИНЫ
+
+
                     Console.Write("Корзина");
                     Console.WriteLine("_______________________________________________________________");
                     Console.WriteLine("Инструкции");
                     Console.WriteLine("Чтобы выйти из корзины нажимите 9");
-                    Console.WriteLine("Чтобы удалить товар нажмите номер книги");
+                    Console.WriteLine("Чтобы удалить товар нажмите 1 и потом его номер");
 
 
-                    if (num[0, 2] >= 0)
+                    if (num[0, 2] > 0)
                     {
                         Console.Write($"Колво { num[0, 2]}");
                         Console.Write(" 1.Психология и Этика");
@@ -148,7 +162,7 @@ namespace ALL_Homework
 
                     }
 
-                    if (num[2, 1] >= 0)
+                    if (num[2, 1] > 0)
                     {
                         Console.Write($"Колво { num[1, 2]}");
                         Console.Write(" 2.Психология влияния");
@@ -157,7 +171,7 @@ namespace ALL_Homework
 
 
                     }
-                    if (num[2, 2] >= 0)
+                    if (num[2, 2] > 0)
                     {
                         Console.Write($"Колво { num[2, 2]}");
                         Console.Write(" 3.Менеджмент");
@@ -167,7 +181,7 @@ namespace ALL_Homework
 
 
                     }
-                    if (num[3, 2] >= 0)
+                    if (num[3, 2] > 0)
                     {
                         Console.Write($"Колво { num[3, 2]}");
                         Console.Write(" 4.Этика        ");
@@ -176,7 +190,7 @@ namespace ALL_Homework
 
                     }
 
-                    if (num[4, 2] >= 0)
+                    if (num[4, 2] > 0)
                     {
                         Console.Write($"Колво { num[4, 2]}");
                         Console.Write(" 5.Искуство монолога");
@@ -184,56 +198,57 @@ namespace ALL_Homework
                         Console.WriteLine("  Ташевцев,       2002г.");
 
                     }
+
+                    //МОЗГИ КОРЗИНЫ
+
+
                     int Summ = 0;
                     float Ckidka = 0f;
 
                     for (int i1 = 0; i1 < num.GetLength(0); i1++)
                     {
-                        Summ = Summ + num[i1, 2] * num[i1, 1];
+                        Summ = Summ + num[i1, 2] * num[i1, 1]; 
+                        Ckidka = Ckidka + num[i1, 2] * num[i1, 1] * CKIDKA [i1];
                     }
-                    for (int i1 = 0; i1 < num.GetLength(0); i1++)
-                    {
-                        if (num[i1, 0] == 1)
-                        {
-                            Ckidka = Ckidka + num[i1, 2] * num[i1, 1] * 0.15f;
-                        }
+                   
+                    Console.WriteLine($"Общая сумма {Summ}р. ");
+                    Console.WriteLine($"Скидка {(Ckidka)}р. ");
+                    Console.WriteLine($"Общая сумма {Summ - Ckidka}р. ");
+                    string Vvod3 = Console.ReadLine();
+                   
 
-                        else
-                        {
-                            Ckidka = Ckidka + num[i1, 2] * num[i1, 1];
-                        }
-                    }
-                    Console.Write($"Общая сумма {Summ}р. ");
-                    Console.Write($"Скидка {(Ckidka)}р. ");
-                    Console.Write($"Общая сумма {Summ - Ckidka}р. ");
-                    int Vvod2 = int.Parse(Console.ReadLine()) - 1;
-                    int k = int.Parse(Console.ReadLine());
-
-                    if (Vvod2 == 8)
+                    if (Vvod3 == "9")
                     {
                         Vvod = "0";
                     }
-                    if (Vvod2 == 0 && num[Vvod2, 2] - k >= 0)
+                    if (Vvod3 == "1")
                     {
-                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        int Vvod2 = int.Parse(Console.ReadLine()) - 1;
+                        Console.WriteLine($"Количество на которое надо уменшить");
+                        int k = int.Parse(Console.ReadLine());
+                        if (Vvod2 == 0 && num[Vvod2, 2] - k >= 0 && k > 0)
+                        {
+                            num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        }
+                        if (Vvod2 == 1 && num[Vvod2, 2] - k >= 0 && k > 0)
+                        {
+                            num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        }
+                        if (Vvod2 == 2 && num[Vvod2, 2] - k >= 0 && k > 0)
+                        {
+                            num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        }
+                        if (Vvod2 == 3 && num[Vvod2, 2] - k >= 0 && k > 0)
+                        {
+                            num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        }
+                        if (Vvod2 == 4 && num[Vvod2, 2] - k >= 0 && k > 0)
+                        {
+                            num[Vvod2, 2] = num[Vvod2, 2] - k;
+                        }
+                       
                     }
-                    if (Vvod2 == 1 && num[Vvod2, 2] - k >= 0)
-                    {
-                        num[Vvod2, 2] = num[Vvod2, 2] - k;
-                    }
-                    if (Vvod2 == 2 && num[Vvod2, 2] - k >= 0)
-                    {
-                        num[Vvod2, 2] = num[Vvod2, 2] - k;
-                    }
-                    if (Vvod2 == 3 && num[Vvod2, 2] - k >= 0)
-                    {
-                        num[Vvod2, 2] = num[Vvod2, 2] - k;
-                    }
-                    if (Vvod2 == 4 && num[Vvod2, 2] - k >= 0)
-                    {
-                        num[Vvod2, 2] = num[Vvod2, 2] - k;
-                    }
-
+                    
 
 
                     System.Threading.Thread.Sleep(500);
