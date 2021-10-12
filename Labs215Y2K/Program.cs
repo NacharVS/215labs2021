@@ -10,13 +10,13 @@ namespace ALL_Homework
         public static void Main()
         {
             string i = "1";
-            int[,] num = new int[5, 3] {
-                { 1, 1200, 0,},
-                { 2, 3400, 0 },
-                { 3, 2300, 0 },
-                { 4, 1000, 0 },
-                { 5, 1500, 0 } };
-            
+            int[,] num = new int[5, 4] {
+                { 1, 1200, 0,  15},
+                { 2, 3400, 0,  0},
+                { 3, 2300, 0,  0},
+                { 4, 1000, 0,  0},
+                { 5, 1500, 0,  0} };
+
             while (i == "1")
             {
                 Console.WriteLine("Онлайн Магазин книг");
@@ -25,9 +25,9 @@ namespace ALL_Homework
                 Console.WriteLine("        Корзина");
                 Console.WriteLine("Инструкции");
                 Console.WriteLine("Чтобы зайти в каталог нажмите цифру 1 ");
-                Console.WriteLine("Чтобы зайти в корзину нажмите цифру 4 ");
+                Console.WriteLine("Чтобы зайти в корзину нажмите цифру 2 ");
                 Console.WriteLine("Чтобы закрыть приложение нажмите цифру 0 ");
-              
+
                 string Vvod = Console.ReadLine();
 
 
@@ -39,6 +39,7 @@ namespace ALL_Homework
 
 
                     Console.WriteLine("");
+                    Console.Write("Инструкции");
                     Console.WriteLine("Чтобы добавить товар в корзину введите номер книги");
                     Console.WriteLine("Чтобы выйти из католога - 9");
                     Console.WriteLine("Нажмите правую стрелку, чтобы перейти в корзину ");
@@ -59,8 +60,8 @@ namespace ALL_Homework
 
                     Console.Write("2.Психология влияния");
                     Console.Write("  3400р.");
-                    Console.Write("  Роберт Чалдини, 2021г.");
-                    Console.WriteLine("   Скидка 10% при покупке второй");
+                    Console.WriteLine("  Роберт Чалдини, 2021г.");
+
 
 
                     Console.Write("3.Менеджмент");
@@ -79,8 +80,9 @@ namespace ALL_Homework
 
 
 
-                    string keyinf = string.Concat(Console.ReadKey());
-                  
+
+
+
                     int Vvod1 = int.Parse(Console.ReadLine()) - 1;
                     if (Vvod1 == 8)
                     {
@@ -114,30 +116,34 @@ namespace ALL_Homework
                     {
                         Vvod = "0";
                     }
-                    if (keyinf == "RightArrow")
+
+                    if (Vvod1 <= 4 && Vvod1 >= 0)
                     {
-                        Vvod = "2";
+                        Console.WriteLine("Товар добавлен в корзину");
+                        Console.WriteLine($"Всего  книг № { Vvod1 + 1} В количестве { num[Vvod1, 2]}  книг");
+                        System.Threading.Thread.Sleep(2000);
                     }
 
-                    Console.WriteLine("Товар добавлен в корзину");
-                    Console.WriteLine($"Всего  книг № { Vvod1 + 1} В количестве { num[Vvod1, 2]}  книг");
                     System.Threading.Thread.Sleep(2000);
                     Console.Clear();
 
                 }
-            
+
                 while (Vvod == "2")
                 {
 
-                    Console.Write("Каталог");
+                    Console.Write("Корзина");
                     Console.WriteLine("_______________________________________________________________");
+                    Console.WriteLine("Инструкции");
+                    Console.WriteLine("Чтобы выйти из корзины нажимите 9");
+                    Console.WriteLine("Чтобы удалить товар нажмите номер книги");
 
 
                     if (num[0, 2] >= 0)
                     {
                         Console.Write($"Колво { num[0, 2]}");
-                        Console.Write("  1.Психология и Этика");
-                        Console.Write(" 1200р.");
+                        Console.Write(" 1.Психология и Этика");
+                        Console.Write("  1200р.");
                         Console.WriteLine("  В.Н.Лавриненко, 2003г.");
 
                     }
@@ -178,11 +184,57 @@ namespace ALL_Homework
                         Console.WriteLine("  Ташевцев,       2002г.");
 
                     }
-                    string keyinf = string.Concat(Console.ReadKey());
-                    if (keyinf == "LeftArrow")
+                    int Summ = 0;
+                    float Ckidka = 0f;
+
+                    for (int i1 = 0; i1 < num.GetLength(0); i1++)
                     {
-                        Vvod = "2";
+                        Summ = Summ + num[i1, 2] * num[i1, 1];
                     }
+                    for (int i1 = 0; i1 < num.GetLength(0); i1++)
+                    {
+                        if (num[i1, 0] == 1)
+                        {
+                            Ckidka = Ckidka + num[i1, 2] * num[i1, 1] * 0.15f;
+                        }
+
+                        else
+                        {
+                            Ckidka = Ckidka + num[i1, 2] * num[i1, 1];
+                        }
+                    }
+                    Console.Write($"Общая сумма {Summ}р. ");
+                    Console.Write($"Скидка {(Ckidka)}р. ");
+                    Console.Write($"Общая сумма {Summ - Ckidka}р. ");
+                    int Vvod2 = int.Parse(Console.ReadLine()) - 1;
+                    int k = int.Parse(Console.ReadLine());
+
+                    if (Vvod2 == 8)
+                    {
+                        Vvod = "0";
+                    }
+                    if (Vvod2 == 0 && num[Vvod2, 2] - k >= 0)
+                    {
+                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                    }
+                    if (Vvod2 == 1 && num[Vvod2, 2] - k >= 0)
+                    {
+                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                    }
+                    if (Vvod2 == 2 && num[Vvod2, 2] - k >= 0)
+                    {
+                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                    }
+                    if (Vvod2 == 3 && num[Vvod2, 2] - k >= 0)
+                    {
+                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                    }
+                    if (Vvod2 == 4 && num[Vvod2, 2] - k >= 0)
+                    {
+                        num[Vvod2, 2] = num[Vvod2, 2] - k;
+                    }
+
+
 
                     System.Threading.Thread.Sleep(500);
                     Console.Clear();
@@ -196,4 +248,7 @@ namespace ALL_Homework
         }
     }
 }
+
+
+
 
