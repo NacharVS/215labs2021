@@ -20,9 +20,8 @@ namespace Labs215Y2K
             }
 
         }
-        public static void ArrayGeneration(int[,] array,int maxValue)
+        public static void ArrayGeneration(int[,] array,int maxValue,int sum)
         {
-            int sum = 0;
             for (int i = 0; i < array.GetLength(0); i++)
             {
                 for (int j = 0; j < array.GetLength(1); j++)
@@ -38,7 +37,7 @@ namespace Labs215Y2K
             }
 
         }
-        public static void ArrayGeneration(int[,] array, int minValue, int maxValue)
+        public static void ArrayGeneration(int[,] array, int minValue, int maxValue, int sum)
         {
             for (int i = 0; i < array.GetLength(0); i++)
             {

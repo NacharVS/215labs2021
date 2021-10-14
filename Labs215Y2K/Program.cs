@@ -9,7 +9,8 @@ namespace Deletor
         {
             int[,] array = new int[10, 10];
             int[] arraytwo = new int[10];
-
+            int maxValue = 10;
+            int sum = 0;
 
             //MaxMin.Maxmin.ex1(); // - максимальный элемент массива
             //Multplus.MultPlus.ex2();  // - Сумма и умножение массива
@@ -19,7 +20,8 @@ namespace Deletor
             //TwoIdentElementDeletor.Deletor.ex7(); // - находит одинаковые числа в массиве
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
-            Labs215Y2K.ArrayOperations.ArrayGeneration(array,10);
+            Sumid.Student.Students(array,maxValue);
+
 
 
             //Console.WriteLine();
@@ -85,7 +87,22 @@ namespace Deletor
                 Console.WriteLine();
             }
         }
+        public static void ArrayOfMatrixSum(int[,] array, int maxValue, int sum)
+        {
+            for (int i = 0; i < array.GetLength(0); i++)
+            {
+                for (int j = 0; j < array.GetLength(1); j++)
+                {
+                    array[i, j] = new Random().Next(maxValue);
+                    Console.Write($"{array[i, j]} ");
+                    sum += array[i, j];
 
-        
+                }
+                Console.Write($" summ - {sum}");
+                Console.WriteLine();
+                sum = 0;
+            }
+        }
+
     }
 }
