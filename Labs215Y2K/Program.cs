@@ -11,9 +11,14 @@ namespace Labs215Y2K
 
             int[] priceproducts = new int[10] { 30, 8, 40, 250, 50, 70, 36, 13, 75, 150 };
             int[] productschoose = new int[10];
-
-
-            Market.catalog(productschoose, priceproducts);
+            int[,] integersarray = new int[10, 10];
+            int[] integersarray2 = new int[10];
+            int[,] newidarray = new int[10, 10];
+            int sum = 0;
+            int a = 0;
+            //Arrays14oc.arraygeneration(integersarray,sum,a,integersarray2);
+            //Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
+            Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
         }
     }
 }
