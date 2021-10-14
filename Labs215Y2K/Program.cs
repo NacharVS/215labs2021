@@ -1,6 +1,5 @@
 ﻿using System;
 
-
 namespace ALL_Homework
 {
     class Program
@@ -27,7 +26,7 @@ namespace ALL_Homework
                 Console.WriteLine("___________________________________________________________");
                 Console.Write("Каталог");
                 Console.WriteLine("        Корзина");
-                Console.WriteLine("Инструкции"); 
+                Console.WriteLine("Инструкции");
                 Console.WriteLine("ИСОЛЬЗУЙТЕ ТОЛЬКО ЦИФРЫ");
                 Console.WriteLine("Чтобы зайти в каталог нажмите цифру 1 ");
                 Console.WriteLine("Чтобы зайти в корзину нажмите цифру 2 ");
@@ -38,7 +37,7 @@ namespace ALL_Homework
 
                 while (Vvod == "1")
                 {
-                    
+
                     // ТЕКСТ КАТАЛОГА
 
 
@@ -69,7 +68,7 @@ namespace ALL_Homework
 
                     Console.Write("2.Психология влияния");
                     Console.Write("  3400р.");
-                    Console.Write("  Роберт Чалдини, 2021г."); 
+                    Console.Write("  Роберт Чалдини, 2021г.");
                     Console.WriteLine("   Скидка 30%");
 
 
@@ -94,6 +93,8 @@ namespace ALL_Homework
 
 
                     int Vvod1 = int.Parse(Console.ReadLine()) - 1;
+
+
                     if (Vvod1 == 8)
                     {
                         Vvod = "0";
@@ -102,27 +103,27 @@ namespace ALL_Homework
                     Console.WriteLine("Количество");
                     int k = int.Parse(Console.ReadLine());
 
-                    if (Vvod1 == 0 && num[Vvod1, 2] + k >=0)
+                    if (Vvod1 == 0 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 1 && num[Vvod1, 2] + k >= 0)
+                    if (Vvod1 == 1 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 2 && num[Vvod1, 2] + k >= 0)
+                    if (Vvod1 == 2 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 3 && num[Vvod1, 2] + k >= 0)
+                    if (Vvod1 == 3 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 4 && num[Vvod1, 2] + k >= 0)
+                    if (Vvod1 == 4 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         num[Vvod1, 2] = num[Vvod1, 2] + k;
                     }
-                    if (Vvod1 == 7 && num[Vvod1, 2] + k >= 0)
+                    if (Vvod1 == 7 && num[Vvod1, 2] + k >= 0 && k > 0)
                     {
                         Vvod = "0";
                     }
@@ -149,6 +150,7 @@ namespace ALL_Homework
                     Console.Write("Корзина");
                     Console.WriteLine("_______________________________________________________________");
                     Console.WriteLine("Инструкции");
+                    Console.WriteLine("ИСОЛЬЗУЙТЕ ТОЛЬКО ЦИФРЫ");
                     Console.WriteLine("Чтобы выйти из корзины нажимите 9");
                     Console.WriteLine("Чтобы удалить товар нажмите 1 и потом его номер");
 
@@ -162,7 +164,7 @@ namespace ALL_Homework
 
                     }
 
-                    if (num[2, 1] > 0)
+                    if (num[1, 2] > 0)
                     {
                         Console.Write($"Колво { num[1, 2]}");
                         Console.Write(" 2.Психология влияния");
@@ -207,49 +209,58 @@ namespace ALL_Homework
 
                     for (int i1 = 0; i1 < num.GetLength(0); i1++)
                     {
-                        Summ = Summ + num[i1, 2] * num[i1, 1]; 
-                        Ckidka = Ckidka + num[i1, 2] * num[i1, 1] * CKIDKA [i1];
+                        Summ = Summ + num[i1, 2] * num[i1, 1];
+                        Ckidka = Ckidka + num[i1, 2] * num[i1, 1] * CKIDKA[i1];
                     }
-                   
+
                     Console.WriteLine($"Общая сумма {Summ}р. ");
                     Console.WriteLine($"Скидка {(Ckidka)}р. ");
                     Console.WriteLine($"Общая сумма {Summ - Ckidka}р. ");
+
+
                     string Vvod3 = Console.ReadLine();
-                   
+                    Type t1 = typeof(string);
+                    Type t2 = typeof(int);
 
-                    if (Vvod3 == "9")
-                    {
-                        Vvod = "0";
-                    }
-                    if (Vvod3 == "1")
-                    {
-                        int Vvod2 = int.Parse(Console.ReadLine()) - 1;
-                        Console.WriteLine($"Количество на которое надо уменшить");
-                        int k = int.Parse(Console.ReadLine());
-                        if (Vvod2 == 0 && num[Vvod2, 2] - k >= 0 && k > 0)
-                        {
-                            num[Vvod2, 2] = num[Vvod2, 2] - k;
-                        }
-                        if (Vvod2 == 1 && num[Vvod2, 2] - k >= 0 && k > 0)
-                        {
-                            num[Vvod2, 2] = num[Vvod2, 2] - k;
-                        }
-                        if (Vvod2 == 2 && num[Vvod2, 2] - k >= 0 && k > 0)
-                        {
-                            num[Vvod2, 2] = num[Vvod2, 2] - k;
-                        }
-                        if (Vvod2 == 3 && num[Vvod2, 2] - k >= 0 && k > 0)
-                        {
-                            num[Vvod2, 2] = num[Vvod2, 2] - k;
-                        }
-                        if (Vvod2 == 4 && num[Vvod2, 2] - k >= 0 && k > 0)
-                        {
-                            num[Vvod2, 2] = num[Vvod2, 2] - k;
-                        }
-                       
-                    }
-                    
 
+
+
+                    if (t1 == Vvod3.GetType())
+                    {
+
+                        if (Vvod3 == "9")
+                        {
+                            Vvod = "0";
+                        }
+                        if (Vvod3 == "1" )
+                        {
+                            int Vvod2 = int.Parse(Console.ReadLine()) - 1;
+                            Console.WriteLine($"Количество на которое надо уменшить");
+                            int k = int.Parse(Console.ReadLine());
+                            if (Vvod2 == 0 && num[Vvod2, 2] - k >= 0 && k > 0)
+                            {
+                                num[Vvod2, 2] = num[Vvod2, 2] - k;
+                            }
+                            if (Vvod2 == 1 && num[Vvod2, 2] - k >= 0 && k > 0)
+                            {
+                                num[Vvod2, 2] = num[Vvod2, 2] - k;
+                            }
+                            if (Vvod2 == 2 && num[Vvod2, 2] - k >= 0 && k > 0)
+                            {
+                                num[Vvod2, 2] = num[Vvod2, 2] - k;
+                            }
+                            if (Vvod2 == 3 && num[Vvod2, 2] - k >= 0 && k > 0)
+                            {
+                                num[Vvod2, 2] = num[Vvod2, 2] - k;
+                            }
+                            if (Vvod2 == 4 && num[Vvod2, 2] - k >= 0 && k > 0)
+                            {
+                                num[Vvod2, 2] = num[Vvod2, 2] - k;
+                            }
+
+                        }
+
+                    }
 
                     System.Threading.Thread.Sleep(500);
                     Console.Clear();
@@ -263,6 +274,9 @@ namespace ALL_Homework
         }
     }
 }
+
+
+
 
 
 
