@@ -7,7 +7,7 @@ namespace Deletor
     {
         public static void Main()
         {
-            int[,] array = new int[5, 5];
+            int[,] array = new int[10, 10];
             int[] arraytwo = new int[10];
 
 
@@ -19,10 +19,13 @@ namespace Deletor
             //TwoIdentElementDeletor.Deletor.ex7(); // - находит одинаковые числа в массиве
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
-            //Labs215Y2K.ArrayOperations.ArrayGeneration(array,5);
+            Labs215Y2K.ArrayOperations.ArrayGeneration(array,10);
+
+
             //Console.WriteLine();
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
-            Magazin.Ashan.catalog();
+            //Magazin.Ashan.catalog();
+            
         }
         public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int  cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
         {
@@ -82,5 +85,7 @@ namespace Deletor
                 Console.WriteLine();
             }
         }
+
+        
     }
 }
