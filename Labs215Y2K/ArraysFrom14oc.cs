@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class Arrays14oc
+    class ArraysFrom14oc
     {
         public static void arraygeneration(int[,] integersarray,int sum, int a, int[] integersarraysum, int[,] integerstring)
         {
@@ -30,7 +30,7 @@ namespace Labs215Y2K
             a = 0;
             Console.WriteLine();
             Console.WriteLine();
-            Arrays14oc.sumstring(integersarray,sum,a, integersarraysum, integerstring);
+            ArraysFrom14oc.sumstring(integersarray,sum,a, integersarraysum, integerstring);
         }
         public static void sumstring(int[,] integersarray, int sum, int a, int[] integersarraysum, int[,] integerstring)
         {
@@ -60,9 +60,47 @@ namespace Labs215Y2K
             }
         }
 
-        public static void idstring()
+        public static void studentslist(string [] list, int [] age)
         {
-           
+            for (int i = 0; i < list.Length; i++)
+            {
+                list[0] = "Салават Ахметов, Возраст - ";
+                list[1] = "Иван Пушкарёв, Возраст - ";
+                list[2] = "Булат Салахов, Возраст - ";
+                list[3] = "Евгений Шишкин, Возраст - ";
+                list[4] = "Дмитрий Иванов, Возраст - ";
+                list[5] = "Александр Петров, Возраст - ";
+                list[6] = "Евгения Сергеева, Возраст - ";
+                list[7] = "Максим Ахметов, Возраст - ";
+                list[8] = "Диана Ахметова, Возраст - ";
+                list[9] = "Олег Петров, Возраст - ";
+                Console.Write($" {list[i]}");
+                age[i] = int.Parse(Console.ReadLine());
+            }
+            Console.WriteLine();
+            Console.WriteLine("Список студентов, кому больше или есть 18:");
+            ArraysFrom14oc.adultlist(list, age);
+        }
+        public static void adultlist(string[] list, int[] age)
+        {
+            for (int i = 0; i < age.Length;i++)
+            {
+                if (age[i] >= 18)
+                {
+                    Console.Write($"{list[i]} {age[i]}");
+                    Console.WriteLine();
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine("Список студентов, кому нету 18 лет:");
+            for (int i = 0; i< age.Length;i++)
+            {
+                if (age[i] < 18)
+                {
+                    Console.Write($"{list[i]} {age[i]}");
+                    Console.WriteLine();
+                }
+            }
         }
     }
 }
