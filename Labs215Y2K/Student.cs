@@ -1,57 +1,56 @@
 ﻿using System;
 
 
-namespace Sumid
+namespace Labs215Y2K
 {
-    class Student
+    class SummId
     {
-        public static void Students(int[,]array,int maxValue)
+        class SummId1
         {
-            SumId sumid = new SumId();
-            int[] sum = new int [10];
-            for (int i = 0; i < array.GetLength(0); i++)
-            {
-                sumid.ID = i + 1;
-                Console.Write($"{sumid.ID} =) ");
-                for (int j = 0; j < array.GetLength(1); j++)
-                {
-                    array[i, j] = new Random().Next(maxValue);
-                    Console.Write($"{array[i, j]} ");
-                    sum[i] += array[i, j];
+            public int Summ;
+            public int id;
+        }
+       public static void SummIdSort()
+        {
 
+            SummId1[] summId = new SummId1[10];
+            int[,] matrix = new int[10, 10];
+            for (int i = 0; i < matrix.GetLength(0); i++)
+            {
+                summId[i] = new SummId1();
+                summId[i].id = i;
+                for (int j = 0; j < matrix.GetLength(1); j++)
+                {
+                    matrix[i, j] = new Random().Next(0, 10);
+                    summId[i].Summ += matrix[i, j];
+                    Console.Write(" " + matrix[i, j]);
                 }
-                sumid.Sum = sum[i];
-                Console.Write(sumid.Sum);
                 Console.WriteLine();
             }
-            SumId [] suma = new SumId[10];
-            SumId[] ID = new SumId[10];
-            int temp;
-            for (int i = 0; i < sum.Length; i++)
+            Console.WriteLine();
+            for (int i = 0; i < summId.Length - 1; i++)
             {
-                for (int j = i+1; j < sum.Length; j++)
+                int buff1;
+                int buff2;
+                for (int j = 0; j < summId.Length - 1; j++)
                 {
-                    if (sum[i]>sum[j])
+
+                    if (summId[j].Summ > summId[j + 1].Summ)
                     {
-                        temp = sum[i];
-                        sum[i] = sum[j];
-                        sum[j] = temp;
-                        
+                        buff1 = summId[j].id;
+                        buff2 = summId[j].Summ;
+                        summId[j].id = summId[j + 1].id;
+                        summId[j].Summ = summId[j + 1].Summ;
+                        summId[j + 1].id = buff1;
+                        summId[j + 1].Summ = buff2;
                     }
                 }
             }
             Console.WriteLine();
-            for (int i = 0; i < sum.Length; i++)
+            for (int i = 0; i < summId.Length; i++)
             {
-                Console.Write($"{sum[i]} ");
+                Console.WriteLine($"строка - {summId[i].id} сумма - {summId[i].Summ}");
             }
-            Console.WriteLine();
         }
     }
-    class SumId
-    {
-        public int Sum;
-        public int ID;
-    }
-
 }

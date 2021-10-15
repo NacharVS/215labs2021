@@ -20,35 +20,37 @@ namespace Deletor
             //TwoIdentElementDeletor.Deletor.ex7(); // - находит одинаковые числа в массиве
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
-            Sumid.Student.Students(array,maxValue);
+            //Labs215Y2K.SummId.SummIdSort();
+            //Labs215Y2K.StudentsSort.StudentSort();
 
 
 
             //Console.WriteLine();
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
-            //Magazin.Ashan.catalog();
-            
+            Magazin.Ashan.catalog();
+
         }
         public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int  cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
         {
             int cou = 1;
+            int pricecounter = 0;
             while (cycleoperation > 1)
             {
                 Console.WriteLine("Выберите номер товара: ");
                 numberofproduct[cou] = int.Parse(Console.ReadLine());
                 Console.WriteLine("Выберите кол-во товара(товары на развес указывать в граммах с шагом в 100): ");
                 countofproduct[cou] = int.Parse(Console.ReadLine());
-                if (numberofproduct[cou] < 6)
+                if (numberofproduct[pricecounter] < 6)
                 {
-                    Sum[cou] += price[numberofproduct[cou]] * countofproduct[cou];
-                    korzinaprice[cou] = Sum[cou];
+                    Sum[pricecounter] += price[numberofproduct[pricecounter]] * countofproduct[pricecounter];
+                    korzinaprice[pricecounter] = Sum[pricecounter];
                 }
                 Console.WriteLine();
-                if (numberofproduct[cou] > 5 && countofproduct[cou] % 100 == 0)
+                if (numberofproduct[pricecounter] > 5 && countofproduct[pricecounter] % 100 == 0)
                 {
-                    int check = countofproduct[cou] / 100;
-                    sumtwo[cou] += price[numberofproduct[cou]] * check;
-                    korzinaprice[cou] = sumtwo[cou];
+                    int check = countofproduct[pricecounter] / 100;
+                    sumtwo[pricecounter] += price[numberofproduct[pricecounter]] * check;
+                    korzinaprice[pricecounter] = sumtwo[pricecounter];
                 }
                 else
                 {
@@ -62,18 +64,11 @@ namespace Deletor
 
                 //}
                 cou++;
+                pricecounter++;
                 cycleoperation--;
             }
-            //if (numberofproduct[cou] < 6)
-            //{
-            //    korzinaprice[counter] = Sum[counter];
-            //}
-            //else
-            //{
-            //    korzinaprice[counter] = sumtwo[counter];
-            //}
             Console.WriteLine();
-            Console.Write($"Товар:       Кол-во:         Цена:");
+            Console.Write($"Товар:       Кол-во:         Цена за 1шт:");
             Console.WriteLine();
             for (int i = 0; i < numberofproduct.Length; i++)
             {
@@ -82,6 +77,7 @@ namespace Deletor
                 Console.Write($"{  countofproduct[counter]}          ");
                 korzinakolvo[counter] = price[numberofproduct[i]];
                 Console.Write($"{  korzinakolvo[counter]}         ");
+                Console.Write($"{  korzinaprice[counter]}         ");
                 //Console.Write($"{korzinaprice[counter]}");
                 counter++;
                 Console.WriteLine();
