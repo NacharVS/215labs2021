@@ -10,7 +10,8 @@ namespace Labs215Y2K
             //int[,] qqnya = new int[10, 5];
             ////ArrayOperations.ArrayGeneration(qq, 11, 50);
             //ArrayOperations.ArrayGeneration(qqnya, 2);
-            Magazin.Ashan.catalog();
+            //Magazin.Ashan.catalog();
+            StudentsSort.StudentsSort.StudentSort();
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
