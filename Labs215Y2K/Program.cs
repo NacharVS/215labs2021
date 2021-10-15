@@ -13,11 +13,13 @@ namespace Labs215Y2K
             int[] productschoose = new int[10];
             int[,] integersarray = new int[10, 10];
             int sum = 0;
-            int [] id1 = new int[10];
+            int[] integersarraysum = new int[10];
+            int a = 0;
+            int[,] integerstring = new int[10, 10];
             
 
 
-            Arrays.arraygeneration(integersarray,sum,id1);
+            Arrays14oc.arraygeneration(integersarray,sum,a, integersarraysum, integerstring);
         }
     }
 }
