@@ -17,7 +17,8 @@ namespace Labs215Y2K
             //int a = 0;
             //int[,] integerstring = new int[10, 10];
             string[] list = new string[10];
-            ArraysFrom14oc.studentslist(list);
+            //ArraysFrom14oc.studentslist(list);
+            array24ex.ex3();
         }
         
     }
