@@ -22,12 +22,12 @@ namespace Deletor
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
             //Labs215Y2K.StudentsSort.StudentSort();
-
+            Labs215Y2K.MarkStudentsSort.MarksSort();
 
 
             //Console.WriteLine();
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
-            Magazin.Ashan.catalog();
+            //Magazin.Ashan.catalog();
 
         }
         public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int  cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
