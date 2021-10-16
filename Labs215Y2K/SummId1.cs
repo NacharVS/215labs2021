@@ -11,7 +11,7 @@ namespace Labs215Y2K
             public int Summ;
             public int id;
         }
-        static void SummIdSort(string[] args)
+        static void SummIdSort()
         {
 
             SummId1[] summId = new SummId1[10];
