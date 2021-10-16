@@ -6,57 +6,49 @@ namespace Labs215Y2K
 {
     class ArraysFrom14oc
     {
-        public static void arraygeneration(int[,] integersarray,int sum, int a, int[] integersarraysum, int[,] integerstring)
+        public int Summ;
+        public int id;
+        
+        public static void SummIdSort()
         {
-            for (int i = 0; i < integersarray.GetLength(0); i++)
+
+            ArraysFrom14oc[] summId = new ArraysFrom14oc[10];
+            int[,] matrix = new int[10, 10];
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                Console.Write(a);
-                for (int j = 0; j < integersarray.GetLength(0); j++)
+                summId[i] = new ArraysFrom14oc();
+                summId[i].id = i;
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
-
-                    integersarray[i, j] = new Random().Next(0, 100);
-                    sum += integersarray[i, j];
-                    integersarraysum[i] = sum;
-                    integerstring[i, j] = integersarray[i, j];
-
-                    Console.Write($" {integersarray[i, j]}");
-
+                    matrix[i, j] = new Random().Next(0, 10);
+                    summId[i].Summ += matrix[i, j];
+                    Console.Write(" " + matrix[i, j]);
                 }
-                Console.Write($" Сумма элементов {a} строки = {sum}");
-                Console.WriteLine("");
-                a += 1;
-                sum = 0;
+                Console.WriteLine();
             }
-            a = 0;
             Console.WriteLine();
-            Console.WriteLine();
-            ArraysFrom14oc.sumstring(integersarray,sum,a, integersarraysum, integerstring);
-        }
-        public static void sumstring(int[,] integersarray, int sum, int a, int[] integersarraysum, int[,] integerstring)
-        {
-            int k;
-            for (int i = 0; i < integersarray.GetLength(0); i++)
+            for (int i = 0; i < summId.Length - 1; i++)
             {
-                for (int j = 0; j < integersarray.GetLength(0); j++)
+                int buff1;
+                int buff2;
+                for (int j = 0; j < summId.Length - 1; j++)
                 {
-                    for (int n = j + 1; n < integersarray.GetLength(0); n++)
+
+                    if (summId[j].Summ > summId[j + 1].Summ)
                     {
-                        if (integersarray[i, j] > integersarray[i, n])
-                        {
-                            k = integersarray[i, j];
-                            integersarray[i, j] = integersarray[i, n];
-                            integersarray[i, n] = k;
-                        }
+                        buff1 = summId[j].id;
+                        buff2 = summId[j].Summ;
+                        summId[j].id = summId[j + 1].id;
+                        summId[j].Summ = summId[j + 1].Summ;
+                        summId[j + 1].id = buff1;
+                        summId[j + 1].Summ = buff2;
                     }
                 }
             }
-            for (int i = 0; i < integersarray.GetLength(0); i++)
+            Console.WriteLine();
+            for (int i = 0; i < summId.Length; i++)
             {
-                for (int j = 0; j < integersarray.GetLength(0); j++)
-                {
-                    Console.Write($" {integersarray[i, j]}");
-                }
-                Console.WriteLine();
+                Console.WriteLine($"строка - {summId[i].id} сумма - {summId[i].Summ}");
             }
         }
 
@@ -89,6 +81,7 @@ namespace Labs215Y2K
             Console.WriteLine("1 - Просмотреть список совершеннолетних студентов");
             Console.WriteLine("2 - Просмотреть средний балл студентов");
             Console.WriteLine("3 - Просмотреть список студентов, живущих в общежитии");
+            Console.WriteLine("4 - Завершить просмотр списка");
             int a = int.Parse(Console.ReadLine());
             switch (a)
             {
@@ -98,8 +91,8 @@ namespace Labs215Y2K
                 case 2:
                     Console.WriteLine();
                     break;
-                case 3:
-                    Console.WriteLine();
+                case 4:
+                    Console.WriteLine("Досвидания");
                     break;
                 default:
                     Console.WriteLine();
@@ -141,7 +134,7 @@ namespace Labs215Y2K
             Console.WriteLine();
             string[] studentlistmarks = new string[10];
             int[,] subjectsmarks = new int[10, 5];
-            int[] averagemarklist = new int[10];
+            double[] averagemarklist = new double[10];
             for (int i = 0; i < studentlistmarks.Length; i++)
             {
                 for(int j = 0; j < subjectsmarks.GetLength(1);j++)
@@ -162,7 +155,7 @@ namespace Labs215Y2K
             }
             for (int i = 0; i < subjectsmarks.GetLength(0);i++)
             {
-                int average = 0;
+                double average = 0;
                 for (int j = 0; j < subjectsmarks.GetLength(1);j++)
                 {
                     average = 0;
