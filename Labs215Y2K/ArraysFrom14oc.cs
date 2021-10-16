@@ -60,8 +60,10 @@ namespace Labs215Y2K
             }
         }
 
-        public static void studentslist(string [] list, int [] age)
+        public static void studentslist(string [] args)
         {
+            string[] list = new string[10];
+            int[] age = new int[10];
             for (int i = 0; i < list.Length; i++)
             {
                 list[0] = "Салават Ахметов, Возраст - ";
