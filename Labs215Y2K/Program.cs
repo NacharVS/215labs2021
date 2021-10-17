@@ -21,8 +21,7 @@ namespace Deletor
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
-            //Labs215Y2K.StudentsSort.StudentSort();
-            Labs215Y2K.MarkStudentsSort.MarksSort();
+            StudentsListsOperation();
 
 
             //Console.WriteLine();
@@ -97,6 +96,45 @@ namespace Deletor
                 Console.Write($" summ - {sum}");
                 Console.WriteLine();
                 sum = 0;
+            }
+        }
+        public static void StudentsListsOperation()
+        {
+            while(true)
+                {
+                Console.WriteLine("Для того чтобы вызвать список студентов введите 1");
+                Console.WriteLine("Для того чтобы вызвать список студентов с оценками введите 2");
+                Console.WriteLine("Для того чтобы вызвать список студентов проживающих в общежитие введите 3");
+                while (true)
+                {
+                    try
+                    {
+                        int vvod = int.Parse(Console.ReadLine());
+                        if (vvod == 1)
+                        {
+                            Labs215Y2K.StudentsSort.StudentSort();
+                        }
+                        if (vvod == 2)
+                        {
+                            Labs215Y2K.MarkStudentsSort.MarksSort();
+                        }
+                        if (vvod == 3)
+                        {
+                            Labs215Y2K.StudentsList.MarksSort();
+                        }
+                        else
+                        {
+                            Console.WriteLine("Вы использовали не правильный номер");
+                        }
+                    }
+                    catch(FormatException)
+                    {
+                        Console.WriteLine("Ввод не корректных данных");
+                        break;
+                    }
+                }
+                
+                Console.WriteLine();
             }
         }
 
