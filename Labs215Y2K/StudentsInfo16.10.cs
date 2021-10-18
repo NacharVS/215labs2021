@@ -13,7 +13,8 @@ namespace Labs215Y2K
         static double[] middlemarks = new double[10];
         static string[] studentsforadresses = new string[10];
         static string[] addresses = new string[10];
-        static string address ="Г.Казань,ул.Бари Галеева,д.3";
+        static string address = "Г.Казань,ул.Бари Галеева,д.3";
+        static int[] numberstudent = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
         public static void studentslist()
         {
@@ -30,7 +31,7 @@ namespace Labs215Y2K
                 list[7] = "Максим Ахметов, возраст - ";
                 list[8] = "Диана Ахметова, возраст - ";
                 list[9] = "Олег Петров, возраст - ";
-                Console.Write($" {list[i]}");
+                Console.Write($"{numberstudent[i]} {list[i]} ");
                 age[i] = int.Parse(Console.ReadLine());
             }
             Console.WriteLine();
@@ -50,7 +51,7 @@ namespace Labs215Y2K
                     studentslistformarks[7] = "Максим Ахметов";
                     studentslistformarks[8] = "Диана Ахметова";
                     studentslistformarks[9] = "Олег Петров";
-                    Console.Write($" {studentslistformarks[i]} {ii} ");
+                    Console.Write($"{numberstudent[i]} {studentslistformarks[i]} {ii} ");
                     studentsmarks[i,j] = int.Parse(Console.ReadLine());
                     ii++;
                 }
@@ -70,7 +71,7 @@ namespace Labs215Y2K
                 studentsforadresses[7] = "Максим Ахметов, адрес - ";
                 studentsforadresses[8] = "Диана Ахметова, адрес - ";
                 studentsforadresses[9] = "Олег Петров, адрес - ";
-                Console.Write($" {studentsforadresses[i]}");
+                Console.Write($"{numberstudent[i]} {studentsforadresses[i]}");
                 addresses[i] = Console.ReadLine();
             }
             Console.WriteLine();
@@ -115,7 +116,7 @@ namespace Labs215Y2K
             {
                 if (age[i] >= 18)
                 {
-                    Console.Write($"{list[i]} {age[i]}");
+                    Console.Write($"{numberstudent[i]} {list[i]} {age[i]}");
                     Console.WriteLine();
                 }
             }
@@ -125,7 +126,7 @@ namespace Labs215Y2K
             {
                 if (age[i] < 18)
                 {
-                    Console.Write($"{list[i]} {age[i]}");
+                    Console.Write($"{numberstudent[i]} {list[i]} {age[i]}");
                     Console.WriteLine();
                 }
             }
@@ -149,7 +150,7 @@ namespace Labs215Y2K
             {
                 if (middlemarks[i] >= 4.4)
                 {
-                    Console.Write($"{studentslistformarks[i]} {middlemarks[i]}");
+                    Console.Write($"{numberstudent[i]} {studentslistformarks[i]} {middlemarks[i]}");
                     Console.WriteLine();
                 }
             }
@@ -159,7 +160,7 @@ namespace Labs215Y2K
             {
                 if (middlemarks[i] <= 4.4)
                 {
-                    Console.Write($"{studentslistformarks[i]} {middlemarks[i]}");
+                    Console.Write($"{numberstudent[i]} {studentslistformarks[i]} {middlemarks[i]}");
                     Console.WriteLine();
                 }
             }
@@ -174,7 +175,7 @@ namespace Labs215Y2K
             {
                 if (addresses[i] == address)
                 {
-                    Console.Write($"{studentsforadresses[i]} {addresses[i]}");
+                    Console.Write($"{numberstudent[i]} {studentsforadresses[i]} {addresses[i]}");
                     Console.WriteLine();
                 }
             }
@@ -184,7 +185,7 @@ namespace Labs215Y2K
             {
                 if (addresses[i] != address)
                 {
-                    Console.Write($"{studentsforadresses[i]} {addresses[i]}");
+                    Console.Write($"{numberstudent[i]} {studentsforadresses[i]} {addresses[i]}");
                     Console.WriteLine();
                 }
             }
