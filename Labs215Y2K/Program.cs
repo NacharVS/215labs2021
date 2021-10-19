@@ -122,7 +122,7 @@ namespace Deletor
                         {
                             Labs215Y2K.StudentsList.MarksSort();
                         }
-                        else
+                        if (vvod > 3)
                         {
                             Console.WriteLine("Вы использовали не правильный номер");
                         }

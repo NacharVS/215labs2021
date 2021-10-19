@@ -118,7 +118,7 @@ namespace Labs215Y2K
                 StudentSort[i].id = i;
                 StudentSort[i].NameSurName = Name[i];
                 StudentSort[i].Age = new Random().Next(12, 23);
-                StudentSort[i].hostel = new Random().Next(1, 2);
+                StudentSort[i].hostel = new Random().Next(1, 3);
                 Console.Write($"{StudentSort[i].id}");
                 Console.Write($"  {StudentSort[i].NameSurName}");
                 Console.Write($"  \t{StudentSort[i].Age}");
