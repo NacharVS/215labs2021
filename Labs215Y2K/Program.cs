@@ -8,7 +8,10 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Console.WriteLine(ArrayOperations.SumOfSomeInts(1, 2, 5, 3, 4, 33, 3));
+            Peasant p1 = new Peasant("peasant1", 20, 10, 30);
+            Console.WriteLine(p1.name);
+            p1 = new Peasant("peasant1", 20, 10, 30);
+
         }       
     }
 }
