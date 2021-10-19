@@ -66,5 +66,28 @@ namespace Labs215Y2K
                     Console.Write($" {array[i]}");
             }
         }
+        //October 19 exercise
+        public static void Reverse()
+        {
+            Console.WriteLine("Введите число");
+            long number = long.Parse(Console.ReadLine());
+            long number1 = number;
+            int n = 0;
+            while (number1 != 0)
+            {
+                number1 = number1 / 10;
+                n++;
+            }
+            long[] array = new long[n];
+            for (int j = 0; j < array.Length; j++)
+            {
+                array[j] = number % 10;
+                number = number / 10;
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.Write(array[i]);
+            }
+        }
     }
 }
