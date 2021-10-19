@@ -18,16 +18,52 @@ namespace Units
             Console.WriteLine($"{name} is working");
         }
     }
-    class Work : Unit
+    class Builder : Unit
     {
-        public Unit(string name, int health, int damage, int armor, int speed, int atackspeed)
+        public Builder(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
         {
-            this.name = name;
-            this.health = health;
-            this.damage = damage;
-            this.armor = armor;
-            this.speed = speed;
-            this.atackspeed = atackspeed;
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is building");
+        }
+    }
+    class Lumberjack : Unit
+    {
+        public Lumberjack(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is minig loag");
+        }
+    }
+    class Miners : Unit
+    {
+        public Miners(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is mining ore");
         }
     }
 }

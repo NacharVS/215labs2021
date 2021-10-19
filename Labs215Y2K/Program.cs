@@ -21,7 +21,8 @@ namespace Deletor
             // MatrixMult.Matrix.ex6(); // - Произведение двух матриц
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
-            StudentsListsOperation();
+            //StudentsListsOperation();
+
 
 
             //Console.WriteLine();
