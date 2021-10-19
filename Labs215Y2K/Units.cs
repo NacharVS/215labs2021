@@ -66,4 +66,52 @@ namespace Units
             Console.WriteLine($"{name} is mining ore");
         }
     }
+    class Wariors : Unit
+    {
+        public Wariors(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is attack");
+        }
+    }
+    class Archers : Unit
+    {
+        public Archers(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is attack");
+        }
+    }
+    class Mages : Unit
+    {
+        public Mages(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            atackspeed = atackspeedc;
+        }
+        public void Build()
+        {
+            Console.WriteLine($"{name} is healing");
+        }
+    }
 }

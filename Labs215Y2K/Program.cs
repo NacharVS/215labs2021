@@ -23,14 +23,14 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
 
-
+            UnitsCreator();
 
             //Console.WriteLine();
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
             //Magazin.Ashan.catalog();
 
         }
-        public static void magaz(int[] numberofproduct,int yesno, string[] catalog, string[] korzina, int counter,int  cycleoperation,int[] countofproduct, int[] korzinakolvo,int[] price,int[] Sum, int[] sumtwo,int[] korzinaprice)
+        public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;
             int pricecounter = 0;
@@ -101,8 +101,8 @@ namespace Deletor
         }
         public static void StudentsListsOperation()
         {
-            while(true)
-                {
+            while (true)
+            {
                 Console.WriteLine("Для того чтобы вызвать список студентов введите 1");
                 Console.WriteLine("Для того чтобы вызвать список студентов с оценками введите 2");
                 Console.WriteLine("Для того чтобы вызвать список студентов проживающих в общежитие введите 3");
@@ -128,16 +128,35 @@ namespace Deletor
                             Console.WriteLine("Вы использовали не правильный номер");
                         }
                     }
-                    catch(FormatException)
+                    catch (FormatException)
                     {
                         Console.WriteLine("Ввод не корректных данных");
                         break;
                     }
                 }
-                
+
                 Console.WriteLine();
             }
         }
+        public static void UnitsCreator()
+        {
+            Units.Builder Builder = new Units.Builder("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {Builder.health} {Builder.damage} { Builder.armor} { Builder.speed} { Builder.atackspeed}");
 
+            Units.Lumberjack Lumberjack = new Units.Lumberjack("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Lumberjack.name} {Lumberjack.health} {Lumberjack.damage} { Lumberjack.armor} { Lumberjack.speed} { Lumberjack.atackspeed}");
+
+            Units.Miners Miner = new Units.Miners("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Wariors Warior = new Units.Wariors("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Mages Mage = new Units.Mages("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Archers Archer = new Units.Archers("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        }
     }
 }
