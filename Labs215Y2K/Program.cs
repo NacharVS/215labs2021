@@ -75,5 +75,29 @@ namespace Labs215Y2K
                 Console.WriteLine();
             }
         }
+
+        public static void UnitsCreator()
+        {
+            Units.Builder Builder = new Units.Builder("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {Builder.health} {Builder.damage} { Builder.armor} { Builder.speed} { Builder.atackspeed}");
+
+            Units.Lumberjack Lumberjack = new Units.Lumberjack("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Lumberjack.name} {Lumberjack.health} {Lumberjack.damage} { Lumberjack.armor} { Lumberjack.speed} { Lumberjack.atackspeed}");
+
+            Units.Miners Miner = new Units.Miners("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Wariors Warior = new Units.Wariors("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Mages Mage = new Units.Mages("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+
+            Units.Archers Archer = new Units.Archers("Builder", 50, 10, 5, 30, 10);
+            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        }
+    }
+}
+
     }
 }
