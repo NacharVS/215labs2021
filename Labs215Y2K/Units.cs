@@ -34,9 +34,9 @@ namespace Units
             Console.WriteLine($"{name} is building");
         }
     }
-    class Lumberjack : Unit
+    class Woodman : Unit
     {
-        public Lumberjack(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        public Woodman(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
         {
             name = namec;
             health = healthc;

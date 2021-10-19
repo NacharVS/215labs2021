@@ -81,22 +81,22 @@ namespace Labs215Y2K
         {
 
             Units.Builder Builder = new Units.Builder("Builder", 50, 10, 15, 30, 10);
-            Console.WriteLine($"Имя - {Builder.name} Здоровье - {Builder.health} Урон - {Builder.damage} Броня - {Builder.armor} Скорость - {Builder.speed} Скорость атаки - {Builder.atackspeed}");
+            Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.health} \t Урон - {Builder.damage} \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.atackspeed}");
 
-            Units.Lumberjack Lumberjack = new Units.Lumberjack("Lumberjack", 60, 10, 15, 40, 15);
-            Console.WriteLine($"Имя - {Lumberjack.name} Здоровье - {Lumberjack.health} Урон - {Lumberjack.damage} Броня - {Lumberjack.armor} Скорость - { Lumberjack.speed} Скорость атаки - {Lumberjack.atackspeed}");
+            Units.Woodman Woodman = new Units.Woodman("Woodman", 60, 10, 15, 40, 15);
+            Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.health} \t Урон - {Woodman.damage} \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.atackspeed}");
 
             Units.Miners Miner = new Units.Miners("Miner", 65, 10, 15, 45, 20);
-            Console.WriteLine($"Имя - {Miner.name} Здоровье - {Miner.health} Урон - {Miner.damage} Броня - {Miner.armor} Скорость - {Miner.speed} Скорость атаки - {Miner.atackspeed}");
+            Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.health} \t Урон - {Miner.damage} \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.atackspeed}");
 
             Units.Wariors Warior = new Units.Wariors("Warior", 100, 50, 50, 20, 45);
-            Console.WriteLine($"Имя - {Warior.name} Здоровье - {Warior.health} Урон - {Warior.damage} Броня - {Warior.armor} Скорость - {Warior.speed} Скорость атаки - {Warior.atackspeed}");
+            Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.health}  Урон - {Warior.damage} \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
 
             Units.Mages Mage = new Units.Mages("Mage", 120, 100, 45, 30, 30);
-            Console.WriteLine($"Имя - {Mage.name} Здоровье - {Mage.health} Урон -{Mage.damage} Броня -{Mage.armor} Скорость - {Mage.speed} Скорость атаки - {Mage.atackspeed}");
+            Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.health}  Урон - {Mage.damage}  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
 
             Units.Archers Archer = new Units.Archers("Archer", 80, 90, 30, 40, 40);
-            Console.WriteLine($"Имя - {Archer.name} Здоровье - {Archer.health} Урон - {Archer.damage} Броня - {Archer.armor} Скорость - {Archer.speed} Скорость атаки - {Archer.atackspeed}");
+            Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.health} \t Урон - {Archer.damage} \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
         }
     }
 }
