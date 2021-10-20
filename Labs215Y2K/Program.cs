@@ -1,5 +1,5 @@
 ﻿using System;
-
+using Units;
 namespace Labs215Y2K
 {
     class Program
@@ -12,8 +12,32 @@ namespace Labs215Y2K
             //ArrayOperations.ArrayGeneration(qqnya, 2);
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
-            Program.UnitsCreator();
-            Units.Archers.Build();
+            Peacful Builder = new Peacful("Builder", 50, 10, 15, 30, 10);
+            Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.health} \t Урон - {Builder.damage} \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.workspeed}");
+
+            Peacful Woodman = new Peacful("Woodman", 60, 10, 15, 40, 15);
+            Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.health} \t Урон - {Woodman.damage} \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.workspeed}");
+
+            Peacful Miner = new Peacful("Miner", 65, 10, 15, 45, 20);
+            Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.health} \t Урон - {Miner.damage} \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.workspeed}");
+
+            Figters Warior = new Figters("Warior", 100, 50, 50, 20, 45);
+            Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.health}  Урон - {Warior.damage} \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
+
+            Figters Mage = new Figters("Mage", 120, 100, 45, 30, 30);
+            Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.health}  Урон - {Mage.damage}  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
+
+            Figters Archer = new Figters("Archer", 80, 90, 30, 40, 40);
+            Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.health} \t Урон - {Archer.damage} \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
+            Console.WriteLine();
+
+            Peacful.Moving(Builder.name); Peacful.Moving(Woodman.name); Peacful.Moving(Miner.name);
+            Console.WriteLine();
+
+            Figters.Moving(Archer.name); Figters.Moving(Warior.name); Figters.Moving(Mage.name);
+            Console.WriteLine();
+
+            Figters.Arche(Archer.name,Archer.damage,Archer.atackspeed);
              
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
@@ -79,26 +103,26 @@ namespace Labs215Y2K
             }
         }
 
-        public static void UnitsCreator()
-        {
+        //public static void UnitsCreator()
+        //{
 
-            Units.Builder Builder = new Units.Builder("Builder", 50, 10, 15, 30, 10);
-            Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.health} \t Урон - {Builder.damage} \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.atackspeed}");
+        //    Builder Builder = new Builder("Builder", 50, 10, 15, 30, 10);
+        //    Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.health} \t Урон - {Builder.damage} \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.atackspeed}");
 
-            Units.Woodman Woodman = new Units.Woodman("Woodman", 60, 10, 15, 40, 15);
-            Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.health} \t Урон - {Woodman.damage} \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.atackspeed}");
+        //    Woodman Woodman = new Woodman("Woodman", 60, 10, 15, 40, 15);
+        //    Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.health} \t Урон - {Woodman.damage} \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.atackspeed}");
 
-            Units.Miners Miner = new Units.Miners("Miner", 65, 10, 15, 45, 20);
-            Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.health} \t Урон - {Miner.damage} \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.atackspeed}");
+        //    Miners Miner = new Miners("Miner", 65, 10, 15, 45, 20);
+        //    Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.health} \t Урон - {Miner.damage} \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.atackspeed}");
 
-            Units.Wariors Warior = new Units.Wariors("Warior", 100, 50, 50, 20, 45);
-            Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.health}  Урон - {Warior.damage} \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
+        //    Wariors Warior = new Wariors("Warior", 100, 50, 50, 20, 45);
+        //    Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.health}  Урон - {Warior.damage} \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
 
-            Units.Mages Mage = new Units.Mages("Mage", 120, 100, 45, 30, 30);
-            Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.health}  Урон - {Mage.damage}  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
+        //    Mages Mage = new Mages("Mage", 120, 100, 45, 30, 30);
+        //    Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.health}  Урон - {Mage.damage}  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
 
-            Units.Archers Archer = new Units.Archers("Archer", 80, 90, 30, 40, 40);
-            Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.health} \t Урон - {Archer.damage} \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
-        }
+        //    Archers Archer = new Archers("Archer", 80, 90, 30, 40, 40);
+        //    Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.health} \t Урон - {Archer.damage} \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
+        //}
     }
 }

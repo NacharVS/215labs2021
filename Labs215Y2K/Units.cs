@@ -2,7 +2,7 @@
 
 namespace Units
 {
-    public class Unit
+    public  class Unit
     {
         public string name;
         public int health;
@@ -10,17 +10,31 @@ namespace Units
         public int armor;
         public int speed;
         public int atackspeed;
+        public int workspeed;
 
 
 
-        public void Work()
-        {
-            Console.WriteLine($"{name} is working");
-        }
     }
-    class Builder : Unit
+    class Peacful : Unit
     {
-        public Builder(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
+        public Peacful(string namec, int healthc, int damagec, int armorc, int speedc, int workspeedc)
+        {
+            name = namec;
+            health = healthc;
+            damage = damagec;
+            armor = armorc;
+            speed = speedc;
+            workspeed = workspeedc;
+        }
+        public static void Moving(string namec)
+        {
+            Console.WriteLine($"{namec} идёт");
+        }
+
+    }
+    class Figters : Unit
+    {
+        public Figters(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
         {
             name = namec;
             health = healthc;
@@ -29,89 +43,14 @@ namespace Units
             speed = speedc;
             atackspeed = atackspeedc;
         }
-        public void Build()
+        public static void Moving(string namec)
         {
-            Console.WriteLine($"{name} is building");
+            Console.WriteLine($"{namec} идёт");
+        }
+        public static void Arche(string namec,int damagec,int atackspeedc)
+        {
+            Console.WriteLine($"{namec} атакует, урон {damagec}");
         }
     }
-    class Woodman : Unit
-    {
-        public Woodman(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
-        {
-            name = namec;
-            health = healthc;
-            damage = damagec;
-            armor = armorc;
-            speed = speedc;
-            atackspeed = atackspeedc;
-        }
-        public void Build()
-        {
-            Console.WriteLine($"{name} is minig loag");
-        }
-    }
-    class Miners : Unit
-    {
-        public Miners(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
-        {
-            name = namec;
-            health = healthc;
-            damage = damagec;
-            armor = armorc;
-            speed = speedc;
-            atackspeed = atackspeedc;
-        }
-        public void Build()
-        {
-            Console.WriteLine($"{name} is mining ore");
-        }
-    }
-    class Wariors : Unit
-    {
-        public Wariors(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
-        {
-            name = namec;
-            health = healthc;
-            damage = damagec;
-            armor = armorc;
-            speed = speedc;
-            atackspeed = atackspeedc;
-        }
-        public void Build()
-        {
-            Console.WriteLine($"{name} is attack");
-        }
-    }
-    public class Archers : Unit
-    {
-        public Archers(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
-        {
-            name = namec;
-            health = healthc;
-            damage = damagec;
-            armor = armorc;
-            speed = speedc;
-            atackspeed = atackspeedc;
-        }
-        public void Build()
-        {
-            Console.WriteLine($"{name} is attack");
-        }
-    }
-    class Mages : Unit
-    {
-        public Mages(string namec, int healthc, int damagec, int armorc, int speedc, int atackspeedc)
-        {
-            name = namec;
-            health = healthc;
-            damage = damagec;
-            armor = armorc;
-            speed = speedc;
-            atackspeed = atackspeedc;
-        }
-        public void Build()
-        {
-            Console.WriteLine($"{name} is healing");
-        }
-    }
+    
 }
