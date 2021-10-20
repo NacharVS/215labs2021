@@ -14,6 +14,11 @@ namespace SuperGame
         public int damage;
         public string skill;
         public int workspeed;
+        public static void Skill(string namec, string skillc, int workspeedc)
+        {
+            Console.WriteLine($"{namec} {skillc} со скоростью " + workspeedc);
+        }
+
 
         public Peaceful(string namec, int speedc, int damagec, int healthc, string skillc, int workspeedc)
         {
@@ -23,6 +28,9 @@ namespace SuperGame
             speed = speedc;
             skill = skillc;
             workspeed = workspeedc;
+
+
+
         }
 
     }

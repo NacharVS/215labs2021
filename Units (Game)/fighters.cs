@@ -13,6 +13,10 @@ namespace SuperGame
         public int speed;
         public int damage;
         public string skill;
+        public static void Skill(string namec, int speedc)
+        {
+            Console.WriteLine($"{namec} движется по полю боя со скоростью {speedc}");
+        }
 
         public fighters(string namec, int speedc, int damagec, int healthc, string skillc)
         {
