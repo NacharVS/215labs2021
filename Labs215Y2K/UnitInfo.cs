@@ -12,13 +12,18 @@ namespace Labs215Y2K
         public int speed;
         public int health;
         public int damage;
+        public int number;
         public void infounit()
         {
-            Console.WriteLine($"Игровой NPC - {name}; Его роль - {role};");
+            Console.WriteLine($"{number} Игровой NPC - {name}; Его роль - {role};");
             Console.WriteLine($"Его характеристики:");
             Console.WriteLine($"скорость - {speed}");
             Console.WriteLine($"здоровье - {health}");
             Console.WriteLine($"урон - {damage}");
+        }
+        public void unitaction()
+        {
+            Console.Write($"{number} {name} - {action}");
         }
     }
 }
