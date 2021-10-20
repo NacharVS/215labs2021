@@ -13,6 +13,8 @@ namespace Labs215Y2K
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
             Program.UnitsCreator();
+            Units.Archers.Build();
+             
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
