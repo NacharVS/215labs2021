@@ -23,11 +23,11 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
 
-            UnitsCreator();
+            //UnitsCreator();
 
             //Console.WriteLine();
             //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
-            //Magazin.Ashan.catalog();
+            Magazin.Ashan.catalog();
 
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
@@ -78,7 +78,6 @@ namespace Deletor
                 korzinakolvo[counter] = price[numberofproduct[i]];
                 Console.Write($"{  korzinakolvo[counter]}         ");
                 Console.Write($"{  korzinaprice[counter]}         ");
-                //Console.Write($"{korzinaprice[counter]}");
                 counter++;
                 Console.WriteLine();
             }
@@ -138,25 +137,25 @@ namespace Deletor
                 Console.WriteLine();
             }
         }
-        public static void UnitsCreator()
-        {
-            Units.Builder Builder = new Units.Builder("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Builder.name} {Builder.health} {Builder.damage} { Builder.armor} { Builder.speed} { Builder.atackspeed}");
+        //public static void UnitsCreator()
+        //{
+        //    Units.Builder Builder = new Units.Builder("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Builder.name} {Builder.health} {Builder.damage} { Builder.armor} { Builder.speed} { Builder.atackspeed}");
 
-            Units.Lumberjack Lumberjack = new Units.Lumberjack("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Lumberjack.name} {Lumberjack.health} {Lumberjack.damage} { Lumberjack.armor} { Lumberjack.speed} { Lumberjack.atackspeed}");
+        //    Units.Lumberjack Lumberjack = new Units.Lumberjack("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Lumberjack.name} {Lumberjack.health} {Lumberjack.damage} { Lumberjack.armor} { Lumberjack.speed} { Lumberjack.atackspeed}");
 
-            Units.Miners Miner = new Units.Miners("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        //    Units.Miners Miner = new Units.Miners("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
 
-            Units.Wariors Warior = new Units.Wariors("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        //    Units.Wariors Warior = new Units.Wariors("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
 
-            Units.Mages Mage = new Units.Mages("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        //    Units.Mages Mage = new Units.Mages("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
 
-            Units.Archers Archer = new Units.Archers("Builder", 50, 10, 5, 30, 10);
-            Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
-        }
+        //    Units.Archers Archer = new Units.Archers("Builder", 50, 10, 5, 30, 10);
+        //    Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        //}
     }
 }

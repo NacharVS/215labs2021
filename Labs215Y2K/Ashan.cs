@@ -44,18 +44,19 @@ namespace Magazin
             int counter = 0;
             if (yesno == 1)
             {
-                Deletor.MainClass.magaz(numberofproduct,yesno,catalog,korzina,counter,cycleoperation, countofproduct, korzinakolvo,price,Sum,sumtwo,korzinaprice);
+                Deletor.MainClass.magaz(numberofproduct, yesno, catalog, korzina, counter, cycleoperation, countofproduct, korzinakolvo, price, Sum, sumtwo, korzinaprice);
             }
             else
             {
                 Console.WriteLine("Выберите больше товаров");
             }
-            //Console.WriteLine("Для того чтобы удалить строчку в корзине введите её номер.Чтобы пропустить введите 0");
-            //int Delet = int.Parse(Console.ReadLine());
-            //if (Delet > 0) 
-            //{
-            //    korzina[Delet] = "Товар был удален";
-            
+            Console.WriteLine("Для того чтобы удалить строчку в корзине введите её номер.Чтобы пропустить введите 10");
+            int Delet = int.Parse(Console.ReadLine());
+            if (Delet < 10)
+            {
+                korzina[Delet] = "Товар был удален";
+
+            }
         }
     }
 }
