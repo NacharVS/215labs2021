@@ -18,13 +18,13 @@ namespace Labs215Y2K
             {
                 case "1":
                     Console.WriteLine("");
-                    Market.catalog1(productschoose, priceproducts);
+                    Shop.catalog1(productschoose, priceproducts);
                     break;
                 case "2":
                     Console.WriteLine("");
                     Console.WriteLine("Корзина пуста. Выберите товары");
                     Console.WriteLine("");
-                    Market.catalog1(productschoose, priceproducts);
+                    Shop.catalog1(productschoose, priceproducts);
                     break;
                 default:
                     Console.WriteLine("");
