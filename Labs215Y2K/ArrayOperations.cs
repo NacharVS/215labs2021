@@ -73,6 +73,7 @@ namespace Labs215Y2K
             long number = long.Parse(Console.ReadLine());
             long number1 = number;
             int n = 0;
+            long sum = 0;
             while (number1 != 0)
             {
                 number1 = number1 / 10;
@@ -83,11 +84,14 @@ namespace Labs215Y2K
             {
                 array[j] = number % 10;
                 number = number / 10;
+                sum += number;
             }
             for (int i = 0; i < array.Length; i++)
             {
                 Console.Write(array[i]);
+                
             }
+            Console.WriteLine(sum);
         }
     }
 }

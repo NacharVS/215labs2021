@@ -10,20 +10,39 @@ namespace Labs215Y2K
         public string role;
         public string action;
         public int speed;
-        public int health;
-        public int damage;
+        public int currentHealth;
+        public int maxhealth;
+        public int mindamage;
+        public int maxdamage;
+        public int attackSpeed;
         public int number;
+        public int amountofArrows;
         public void infounit()
         {
-            Console.WriteLine($"{number} Игровой NPC - {name}; Его роль - {role};");
-            Console.WriteLine($"Его характеристики:");
-            Console.WriteLine($"скорость - {speed}");
-            Console.WriteLine($"здоровье - {health}");
-            Console.WriteLine($"урон - {damage}");
+            Console.WriteLine($"{number} Gaming NPC - {name}; his role - {role};");
+            Console.WriteLine($"His specifications:");
+            Console.WriteLine($"movements speed - {speed}");
+            Console.WriteLine($"attack speed - {attackSpeed}");
+            Console.WriteLine($"current health - {currentHealth}");
+            Console.WriteLine($"minimum damage - {mindamage}");
+            Console.WriteLine($"maximum damage - {maxdamage}");
+            if (amountofArrows == 0)
+            {
+                Console.Write("");
+            }
+            else
+            {
+                Console.WriteLine($"ammount of arrows - {amountofArrows}");
+            }
         }
         public void unitaction()
         {
             Console.Write($"{number} {name} - {action}");
+        }
+        public void unitattack()
+        {
+            int attackdamage = new Random().Next(mindamage, maxdamage);
+            Console.WriteLine($"{number} {name} attacking with {attackdamage} damage");
         }
     }
 }

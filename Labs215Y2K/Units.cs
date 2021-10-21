@@ -7,29 +7,34 @@ namespace Labs215Y2K
 {
     class Units : UnitInfo
     {
-        public static Units mover = new Units("Косарь", "Мирный", "косит траву", 40, 80, 0,1);
-        public static Units blacksmith = new Units("Кузнец", "Мирный", "кует железо", 25, 90, 1,2);
-        public static Units bricklayer = new Units("Каменщик", "Мирный", "ложит кладку", 30, 85, 0,3);
-        public static Units archer = new Units("Лучник", "Боевой", "стреляет из лука", 60, 140, 70,4);
-        public static Units warrior = new Units("Воин", "Боевой", "нападает на противника", 100, 190, 120,5);
-        public static Units magician = new Units("Маг", "Боевой", "использует заклинания", 45, 120, 100,6);
-        public  Units(string name1, string role1, string action1, int speed1, int health1, int damage1, int number1)
+        public static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60,80,10,20,5,1,0);
+        public static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25,50,90,20,30,10,2,0);
+        public static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30,50, 85,15,30,10,3,0);
+        public static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120,150,60,100,50,4,20);
+        public static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170,220, 100,170,90, 5,0);
+        public static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 80, 120,30,90,45, 6,0);
+        public Units(string name1, string role1, string action1, int speed1,int healthnow, int healthmax, int damagemin,int damagemax,int attackspeed, int number1, int arrowamount)
         {
             name = name1;
             role = role1;
             action = action1;
             speed = speed1;
-            health = health1;
-            damage = damage1;
+            currentHealth = healthnow;
+            maxhealth = healthmax;
+            mindamage = damagemin;
+            maxdamage = damagemax;
+            attackSpeed = attackspeed;
             number = number1;
-            
+            amountofArrows = arrowamount;
+
         }
         public static void Question()
         {
-            Console.WriteLine("Что вы хотите сделать? Вводите цифру с клавиатуры");
-            Console.WriteLine("1 - Просмотреть список NPC");
-            Console.WriteLine("2 - Просмотреть действие(-ия) NPC");
-            Console.WriteLine("3 - Закончить просмотр NPC");
+            Console.WriteLine("What do you want to do? Enter numbers from the keyboard");
+            Console.WriteLine("1 - View the list of NPC");
+            Console.WriteLine("2 - View NPC action(s)");
+            Console.WriteLine("3 - View NPC attack(`s)");
+            Console.WriteLine("3 - Finish viewing the list of NPC");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -41,7 +46,11 @@ namespace Labs215Y2K
                     Units.quesnpcaction();
                     break;
                 case 3:
-                    Console.WriteLine("Досвидания!");
+                    Console.WriteLine("Goodbye!");
+                    break;
+                case 4:
+                    Console.WriteLine();
+                    Units.attackquestion();
                     break;
                 default:
                     Console.WriteLine();
@@ -51,10 +60,10 @@ namespace Labs215Y2K
         }
         public static void questiontwo()
         {
-            Console.WriteLine("Cписок каких NPC вы хотите просмотреть?");
-            Console.WriteLine("1 - Просмотреть список мирных NPC");
-            Console.WriteLine("2 - Просмотреть список боевых NPC");
-            Console.WriteLine("3 - Просмотреть список всех NPC");
+            Console.WriteLine("which NPC`s do you want to view??");
+            Console.WriteLine("1 - View the list of peacufl NPC");
+            Console.WriteLine("2 - View the list of combat NPC");
+            Console.WriteLine("3 - View the list of all NPC");
             int answertwo = int.Parse(Console.ReadLine());
             switch (answertwo)
             {
@@ -66,8 +75,6 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     bricklayer.infounit();
                     Console.WriteLine();
-                    Thread.Sleep(5000);
-                    Console.Clear();
                     Units.Question();
                     break;
                 case 2:
@@ -77,29 +84,25 @@ namespace Labs215Y2K
                     warrior.infounit();
                     Console.WriteLine();
                     magician.infounit();
-                    Console.WriteLine();
-                    Thread.Sleep(5000);
-                    Console.Clear();
+                    Console.WriteLine();;
                     Units.Question();
                     break;
                 case 3:
                     Console.WriteLine();
-                    Console.WriteLine("Мирные NPC:");
+                    Console.WriteLine("Peaceful NPC:");
                     mover.infounit();
                     Console.WriteLine();
                     blacksmith.infounit();
                     Console.WriteLine();
                     bricklayer.infounit();
                     Console.WriteLine();
-                    Console.WriteLine("Боевые NPC:");
+                    Console.WriteLine("Combat NPC:");
                     archer.infounit();
                     Console.WriteLine();
                     warrior.infounit();
                     Console.WriteLine();
                     magician.infounit();
                     Console.WriteLine();
-                    Thread.Sleep(7000);
-                    Console.Clear();
                     Units.Question();
                     break;
                 default:
@@ -110,7 +113,7 @@ namespace Labs215Y2K
         public static void quesnpcaction()
         {
             Console.WriteLine();
-            Console.WriteLine("Действия каких NPC вы хотите просмотреть? 1 - Мирных NPC; 2 - Боевых NPC; 3 - Всех NPC");
+            Console.WriteLine("Which NPC actions do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -122,8 +125,6 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     bricklayer.unitaction();
                     Console.WriteLine();
-                    Thread.Sleep(5000);
-                    Console.Clear();
                     Units.Question();
                     break;
                 case 2:
@@ -134,28 +135,74 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     magician.unitaction();
                     Console.WriteLine();
-                    Thread.Sleep(5000);
-                    Console.Clear();
                     Units.Question();
                     break;
                 case 3:
                     Console.WriteLine();
-                    Console.WriteLine("Мирные NPC:");
+                    Console.WriteLine("Peaceful NPC:");
                     mover.unitaction();
                     Console.WriteLine();
                     blacksmith.unitaction();
                     Console.WriteLine();
                     bricklayer.unitaction();
                     Console.WriteLine();
-                    Console.WriteLine("Боевые NPC:");
+                    Console.WriteLine("Combat NPC:");
                     archer.unitaction();
                     Console.WriteLine();
                     warrior.unitaction();
                     Console.WriteLine();
                     magician.unitaction();
                     Console.WriteLine();
-                    Thread.Sleep(7000);
-                    Console.Clear();
+                    Units.Question();
+                    break;
+                default:
+                    Console.WriteLine();
+                    break;
+            }
+        }
+        public static void attackquestion()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Which NPC attacks do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.WriteLine();
+                    mover.unitattack();
+                    Console.WriteLine();
+                    blacksmith.unitattack();
+                    Console.WriteLine();
+                    bricklayer.unitattack();
+                    Console.WriteLine();
+                    Units.Question();
+                    break;
+                case 2:
+                    Console.WriteLine();
+                    archer.unitattack();
+                    Console.WriteLine();
+                    warrior.unitattack();
+                    Console.WriteLine();
+                    magician.unitattack();
+                    Console.WriteLine();
+                    Units.Question();
+                    break;
+                case 3:
+                    Console.WriteLine();
+                    Console.WriteLine("Peaceful NPC:");
+                    mover.unitattack();
+                    Console.WriteLine();
+                    blacksmith.unitattack();
+                    Console.WriteLine();
+                    bricklayer.unitattack();
+                    Console.WriteLine();
+                    Console.WriteLine("Combat NPC:");
+                    archer.unitattack();
+                    Console.WriteLine();
+                    warrior.unitattack();
+                    Console.WriteLine();
+                    magician.unitattack();
+                    Console.WriteLine();
                     Units.Question();
                     break;
                 default:
