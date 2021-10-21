@@ -11,7 +11,10 @@ namespace Units
         public int speed;
         public int atackspeed;
         public int workspeed;
-
+        public static void Attack()
+        {
+            Console.WriteLine($"{name} идёт");
+        }
 
 
     }
