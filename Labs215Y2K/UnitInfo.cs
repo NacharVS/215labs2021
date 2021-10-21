@@ -19,6 +19,7 @@ namespace Labs215Y2K
         public int amountofArrows;
         public void infounit()
         {
+            Console.WriteLine();
             Console.WriteLine($"{number} Gaming NPC - {name}; his role - {role};");
             Console.WriteLine($"His specifications:");
             Console.WriteLine($"movements speed - {speed}");
@@ -38,6 +39,7 @@ namespace Labs215Y2K
         public void unitaction()
         {
             Console.Write($"{number} {name} - {action}");
+            Console.WriteLine();
         }
         public void unitattack()
         {
