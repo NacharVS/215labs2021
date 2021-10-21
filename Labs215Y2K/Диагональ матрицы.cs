@@ -4,7 +4,7 @@ namespace Diagonal
 {
     class Diagonal
     {
-       public static void ex2()
+       public static void Ex2()
         {
             int[,] array = new int[10, 10];
 

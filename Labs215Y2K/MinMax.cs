@@ -4,7 +4,7 @@ namespace massiv
 {
     class MinMax
     {
-        public static void ex8()
+        public static void Ex8()
         {
             int[] array = new int[10];
             for (int i = 0; i < array.Length; i++)
