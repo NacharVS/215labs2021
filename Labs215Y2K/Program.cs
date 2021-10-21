@@ -1,5 +1,6 @@
 ﻿using System;
 using Units;
+
 namespace Labs215Y2K
 {
     class Program
@@ -12,23 +13,26 @@ namespace Labs215Y2K
             //ArrayOperations.ArrayGeneration(qqnya, 2);
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
-            Peacful Builder = new Peacful("Builder", 50, 10, 15, 30, 10);
-            Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.health} \t Урон - {Builder.damage} \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.workspeed}");
+            Peacful Builder = new Peacful("Builder", 50,1,10 , 15, 30, 10);
+            Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.MaxHealth} \t Урон - /*damage*/ \t Броня - {Builder.armor} \t Скорость - {Builder.speed} \t Скорость атаки - {Builder.workspeed}");
 
-            Peacful Woodman = new Peacful("Woodman", 60, 10, 15, 40, 15);
-            Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.health} \t Урон - {Woodman.damage} \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.workspeed}");
+            Peacful Woodman = new Peacful("Woodman", 60,1, 10, 15, 40, 15);
+            Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.MaxHealth} \t Урон - Woodman.damage \t Броня - {Woodman.armor} \t Скорость - { Woodman.speed} \t Скорость атаки - {Woodman.workspeed}");
 
-            Peacful Miner = new Peacful("Miner", 65, 10, 15, 45, 20);
-            Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.health} \t Урон - {Miner.damage} \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.workspeed}");
+            Peacful Miner = new Peacful("Miner", 65,1, 10, 15, 45, 20);
+            Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.MaxHealth} \t Урон - Miner.damage \t Броня - {Miner.armor} \t Скорость - {Miner.speed} \t Скорость атаки - {Miner.workspeed}");
 
-            Figters Warior = new Figters("Warior", 100, 50, 50, 20, 45);
-            Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.health}  Урон - {Warior.damage} \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
+            Warior Warior = new Warior("Warior", 100, 100, 30, 50, 50, 20, 45);
+            Console.WriteLine($"Имя - {Warior.name} \t Здоровье - {Warior.MaxHealth}  Урон - Warior.damage \t Броня - {Warior.armor} \t Скорость - {Warior.speed} \t Скорость атаки - {Warior.atackspeed}");
 
-            Figters Mage = new Figters("Mage", 120, 100, 45, 30, 30);
-            Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.health}  Урон - {Mage.damage}  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
+            Figters Mage = new Figters("Mage", 120, 120,10,20, 70, 100, 45,50, 30, 30);
+            Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.MaxHealth}  Урон - Mage.damage  \t Броня - {Mage.armor} \t Скорость - {Mage.speed} \t Скорость атаки - {Mage.atackspeed}");
 
-            Figters Archer = new Figters("Archer", 80, 90, 30, 40, 40);
-            Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.health} \t Урон - {Archer.damage} \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
+            Healer Healer = new Healer("Healer", 100, 100, 5, 15, 10, 25, 10, 50);
+            Console.WriteLine($"Имя - {Healer.name} \t Здоровье - {Healer.MaxHealth}  Урон - Mage.damage  \t Броня - {Healer.armor} \t Скорость - {Healer.speed} \t Скорость атаки - {Healer.Healing}");
+
+            Figters Archer = new Figters("Archer", 80, 80,15,25, 60, 80, 30,100, 40, 40);
+            Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.MaxHealth} \t Урон - Archer.damage \t Броня - {Archer.armor} \t Скорость - {Archer.speed} \t Скорость атаки - {Archer.atackspeed}");
             Console.WriteLine();
 
             Peacful.Moving(Builder.name); Peacful.Moving(Woodman.name); Peacful.Moving(Miner.name);
@@ -37,8 +41,9 @@ namespace Labs215Y2K
             Figters.Moving(Archer.name); Figters.Moving(Warior.name); Figters.Moving(Mage.name);
             Console.WriteLine();
 
-            Figters.Arche(Archer.name,Archer.damage,Archer.atackspeed);
-             
+            Figters.ArcherDamage(Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage,Warior.name,Warior.CurrentHealth,Archer.CurrentArrows);
+
+            
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
