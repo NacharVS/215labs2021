@@ -21,6 +21,7 @@ namespace Units
         public int MaxRangeDamage;
 
     }
+
     class BuilderPeacful : Unit
     {
         public BuilderPeacful(string namec, int MaxHealthc, int MinDamagec, int MaxDamagec, int armorc, int speedc, int workspeedc)
@@ -58,6 +59,7 @@ namespace Units
         }
 
     }
+
     class MinerPeacful : Unit
     {
         public MinerPeacful(string namec, int MaxHealthc, int MinDamagec, int MaxDamagec, int armorc, int speedc, int workspeedc)
@@ -97,6 +99,7 @@ namespace Units
         }
 
     }
+
     class Healer : Unit
     {
         public Healer(string namec, int MaxHealthc, int CurrentHealthc, int MinDamagec, int MaxDamagec, int armorc, int speedc, int atackspeedc, int Healingc)
@@ -163,12 +166,12 @@ namespace Units
 
                 if (CurrentHealth > 0)
                 {
+                    int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
 
                     if (CurrentArrows != 0)
                     {
-                        int ArcerRanageDamage = new Random().Next(MinRanageDamagec, MaxRangeDamagec);
-                        Console.WriteLine($"{namec} нанёс {ArcerRanageDamage} урона в дальнем бою {MobName}");
-                        CurrentHealth -= ArcerRanageDamage;
+                        Console.WriteLine($"{namec} нанёс {ArcherDamageMelee} урона в дальнем бою {MobName}");
+                        CurrentHealth -= ArcherDamageMelee;
                         Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
                         CurrentArrows--;
                         Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
@@ -176,10 +179,10 @@ namespace Units
                     }
                     else
                     {
-                        int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
                         Console.WriteLine($"{namec} нанёс {ArcherDamageMelee} урона в ближнем бою {MobName}");
                         CurrentHealth -= ArcherDamageMelee;
                         Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
+                        Console.WriteLine();
                     }
                 }
                 else 
@@ -209,6 +212,7 @@ namespace Units
             MinRangeDamage = MinRangeDamagec;
             MaxRangeDamage = MaxRangeDamagec;
         }
+
         public static void MageVSArcher(string namec, int MaxHealthc, int CurrentHealthc, int MinDamagec, int MaxDamagec,string MobName, int MinRangeDamagec, int MaxRangeDamagec, int CurrentHealth, int CurrentArrows)
         {
             while (CurrentHealth != 0)
@@ -216,12 +220,29 @@ namespace Units
 
                 if (CurrentHealth > 0)
                 {
+                    int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
+                    int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
+                    Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
+                    CurrentHealth -= MageRanageDamage;
+                    Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
 
-                        int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
-                        Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
-                        CurrentHealth -= MageRanageDamage;
-                        Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
+                    if (CurrentArrows != 0)
+                    {
+                        Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в дальнем бою {namec}");
+                        CurrentHealth -= ArcherDamageMelee;
+                        CurrentArrows--;
+                        Console.WriteLine($"У {namec} осталось {CurrentHealth} xp");
+                        Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
                         Console.WriteLine();
+                    }
+                    else
+                    {
+
+                        Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в ближнем бою {namec}");
+                        CurrentHealth -= ArcherDamageMelee;
+                        Console.WriteLine($"У {namec} осталось {CurrentHealth} xp");
+                    }
+                      Console.WriteLine();
                 }
                 else
                 {
