@@ -17,11 +17,13 @@ namespace SuperGame_2._0
         public int mindamage;
         public int maxdamage;
         public string skill;
-        public static void Attack(string typeunit, int mindamage, int maxdamage)
+        public static void Attack(string typeunitAtt, string typeunitDef, int mindamage, int maxdamage, int healthDef)
         {
 
             Random z = new Random();
-            Console.WriteLine($"{typeunit} наносит {z.Next(mindamage, maxdamage)} ");
+            Console.WriteLine($"{typeunitAtt} наносит {z.Next(mindamage, maxdamage)} урона {typeunitDef}.");
+            Console.WriteLine($"У {typeunitDef} остаётся {healthDef} hp.");
+            Console.WriteLine(z);
 
         }
 
@@ -29,6 +31,10 @@ namespace SuperGame_2._0
         {
             Console.WriteLine($"{typeunitc} {skillc} со скоростью " + workspeedc);
             
+        }
+        public static void Death ()
+        {
+
         }
     }
 }

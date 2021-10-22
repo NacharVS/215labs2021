@@ -34,8 +34,8 @@ namespace SuperGame_2._0
             if (arrows > 0)
             Console.WriteLine($"{typeunit} наносит {rangedamage} урона. У него остается {arrows-1} стрел.");
             
-            else
-                Archer.Attack("арчер", 15, 20);
+            //else
+                //Archer.Attack("арчер", 15, 20);
 
 
         }

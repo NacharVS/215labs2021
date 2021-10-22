@@ -22,7 +22,7 @@ namespace SuperGame_2._0
 
         }
 
-        public static void Heal(string typeunit, int maxhealth, int health, int countheal)
+        public static void HealSelf(int maxhealth, int health, int countheal)
         {
             if (health<maxhealth)
             {
@@ -34,5 +34,19 @@ namespace SuperGame_2._0
             }
             Console.WriteLine($"Хилер исцелён на {countheal} hp. Сейчас у него {health} hp.");
         }
+
+        public static void Heal(string typeunitZ, int maxhealthZ, int healthZ, int counthealZ, string typeHealerZ)
+        {
+            healthZ += counthealZ;
+            if (healthZ > maxhealthZ)
+            {
+                healthZ = maxhealthZ;
+
+            }
+            Console.WriteLine($"{typeHealerZ} исцелил {typeunitZ} на {counthealZ} hp");
+            Console.WriteLine($"У {typeunitZ} стало {healthZ} hp");
+
+        }
+
     }
 }
