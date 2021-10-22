@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class Program
+    class Program 
     {
         static void Main(string[] args)
         {
@@ -12,7 +12,9 @@ namespace Labs215Y2K
             //int[] priceproducts = new int[10] { 30, 8, 40, 250, 50, 70, 36, 13, 75, 150 };
             //int[] productschoose = new int[10];
             //StudentsInfo16.studentslist();
-            Units.Question();
+            
+        Units.Question();
+            
         } 
     }
 }

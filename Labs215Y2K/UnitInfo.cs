@@ -17,6 +17,7 @@ namespace Labs215Y2K
         public int attackSpeed;
         public int number;
         public int amountofArrows;
+        public int healammount;
         public void infounit()
         {
             Console.WriteLine();
@@ -49,7 +50,7 @@ namespace Labs215Y2K
         public void unitattackprocces()
         {
             Console.WriteLine();
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 int healthdamage = new Random().Next(40,180);
                 int attackdamage = new Random().Next(mindamage, maxdamage);
@@ -69,11 +70,92 @@ namespace Labs215Y2K
                     break;
                 }
             }
-            
         }
-        public void deathunit()
+        public void unitlive()
         {
-            
+            if (currentHealth > 0)
+            {
+                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}");
+            }
+            else
+            {
+                Console.Write("");
+            }
+        }
+        public void archerattackprocces()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{name} attacks with arrows in ranged combat; his current health = {currentHealth}");
+            for (int i = 0; i < 100; i++)
+            {
+                int healthdamage = new Random().Next(1, 20);
+                int arrowsnumber = new Random().Next(1, 4);
+                currentHealth = currentHealth - healthdamage;
+                amountofArrows = amountofArrows - arrowsnumber;
+                if (amountofArrows > 0 )
+                {
+                    Console.WriteLine($"{name} lost {arrowsnumber} arrows and lost {healthdamage} health; his current health = {currentHealth}; current arrows - {amountofArrows}");
+                }
+                if (amountofArrows <= 0)
+                {
+                    Console.WriteLine($"{name}  lost all the arrows and went into melee with {currentHealth} health");
+                    break;
+                }
+            }
+            for (int i = 0; i < 3;i++)
+            {
+                int meleedamage = new Random().Next(mindamage, maxdamage);
+                int healthdamage1 = new Random().Next(10, 40);
+                currentHealth = currentHealth - healthdamage1;
+                if (currentHealth > 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"{name} attacking with {meleedamage} damage;{name} loses {healthdamage1} health units; his current health = {currentHealth}");
+                    
+                }
+                if (currentHealth < 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"{name} died due to loss of health while fighting in melee battle");
+                    break;
+                }
+            }
+            if (currentHealth > 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine($"{name} survived the melee his current health = {currentHealth}");
+            }
+            else
+            {
+                Console.Write("");
+            }
+        }
+        public void unithealth()
+        {
+            if (currentHealth < 0)
+            {
+                currentHealth = 0;
+                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}; max health is {maxhealth}");
+            }
+            else
+            {
+                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}");
+            }
+        }
+        public void healtunitdone()
+        {
+            if (currentHealth == maxhealth)
+            {
+                Console.WriteLine($"{number} {name} current health {currentHealth} = max health");
+            }
+            else if (currentHealth == 0)
+            {
+                Console.WriteLine($"{number} {name} current health {currentHealth} died");
+            }
+            else
+            {
+                Console.WriteLine($"{number} {name} current health {currentHealth}");
+            }
         }
     }
 }
