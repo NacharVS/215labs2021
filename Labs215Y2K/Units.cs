@@ -13,8 +13,7 @@ namespace Labs215Y2K
         public static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 20);
         public static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0);
         public static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 80, 120, 30, 90, 45, 7, 0);
-        public static Units healer = new Units("Healer", "Peaceful", "heals", 40, 65, 105, 1, 250, 0, 4, 0);
-        TextBox[] textboxes = new TextBox[7];
+        public static Units healer = new Units("Healer", "Combat", "heals", 40, 65, 105, 1, 20, 5, 4, 0);
         public Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount)
         {
             name = name1;
@@ -37,7 +36,8 @@ namespace Labs215Y2K
             Console.WriteLine("1 - View the list of NPC");
             Console.WriteLine("2 - View NPC action(s)");
             Console.WriteLine("3 - View NPC attack(`s)");
-            Console.WriteLine("4 - Finish viewing the list of NPC");
+            Console.WriteLine("4 - Send an NPC into battle");
+            Console.WriteLine("5 - Finish viewing the list of NPC");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -51,6 +51,9 @@ namespace Labs215Y2K
                     Units.attackquestion();
                     break;
                 case 4:
+                    Units.war();
+                    break;
+                case 5:
                     Console.WriteLine("Goodbye!");
                     break;
                 default:
@@ -66,6 +69,7 @@ namespace Labs215Y2K
             Console.WriteLine("1 - View the list of peacufl NPC");
             Console.WriteLine("2 - View the list of combat NPC");
             Console.WriteLine("3 - View the list of all NPC");
+            Console.WriteLine("4 - View an npc using a number");
             int answertwo = int.Parse(Console.ReadLine());
             switch (answertwo)
             {
@@ -94,6 +98,9 @@ namespace Labs215Y2K
                     magician.infounit();
                     Units.Question();
                     break;
+                case 4:
+                    Units.choosenpcinfo();
+                    break;
                 default:
                     break;
             }
@@ -101,7 +108,7 @@ namespace Labs215Y2K
         public static void quesnpcaction()
         {
             Console.WriteLine();
-            Console.WriteLine("Which NPC actions do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC");
+            Console.WriteLine("Which NPC actions do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC; 4 - NPC by number");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -129,6 +136,9 @@ namespace Labs215Y2K
                     warrior.unitaction();
                     magician.unitaction();
                     Units.Question();
+                    break;
+                case 4:
+                    Units.choosenpcaction();
                     break;
                 default:
                     break;
@@ -137,7 +147,7 @@ namespace Labs215Y2K
         public static void attackquestion()
         {
             Console.WriteLine();
-            Console.WriteLine("Which NPC attacks do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC");
+            Console.WriteLine("Which NPC attacks do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC; 4 - NPC by number");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -166,12 +176,16 @@ namespace Labs215Y2K
                     magician.unitattack();
                     Units.Question();
                     break;
+                case 4:
+                    Units.choosenpcattack();
+                    break;
                 default:
                     break;
             }
         }
-        public static void choosenpc()
+        public static void choosenpcinfo()
         {
+            Console.WriteLine("Enter a number of NPC from the keyboard");
             int choose = int.Parse(Console.ReadLine());
             switch (choose)
             {
@@ -199,17 +213,93 @@ namespace Labs215Y2K
                 default:
                     break;
             }
+            Units.Question();
         }
-        public static void choosenpc1()
+        public static void choosenpcaction()
         {
+            Console.WriteLine("Enter a number of NPC from the keyboard");
             int choose = int.Parse(Console.ReadLine());
-            for (int i = 0; i < listNpc.Length; i++)
+            switch (choose)
             {
-                if (choose == listNpc[i])
-                {
-                    
-                }
+                case 1:
+                    mover.unitaction();
+                    break;
+                case 2:
+                    blacksmith.unitaction();
+                    break;
+                case 3:
+                    bricklayer.unitaction();
+                    break;
+                case 4:
+                    healer.unitaction();
+                    break;
+                case 5:
+                    archer.unitaction();
+                    break;
+                case 6:
+                    warrior.unitaction();
+                    break;
+                case 7:
+                    magician.unitaction();
+                    break;
+                default:
+                    break;
+            }
+            Units.Question();
+        }
+        public static void choosenpcattack()
+        {
+            Console.WriteLine("Enter a number of NPC from the keyboard");
+            int choose = int.Parse(Console.ReadLine());
+            switch (choose)
+            {
+                case 1:
+                    mover.unitattack();
+                    break;
+                case 2:
+                    blacksmith.unitattack();
+                    break;
+                case 3:
+                    bricklayer.unitattack();
+                    break;
+                case 4:
+                    healer.unitattack();
+                    break;
+                case 5:
+                    archer.unitattack();
+                    break;
+                case 6:
+                    warrior.unitattack();
+                    break;
+                case 7:
+                    magician.unitaction();
+                    break;
+                default:
+                    break;
+            }
+            Units.Question();
+        }
+        public static void war()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Want to send combat NPCs into battle?1 - Yes; 2 - No;");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    mover.unitattackprocces();
+                    bricklayer.unitattackprocces();
+                    blacksmith.unitattackprocces();
+                    archer.unitattackprocces();
+                    warrior.unitattackprocces();
+                    magician.unitattackprocces();
+                    healer.unitattackprocces();
+                    break;
+                case 2:
+                    Units.Question();
+                    break;
             }
         }
+        
     }
 }

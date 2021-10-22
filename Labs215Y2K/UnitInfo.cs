@@ -46,5 +46,34 @@ namespace Labs215Y2K
             int attackdamage = new Random().Next(mindamage, maxdamage);
             Console.WriteLine($"{number} {name} attacking with {attackdamage} damage");
         }
+        public void unitattackprocces()
+        {
+            Console.WriteLine();
+            for (int i = 0; i < 2; i++)
+            {
+                int healthdamage = new Random().Next(40,180);
+                int attackdamage = new Random().Next(mindamage, maxdamage);
+                Console.WriteLine($"{number} {name} attacking with {attackdamage} damage; his current health = {currentHealth}");
+                currentHealth = currentHealth - healthdamage;
+                Console.WriteLine($"{name} Loses {healthdamage} health units; his current health = {currentHealth};");
+                if (currentHealth <= 0)
+                {
+                  Console.WriteLine();
+                  Console.WriteLine($"{name} died due to loss of health while fighting in battle");
+                  break;
+                }
+                if (currentHealth > 0)
+                {
+                    Console.WriteLine();
+                    Console.WriteLine($"{name} did not die in battle;his current health = {currentHealth}");
+                    break;
+                }
+            }
+            
+        }
+        public void deathunit()
+        {
+            
+        }
     }
 }
