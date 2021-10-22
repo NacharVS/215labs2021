@@ -6,7 +6,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            perevorot_chisla.r3();
+            perevorot_chisla.r4();
         }
     }
 }

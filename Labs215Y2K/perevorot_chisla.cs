@@ -64,5 +64,27 @@ namespace Labs215Y2K
             }
 
         }
+        public static void r4()
+        {
+            
+            int[] array = new int[10];
+            int number1 = array[0];
+            for (int i = 0; i < array.Length; i++)
+            {
+                array[i] = new Random().Next(0, 10);
+                Console.Write($" {array[i]} ");
+                if (number1 > array[i])
+                {
+                    number1++;
+                    
+                }
+                if (array[i]> number1)
+                {
+                    Console.Write("");
+                }
+            }
+            Console.WriteLine();
+            Console.WriteLine(number1);
+        }
     }
 }
