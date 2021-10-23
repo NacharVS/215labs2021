@@ -119,6 +119,8 @@ namespace Units
         }
         public static void MageVSArcherAndHealer(string namec, int MaxHealth, int CurrentHealthMage, int MinDamagec, int MaxDamagec, string MobName,int MinRangeDamagec, int MaxRangeDamagec, int CurrentHealth, int CurrentArrows, int Healingc)
         {
+            Console.WriteLine($"Бой между {namec} и {MobName}, но здесь ещё присутствует Healer");
+            Console.WriteLine();
             while (CurrentHealth >= 0 || CurrentHealthMage >= 0)
             {
 
@@ -219,17 +221,15 @@ namespace Units
             MaxRangeDamage = MaxRangeDamagec;
             CurrentArrows = CurrentArrowsc;
         }
-
-        public static void Moving(string namec)
+        public static void ArcherDamage(string namec, int MinRangeDamagec, int MaxRangeDamagec, int MinDamagec, int MaxDamagec, string MobName, int MaxHealthc, int CurrentHealthc, int armorc, int CurrentArrows,int CurrentHealthWarrior)
         {
-            Console.WriteLine($"{namec} идёт");
-        }
-        public static void ArcherDamage(string namec, int MinRangeDamagec, int MaxRangeDamagec, int MinDamagec, int MaxDamagec, string MobName, int CurrentHealthc, int CurrentArrows,int CurrentHealthWarrior)
-        {
-            while (CurrentHealthc >= 0 && CurrentHealthWarrior >= 0)
+            Console.WriteLine($"Бой между {namec} и {MobName}");
+            Console.WriteLine();
+            int CurrentHealthWarriorArmor = CurrentHealthWarrior + armorc;
+            while (CurrentHealthc >= 0 && CurrentHealthWarriorArmor >= 0)
             {
 
-                if (CurrentHealthc > 0 && CurrentHealthWarrior > 0)
+                if (CurrentHealthc > 0 && CurrentHealthWarriorArmor > 0)
                 {
                     int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
                     int ArcherDamageRange = new Random().Next(MinRangeDamagec, MaxRangeDamagec);
@@ -237,14 +237,19 @@ namespace Units
                     if (CurrentArrows != 0)
                     {
                         Console.WriteLine($"{namec} нанёс {ArcherDamageRange} урона в дальнем бою {MobName}");
-                        CurrentHealthWarrior -= ArcherDamageRange;
-
-                        if (CurrentHealthWarrior < 0)
+                        CurrentHealthWarriorArmor -= ArcherDamageRange;
+                        if (CurrentHealthWarriorArmor <= MaxHealthc)
                         {
-                            CurrentHealthWarrior = 0;
+                           Console.WriteLine($"Броня {MobName} разбита");
+                                                
                         }
 
-                        Console.WriteLine($"У {MobName} осталось {CurrentHealthWarrior} xp");
+                        if (CurrentHealthWarriorArmor < 0)
+                        {
+                            CurrentHealthWarriorArmor = 0;
+                        }
+
+                        Console.WriteLine($"У {MobName} осталось {CurrentHealthWarriorArmor} xp");
                         CurrentArrows--;
                         Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
                         Console.WriteLine();
@@ -252,14 +257,19 @@ namespace Units
                     else
                     {
                         Console.WriteLine($"{namec} нанёс {ArcherDamageMelee} урона в ближнем бою {MobName}");
-                        CurrentHealthWarrior -= ArcherDamageMelee;
+                        CurrentHealthWarriorArmor -= ArcherDamageMelee;
 
-                        if (CurrentHealthWarrior < 0)
+                        if (CurrentHealthWarriorArmor <= MaxHealthc)
                         {
-                            CurrentHealthWarrior = 0;
+                            Console.WriteLine($"Броня {MobName} разбита");
                         }
 
-                        Console.WriteLine($"У {MobName} осталось {CurrentHealthWarrior} xp");
+                        if (CurrentHealthWarriorArmor < 0)
+                        {
+                            CurrentHealthWarriorArmor = 0;
+                        }
+
+                        Console.WriteLine($"У {MobName} осталось {CurrentHealthWarriorArmor} xp");
                         Console.WriteLine();
                     }
                 }
@@ -297,8 +307,11 @@ namespace Units
         {
             Console.WriteLine($"Хотите посмотреть кто сильнее {namec} или {MobName}, только без восстановления xp? 1 - да, 2 - нет");
             int WhoIsStronger = int.Parse(Console.ReadLine());
+
             if (WhoIsStronger == 1)
             {
+                Console.WriteLine($"Бой между {namec} и {MobName}");
+                Console.WriteLine();
                 while (CurrentHealth >= 0 || CurrentHealthMage >= 0)
                 {
 
