@@ -21,9 +21,16 @@ namespace SuperGame_2._0
         {
 
             Random z = new Random();
-            Console.WriteLine($"{typeunitAtt} наносит {z.Next(mindamage, maxdamage)} урона {typeunitDef}.");
-            Console.WriteLine($"У {typeunitDef} остаётся {healthDef} hp.");
-            Console.WriteLine(z);
+            int nowdamage = z.Next(mindamage, maxdamage);
+
+            Console.WriteLine($"{typeunitAtt} наносит {nowdamage} урона {typeunitDef}.");
+
+            Console.WriteLine($"У {typeunitDef} остаётся {healthDef -= nowdamage} hp.");
+
+            if (healthDef <= 0)
+            {
+                Console.WriteLine($"{typeunitDef} мёртв. Сожалеем.");
+            }
 
         }
 
@@ -32,9 +39,6 @@ namespace SuperGame_2._0
             Console.WriteLine($"{typeunitc} {skillc} со скоростью " + workspeedc);
             
         }
-        public static void Death ()
-        {
 
-        }
     }
 }

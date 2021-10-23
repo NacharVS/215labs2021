@@ -11,14 +11,15 @@ namespace SuperGame_2._0
        
         static void Main(string[] args)
         {
+            // Announcement
             string typeunit = "Archer";
-            int maxhealth = 60;
-            int health = 60;
+            int maxhealth = 30;
+            int health = 30;
             int speed = 40;
             int attackspeed = 10;
             int mindamage = 15;
             int maxdamage = 20;
-            int arrows = 3;
+            int arrows = 1;
             int rangedamage = 40;
             Archer archer1 = new Archer(typeunit, maxhealth, health, speed, attackspeed, mindamage, maxdamage, arrows, rangedamage);
 
@@ -52,6 +53,7 @@ namespace SuperGame_2._0
             int maxdamage4 = 45;
             Warrior warrior1 = new Warrior(typeunit4, maxhealth4, health4, speed4, attackspeed4, mindamage4, maxdamage4);
 
+            // Heal
             
             Console.WriteLine("Введите название юнита, которого хотите вылечить.");
             string chose2 = Console.ReadLine();
@@ -72,34 +74,107 @@ namespace SuperGame_2._0
                 Healer.Heal(typeunit, maxhealth, health, countheal2, typeunit2);
             }
 
-            //Console.WriteLine("Введите юнита, за которого хотите начать атаку.");
-            //string chose3 = Console.ReadLine();
-            //Console.WriteLine("Введите название юнита, которого хотите атаковать.");
-            //string chose4 = Console.ReadLine();
-            //if (chose3 == typeunit4)
-            //{
-            //    Unit.Attack(typeunit4, maxhealth4, health4, countheal2, typeunit2);
-            //}
-            //if (chose2 == typeunit3)
-            //{
-            //    Healer.Heal(typeunit3, maxhealth3, health3, countheal2, typeunit2);
-            //}
-            //if (chose2 == typeunit2)
-            //{
-            //    Healer.Heal(typeunit2, maxhealth2, health2, countheal2, typeunit2);
-            //}
-            //if (chose2 == typeunit)
-            //{
-            //    Healer.Heal(typeunit, maxhealth, health, countheal2, typeunit2);
-            //}
+
+            // Attack
+
+            Console.WriteLine("Введите юнита, за которого хотите начать атаку.");
+            string chose3 = Console.ReadLine();
+            Console.WriteLine("Введите название юнита, которого хотите атаковать.");
+            string chose4 = Console.ReadLine();
+            if (chose3 == typeunit4)
+            {
+                if (chose4 == typeunit3)
+                   Unit.Attack(typeunit4, typeunit3, mindamage4, maxdamage4, health3);
+
+                if (chose4 == typeunit2)
+                    Unit.Attack(typeunit4, typeunit2, mindamage4, maxdamage4, health2);
+
+                if (chose4 == typeunit)
+                    Unit.Attack(typeunit4, typeunit, mindamage4, maxdamage4, health);
+
+                if (chose4 == typeunit4)
+                {
+                    Console.WriteLine("В нашей прекрасной игре нельзя наносить урон по себе. Одумайтесь!");
+                }
+            }
+
+            if (chose3 == typeunit3)
+            {
+                if(chose4 == typeunit4)
+                Unit.Attack(typeunit3, typeunit4, mindamage3, maxdamage3, health4);
+
+                if (chose4 == typeunit2)
+                    Unit.Attack(typeunit3, typeunit2, mindamage3, maxdamage3, health2);
+
+                if (chose4 == typeunit)
+                    Unit.Attack(typeunit3, typeunit, mindamage3, maxdamage3, health);
+
+                if (chose4 == typeunit3)
+                {
+                    Console.WriteLine("В нашей прекрасной игре нельзя наносить урон по себе. Одумайтесь!");
+                }
+            }
+
+            if (chose3 == typeunit2)
+            {
+                if (chose4 == typeunit4)
+                    Unit.Attack(typeunit2, typeunit4, mindamage2, maxdamage2, health4);
+
+                if (chose4 == typeunit3)
+                    Unit.Attack(typeunit2, typeunit3, mindamage2, maxdamage2, health3);
+
+                if (chose4 == typeunit)
+                    Unit.Attack(typeunit2, typeunit, mindamage2, maxdamage2, health);
+
+                if (chose4 == typeunit2)
+                {
+                    Console.WriteLine("В нашей прекрасной игре нельзя наносить урон по себе. Одумайтесь!");
+                }
+            }
+
+
+            if (chose3 == typeunit)
+            {
+                if (chose4 == typeunit4)
+                {
+                    if (arrows>0)
+                    {
+                        Archer.ArcherShoot(typeunit, typeunit4, health4, arrows, rangedamage);
+                    }
+                    else
+                    Unit.Attack(typeunit, typeunit4, mindamage, maxdamage, health4);
+                }
+
+                if (chose4 == typeunit3)
+                {
+                    if (arrows > 0)
+                    {
+                        Archer.ArcherShoot(typeunit, typeunit3, health3, arrows, rangedamage);
+                    }
+                    else
+                        Unit.Attack(typeunit, typeunit3, mindamage, maxdamage, health3);
+                }
+
+                if (chose4 == typeunit2)
+                {
+                    if (arrows > 0)
+                    {
+                        Archer.ArcherShoot(typeunit, typeunit2, health2, arrows, rangedamage);
+                    }
+                    else
+                        Unit.Attack(typeunit, typeunit2, mindamage, maxdamage, health2);
+                }
+
+                if (chose4 == typeunit)
+                {
+                    Console.WriteLine("В нашей прекрасной игре нельзя стрелять по себе. Одумайтесь!");
+                }
+            }
 
 
 
-            //Peasant.Attack(typeunit3, mindamage3, maxdamage3);
-            //Peasant.Skill(typeunit3, skill3, workspeed);
-            //Archer.ArcherShoot(typeunit, arrows, rangedamage);
-            //Healer.HealSelf(maxhealth2, health2, countheal2);
-            //Warrior.Attack(typeunit4, mindamage4, maxdamage4);
+
+   
 
             Console.ReadKey();
         }

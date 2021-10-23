@@ -12,6 +12,8 @@ namespace SuperGame_2._0
         public int range;
         public int rangedamage;
 
+
+
         public Archer(string typeunitc, int maxhealthc, int healthc, int speedc, int attackspeedc, int mindamagec, int maxdamagec, int arrowsc, int rangedamagec)
         {
             typeunit = typeunitc;
@@ -29,13 +31,19 @@ namespace SuperGame_2._0
 
 
         }
-        public static void ArcherShoot(string typeunit, int arrows, int rangedamage)
+        public static void ArcherShoot(string ARCHER, string target, int targethealth, int arrows, int rangedamage)
         {
-            if (arrows > 0)
-            Console.WriteLine($"{typeunit} наносит {rangedamage} урона. У него остается {arrows-1} стрел.");
-            
-            //else
-                //Archer.Attack("арчер", 15, 20);
+
+                Console.WriteLine($"{ARCHER} наносит {rangedamage} урона. У него остается {arrows - 1} стрел.");
+                targethealth -= rangedamage;
+                arrows -= 1;
+                Console.WriteLine($"У {target} осталось {targethealth} hp.");
+            if (targethealth <= 0)
+            {
+                Console.WriteLine($"{target} мёртв. Сожалеем.");
+            }
+
+
 
 
         }
