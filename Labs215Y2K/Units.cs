@@ -100,104 +100,106 @@ namespace Units
 
     }
 
-    //class Healer : Unit
-    //{
-    //    public Healer(string namec, int MaxHealthc, int CurrentHealthMage, int MinDamagec, int MaxDamagec, int MinRangeDamagec, int MaxRangeDamagec, int armorc, int rangec, int speedc, int atackspeedc, int Healingc)
-    //    {
-    //        name = namec;
-    //        CurrentHealth = CurrentHealthMage;
-    //        MaxHealth = MaxHealthc;
-    //        MinDamage = MinDamagec;
-    //        MaxDamage = MaxDamagec;
-    //        armor = armorc;
-    //        range = rangec;
-    //        speed = speedc;
-    //        atackspeed = atackspeedc;
-    //        Healing = Healingc;
-    //        MinRangeDamage = MinRangeDamagec;
-    //        MaxRangeDamage = MaxRangeDamagec;
-    //    }
-    //    public static void MageVSArcher(string namec, int MaxHealth, int CurrentHealthMage, int MinDamagec, int MaxDamagec, string MobName, int MinRangeDamagec, int MaxRangeDamagec, int CurrentHealth, int CurrentArrows, int Healingc)
-    //    {
-    //        while (CurrentHealth >= 0 || CurrentHealthMage >= 0)
-    //        {
+    class Healer : Unit
+    {
+        public Healer(string namec, int MaxHealthc, int CurrentHealthMage, int MinDamagec, int MaxDamagec, int MinRangeDamagec, int MaxRangeDamagec, int armorc, int rangec, int speedc, int atackspeedc, int Healingc)
+        {
+            name = namec;
+            CurrentHealth = CurrentHealthMage;
+            MaxHealth = MaxHealthc;
+            MinDamage = MinDamagec;
+            MaxDamage = MaxDamagec;
+            armor = armorc;
+            range = rangec;
+            speed = speedc;
+            atackspeed = atackspeedc;
+            Healing = Healingc;
+            MinRangeDamage = MinRangeDamagec;
+            MaxRangeDamage = MaxRangeDamagec;
+        }
+        public static void MageVSArcherAndHealer(string namec, int MaxHealth, int CurrentHealthMage, int MinDamagec, int MaxDamagec, string MobName,int MinRangeDamagec, int MaxRangeDamagec, int CurrentHealth, int CurrentArrows, int Healingc)
+        {
+            while (CurrentHealth >= 0 || CurrentHealthMage >= 0)
+            {
 
-    //            if (CurrentHealth > 0 && CurrentHealthMage > 0)
-    //            {
-    //                int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
-    //                int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
-    //                int ArcherDamageRanage = new Random().Next(MinRangeDamagec, MaxRangeDamagec);
+                if (CurrentHealth > 0 && CurrentHealthMage > 0)
+                {
+                    int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
+                    int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
+                    int ArcherDamageRanage = new Random().Next(MinRangeDamagec, MaxRangeDamagec);
 
-    //                Console.WriteLine("Выберите кого вы хотите отхилить: Маг - 1, Лучник - 2");
-    //                int choice = int.Parse(Console.ReadLine());
-    //                if (choice == 1)
-    //                {
-    //                    CurrentHealthMage += Healingc;
-    //                }
-    //                if (choice == 2)
-    //                {
-    //                    CurrentHealth += Healingc;
-    //                }
-    //                else
-    //                {
-    //                    Console.WriteLine("Надо было ввести 1 или 2");
-    //                }
-    //                Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
-    //                CurrentHealth -= MageRanageDamage;
+                    Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
+                    CurrentHealth -= MageRanageDamage;
 
-    //                if (CurrentHealth < 0)
-    //                {
-    //                    CurrentHealth = 0;
-    //                }
+                    if (CurrentHealth < 0)
+                    {
+                        CurrentHealth = 0;
+                    }
 
-    //                Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
+                    Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
 
-    //                if (CurrentArrows != 0)
-    //                {
-    //                    Console.WriteLine($"{MobName} нанёс {ArcherDamageRanage} урона в дальнем бою {namec}");
-    //                    CurrentHealthMage -= ArcherDamageRanage;
-    //                    CurrentArrows--;
+                    if (CurrentArrows != 0)
+                    {
+                        Console.WriteLine($"{MobName} нанёс {ArcherDamageRanage} урона в дальнем бою {namec}");
+                        CurrentHealthMage -= ArcherDamageRanage;
+                        CurrentArrows--;
 
-    //                    if (CurrentHealthMage < 0)
-    //                    {
-    //                        CurrentHealthMage = 0;
-    //                    }
+                        if (CurrentHealthMage < 0)
+                        {
+                            CurrentHealthMage = 0;
+                        }
 
-    //                    Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
-    //                    Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
-    //                    Console.WriteLine();
-    //                }
-    //                else
-    //                {
+                        Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
+                        Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
 
-    //                    Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в ближнем бою {namec}");
-    //                    CurrentHealthMage -= ArcherDamageMelee;
+                        Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в ближнем бою {namec}");
+                        CurrentHealthMage -= ArcherDamageMelee;
 
-    //                    if (CurrentHealthMage < 0)
-    //                    {
-    //                        CurrentHealthMage = 0;
-    //                    }
+                        if (CurrentHealthMage < 0)
+                        {
+                            CurrentHealthMage = 0;
+                        }
 
-    //                    Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
-    //                }
-    //                Console.WriteLine();
-    //            }
-    //            else
-    //            {
-    //                if (CurrentHealth < 0)
-    //                {
-    //                    Console.WriteLine($"{MobName} погиб");
-    //                    Console.WriteLine();
-    //                }
-    //                else
-    //                {
-    //                    Console.WriteLine($"{namec} погиб");
-    //                }
-    //                break;
-    //            }
-    //        }
-    //    }
-    //}
+                        Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
+                    }
+                    Console.WriteLine();
+                    Console.WriteLine("Выберите кого вы хотите отхилить: Маг - 1, Лучник - 2");
+                    int choice = int.Parse(Console.ReadLine());
+                    if (choice == 1)
+                    {
+                        CurrentHealthMage += Healingc;
+                    }
+                    if (choice == 2)
+                    {
+                        CurrentHealth += Healingc;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Надо было ввести 1 или 2");
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    if (CurrentHealth <= 0)
+                    {
+                        Console.WriteLine($"{MobName} погиб");
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{namec} погиб");
+                        Console.WriteLine();
+                    }
+                    break;
+                }
+            }
+        }
+    }
 
 
     class ArcherWarrior : Unit
@@ -293,68 +295,80 @@ namespace Units
 
         public static void MageVSArcher(string namec, int MaxHealth, int CurrentHealthMage, int MinDamagec, int MaxDamagec,string MobName, int MinRangeDamagec, int MaxRangeDamagec, int CurrentHealth, int CurrentArrows)
         {
-            while (CurrentHealth >= 0 || CurrentHealthMage >=0 )
+            Console.WriteLine($"Хотите посмотреть кто сильнее {namec} или {MobName}, только без восстановления xp? 1 - да, 2 - нет");
+            int WhoIsStronger = int.Parse(Console.ReadLine());
+            if (WhoIsStronger == 1)
             {
-
-                if (CurrentHealth > 0 && CurrentHealthMage > 0)
+                while (CurrentHealth >= 0 || CurrentHealthMage >= 0)
                 {
-                    int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
-                    int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
-                    int ArcherDamageRanage = new Random().Next(MinRangeDamagec, MaxRangeDamagec);
 
-                    Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
-                    CurrentHealth -= MageRanageDamage;
-
-                    if (CurrentHealth < 0)
+                    if (CurrentHealth > 0 && CurrentHealthMage > 0)
                     {
-                        CurrentHealth = 0;
-                    }
+                        int MageRanageDamage = new Random().Next(MinDamagec, MaxDamagec);
+                        int ArcherDamageMelee = new Random().Next(MinDamagec, MaxDamagec);
+                        int ArcherDamageRanage = new Random().Next(MinRangeDamagec, MaxRangeDamagec);
 
-                    Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
+                        Console.WriteLine($"{namec} нанёс {MageRanageDamage} урона в дальнем бою {MobName}");
+                        CurrentHealth -= MageRanageDamage;
 
-                    if (CurrentArrows != 0)
-                    {
-                        Console.WriteLine($"{MobName} нанёс {ArcherDamageRanage} урона в дальнем бою {namec}");
-                        CurrentHealthMage -= ArcherDamageRanage;
-                        CurrentArrows--;
-
-                        if (CurrentHealthMage < 0)
+                        if (CurrentHealth < 0)
                         {
-                            CurrentHealthMage = 0;
+                            CurrentHealth = 0;
                         }
 
-                        Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
-                        Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
+                        Console.WriteLine($"У {MobName} осталось {CurrentHealth} xp");
+
+                        if (CurrentArrows != 0)
+                        {
+                            Console.WriteLine($"{MobName} нанёс {ArcherDamageRanage} урона в дальнем бою {namec}");
+                            CurrentHealthMage -= ArcherDamageRanage;
+                            CurrentArrows--;
+
+                            if (CurrentHealthMage < 0)
+                            {
+                                CurrentHealthMage = 0;
+                            }
+
+                            Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
+                            Console.WriteLine($"Оставшиеся стрелы у лучника: {CurrentArrows}");
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+
+                            Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в ближнем бою {namec}");
+                            CurrentHealthMage -= ArcherDamageMelee;
+
+                            if (CurrentHealthMage < 0)
+                            {
+                                CurrentHealthMage = 0;
+                            }
+
+                            Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
+                        }
                         Console.WriteLine();
                     }
                     else
                     {
-
-                        Console.WriteLine($"{MobName} нанёс {ArcherDamageMelee} урона в ближнем бою {namec}");
-                        CurrentHealthMage -= ArcherDamageMelee;
-
-                        if (CurrentHealthMage < 0)
+                        if (CurrentHealth < 0)
                         {
-                            CurrentHealthMage = 0;
+                            Console.WriteLine($"{MobName} погиб");
+                            Console.WriteLine();
                         }
-
-                        Console.WriteLine($"У {namec} осталось {CurrentHealthMage} xp");
+                        else
+                        {
+                            Console.WriteLine($"{namec} погиб");
+                            Console.WriteLine();
+                        }
+                        break;
                     }
-                      Console.WriteLine();
                 }
-                else
-                {
-                    if (CurrentHealth < 0 )
-                    {
-                        Console.WriteLine($"{MobName} погиб");
-                        Console.WriteLine();
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{namec} погиб");
-                    }
-                    break;
-                }
+            }
+            else
+            {
+                Console.WriteLine();
+                Console.WriteLine("Ну как хотите");
+                Console.WriteLine();
             }
         }
     }
