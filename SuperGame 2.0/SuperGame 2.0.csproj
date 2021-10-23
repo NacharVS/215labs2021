@@ -45,6 +45,8 @@
   <ItemGroup>
     <Compile Include="Archer.cs" />
     <Compile Include="Healer.cs" />
+    <Compile Include="Lamberjack.cs" />
+    <Compile Include="Miner.cs" />
     <Compile Include="Peasant.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
