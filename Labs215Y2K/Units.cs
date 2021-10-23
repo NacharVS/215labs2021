@@ -7,14 +7,14 @@ namespace Labs215Y2K
 {
     class Units : UnitInfo
     {
-        public static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60, 80, 10, 20, 5, 1, 0,0);
-        public static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0,0);
-        public static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0,0);
-        public static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 10,0);
-        public static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0,0);
-        public static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 80, 120, 30, 90, 45, 7, 0,0);
-        public static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 4, 0,5000);
-        public Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1)
+        public static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60, 80, 10, 20, 5, 1, 0, 0, 0);
+        public static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0,0,0);
+        public static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0,0,0);
+        public static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 10,0,0);
+        public static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0,0,0);
+        public static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 150, 200, 30, 90, 45, 7, 0,0,250);
+        public static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 4, 0,5000,0);
+        public Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1,int manna1)
         {
             name = name1;
             role = role1;
@@ -28,7 +28,7 @@ namespace Labs215Y2K
             number = number1;
             amountofArrows = arrowamount;
             healammount = healammount1;
-
+            manna = manna1;
         }
         public static void Question()
         {
@@ -289,7 +289,7 @@ namespace Labs215Y2K
                     blacksmith.unitattackprocces();
                     archer.archerattackprocces();
                     warrior.unitattackprocces();
-                    magician.unitattackprocces();
+                    magician.magicianattack();
                     healer.unitattackprocces();
                     Console.WriteLine();
                     Units.unitsalive();
@@ -317,7 +317,7 @@ namespace Labs215Y2K
             switch (answer)
             {
                 case 1:
-                    Console.WriteLine("Healing occurs as follows: the entered number of health units is subtracted from the healer's health. Maximum amount of health - rebirth NPC;Restore the healer's health is impossible;");
+                    Console.WriteLine("Healing occurs as follows:the entered number of health units is subtracted from the ammount of heals. Maximum amount of health - rebirth NPC;Restore the healer's health is impossible;");
                     Console.WriteLine("The number of health parts that the healer can restore is 5000");
                     Console.WriteLine();
                     mover.unithealth();
@@ -326,7 +326,7 @@ namespace Labs215Y2K
                     archer.unithealth();
                     warrior.unithealth();
                     magician.unithealth();
-                    Console.WriteLine($"{healer.name} is alive with current health = {healer.currentHealth}"); 
+                    Console.WriteLine($"{healer.number} {healer.name} is alive with current health = {healer.currentHealth}"); 
                     Console.WriteLine();
                     Console.WriteLine("Enter the number of the desired NPC");
                     Units.unitheal();
@@ -357,12 +357,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount1;
                     if (mover.currentHealth > mover.maxhealth)
                     {
-                        Console.WriteLine($"{mover.name} has full health");
+                        Console.WriteLine($"{mover.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (mover.currentHealth == mover.maxhealth)
                     {
-                        Console.WriteLine($"{mover.name} revived because his health is restored");
+                        Console.WriteLine($"{mover.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount == 0)
@@ -372,7 +372,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{mover.name} has {mover.currentHealth} health");
+                        Console.WriteLine($"{mover.name} have {mover.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
@@ -383,12 +383,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount2;
                     if (blacksmith.currentHealth > blacksmith.maxhealth)
                     {
-                        Console.WriteLine($"{blacksmith.name} has full health");
+                        Console.WriteLine($"{blacksmith.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (blacksmith.currentHealth == blacksmith.maxhealth)
                     {
-                        Console.WriteLine($"{blacksmith.name} revived because his health is restored");
+                        Console.WriteLine($"{blacksmith.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount == 0)
@@ -398,7 +398,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{blacksmith.name} has {blacksmith.currentHealth} health");
+                        Console.WriteLine($"{blacksmith.name} have {blacksmith.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
@@ -409,12 +409,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount3;
                     if (bricklayer.currentHealth > bricklayer.maxhealth)
                     {
-                        Console.WriteLine($"{bricklayer.name} has full health");
+                        Console.WriteLine($"{bricklayer.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (bricklayer.currentHealth == bricklayer.maxhealth)
                     {
-                        Console.WriteLine($"{bricklayer.name} revived because his health is restored");
+                        Console.WriteLine($"{bricklayer.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount == 0)
@@ -424,7 +424,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{bricklayer.name} has {bricklayer.currentHealth} health");
+                        Console.WriteLine($"{bricklayer.name} have {bricklayer.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
@@ -435,12 +435,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount4;
                     if (archer.currentHealth > archer.maxhealth)
                     {
-                        Console.WriteLine($"{archer.name} has full health");
+                        Console.WriteLine($"{archer.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (archer.currentHealth == archer.maxhealth)
                     {
-                        Console.WriteLine($"{archer.name} revived because his health is restored");
+                        Console.WriteLine($"{archer.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount == 0)
@@ -450,7 +450,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{archer.name} has {archer.currentHealth} health");
+                        Console.WriteLine($"{archer.name} have {archer.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
@@ -461,12 +461,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount5;
                     if (mover.currentHealth > mover.maxhealth)
                     {
-                        Console.WriteLine($"{warrior.name} has full health");
+                        Console.WriteLine($"{warrior.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (mover.currentHealth == mover.maxhealth)
                     {
-                        Console.WriteLine($"{warrior.name} revived because his health is restored");
+                        Console.WriteLine($"{warrior.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount <= 0)
@@ -476,7 +476,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{warrior.name} has {warrior.currentHealth} health");
+                        Console.WriteLine($"{warrior.name} have {warrior.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
@@ -487,12 +487,12 @@ namespace Labs215Y2K
                     healer.healammount = healer.healammount - healthammount6;
                     if (magician.currentHealth > magician.maxhealth)
                     {
-                        Console.WriteLine($"{magician.name} has full health");
+                        Console.WriteLine($"{magician.name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (magician.currentHealth == magician.maxhealth)
                     {
-                        Console.WriteLine($"{magician.name} revived because his health is restored");
+                        Console.WriteLine($"{magician.name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
                     else if (healer.healammount == 0)
@@ -502,7 +502,7 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{magician.name} has {magician.currentHealth} health");
+                        Console.WriteLine($"{magician.name} have {magician.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
