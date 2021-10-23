@@ -18,7 +18,15 @@ namespace Labs215Y2K
         }
         public void murder()
         {
-            Console.WriteLine($"{typeUnit} made a murder");
+            if (GamePlay.OverallTeamHealth < 1500)
+            {
+                Console.WriteLine($" {typeUnit} made murder");
+            }
+            else
+            {
+                int hit = new Random().Next(mindamage, maxdamage) + 200;
+                Console.WriteLine($" {typeUnit} has dealt {hit} units of damage ");
+            }
         }
     }
 }

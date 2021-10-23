@@ -16,6 +16,10 @@ namespace Labs215Y2K
             speed = speed1;
             attackspeed = attackspeed1;
         }
-    
+        public void Attack()
+        {
+            int hit = new Random().Next(mindamage, maxdamage);
+            Console.WriteLine($" {typeUnit} has dealt {hit} units of damage ");
+        }
     }
 }

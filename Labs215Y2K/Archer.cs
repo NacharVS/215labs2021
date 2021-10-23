@@ -20,9 +20,9 @@ namespace Labs215Y2K
             range = range1;
             countOfArrows = countOfArrows1;
         }
-        public void ArcherAttack()
+        public void Shoot()
         {
-            if  (countOfArrows != 0)
+            if  (countOfArrows > 0)
             {
                 int hit = new Random().Next(mindamage, maxdamage) + 100;
                 Console.WriteLine($" {typeUnit} took {hit} units of damage");
@@ -31,7 +31,7 @@ namespace Labs215Y2K
             else
             {
                 int hit = new Random().Next(mindamage, maxdamage);
-                Console.WriteLine($"{typeUnit} has dealt {hit} units of damage in melee combat ");
+                Console.WriteLine($" {typeUnit} has dealt {hit} units of damage in melee combat ");
             }
         }
     }

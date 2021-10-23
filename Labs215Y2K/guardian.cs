@@ -16,6 +16,10 @@ namespace Labs215Y2K
             speed = speed1;
             attackspeed = attackspeed1;
         }
-
+           public void GuardianAttack()
+        {
+            int hit = new Random().Next(mindamage, maxdamage);
+            Console.WriteLine($" The {typeUnit} overshadowed the team and inflicted {hit} units of damage ");
+        }
     }
 }
