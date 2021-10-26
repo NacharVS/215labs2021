@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
     class Unit
     {
@@ -17,7 +17,7 @@ namespace SuperGame_2._0
         public int mindamage;
         public int maxdamage;
         public string skill;
-        public static void Attack(string typeunitAtt, string typeunitDef, int mindamage, int maxdamage, int healthDef)
+        public static void Attack(string typeunitAtt, string typeunitDef, int mindamage, int maxdamage, ref int healthDef)
         {
 
             Random z = new Random();
@@ -37,7 +37,7 @@ namespace SuperGame_2._0
         public static void Skill(string typeunitc, string skillc, int workspeedc)
         {
             Console.WriteLine($"{typeunitc} {skillc} со скоростью " + workspeedc);
-            
+
         }
 
     }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
     class Healer : Unit
     {
@@ -22,9 +22,9 @@ namespace SuperGame_2._0
 
         }
 
-        public static void HealSelf(int maxhealth, int health, int countheal)
+        public static void HealSelf(int maxhealth, ref int health, int countheal)
         {
-            if (health<maxhealth)
+            if (health < maxhealth)
             {
                 health += countheal;
                 if (health > maxhealth)
@@ -35,7 +35,7 @@ namespace SuperGame_2._0
             Console.WriteLine($"Хилер исцелён на {countheal} hp. Сейчас у него {health} hp.");
         }
 
-        public static void Heal(string typeunitZ, int maxhealthZ, int healthZ, int counthealZ, string typeHealerZ)
+        public static void Heal(string typeunitZ, int maxhealthZ, ref int healthZ, int counthealZ, string typeHealerZ)
         {
             healthZ += counthealZ;
             if (healthZ > maxhealthZ)

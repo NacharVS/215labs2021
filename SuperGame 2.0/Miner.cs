@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
-    class Miner:Unit
+    class Miner : Unit
     {
         public Miner(string typeunitc, int workspeedc, int maxhealthc, int healthc, int speedc, int attackspeedc, int mindamagec, int maxdamagec, string skillc)
         {

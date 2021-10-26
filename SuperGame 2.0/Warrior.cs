@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
     class Warrior : Unit
     {
@@ -17,7 +17,6 @@ namespace SuperGame_2._0
             attackspeed = attackspeedc;
             mindamage = mindamagec;
             maxdamage = maxdamagec;
-
 
 
 

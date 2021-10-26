@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
-    class Archer:Unit
+    class Archer : Unit
     {
         public int arrows;
         public int range;
@@ -31,13 +31,13 @@ namespace SuperGame_2._0
 
 
         }
-        public static void ArcherShoot(string ARCHER, string target, int targethealth, int arrows, int rangedamage)
+        public static void ArcherShoot(string ARCHER, string target, ref int targethealth, ref int arrows, int rangedamage)
         {
 
-                Console.WriteLine($"{ARCHER} наносит {rangedamage} урона. У него остается {arrows - 1} стрел.");
-                targethealth -= rangedamage;
-                arrows -= 1;
-                Console.WriteLine($"У {target} осталось {targethealth} hp.");
+            Console.WriteLine($"{ARCHER} наносит {rangedamage} урона стрелой. У него остается {arrows - 1} стрел.");
+            targethealth -= rangedamage;
+            arrows -= 1;
+            Console.WriteLine($"У {target} осталось {targethealth} hp.");
             if (targethealth <= 0)
             {
                 Console.WriteLine($"{target} мёртв. Сожалеем.");

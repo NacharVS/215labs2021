@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperGame_2._0
+namespace game
 {
-    class Lamberjack:Unit
+    class Lamberjack : Unit
     {
         public Lamberjack(string typeunitc, int workspeedc, int maxhealthc, int healthc, int speedc, int attackspeedc, int mindamagec, int maxdamagec, string skillc)
         {
