@@ -16,20 +16,21 @@ namespace Labs215Y2K
         public static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 4, 0,5000,0);
         public Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1,int manna1)
         {
-            name = name1;
-            role = role1;
-            action = action1;
-            speed = speed1;
-            currentHealth = healthnow;
-            maxhealth = healthmax;
-            mindamage = damagemin;
-            maxdamage = damagemax;
-            attackSpeed = attackspeed;
-            number = number1;
-            amountofArrows = arrowamount;
-            healammount = healammount1;
-            manna = manna1;
+            Name = name1;
+            Role = role1;
+            Action = action1;
+            Speed = speed1;
+            CurrentHealth = healthnow;
+            Maxhealth = healthmax;
+            Mindamage = damagemin;
+            Maxdamage = damagemax;
+            AttackSpeed = attackspeed;
+            Number = number1;
+            AmountofArrows = arrowamount;
+            Healammount = healammount1;
+            Manna = manna1;
         }
+        
         public static void Question()
         {
             Console.WriteLine();
@@ -326,7 +327,7 @@ namespace Labs215Y2K
                     archer.unithealth();
                     warrior.unithealth();
                     magician.unithealth();
-                    Console.WriteLine($"{healer.number} {healer.name} is alive with current health = {healer.currentHealth}"); 
+                    Console.WriteLine($"{healer.Number} {healer.Name} is alive with current health = {healer.CurrentHealth}"); 
                     Console.WriteLine();
                     Console.WriteLine("Enter the number of the desired NPC");
                     Units.unitheal();
@@ -353,26 +354,26 @@ namespace Labs215Y2K
                 case 1:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount1 = int.Parse(Console.ReadLine());
-                    mover.currentHealth += healthammount1;
-                    healer.healammount = healer.healammount - healthammount1;
-                    if (mover.currentHealth > mover.maxhealth)
+                    mover.CurrentHealth += healthammount1;
+                    healer.Healammount = healer.Healammount - healthammount1;
+                    if (mover.CurrentHealth > mover.Maxhealth)
                     {
-                        Console.WriteLine($"{mover.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{mover.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (mover.currentHealth == mover.maxhealth)
+                    else if (mover.CurrentHealth == mover.Maxhealth)
                     {
-                        Console.WriteLine($"{mover.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{mover.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount == 0)
+                    else if (healer.Healammount == 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{mover.name} have {mover.currentHealth} health");
+                        Console.WriteLine($"{mover.Name} have {mover.currentHealth} health");
                         Units.unithealquestion();
                     }
                     break;

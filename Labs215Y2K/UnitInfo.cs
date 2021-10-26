@@ -6,19 +6,175 @@ namespace Labs215Y2K
 {
     class UnitInfo
     {
-        public string name;
-        public string role;
-        public string action;
-        public int speed;
-        public int currentHealth;
-        public int maxhealth;
-        public int mindamage;
-        public int maxdamage;
-        public int attackSpeed;
-        public int number;
-        public int amountofArrows;
-        public int healammount;
-        public int manna;
+        private string name;
+        private string role;
+        private string action;
+        private int speed;
+        private int currentHealth;
+        private int maxhealth;
+        private int mindamage;
+        private int maxdamage;
+        private int attackSpeed;
+        private int number;
+        private int amountofArrows;
+        private int healammount;
+        private int manna;
+        public string Name
+        {
+            get
+            {
+                return name;
+
+            }
+            set
+            {
+                name = value;
+            }
+        }
+        public string Role
+        {
+            get
+            {
+                return role;
+
+            }
+            set
+            {
+                role = value;
+            }
+        }
+        public string Action
+        {
+            get
+            {
+                return action;
+
+            }
+            set
+            {
+                action = value;
+            }
+        }
+        public int Speed
+        {
+            get
+            {
+                return speed;
+
+            }
+            set
+            {
+                speed = value;
+            }
+        }
+        public int CurrentHealth
+        {
+            get
+            {
+                return currentHealth;
+
+            }
+            set
+            {
+                currentHealth = value;
+            }
+        }
+        public int Maxhealth
+        {
+            get
+            {
+                return maxhealth;
+
+            }
+            set
+            {
+                maxhealth = value;
+            }
+        }
+        public int Mindamage
+        {
+            get
+            {
+                return mindamage;
+
+            }
+            set
+            {
+                mindamage = value;
+            }
+        }
+        public int Maxdamage
+        {
+            get
+            {
+                return maxdamage;
+
+            }
+            set
+            {
+                maxdamage = value;
+            }
+        }
+        public int AttackSpeed
+        {
+            get
+            {
+                return attackSpeed;
+
+            }
+            set
+            {
+                attackSpeed = value;
+            }
+        }
+        public int Number
+        {
+            get
+            {
+                return number;
+
+            }
+            set
+            {
+                number = value;
+            }
+        }
+        public int AmountofArrows
+        {
+            get
+            {
+                return amountofArrows;
+
+            }
+            set
+            {
+                amountofArrows = value;
+            }
+        }
+        public int Healammount
+        {
+            get
+            {
+                return healammount;
+
+            }
+            set
+            {
+                healammount = value;
+            }
+        }
+        public int Manna
+        {
+            get
+            {
+                return manna;
+
+            }
+            set
+            {
+                manna = value;
+            }
+        }
         public void infounit()
         {
             Console.WriteLine();
