@@ -6,203 +6,203 @@ namespace Labs215Y2K
 {
     class UnitInfo
     {
-        private string name;
-        private string role;
-        private string action;
-        private int speed;
-        private int currentHealth;
-        private int maxhealth;
-        private int mindamage;
-        private int maxdamage;
-        private int attackSpeed;
-        private int number;
-        private int amountofArrows;
-        private int healammount;
-        private int manna;
+        private string _name;
+        private string _role;
+        private string _action;
+        private int _speed;
+        private int _currentHealth;
+        private int _maxhealth;
+        private int _mindamage;
+        private int _maxdamage;
+        private int _attackSpeed;
+        private int _number;
+        private int _amountofArrows;
+        private int _healammount;
+        private int _manna;
         public string Name
         {
             get
             {
-                return name;
+                return _name;
 
             }
             set
             {
-                name = value;
+                _name = value;
             }
         }
         public string Role
         {
             get
             {
-                return role;
+                return _role;
 
             }
             set
             {
-                role = value;
+                _role = value;
             }
         }
         public string Action
         {
             get
             {
-                return action;
+                return _action;
 
             }
             set
             {
-                action = value;
+                _action = value;
             }
         }
         public int Speed
         {
             get
             {
-                return speed;
+                return _speed;
 
             }
             set
             {
-                speed = value;
+                _speed = value;
             }
         }
         public int CurrentHealth
         {
             get
             {
-                return currentHealth;
+                return _currentHealth;
 
             }
             set
             {
-                currentHealth = value;
+                _currentHealth = value;
             }
         }
         public int Maxhealth
         {
             get
             {
-                return maxhealth;
+                return _maxhealth;
 
             }
             set
             {
-                maxhealth = value;
+                _maxhealth = value;
             }
         }
         public int Mindamage
         {
             get
             {
-                return mindamage;
+                return _mindamage;
 
             }
             set
             {
-                mindamage = value;
+                _mindamage = value;
             }
         }
         public int Maxdamage
         {
             get
             {
-                return maxdamage;
+                return _maxdamage;
 
             }
             set
             {
-                maxdamage = value;
+                _maxdamage = value;
             }
         }
         public int AttackSpeed
         {
             get
             {
-                return attackSpeed;
+                return _attackSpeed;
 
             }
             set
             {
-                attackSpeed = value;
+                _attackSpeed = value;
             }
         }
         public int Number
         {
             get
             {
-                return number;
+                return _number;
 
             }
             set
             {
-                number = value;
+                _number = value;
             }
         }
         public int AmountofArrows
         {
             get
             {
-                return amountofArrows;
+                return _amountofArrows;
 
             }
             set
             {
-                amountofArrows = value;
+                _amountofArrows = value;
             }
         }
         public int Healammount
         {
             get
             {
-                return healammount;
+                return _healammount;
 
             }
             set
             {
-                healammount = value;
+                _healammount = value;
             }
         }
         public int Manna
         {
             get
             {
-                return manna;
+                return _manna;
 
             }
             set
             {
-                manna = value;
+                _manna = value;
             }
         }
         public void infounit()
         {
             Console.WriteLine();
-            Console.WriteLine($"{number} Gaming NPC - {name}; his role - {role};");
+            Console.WriteLine($"{_number} Gaming NPC - {_name}; his role - {_role};");
             Console.WriteLine($"His specifications:");
-            Console.WriteLine($"movements speed - {speed}");
-            Console.WriteLine($"attack speed - {attackSpeed}");
-            Console.WriteLine($"current health - {currentHealth}");
-            Console.WriteLine($"minimum damage - {mindamage}");
-            Console.WriteLine($"maximum damage - {maxdamage}");
-            if (amountofArrows == 0)
+            Console.WriteLine($"movements speed - {_speed}");
+            Console.WriteLine($"attack speed - {_attackSpeed}");
+            Console.WriteLine($"current health - {_currentHealth}");
+            Console.WriteLine($"minimum damage - {_mindamage}");
+            Console.WriteLine($"maximum damage - {_maxdamage}");
+            if (_amountofArrows == 0)
             {
                 Console.Write("");
             }
             else
             {
-                Console.WriteLine($"ammount of arrows - {amountofArrows}");
+                Console.WriteLine($"ammount of arrows - {_amountofArrows}");
             }
         }
         public void unitaction()
         {
-            Console.Write($"{number} {name} - {action}");
+            Console.Write($"{_number} {_name} - {_action}");
             Console.WriteLine();
         }
         public void unitattack()
         {
-            int attackdamage = new Random().Next(mindamage, maxdamage);
-            Console.WriteLine($"{number} {name} attacking with {attackdamage} damage");
+            int attackdamage = new Random().Next(_mindamage, _maxdamage);
+            Console.WriteLine($"{_number} {_name} attacking with {attackdamage} damage");
         }
         public void unitattackprocces()
         {
@@ -210,29 +210,29 @@ namespace Labs215Y2K
             for (int i = 0; i < 3; i++)
             {
                 int healthdamage = new Random().Next(40,180);
-                int attackdamage = new Random().Next(mindamage, maxdamage);
-                Console.WriteLine($"{number} {name} attacking with {attackdamage} damage; his current health = {currentHealth}");
-                currentHealth = currentHealth - healthdamage;
-                Console.WriteLine($"{name} Loses {healthdamage} health units; his current health = {currentHealth};");
-                if (currentHealth <= 0)
+                int attackdamage = new Random().Next(_mindamage,_maxdamage);
+                Console.WriteLine($"{_number} {_name} attacking with {attackdamage} damage; his current health = {_currentHealth}");
+                _currentHealth = _currentHealth - healthdamage;
+                Console.WriteLine($"{_name} Loses {healthdamage} health units; his current health = {_currentHealth};");
+                if (_currentHealth <= 0)
                 {
                   Console.WriteLine();
-                  Console.WriteLine($"{name} died due to loss of health while fighting in battle");
+                  Console.WriteLine($"{_name} died due to loss of health while fighting in battle");
                   break;
                 }
-                if (currentHealth > 0)
+                if (_currentHealth > 0)
                 {
                     Console.WriteLine();
-                    Console.WriteLine($"{name} did not die in battle;his current health = {currentHealth}");
+                    Console.WriteLine($"{_name} did not die in battle;his current health = {_currentHealth}");
                     break;
                 }
             }
         }
         public void unitlive()
         {
-            if (currentHealth > 0)
+            if (_currentHealth > 0)
             {
-                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}");
+                Console.WriteLine($"{_number} {_name} is alive with current health = {_currentHealth}");
             }
             else
             {
@@ -242,45 +242,45 @@ namespace Labs215Y2K
         public void archerattackprocces()
         {
             Console.WriteLine();
-            Console.WriteLine($"{name} attacks with arrows in ranged combat; his current health = {currentHealth}");
+            Console.WriteLine($"{_name} attacks with arrows in ranged combat; his current health = {_currentHealth}");
             for (int i = 0; i < 100; i++)
             {
                 int healthdamage = new Random().Next(1, 20);
                 int arrowsnumber = new Random().Next(1, 4);
-                currentHealth = currentHealth - healthdamage;
-                amountofArrows = amountofArrows - arrowsnumber;
-                if (amountofArrows > 0 )
+                _currentHealth = _currentHealth - healthdamage;
+                _amountofArrows = _amountofArrows - arrowsnumber;
+                if (_amountofArrows > 0 )
                 {
-                    Console.WriteLine($"{name} lost {arrowsnumber} arrows and lost {healthdamage} health; his current health = {currentHealth}; current arrows - {amountofArrows}");
+                    Console.WriteLine($"{_name} lost {arrowsnumber} arrows and lost {healthdamage} health; his current health = {_currentHealth}; current arrows - {_amountofArrows}");
                 }
-                if (amountofArrows <= 0)
+                if (_amountofArrows <= 0)
                 {
-                    Console.WriteLine($"{name}  lost all the arrows and went into melee with {currentHealth} health");
+                    Console.WriteLine($"{_name}  lost all the arrows and went into melee with {_currentHealth} health");
                     break;
                 }
             }
             for (int i = 0; i < 3;i++)
             {
-                int meleedamage = new Random().Next(mindamage, maxdamage);
+                int meleedamage = new Random().Next(_mindamage, _maxdamage);
                 int healthdamage1 = new Random().Next(10, 40);
-                currentHealth = currentHealth - healthdamage1;
-                if (currentHealth > 0)
+                _currentHealth = _currentHealth - healthdamage1;
+                if (_currentHealth > 0)
                 {
                     Console.WriteLine();
-                    Console.WriteLine($"{name} attacking with {meleedamage} damage;{name} loses {healthdamage1} health units; his current health = {currentHealth}");
+                    Console.WriteLine($"{_name} attacking with {meleedamage} damage;{_name} loses {healthdamage1} health units; his current health = {_currentHealth}");
                     
                 }
-                if (currentHealth < 0)
+                if (_currentHealth < 0)
                 {
                     Console.WriteLine();
-                    Console.WriteLine($"{name} died due to loss of health while fighting in melee battle");
+                    Console.WriteLine($"{_name} died due to loss of health while fighting in melee battle");
                     break;
                 }
             }
-            if (currentHealth > 0)
+            if (_currentHealth > 0)
             {
                 Console.WriteLine();
-                Console.WriteLine($"{name} survived the melee his current health = {currentHealth}");
+                Console.WriteLine($"{_name} survived the melee his current health = {_currentHealth}");
             }
             else
             {
@@ -289,39 +289,39 @@ namespace Labs215Y2K
         }
         public void unithealth()
         {
-            if (currentHealth < 0)
+            if (_currentHealth < 0)
             {
-                currentHealth = 0;
-                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}; max health is {maxhealth}");
+                _currentHealth = 0;
+                Console.WriteLine($"{_number} {_name} is dead; max health is {_maxhealth}");
             }
             else
             {
-                Console.WriteLine($"{number} {name} is alive with current health = {currentHealth}; max health is {maxhealth}");
+                Console.WriteLine($"{_number} {_name} is alive with current health = {_currentHealth}; max health is {_maxhealth}");
             }
         }
         public void healtunitdone()
         {
-            if (currentHealth == maxhealth)
+            if (_currentHealth == _maxhealth)
             {
-                Console.WriteLine($"{number} {name} current health {currentHealth} = max health");
+                Console.WriteLine($"{_number} {_name} current health {_currentHealth} = max health");
             }
-            else if (currentHealth == 0)
+            else if (_currentHealth == 0)
             {
-                Console.WriteLine($"{number} {name} current health {currentHealth} died");
+                Console.WriteLine($"{_number} {_name} current health {_currentHealth} died");
             }
             else
             {
-                Console.WriteLine($"{number} {name} current health {currentHealth} - alive;");
+                Console.WriteLine($"{_number} {_name} current health {_currentHealth} - alive;");
             }
         }
         public void magicianattack()
         {
             Console.WriteLine();
-            Console.WriteLine($"{number} {name} will use a spell;amount of mana = {manna}; {name} have 3 spells:");
+            Console.WriteLine($"{_number} {_name} will use a spell;amount of mana = {_manna}; {_name} have 3 spells:");
             Console.WriteLine($"1 - The Magic Arrow; ranged combat; damage in the range from 70 to 120");
             Console.WriteLine($"2 - The Magic Shield; melee combat; damage in the range from 10 to 45");
             Console.WriteLine($"3 - The Magic Staff; melee combat; damage in the range from 50 to 95");
-            while (manna > 0)
+            while (_manna > 0)
             {
                 Console.WriteLine("Enter the spell number to use it");
 
@@ -338,44 +338,44 @@ namespace Labs215Y2K
                 switch (speelnumber)
                 {
                     case 1:
-                        Console.WriteLine($"{name} uses 1 spell; damage done = {spell1damage}; lost manna = {spell1manna} ");
-                        manna = manna - spell1manna;
-                        currentHealth = currentHealth - spell1healthdamage;
-                        Console.WriteLine($"{name} has {currentHealth} health; current manna amount = {manna}");
-                        if (manna <= 0)
+                        Console.WriteLine($"{_name} uses 1 spell; damage done = {spell1damage}; lost manna = {spell1manna} ");
+                        _manna = _manna - spell1manna;
+                        _currentHealth = _currentHealth - spell1healthdamage;
+                        Console.WriteLine($"{_name} has {_currentHealth} health; current manna amount = {_manna}");
+                        if (_manna <= 0)
                         {
-                            Console.WriteLine($"{name} lost all manna; his current health = {currentHealth}");
+                            Console.WriteLine($"{_name} lost all manna; his current health = {_currentHealth}");
                         }
                         break;
                     case 2:
-                        Console.WriteLine($"{name} uses 2 spell; damage done = {spell2damage}; lost manna = {spell2manna} ");
-                        manna = manna - spell2manna;
-                        currentHealth = currentHealth - spell2healthdamage;
-                        Console.WriteLine($"{name} has {currentHealth} health; current manna amount = {manna}");
-                        if (manna <= 0)
+                        Console.WriteLine($"{_name} uses 2 spell; damage done = {spell2damage}; lost manna = {spell2manna} ");
+                        _manna = _manna - spell2manna;
+                        _currentHealth = _currentHealth - spell2healthdamage;
+                        Console.WriteLine($"{_name} has {_currentHealth} health; current manna amount = {_manna}");
+                        if (_manna <= 0)
                         {
-                            Console.WriteLine($"{name} lost all manna; his current health = {currentHealth}");
+                            Console.WriteLine($"{_name} lost all manna; his current health = {_currentHealth}");
                         }
                         break;
                     case 3:
-                        Console.WriteLine($"{name} uses 3 spell; damage done = {spell3damage}; lost manna = {spell3manna} ");
-                        manna = manna - spell3manna;
-                        currentHealth = currentHealth - spell3healthdamage;
-                        Console.WriteLine($"{name} has {currentHealth} health; current manna amount = {manna}");
-                        if (manna <= 0)
+                        Console.WriteLine($"{_name} uses 3 spell; damage done = {spell3damage}; lost manna = {spell3manna} ");
+                        _manna = _manna - spell3manna;
+                        _currentHealth = _currentHealth - spell3healthdamage;
+                        Console.WriteLine($"{_name} has {_currentHealth} health; current manna amount = {_manna}");
+                        if (_manna <= 0)
                         {
-                            Console.WriteLine($"{name} lost all manna; his current health = {currentHealth}");
+                            Console.WriteLine($"{_name} lost all manna; his current health = {_currentHealth}");
                         }
                         break;
                 }
             }
-            if (currentHealth > 0)
+            if (_currentHealth > 0)
             {
-                Console.WriteLine($"{number} {name} survived in battle; his current health = {currentHealth} ");
+                Console.WriteLine($"{_number} {_name} survived in battle; his current health = {_currentHealth} ");
             }
-            else if (currentHealth < 0)
+            else if (_currentHealth < 0)
             {
-                Console.WriteLine($"{number} {name} died in battle;");
+                Console.WriteLine($"{_number} {_name} died in battle;");
             }
             else
             {

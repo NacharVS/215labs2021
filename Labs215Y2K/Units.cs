@@ -373,137 +373,141 @@ namespace Labs215Y2K
                     }
                     else
                     {
-                        Console.WriteLine($"{mover.Name} have {mover.currentHealth} health");
+                        Console.WriteLine($"{mover.Name} have {mover.CurrentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
                 case 2:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount2 = int.Parse(Console.ReadLine());
-                    blacksmith.currentHealth += healthammount2;
-                    healer.healammount = healer.healammount - healthammount2;
-                    if (blacksmith.currentHealth > blacksmith.maxhealth)
+                    blacksmith.CurrentHealth += healthammount2;
+                    healer.Healammount = healer.Healammount - healthammount2;
+                    if (blacksmith.CurrentHealth > blacksmith.Maxhealth)
                     {
-                        Console.WriteLine($"{blacksmith.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{blacksmith.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (blacksmith.currentHealth == blacksmith.maxhealth)
+                    else if (blacksmith.CurrentHealth == blacksmith.Maxhealth)
                     {
-                        Console.WriteLine($"{blacksmith.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{blacksmith.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount == 0)
+                    else if (healer.Healammount == 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{blacksmith.name} have {blacksmith.currentHealth} health");
+                        Console.WriteLine($"{blacksmith.Name} have {blacksmith.CurrentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
                 case 3:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount3 = int.Parse(Console.ReadLine());
-                    bricklayer.currentHealth += healthammount3;
-                    healer.healammount = healer.healammount - healthammount3;
-                    if (bricklayer.currentHealth > bricklayer.maxhealth)
+                    bricklayer.CurrentHealth += healthammount3;
+                    healer.Healammount = healer.Healammount - healthammount3;
+                    if (bricklayer.CurrentHealth > bricklayer.Maxhealth)
                     {
-                        Console.WriteLine($"{bricklayer.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{bricklayer.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (bricklayer.currentHealth == bricklayer.maxhealth)
+                    else if (bricklayer.CurrentHealth == bricklayer.Maxhealth)
                     {
-                        Console.WriteLine($"{bricklayer.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{bricklayer.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount == 0)
+                    else if (healer.Healammount == 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{bricklayer.name} have {bricklayer.currentHealth} health");
+                        Console.WriteLine($"{bricklayer.Name} have {bricklayer.CurrentHealth} health");
                         Units.unithealquestion();
                     }
+                    break;
+                case 4:
+                    Console.WriteLine("You can`t add health to healer;");
+                    Units.unithealquestion();
                     break;
                 case 5:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount4 = int.Parse(Console.ReadLine());
-                    archer.currentHealth += healthammount4;
-                    healer.healammount = healer.healammount - healthammount4;
-                    if (archer.currentHealth > archer.maxhealth)
+                    archer.CurrentHealth += healthammount4;
+                    healer.Healammount = healer.Healammount - healthammount4;
+                    if (archer.CurrentHealth > archer.Maxhealth)
                     {
-                        Console.WriteLine($"{archer.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{archer.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (archer.currentHealth == archer.maxhealth)
+                    else if (archer.CurrentHealth == archer.Maxhealth)
                     {
-                        Console.WriteLine($"{archer.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{archer.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount == 0)
+                    else if (healer.Healammount == 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{archer.name} have {archer.currentHealth} health");
+                        Console.WriteLine($"{archer.Name} have {archer.CurrentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
                 case 6:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount5 = int.Parse(Console.ReadLine());
-                    warrior.currentHealth += healthammount5;
-                    healer.healammount = healer.healammount - healthammount5;
-                    if (mover.currentHealth > mover.maxhealth)
+                    warrior.CurrentHealth += healthammount5;
+                    healer.Healammount = healer.Healammount - healthammount5;
+                    if (mover.CurrentHealth > mover.Maxhealth)
                     {
-                        Console.WriteLine($"{warrior.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{warrior.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (mover.currentHealth == mover.maxhealth)
+                    else if (mover.CurrentHealth == mover.Maxhealth)
                     {
-                        Console.WriteLine($"{warrior.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{warrior.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount <= 0)
+                    else if (healer.Healammount <= 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{warrior.name} have {warrior.currentHealth} health");
+                        Console.WriteLine($"{warrior.Name} have {warrior.CurrentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
                 case 7:
                     Console.WriteLine("Enter the number of health you want to add");
                     int healthammount6 = int.Parse(Console.ReadLine());
-                    magician.currentHealth += healthammount6;
-                    healer.healammount = healer.healammount - healthammount6;
-                    if (magician.currentHealth > magician.maxhealth)
+                    magician.CurrentHealth += healthammount6;
+                    healer.Healammount = healer.Healammount - healthammount6;
+                    if (magician.CurrentHealth > magician.Maxhealth)
                     {
-                        Console.WriteLine($"{magician.name} have full health;You can't add more health units");
+                        Console.WriteLine($"{magician.Name} have full health;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (magician.currentHealth == magician.maxhealth)
+                    else if (magician.CurrentHealth == magician.Maxhealth)
                     {
-                        Console.WriteLine($"{magician.name} revived because his health is restored;You can't add more health units");
+                        Console.WriteLine($"{magician.Name} revived because his health is restored;You can't add more health units");
                         Units.unithealquestion();
                     }
-                    else if (healer.healammount == 0)
+                    else if (healer.Healammount == 0)
                     {
                         Console.WriteLine("Healer can no longer use healings");
                         Units.viewlastlistofunits();
                     }
                     else
                     {
-                        Console.WriteLine($"{magician.name} have {magician.currentHealth} health");
+                        Console.WriteLine($"{magician.Name} have {magician.CurrentHealth} health");
                         Units.unithealquestion();
                     }
                     break;
