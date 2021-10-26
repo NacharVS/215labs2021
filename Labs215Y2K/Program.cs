@@ -8,9 +8,10 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Peasant p1 = new Peasant("peasant1", 20, 10, 30);
-            Console.WriteLine(p1.name);
-            p1 = new Peasant("peasant1", 20, 10, 30);
+            Peasant p1 = new Peasant();
+            Console.WriteLine(p1.Health);
+            p1.Health = 20;
+            Console.WriteLine(p1.Health);
 
         }       
     }
