@@ -175,7 +175,7 @@ namespace Labs215Y2K
                 _manna = value;
             }
         }
-        public void infounit()
+        protected void infounit()
         {
             Console.WriteLine();
             Console.WriteLine($"{_number} Gaming NPC - {_name}; his role - {_role};");
@@ -194,17 +194,17 @@ namespace Labs215Y2K
                 Console.WriteLine($"ammount of arrows - {_amountofArrows}");
             }
         }
-        public void unitaction()
+        protected void unitaction()
         {
             Console.Write($"{_number} {_name} - {_action}");
             Console.WriteLine();
         }
-        public void unitattack()
+        protected void unitattack()
         {
             int attackdamage = new Random().Next(_mindamage, _maxdamage);
             Console.WriteLine($"{_number} {_name} attacking with {attackdamage} damage");
         }
-        public void unitattackprocces()
+        protected void unitattackprocces()
         {
             Console.WriteLine();
             for (int i = 0; i < 3; i++)
@@ -228,7 +228,7 @@ namespace Labs215Y2K
                 }
             }
         }
-        public void unitlive()
+        protected void unitlive()
         {
             if (_currentHealth > 0)
             {
@@ -239,7 +239,7 @@ namespace Labs215Y2K
                 Console.Write("");
             }
         }
-        public void archerattackprocces()
+        protected void archerattackprocces()
         {
             Console.WriteLine();
             Console.WriteLine($"{_name} attacks with arrows in ranged combat; his current health = {_currentHealth}");
@@ -287,7 +287,7 @@ namespace Labs215Y2K
                 Console.Write("");
             }
         }
-        public void unithealth()
+        protected void unithealth()
         {
             if (_currentHealth < 0)
             {
@@ -299,7 +299,7 @@ namespace Labs215Y2K
                 Console.WriteLine($"{_number} {_name} is alive with current health = {_currentHealth}; max health is {_maxhealth}");
             }
         }
-        public void healtunitdone()
+        protected void healtunitdone()
         {
             if (_currentHealth == _maxhealth)
             {
@@ -314,7 +314,7 @@ namespace Labs215Y2K
                 Console.WriteLine($"{_number} {_name} current health {_currentHealth} - alive;");
             }
         }
-        public void magicianattack()
+        protected void magicianattack()
         {
             Console.WriteLine();
             Console.WriteLine($"{_number} {_name} will use a spell;amount of mana = {_manna}; {_name} have 3 spells:");
@@ -384,5 +384,6 @@ namespace Labs215Y2K
                     
 
         }
+        
     }
 }

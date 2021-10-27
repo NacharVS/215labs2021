@@ -7,14 +7,15 @@ namespace Labs215Y2K
 {
     class Units : UnitInfo
     {
-        public static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60, 80, 10, 20, 5, 1, 0, 0, 0);
-        public static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0,0,0);
-        public static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0,0,0);
-        public static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 10,0,0);
-        public static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0,0,0);
-        public static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 150, 200, 30, 90, 45, 7, 0,0,250);
-        public static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 4, 0,5000,0);
-        public Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1,int manna1)
+        private static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60, 80, 10, 20, 5, 1, 0, 0, 0);
+        private static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0, 0, 0);
+        private static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0, 0, 0);
+        private static Units fisherman = new Units("Fisherman", "Peaceful", "catching fish", 20, 45, 60, 10, 30, 7, 4, 0, 0, 0);
+        private static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 10, 0, 0);
+        private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0, 0, 0);
+        private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 150, 200, 30, 90, 45, 7, 0, 0, 250);
+        private static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 8, 0, 5000, 0);
+        private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
         {
             Name = name1;
             Role = role1;
@@ -30,8 +31,8 @@ namespace Labs215Y2K
             Healammount = healammount1;
             Manna = manna1;
         }
-        
-        public static void Question()
+
+        internal static void Question()
         {
             Console.WriteLine();
             Console.WriteLine("What do you want to do? Enter numbers from the keyboard");
@@ -72,9 +73,10 @@ namespace Labs215Y2K
             switch (answertwo)
             {
                 case 1:
-                    mover.infounit();;
+                    mover.infounit(); ;
                     blacksmith.infounit();
                     bricklayer.infounit();
+                    fisherman.infounit();
                     Units.Question();
                     break;
                 case 2:
@@ -90,6 +92,7 @@ namespace Labs215Y2K
                     blacksmith.infounit();
                     bricklayer.infounit();
                     healer.infounit();
+                    fisherman.infounit();
                     Console.WriteLine("Combat NPC:");
                     archer.infounit();
                     warrior.infounit();
@@ -114,6 +117,7 @@ namespace Labs215Y2K
                     mover.unitaction();
                     blacksmith.unitaction();
                     bricklayer.unitaction();
+                    fisherman.unitaction();
                     Units.Question();
                     break;
                 case 2:
@@ -129,53 +133,16 @@ namespace Labs215Y2K
                     blacksmith.unitaction();
                     bricklayer.unitaction();
                     healer.unitaction();
+                    fisherman.unitaction();
                     Console.WriteLine("Combat NPC:");
                     archer.unitaction();
                     warrior.unitaction();
                     magician.unitaction();
+                    healer.unitaction();
                     Units.Question();
                     break;
                 case 4:
                     Units.choosenpcaction();
-                    break;
-                default:
-                    break;
-            }
-        }
-        public static void attackquestion()
-        {
-            Console.WriteLine();
-            Console.WriteLine("Which NPC attacks do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC; 4 - NPC by number");
-            int answer = int.Parse(Console.ReadLine());
-            switch (answer)
-            {
-                case 1:
-                    mover.unitattack();
-                    blacksmith.unitattack();
-                    bricklayer.unitattack();
-                    healer.unitattack();
-                    Units.Question();
-                    break;
-                case 2:
-                    archer.unitattack();
-                    warrior.unitattack();
-                    magician.unitattack();
-                    Units.Question();
-                    break;
-                case 3:
-                    Console.WriteLine("Peaceful NPC:");
-                    mover.unitattack();
-                    blacksmith.unitattack();
-                    bricklayer.unitattack();
-                    healer.unitattack();
-                    Console.WriteLine("Combat NPC:");
-                    archer.unitattack();
-                    warrior.unitattack();
-                    magician.unitattack();
-                    Units.Question();
-                    break;
-                case 4:
-                    Units.choosenpcattack();
                     break;
                 default:
                     break;
@@ -197,7 +164,7 @@ namespace Labs215Y2K
                     bricklayer.infounit();
                     break;
                 case 4:
-                    healer.infounit();
+                    fisherman.infounit();
                     break;
                 case 5:
                     archer.infounit();
@@ -207,6 +174,9 @@ namespace Labs215Y2K
                     break;
                 case 7:
                     magician.infounit();
+                    break;
+                case 8:
+                    healer.infounit();
                     break;
                 default:
                     break;
@@ -229,7 +199,7 @@ namespace Labs215Y2K
                     bricklayer.unitaction();
                     break;
                 case 4:
-                    healer.unitaction();
+                    fisherman.unitaction();
                     break;
                 case 5:
                     archer.unitaction();
@@ -240,37 +210,8 @@ namespace Labs215Y2K
                 case 7:
                     magician.unitaction();
                     break;
-                default:
-                    break;
-            }
-            Units.Question();
-        }
-        public static void choosenpcattack()
-        {
-            Console.WriteLine("Enter a number of NPC from the keyboard");
-            int choose = int.Parse(Console.ReadLine());
-            switch (choose)
-            {
-                case 1:
-                    mover.unitattack();
-                    break;
-                case 2:
-                    blacksmith.unitattack();
-                    break;
-                case 3:
-                    bricklayer.unitattack();
-                    break;
-                case 4:
-                    healer.unitattack();
-                    break;
-                case 5:
-                    archer.unitattack();
-                    break;
-                case 6:
-                    warrior.unitattack();
-                    break;
-                case 7:
-                    magician.unitaction();
+                case 8:
+                    healer.unitaction();
                     break;
                 default:
                     break;
@@ -288,6 +229,7 @@ namespace Labs215Y2K
                     mover.unitattackprocces();
                     bricklayer.unitattackprocces();
                     blacksmith.unitattackprocces();
+                    fisherman.unitattackprocces();
                     archer.archerattackprocces();
                     warrior.unitattackprocces();
                     magician.magicianattack();
@@ -306,6 +248,7 @@ namespace Labs215Y2K
             mover.unitlive();
             blacksmith.unitlive();
             bricklayer.unitlive();
+            fisherman.unitlive();
             archer.unitlive();
             warrior.unitlive();
             magician.unitlive();
@@ -324,10 +267,11 @@ namespace Labs215Y2K
                     mover.unithealth();
                     blacksmith.unithealth();
                     bricklayer.unithealth();
+                    fisherman.unithealth();
                     archer.unithealth();
                     warrior.unithealth();
                     magician.unithealth();
-                    Console.WriteLine($"{healer.Number} {healer.Name} is alive with current health = {healer.CurrentHealth}"); 
+                    Console.WriteLine($"{healer.Number} {healer.Name} is alive with current health = {healer.CurrentHealth}");
                     Console.WriteLine();
                     Console.WriteLine("Enter the number of the desired NPC");
                     Units.unitheal();
@@ -337,6 +281,7 @@ namespace Labs215Y2K
                     mover.unitlive();
                     blacksmith.unitlive();
                     bricklayer.unitlive();
+                    fisherman.unitlive();
                     archer.unitlive();
                     warrior.unitlive();
                     magician.unitlive();
@@ -347,7 +292,7 @@ namespace Labs215Y2K
         }
         public static void unitheal()
         {
-            
+
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -559,5 +504,19 @@ namespace Labs215Y2K
                     break;
             }
         }
+        public static void moverblacksmithattack()
+        {
+            while (mover.CurrentHealth > 0 | blacksmith.CurrentHealth > 0)
+            {
+                int moverattack = new Random().Next(mover.Mindamage, mover.Maxdamage);
+                int blacksmithattack = new Random().Next(blacksmith.Mindamage, blacksmith.Maxdamage);
+                Console.WriteLine($"{mover.Name} attacks {blacksmith.Name} with {moverattack} damage; mover current health = {mover.CurrentHealth}; blacksmith current health = {blacksmith.CurrentHealth}");
+                blacksmith.CurrentHealth = blacksmith.CurrentHealth - moverattack;
+                Console.WriteLine($"{blacksmith.Name} attacks {mover.Name} with {blacksmithattack} damage; mover current health = {mover.CurrentHealth}; blacksmith current health = {blacksmith.CurrentHealth}");
+                mover.CurrentHealth = mover.CurrentHealth - blacksmithattack;
+            }
+            
+        }
+        
     }
 }

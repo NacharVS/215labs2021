@@ -13,7 +13,8 @@ namespace Labs215Y2K
             //int[] productschoose = new int[10];
             //StudentsInfo16.studentslist();
 
-            Units.Question();
-        } 
+            //Units.Question();
+            Units.moverblacksmithattack();
+        }
     }
 }
