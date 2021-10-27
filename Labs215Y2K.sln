@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Units (Game)", "Units (Game
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGame 2.0", "SuperGame 2.0\SuperGame 2.0.csproj", "{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game 3.0", "game 3.0\game 3.0.csproj", "{97527B8E-55FD-4104-8AA0-0D2F21E120CF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
