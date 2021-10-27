@@ -6,20 +6,18 @@ namespace Labs215Y2K
 {
     class Guardian : Unit
     {
-        public Guardian(string typeUnit1, int currenthealth1, int maxhealth1, int mindamage1, int maxdamage1, int speed1, int attackspeed1)
+        public Guardian(string typeUnit1, int currenthealth1, int maxhealth1, int mindamage1, int maxdamage1)
         {
-            typeUnit = typeUnit1;
-            currenthealth = currenthealth1;
-            maxhealth = maxhealth1;
-            mindamage = mindamage1;
-            maxdamage = maxdamage1;
-            speed = speed1;
-            attackspeed = attackspeed1;
+            TypeUnit = typeUnit1;
+            Currenthealth = currenthealth1;
+            Maxhealth = maxhealth1;
+            Mindamage = mindamage1;
+            Maxdamage = maxdamage1;
         }
            public void GuardianAttack()
         {
-            int hit = new Random().Next(mindamage, maxdamage);
-            Console.WriteLine($" The {typeUnit} overshadowed the team and inflicted {hit} units of damage ");
+            int hit = new Random().Next(Mindamage, Maxdamage);
+            Console.WriteLine($" The {TypeUnit} overshadowed the team and inflicted {hit} units of damage ");
         }
     }
 }
