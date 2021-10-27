@@ -6,5 +6,6 @@ namespace Labs215Y2K
 {
     class Warrior : Unit
     {
+
     }
 }

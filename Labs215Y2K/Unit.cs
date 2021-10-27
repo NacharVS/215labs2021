@@ -5,15 +5,16 @@ namespace Labs215Y2K
     class Unit
     {
         private string _name;
-        private int _health = 50;
+        private int _health;
         private int _speed;
-        private int _damage;
+        private int _minDamage;
+        private int _maxDamage;
 
         public string Name
         {
             get
             {
-               return _name + _name;
+               return _name;
             }
 
             set
@@ -26,11 +27,9 @@ namespace Labs215Y2K
         { 
             get => _health;
             set
-            {
-                var oldValue = _health;
-
-                if (oldValue - value > 0)
-                    _health = oldValue - value;
+            {              
+                if (value > 0)
+                    _health = value;
                 else
                 {
                     _health = 0;
@@ -39,8 +38,18 @@ namespace Labs215Y2K
             }
         }
 
+        public int MinDamage { get => _minDamage; set => _minDamage = value; }
+        public int MaxDamage { get => _maxDamage; set => _maxDamage = value; }
 
+        internal void GetDamage(int damage)
+        {
+            Health = Health - damage;
+        }
 
+        internal int InflictDamage()
+        {
+            return new Random().Next(MinDamage, MaxDamage);
+        }
         //public string GetName()
         //{
         //    return _name + _name;
@@ -58,7 +67,7 @@ namespace Labs215Y2K
 
         private void Death()
         {
-            Console.WriteLine("Dead");
+            Console.WriteLine($"{_name} Dead");
         }
     }
 }
