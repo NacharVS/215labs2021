@@ -11,8 +11,8 @@ namespace Labs215Y2K
         private static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0, 0, 0);
         private static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0, 0, 0);
         private static Units fisherman = new Units("Fisherman", "Peaceful", "catching fish", 20, 45, 60, 10, 30, 7, 4, 0, 0, 0);
-        private static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 120, 150, 60, 100, 50, 5, 10, 0, 0);
-        private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 170, 220, 100, 170, 90, 6, 0, 0, 0);
+        private static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 130, 170, 60, 100, 50, 5, 10, 0, 0);
+        private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 180, 250, 100, 170, 90, 6, 0, 0, 0);
         private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 150, 200, 30, 90, 45, 7, 0, 0, 250);
         private static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 8, 0, 5000, 0);
         private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
@@ -61,7 +61,7 @@ namespace Labs215Y2K
 
             }
         }
-        public static void questiontwo()
+        protected static void questiontwo()
         {
             Console.WriteLine();
             Console.WriteLine("which NPC`s do you want to view??");
@@ -106,7 +106,7 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void quesnpcaction()
+        protected static void quesnpcaction()
         {
             Console.WriteLine();
             Console.WriteLine("Which NPC actions do you want to view? 1 - Peaceful NPC; 2 - Combat NPC; 3 - All NPC; 4 - NPC by number");
@@ -148,7 +148,7 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void choosenpcinfo()
+        protected static void choosenpcinfo()
         {
             Console.WriteLine("Enter a number of NPC from the keyboard");
             int choose = int.Parse(Console.ReadLine());
@@ -183,7 +183,7 @@ namespace Labs215Y2K
             }
             Units.Question();
         }
-        public static void choosenpcaction()
+        protected static void choosenpcaction()
         {
             Console.WriteLine("Enter a number of NPC from the keyboard");
             int choose = int.Parse(Console.ReadLine());
@@ -218,7 +218,7 @@ namespace Labs215Y2K
             }
             Units.Question();
         }
-        public static void war()
+        protected static void war()
         {
             Console.WriteLine();
             Console.WriteLine("Want to send NPCs into battle? 1 - Yes; 2 - No;");
@@ -243,7 +243,7 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void unitsalive()
+        protected static void unitsalive()
         {
             mover.unitlive();
             blacksmith.unitlive();
@@ -290,7 +290,7 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void unitheal()
+        protected static void unitheal()
         {
 
             int answer = int.Parse(Console.ReadLine());
@@ -459,7 +459,7 @@ namespace Labs215Y2K
 
             }
         }
-        public static void unithealquestion()
+        protected static void unithealquestion()
         {
             Console.WriteLine("What do you want to do?");
             Console.WriteLine("1 - Heal the character");
@@ -482,7 +482,7 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void viewlastlistofunits()
+        protected static void viewlastlistofunits()
         {
             Console.WriteLine("What do you want to do?");
             Console.WriteLine("1 - view the last list of NPC ");
@@ -504,19 +504,108 @@ namespace Labs215Y2K
                     break;
             }
         }
-        public static void moverblacksmithattack()
+        internal static void moverblacksmithattack()
         {
-            while (mover.CurrentHealth > 0 | blacksmith.CurrentHealth > 0)
+            while (mover.CurrentHealth > 0 & blacksmith.CurrentHealth > 0)
             {
                 int moverattack = new Random().Next(mover.Mindamage, mover.Maxdamage);
                 int blacksmithattack = new Random().Next(blacksmith.Mindamage, blacksmith.Maxdamage);
-                Console.WriteLine($"{mover.Name} attacks {blacksmith.Name} with {moverattack} damage; mover current health = {mover.CurrentHealth}; blacksmith current health = {blacksmith.CurrentHealth}");
+                Console.WriteLine($"{mover.Name} attacks {blacksmith.Name} with {moverattack} damage");
                 blacksmith.CurrentHealth = blacksmith.CurrentHealth - moverattack;
-                Console.WriteLine($"{blacksmith.Name} attacks {mover.Name} with {blacksmithattack} damage; mover current health = {mover.CurrentHealth}; blacksmith current health = {blacksmith.CurrentHealth}");
+                Console.WriteLine($"{blacksmith.Name} attacks {mover.Name} with {blacksmithattack} damage");
                 mover.CurrentHealth = mover.CurrentHealth - blacksmithattack;
+                if (mover.CurrentHealth <= 0 & blacksmith.CurrentHealth > 0)
+                {
+                    Console.WriteLine($"{mover.Name} is dead; {blacksmith.Name} win with current health {blacksmith.CurrentHealth}");
+                    mover.CurrentHealth = 0;
+                    break;
+                }
+                else if (blacksmith.CurrentHealth <= 0 & mover.CurrentHealth > 0)
+                {
+                    Console.WriteLine($"{blacksmith.Name} is dead; {mover.Name} win with current health {mover.CurrentHealth}");
+                    blacksmith.CurrentHealth = 0;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"{mover.Name} and {blacksmith.Name} died. No one won in battle");
+                }
             }
-            
+            Console.WriteLine();
+            Units.bricklayerfisherman();
         }
-        
+        protected static void bricklayerfisherman()
+        {
+            while (bricklayer.CurrentHealth > 0 & fisherman.CurrentHealth > 0)
+            {
+                int bricklayerattack = new Random().Next(bricklayer.Mindamage, bricklayer.Maxdamage);
+                int fishermanattack = new Random().Next(fisherman.Mindamage, fisherman.Maxdamage);
+                Console.WriteLine($"{bricklayer.Name} attacks {fisherman.Name} with {bricklayerattack} damage");
+                fisherman.CurrentHealth = fisherman.CurrentHealth - bricklayerattack;
+                Console.WriteLine($"{fisherman.Name} attacks {bricklayer.Name} with {fishermanattack} damage");
+                bricklayer.CurrentHealth = bricklayer.CurrentHealth - fishermanattack;
+                if (bricklayer.CurrentHealth <= 0 & fisherman.CurrentHealth > 0)
+                {
+                    Console.WriteLine($"{bricklayer.Name} is dead; {fisherman.Name} win with current health {fisherman.CurrentHealth}");
+                    bricklayer.CurrentHealth = 0;
+                    break;
+                }
+                else if (fisherman.CurrentHealth <= 0 & bricklayer.CurrentHealth > 0)
+                {
+                    Console.WriteLine($"{fisherman.Name} is dead; {bricklayer.Name} win with current health {bricklayer.CurrentHealth}");
+                    fisherman.CurrentHealth = 0;
+                    break;
+                }
+                else
+                {
+                    Console.WriteLine($"{bricklayer.Name} and {fisherman.Name} died. No one won in battle");
+                }
+            }
+            Console.WriteLine();
+            Units.archerwarrior();
+        }
+        protected static void archerwarrior()
+        {
+            while (archer.AmountofArrows > 0)
+            {
+                int archerarrowsdamage = new Random().Next(15, 30);
+                int arrowsammount = new Random().Next(1, 4);
+                int archerdamage = new Random().Next(5, 15);
+                Console.WriteLine($"{archer.Name} attacks {warrior.Name} with arrows inflict {archerarrowsdamage} damage; he is lost {arrowsammount} arrows");
+                archer.AmountofArrows = archer.AmountofArrows - arrowsammount;
+                warrior.CurrentHealth = warrior.CurrentHealth - archerarrowsdamage;
+                Console.WriteLine($"{warrior.Name} attacks {archer.Name} inflict {archerdamage} damage");
+                archer.CurrentHealth = archer.CurrentHealth - archerdamage;
+            }
+            Console.WriteLine();
+            Console.WriteLine("Archer lost all arrows and switched to melee combat");
+            Console.WriteLine($"{archer.Name} have {archer.CurrentHealth} health");
+            Console.WriteLine($"{warrior.Name} have {warrior.CurrentHealth} health");
+            Console.WriteLine();
+            while (archer.CurrentHealth > 0 & warrior.CurrentHealth > 0)
+            {
+                int archerattack = new Random().Next(10, 30);
+                int warriornattack = new Random().Next(15, 45);
+                Console.WriteLine($"{archer.Name} attacks {warrior.Name} with {archerattack} damage");
+                warrior.CurrentHealth = warrior.CurrentHealth - archerattack;
+                Console.WriteLine($"{warrior.Name} attacks {archer.Name} with {warriornattack} damage");
+                archer.CurrentHealth = archer.CurrentHealth - warriornattack;
+            }
+            if (archer.CurrentHealth <= 0 & warrior.CurrentHealth > 0)
+            {
+                Console.WriteLine($"{archer.Name} is dead; {warrior.Name} win in melee combat with current health {warrior.CurrentHealth}");
+                archer.CurrentHealth = 0;
+            }
+            else if (warrior.CurrentHealth <= 0 & archer.CurrentHealth > 0)
+            {
+                Console.WriteLine($"{warrior.Name} is dead; {archer.Name} win in melee combat with current health {archer.CurrentHealth}");
+                warrior.CurrentHealth = 0;
+            }
+            else
+            {
+                Console.WriteLine($"{archer.Name} and {warrior.Name} died in melee combat. No one won in battle");
+            }
+        }
+
     }
 }
