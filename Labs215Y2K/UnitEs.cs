@@ -24,9 +24,9 @@ namespace Units
             set 
             {
                 if (value > 0)
-                {
+                
                     _CurrentHealth = value;
-                }
+                
                 else
                 {
                     _CurrentHealth = 0;
@@ -49,7 +49,11 @@ namespace Units
 
         private void Death()
         {
-            Console.WriteLine($"{_name} Dead");
+            Console.WriteLine($"{_name} умер");
         }
+    }
+    class Peasant : UnitEs
+    {
+
     }
 }

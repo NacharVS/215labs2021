@@ -1,11 +1,13 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 using Units;
+using Action;
 
 namespace Labs215Y2K
 {
     class Program
     {
-        public static void Main()
+         static void Main(string[] args)
         {
             ////int[] qq = new int[10];
             //int[,] qqnya = new int[10, 5];
@@ -60,8 +62,8 @@ namespace Labs215Y2K
             p1.MaxDamage = 20;
             p2.MinDamage = 15;
             p2.MaxDamage = 20;
-            p1.Health = 50;
-            p2.Health = 50;
+            p1.CurrentHealth = 50;
+            p2.CurrentHealth = 50;
             Actions.Fight(p1, p2);
             Actions.Fight(p1, p2);
             Actions.Fight(p1, p2);
