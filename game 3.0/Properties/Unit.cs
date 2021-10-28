@@ -45,10 +45,13 @@ namespace game_3._0
         public int MinDamage { get => _minDamage; set => _minDamage = value; }
         public int MaxDamage { get => _maxDamage; set => _maxDamage = value; }
 
+
+
         internal void GetDamage(int damage)
         {
             Health = Health - damage;
         }
+
 
         internal int InflictDamage()
         {
