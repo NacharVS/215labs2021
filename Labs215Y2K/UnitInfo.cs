@@ -289,12 +289,12 @@ namespace Labs215Y2K
         }
         protected void unithealth()
         {
-            if (_currentHealth < 0)
+            if (_currentHealth <= 0)
             {
                 _currentHealth = 0;
                 Console.WriteLine($"{_number} {_name} is dead; max health is {_maxhealth}");
             }
-            else
+            else if (_currentHealth > 0)
             {
                 Console.WriteLine($"{_number} {_name} is alive with current health = {_currentHealth}; max health is {_maxhealth}");
             }

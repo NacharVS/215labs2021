@@ -13,8 +13,8 @@ namespace Labs215Y2K
         private static Units fisherman = new Units("Fisherman", "Peaceful", "catching fish", 20, 45, 60, 10, 30, 7, 4, 0, 0, 0);
         private static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 130, 170, 60, 100, 50, 5, 10, 0, 0);
         private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 180, 250, 100, 170, 90, 6, 0, 0, 0);
-        private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 150, 200, 30, 90, 45, 7, 0, 0, 250);
-        private static Units healer = new Units("Healer", "Combat", "heals", 40, 500, 501, 1, 20, 5, 8, 0, 5000, 0);
+        private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 200, 250, 30, 90, 45, 7, 0, 0, 250);
+        private static Units healer = new Units("Healer", "Combat", "heals", 40, 300, 350, 30, 70, 5, 8, 0, 5000, 0);
         private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
         {
             Name = name1;
@@ -226,14 +226,11 @@ namespace Labs215Y2K
             switch (answer)
             {
                 case 1:
-                    mover.unitattackprocces();
-                    bricklayer.unitattackprocces();
-                    blacksmith.unitattackprocces();
-                    fisherman.unitattackprocces();
-                    archer.archerattackprocces();
-                    warrior.unitattackprocces();
-                    magician.magicianattack();
-                    healer.unitattackprocces();
+                    Console.WriteLine("");
+                    Units.moverblacksmithattack();
+                    Units.bricklayerfisherman();
+                    Units.archerwarrior();
+                    Units.healermagician();
                     Console.WriteLine();
                     Units.unitsalive();
                     break;
@@ -245,6 +242,7 @@ namespace Labs215Y2K
         }
         protected static void unitsalive()
         {
+            Console.WriteLine();
             mover.unitlive();
             blacksmith.unitlive();
             bricklayer.unitlive();
@@ -261,20 +259,50 @@ namespace Labs215Y2K
             switch (answer)
             {
                 case 1:
-                    Console.WriteLine("Healing occurs as follows:the entered number of health units is subtracted from the ammount of heals. Maximum amount of health - rebirth NPC;Restore the healer's health is impossible;");
-                    Console.WriteLine("The number of health parts that the healer can restore is 5000");
-                    Console.WriteLine();
-                    mover.unithealth();
-                    blacksmith.unithealth();
-                    bricklayer.unithealth();
-                    fisherman.unithealth();
-                    archer.unithealth();
-                    warrior.unithealth();
-                    magician.unithealth();
-                    Console.WriteLine($"{healer.Number} {healer.Name} is alive with current health = {healer.CurrentHealth}");
-                    Console.WriteLine();
-                    Console.WriteLine("Enter the number of the desired NPC");
-                    Units.unitheal();
+                    if (healer.CurrentHealth > 0)
+                    {
+                        Console.WriteLine("Healing occurs as follows:the entered number of health units is subtracted from the ammount of heals. Maximum amount of health - rebirth NPC;Restore the healer's health is impossible;");
+                        Console.WriteLine("The number of health parts that the healer can restore is 5000");
+                        Console.WriteLine();
+                        mover.unithealth();
+                        blacksmith.unithealth();
+                        bricklayer.unithealth();
+                        fisherman.unithealth();
+                        archer.unithealth();
+                        warrior.unithealth();
+                        magician.unithealth();
+                        Console.WriteLine($"{healer.Number} {healer.Name} is alive with current health = {healer.CurrentHealth}");
+                        Console.WriteLine();
+                        Console.WriteLine("Enter the number of the desired NPC");
+                        Units.unitheal();
+                        break;
+                    }
+                    else if (healer.CurrentHealth < 0)
+                    {
+                        Console.WriteLine("Healer is dead; You cant heal units");
+                        Console.WriteLine("What do you want to do?");
+                        Console.WriteLine("1 - View the list of all NPC health");
+                        Console.WriteLine("2 - Stop game");
+                        int answer1 = int.Parse(Console.ReadLine());
+                        switch (answer1)
+                        {
+                            case 1:
+                                Console.WriteLine();
+                                mover.unitlive();
+                                blacksmith.unitlive();
+                                bricklayer.unitlive();
+                                fisherman.unitlive();
+                                archer.unitlive();
+                                warrior.unitlive();
+                                magician.unitlive();
+                                healer.unitlive();
+                                Console.WriteLine("Goodbye!");
+                                break;
+                            case 2:
+                                Console.WriteLine("Goodbye!");
+                                break;
+                        }
+                    }
                     break;
                 case 2:
                     Console.WriteLine();
@@ -479,13 +507,14 @@ namespace Labs215Y2K
                     warrior.healtunitdone();
                     magician.healtunitdone();
                     healer.healtunitdone();
+                    Console.WriteLine("Goodbye!");
                     break;
             }
         }
         protected static void viewlastlistofunits()
         {
             Console.WriteLine("What do you want to do?");
-            Console.WriteLine("1 - view the last list of NPC ");
+            Console.WriteLine("1 - View the last list of NPC ");
             Console.WriteLine("2 - Complete the programm");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
@@ -532,7 +561,6 @@ namespace Labs215Y2K
                 }
             }
             Console.WriteLine();
-            Units.bricklayerfisherman();
         }
         protected static void bricklayerfisherman()
         {
@@ -562,7 +590,6 @@ namespace Labs215Y2K
                 }
             }
             Console.WriteLine();
-            Units.archerwarrior();
         }
         protected static void archerwarrior()
         {
@@ -606,6 +633,79 @@ namespace Labs215Y2K
                 Console.WriteLine($"{archer.Name} and {warrior.Name} died in melee combat. No one won in battle");
             }
         }
-
+        protected static void healermagician()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{magician.Name} using spells to attack;");
+            Console.WriteLine($"{magician.Name} have 3 spells:");
+            Console.WriteLine($"1 - The Magic Arrow; ranged combat; damage in the range from 70 to 120");
+            Console.WriteLine($"2 - The Magic Shield; melee combat; damage in the range from 10 to 45");
+            Console.WriteLine($"3 - The Magic Staff; melee combat; damage in the range from 50 to 95");
+            while (magician.Manna > 0 & magician.CurrentHealth > 0)
+            {
+                int healerdamage = new Random().Next(healer.Mindamage, healer.Maxdamage);
+                int spell1damage = new Random().Next(70, 120);
+                int spell2damage = new Random().Next(10, 45);
+                int spell3damage = new Random().Next(50, 95);
+                int spell1manna = 75;
+                int spell2manna = 50;
+                int spell3manna = 90;
+                Console.WriteLine($"{healer.Name} attacks {magician.Name} with {healerdamage} damage;");
+                magician.CurrentHealth = magician.CurrentHealth - healerdamage;
+                Console.WriteLine("Enter the number of the spell to use by magician");
+                int answer = int.Parse(Console.ReadLine());
+                if (magician.CurrentHealth <= 0)
+                {
+                    Console.WriteLine($"{magician.Name} is dead; {healer.Name} is won in the battle with current health = {healer.CurrentHealth}");
+                    magician.CurrentHealth = 0;
+                    break;
+                }
+                else
+                {
+                    switch (answer)
+                    {
+                        case 1:
+                            healer.CurrentHealth = healer.CurrentHealth - spell1damage;
+                            magician.Manna = magician.Manna - spell1manna;
+                            Console.WriteLine($"{magician.Name} using 1 spell; {magician.Name} inflicted {spell1damage} damage to healer");
+                            break;
+                        case 2:
+                            healer.CurrentHealth = healer.CurrentHealth - spell2damage;
+                            magician.Manna = magician.Manna - spell2manna;
+                            Console.WriteLine($"{magician.Name} using 2 spell; {magician.Name} inflicted {spell2damage} damage to healer");
+                            break;
+                        case 3:
+                            healer.CurrentHealth = healer.CurrentHealth - spell3damage;
+                            magician.Manna = magician.Manna - spell3manna;
+                            Console.WriteLine($"{magician.Name} using 3 spell; {magician.Name} inflicted {spell3damage} damage to healer");
+                            break;
+                        default:
+                            Console.WriteLine();
+                            break;
+                    }
+                }
+            }
+            if (magician.Manna <= 0 & magician.CurrentHealth > 0 & healer.CurrentHealth > 0)
+            {
+                Console.WriteLine($"{healer.Name} win in the combat; his current health = {healer.CurrentHealth}");
+            }
+            else if (magician.Manna <= 0 & magician.CurrentHealth < 0 & healer.CurrentHealth > 0)
+            {
+                Console.WriteLine($"{healer.Name} win in the combat; his current health = {healer.CurrentHealth}");
+                magician.CurrentHealth = 0;
+            }
+            else if (healer.CurrentHealth < 0 & magician.CurrentHealth > 0 )
+            {
+                Console.WriteLine($"{healer.Name} is dead;{magician.Name} win in the combat; his current health = {magician.CurrentHealth}");
+                healer.CurrentHealth = 0;
+            }
+            else if (healer.CurrentHealth <= 0 & magician.CurrentHealth <= 0)
+            {
+                Console.WriteLine("No one win in the battle");
+                healer.CurrentHealth = 0;
+                magician.CurrentHealth = 0;
+            }
+            Units.unitsalive();
+        }
     }
 }
