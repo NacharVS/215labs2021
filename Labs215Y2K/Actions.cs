@@ -8,32 +8,34 @@ namespace Action
 {
     class Actions
     {
-        public static void WarriorVSArcher(Unit unit, Unit unit2)
+        public static void WarriorVSArcher(Unit WarriorArcher, Unit Warrior)
         {
-                Thread.Sleep(500);
-                Console.WriteLine();
-            if (unit.Health > 0 )
+            Console.WriteLine($"Бой между {WarriorArcher.Name} и {Warrior.Name}");
+            Thread.Sleep(500);
+            Console.WriteLine();
+            if (WarriorArcher.Health > 0 )
             {
-                Console.WriteLine($"{unit.Name} наносит урон {unit2.Name}у");
-                unit2.GetDamage(unit.InflictDamage());
+                Console.WriteLine($"{WarriorArcher.Name} наносит урон {Warrior.Name}у");
+                Warrior.GetDamage(WarriorArcher.InflictDamage());
             }
-            if (unit2.Health > 0)
+            if (Warrior.Health > 0)
             {
-                Console.WriteLine($"{unit2.Name} наносит урон {unit.Name}у");
-                unit.GetDamage(unit2.InflictDamage());
+                Console.WriteLine($"{Warrior.Name} наносит урон {WarriorArcher.Name}у");
+                WarriorArcher.GetDamage(Warrior.InflictDamage());
             }
 
             Console.WriteLine();
 
-            if (unit2.Health > 0)
+            if (Warrior.Health > 0)
             {
-                Console.WriteLine($"{unit2.Name} - {unit2.Health} xp");
+                Console.WriteLine($"{Warrior.Name} - {Warrior.Health} xp");
             }
-            if (unit.Health > 0)
+            if (WarriorArcher.Health > 0)
             {
-                Console.WriteLine($"{unit.Name} - {unit.Health} xp");
+                Console.WriteLine($"{WarriorArcher.Name} - {WarriorArcher.Health} xp");
             }
-
         }
+
+
     }
 }
