@@ -320,7 +320,6 @@ namespace Labs215Y2K
         }
         protected static void unitheal()
         {
-
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -705,7 +704,6 @@ namespace Labs215Y2K
                 healer.CurrentHealth = 0;
                 magician.CurrentHealth = 0;
             }
-            Units.unitsalive();
         }
     }
 }
