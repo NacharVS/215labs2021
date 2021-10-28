@@ -55,21 +55,22 @@ namespace Labs215Y2K
             //Healer.MageVSArcherAndHealer(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows,Healer.Healing);
 
             //MageWarrior.MageVSArcher(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows);
-            Peasant p1 = new Peasant();
-            Peasant p2 = new Peasant();
-            p1.Name = "Valera"; p2.Name = "Danila";
-            p1.MinDamage = 15;
-            p1.MaxDamage = 20;
-            p2.MinDamage = 15;
-            p2.MaxDamage = 20;
-            p1.CurrentHealth = 50;
-            p2.CurrentHealth = 50;
-            Actions.Fight(p1, p2);
-            Actions.Fight(p1, p2);
-            Actions.Fight(p1, p2);
 
 
-        }
+            Warrior WarriorArcher = new Warrior();
+            Warrior Warrior = new Warrior();
+            WarriorArcher.Name = "Лучник"; Warrior.Name = "Воин";
+
+            WarriorArcher.MinDamage = 15; Warrior.MinDamage = 15; WarriorArcher.Health = 50;
+            WarriorArcher.MaxDamage = 20; Warrior.MaxDamage = 20; Warrior.Health = 50;
+
+            while (WarriorArcher.Health != 0 && Warrior.Health != 0)
+            {
+                Actions.WarriorVSArcher(WarriorArcher, Warrior);
+            }
+           
+
+         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;

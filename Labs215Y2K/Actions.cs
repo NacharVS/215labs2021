@@ -8,15 +8,32 @@ namespace Action
 {
     class Actions
     {
-        public static void Fight(UnitEs unit, UnitEs unit2)
+        public static void WarriorVSArcher(Unit unit, Unit unit2)
         {
-            Thread.Sleep(1000);
-            Console.WriteLine($"unit {unit.Name} hited unit {unit2.Name}");
-            unit2.GetDamage(unit.InflictDamage());
-            Console.WriteLine($"unit {unit2.Name} hited unit {unit.Name}");
-            unit.GetDamage(unit2.InflictDamage());
-            Console.WriteLine($"{unit2.Name} - {unit2.CurrentHealth}");
-            Console.WriteLine($"{unit.Name} - {unit.CurrentHealth}");
+                Thread.Sleep(500);
+                Console.WriteLine();
+            if (unit.Health > 0 )
+            {
+                Console.WriteLine($"{unit.Name} наносит урон {unit2.Name}у");
+                unit2.GetDamage(unit.InflictDamage());
+            }
+            if (unit2.Health > 0)
+            {
+                Console.WriteLine($"{unit2.Name} наносит урон {unit.Name}у");
+                unit.GetDamage(unit2.InflictDamage());
+            }
+
+            Console.WriteLine();
+
+            if (unit2.Health > 0)
+            {
+                Console.WriteLine($"{unit2.Name} - {unit2.Health} xp");
+            }
+            if (unit.Health > 0)
+            {
+                Console.WriteLine($"{unit.Name} - {unit.Health} xp");
+            }
+
         }
     }
 }

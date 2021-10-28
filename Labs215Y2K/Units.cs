@@ -2,7 +2,7 @@
 
 //namespace Units
 //{
-//    public class Unit
+//     class Units
 //    {
 //        public string name;
 //        public int CurrentHealth;
@@ -240,7 +240,7 @@
 //                        if (CurrentHealthWarriorArmor <= MaxHealthc)
 //                        {
 //                           Console.WriteLine($"Броня {MobName} разбита");
-                                                
+
 //                        }
 
 //                        if (CurrentHealthWarriorArmor < 0)
