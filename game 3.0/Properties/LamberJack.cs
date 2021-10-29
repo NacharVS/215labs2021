@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace game_3._0
 {
-    class Peasant : Unit
+    class LamberJack:Unit
     {
         private string _skill;
         public string Skill

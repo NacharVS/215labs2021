@@ -9,6 +9,7 @@ namespace game_3._0
     class Unit
     {
         private string _name;
+        private int _maxhealth;
         private int _health;
         private int _speed;
         private int _minDamage;
@@ -43,9 +44,8 @@ namespace game_3._0
         }
 
         public int MinDamage { get => _minDamage; set => _minDamage = value; }
+        public int Maxhealth { get => _maxhealth; set => _maxhealth = value; }
         public int MaxDamage { get => _maxDamage; set => _maxDamage = value; }
-
-
 
         internal void GetDamage(int damage)
         {
