@@ -386,7 +386,24 @@ namespace Labs215Y2K
         }
         protected void buildingsinfo()
         {
-            Console.WriteLine($"{_number} );
+            Console.WriteLine();
+            Console.WriteLine($"{_number} {_name} - building");
+            Console.WriteLine($"current health = {_currentHealth}");
+            if (_mindamage > 0 & _maxdamage > 0)
+            {
+                Console.WriteLine($"Min. damage = {_mindamage}");
+                Console.WriteLine($"Max. damage = {_maxdamage}");
+            }
+            else
+            {
+                Console.Write("");
+            }
+            
+        }
+        protected void buildingsaction()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{_number} {_name} - {_action}");
         }
         
     }

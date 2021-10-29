@@ -15,9 +15,9 @@ namespace Labs215Y2K
         private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 180, 250, 100, 170, 90, 6, 0, 0, 0);
         private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 200, 250, 30, 90, 45, 7, 0, 0, 250);
         private static Units healer = new Units("Healer", "Combat", "heals", 40, 300, 350, 30, 70, 5, 8, 0, 5000, 0);
-        private static Units tower = new Units("Archer's tower", "Buildings", "archer attack", 30, 500, 600, 60, 100, 50, 9, 75, 0, 0);
-        private static Units workshop = new Units("Bricklayer workshop", "Buildings", "bricklayer work", 0, 300, 350, 0, 0, 1, 10, 0, 0, 0);
-        private static Units smithy = new Units("Smithy", "Buildings", "blacksmith work", 0, 250, 260, 0, 0, 0, 11, 0, 0, 0);
+        private static Units tower = new Units("Archer's tower", "Building", "archer attack", 30, 500, 600, 60, 100, 50, 9, 75, 0, 0);
+        private static Units workshop = new Units("Bricklayer workshop", "Building", "bricklayer work", 0, 300, 350, 0, 0, 1, 10, 0, 0, 0);
+        private static Units smithy = new Units("Smithy", "Building", "blacksmith work", 0, 250, 260, 0, 0, 0, 11, 0, 0, 0);
         private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
         {
             Name = name1;
@@ -40,9 +40,11 @@ namespace Labs215Y2K
             Console.WriteLine();
             Console.WriteLine("What do you want to do? Enter numbers from the keyboard");
             Console.WriteLine("1 - View the list of NPC");
-            Console.WriteLine("2 - View NPC action(s)");
-            Console.WriteLine("3 - Send an NPC into battle");
-            Console.WriteLine("4 - Finish viewing the list of NPC");
+            Console.WriteLine("2 - View the list of buildings");
+            Console.WriteLine("3 - View building actions");
+            Console.WriteLine("4 - View NPC action(s)");
+            Console.WriteLine("5 - Send an NPC into battle");
+            Console.WriteLine("6 - Finish");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -50,16 +52,23 @@ namespace Labs215Y2K
                     Units.questiontwo();
                     break;
                 case 2:
-                    Units.quesnpcaction();
+                    Units.buildinginfoquestion();
                     break;
                 case 3:
-                    Units.war();
+                    Units.buildingactions();
                     break;
                 case 4:
+                    Units.quesnpcaction();
+                    break;
+                case 5:
+                    Units.war();
+                    break;
+                case 6:
                     Console.WriteLine("Goodbye!");
                     break;
                 default:
-                    Console.WriteLine();
+                    Console.WriteLine("Wrong number, try again");
+                    Units.Question();
                     break;
 
             }
@@ -67,7 +76,7 @@ namespace Labs215Y2K
         protected static void questiontwo()
         {
             Console.WriteLine();
-            Console.WriteLine("which NPC`s do you want to view??");
+            Console.WriteLine("Which NPC`s do you want to view??");
             Console.WriteLine("1 - View the list of peaceful NPC");
             Console.WriteLine("2 - View the list of combat NPC");
             Console.WriteLine("3 - View the list of all NPC");
@@ -106,6 +115,8 @@ namespace Labs215Y2K
                     Units.choosenpcinfo();
                     break;
                 default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.questiontwo();
                     break;
             }
         }
@@ -148,12 +159,15 @@ namespace Labs215Y2K
                     Units.choosenpcaction();
                     break;
                 default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.quesnpcaction();
                     break;
+
             }
         }
         protected static void choosenpcinfo()
         {
-            Console.WriteLine("Enter a number of NPC from the keyboard");
+            Console.Write("Enter a number of NPC from the keyboard: ");
             int choose = int.Parse(Console.ReadLine());
             switch (choose)
             {
@@ -182,13 +196,15 @@ namespace Labs215Y2K
                     healer.infounit();
                     break;
                 default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.choosenpcinfo();
                     break;
             }
             Units.Question();
         }
         protected static void choosenpcaction()
         {
-            Console.WriteLine("Enter a number of NPC from the keyboard");
+            Console.Write("Enter a number of NPC from the keyboard: ");
             int choose = int.Parse(Console.ReadLine());
             switch (choose)
             {
@@ -217,6 +233,8 @@ namespace Labs215Y2K
                     healer.unitaction();
                     break;
                 default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.choosenpcaction();
                     break;
             }
             Units.Question();
@@ -237,9 +255,12 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     Units.unitsalive();
                     break;
-
                 case 2:
                     Units.Question();
+                    break;
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.war();
                     break;
             }
         }
@@ -498,7 +519,10 @@ namespace Labs215Y2K
                         Units.unithealquestion();
                     }
                     break;
-
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.unitheal();
+                    break;
             }
         }
         protected static void unithealquestion()
@@ -523,6 +547,10 @@ namespace Labs215Y2K
                     healer.healtunitdone();
                     Console.WriteLine("Goodbye!");
                     break;
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.unithealquestion();
+                    break;
             }
         }
         protected static void viewlastlistofunits()
@@ -544,6 +572,10 @@ namespace Labs215Y2K
                     break;
                 case 2:
                     Console.WriteLine("Goodbye!");
+                    break;
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.viewlastlistofunits();
                     break;
             }
         }
@@ -708,7 +740,7 @@ namespace Labs215Y2K
                 Console.WriteLine($"{healer.Name} win in the combat; his current health = {healer.CurrentHealth}");
                 magician.CurrentHealth = 0;
             }
-            else if (healer.CurrentHealth < 0 & magician.CurrentHealth > 0 )
+            else if (healer.CurrentHealth < 0 & magician.CurrentHealth > 0)
             {
                 Console.WriteLine($"{healer.Name} is dead;{magician.Name} win in the combat; his current health = {magician.CurrentHealth}");
                 healer.CurrentHealth = 0;
@@ -718,6 +750,95 @@ namespace Labs215Y2K
                 Console.WriteLine("No one win in the battle");
                 healer.CurrentHealth = 0;
                 magician.CurrentHealth = 0;
+            }
+        }
+        protected static void buildinginfoquestion()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Which building info do you want to view?");
+            Console.WriteLine("1 - View the all buildings info");
+            Console.WriteLine("2 - View the building info by number; 9 - tower; 10 - workshop; 11 - smithy ");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    tower.buildingsinfo();
+                    workshop.buildingsinfo();
+                    smithy.buildingsinfo();
+                    Units.Question();
+                    break;
+                case 2:
+                    Console.Write("Enter the number: ");
+                    int answer1 = int.Parse(Console.ReadLine());
+                    switch (answer1)
+                    {
+                        case 9:
+                            tower.buildingsinfo();
+                            Units.Question();
+                            break;
+                        case 10:
+                            workshop.buildingsinfo();
+                            Units.Question();
+                            break;
+                        case 11:
+                            smithy.buildingsinfo();
+                            Units.Question();
+                            break;
+                        default:
+                            Console.WriteLine("Wrong number, try again");
+                            Units.buildinginfoquestion();
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.buildinginfoquestion();
+                    break;
+            }
+
+        }
+        protected static void buildingactions()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Which building action do you want to view?");
+            Console.WriteLine("1 - View the all buildings actions");
+            Console.WriteLine("2 - View the building action by number; 9 - tower; 10 - workshop; 11 - smithy ");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    tower.buildingsaction();
+                    workshop.buildingsaction();
+                    smithy.buildingsaction();
+                    Units.Question();
+                    break;
+                case 2:
+                    Console.Write("Enter the number: ");
+                    int answer1 = int.Parse(Console.ReadLine());
+                    switch (answer1)
+                    {
+                        case 9:
+                            tower.buildingsaction();
+                            Units.Question();
+                            break;
+                        case 10:
+                            workshop.buildingsaction();
+                            Units.Question();
+                            break;
+                        case 11:
+                            smithy.buildingsaction();
+                            Units.Question();
+                            break;
+                        default:
+                            Console.WriteLine("Wrong number, try again");
+                            Units.buildingactions();
+                            break;
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Wrong number, try again");
+                    Units.buildingactions();
+                    break;
             }
         }
     }
