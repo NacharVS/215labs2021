@@ -384,6 +384,10 @@ namespace Labs215Y2K
                     
 
         }
+        protected void buildingsinfo()
+        {
+            Console.WriteLine($"{_number} );
+        }
         
     }
 }

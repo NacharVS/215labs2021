@@ -15,6 +15,9 @@ namespace Labs215Y2K
         private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 180, 250, 100, 170, 90, 6, 0, 0, 0);
         private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 200, 250, 30, 90, 45, 7, 0, 0, 250);
         private static Units healer = new Units("Healer", "Combat", "heals", 40, 300, 350, 30, 70, 5, 8, 0, 5000, 0);
+        private static Units tower = new Units("Archer's tower", "Buildings", "archer attack", 30, 500, 600, 60, 100, 50, 9, 75, 0, 0);
+        private static Units workshop = new Units("Bricklayer workshop", "Buildings", "bricklayer work", 0, 300, 350, 0, 0, 1, 10, 0, 0, 0);
+        private static Units smithy = new Units("Smithy", "Buildings", "blacksmith work", 0, 250, 260, 0, 0, 0, 11, 0, 0, 0);
         private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
         {
             Name = name1;
@@ -331,11 +334,13 @@ namespace Labs215Y2K
                     if (mover.CurrentHealth > mover.Maxhealth)
                     {
                         Console.WriteLine($"{mover.Name} have full health;You can't add more health units");
+                        mover.CurrentHealth = mover.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (mover.CurrentHealth == mover.Maxhealth)
                     {
                         Console.WriteLine($"{mover.Name} revived because his health is restored;You can't add more health units");
+                        mover.CurrentHealth = mover.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount == 0)
@@ -357,11 +362,13 @@ namespace Labs215Y2K
                     if (blacksmith.CurrentHealth > blacksmith.Maxhealth)
                     {
                         Console.WriteLine($"{blacksmith.Name} have full health;You can't add more health units");
+                        blacksmith.CurrentHealth = blacksmith.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (blacksmith.CurrentHealth == blacksmith.Maxhealth)
                     {
                         Console.WriteLine($"{blacksmith.Name} revived because his health is restored;You can't add more health units");
+                        blacksmith.CurrentHealth = blacksmith.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount == 0)
@@ -383,11 +390,13 @@ namespace Labs215Y2K
                     if (bricklayer.CurrentHealth > bricklayer.Maxhealth)
                     {
                         Console.WriteLine($"{bricklayer.Name} have full health;You can't add more health units");
+                        bricklayer.CurrentHealth = bricklayer.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (bricklayer.CurrentHealth == bricklayer.Maxhealth)
                     {
                         Console.WriteLine($"{bricklayer.Name} revived because his health is restored;You can't add more health units");
+                        bricklayer.CurrentHealth = bricklayer.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount == 0)
@@ -413,11 +422,13 @@ namespace Labs215Y2K
                     if (archer.CurrentHealth > archer.Maxhealth)
                     {
                         Console.WriteLine($"{archer.Name} have full health;You can't add more health units");
+                        archer.CurrentHealth = archer.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (archer.CurrentHealth == archer.Maxhealth)
                     {
                         Console.WriteLine($"{archer.Name} revived because his health is restored;You can't add more health units");
+                        archer.CurrentHealth = archer.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount == 0)
@@ -439,11 +450,13 @@ namespace Labs215Y2K
                     if (mover.CurrentHealth > mover.Maxhealth)
                     {
                         Console.WriteLine($"{warrior.Name} have full health;You can't add more health units");
+                        mover.CurrentHealth = mover.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (mover.CurrentHealth == mover.Maxhealth)
                     {
                         Console.WriteLine($"{warrior.Name} revived because his health is restored;You can't add more health units");
+                        mover.CurrentHealth = mover.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount <= 0)
@@ -465,11 +478,13 @@ namespace Labs215Y2K
                     if (magician.CurrentHealth > magician.Maxhealth)
                     {
                         Console.WriteLine($"{magician.Name} have full health;You can't add more health units");
+                        magician.CurrentHealth = magician.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (magician.CurrentHealth == magician.Maxhealth)
                     {
                         Console.WriteLine($"{magician.Name} revived because his health is restored;You can't add more health units");
+                        magician.CurrentHealth = magician.Maxhealth;
                         Units.unithealquestion();
                     }
                     else if (healer.Healammount == 0)
