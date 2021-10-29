@@ -45,6 +45,10 @@ namespace Units
         {
             Health = Health - damage;
         }
+        internal void GetHeal(int Healing)
+        {
+            Health = Health + Healing;
+        }
 
         internal int InflictDamage()
         {
@@ -82,5 +86,26 @@ namespace Units
         private int _Healing;
 
         public int Healing { get => _Healing; set => _Healing = value; }
+    }
+    class Builder : Unit
+    {
+        internal void build()
+        {
+            Console.WriteLine("Строит здания");
+        }
+    }
+    class Farmer : Unit
+    {
+        internal void Farming()
+        {
+            Console.WriteLine("Собирает урожай");
+        }
+    }
+    class Miner : Unit
+    {
+        internal void Mining()
+        {
+            Console.WriteLine("Копает камень");
+        }
     }
 }

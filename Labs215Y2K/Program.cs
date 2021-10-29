@@ -57,20 +57,54 @@ namespace Labs215Y2K
             //MageWarrior.MageVSArcher(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows);
 
 
-            Warrior WarriorArcher = new Warrior();
+            Archer WarriorArcher = new Archer();
             Warrior Warrior = new Warrior();
-            WarriorArcher.Name = "Лучник"; Warrior.Name = "Воин";
+            Mage Mage = new Mage();
+            Healer Healer = new Healer();
 
-            WarriorArcher.MinDamage = 15; Warrior.MinDamage = 15; WarriorArcher.Health = 50;
-            WarriorArcher.MaxDamage = 20; Warrior.MaxDamage = 20; Warrior.Health = 50;
+            WarriorArcher.Name = "Лучник"; Warrior.Name = "Воин"; Mage.Name = "Маг";
 
-            while (WarriorArcher.Health != 0 && Warrior.Health != 0)
+            WarriorArcher.MinDamage = 15; WarriorArcher.MaxDamage = 20; WarriorArcher.Health = 40;
+            Warrior.MinDamage = 10; Warrior.MaxDamage = 18; Warrior.Health = 50;
+            Mage.MinDamage = 13; Mage.MaxDamage = 19; Mage.Health = 60;
+            Healer.Healing = 20; Healer.Health = 55;
+
+            Console.WriteLine("Бой между Лучником и Воином, если хотите посмотреть напишите 1");
+            Console.WriteLine("Бой между Магом и Воином, если хотите посмотреть напишите 2");
+            Console.WriteLine("Бой между Магом, Воином и Лучником, если хотите посмотреть напишите 3");
+
+            int choice = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            if (choice == 1)
             {
-                Actions.WarriorVSArcher(WarriorArcher, Warrior);
+                Console.WriteLine($"Бой между {WarriorArcher.Name} и {Warrior.Name}");
+                while (WarriorArcher.Health != 0 && Warrior.Health != 0)
+                {
+                    Actions.WarriorVSArcher(WarriorArcher, Warrior);
+                }
             }
-           
 
-         }
+            if (choice == 2)
+            {
+                Console.WriteLine($"Бой между {Mage.Name} и {Warrior.Name}");
+                while (Mage.Health != 0 && Warrior.Health != 0)
+                {
+                    Actions.MageVSWarior(Mage, Warrior);
+                }
+            }
+
+            if (choice == 3)
+            {
+                Console.WriteLine($"Бой между {Mage.Name}, {Warrior.Name} и {WarriorArcher.Name}");
+                while (Mage.Health != 0 && Warrior.Health != 0 && WarriorArcher.Health != 0)
+                {
+                    Actions.ArcherVSMageVsWarrior(Mage, Warrior, WarriorArcher);
+                }
+            }
+
+
+        }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;
