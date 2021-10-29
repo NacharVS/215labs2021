@@ -7,17 +7,20 @@ namespace Labs215Y2K
 {
     class Units : UnitInfo
     {
+        //The Magic Rift - разрушает здание, снимает манны в районе 50-80, юзается только у мага, остальные заклинания не действуют на здания, только на юнитов
+        //катапульта - новый юнит, наносит в районе 75-150 урона зданиям, также и юнитам, рандомно, имеет здоровье, работает сама по себе, урон наносится только из далека, уничтожить значительным уроном может маг мб я хз хаха
         private static Units mover = new Units("Mover", "Peaceful", "mowing the grass", 40, 60, 80, 10, 20, 5, 1, 0, 0, 0);
         private static Units blacksmith = new Units("Blacksmith", "Peaceful", "forges iron", 25, 50, 90, 20, 30, 10, 2, 0, 0, 0);
         private static Units bricklayer = new Units("Bricklayer", "Peaceful", "laying masonry", 30, 50, 85, 15, 30, 10, 3, 0, 0, 0);
         private static Units fisherman = new Units("Fisherman", "Peaceful", "catching fish", 20, 45, 60, 10, 30, 7, 4, 0, 0, 0);
         private static Units archer = new Units("Archer", "Сombat", "shoots with a bow", 60, 130, 170, 60, 100, 50, 5, 10, 0, 0);
         private static Units warrior = new Units("Warrior", "Сombat", "attacks the enemy", 100, 180, 250, 100, 170, 90, 6, 0, 0, 0);
-        private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 200, 250, 30, 90, 45, 7, 0, 0, 250);
+        private static Units magician = new Units("Magician", "Сombat", "uses spells", 45, 200, 250, 30, 90, 45, 7, 0, 0, 350);
         private static Units healer = new Units("Healer", "Combat", "heals", 40, 300, 350, 30, 70, 5, 8, 0, 5000, 0);
         private static Units tower = new Units("Archer's tower", "Building", "archer attack", 30, 500, 600, 60, 100, 50, 9, 75, 0, 0);
         private static Units workshop = new Units("Bricklayer workshop", "Building", "bricklayer work", 0, 300, 350, 0, 0, 1, 10, 0, 0, 0);
         private static Units smithy = new Units("Smithy", "Building", "blacksmith work", 0, 250, 260, 0, 0, 0, 11, 0, 0, 0);
+        private static Units catapult = new Units("Catapult", "Combat vehicles", "shoots by cores", 45, 250, 300, 75, 150, 45, 12, 0, 0, 0);
         private Units(string name1, string role1, string action1, int speed1, int healthnow, int healthmax, int damagemin, int damagemax, int attackspeed, int number1, int arrowamount, int healammount1, int manna1)
         {
             Name = name1;
@@ -41,10 +44,12 @@ namespace Labs215Y2K
             Console.WriteLine("What do you want to do? Enter numbers from the keyboard");
             Console.WriteLine("1 - View the list of NPC");
             Console.WriteLine("2 - View the list of buildings");
-            Console.WriteLine("3 - View building actions");
-            Console.WriteLine("4 - View NPC action(s)");
-            Console.WriteLine("5 - Send an NPC into battle");
-            Console.WriteLine("6 - Finish");
+            Console.WriteLine("3 - View the combat vehicles");
+            Console.WriteLine("4 - View building actions");
+            Console.WriteLine("5 - View NPC action(s)");
+            Console.WriteLine("6 - View combat vehicles actions");
+            Console.WriteLine("7 - Send an NPC into battle");
+            Console.WriteLine("8 - Finish");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
@@ -55,15 +60,23 @@ namespace Labs215Y2K
                     Units.buildinginfoquestion();
                     break;
                 case 3:
-                    Units.buildingactions();
+                    catapult.catapultinfo();
+                    Units.Question();
                     break;
                 case 4:
-                    Units.quesnpcaction();
+                    Units.buildingactions();
                     break;
                 case 5:
-                    Units.war();
+                    Units.quesnpcaction();
                     break;
                 case 6:
+                    catapult.catapultsaction();
+                    Units.Question();
+                    break;
+                case 7:
+                    Units.war();
+                    break;
+                case 8:
                     Console.WriteLine("Goodbye!");
                     break;
                 default:
@@ -286,6 +299,7 @@ namespace Labs215Y2K
                     if (healer.CurrentHealth > 0)
                     {
                         Console.WriteLine("Healing occurs as follows:the entered number of health units is subtracted from the ammount of heals. Maximum amount of health - rebirth NPC;Restore the healer's health is impossible;");
+                        Console.WriteLine("Healer can't repair buildings and catapult;");
                         Console.WriteLine("The number of health parts that the healer can restore is 5000");
                         Console.WriteLine();
                         mover.unithealth();
@@ -432,14 +446,38 @@ namespace Labs215Y2K
                     }
                     break;
                 case 4:
-                    Console.WriteLine("You can`t add health to healer;");
-                    Units.unithealquestion();
+                    Console.WriteLine("Enter the number of health you want to add");
+                    int healthammount4 = int.Parse(Console.ReadLine());
+                    fisherman.CurrentHealth += healthammount4;
+                    healer.Healammount = healer.Healammount - healthammount4;
+                    if (fisherman.CurrentHealth > fisherman.Maxhealth)
+                    {
+                        Console.WriteLine($"{fisherman.Name} have full health;You can't add more health units");
+                        fisherman.CurrentHealth = fisherman.Maxhealth;
+                        Units.unithealquestion();
+                    }
+                    else if (fisherman.CurrentHealth == fisherman.Maxhealth)
+                    {
+                        Console.WriteLine($"{fisherman.Name} revived because his health is restored;You can't add more health units");
+                        fisherman.CurrentHealth = fisherman.Maxhealth;
+                        Units.unithealquestion();
+                    }
+                    else if (healer.Healammount == 0)
+                    {
+                        Console.WriteLine("Healer can no longer use healings");
+                        Units.viewlastlistofunits();
+                    }
+                    else
+                    {
+                        Console.WriteLine($"{fisherman.Name} have {fisherman.CurrentHealth} health");
+                        Units.unithealquestion();
+                    }
                     break;
                 case 5:
                     Console.WriteLine("Enter the number of health you want to add");
-                    int healthammount4 = int.Parse(Console.ReadLine());
-                    archer.CurrentHealth += healthammount4;
-                    healer.Healammount = healer.Healammount - healthammount4;
+                    int healthammount5 = int.Parse(Console.ReadLine());
+                    archer.CurrentHealth += healthammount5;
+                    healer.Healammount = healer.Healammount - healthammount5;
                     if (archer.CurrentHealth > archer.Maxhealth)
                     {
                         Console.WriteLine($"{archer.Name} have full health;You can't add more health units");
@@ -465,9 +503,9 @@ namespace Labs215Y2K
                     break;
                 case 6:
                     Console.WriteLine("Enter the number of health you want to add");
-                    int healthammount5 = int.Parse(Console.ReadLine());
-                    warrior.CurrentHealth += healthammount5;
-                    healer.Healammount = healer.Healammount - healthammount5;
+                    int healthammount6 = int.Parse(Console.ReadLine());
+                    warrior.CurrentHealth += healthammount6;
+                    healer.Healammount = healer.Healammount - healthammount6;
                     if (mover.CurrentHealth > mover.Maxhealth)
                     {
                         Console.WriteLine($"{warrior.Name} have full health;You can't add more health units");
@@ -493,9 +531,9 @@ namespace Labs215Y2K
                     break;
                 case 7:
                     Console.WriteLine("Enter the number of health you want to add");
-                    int healthammount6 = int.Parse(Console.ReadLine());
-                    magician.CurrentHealth += healthammount6;
-                    healer.Healammount = healer.Healammount - healthammount6;
+                    int healthammount7 = int.Parse(Console.ReadLine());
+                    magician.CurrentHealth += healthammount7;
+                    healer.Healammount = healer.Healammount - healthammount7;
                     if (magician.CurrentHealth > magician.Maxhealth)
                     {
                         Console.WriteLine($"{magician.Name} have full health;You can't add more health units");
@@ -519,6 +557,10 @@ namespace Labs215Y2K
                         Units.unithealquestion();
                     }
                     break;
+                case 8:
+                    Console.WriteLine("You can`t add health to healer;");
+                    Units.unithealquestion();
+                    break;
                 default:
                     Console.WriteLine("Wrong number, try again");
                     Units.unitheal();
@@ -541,6 +583,7 @@ namespace Labs215Y2K
                     mover.healtunitdone();
                     blacksmith.healtunitdone();
                     bricklayer.healtunitdone();
+                    fisherman.healtunitdone();
                     archer.healtunitdone();
                     warrior.healtunitdone();
                     magician.healtunitdone();
@@ -841,5 +884,6 @@ namespace Labs215Y2K
                     break;
             }
         }
+
     }
 }

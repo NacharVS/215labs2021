@@ -388,6 +388,7 @@ namespace Labs215Y2K
         {
             Console.WriteLine();
             Console.WriteLine($"{_number} {_name} - building");
+            Console.WriteLine("Building characteristics: ");
             Console.WriteLine($"current health = {_currentHealth}");
             if (_mindamage > 0 & _maxdamage > 0)
             {
@@ -401,6 +402,20 @@ namespace Labs215Y2K
             
         }
         protected void buildingsaction()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{_number} {_name} - {_action}");
+        }
+        protected void catapultinfo()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"{_number} {_name} - combat vehicle");
+            Console.WriteLine("Characteristics: ");
+            Console.WriteLine($"current health = {_currentHealth}");
+            Console.WriteLine($"Min. damage = {_mindamage}");
+            Console.WriteLine($"Max. damage = {_maxdamage}");
+        }
+        protected void catapultsaction()
         {
             Console.WriteLine();
             Console.WriteLine($"{_number} {_name} - {_action}");
