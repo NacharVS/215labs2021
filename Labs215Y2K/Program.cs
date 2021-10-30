@@ -57,14 +57,14 @@ namespace Labs215Y2K
             //MageWarrior.MageVSArcher(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows);
 
 
-            Archer WarriorArcher = new Archer();
+            Archer Archer = new Archer();
             Warrior Warrior = new Warrior();
             Mage Mage = new Mage();
             Healer Healer = new Healer();
 
-            WarriorArcher.Name = "Лучник"; Warrior.Name = "Воин"; Mage.Name = "Маг";
+            Archer.Name = "Лучник"; Warrior.Name = "Воин"; Mage.Name = "Маг"; Healer.Name = "Целитель";
 
-            WarriorArcher.MinDamage = 15; WarriorArcher.MaxDamage = 20; WarriorArcher.Health = 40;
+            Archer.MinDamage = 15; Archer.MaxDamage = 20; Archer.Health = 40;
             Warrior.MinDamage = 10; Warrior.MaxDamage = 18; Warrior.Health = 50;
             Mage.MinDamage = 13; Mage.MaxDamage = 19; Mage.Health = 60;
             Healer.Healing = 20; Healer.Health = 55;
@@ -78,10 +78,10 @@ namespace Labs215Y2K
 
             if (choice == 1)
             {
-                Console.WriteLine($"Бой между {WarriorArcher.Name} и {Warrior.Name}");
-                while (WarriorArcher.Health != 0 && Warrior.Health != 0)
+                Console.WriteLine($"Бой между {Archer.Name} и {Warrior.Name}");
+                while (Archer.Health != 0 && Warrior.Health != 0)
                 {
-                    Actions.WarriorVSArcher(WarriorArcher, Warrior);
+                    Actions.WarriorVSArcher(Archer, Warrior);
                 }
             }
 
@@ -96,10 +96,10 @@ namespace Labs215Y2K
 
             if (choice == 3)
             {
-                Console.WriteLine($"Бой между {Mage.Name}, {Warrior.Name} и {WarriorArcher.Name}");
-                while (Mage.Health != 0 && Warrior.Health != 0 && WarriorArcher.Health != 0)
+                Console.WriteLine($"Бой между {Mage.Name}, {Warrior.Name} и {Archer.Name} (присутствует {Healer.Name})");
+                while (Mage.Health != 0 && Warrior.Health != 0 && Archer.Health != 0)
                 {
-                    Actions.ArcherVSMageVsWarrior(Mage, Warrior, WarriorArcher);
+                    Actions.ArcherVSMageVsWarrior(Mage, Warrior, Archer, Healer);
                 }
             }
 

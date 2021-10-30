@@ -8,19 +8,19 @@ namespace Action
 {
     class Actions
     {
-        public static void WarriorVSArcher(Archer WarriorArcher, Warrior Warrior)
+        public static void WarriorVSArcher(Archer Archer, Warrior Warrior)
         {
             Thread.Sleep(500);
             Console.WriteLine();
-            if (WarriorArcher.Health > 0 )
+            if (Archer.Health > 0 )
             {
-                Console.WriteLine($"{WarriorArcher.Name} наносит урон {Warrior.Name}у");
-                Warrior.GetDamage(WarriorArcher.InflictDamage());
+                Console.WriteLine($"{Archer.Name} наносит урон {Warrior.Name}у");
+                Warrior.GetDamage(Archer.InflictDamage());
             }
             if (Warrior.Health > 0)
             {
-                Console.WriteLine($"{Warrior.Name} наносит урон {WarriorArcher.Name}у");
-                WarriorArcher.GetDamage(Warrior.InflictDamage());
+                Console.WriteLine($"{Warrior.Name} наносит урон {Archer.Name}у");
+                Archer.GetDamage(Warrior.InflictDamage());
             }
 
             Console.WriteLine();
@@ -29,9 +29,9 @@ namespace Action
             {
                 Console.WriteLine($"{Warrior.Name} - {Warrior.Health} xp");
             }
-            if (WarriorArcher.Health > 0)
+            if (Archer.Health > 0)
             {
-                Console.WriteLine($"{WarriorArcher.Name} - {WarriorArcher.Health} xp");
+                Console.WriteLine($"{Archer.Name} - {Archer.Health} xp");
             }
         }
         public static void MageVSWarior(Mage Mage, Warrior Warrior)
@@ -60,12 +60,17 @@ namespace Action
                 Console.WriteLine($"{Mage.Name} - {Mage.Health} xp");
             }
         }
-        public static void ArcherVSMageVsWarrior(Mage Mage, Warrior Warrior, Archer WarriorArcher, Healer Healer)
+        public static void ArcherVSMageVsWarrior(Mage Mage, Warrior Warrior, Archer Archer, Healer Healer)
         {
             Thread.Sleep(500);
             Console.WriteLine();
             int RandomFightOne = new Random().Next(1,3);
-            int RandomHealingOne = new Random().Next(1, 5);
+            int RandomHealingOne = new Random().Next(1, 2);
+            int RandomHealingTwo = new Random().Next(1, 5);
+            int RandomHealingThree = new Random().Next(1, 5);
+            int RandomHealingFour = new Random().Next(1, 5);
+            int RandomHealingFive = new Random().Next(1, 5);
+            int RandomHealingSix = new Random().Next(1, 5);
             if (RandomFightOne == 1)
             {
                 if (Mage.Health > 0)
@@ -73,19 +78,29 @@ namespace Action
                     Console.WriteLine($"{Mage.Name} наносит урон {Warrior.Name}у"); // Маг наносит Воину
                     Warrior.GetDamage(Mage.InflictDamage());
                 }
+                if (RandomHealingOne == 1)
+                {
+                    if (Healer.Health > 0)
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Warrior.Name}а"); // Хилер хилит Воина
+                        Warrior.GetHeal(Healer.Healing);
+                    }
+                }
             }
             else
             {
                 if (Mage.Health > 0)
                 {
-                    Console.WriteLine($"{Mage.Name} наносит урон {WarriorArcher.Name}у"); // Маг наносит Лучнику
-                    WarriorArcher.GetDamage(Mage.InflictDamage());
+                    Console.WriteLine($"{Mage.Name} наносит урон {Archer.Name}у"); // Маг наносит Лучнику
+                    Archer.GetDamage(Mage.InflictDamage());
                 }
-
-                if (Healer.Health > 0) // ещё куда-нибудь добавить if
+                if (RandomHealingTwo == 1)
                 {
-                    Console.WriteLine($"{Healer.Name} хилит {WarriorArcher.Name}а"); // Хилер хилит Лучника
-                    WarriorArcher.GetHeal(Healer.Healing);
+                    if (Healer.Health > 0) 
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Archer.Name}а"); // Хилер хилит Лучника
+                        Archer.GetHeal(Healer.Healing);
+                    }
                 }
             }
 
@@ -97,13 +112,29 @@ namespace Action
                     Console.WriteLine($"{Warrior.Name} наносит урон {Mage.Name}у"); //  Воин наносит Магу
                     Mage.GetDamage(Warrior.InflictDamage());
                 }
+                if (RandomHealingThree == 1)
+                {
+                    if (Healer.Health > 0)
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Mage.Name}а"); // Хилер хилит Мага
+                        Mage.GetHeal(Healer.Healing);
+                    }
+                }
             }
             else
             {
                 if (Warrior.Health > 0)
                 {
-                    Console.WriteLine($"{Warrior.Name} наносит урон {WarriorArcher.Name}у"); //  Воин наносит Лучнику
-                    WarriorArcher.GetDamage(Warrior.InflictDamage());
+                    Console.WriteLine($"{Warrior.Name} наносит урон {Archer.Name}у"); //  Воин наносит Лучнику
+                    Archer.GetDamage(Warrior.InflictDamage());
+                }
+                if (RandomHealingFour == 1)
+                {
+                    if (Healer.Health > 0)
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Archer.Name}а"); // Хилер хилит Лучника
+                        Archer.GetHeal(Healer.Healing);
+                    }
                 }
             }
   
@@ -111,18 +142,34 @@ namespace Action
             int RandomFightThree = new Random().Next(1, 3);
             if (RandomFightThree == 1)
             {
-                if (WarriorArcher.Health > 0)
+                if (Archer.Health > 0)
                 {
-                    Console.WriteLine($"{WarriorArcher.Name} наносит урон {Warrior.Name}у"); // Лучник наносит Воину
-                    Warrior.GetDamage(WarriorArcher.InflictDamage());
+                    Console.WriteLine($"{Archer.Name} наносит урон {Warrior.Name}у"); // Лучник наносит Воину
+                    Warrior.GetDamage(Archer.InflictDamage());
+                }
+                if (RandomHealingFive == 1)
+                {
+                    if (Healer.Health > 0)
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Warrior.Name}а"); // Хилер хилит Воина
+                        Warrior.GetHeal(Healer.Healing);
+                    }
                 }
             }
             else
             {
-                if (WarriorArcher.Health > 0)
+                if (Archer.Health > 0)
                 {
-                    Console.WriteLine($"{WarriorArcher.Name} наносит урон {Mage.Name}у"); // Лучник наносит Магу
-                    Mage.GetDamage(WarriorArcher.InflictDamage());
+                    Console.WriteLine($"{Archer.Name} наносит урон {Mage.Name}у"); // Лучник наносит Магу
+                    Mage.GetDamage(Archer.InflictDamage());
+                }
+                if (RandomHealingSix == 1)
+                {
+                    if (Healer.Health > 0)
+                    {
+                        Console.WriteLine($"{Healer.Name} хилит {Mage.Name}а"); // Хилер хилит Мага
+                        Mage.GetHeal(Healer.Healing);
+                    }
                 }
             }
             Console.WriteLine();
@@ -135,9 +182,9 @@ namespace Action
             {
                 Console.WriteLine($"{Mage.Name} - {Mage.Health} xp");
             }
-            if (WarriorArcher.Health > 0)
+            if (Archer.Health > 0)
             {
-                Console.WriteLine($"{WarriorArcher.Name} - {WarriorArcher.Health} xp");
+                Console.WriteLine($"{Archer.Name} - {Archer.Health} xp");
             }
             if (Healer.Health > 0)
             {
