@@ -1,0 +1,13 @@
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.exe
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.deps.json
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.runtimeconfig.json
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.runtimeconfig.dev.json
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.dll
+C:\Users\152017\Desktop\Игар\Игра\Игра\bin\Debug\netcoreapp3.1\Игра.pdb
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.csprojAssemblyReference.cache
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.AssemblyInfoInputs.cache
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.AssemblyInfo.cs
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.csproj.CoreCompileInputs.cache
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.dll
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.pdb
+C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.genruntimeconfig.cache

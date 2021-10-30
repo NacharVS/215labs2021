@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Labs215Y2K
+
+namespace Игра
 {
-    class Unit
+    class Combat_Units : Peaceful
     {
+       
+        
     }
 }
