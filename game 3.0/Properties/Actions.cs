@@ -90,10 +90,10 @@ namespace game_3._0
 
 
 
-        public void BuildingGetDamage(Buildings buildings, Unit unit)
-        {
-            buildings.GetDamageB(150, unit);
-        }
+        //public void BuildingGetDamage(Buildings buildings, Unit unit)
+        //{
+        //    buildings.GetDamageB(150, unit);
+        //}
 
 
 

@@ -8,12 +8,12 @@ namespace game_3._0
 {
     class Destroyer:Unit
     {
-        private int _damageForB;
+        //private int _damageForB;
 
-        public int DamageForB { get => _damageForB; set => _damageForB = value; }
-        public int InflictDamageB()
-        {
-            return DamageForB;
-        }
+        //public int DamageForB { get => _damageForB; set => _damageForB = value; }
+        //public int InflictDamageB()
+        //{
+        //    return DamageForB;
+        //}
     }
 }

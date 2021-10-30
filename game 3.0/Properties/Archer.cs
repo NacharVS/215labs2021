@@ -10,7 +10,7 @@ namespace game_3._0
     {
         private int _arrows;
         public int Arrows { get => _arrows; set => _arrows = value; }
-
+        //
 
 
     }
