@@ -73,18 +73,17 @@ namespace Labs215Y2K
             {
                 array[i] = new Random().Next(0, 10);
                 Console.Write($" {array[i]} ");
-                if (number1 > array[i])
+                if (array[i] < array[i++])
                 {
-                    number1++;
-                    
+                    Console.WriteLine(array[i]);
                 }
-                if (array[i]> number1)
+                else
                 {
-                    Console.Write("");
+                    Console.Write(array[i++]);
                 }
             }
             Console.WriteLine();
-            Console.WriteLine(number1);
+            
         }
     }
 }
