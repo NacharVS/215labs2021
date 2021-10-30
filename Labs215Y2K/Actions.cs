@@ -22,7 +22,7 @@ namespace Action
                 Console.WriteLine($"{Warrior.Name} наносит урон {Archer.Name}у");
                 Archer.GetDamage(Warrior.InflictDamage());
             }
-
+            
             Console.WriteLine();
 
             if (Warrior.Health > 0)
