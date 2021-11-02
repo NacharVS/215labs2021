@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGame 2.0", "SuperGame 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game 3.0", "game 3.0\game 3.0.csproj", "{97527B8E-55FD-4104-8AA0-0D2F21E120CF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[SS ] ScamShop", "[SS ] ScamShop\[SS ] ScamShop.csproj", "{6B6F7AAF-492E-4216-98D4-84A62759169A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
