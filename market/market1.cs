@@ -4,37 +4,37 @@ using System.Text;
 
 namespace market
 {
-   
-    
-        class Market
+// не получается что-то :( 
+// дома попробую, может лучше будет.. Не понимаю как мой массив сдлать таким же как шаблон.
+    class Market
+    {
+        static string a11 = "1 - Просмотреть список товаров";
+        static string a22 = "2 - Перейти в корзину";
+        public static void catalog(int[] productschoose, int[] priceproducts)
         {
-            static string a11 = "1 - Просмотреть список товаров";
-            static string a22 = "2 - Перейти в корзину";
-            public static void catalog(int[] productschoose, int[] priceproducts)
+            Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
+            Console.WriteLine(a11);
+            Console.WriteLine(a22);
+            string solution = Console.ReadLine();
+            switch (solution)
             {
-                Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
-                Console.WriteLine(a11);
-                Console.WriteLine(a22);
-                string solution = Console.ReadLine();
-                switch (solution)
-                {
-                    case "1":
-                        Console.WriteLine("");
-                        Market.catalog1(productschoose, priceproducts);
-                        break;
-                    case "2":
-                        Console.WriteLine("");
-                        Console.WriteLine("Корзина пуста. Выберите товары");
-                        Console.WriteLine("");
-                        Market.catalog1(productschoose, priceproducts);
-                        break;
-                    default:
-                        Console.WriteLine("");
-                        Console.WriteLine("Ваша итоговая цена равна ");
-                        break;
-                }
-
+                case "1":
+                    Console.WriteLine("");
+                    Market.catalog1(productschoose, priceproducts);
+                    break;
+                case "2":
+                    Console.WriteLine("");
+                    Console.WriteLine("Корзина пуста. Выберите товары");
+                    Console.WriteLine("");
+                    Market.catalog1(productschoose, priceproducts);
+                    break;
+                default:
+                    Console.WriteLine("");
+                    Console.WriteLine("Ваша итоговая цена равна ");
+                    break;
             }
+
+        } 
             public static void catalog1(int[] productschoose, int[] priceproducts)
             {
                 string[] a = new string[10];
