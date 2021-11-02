@@ -2,6 +2,7 @@
 using System.Linq;
 using Units;
 using Action;
+using Labs215Y2K;
 
 namespace Deletor
 {
@@ -24,99 +25,29 @@ namespace Deletor
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
-
-            //UnitsCreator();
-
-            //Console.WriteLine();
-            //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
-            //Magazin.Ashan.catalog();
-            //BuilderPeacful Builder = new BuilderPeacful("Builder", 50, 1, 10, 15, 30, 10);
-            //WoodmanPeacful Woodman = new WoodmanPeacful("Woodman", 60, 1, 10, 15, 40, 15);
-            //MinerPeacful Miner = new MinerPeacful("Miner", 65, 1, 10, 15, 45, 20);
-            //Healer Healer = new Healer("Healer", 100, 100, 5, 15, 10, 25, 10, 50,30,2,50);
-            //Warrior Warrior = new Warrior("Warrior", 100, 100, 30, 50, 50, 20, 45);
-            //MageWarrior Mage = new MageWarrior("Mage", 120, 120, 10, 20, 70, 100, 45, 50, 30, 30);
-            //ArcherWarrior Archer = new ArcherWarrior("Archer", 80, 80, 15, 25, 60, 80, 30, 100, 40, 40, 2);
-
-            //Console.WriteLine("Хотите ли вы видеть характеристики персонажей? 1 - да, 0 - нет");
-            //int pers = int.Parse(Console.ReadLine());
-            //Console.WriteLine();
-
-            //if (pers == 1)
-            //{
-            //    Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.MaxHealth} \t Минимальный урон - {Builder.MinDamage} \t Максимальный урон - {Builder.MaxDamage}  Броня - {Builder.armor}  Скорость - {Builder.speed}  Скорость атаки - {Builder.workspeed}");
-
-            //    Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.MaxHealth} \t Минимальный урон - {Woodman.MinDamage} \t Максимальный урон - {Woodman.MaxDamage}  Броня - {Woodman.armor}  Скорость - { Woodman.speed}  Скорость атаки - {Woodman.workspeed}");
-
-            //    Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.MaxHealth} \t Минимальный урон - {Miner.MinDamage} \t Максимальный урон - {Miner.MaxDamage}  Броня - {Miner.armor}  Скорость - {Miner.speed}  Скорость атаки - {Miner.workspeed}");
-
-            //    Console.WriteLine($"Имя - {Warrior.name} \t Здоровье - {Warrior.MaxHealth}  Минимальный урон - {Warrior.MinDamage} \t Максимальный урон - {Warrior.MaxDamage}  Броня - {Warrior.armor}  Скорость - {Warrior.speed}  Скорость атаки - {Warrior.atackspeed}");
-
-            //    Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.MaxHealth}  Минимальный урон - {Mage.MinDamage} \t Максимальный урон - {Mage.MaxDamage}  Броня - {Mage.armor}  Скорость - {Mage.speed}  Скорость атаки - {Mage.atackspeed}");
-
-            //    Console.WriteLine($"Имя - {Healer.name} \t Здоровье - {Healer.MaxHealth}  Минимальный урон - {Healer.MinDamage} \t Максимальный урон - {Healer.MaxDamage}  Броня - {Healer.armor}  Скорость - {Healer.speed}  Восстанавливает xp - {Healer.Healing} ");
-
-            //    Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.MaxHealth} \t Минимальный урон - {Archer.MinDamage} \t Максимальный урон - {Archer.MaxDamage}  Броня - {Archer.armor}  Скорость - {Archer.speed}  Скорость атаки - {Archer.atackspeed}");
-            //}
-            //Console.WriteLine();
-
-            //BuilderPeacful.Moving(Builder.name); WoodmanPeacful.Moving(Woodman.name); MinerPeacful.Moving(Miner.name);
-            //Console.WriteLine();
-            //Console.WriteLine();
-
-            //ArcherWarrior.ArcherDamage(Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.MinDamage, Archer.MaxDamage , Warrior.name,Warrior.MaxHealth ,Archer.CurrentHealth, Warrior.armor, Archer.CurrentArrows,Warrior.CurrentHealth);
-
-            //Healer.MageVSArcherAndHealer(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows,Healer.Healing);
-
-            //MageWarrior.MageVSArcher(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows);
-
-
-            Archer Archer = new Archer();
-            Warrior Warrior = new Warrior();
-            Mage Mage = new Mage();
-            Healer Healer = new Healer();
-
-            Archer.Name = "Лучник"; Warrior.Name = "Воин"; Mage.Name = "Маг"; Healer.Name = "Целитель";
-
-            Archer.MinDamage = 15; Archer.MaxDamage = 20; Archer.Health = 40;
-            Warrior.MinDamage = 10; Warrior.MaxDamage = 18; Warrior.Health = 50;
-            Mage.MinDamage = 13; Mage.MaxDamage = 19; Mage.Health = 60;
-            Healer.Healing = 20; Healer.Health = 55;
-
-            Console.WriteLine("Бой между Лучником и Воином, если хотите посмотреть напишите 1");
-            Console.WriteLine("Бой между Магом и Воином, если хотите посмотреть напишите 2");
-            Console.WriteLine("Бой между Магом, Воином и Лучником, если хотите посмотреть напишите 3");
-
-            int choice = int.Parse(Console.ReadLine());
-            Console.WriteLine();
-
-            if (choice == 1)
+            NewAshanUpdate[] Ashan = new NewAshanUpdate[11];
+            int CounterOfProducts = 0;
+            int CounterOfCyclices = 1;
+            Ashan[0].Names = "1. Гречка"; Ashan[1].Names = "2. Макароны"; Ashan[3].Names = "3. Молоко"; Ashan[4].Names = "4. Хлеб"; Ashan[5].Names = "5. Батон"; Ashan[6].Names = "6. Конфеты"; Ashan[7].Names = "7. Чипсы"; Ashan[8].Names = "8. Сухари";  Ashan[9].Names = "9. Соленый попкорн"; Ashan[10].Names = "10. Семечки Белочка";
+            Ashan[1].Price = 130; Ashan[2].Price = 250; Ashan[3].Price = 50; Ashan[4].Price = 30; Ashan[5].Price = 30; Ashan[6].Price = 150; Ashan[7].Price = 100; Ashan[8].Price = 50; Ashan[9].Price = 150; Ashan[10].Price = 200;
+            while (CounterOfCyclices != 2)
             {
-                Console.WriteLine($"Бой между {Archer.Name} и {Warrior.Name}");
-                while (Archer.Health != 0 && Warrior.Health != 0)
+                Console.WriteLine("Хотите приобрести товар?? 1 - Да, 2 - Нет");
+                CounterOfCyclices = int.Parse(Console.ReadLine());
+                if (CounterOfCyclices == 1)
                 {
-                    Actions.WarriorVSArcher(Archer, Warrior);
+                    Console.WriteLine("Введите номер товара, который вам нужен");
+                    Ashan[CounterOfProducts].NumberOfProduct1 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Введите кол-во товара");
+                    Ashan[CounterOfProducts].Count = int.Parse(Console.ReadLine());
+                    CounterOfProducts++;
+                }
+                else
+                {
+                    break;
                 }
             }
-
-            if (choice == 2)
-            {
-                Console.WriteLine($"Бой между {Mage.Name} и {Warrior.Name}");
-                while (Mage.Health != 0 && Warrior.Health != 0)
-                {
-                    Actions.MageVSWarior(Mage, Warrior);
-                }
-            }
-
-            if (choice == 3)
-            {
-                Console.WriteLine($"Бой между {Mage.Name}, {Warrior.Name} и {Archer.Name} (присутствует {Healer.Name})");
-                while (Mage.Health != 0 && Warrior.Health != 0 && Archer.Health != 0)
-                {
-                    Actions.ArcherVSMageVsWarrior(Mage, Warrior, Archer, Healer);
-                }
-            }
-
+            
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
@@ -244,6 +175,98 @@ namespace Deletor
 
         //    Units.Archers Archer = new Units.Archers("Builder", 50, 10, 5, 30, 10);
         //    Console.WriteLine($"{Builder.name} {.health} {.damage} { .armor} { .speed} { .atackspeed}");
+        //}
+
+        //UnitsCreator();
+
+        //Console.WriteLine();
+        //Labs215Y2K.ArrayOperations.ArrayGeneration(arraytwo,5,500);
+        //Magazin.Ashan.catalog();
+        //BuilderPeacful Builder = new BuilderPeacful("Builder", 50, 1, 10, 15, 30, 10);
+        //WoodmanPeacful Woodman = new WoodmanPeacful("Woodman", 60, 1, 10, 15, 40, 15);
+        //MinerPeacful Miner = new MinerPeacful("Miner", 65, 1, 10, 15, 45, 20);
+        //Healer Healer = new Healer("Healer", 100, 100, 5, 15, 10, 25, 10, 50,30,2,50);
+        //Warrior Warrior = new Warrior("Warrior", 100, 100, 30, 50, 50, 20, 45);
+        //MageWarrior Mage = new MageWarrior("Mage", 120, 120, 10, 20, 70, 100, 45, 50, 30, 30);
+        //ArcherWarrior Archer = new ArcherWarrior("Archer", 80, 80, 15, 25, 60, 80, 30, 100, 40, 40, 2);
+
+        //Console.WriteLine("Хотите ли вы видеть характеристики персонажей? 1 - да, 0 - нет");
+        //int pers = int.Parse(Console.ReadLine());
+        //Console.WriteLine();
+
+        //if (pers == 1)
+        //{
+        //    Console.WriteLine($"Имя - {Builder.name} \t Здоровье - {Builder.MaxHealth} \t Минимальный урон - {Builder.MinDamage} \t Максимальный урон - {Builder.MaxDamage}  Броня - {Builder.armor}  Скорость - {Builder.speed}  Скорость атаки - {Builder.workspeed}");
+
+        //    Console.WriteLine($"Имя - {Woodman.name} \t Здоровье - {Woodman.MaxHealth} \t Минимальный урон - {Woodman.MinDamage} \t Максимальный урон - {Woodman.MaxDamage}  Броня - {Woodman.armor}  Скорость - { Woodman.speed}  Скорость атаки - {Woodman.workspeed}");
+
+        //    Console.WriteLine($"Имя - {Miner.name} \t Здоровье - {Miner.MaxHealth} \t Минимальный урон - {Miner.MinDamage} \t Максимальный урон - {Miner.MaxDamage}  Броня - {Miner.armor}  Скорость - {Miner.speed}  Скорость атаки - {Miner.workspeed}");
+
+        //    Console.WriteLine($"Имя - {Warrior.name} \t Здоровье - {Warrior.MaxHealth}  Минимальный урон - {Warrior.MinDamage} \t Максимальный урон - {Warrior.MaxDamage}  Броня - {Warrior.armor}  Скорость - {Warrior.speed}  Скорость атаки - {Warrior.atackspeed}");
+
+        //    Console.WriteLine($"Имя - {Mage.name} \t Здоровье - {Mage.MaxHealth}  Минимальный урон - {Mage.MinDamage} \t Максимальный урон - {Mage.MaxDamage}  Броня - {Mage.armor}  Скорость - {Mage.speed}  Скорость атаки - {Mage.atackspeed}");
+
+        //    Console.WriteLine($"Имя - {Healer.name} \t Здоровье - {Healer.MaxHealth}  Минимальный урон - {Healer.MinDamage} \t Максимальный урон - {Healer.MaxDamage}  Броня - {Healer.armor}  Скорость - {Healer.speed}  Восстанавливает xp - {Healer.Healing} ");
+
+        //    Console.WriteLine($"Имя - {Archer.name} \t Здоровье - {Archer.MaxHealth} \t Минимальный урон - {Archer.MinDamage} \t Максимальный урон - {Archer.MaxDamage}  Броня - {Archer.armor}  Скорость - {Archer.speed}  Скорость атаки - {Archer.atackspeed}");
+        //}
+        //Console.WriteLine();
+
+        //BuilderPeacful.Moving(Builder.name); WoodmanPeacful.Moving(Woodman.name); MinerPeacful.Moving(Miner.name);
+        //Console.WriteLine();
+        //Console.WriteLine();
+
+        //ArcherWarrior.ArcherDamage(Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.MinDamage, Archer.MaxDamage , Warrior.name,Warrior.MaxHealth ,Archer.CurrentHealth, Warrior.armor, Archer.CurrentArrows,Warrior.CurrentHealth);
+
+        //Healer.MageVSArcherAndHealer(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows,Healer.Healing);
+
+        //MageWarrior.MageVSArcher(Mage.name, Mage.MaxHealth, Mage.CurrentHealth, Mage.MinDamage, Mage.MaxDamage, Archer.name, Archer.MinRangeDamage, Archer.MaxRangeDamage, Archer.CurrentHealth, Archer.CurrentArrows);
+
+
+        //Archer Archer = new Archer();
+        //Warrior Warrior = new Warrior();
+        //Mage Mage = new Mage();
+        //Healer Healer = new Healer();
+
+        //Archer.Name = "Лучник"; Warrior.Name = "Воин"; Mage.Name = "Маг"; Healer.Name = "Целитель";
+
+        //Archer.MinDamage = 15; Archer.MaxDamage = 20; Archer.Health = 40;
+        //Warrior.MinDamage = 10; Warrior.MaxDamage = 18; Warrior.Health = 50;
+        //Mage.MinDamage = 13; Mage.MaxDamage = 19; Mage.Health = 60;
+        //Healer.Healing = 20; Healer.Health = 55;
+
+        //Console.WriteLine("Бой между Лучником и Воином, если хотите посмотреть напишите 1");
+        //Console.WriteLine("Бой между Магом и Воином, если хотите посмотреть напишите 2");
+        //Console.WriteLine("Бой между Магом, Воином и Лучником, если хотите посмотреть напишите 3");
+
+        //int choice = int.Parse(Console.ReadLine());
+        //Console.WriteLine();
+
+        //if (choice == 1)
+        //{
+        //    Console.WriteLine($"Бой между {Archer.Name} и {Warrior.Name}");
+        //    while (Archer.Health != 0 && Warrior.Health != 0)
+        //    {
+        //        Actions.WarriorVSArcher(Archer, Warrior);
+        //    }
+        //}
+
+        //if (choice == 2)
+        //{
+        //    Console.WriteLine($"Бой между {Mage.Name} и {Warrior.Name}");
+        //    while (Mage.Health != 0 && Warrior.Health != 0)
+        //    {
+        //        Actions.MageVSWarior(Mage, Warrior);
+        //    }
+        //}
+
+        //if (choice == 3)
+        //{
+        //    Console.WriteLine($"Бой между {Mage.Name}, {Warrior.Name} и {Archer.Name} (присутствует {Healer.Name})");
+        //    while (Mage.Health != 0 && Warrior.Health != 0 && Archer.Health != 0)
+        //    {
+        //        Actions.ArcherVSMageVsWarrior(Mage, Warrior, Archer, Healer);
+        //    }
         //}
     }
 }
