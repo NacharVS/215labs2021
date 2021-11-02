@@ -26,9 +26,10 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
             NewAshanUpdate[] Ashan = new NewAshanUpdate[11];
+            NewAshanUpdate[] Names = new NewAshanUpdate[11];
             int CounterOfProducts = 0;
             int CounterOfCyclices = 1;
-            Ashan[0].Names = "1. Гречка"; Ashan[1].Names = "2. Макароны"; Ashan[3].Names = "3. Молоко"; Ashan[4].Names = "4. Хлеб"; Ashan[5].Names = "5. Батон"; Ashan[6].Names = "6. Конфеты"; Ashan[7].Names = "7. Чипсы"; Ashan[8].Names = "8. Сухари";  Ashan[9].Names = "9. Соленый попкорн"; Ashan[10].Names = "10. Семечки Белочка";
+            Names[1].Names = "1. Гречка"; Names[2].Names = "2. Макароны"; Ashan[3].Names = "3. Молоко"; Ashan[4].Names = "4. Хлеб"; Ashan[5].Names = "5. Батон"; Ashan[6].Names = "6. Конфеты"; Ashan[7].Names = "7. Чипсы"; Ashan[8].Names = "8. Сухари";  Ashan[9].Names = "9. Соленый попкорн"; Ashan[10].Names = "10. Семечки Белочка";
             Ashan[1].Price = 130; Ashan[2].Price = 250; Ashan[3].Price = 50; Ashan[4].Price = 30; Ashan[5].Price = 30; Ashan[6].Price = 150; Ashan[7].Price = 100; Ashan[8].Price = 50; Ashan[9].Price = 150; Ashan[10].Price = 200;
             while (CounterOfCyclices != 2)
             {
@@ -267,6 +268,36 @@ namespace Deletor
         //    {
         //        Actions.ArcherVSMageVsWarrior(Mage, Warrior, Archer, Healer);
         //    }
+        //}
+
+        //static void Main(string[] args)
+        //{
+        //    Student[] students = new Student[3];
+        //    Student student1 = new Student();
+        //    student1.name = "Valeriy";
+        //    student1.group = 222;
+        //    student1.age = 16;
+        //    Student student2 = new Student();
+        //    student2.name = "Ivan";
+        //    student2.group = 223;
+        //    student2.age = 17;
+        //    Student student3 = new Student();
+        //    student3.name = "Sergey";
+        //    student3.group = 221;
+        //    student3.age = 18;
+
+        //    students[0] = student1;
+        //    students[1] = student2;
+        //    students[2] = student3;
+
+        //    foreach (var item in students)
+        //    {
+        //        if (item.age >= 18)
+        //            Console.WriteLine(item.name);
+        //    }
+
+
+
         //}
     }
 }
