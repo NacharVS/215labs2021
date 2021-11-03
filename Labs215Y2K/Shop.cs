@@ -33,6 +33,11 @@ namespace Labs215Y2K
             }
 
         }
+        class a
+        {
+            public static a;
+        }
+    
         public static void catalog1(int[] productschoose, int[] priceproducts)
         {
             string[] a = new string[10];
