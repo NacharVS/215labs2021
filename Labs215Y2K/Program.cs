@@ -25,12 +25,20 @@ namespace Deletor
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
-            NewAshanUpdate[] Ashan = new NewAshanUpdate[11];
-            NewAshanUpdate[] Names = new NewAshanUpdate[11];
+            NewAshanUpdate[] Ashan = new NewAshanUpdate[10];
             int CounterOfProducts = 0;
             int CounterOfCyclices = 1;
-            Names[1].Names = "1. Гречка"; Names[2].Names = "2. Макароны"; Ashan[3].Names = "3. Молоко"; Ashan[4].Names = "4. Хлеб"; Ashan[5].Names = "5. Батон"; Ashan[6].Names = "6. Конфеты"; Ashan[7].Names = "7. Чипсы"; Ashan[8].Names = "8. Сухари";  Ashan[9].Names = "9. Соленый попкорн"; Ashan[10].Names = "10. Семечки Белочка";
-            Ashan[1].Price = 130; Ashan[2].Price = 250; Ashan[3].Price = 50; Ashan[4].Price = 30; Ashan[5].Price = 30; Ashan[6].Price = 150; Ashan[7].Price = 100; Ashan[8].Price = 50; Ashan[9].Price = 150; Ashan[10].Price = 200;
+            int CounterOfFilling = 0;
+            int CounterOfFilling2 = 0;
+            string[] catalog = new string[] { "0. Гречка", "1. Макароны", "2. Молоко", "3. Хлеб", "4. Батон", "5. Конфеты", "6. Чипсы", "7. Сухари", "8. Соленый попкорн", "9. Семечки Белочка"};
+            Ashan[CounterOfFilling] = new NewAshanUpdate();
+            for (CounterOfFilling = 0; CounterOfFilling < catalog.Length; CounterOfFilling++)
+            {
+                Ashan[CounterOfFilling] = new NewAshanUpdate();
+                Ashan[CounterOfFilling].Names = catalog[CounterOfFilling];
+                Console.WriteLine(Ashan[CounterOfFilling]);
+            }
+            //Ashan[CounterOfFilling].Price
             while (CounterOfCyclices != 2)
             {
                 Console.WriteLine("Хотите приобрести товар?? 1 - Да, 2 - Нет");
