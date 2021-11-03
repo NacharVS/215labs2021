@@ -3,11 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace Shop7._0
 {
     class Program
     {
+       
+
+
+        public static void realbasket(Storage[] storage, int numb, int trash, int[] trasharray, int totalsum, int [] trasharrayforcount)
+        {
+
+            Console.WriteLine("Ваша корзина:");
+            int test = 0;
+            for (int i = 0; i < numb; i++)
+            {
+                test = trasharray[i + 1];
+                Console.WriteLine(storage[test].name + " = " + storage[test].prices * trasharrayforcount[i] + "\t"  + " руб " + $"х {trasharrayforcount[i]}");
+
+            }
+
+            
+            Console.WriteLine("Итого к оплате: " + totalsum + " руб");
+
+        }
         static void Main(string[] args)
         {
             Storage[] storage = new Storage[10];
@@ -72,20 +90,19 @@ namespace Shop7._0
             storage[8] = product9;
             storage[9] = product10;
 
-            Console.WriteLine(storage[0].name);
-           
+            int numb = 0;
 
-            Buy(storage);
+
+            Basket(storage, numb);
+            //realbasket(storage, numb, ref selection);
+            //Buy(storage);
             Console.ReadKey();
 
 
         }
 
-        public static void Buy(Storage [] storage)
+        public static void Buy(Storage[] storage)
         {
-
-
-
 
             int z = 1;
             for (int i = 0; i < storage.Length; i++)
@@ -104,9 +121,134 @@ namespace Shop7._0
 
 
 
-        public static void TRASH()
+        public static void Basket(Storage[] storage, int numb)
         {
+            int totalsum = 0;
+            int localsum = 0;
+            int grammcount = 0;
+            Console.WriteLine("Приветствуем в нашем онлайн-магазине 'ScamShop'");
+            Console.WriteLine("На данный момент Ваша корзина пуста. Давайте перейдём к покупкам!");
 
+            string o;
+            int besk = 1;
+            int[] trasharray = new int[10];
+            int[] trasharrayforcount = new int[5];
+            int trash = 0;
+            int trash2 = -1;
+
+            while (besk == 1)
+            {
+                trash++;
+                numb++;
+                trash2++;
+
+                Console.WriteLine("Введите номер товара, который хотите приобрести");
+                int a = int.Parse(Console.ReadLine());
+                a -= 1;
+                trasharray[trash] = a;
+                //Program sel1 = new Program();
+                //sel1.name2 = storage[a].name;
+                //Program sel2 = new Program();
+                //sel2.name2 = storage[a].name 
+
+                if (a >= 0 && a < 10)
+                {
+
+                    if (a % 2 == 0)
+                    {
+                        Console.WriteLine("Введите количество приобретаемого товара. Цена указана за штуку.");
+                        int count = int.Parse(Console.ReadLine());
+
+
+                        trasharrayforcount[trash2] = count; // test
+
+
+
+                        localsum += storage[a].prices* count;
+                        totalsum += localsum;
+                        Console.WriteLine("Вы добавили в корзину:" + storage[a].name + "\t" + "х" + count + " = " + localsum + " руб");
+                        localsum = 0;
+
+
+                    }
+                    if (a % 2 != 0)
+                    {
+
+                        Console.WriteLine("Введите количество грамм, кратное 100.");
+                        grammcount = int.Parse(Console.ReadLine());
+
+
+                      
+
+                        if (grammcount % 100 == 0)
+                        {
+                            trasharrayforcount[trash2] = grammcount/100; // test
+                            localsum += storage[a].prices * grammcount / 100;
+
+                            totalsum += localsum;
+                            Console.WriteLine("Вы добавили в корзину:" + storage[a].name + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
+                            localsum = 0;
+
+                        }
+
+                        else
+                        {
+                            Console.WriteLine("Ошибка! Вы ввели НЕВЕРНОЕ число. Количество грамм ДОЛЖНО быть кратно сотне.");
+                            Console.WriteLine("Введите количество грамм, кратное 100.");
+                            grammcount = int.Parse(Console.ReadLine());
+                            trasharrayforcount[trash2] = grammcount / 100; // test
+                            if (grammcount % 100 == 0)
+                            {
+                                localsum += storage[a].prices * grammcount / 100;
+                                totalsum += localsum;
+
+                                Console.WriteLine("Вы добавили в корзину:" + storage[a].name + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
+                                localsum = 0;
+
+
+                            }
+                            if (grammcount % 100 != 0)
+                            {
+                                Console.WriteLine("Ошибка! Вы ввели НЕВЕРНОЕ число.Количество грамм ДОЛЖНО быть кратно сотне.");
+                                Console.WriteLine("Введите количество грамм, кратное 100.");
+                                grammcount = int.Parse(Console.ReadLine());
+                                trasharrayforcount[trash2] = grammcount / 100; // test
+                                if (grammcount % 100 == 0)
+                                {
+                                    localsum += storage[a].prices * grammcount / 100;
+                                    totalsum += localsum;
+
+                                    Console.WriteLine("Вы добавили в корзину:" + storage[a].name + "\t" + "х " + grammcount + " г" + " = " + localsum + " руб");
+                                    localsum = 0;
+                                }
+                            }
+                        }
+                    }
+
+
+                }
+                else
+                    Console.WriteLine("Ошибка! Введите число от 1 до 10, предварительно перезапустив программу. У нас нет столько ассортимента!");
+
+                Console.WriteLine("Введите 'Да', если хотите продолжить покупки");
+                Console.WriteLine("Введите 'Нет', если хотите прекратить покупки.");
+
+
+                o = Console.ReadLine();
+                if (o == "Да")
+                    continue;
+
+                if (o == "Нет")
+                {
+                    Console.WriteLine($"Итого к оплате: {totalsum} рублей");
+
+                    break;
+                }
+
+            }
+
+            realbasket(storage, numb, trash, trasharray, totalsum, trasharrayforcount);
         }
     }
 }
+
