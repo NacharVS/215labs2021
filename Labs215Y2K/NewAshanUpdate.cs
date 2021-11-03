@@ -27,7 +27,7 @@ namespace Labs215Y2K
         public int Price { get => _Price; set => _Price = value; }
         public int Count { get => _Count; set => _Count = value; }
         public int SumPrice { get => _SumPrice; set => _SumPrice = value; }
-        public int NumberOfProduct1 { get => _NumberOfProduct; set => _NumberOfProduct = value; }
+        public int NumberOfProduct { get => _NumberOfProduct; set => _NumberOfProduct = value; }
 
         internal void Products()
         {
