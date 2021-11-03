@@ -4,8 +4,8 @@ using System.Text;
 
 namespace market
 {
-// не получается что-то :( 
-// дома попробую, может лучше будет.. Не понимаю как мой массив сдлать таким же как шаблон.
+    // созданный новый класс не виден тут, из-за этого не получается сделать новый массив на основе шаблона...
+ 
     class Market
     {
         static string a11 = "1 - Просмотреть список товаров";
@@ -34,9 +34,11 @@ namespace market
                     break;
             }
 
-        } 
-            public static void catalog1(int[] productschoose, int[] priceproducts)
+        }
+
+        public static void catalog1(int[] productschoose, int[] priceproducts)
             {
+           
                 string[] a = new string[10];
                 for (int j = 0; j < 10; j++)
                 {
