@@ -16,13 +16,9 @@ namespace Labs215Y2K
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
 
-            NewAshan[] Ashan = new NewAshan[11];
-            NewAshan Product1 = new NewAshan(); NewAshan Product2 = new NewAshan(); NewAshan Product3 = new NewAshan(); NewAshan Product4 = new NewAshan(); NewAshan Product5 = new NewAshan();
-            NewAshan Product6 = new NewAshan(); NewAshan Product7 = new NewAshan(); NewAshan Product8 = new NewAshan(); NewAshan Product9 = new NewAshan(); NewAshan Product10 = new NewAshan();
+            
 
-            Product1.Names = "1. Гречка"; Product2.Names = "2. Макароны";
-            Product1.Price = 130; 
-        }
+         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;
