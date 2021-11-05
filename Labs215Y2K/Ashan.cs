@@ -46,6 +46,7 @@ namespace Magazin
             Console.WriteLine("Для продолжения введите - 1, для завершения - 0");
             yesno = int.Parse(Console.ReadLine());
             int counter = 0;
+
             if (yesno == 1)
             {
                 Labs215Y2K.Program.magaz(numberofproduct, yesno, catalog, korzina, counter, cycleoperation, countofproduct, korzinakolvo, price, Sum, sumtwo, korzinaprice);
