@@ -11,6 +11,7 @@ namespace Labs215Y2K
         private int _Count;
         private int _SumPrice;
         private string _NumberOfProduct;
+        private float _SumPrices;
 
         public string Names
         {
@@ -28,6 +29,7 @@ namespace Labs215Y2K
         public int Count { get => _Count; set => _Count = value; }
         public int SumPrice { get => _SumPrice; set => _SumPrice = value; }
         public string NumberOfProduct { get => _NumberOfProduct; set => _NumberOfProduct = value; }
+        public float SumPrices { get => _SumPrices; set => _SumPrices = value; }
 
         internal void Products()
         {

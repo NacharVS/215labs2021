@@ -26,7 +26,7 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
             int ArrayRange = 0;
-            NewAshanUpdate[] Ashan = new NewAshanUpdate[10];
+            NewAshanUpdate[] Ashan = new NewAshanUpdate[100];
             NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
             int CounterOfProducts = 0;
             int CounterOfFilling = 0;
@@ -47,6 +47,7 @@ namespace Deletor
             while (CounterOfCyclices != 2)
             {
                 Korzina[CounterOfProducts] = new NewAshanUpdate();
+                Ashan[CounterOfProducts] = new NewAshanUpdate();
                 Console.WriteLine("Хотите приобрести товар? 1 - Да, 2 - Нет");
                 CounterOfCyclices = int.Parse(Console.ReadLine());
                 if (CounterOfCyclices == 1)
@@ -57,6 +58,20 @@ namespace Deletor
                     Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
                     Console.WriteLine("Введите кол-во товара");
                     Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
+                    if (KorzinaNumber-1 < 6)
+                    {
+                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * Ashan[CounterOfProducts].Count;
+                    }
+                    Console.WriteLine();
+                    if (KorzinaNumber > 5 && Ashan[CounterOfProducts].Count % 100 == 0)
+                    {
+                        int check = Ashan[CounterOfProducts].Count / 100;
+                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * check;
+                    }
+                    //        else
+                    //{
+                    //    Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
+                    //}
                 }
                 else
                 {
@@ -67,7 +82,8 @@ namespace Deletor
             for (int i = 0; i < ArrayRange; i++)
             {
                 Console.Write($"{Korzina[i].NumberOfProduct}");
-                Console.WriteLine($"\t{Korzina[i].Count}");
+                Console.Write($"\t{Korzina[i].Count} ");
+                Console.WriteLine($"\t{Korzina[0].Price}");
             }
 
         }
