@@ -4,14 +4,39 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Shop7._0
+namespace ScamShop
 {
     class Storage
     {
-        public string name;
-        public int prices;
-        public int number;
-        public int numbergramm;
+            private string _name;
+            private double _prices;
+            private double _quantity;
 
+        public Storage(double prices, double quantity, string name)
+        {
+            Prices = prices;
+            Quantity = quantity;
+            Name = name;
+
+        }
+
+
+        public double Prices
+        {
+            get
+            {
+                return _prices;
+            }
+
+            set
+            {
+                _prices = value;
+            }
+        }
+
+        public string Name { get => _name; set => _name = value; }
+        public double Quantity { get => _quantity; set => _quantity = value; }
     }
+
+
 }
