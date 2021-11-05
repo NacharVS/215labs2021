@@ -10,7 +10,7 @@ namespace Labs215Y2K
         private int _Price;
         private int _Count;
         private int _SumPrice;
-        private int _NumberOfProduct;
+        private string _NumberOfProduct;
 
         public string Names
         {
@@ -27,14 +27,14 @@ namespace Labs215Y2K
         public int Price { get => _Price; set => _Price = value; }
         public int Count { get => _Count; set => _Count = value; }
         public int SumPrice { get => _SumPrice; set => _SumPrice = value; }
-        public int NumberOfProduct { get => _NumberOfProduct; set => _NumberOfProduct = value; }
+        public string NumberOfProduct { get => _NumberOfProduct; set => _NumberOfProduct = value; }
 
         internal void Products()
         {
-            Console.WriteLine("Введите номер товара, который вам нужен");
-            _NumberOfProduct = int.Parse(Console.ReadLine());
-            Console.WriteLine("Введите кол-во товара");
-            _Count = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введите номер товара, который вам нужен");
+            //_NumberOfProduct = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Введите кол-во товара");
+            //_Count = int.Parse(Console.ReadLine());
         }
     }
 }

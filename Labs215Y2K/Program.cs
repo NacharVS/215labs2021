@@ -25,12 +25,12 @@ namespace Deletor
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
-            int ArrayRange = 1;
+            int ArrayRange = 0;
             NewAshanUpdate[] Ashan = new NewAshanUpdate[10];
-            NewAshanUpdate[] Korzina = new NewAshanUpdate[ArrayRange];
+            NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
             int CounterOfProducts = 0;
-            int CounterOfCyclices = 1;
             int CounterOfFilling = 0;
+            int CounterOfCyclices = 1;
             string[] catalog = new string[] { "1. Гречка", "2. Макароны", "3. Молоко", "4. Хлеб", "5. Батон", "6. Конфеты", "7. Чипсы", "8. Сухари", "9. Попкорн", "10. Семечки"};
             int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
             Ashan[CounterOfFilling] = new NewAshanUpdate();
@@ -51,9 +51,10 @@ namespace Deletor
                 CounterOfCyclices = int.Parse(Console.ReadLine());
                 if (CounterOfCyclices == 1)
                 {
-                    ArrayRange+=10;
+                    ArrayRange+=1;
                     Console.WriteLine("Введите номер товара, который вам нужен");
-                    Korzina[CounterOfProducts].NumberOfProduct = int.Parse(Console.ReadLine());
+                    int KorzinaNumber = int.Parse(Console.ReadLine())-1;
+                    Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
                     Console.WriteLine("Введите кол-во товара");
                     Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
                 }
@@ -63,7 +64,7 @@ namespace Deletor
                 }
                 CounterOfProducts++;
             }
-            for (int i = 0; i < Korzina.Length; i++)
+            for (int i = 0; i < ArrayRange; i++)
             {
                 Console.Write($"{Korzina[i].NumberOfProduct}");
                 Console.WriteLine($"\t{Korzina[i].Count}");
