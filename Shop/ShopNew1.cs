@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Labs215Y2K
+namespace Shop
 {
-    class ShopNew : Shop
+    class ShopNew1 : ShopInfo
     {
-        public ShopNew(string name1, double quantity1, double price1, double discount1)
+        public ShopNew1(string name1, double quantity1, double price1, double discount1)
         {
             Name = name1;
             Quantity = quantity1;
@@ -18,16 +18,17 @@ namespace Labs215Y2K
         private static double[] _productsprice = new double[10];
         private static double[] _productsquantity = new double[10];
         private static int[] _productschoose = new int[10];
-        private static ShopNew prod1 = new ShopNew("Буханка хлеба 1 шт.          ", 25, 30, 0);
-        private static ShopNew prod2 = new ShopNew("Гречневая крупа 100 гр.      ", 15000, 8, 0);
-        private static ShopNew prod3 = new ShopNew("Лимонад грушевый 1,5 л - 1 шт", 20, 50, 0);
-        private static ShopNew prod4 = new ShopNew("Вырезка говяжья 100 гр.      ", 5000, 250, 0);
-        private static ShopNew prod5 = new ShopNew("Индийский чай - 1 уп.        ", 20, 50, 0);
-        private static ShopNew prod6 = new ShopNew("Сыр российский 100 гр.       ", 10000, 70, 0);
-        private static ShopNew prod7 = new ShopNew("Жевательная резинка - 1 уп.  ", 20, 36, 0);
-        private static ShopNew prod8 = new ShopNew("Апельсины 100 гр.            ", 30000, 13, 0);
-        private static ShopNew prod9 = new ShopNew("Орех грецкий 100 гр.         ", 5000, 75, 0);
-        private static ShopNew prod10 = new ShopNew("Сок яблочный 2 л. - 1 шт.   ", 10, 150, 0);
+        private static double[] _choosenprice = new double[10];
+        private static ShopNew1 prod1 = new ShopNew1("Буханка хлеба            ", 25, 30, 0);
+        private static ShopNew1 prod2 = new ShopNew1("Гречневая крупа 100 гр.  ", 15000, 8, 0);
+        private static ShopNew1 prod3 = new ShopNew1("Лимонад грушевый 1,5 л   ", 20, 50, 0);
+        private static ShopNew1 prod4 = new ShopNew1("Вырезка говяжья 100 гр.  ", 5000, 250, 0);
+        private static ShopNew1 prod5 = new ShopNew1("Индийский чай -          ", 20, 50, 0);
+        private static ShopNew1 prod6 = new ShopNew1("Сыр российский 100 гр.   ", 10000, 70, 0);
+        private static ShopNew1 prod7 = new ShopNew1("Жевательная резинка -    ", 20, 36, 0);
+        private static ShopNew1 prod8 = new ShopNew1("Апельсины 100 гр.        ", 30000, 13, 0);
+        private static ShopNew1 prod9 = new ShopNew1("Орех грецкий 100 гр.     ", 5000, 75, 0);
+        private static ShopNew1 prod10 = new ShopNew1("Сок яблочный 2 л. -     ", 10, 150, 0);
 
         protected static void Listproducts()
         {
@@ -94,8 +95,8 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     Console.WriteLine("Список товаров: ");
                     Console.WriteLine();
-                    ShopNew.Listproducts();
-                    ShopNew.productschoose();
+                    ShopNew1.Listproducts();
+                    ShopNew1.productschoose();
                     break;
                 case 2:
                     Console.WriteLine("Досвидания!");
@@ -103,7 +104,7 @@ namespace Labs215Y2K
                 default:
                     Console.WriteLine("Неверная цифра!");
                     break;
-            }    
+            }
         }
         protected static void productschoose()
         {
@@ -111,11 +112,59 @@ namespace Labs215Y2K
             Console.WriteLine("Кол-во товара на развес измеряется следующим образом: 1кг гречки = 1000 гр. Введите вес в граммах.");
             Console.WriteLine("Если товар не нужен, введите 0");
             Console.WriteLine();
-            ShopNew.productschoose2();
+            ShopNew1.productschoose2();
         }
         protected static void question()
         {
-            Console.WriteLine("Aboba");
+            Console.WriteLine();
+            Console.WriteLine("Что вы хотите сделать?");
+            Console.WriteLine("1 - Просмотреть корзину");
+            Console.WriteLine("2 - Добавить продукты в корзину");
+            Console.WriteLine("3 - Убрать продукты из корзины");
+            Console.WriteLine("4 - Завершить покупки и оплатить");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.WriteLine();
+                    ShopNew1.bucketproducts();
+                    ShopNew1.question();
+                    break;
+                case 2:
+                    Console.WriteLine();
+                    ShopNew1.productsaddsecond();
+                    break;
+
+            }
+        }
+        protected static void bucketproducts()
+        {
+            for (int i = 0; i < _productsprice.Length;i++)
+            {
+                _choosenprice[i] = _choosenprice[i] * _productsprice[i];
+            }
+            for (int i = 0; i < _productschoose.Length; i++)
+            {
+                if (_productschoose[i] > 0)
+                {
+                    Console.WriteLine($"{_productsnumber[i]} {_listofproducts[i]} Выбрано : {_productschoose[i]} у.е. Цена за 1 у.е. = {_productsprice[i]} р. Итого = {_choosenprice[i]} р.");
+                    continue;
+                }
+                else if (_productschoose[i] == 0)
+                {
+                    continue;
+                }
+            }
+        }
+        protected static void productsaddsecond()
+        {
+            Console.WriteLine("Доступные товары к добавлению:");
+            for (int i = 0; i < _productschoose.Length; i++)
+            {
+                Console.WriteLine($"{_productsnumber[i]} {_listofproducts[i]} Цена = {_productsprice[i]} р. Наличие {_productsquantity[i]} у.е.");
+            }
+            Console.WriteLine();
+            ShopNew1.productschoose2();
         }
         protected static void productschoose2()
         {
@@ -125,14 +174,14 @@ namespace Labs215Y2K
             {
                 case 1:
                     Console.Write($"Введите кол-во буханок хлеба - ");
-                    _productschoose[0] = int.Parse(Console.ReadLine());
+                    _productschoose[0] += int.Parse(Console.ReadLine());
                     if (_productschoose[0] > _productsquantity[0])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[0] > _productsquantity[0])
                         {
                             Console.Write($"Введите кол-во буханок хлеба - ");
-                            _productschoose[0] = int.Parse(Console.ReadLine());
+                            _productschoose[0] += int.Parse(Console.ReadLine());
                             if (_productschoose[0] > _productsquantity[0])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -140,41 +189,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[0] <= _productsquantity[0])
                             {
-                                _productschoose[0] = _productschoose[0] / 100;
+                                _choosenprice[0] += _productschoose[0];
+                                _productsquantity[0] = _productsquantity[0] - _productschoose[0];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[0] += _productschoose[0];
+                        _productsquantity[0] = _productsquantity[0] - _productschoose[0];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer1 = int.Parse(Console.ReadLine());
                     switch (answer1)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 2:
                     Console.WriteLine();
                     Console.Write($"Введите нужный вес гречки - ");
-                    _productschoose[1] = int.Parse(Console.ReadLine());
+                    _productschoose[1] += int.Parse(Console.ReadLine());
                     if (_productschoose[1] > _productsquantity[1])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[1] > _productsquantity[1])
                         {
                             Console.Write($"Введите нужный вес гречки - ");
-                            _productschoose[1] = int.Parse(Console.ReadLine());
+                            _productschoose[1] += int.Parse(Console.ReadLine());
                             if (_productschoose[1] > _productsquantity[1])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -182,41 +233,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[1] <= _productsquantity[1])
                             {
-                                _productschoose[1] = _productschoose[1] / 100;
+                                _choosenprice[1] += _productschoose[1] / 100;
+                                _productsquantity[1] = _productsquantity[1] - _productschoose[1];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[1] += _productschoose[1] / 100;
+                        _productsquantity[1] = _productsquantity[1] - _productschoose[1];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer2 = int.Parse(Console.ReadLine());
                     switch (answer2)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 3:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во лимонада - ");
-                    _productschoose[2] = int.Parse(Console.ReadLine());
+                    _productschoose[2] += int.Parse(Console.ReadLine());
                     if (_productschoose[2] > _productsquantity[2])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[2] > _productsquantity[2])
                         {
                             Console.Write($"Введите кол-во лимонада - ");
-                            _productschoose[2] = int.Parse(Console.ReadLine());
+                            _productschoose[2] += int.Parse(Console.ReadLine());
                             if (_productschoose[2] > _productsquantity[2])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -224,41 +277,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[2] <= _productsquantity[2])
                             {
-                                _productschoose[2] = _productschoose[2] / 100;
+                                _choosenprice[2] += _productschoose[2];
+                                _productsquantity[2] = _productsquantity[2] - _productschoose[2];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[2] += _productschoose[2];
+                        _productsquantity[2] = _productsquantity[2] - _productschoose[2];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer3 = int.Parse(Console.ReadLine());
                     switch (answer3)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 4:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во говяжьей вырезки - ");
-                    _productschoose[3] = int.Parse(Console.ReadLine());
+                    _productschoose[3] += int.Parse(Console.ReadLine());
                     if (_productschoose[3] > _productsquantity[3])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[3] > _productsquantity[3])
                         {
                             Console.Write($"Введите кол-во говяжьей вырезки - ");
-                            _productschoose[3] = int.Parse(Console.ReadLine());
+                            _productschoose[3] += int.Parse(Console.ReadLine());
                             if (_productschoose[3] > _productsquantity[3])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -266,41 +321,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[3] <= _productsquantity[3])
                             {
-                                _productschoose[3] = _productschoose[3] / 100;
+                                _choosenprice[3] += _productschoose[3] / 100;
+                                _productsquantity[3] = _productsquantity[3] - _productschoose[3];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[3] += _productschoose[3] / 100;
+                        _productsquantity[3] = _productsquantity[3] - _productschoose[3];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer4 = int.Parse(Console.ReadLine());
                     switch (answer4)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 5:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во чая - ");
-                    _productschoose[4] = int.Parse(Console.ReadLine());
+                    _productschoose[4] += int.Parse(Console.ReadLine());
                     if (_productschoose[4] > _productsquantity[4])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[4] > _productsquantity[4])
                         {
                             Console.Write($"Введите кол-во чая - ");
-                            _productschoose[4] = int.Parse(Console.ReadLine());
+                            _productschoose[4] += int.Parse(Console.ReadLine());
                             if (_productschoose[4] > _productsquantity[4])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -308,41 +365,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[4] <= _productsquantity[4])
                             {
-                                _productschoose[4] = _productschoose[4] / 100;
+                                _choosenprice[4] += _productschoose[4];
+                                _productsquantity[4] = _productsquantity[4] - _productschoose[4];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[4] += _productschoose[4];
+                        _productsquantity[4] = _productsquantity[4] - _productschoose[4];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer5 = int.Parse(Console.ReadLine());
                     switch (answer5)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 6:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во сыра  - ");
-                    _productschoose[5] = int.Parse(Console.ReadLine());
+                    _productschoose[5] += int.Parse(Console.ReadLine());
                     if (_productschoose[5] > _productsquantity[5])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[5] > _productsquantity[5])
                         {
                             Console.Write($"Введите кол-во сыра - ");
-                            _productschoose[5] = int.Parse(Console.ReadLine());
+                            _productschoose[5] += int.Parse(Console.ReadLine());
                             if (_productschoose[5] > _productsquantity[5])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -350,41 +409,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[5] <= _productsquantity[5])
                             {
-                                _productschoose[5] = _productschoose[5] / 100;
+                                _choosenprice[5] += _productschoose[5] / 100;
+                                _productsquantity[5] = _productsquantity[5] - _productschoose[5];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[5] += _productschoose[5] / 100;
+                        _productsquantity[5] = _productsquantity[5] - _productschoose[5];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer6 = int.Parse(Console.ReadLine());
                     switch (answer6)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 7:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во жев. резинки  - ");
-                    _productschoose[6] = int.Parse(Console.ReadLine());
+                    _productschoose[6] += int.Parse(Console.ReadLine());
                     if (_productschoose[6] > _productsquantity[6])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[6] > _productsquantity[6])
                         {
                             Console.Write($"Введите кол-во жев. резинки - ");
-                            _productschoose[6] = int.Parse(Console.ReadLine());
+                            _productschoose[6] += int.Parse(Console.ReadLine());
                             if (_productschoose[6] > _productsquantity[6])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -392,41 +453,44 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[6] <= _productsquantity[6])
                             {
-                                _productschoose[6] = _productschoose[6] / 100;
+                                _choosenprice[6] += _productschoose[6];
+                                _productsquantity[6] = _productsquantity[6] - _productschoose[6];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[6] += _productschoose[6];
+                        _productsquantity[6] = _productsquantity[6] - _productschoose[6];
                     }
+
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer7 = int.Parse(Console.ReadLine());
                     switch (answer7)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 8:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во апельсинов  - ");
-                    _productschoose[7] = int.Parse(Console.ReadLine());
+                    _productschoose[7] += int.Parse(Console.ReadLine());
                     if (_productschoose[7] > _productsquantity[7])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[7] > _productsquantity[7])
                         {
                             Console.Write($"Введите кол-во апельсинов - ");
-                            _productschoose[7] = int.Parse(Console.ReadLine());
+                            _productschoose[7] += int.Parse(Console.ReadLine());
                             if (_productschoose[7] > _productsquantity[7])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -434,41 +498,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[7] <= _productsquantity[7])
                             {
-                                _productschoose[7] = _productschoose[7] / 100;
+                                _choosenprice[7] += _productschoose[7] / 100;
+                                _productsquantity[7] = _productsquantity[7] - _productschoose[7];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[7] += _productschoose[7] / 100;
+                        _productsquantity[7] = _productsquantity[7] - _productschoose[7];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer8 = int.Parse(Console.ReadLine());
                     switch (answer8)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 9:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во гр. ореха  - ");
-                    _productschoose[8] = int.Parse(Console.ReadLine());
+                    _productschoose[8] += int.Parse(Console.ReadLine());
                     if (_productschoose[8] > _productsquantity[8])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[8] > _productsquantity[8])
                         {
                             Console.Write($"Введите кол-во гр. ореха - ");
-                            _productschoose[8] = int.Parse(Console.ReadLine());
+                            _productschoose[8] += int.Parse(Console.ReadLine());
                             if (_productschoose[8] > _productsquantity[8])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -476,41 +542,43 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[8] <= _productsquantity[8])
                             {
-                                _productschoose[8] = _productschoose[8] / 100;
+                                _choosenprice[8] += _productschoose[8] / 100;
+                                _productsquantity[8] = _productsquantity[8] - _productschoose[8];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[8] += _productschoose[8] / 100;
+                        _productsquantity[8] = _productsquantity[8] - _productschoose[8];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer9 = int.Parse(Console.ReadLine());
                     switch (answer9)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 case 10:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во сока  - ");
-                    _productschoose[9] = int.Parse(Console.ReadLine());
+                    _productschoose[9] += int.Parse(Console.ReadLine());
                     if (_productschoose[9] > _productsquantity[9])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[5] > _productsquantity[5])
                         {
                             Console.Write($"Введите кол-во сока - ");
-                            _productschoose[9] = int.Parse(Console.ReadLine());
+                            _productschoose[9] += int.Parse(Console.ReadLine());
                             if (_productschoose[9] > _productsquantity[9])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -518,38 +586,38 @@ namespace Labs215Y2K
                             }
                             else if (_productschoose[9] <= _productsquantity[9])
                             {
-                                _productschoose[9] = _productschoose[0] / 100;
+                                _choosenprice[9] += _productschoose[9];
+                                _productsquantity[9] = _productsquantity[9] - _productschoose[9];
                                 break;
                             }
                         }
                     }
                     else
                     {
-
+                        _choosenprice[9] += _productschoose[9];
+                        _productsquantity[9] = _productsquantity[9] - _productschoose[9];
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer10 = int.Parse(Console.ReadLine());
                     switch (answer10)
                     {
                         case 1:
-                            ShopNew.productschoose2();
+                            ShopNew1.productschoose2();
                             break;
                         case 2:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                         default:
-                            ShopNew.question();
+                            ShopNew1.question();
                             break;
                     }
                     break;
                 default:
                     Console.WriteLine("Неверный номер товара!");
-                    ShopNew.productschoose2();
+                    ShopNew1.productschoose2();
                     break;
             }
         }
     }
 }
-        
-    
 

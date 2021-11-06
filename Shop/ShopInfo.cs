@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Labs215Y2K
+namespace Shop
 {
-    class Shop
+    class ShopInfo
     {
         private string _name;
         private double _quantity;
@@ -40,7 +40,7 @@ namespace Labs215Y2K
             }
             set
             {
-               _price = value;
+                _price = value;
             }
         }
         public double Discount
@@ -72,7 +72,7 @@ namespace Labs215Y2K
         }
         public void chooseprocces()
         {
-
         }
     }
 }
+
