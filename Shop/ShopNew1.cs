@@ -174,14 +174,17 @@ namespace Shop
             {
                 case 1:
                     Console.Write($"Введите кол-во буханок хлеба - ");
-                    _productschoose[0] += int.Parse(Console.ReadLine());
+                    int input1 = int.Parse(Console.ReadLine());
+                    _productschoose[0] += input1;
                     if (_productschoose[0] > _productsquantity[0])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[0] > _productsquantity[0])
                         {
+                            _productschoose[0] -= input1;
                             Console.Write($"Введите кол-во буханок хлеба - ");
-                            _productschoose[0] += int.Parse(Console.ReadLine());
+                            input1 = int.Parse(Console.ReadLine());
+                            _productschoose[0] += input1;
                             if (_productschoose[0] > _productsquantity[0])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -190,7 +193,7 @@ namespace Shop
                             else if (_productschoose[0] <= _productsquantity[0])
                             {
                                 _choosenprice[0] += _productschoose[0];
-                                _productsquantity[0] = _productsquantity[0] - _productschoose[0];
+                                _productsquantity[0] = _productsquantity[0] - input1;
                                 break;
                             }
                         }
@@ -198,7 +201,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[0] += _productschoose[0];
-                        _productsquantity[0] = _productsquantity[0] - _productschoose[0];
+                        _productsquantity[0] = _productsquantity[0] - input1;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer1 = int.Parse(Console.ReadLine());
@@ -218,14 +221,17 @@ namespace Shop
                 case 2:
                     Console.WriteLine();
                     Console.Write($"Введите нужный вес гречки - ");
-                    _productschoose[1] += int.Parse(Console.ReadLine());
+                    int input2 = int.Parse(Console.ReadLine());
+                    _productschoose[1] += input2;
                     if (_productschoose[1] > _productsquantity[1])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[1] > _productsquantity[1])
                         {
+                            _productschoose[1] -= input2;
                             Console.Write($"Введите нужный вес гречки - ");
-                            _productschoose[1] += int.Parse(Console.ReadLine());
+                            input2 = int.Parse(Console.ReadLine());
+                            _productschoose[1] += input2;
                             if (_productschoose[1] > _productsquantity[1])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -234,7 +240,7 @@ namespace Shop
                             else if (_productschoose[1] <= _productsquantity[1])
                             {
                                 _choosenprice[1] += _productschoose[1] / 100;
-                                _productsquantity[1] = _productsquantity[1] - _productschoose[1];
+                                _productsquantity[1] = _productsquantity[1] - input2;
                                 break;
                             }
                         }
@@ -242,7 +248,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[1] += _productschoose[1] / 100;
-                        _productsquantity[1] = _productsquantity[1] - _productschoose[1];
+                        _productsquantity[1] = _productsquantity[1] - input2;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer2 = int.Parse(Console.ReadLine());
@@ -262,14 +268,17 @@ namespace Shop
                 case 3:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во лимонада - ");
-                    _productschoose[2] += int.Parse(Console.ReadLine());
+                    int input3 = int.Parse(Console.ReadLine());
+                    _productschoose[2] += input3;
                     if (_productschoose[2] > _productsquantity[2])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[2] > _productsquantity[2])
                         {
+                            _productschoose[2] -= input3;
                             Console.Write($"Введите кол-во лимонада - ");
-                            _productschoose[2] += int.Parse(Console.ReadLine());
+                            input3 = int.Parse(Console.ReadLine());
+                            _productschoose[2] += input3;
                             if (_productschoose[2] > _productsquantity[2])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -278,7 +287,7 @@ namespace Shop
                             else if (_productschoose[2] <= _productsquantity[2])
                             {
                                 _choosenprice[2] += _productschoose[2];
-                                _productsquantity[2] = _productsquantity[2] - _productschoose[2];
+                                _productsquantity[2] = _productsquantity[2] - input3;
                                 break;
                             }
                         }
@@ -286,7 +295,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[2] += _productschoose[2];
-                        _productsquantity[2] = _productsquantity[2] - _productschoose[2];
+                        _productsquantity[2] = _productsquantity[2] - input3;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer3 = int.Parse(Console.ReadLine());
@@ -306,14 +315,17 @@ namespace Shop
                 case 4:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во говяжьей вырезки - ");
-                    _productschoose[3] += int.Parse(Console.ReadLine());
+                    int input4 = int.Parse(Console.ReadLine());
+                    _productschoose[3] += input4;
                     if (_productschoose[3] > _productsquantity[3])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[3] > _productsquantity[3])
                         {
+                            _productschoose[3] -= input4;
                             Console.Write($"Введите кол-во говяжьей вырезки - ");
-                            _productschoose[3] += int.Parse(Console.ReadLine());
+                            input4 = int.Parse(Console.ReadLine());
+                            _productschoose[3] += input4;
                             if (_productschoose[3] > _productsquantity[3])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -322,7 +334,7 @@ namespace Shop
                             else if (_productschoose[3] <= _productsquantity[3])
                             {
                                 _choosenprice[3] += _productschoose[3] / 100;
-                                _productsquantity[3] = _productsquantity[3] - _productschoose[3];
+                                _productsquantity[3] = input4;
                                 break;
                             }
                         }
@@ -330,7 +342,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[3] += _productschoose[3] / 100;
-                        _productsquantity[3] = _productsquantity[3] - _productschoose[3];
+                        _productsquantity[3] = _productsquantity[3] - input4;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer4 = int.Parse(Console.ReadLine());
@@ -350,14 +362,17 @@ namespace Shop
                 case 5:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во чая - ");
-                    _productschoose[4] += int.Parse(Console.ReadLine());
+                    int input5 = int.Parse(Console.ReadLine());
+                    _productschoose[4] += input5;
                     if (_productschoose[4] > _productsquantity[4])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[4] > _productsquantity[4])
                         {
+                            _productschoose[4] -= input5;
                             Console.Write($"Введите кол-во чая - ");
-                            _productschoose[4] += int.Parse(Console.ReadLine());
+                            input5 = int.Parse(Console.ReadLine());
+                            _productschoose[4] += input5;
                             if (_productschoose[4] > _productsquantity[4])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -366,7 +381,7 @@ namespace Shop
                             else if (_productschoose[4] <= _productsquantity[4])
                             {
                                 _choosenprice[4] += _productschoose[4];
-                                _productsquantity[4] = _productsquantity[4] - _productschoose[4];
+                                _productsquantity[4] = _productsquantity[4] - input5;
                                 break;
                             }
                         }
@@ -374,7 +389,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[4] += _productschoose[4];
-                        _productsquantity[4] = _productsquantity[4] - _productschoose[4];
+                        _productsquantity[4] = _productsquantity[4] - input5;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer5 = int.Parse(Console.ReadLine());
@@ -394,14 +409,17 @@ namespace Shop
                 case 6:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во сыра  - ");
-                    _productschoose[5] += int.Parse(Console.ReadLine());
+                    int input6 = int.Parse(Console.ReadLine());
+                    _productschoose[5] += input6;
                     if (_productschoose[5] > _productsquantity[5])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[5] > _productsquantity[5])
                         {
+                            _productschoose[5] -= input6;
                             Console.Write($"Введите кол-во сыра - ");
-                            _productschoose[5] += int.Parse(Console.ReadLine());
+                            input6 = int.Parse(Console.ReadLine());
+                            _productschoose[5] += input6;
                             if (_productschoose[5] > _productsquantity[5])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -410,7 +428,7 @@ namespace Shop
                             else if (_productschoose[5] <= _productsquantity[5])
                             {
                                 _choosenprice[5] += _productschoose[5] / 100;
-                                _productsquantity[5] = _productsquantity[5] - _productschoose[5];
+                                _productsquantity[5] = _productsquantity[5] - input6;
                                 break;
                             }
                         }
@@ -418,7 +436,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[5] += _productschoose[5] / 100;
-                        _productsquantity[5] = _productsquantity[5] - _productschoose[5];
+                        _productsquantity[5] = _productsquantity[5] - input6;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer6 = int.Parse(Console.ReadLine());
@@ -438,14 +456,17 @@ namespace Shop
                 case 7:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во жев. резинки  - ");
-                    _productschoose[6] += int.Parse(Console.ReadLine());
+                    int input7 = int.Parse(Console.ReadLine());
+                    _productschoose[6] += input7;
                     if (_productschoose[6] > _productsquantity[6])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[6] > _productsquantity[6])
                         {
+                            _productschoose[6] -= input7;
                             Console.Write($"Введите кол-во жев. резинки - ");
-                            _productschoose[6] += int.Parse(Console.ReadLine());
+                            input7 = int.Parse(Console.ReadLine());
+                            _productschoose[6] += input7;
                             if (_productschoose[6] > _productsquantity[6])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -454,7 +475,7 @@ namespace Shop
                             else if (_productschoose[6] <= _productsquantity[6])
                             {
                                 _choosenprice[6] += _productschoose[6];
-                                _productsquantity[6] = _productsquantity[6] - _productschoose[6];
+                                _productsquantity[6] = _productsquantity[6] - input7;
                                 break;
                             }
                         }
@@ -462,7 +483,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[6] += _productschoose[6];
-                        _productsquantity[6] = _productsquantity[6] - _productschoose[6];
+                        _productsquantity[6] = _productsquantity[6] - input7;
                     }
 
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
@@ -483,14 +504,17 @@ namespace Shop
                 case 8:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во апельсинов  - ");
-                    _productschoose[7] += int.Parse(Console.ReadLine());
+                    int input8 = int.Parse(Console.ReadLine());
+                    _productschoose[7] += input8;
                     if (_productschoose[7] > _productsquantity[7])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[7] > _productsquantity[7])
                         {
+                            _productschoose[7] -= input8;
                             Console.Write($"Введите кол-во апельсинов - ");
-                            _productschoose[7] += int.Parse(Console.ReadLine());
+                            input8 = int.Parse(Console.ReadLine());
+                            _productschoose[7] += input8;
                             if (_productschoose[7] > _productsquantity[7])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -499,7 +523,7 @@ namespace Shop
                             else if (_productschoose[7] <= _productsquantity[7])
                             {
                                 _choosenprice[7] += _productschoose[7] / 100;
-                                _productsquantity[7] = _productsquantity[7] - _productschoose[7];
+                                _productsquantity[7] = _productsquantity[7] - input8;
                                 break;
                             }
                         }
@@ -507,7 +531,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[7] += _productschoose[7] / 100;
-                        _productsquantity[7] = _productsquantity[7] - _productschoose[7];
+                        _productsquantity[7] = _productsquantity[7] - input8;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer8 = int.Parse(Console.ReadLine());
@@ -527,14 +551,17 @@ namespace Shop
                 case 9:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во гр. ореха  - ");
-                    _productschoose[8] += int.Parse(Console.ReadLine());
+                    int input9 = int.Parse(Console.ReadLine());
+                    _productschoose[8] += input9;
                     if (_productschoose[8] > _productsquantity[8])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[8] > _productsquantity[8])
                         {
+                            _productschoose[8] -= input9;
                             Console.Write($"Введите кол-во гр. ореха - ");
-                            _productschoose[8] += int.Parse(Console.ReadLine());
+                            input9 = int.Parse(Console.ReadLine());
+                            _productschoose[8] += input9;
                             if (_productschoose[8] > _productsquantity[8])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -543,7 +570,7 @@ namespace Shop
                             else if (_productschoose[8] <= _productsquantity[8])
                             {
                                 _choosenprice[8] += _productschoose[8] / 100;
-                                _productsquantity[8] = _productsquantity[8] - _productschoose[8];
+                                _productsquantity[8] = _productsquantity[8] - input9;
                                 break;
                             }
                         }
@@ -551,7 +578,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[8] += _productschoose[8] / 100;
-                        _productsquantity[8] = _productsquantity[8] - _productschoose[8];
+                        _productsquantity[8] = _productsquantity[8] - input9;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer9 = int.Parse(Console.ReadLine());
@@ -571,14 +598,17 @@ namespace Shop
                 case 10:
                     Console.WriteLine();
                     Console.Write($"Введите кол-во сока  - ");
-                    _productschoose[9] += int.Parse(Console.ReadLine());
+                    int input10 = int.Parse(Console.ReadLine());
+                    _productschoose[9] += input10;
                     if (_productschoose[9] > _productsquantity[9])
                     {
                         Console.WriteLine("Данного количества нет в наличии!");
                         while (_productschoose[5] > _productsquantity[5])
                         {
+                            _productschoose[9] -= input10;
                             Console.Write($"Введите кол-во сока - ");
-                            _productschoose[9] += int.Parse(Console.ReadLine());
+                            input10 = int.Parse(Console.ReadLine());
+                            _productschoose[9] += input10;
                             if (_productschoose[9] > _productsquantity[9])
                             {
                                 Console.WriteLine("Данного количества нет в наличии!");
@@ -587,7 +617,7 @@ namespace Shop
                             else if (_productschoose[9] <= _productsquantity[9])
                             {
                                 _choosenprice[9] += _productschoose[9];
-                                _productsquantity[9] = _productsquantity[9] - _productschoose[9];
+                                _productsquantity[9] = _productsquantity[9] - input10;
                                 break;
                             }
                         }
@@ -595,7 +625,7 @@ namespace Shop
                     else
                     {
                         _choosenprice[9] += _productschoose[9];
-                        _productsquantity[9] = _productsquantity[9] - _productschoose[9];
+                        _productsquantity[9] = _productsquantity[9] - input10;
                     }
                     Console.WriteLine("Желаете продолжить? 1 - Да; 2 - Нет");
                     int answer10 = int.Parse(Console.ReadLine());
