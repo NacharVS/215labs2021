@@ -70,5 +70,9 @@ namespace Labs215Y2K
                 Console.WriteLine();
             }
         }
+        public void chooseprocces()
+        {
+
+        }
     }
 }
