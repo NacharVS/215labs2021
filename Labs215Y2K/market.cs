@@ -117,6 +117,7 @@ namespace Labs215Y2K
             {
                 Console.WriteLine($"Кол-во упаковок сока - {_listOfProducts[9]}");
             }
+        }
             public market(string Name1, long Quantity1, double Price1, double Discount1)
             {
                 Name = Name1;
