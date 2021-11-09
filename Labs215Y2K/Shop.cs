@@ -8,6 +8,8 @@ namespace Labs215Y2K
     {
         static string a11 = "1 - Просмотреть список товаров";
         static string a22 = "2 - Перейти в корзину";
+        
+        
         public static void catalog(int[] productschoose, int[] priceproducts)
         {
             Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");

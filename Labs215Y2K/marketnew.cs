@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class marketnew
+    class marketnew 
     {
         private string _name;
         private double _quantity;
