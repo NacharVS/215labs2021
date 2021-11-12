@@ -12,3 +12,17 @@ C:\Users\User\Documents\1111\Shop\obj\Debug\netcoreapp3.1\Shop.csproj.CoreCompil
 C:\Users\User\Documents\1111\Shop\obj\Debug\netcoreapp3.1\Shop.dll
 C:\Users\User\Documents\1111\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
 C:\Users\User\Documents\1111\Shop\obj\Debug\netcoreapp3.1\Shop.genruntimeconfig.cache
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.exe
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.deps.json
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.runtimeconfig.json
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.runtimeconfig.dev.json
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.dll
+C:\Users\User\Documents\215labs2021\a\Shop\bin\Debug\netcoreapp3.1\Shop.pdb
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.csproj.AssemblyReference.cache
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.AssemblyInfoInputs.cache
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.AssemblyInfo.cs
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.dll
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
+C:\Users\User\Documents\215labs2021\a\Shop\obj\Debug\netcoreapp3.1\Shop.genruntimeconfig.cache
