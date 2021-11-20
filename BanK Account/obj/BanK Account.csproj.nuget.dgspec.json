@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\152008\\Documents\\labs215\\1111\\Shop\\Shop.csproj": {}
+    "C:\\Users\\152008\\Documents\\labs215\\1111\\BanK Account\\BanK Account.csproj": {}
   },
   "projects": {
-    "C:\\Users\\152008\\Documents\\labs215\\1111\\Shop\\Shop.csproj": {
+    "C:\\Users\\152008\\Documents\\labs215\\1111\\BanK Account\\BanK Account.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\152008\\Documents\\labs215\\1111\\Shop\\Shop.csproj",
-        "projectName": "Shop",
-        "projectPath": "C:\\Users\\152008\\Documents\\labs215\\1111\\Shop\\Shop.csproj",
+        "projectUniqueName": "C:\\Users\\152008\\Documents\\labs215\\1111\\BanK Account\\BanK Account.csproj",
+        "projectName": "BanK Account",
+        "projectPath": "C:\\Users\\152008\\Documents\\labs215\\1111\\BanK Account\\BanK Account.csproj",
         "packagesPath": "C:\\Users\\152008\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\152008\\Documents\\labs215\\1111\\Shop\\obj\\",
+        "outputPath": "C:\\Users\\152008\\Documents\\labs215\\1111\\BanK Account\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

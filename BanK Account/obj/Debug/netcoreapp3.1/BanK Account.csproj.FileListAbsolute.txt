@@ -1,0 +1,11 @@
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.exe
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.deps.json
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.runtimeconfig.json
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.runtimeconfig.dev.json
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.dll
+C:\Users\152008\Documents\labs215\1111\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.pdb
+C:\Users\152008\Documents\labs215\1111\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.csprojAssemblyReference.cache
+C:\Users\152008\Documents\labs215\1111\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.AssemblyInfoInputs.cache
+C:\Users\152008\Documents\labs215\1111\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.AssemblyInfo.cs
+C:\Users\152008\Documents\labs215\1111\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.dll
+C:\Users\152008\Documents\labs215\1111\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.pdb
