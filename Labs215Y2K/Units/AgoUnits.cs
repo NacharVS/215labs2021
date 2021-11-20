@@ -2,7 +2,7 @@
 
 //namespace Units
 //{
-//     class Units
+//     class AgoUnits
 //    {
 //        public string name;
 //        public int CurrentHealth;
