@@ -4,59 +4,59 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class solivie
+    class MakDak
     {
         static void Main(string[] args)
         {
-            solevie[] tovars = new solevie[6];
-            solevie bear = new solevie();
-            bear.nameprodyct = "Плюшевый мишка";
-            bear.kolvo = 1;
-            bear.price = 500;
+            MakDaki[] tovars = new MakDaki[6];
+            MakDaki salt = new MakDaki();
+            salt.nameproduct = "Соль";
+            salt.kolvo = 5;
+            salt.price = 500;
 
-            solevie gun = new solevie();
-            gun.nameprodyct = "Пистолетик";
+            MakDaki gun = new MakDaki();
+            gun.nameproduct = "Ружье Hatsan Escort";
             gun.kolvo = 2;
-            gun.price = 200;
+            gun.price = 20000;
 
-            solevie car = new solevie();
-            car.nameprodyct = "Машинка с пультом управления";
-            car.kolvo = 3;
-            car.price = 2000;
+            MakDaki razor = new MakDaki();
+            razor.nameproduct = "Бритва Gilet";
+            razor.kolvo = 3;
+            razor.price = 2000;
 
-            solevie popit = new solevie();
-            popit.nameprodyct = "Попыт";
-            popit.kolvo = 4;
-            popit.price = 350;
+            MakDaki spinner = new MakDaki();
+            spinner.nameproduct = "Спинер";
+            spinner.kolvo = 10;
+            spinner.price = 350;
 
-            solevie skvish = new solevie();
-            skvish.nameprodyct = "антистресс для рук - Сквиш";
-            skvish.kolvo = 5;
-            skvish.price = 250;
+            MakDaki hemotogen = new MakDaki();
+            hemotogen.nameproduct = "Гемотоген";
+            hemotogen.kolvo = 20;
+            hemotogen.price = 20;
 
-            solevie lego = new solevie();
-            lego.nameprodyct = "Конструктор лего";
-            lego.kolvo = 6;
+            MakDaki lego = new MakDaki();
+            lego.nameproduct = "Конструктор лего";
+            lego.kolvo = 3;
             lego.price = 2500;
 
-            tovars[0] = bear;
+            tovars[0] = salt;
             tovars[1] = gun;
-            tovars[2] = car;
-            tovars[3] = popit;
-            tovars[4] = skvish;
+            tovars[2] = razor;
+            tovars[3] = spinner;
+            tovars[4] = hemotogen;
             tovars[5] = lego;
 
-            Console.WriteLine("Здравствуйте, добро пожаловать в Solevie, чтобы посмотреть товары, напишите цифру 1!");
+            Console.WriteLine("Здравствуйте, добро пожаловать в Solevie, чтобы посмотреть товары, напишите цифру 0!");
             int prosmotr = int.Parse(Console.ReadLine());
             {
-                if (prosmotr == 1)
+                if (prosmotr == 0)
                 {
-                    Console.WriteLine(bear.nameprodyct);
-                    Console.WriteLine(gun.nameprodyct);
-                    Console.WriteLine(popit.nameprodyct);
-                    Console.WriteLine(car.nameprodyct);
-                    Console.WriteLine(skvish.nameprodyct);
-                    Console.WriteLine(lego.nameprodyct);
+                    Console.WriteLine(salt.nameproduct);
+                    Console.WriteLine(gun.nameproduct);
+                    Console.WriteLine(spinner.nameproduct);
+                    Console.WriteLine(razor.nameproduct);
+                    Console.WriteLine(hemotogen.nameproduct);
+                    Console.WriteLine(lego.nameproduct);
                 }
                 else
                     Console.WriteLine("Некорректно");
