@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Labs215Y2K.Bank;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Labs215Y2K
@@ -8,9 +9,20 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Product prod1 = new Product(55.59, 100, "Banana");
-            prod1.Nds = 10;
-            Console.WriteLine(prod1.Nds);
+            Account acc1 = new Account("Ivan", 5000);
+            Account acc2 = new Account("Fedor", 6000);
+            Account acc3 = new Account("Elena", 3000);
+            acc1.ShowInfo();
+            acc2.ShowInfo();
+            acc3.ShowInfo();
+            Console.WriteLine();
+            Account.rate = 0.09;
+            Account.ShowProfit(acc1, 1);
+            Account.ShowProfit(acc3, 1);
+            Account.ShowProfit(acc3, 1);
+            acc1.ShowInfo();
+            acc2.ShowInfo();
+            acc3.ShowInfo();
 
 
 
