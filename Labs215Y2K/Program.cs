@@ -50,6 +50,10 @@ namespace Labs215Y2K
             acc4.Withdraw(acc4);
             acc4.ShowInfo(acc4);
 
+          
+            acc5.Transaction(acc5, acc5, acc4);
+            acc4.ShowInfo(acc4);
+            acc5.ShowInfo(acc5);
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {

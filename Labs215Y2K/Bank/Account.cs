@@ -56,10 +56,11 @@ namespace Labs215Y2K.Bank
             }
         }
 
-        public static void Transaction(Account accSeller, Account accGetter)
+        public void Transaction(Account acc,Account accSeller, Account accGetter)
         {
             Console.WriteLine();
-            Console.WriteLine("Укажите сумму, которую вы хотите передать");
+            Console.WriteLine($"{acc.name} - {acc.balance}");
+            Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
             double TransactionMoney = double.Parse(Console.ReadLine());
             accSeller.balance -= TransactionMoney;
             accGetter.balance += TransactionMoney;
