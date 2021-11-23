@@ -8,20 +8,22 @@ namespace Labs215Y2K.Bank
     {
         public string name;
         public double balance;
+        public int id;
 
         public static double rate = 0.09;
 
-        public Account(string name, double balance)
+        public Account(string name, double balance, int id)
         {
             this.name = name;
             this.balance = balance;
+            this.id = id;
         }
 
         public void ShowInfo(Account acc)
         {
             if (acc.balance > 0)
             {
-                System.Console.WriteLine($"{name} - {balance}");
+                System.Console.WriteLine($"Пользователь - {name} \t Баланс - {balance}   \t id - {id}");
             }
         }
 
@@ -56,14 +58,25 @@ namespace Labs215Y2K.Bank
             }
         }
 
-        public void Transaction(Account acc,Account accSeller, Account accGetter)
+        public static void Transaction(Account acc,Account accSeller, Account accGetter) // не работает
         {
             Console.WriteLine();
-            Console.WriteLine($"{acc.name} - {acc.balance}");
-            Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
-            double TransactionMoney = double.Parse(Console.ReadLine());
-            accSeller.balance -= TransactionMoney;
-            accGetter.balance += TransactionMoney;
+            Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
+            int AccGetterSeller = int.Parse(Console.ReadLine());
+
+            if (AccGetterSeller == acc.id)
+            {
+                Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
+                double TransactionMoney = double.Parse(Console.ReadLine());
+                Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
+                int AccGetterId = int.Parse(Console.ReadLine());
+                if (AccGetterId == acc.id)
+                {
+                    Console.WriteLine($"{acc.name} - {acc.balance}");
+                    accSeller.balance -= TransactionMoney;
+                    accGetter.balance += TransactionMoney;
+                }
+            }
         }
     }
 }

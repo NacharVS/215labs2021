@@ -16,12 +16,13 @@ namespace Labs215Y2K
             //ArrayOperations.ArrayGeneration(qqnya, 2);
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
+            
+            Account acc1 = new Account("Ivan", 5000, new Random().Next(100, 1000));
+            Account acc2 = new Account("Fedor", 6000, new Random().Next(100, 1000));
+            Account acc3 = new Account("Elena", 3000, new Random().Next(100, 1000));
+            Account acc4 = new Account("Yarik", 100, new Random().Next(100, 1000));
+            Account acc5 = new Account("Egorik", 100000, new Random().Next(100, 1000));
 
-            Account acc1 = new Account("Ivan", 5000);
-            Account acc2 = new Account("Fedor", 6000);
-            Account acc3 = new Account("Elena", 3000);
-            Account acc4 = new Account("Yarik", 100);
-            Account acc5 = new Account("Egorik", 100000);
 
             acc1.ShowInfo(acc1);
             acc2.ShowInfo(acc2);
@@ -30,12 +31,16 @@ namespace Labs215Y2K
             acc5.ShowInfo(acc5);
             Console.WriteLine();
 
+            Console.WriteLine("Введите кол-во месяцев:");
+            int month = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Через {month} меся(ц/ца/цев) Ваш баланс с коэффицентом {Account.rate} будет составлять:");
+
             Account.rate = 0.09;
-            Account.ShowProfit(acc1, 1);
-            Account.ShowProfit(acc3, 1);
-            Account.ShowProfit(acc3, 1);
-            Account.ShowProfit(acc4, 1);
-            Account.ShowProfit(acc5, 1);
+            Account.ShowProfit(acc1, month);
+            Account.ShowProfit(acc2, month);
+            Account.ShowProfit(acc3, month);
+            Account.ShowProfit(acc4, month);
+            Account.ShowProfit(acc5, month);
 
 
             acc1.ShowInfo(acc1);
@@ -50,11 +55,14 @@ namespace Labs215Y2K
             acc4.Withdraw(acc4);
             acc4.ShowInfo(acc4);
 
-          
-            acc5.Transaction(acc5, acc5, acc4);
+
+            
+            
+            Account.Transaction(acc4, acc4, acc5); // не работает
+
             acc4.ShowInfo(acc4);
             acc5.ShowInfo(acc5);
-        }
+         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;
