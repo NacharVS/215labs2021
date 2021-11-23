@@ -93,7 +93,7 @@ namespace BanK_Account
         public static void deposit()
         {
             Info.list();
-            Console.Write("Введите id клиента которому желаете пополнить балик (3 номера): ");
+            Console.Write("Введите id клиента которому желаете пополнить баланс: ");
             int number = int.Parse(Console.ReadLine());
             switch (number)
             {
@@ -133,37 +133,91 @@ namespace BanK_Account
         public static void withdraw()
         {
             Info.list();
-            Console.Write("Введите id клиента которому желаете вывести балик : ");
+            Console.Write("Введите id клиента которому желаете вывести баланс: ");
             int number4 = int.Parse(Console.ReadLine());
             switch (number4)
             {
                 case 195234:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите вывести");
-                    int withd = int.Parse(Console.ReadLine());
-                    acc1.Withdraw(acc1, withd);
-                    Console.WriteLine($"{acc1.name} - успешно выведено {withd}");
-                    acc1.ShowInfo();
-                    Info.start();
-                    break;
+                    if (acc1.balance <= 0)
+                    {
+                        Console.WriteLine($"{acc1.name} не имеет денег на счету для вывода");
+                        Info.start();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Введите сумму которую хотите вывести");
+                        int withd = int.Parse(Console.ReadLine());
+                        if (withd <= acc1.balance)
+                        {
+                            acc1.Withdraw(acc1, withd);
+                            Console.WriteLine($"{acc1.name} - успешно выведено {withd}");
+                            acc1.ShowInfo();
+                            Info.start();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"У {acc1.name} нет столько денег на счету для вывода");
+                            Info.start();
+                            break;
+                        }
+                    }
                 case 300592:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите вывести");
-                    int withd2 = int.Parse(Console.ReadLine());
-                    acc2.Withdraw(acc2, withd2);
-                    Console.WriteLine($"{acc2.name} - успешно выведено {withd2}");
-                    acc2.ShowInfo();
-                    Info.start();
-                    break;
+                    if (acc2.balance <= 0)
+                    {
+                        Console.WriteLine($"{acc2.name} не имеет денег на счету для вывода");
+                        Info.start();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Введите сумму которую хотите вывести");
+                        int withd2 = int.Parse(Console.ReadLine());
+                        if (withd2 <= acc2.balance)
+                        {
+                            acc2.Withdraw(acc2, withd2);
+                            Console.WriteLine($"{acc2.name} - успешно выведено {withd2}");
+                            acc2.ShowInfo();
+                            Info.start();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"У {acc2.name} нет столько денег на счету для вывода");
+                            Info.start();
+                            break;
+                        }
+                    }
                 case 666777:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите вывести");
-                    int withd3 = int.Parse(Console.ReadLine());
-                    acc3.Withdraw(acc3, withd3);
-                    Console.WriteLine($"{acc3.name} - успешно выведено {withd3}");
-                    acc3.ShowInfo();
-                    Info.start();
-                    break;
+                    if (acc3.balance <= 0)
+                    {
+                        Console.WriteLine($"{acc3.name} не имеет денег на счету для вывода");
+                        Info.start();
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine();
+                        Console.WriteLine("Введите сумму которую хотите вывести");
+                        int withd3 = int.Parse(Console.ReadLine());
+                        if (withd3 <= acc3.balance)
+                        {
+                            acc3.Withdraw(acc3, withd3);
+                            Console.WriteLine($"{acc3.name} - успешно выведено {withd3}");
+                            acc3.ShowInfo();
+                            Info.start();
+                            break;
+                        }
+                        else
+                        {
+                            Console.WriteLine($"У {acc3.name} нет столько денег на счету для вывода");
+                            Info.start();
+                            break;
+                        }
+                    }
                 default:
                     Console.WriteLine("Неверный номер!");
                     Info.start();
@@ -178,62 +232,89 @@ namespace BanK_Account
             switch (number5)
             {
                 case 195234:
-                    Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
-                    int answer11 = int.Parse(Console.ReadLine());
-                    switch (answer11)
+                    if (acc1.balance <= 0)
                     {
-                        case 300592:
-                            AccountMethods.Transaction(acc1, acc2);
-                            Info.start();
-                            break;
-                        case 666777:
-                            AccountMethods.Transaction(acc1, acc3);
-                            Info.start();
-                            break;
-                        default:
-                            Console.WriteLine("Неверный номер!");
-                            Info.start();
-                            break;
+                        Console.WriteLine($"У {acc1.name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
+                        int answer11 = int.Parse(Console.ReadLine());
+                        switch (answer11)
+                        {
+                            case 300592:
+                                AccountMethods.Transaction(acc1, acc2);
+                                Info.start();
+                                break;
+                            case 666777:
+                                AccountMethods.Transaction(acc1, acc3);
+                                Info.start();
+                                break;
+                            default:
+                                Console.WriteLine("Неверный номер!");
+                                Info.start();
+                                break;
+                        }
+                        break;
+                    }
                 case 300592:
-                    Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
-                    int answer12 = int.Parse(Console.ReadLine());
-                    switch (answer12)
+                    if (acc2.balance <= 0)
                     {
-                        case 195234:
-                            AccountMethods.Transaction(acc2, acc1);
-                            Info.start();
-                            break;
-                        case 666777:
-                            AccountMethods.Transaction(acc2, acc3);
-                            Info.start();
-                            break;
-                        default:
-                            Console.WriteLine("Неверный номер!");
-                            Info.start();
-                            break;
+                        Console.WriteLine($"У {acc2.name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
+                        int answer12 = int.Parse(Console.ReadLine());
+                        switch (answer12)
+                        {
+                            case 195234:
+                                AccountMethods.Transaction(acc2, acc1);
+                                Info.start();
+                                break;
+                            case 666777:
+                                AccountMethods.Transaction(acc2, acc3);
+                                Info.start();
+                                break;
+                            default:
+                                Console.WriteLine("Неверный номер!");
+                                Info.start();
+                                break;
+                        }
+                        break;
+                    }
                 case 666777:
-                    Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
-                    int answer13 = int.Parse(Console.ReadLine());
-                    switch (answer13)
+                    if (acc3.balance <= 0)
                     {
-                        case 195234:
-                            AccountMethods.Transaction(acc3, acc1);
-                            Info.start();
-                            break;
-                        case 300592:
-                            AccountMethods.Transaction(acc3, acc2);
-                            Info.start();
-                            break;
-                        default:
-                            Console.WriteLine("Неверный номер!");
-                            Info.start();
-                            break;
+                        Console.WriteLine($"У {acc3.name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
                     }
-                    break;
+                    else
+                    {
+                        Console.Write("Введите id клиента которому желаете сделать транзакцию: ");
+                        int answer13 = int.Parse(Console.ReadLine());
+                        switch (answer13)
+                        {
+                            case 195234:
+                                AccountMethods.Transaction(acc3, acc1);
+                                Info.start();
+                                break;
+                            case 300592:
+                                AccountMethods.Transaction(acc3, acc2);
+                                Info.start();
+                                break;
+                            default:
+                                Console.WriteLine("Неверный номер!");
+                                Info.start();
+                                break;
+                        }
+                        break;
+                    }
                 default:
                     Console.WriteLine("Неверный номер!");
                     Info.start();

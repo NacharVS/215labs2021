@@ -39,16 +39,30 @@ namespace BanK_Account
 
         public void Withdraw(AccountMethods acc, int withd)
         {
-            acc.balance -= withd;
+            if (acc.balance <= 0)
+            {
+                Console.WriteLine($"{acc.name} не имеет денег на счету для вывода");
+            }
+            else
+            {
+                acc.balance -= withd;
+            }
         }
 
         public static void Transaction(AccountMethods accSeller, AccountMethods accGetter)
         {
-            Console.Write("Введите сумму для транзакции: ");
-            double transsum = double.Parse(Console.ReadLine());
-            accSeller.balance -= transsum;
-            accGetter.balance += transsum;
-            Console.WriteLine($"{accGetter.name} успешно получил {transsum}");
+            if (accSeller.balance <= 0)
+            {
+                Console.WriteLine($"У {accSeller.name} нет денег на счёту для транзакции!");
+            }
+            else
+            {
+                Console.Write("Введите сумму для транзакции: ");
+                double transsum = double.Parse(Console.ReadLine());
+                accSeller.balance -= transsum;
+                accGetter.balance += transsum;
+                Console.WriteLine($"{accGetter.name} успешно получил {transsum}");
+            }
         }
     }
 }
