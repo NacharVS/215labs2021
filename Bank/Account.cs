@@ -1,20 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
-namespace ConsoleApp1
+namespace justforfun
 {
     class Account
     {
         public string name;
         public double balance;
+        public string id;
 
         public static double rate = 0.09;
 
-        public Account(string name, double balance)
+        public Account(string name, double balance, string id)
         {
             this.name = name;
             this.balance = balance;
+            this.id = id;
         }
 
         public void ShowInfo()
