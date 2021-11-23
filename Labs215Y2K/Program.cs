@@ -25,66 +25,83 @@ namespace Deletor
             //Fill.Matrix.ex10(array);
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
-            int ArrayRange = 0;
-            NewAshanUpdate[] Ashan = new NewAshanUpdate[100];
-            NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
-            int CounterOfProducts = 0;
-            int CounterOfFilling = 0;
-            int CounterOfCyclices = 1;
-            string[] catalog = new string[] { "1. Гречка", "2. Макароны", "3. Молоко", "4. Хлеб", "5. Батон", "6. Конфеты", "7. Чипсы", "8. Сухари", "9. Попкорн", "10. Семечки"};
-            int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
-            Ashan[CounterOfFilling] = new NewAshanUpdate();
-            for (CounterOfFilling = 0; CounterOfFilling < catalog.Length; CounterOfFilling++)
-            {
-                Ashan[CounterOfFilling] = new NewAshanUpdate();
-                Ashan[CounterOfFilling].Names = catalog[CounterOfFilling];
-                Ashan[CounterOfFilling].Price = price[CounterOfFilling];
-                Console.Write($"{Ashan[CounterOfFilling].Names} ");
-                Console.WriteLine($"\t{Ashan[CounterOfFilling].Price}");
-            }
-            //Ashan[CounterOfFilling].Price
+            Account acc1 = new Account("Ivan", 5000, new Random().Next(123456,9523512));
+            Account acc2 = new Account("Fedor", 6000, new Random().Next(123456, 9523512));
+            Account acc3 = new Account("Elena", 3000, new Random().Next(123456, 9523512));
+            Account acc4 = new Account("Yarik", 100, new Random().Next(123456, 9523512));
+            Account acc5 = new Account("Egorik", 1000, new Random().Next(123456, 9523512));
+
+            acc1.ShowInfo(acc1);
+            acc2.ShowInfo(acc2);
+            acc3.ShowInfo(acc3);
+            acc4.ShowInfo(acc4);
+            acc5.ShowInfo(acc5);
             Console.WriteLine();
-            while (CounterOfCyclices != 2)
+
+            Console.WriteLine("Введите кол-во месяцев");
+            int mountcounter = int.Parse(Console.ReadLine());
+            Account.rate = 0.09;
+            Console.WriteLine("Профит за " +mountcounter+ " меся(ц/ца/цев) с коэффицентом " + Account.rate);
+            Console.WriteLine();
+            Account.ShowProfit(acc1, mountcounter);
+            Account.ShowProfit(acc3, mountcounter);
+            Account.ShowProfit(acc3, mountcounter);
+            Account.ShowProfit(acc4, mountcounter);
+            Account.ShowProfit(acc5, mountcounter);
+
+
+            acc1.ShowInfo(acc1);
+            acc2.ShowInfo(acc2);
+            acc3.ShowInfo(acc3);
+            acc4.ShowInfo(acc4);
+            acc5.ShowInfo(acc5);
+
+            acc1.Deposit(acc1);
+            acc1.ShowInfo(acc1);
+
+            acc4.Withdraw(acc4);
+            acc4.ShowInfo(acc4);
+            while (true)
             {
-                Korzina[CounterOfProducts] = new NewAshanUpdate();
-                Ashan[CounterOfProducts] = new NewAshanUpdate();
-                Console.WriteLine("Хотите приобрести товар? 1 - Да, 2 - Нет");
-                CounterOfCyclices = int.Parse(Console.ReadLine());
-                if (CounterOfCyclices == 1)
+                int GetterCounter = 0;
+                int SellerCounter = 0;
+                int[] UserIdMassive = new int[5];
+                UserIdMassive[0] = acc1.UserId;
+                UserIdMassive[1] = acc2.UserId;
+                UserIdMassive[2] = acc3.UserId;
+                UserIdMassive[3] = acc4.UserId;
+                UserIdMassive[4] = acc5.UserId;
+                Account[] UserMassive2 = new Account[5];
+                UserMassive2[0] = acc1;
+                UserMassive2[1] = acc2;
+                UserMassive2[2] = acc3;
+                UserMassive2[3] = acc4;
+                UserMassive2[4] = acc5;
+                Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
+                int AccGetterId = int.Parse(Console.ReadLine());
+                Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
+                int AccGetterSeller = int.Parse(Console.ReadLine());
+                for (int i = 0; i < UserIdMassive.Length; i++)
                 {
-                    ArrayRange+=1;
-                    Console.WriteLine("Введите номер товара, который вам нужен");
-                    int KorzinaNumber = int.Parse(Console.ReadLine())-1;
-                    Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
-                    Console.WriteLine("Введите кол-во товара");
-                    Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
-                    if (KorzinaNumber-1 < 6)
+                    if (UserIdMassive[i] == AccGetterId)
                     {
-                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * Ashan[CounterOfProducts].Count;
+                        GetterCounter = i;
                     }
-                    Console.WriteLine();
-                    if (KorzinaNumber > 5 && Ashan[CounterOfProducts].Count % 100 == 0)
+                    if (UserIdMassive[i] == AccGetterSeller)
                     {
-                        int check = Ashan[CounterOfProducts].Count / 100;
-                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * check;
+                        SellerCounter = i;
                     }
-                    //        else
-                    //{
-                    //    Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
-                    //}
+                    else
+                    {
+                        Console.WriteLine("Вы ввели неверный ид");
+                    }
                 }
-                else
-                {
-                    break;
-                }
-                CounterOfProducts++;
+                Account.Transaction(UserMassive2[SellerCounter], UserMassive2[SellerCounter], UserMassive2[GetterCounter]);
+                acc4.ShowInfo(UserMassive2[SellerCounter]);
+                acc5.ShowInfo(UserMassive2[GetterCounter]);
             }
-            for (int i = 0; i < ArrayRange; i++)
-            {
-                Console.Write($"{Korzina[i].NumberOfProduct}");
-                Console.Write($"\t{Korzina[i].Count} ");
-                Console.WriteLine($"\t{Korzina[0].Price}");
-            }
+
+           
 
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
@@ -335,6 +352,67 @@ namespace Deletor
 
 
 
+
         //}
+//        int ArrayRange = 0;
+//        NewAshanUpdate[] Ashan = new NewAshanUpdate[100];
+//        NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
+//        int CounterOfProducts = 0;
+//        int CounterOfFilling = 0;
+//        int CounterOfCyclices = 1;
+//        string[] catalog = new string[] { "1. Гречка", "2. Макароны", "3. Молоко", "4. Хлеб", "5. Батон", "6. Конфеты", "7. Чипсы", "8. Сухари", "9. Попкорн", "10. Семечки" };
+//        int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
+//        Ashan[CounterOfFilling] = new NewAshanUpdate();
+//            for (CounterOfFilling = 0; CounterOfFilling<catalog.Length; CounterOfFilling++)
+//            {
+//                Ashan[CounterOfFilling] = new NewAshanUpdate();
+//        Ashan[CounterOfFilling].Names = catalog[CounterOfFilling];
+//                Ashan[CounterOfFilling].Price = price[CounterOfFilling];
+//                Console.Write($"{Ashan[CounterOfFilling].Names} ");
+//                Console.WriteLine($"\t{Ashan[CounterOfFilling].Price}");
+//            }
+//    //Ashan[CounterOfFilling].Price
+//    Console.WriteLine();
+//            while (CounterOfCyclices != 2)
+//            {
+//                Korzina[CounterOfProducts] = new NewAshanUpdate();
+//    Ashan[CounterOfProducts] = new NewAshanUpdate();
+//    Console.WriteLine("Хотите приобрести товар? 1 - Да, 2 - Нет");
+//                CounterOfCyclices = int.Parse(Console.ReadLine());
+//                if (CounterOfCyclices == 1)
+//                {
+//                    ArrayRange+=1;
+//                    Console.WriteLine("Введите номер товара, который вам нужен");
+//                    int KorzinaNumber = int.Parse(Console.ReadLine()) - 1;
+//    Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
+//                    Console.WriteLine("Введите кол-во товара");
+//                    Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
+//                    if (KorzinaNumber-1 < 6)
+//                    {
+//                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price* Ashan[CounterOfProducts].Count;
+//                    }
+//Console.WriteLine();
+//if (KorzinaNumber > 5 && Ashan[CounterOfProducts].Count % 100 == 0)
+//{
+//    int check = Ashan[CounterOfProducts].Count / 100;
+//    Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * check;
+//}
+//                    //        else
+//                    //{
+//                    //    Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
+//                    //}
+//                }
+//                else
+//{
+//    break;
+//}
+//CounterOfProducts++;
+//            }
+//            for (int i = 0; i < ArrayRange; i++)
+//{
+//    Console.Write($"{Korzina[i].NumberOfProduct}");
+//    Console.Write($"\t{Korzina[i].Count} ");
+//    Console.WriteLine($"\t{Korzina[0].Price}");
+//}
     }
 }
