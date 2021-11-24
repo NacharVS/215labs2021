@@ -5,7 +5,33 @@ class Account
     public double balance;
     public int UserId;
 
+    private int _birthOfYear;
+    private int _age;
+
     public static double rate = 0.09;
+
+    public int Age { get => _age; set => _age = value; }
+    public int BirthOfYear
+    {
+        get
+        {
+            return _birthOfYear;
+        }
+
+        set
+        {
+            if (value < 1900 || value >= DateTime.Now.Year)
+            {
+                Console.WriteLine("Вы ввели неверный год рождения");
+                Age = 0;
+            }
+            else
+            {
+                _age = DateTime.Now.Year - value;
+                Console.WriteLine($"Ваш возраст - {_age}");
+            }
+        }
+    }
 
     public Account(string name, double balance,int UserId)
     {
@@ -14,11 +40,36 @@ class Account
         this.UserId = UserId;
     }
 
+    public void Info(Account acc)
+    {
+         if (Age == 0)
+         {
+             if (acc.balance > 0)
+             {
+                    System.Console.WriteLine($"Id - {UserId}, {name} - Возраст не указан - {balance}");
+             }
+         }
+         else
+         {
+             System.Console.WriteLine($"Id - {UserId}, {name} - {Age} лет(год) - {balance}");
+         }
+    }
     public void ShowInfo(Account acc)
     {
-        if (acc.balance > 0)
+        if (Age >= 18)
         {
-            System.Console.WriteLine($"Id - {UserId}, {name} - {balance}");
+            if (Age == 0)
+            {
+                if (acc.balance > 0)
+                {
+                    System.Console.WriteLine($"Id - {UserId}, {name} - Возраст не указан - {balance}");
+                }
+            }
+            else
+            {
+                System.Console.WriteLine($"Id - {UserId}, {name} - {Age} лет(год) - {balance}");
+                balance = 0;
+            }
         }
     }
 

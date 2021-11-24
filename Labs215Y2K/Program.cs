@@ -31,12 +31,39 @@ namespace Deletor
             Account acc4 = new Account("Yarik", 100, new Random().Next(123456, 9523512));
             Account acc5 = new Account("Egorik", 1000, new Random().Next(123456, 9523512));
 
-            acc1.ShowInfo(acc1);
-            acc2.ShowInfo(acc2);
-            acc3.ShowInfo(acc3);
-            acc4.ShowInfo(acc4);
-            acc5.ShowInfo(acc5);
+            acc1.Info(acc1);
+            acc2.Info(acc2);
+            acc3.Info(acc3);
+            acc4.Info(acc4);
+            acc5.Info(acc5);
             Console.WriteLine();
+            
+            Console.WriteLine($"{acc1.name} Введите Ваш год рождения: ");
+            acc1.BirthOfYear = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.WriteLine($"{acc2.name} Введите Ваш год рождения: ");
+            acc2.BirthOfYear = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.WriteLine($"{acc3.name} Введите Ваш год рождения: ");
+            acc3.BirthOfYear = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.WriteLine($"{acc4.name} Введите Ваш год рождения: ");
+            acc4.BirthOfYear = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            Console.WriteLine($"{acc5.name} Введите Ваш год рождения: ");
+            acc5.BirthOfYear = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+            acc1.ShowInfo(acc1);
+            acc2.ShowInfo(acc2); 
+            acc3.ShowInfo(acc3); 
+            acc4.ShowInfo(acc4); 
+            acc5.ShowInfo(acc5); 
+            Console.WriteLine(); 
 
             Console.WriteLine("Введите кол-во месяцев");
             int mountcounter = int.Parse(Console.ReadLine());
@@ -44,7 +71,7 @@ namespace Deletor
             Console.WriteLine("Профит за " +mountcounter+ " меся(ц/ца/цев) с коэффицентом " + Account.rate);
             Console.WriteLine();
             Account.ShowProfit(acc1, mountcounter);
-            Account.ShowProfit(acc3, mountcounter);
+            Account.ShowProfit(acc2, mountcounter);
             Account.ShowProfit(acc3, mountcounter);
             Account.ShowProfit(acc4, mountcounter);
             Account.ShowProfit(acc5, mountcounter);
@@ -61,8 +88,7 @@ namespace Deletor
 
             acc4.Withdraw(acc4);
             acc4.ShowInfo(acc4);
-            while (true)
-            {
+
                 int GetterCounter = 0;
                 int SellerCounter = 0;
                 int[] UserIdMassive = new int[5];
@@ -91,15 +117,10 @@ namespace Deletor
                     {
                         SellerCounter = i;
                     }
-                    else
-                    {
-                        Console.WriteLine("Вы ввели неверный ид");
-                    }
                 }
                 Account.Transaction(UserMassive2[SellerCounter], UserMassive2[SellerCounter], UserMassive2[GetterCounter]);
-                acc4.ShowInfo(UserMassive2[SellerCounter]);
-                acc5.ShowInfo(UserMassive2[GetterCounter]);
-            }
+                UserMassive2[SellerCounter].ShowInfo(UserMassive2[SellerCounter]);
+                UserMassive2[GetterCounter].ShowInfo(UserMassive2[GetterCounter]);
 
            
 
