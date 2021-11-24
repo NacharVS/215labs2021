@@ -19,7 +19,7 @@ namespace Labs215Y2K
         {
             this.name = name;
             this.balance = balance;
-        }
+     
 
         public void ShowInfo()
         {
