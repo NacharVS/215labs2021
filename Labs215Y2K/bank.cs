@@ -19,34 +19,35 @@ namespace Labs215Y2K
         {
             this.name = name;
             this.balance = balance;
-     
 
-        public void ShowInfo()
-        {
-            System.Console.WriteLine($"{name} - {balance}");
-        }
 
-        public static void ShowProfit(bank acc, int month)
-        {
-            for (int i = 0; i < month; i++)
+            void ShowInfo()
             {
-                acc.balance += acc.balance * rate;
+                System.Console.WriteLine($"{name} - {balance}");
             }
-        }
 
-        public void Deposit(double money)
-        {
+            static void ShowProfit(bank acc, int month)
+            {
+                for (int i = 0; i < month; i++)
+                {
+                    acc.balance += acc.balance * rate;
+                }
+            }
 
-        }
+            void Deposit(double money)
+            {
 
-        public void Withdraw(double money)
-        {
+            }
 
-        }
+            void Withdraw(double money)
+            {
 
-        public static void Transaction(bank accSeller, bank accGetter)
-        {
+            }
 
+            static void Transaction(bank accSeller, bank accGetter)
+            {
+
+            }
         }
     }
 }
