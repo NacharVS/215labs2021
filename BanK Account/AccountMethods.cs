@@ -8,10 +8,10 @@ namespace BanK_Account
     {
         private  string _name;
         private  double _balance;
-        private  int _id;
-        private int _datebirth;
-        public int _finalage;
+        private int _id;
         private static double rate = 0.09;
+        private int[] dateofbirth = new int[3];
+        private int[] finalage = new int[3];
         
         public string Name
         {
@@ -21,8 +21,7 @@ namespace BanK_Account
             }
             set
             {
-                Console.Write("Введите имя: ");
-                _name = Console.ReadLine();
+                _name = value;
             }
         }
         public double Balance
@@ -47,41 +46,53 @@ namespace BanK_Account
                 _id = value;
             }
         }
-        public int DateBirth
+
+        public void AgeInput()
         {
-            get
+            Console.Write($"Введите год рождения {Name} : ");
+            int date = int.Parse(Console.ReadLine());
+            if (date < 1900 || date > 2021)
             {
-                return _datebirth;
+                Console.WriteLine();
+                while (date < 1900 || date > 2021)
+                {
+                    date = 0;
+                    Console.Write("Неверный год рождения! Введите заново: ");
+                    date = int.Parse(Console.ReadLine());
+                    if (date > 1900 && date < 2021)
+                    {
+                        for (int i = 0; i < 1; i++)
+                        {
+                            dateofbirth[i] += date;
+                            break;
+                        }
+                        break;
+                    }
+                    else
+                    {
+                        continue;
+                    }
+                }
             }
-            set
+            else
             {
-                Console.Write("Введите год рождения: ");
-                _datebirth = int.Parse(Console.ReadLine());
-                
+                for (int i = 0; i < 1; i++)
+                {
+                    dateofbirth[i] += date;
+                }
             }
-        }
-        public void proverka()
-        {
-            if (DateBirth < 1900 && DateBirth > 2021)
-            {
-                Console.WriteLine("нверно");
-               
-            }
-        }
-        public int Finalage
-        {
-            get
-            {
-                return _finalage;
-            }
-            set
-            {
-                _finalage = DateTime.Now.Year - DateBirth;
-            }
+            
         }
         public void ShowInfo()
         {
-            System.Console.WriteLine($"id: {_id} Имя: {_name} Возраст: {_finalage} Баланс = {_balance}"); 
+            for (int i = 0; i < 1; i++)
+            {
+                finalage[i] = DateTime.Now.Year - dateofbirth[i];
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                Console.WriteLine($"id: {Id} Имя: {Name} Возраст: {finalage[i]} Баланс = {Balance}");
+            }
         }
 
         public void ShowProfit(AccountMethods acc, int month)
