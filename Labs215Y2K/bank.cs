@@ -11,6 +11,10 @@ namespace Labs215Y2K
 
         public static double rate = 0.09;
 
+        public bank(string v1, int v2)
+        {
+        }
+
         public void Account(string name, double balance)
         {
             this.name = name;
@@ -22,7 +26,7 @@ namespace Labs215Y2K
             System.Console.WriteLine($"{name} - {balance}");
         }
 
-        public static void ShowProfit( Account acc, int month)
+        public static void ShowProfit( bank  acc, int month)
         {
             for (int i = 0; i < month; i++)
             {
@@ -40,7 +44,7 @@ namespace Labs215Y2K
 
         }
 
-        public static void Transaction(Account accSeller, Account accGetter)
+        public static void Transaction(bank accSeller, bank accGetter)
         {
 
         }
