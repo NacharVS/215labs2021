@@ -6,17 +6,20 @@ namespace BanK_Account
 {
     class Info : AccountMethods
     {
-        public Info(string name, double balance, int id)
+        public Info(string name, double balance, int id, int datebirth, int finalage)
         {
             Name = name;
             Balance = balance;
             Id = id;
+            DateBirth = datebirth;
+            Finalage = finalage;
 
         }
 
-        private static AccountMethods acc1 = new Info("Альфред", 2000,195234);
-        private static AccountMethods acc2 = new Info("Илья", 10000,300592);
-        private static AccountMethods acc3 = new Info("Александр", 15000,666777);
+        private static AccountMethods acc1 = new Info("Альфред", 2000,195234,0,0);
+        private static AccountMethods acc2 = new Info("Илья", 10000,300592,0,0);
+        private static AccountMethods acc3 = new Info("Александр", 15000,666777,0,0);
+        
 
         public static void start()
         {
