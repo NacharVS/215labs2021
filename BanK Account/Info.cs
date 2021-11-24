@@ -2,14 +2,21 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BanK_Account
+namespace BanK_Account 
 {
-    class Info
+    class Info : AccountMethods
     {
+        public Info(string name, double balance, int id)
+        {
+            Name = name;
+            Balance = balance;
+            Id = id;
 
-        public static AccountMethods acc1 = new AccountMethods("Альфред", 2000,195234);
-        public static AccountMethods acc2 = new AccountMethods("Илья", 10000,300592);
-        public static AccountMethods acc3 = new AccountMethods("Александр", 15000,666777);
+        }
+
+        private static AccountMethods acc1 = new Info("Альфред", 2000,195234);
+        private static AccountMethods acc2 = new Info("Илья", 10000,300592);
+        private static AccountMethods acc3 = new Info("Александр", 15000,666777);
 
         public static void start()
         {
@@ -51,7 +58,6 @@ namespace BanK_Account
             acc1.ShowInfo();
             acc2.ShowInfo();
             acc3.ShowInfo();
-      
         }
         public static void procents()
         {
@@ -98,29 +104,20 @@ namespace BanK_Account
             switch (number)
             {
                 case 195234:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите добавить");
-                    int depo = int.Parse(Console.ReadLine());
-                    acc1.Deposit(acc1, depo);
-                    Console.WriteLine($"{acc1.name} - начислено {depo}");
+                    int depo1 = 0;
+                    acc1.Deposit(acc1,depo1);
                     acc1.ShowInfo();
                     Info.start();
                     break;
                 case 300592:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите добавить");
-                    int depo1 = int.Parse(Console.ReadLine());
-                    acc2.Deposit(acc2, depo1);
-                    Console.WriteLine($"{acc2.name} - начислено {depo1}");
+                    int depo2 = 0;
+                    acc2.Deposit(acc2, depo2);
                     acc2.ShowInfo();
                     Info.start();
                     break;
                 case 666777:
-                    Console.WriteLine();
-                    Console.WriteLine("Введите сумму которую хотите добавить");
-                    int depo3 = int.Parse(Console.ReadLine());
+                    int depo3 = 0;
                     acc3.Deposit(acc3, depo3);
-                    Console.WriteLine($"{acc3.name} - начислено {depo3}");
                     acc3.ShowInfo();
                     Info.start();
                     break;
@@ -138,86 +135,17 @@ namespace BanK_Account
             switch (number4)
             {
                 case 195234:
-                    if (acc1.balance <= 0)
-                    {
-                        Console.WriteLine($"{acc1.name} не имеет денег на счету для вывода");
-                        Info.start();
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("Введите сумму которую хотите вывести");
-                        int withd = int.Parse(Console.ReadLine());
-                        if (withd <= acc1.balance)
-                        {
-                            acc1.Withdraw(acc1, withd);
-                            Console.WriteLine($"{acc1.name} - успешно выведено {withd}");
-                            acc1.ShowInfo();
-                            Info.start();
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"У {acc1.name} нет столько денег на счету для вывода");
-                            Info.start();
-                            break;
-                        }
-                    }
+                    int withd1 = 0;
+                    acc1.Withdraw(acc1, withd1);
+                    break;
                 case 300592:
-                    if (acc2.balance <= 0)
-                    {
-                        Console.WriteLine($"{acc2.name} не имеет денег на счету для вывода");
-                        Info.start();
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("Введите сумму которую хотите вывести");
-                        int withd2 = int.Parse(Console.ReadLine());
-                        if (withd2 <= acc2.balance)
-                        {
-                            acc2.Withdraw(acc2, withd2);
-                            Console.WriteLine($"{acc2.name} - успешно выведено {withd2}");
-                            acc2.ShowInfo();
-                            Info.start();
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"У {acc2.name} нет столько денег на счету для вывода");
-                            Info.start();
-                            break;
-                        }
-                    }
+                    int withd2 = 0;
+                    acc2.Withdraw(acc2, withd2);
+                    break;
                 case 666777:
-                    if (acc3.balance <= 0)
-                    {
-                        Console.WriteLine($"{acc3.name} не имеет денег на счету для вывода");
-                        Info.start();
-                        break;
-                    }
-                    else
-                    {
-                        Console.WriteLine();
-                        Console.WriteLine("Введите сумму которую хотите вывести");
-                        int withd3 = int.Parse(Console.ReadLine());
-                        if (withd3 <= acc3.balance)
-                        {
-                            acc3.Withdraw(acc3, withd3);
-                            Console.WriteLine($"{acc3.name} - успешно выведено {withd3}");
-                            acc3.ShowInfo();
-                            Info.start();
-                            break;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"У {acc3.name} нет столько денег на счету для вывода");
-                            Info.start();
-                            break;
-                        }
-                    }
+                    int withd3 = 0;
+                    acc3.Withdraw(acc3, withd3);
+                    break;
                 default:
                     Console.WriteLine("Неверный номер!");
                     Info.start();
@@ -232,9 +160,9 @@ namespace BanK_Account
             switch (number5)
             {
                 case 195234:
-                    if (acc1.balance <= 0)
+                    if (acc1.Balance <= 0)
                     {
-                        Console.WriteLine($"У {acc1.name} нет денег на счёту для транзакции!");
+                        Console.WriteLine($"У {acc1.Name} нет денег на счёту для транзакции!");
                         Info.start();
                         break;
                     }
@@ -260,9 +188,9 @@ namespace BanK_Account
                         break;
                     }
                 case 300592:
-                    if (acc2.balance <= 0)
+                    if (acc2.Balance <= 0)
                     {
-                        Console.WriteLine($"У {acc2.name} нет денег на счёту для транзакции!");
+                        Console.WriteLine($"У {acc2.Name} нет денег на счёту для транзакции!");
                         Info.start();
                         break;
                     }
@@ -288,9 +216,9 @@ namespace BanK_Account
                         break;
                     }
                 case 666777:
-                    if (acc3.balance <= 0)
+                    if (acc3.Balance <= 0)
                     {
-                        Console.WriteLine($"У {acc3.name} нет денег на счёту для транзакции!");
+                        Console.WriteLine($"У {acc3.Name} нет денег на счёту для транзакции!");
                         Info.start();
                         break;
                     }
