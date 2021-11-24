@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7pbe9IpdAJ+kDDDnp263om2Y0OTDFJnj5l3Rgb7Wf0+t7DC1oLo8sbUEdZ0hxeIkrbKu0qksZ6doHsIyxA0o/Q==",
+  "dgSpecHash": "2iFDWV4RWM8f8sGbWAXcpS4gZYKrgAmJJjxbhhZnhbBOUGM8gVII2b7bFQm7jKx8XlBOZPo+TK3JtpKTI7Oftw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\152019\\Documents\\215\\Bank\\Bank.csproj",
+  "projectFilePath": "C:\\215github\\Bank\\Bank.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

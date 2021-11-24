@@ -1,82 +1,78 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace justforfun
+namespace ConsoleApp1
 {
     class Account
     {
-        public string name;
-        public double balance;
-        public string id;
+        private string _name;
+        private double _balance;
+        private int _id;
+        private int _yearOfBirth;
+
 
         public static double rate = 0.09;
 
-        public Account(string name, double balance, string id)
-        {
-            this.name = name;
-            this.balance = balance;
-            this.id = id;
-        }
+        public string Name { get => _name; set => _name = value; }
+        public double Balance
+        {   
+            get 
+            {return _balance;}
+            set 
+            { 
+                if (value < 0)
+                    Console.WriteLine("Баланс не может быть отрицательным.");
 
-        public void ShowInfo()
-        {
-            System.Console.WriteLine($"{name} - {balance}");
-        }
-
-        public static void ShowProfit(Account acc, int month)
-        {
-            for (int i = 0; i < month; i++)
-            {
-                acc.balance += acc.balance * rate;
-            }
-        }
-
-        public void Deposit(ref double money)
-        {
-            Console.WriteLine("Введите количество денег, которое Вы хотите внести");
-            double cash = double.Parse(Console.ReadLine());
-            if (money > 0)
-            {
-                money += cash;
-                Console.WriteLine($"Поздравляем. {cash} рублей было зачислено на Ваш счёт.");
-            }
-            else
-                Console.WriteLine("Жулик, не воруй!");
-        }
-
-        public void Withdraw(ref double money)
-        {
-            Console.WriteLine("Введите количество денег, которое Вы хотите снять");
-            double cash = double.Parse(Console.ReadLine());
-            if (money > 0)
-            {
-                money += cash;
-                Console.WriteLine($"{cash} рублей было снято со счёта.");
-            }
-            else
-                Console.WriteLine("Жулик, не воруй!");
-        }
-
-        public static void Transaction(Account accSeller, Account accGetter)
-        {
-            Console.WriteLine($"Введите сумму, которую хотите перевести {accGetter.name}");
-            double money = double.Parse(Console.ReadLine());
-            if (money > 0)
-            {
-                if (money <= accSeller.balance)
+                else 
                 {
-                    accSeller.balance -= money;
-                    accGetter.balance += money;
-                    Console.WriteLine($"Со счёта {accSeller.name} было переведено {accGetter.name} {money} рублей");
+                    _balance = value;
                 }
-                else
-                    Console.WriteLine("На вашем счету недостаточно средств.");
-            }
-            else
-                Console.WriteLine("Жулик, не воруй!");
+            }           
         }
+
+        public int Id
+        {
+            get
+            { return _id; }
+            set
+            {
+                if (value < 0)
+                    Console.WriteLine("ID пользователя не может быть отрицательным.");
+
+                else
+                {
+                    _id = value;
+                }
+            }
+        }
+        public int Age
+        {
+            get
+            { return _yearOfBirth; }
+            set
+            {
+                if (value > 1900 & value <= DateTime.Now.Year)
+                    _yearOfBirth = DateTime.Now.Year - value;
+
+                else
+                {
+                    Console.WriteLine("Некорректный год рождения.");
+                }
+            }
+        }
+
+
+        public Account(string name, double balance, int yearOfBirth, int id)
+        {
+            Age = yearOfBirth;
+            Id = id;
+            Name = name;
+            Balance = balance;
+        }
+
+
+
+      
     }
 }

@@ -1,79 +1,75 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace justforfun
+namespace ConsoleApp1
 {
-    class Program
+    class Program:Actions
     {
         static void Main(string[] args)
         {
-            Account acc1 = new Account("Ivan", 5000, "1");
-            Account acc2 = new Account("Fedor", 6000, "2");
-            Account acc3 = new Account("Elena", 3000, "3");
+            Account acc1 = new Account("MyName", 500, 1901, 0);
+            Account acc2 = new Account("Fedor", 6000, 2004, 1);
+            Account acc3 = new Account("Elena", 3000, 1987, 2);
 
-            Console.WriteLine("Введите Ваш ID.");
-            string chose = Console.ReadLine();
-            Console.WriteLine("Введите ID пользователя, которому Вы хотите перевести деньги.");
-            string chose2 = Console.ReadLine();
+            Work();
+            Actions.ShowInfo(acc1);
+            Actions.ShowInfo(acc2);
 
-            if (chose == "1")
+
+        }
+        public static void Work ()
+        {
+            Account[] array = new Account[100];
+            
+            Account acc1 = new Account("MyName", 500, 1901, 0);
+            Account acc2 = new Account("Fedor", 6000, 2004, 1);
+            Account acc3 = new Account("Elena", 3000, 1987, 2);
+            array[0] = acc1;
+            array[1] = acc2;
+            array[2] = acc3;
+
+            Console.WriteLine("Введите ID пользователя, с которого Вы хотите начать работу.");
+            int userID = int.Parse(Console.ReadLine());
+            Console.WriteLine("На данный момент вы можете:");
+            Console.WriteLine("(1) - Пополнить счёт.");
+            Console.WriteLine("(2) - Снять деньги со счёта.");
+            Console.WriteLine($"(3) - Узнать свой будущий профит за год с процентной ставкой в {Account.rate*100}. % в месяц");
+            Console.WriteLine("(4) - Узнать свой баланс.");
+            Console.WriteLine("(5) - Перевести деньги с одного счета на другой");
+            Console.WriteLine("Введите номер необходимой операции");
+            string number = Console.ReadLine();
+            if (userID == 0)
             {
-                switch (chose)
+                switch (number)
                 {
                     case "1":
-                        Console.WriteLine("Невозможно отправить деньги самому себе.");
+                        Actions.Deposit(acc1);
+                        Actions.ShowInfo(acc1);
                         break;
                     case "2":
-                        Account.Transaction(acc1, acc2);
+                        Actions.Withdraw(acc1);
+                        Actions.ShowInfo(acc1);
                         break;
                     case "3":
-                        Account.Transaction(acc1, acc3);
+                        Actions.ShowProfit(acc1, 12);
+                        break;
+                    case "4":
+                        Actions.ShowInfo(acc1);
+                        break;
+                    case "5":
+                        Console.WriteLine("Введите ID пользователя, которому хотите перевести деньги.");
+                        int getterId = int.Parse(Console.ReadLine());
+                        for (int i = 0; i< array.Length; i++)
+                        {
+                            if (array[i]==array[getterId])
+                            {
+                                Actions.Transaction(acc1, array[getterId]);
+                                Actions.ShowInfo(acc1);
+                            }
+                        }
                         break;
                 }
+
             }
-
-            if (chose == "2")
-            {
-                switch (chose)
-                {
-                    case "1":
-                        Account.Transaction(acc2, acc1);
-                        
-                        break;
-                    case "2":
-                        Console.WriteLine("Невозможно отправить деньги самому себе.");
-                        break;
-                    case "3":
-                        Account.Transaction(acc2, acc3);
-                        break;
-                }
-            }
-
-            if (chose == "3")
-            {
-                switch (chose)
-                {
-                    case "1":
-                        Account.Transaction(acc3, acc1);
-                        break;
-                    case "2":
-                        Account.Transaction(acc3, acc2);
-                        break;
-                    case "3":
-                        Console.WriteLine("Невозможно отправить деньги самому себе.");
-                        break;
-                }
-            }
-
-
-
-
-            acc1.ShowInfo();
-            acc3.ShowInfo();
-            Console.ReadKey();
         }
     }
 }
