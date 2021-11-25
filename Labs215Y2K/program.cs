@@ -8,23 +8,25 @@ namespace Labs215Y2K
     {
         public static void Main()
         {
-
-            bank acc1 = new bank("Ivan", 5000);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
-            bank acc2 = new bank("Fedor", 6000);
-            bank acc3 = new bank("Elena", 3000);
+            acc1.ShowInfo id = new Random().Next(1234, 9876);
+        
+            Account acc1 = new Account("Ivan", 5000);
+            Account acc2 = new Account("Fedor", 6000);
+            Account acc3 = new Account("Elena", 3000);
             acc1.ShowInfo();
             acc2.ShowInfo();
             acc3.ShowInfo();
             Console.WriteLine();
-            bank.rate = 0.09;
-            bank.ShowProfit(acc1, 1);                                                                       
-            bank.ShowProfit(acc3, 1);
-            bank.ShowProfit(acc3, 1);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+            Account.rate = 0.09;
+            Account.ShowProfit(acc1, 1);
+            Account.ShowProfit(acc3, 1);
+            Account.ShowProfit(acc3, 1);
             acc1.ShowInfo();
             acc2.ShowInfo();
             acc3.ShowInfo();
         }
     }
+}
 
 
 
