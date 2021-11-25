@@ -6,17 +6,17 @@ namespace BanK_Account
 {
     class Info : AccountMethods
     {
-        public Info(string name, double balance, int id)
+        public Info(string name, double rubbalance, double usdbalance, int id)
         {
             Name = name;
-            Balance = balance;
+            RubBalance = rubbalance;
+            UsdBalance = usdbalance;
             Id = id;
-
         }
 
-        private static AccountMethods acc1 = new Info("Альфред", 2000,195234);
-        private static AccountMethods acc2 = new Info("Илья", 10000,300592);
-        private static AccountMethods acc3 = new Info("Александр", 15000,666777);
+        private static AccountMethods acc1 = new Info("Альфред", 2000,100,195234);
+        private static AccountMethods acc2 = new Info("Илья", 10000,300,300592);
+        private static AccountMethods acc3 = new Info("Александр", 15000,750,666777);
         
 
         public static void start()
@@ -27,11 +27,15 @@ namespace BanK_Account
             Console.WriteLine("3 - Сделать пополнение на счёт клиента");
             Console.WriteLine("4 - Вывести со счёта клиента");
             Console.WriteLine("5 - Сделать транзакцию");
+            Console.WriteLine("6 - Сделать конвертацию со счетов");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
                 case 1:
                     Console.WriteLine();
+                    acc1.AgeInput();
+                    acc2.AgeInput();
+                    acc3.AgeInput();
                     Info.list();
                     Info.start();
                     break;
@@ -47,18 +51,96 @@ namespace BanK_Account
                 case 5:
                     Info.Trans();
                     break;
+                case 6:
+                    Info.ConvertOp();
+                    break;
                 default:
                     Console.WriteLine("Неверный номер!");
                     Info.start();
                     break;
             }
         }
+        public static void ConvertOp()
+        {
+            Console.WriteLine();
+            acc1.ShowInfo();
+            acc2.ShowInfo();
+            acc3.ShowInfo();
+            Console.Write("Введите id клиента: ");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 195234:
+                    Console.WriteLine();
+                    Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
+                    int answer1 = int.Parse(Console.ReadLine());
+                    switch (answer1)
+                    {
+                        case 1:
+                            acc1.RubConvertation(acc1);
+                            Console.WriteLine();
+                            acc1.ShowInfo();
+                            Info.start();
+                            break;
+                        case 2:
+                            acc1.UsdConvertation(acc1);
+                            Console.WriteLine();
+                            acc1.ShowInfo();
+                            Info.start();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 300592:
+                    Console.WriteLine();
+                    Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
+                    int answer2 = int.Parse(Console.ReadLine());
+                    switch (answer2)
+                    {
+                        case 1:
+                            acc2.RubConvertation(acc2);
+                            Console.WriteLine();
+                            acc2.ShowInfo();
+                            Info.start();
+                            break;
+                        case 2:
+                            acc2.UsdConvertation(acc2);
+                            Console.WriteLine();
+                            acc2.ShowInfo();
+                            Info.start();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case 666777:
+                    Console.WriteLine();
+                    Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
+                    int answer3 = int.Parse(Console.ReadLine());
+                    switch (answer3)
+                    {
+                        case 1:
+                            acc3.RubConvertation(acc3);
+                            Console.WriteLine();
+                            acc3.ShowInfo();
+                            Info.start();
+                            break;
+                        case 2:
+                            acc3.UsdConvertation(acc3);
+                            Console.WriteLine();
+                            acc3.ShowInfo();
+                            Info.start();
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+            }
+        }
         public static void list()
         {
             Console.WriteLine();
-            acc1.AgeInput();
-            acc2.AgeInput();
-            acc3.AgeInput();
             acc1.ShowInfo();
             acc2.ShowInfo();
             acc3.ShowInfo();
@@ -164,7 +246,13 @@ namespace BanK_Account
             switch (number5)
             {
                 case 195234:
-                    if (acc1.Balance <= 0)
+                    if (acc1.RubBalance <= 0)
+                    {
+                        Console.WriteLine($"У {acc1.Name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
+                    }
+                    else if (acc1.UsdBalance <= 0)
                     {
                         Console.WriteLine($"У {acc1.Name} нет денег на счёту для транзакции!");
                         Info.start();
@@ -192,7 +280,13 @@ namespace BanK_Account
                         break;
                     }
                 case 300592:
-                    if (acc2.Balance <= 0)
+                    if (acc2.RubBalance <= 0)
+                    {
+                        Console.WriteLine($"У {acc2.Name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
+                    }
+                    else if (acc2.UsdBalance <= 0)
                     {
                         Console.WriteLine($"У {acc2.Name} нет денег на счёту для транзакции!");
                         Info.start();
@@ -220,7 +314,13 @@ namespace BanK_Account
                         break;
                     }
                 case 666777:
-                    if (acc3.Balance <= 0)
+                    if (acc3.RubBalance <= 0)
+                    {
+                        Console.WriteLine($"У {acc3.Name} нет денег на счёту для транзакции!");
+                        Info.start();
+                        break;
+                    }
+                    else if (acc3.UsdBalance <= 0)
                     {
                         Console.WriteLine($"У {acc3.Name} нет денег на счёту для транзакции!");
                         Info.start();
