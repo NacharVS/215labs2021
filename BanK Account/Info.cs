@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account 
 {
-    class Info : AccountMethods
+    class Info : AccountMethods , IClientOperations
     {
         public Info(string name, double rubbalance, double usdbalance, int id)
         {
@@ -18,7 +18,27 @@ namespace BanK_Account
         private static AccountMethods acc2 = new Info("Илья", 10000,300,300592);
         private static AccountMethods acc3 = new Info("Александр", 15000,750,666777);
         
-
+        public static void usingquestion()
+        {
+            Console.WriteLine();
+            Console.WriteLine("Вы хотите использовать аккаунт сотрудника или клиента? 1 - сотрудник 2 - клиент");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Info.start();
+                    break;
+                case 2:
+                    Console.WriteLine();
+                    
+                    Console.Write("Введите id клиента, за которого хотите войти:");
+                    int answer2 = int.Parse(Console.ReadLine());
+                    switch (answer2)
+                    {
+                        case 
+                    }
+            }
+        }
         public static void start()
         {
             Console.WriteLine("Что вы хотите сделать?");
@@ -354,6 +374,45 @@ namespace BanK_Account
             }
         }
 
+        void IClientOperations.ConvertOp(AccountMethods acc)
+        {
+            Console.WriteLine();
+            Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    acc.RubConvertation(acc);
+                    Console.WriteLine();
+                    acc.ShowInfo();
+                    Info.start();
+                    break;
+                case 2:
+                    acc.UsdConvertation(acc);
+                    Console.WriteLine();
+                    acc.ShowInfo();
+                    Info.start();
+                    break;
+                default:
+                    break;
+            }
+            
+        }
+
+        void IClientOperations.deposit()
+        {
+            
+        }
+
+        void IClientOperations.withdraw()
+        {
+            
+        }
+
+        void IClientOperations.trans()
+        {
+            
+        }
     }
 }
 

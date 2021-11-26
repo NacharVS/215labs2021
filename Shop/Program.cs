@@ -6,7 +6,7 @@ namespace Shop
     {
         static void Main(string[] args)
         {
-            //ShopNew1.start();
+            ShopNew1.start();
         }
     }
 }

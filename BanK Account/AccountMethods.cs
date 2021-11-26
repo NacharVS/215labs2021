@@ -106,6 +106,10 @@ namespace BanK_Account
                 Console.WriteLine($"id: {Id} Имя: {Name} Возраст: {finalage[i]} Баланс в рублях = {RubBalance} р. Баланс в долларах = {UsdBalance} $");
             }
         }
+        public void ShowId()
+        {
+            Console.WriteLine();
+        }
 
         public void ShowProfit(AccountMethods acc, int month)
         {
