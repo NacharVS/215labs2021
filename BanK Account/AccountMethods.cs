@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account
 {
-    class AccountMethods
+    class AccountMethods : IClientOperations
     {
         private  string _name;
         private  double _rubbalance;
@@ -61,38 +61,47 @@ namespace BanK_Account
         }
         public void AgeInput()
         {
-            Console.Write($"Введите год рождения {Name} : ");
-            int date = int.Parse(Console.ReadLine());
-            if (date < 1900 || date > 2021)
+            for (int i = 0; i < 1; i++)
             {
-                Console.WriteLine();
-                while (date < 1900 || date > 2021)
+                if (dateofbirth[i] > 0)
                 {
-                    date = 0;
-                    Console.Write("Неверный год рождения! Введите заново: ");
-                    date = int.Parse(Console.ReadLine());
-                    if (date > 1900 && date < 2021)
+                    break;
+                }
+                else
+                {
+                    Console.Write($"Введите год рождения {Name} : ");
+                    int date = int.Parse(Console.ReadLine());
+                    if (date < 1900 || date > 2021)
                     {
-                        for (int i = 0; i < 1; i++)
+                        Console.WriteLine();
+                        while (date < 1900 || date > 2021)
                         {
-                            dateofbirth[i] += date;
-                            break;
+                            date = 0;
+                            Console.Write("Неверный год рождения! Введите заново: ");
+                            date = int.Parse(Console.ReadLine());
+                            if (date > 1900 && date < 2021)
+                            {
+                                
+                                    dateofbirth[i] += date;
+                                
+                                break;
+                            }
+                            else
+                            {
+                                continue;
+                            }
                         }
-                        break;
                     }
                     else
                     {
-                        continue;
+                        
+                            dateofbirth[i] += date;
+                        break;
+                        
                     }
                 }
             }
-            else
-            {
-                for (int i = 0; i < 1; i++)
-                {
-                    dateofbirth[i] += date;
-                }
-            }
+            
             
         }
         public void ShowInfo()
@@ -108,7 +117,7 @@ namespace BanK_Account
         }
         public void ShowId()
         {
-            Console.WriteLine();
+            Console.WriteLine($"id: {Id} Имя: {Name}");
         }
 
         public void ShowProfit(AccountMethods acc, int month)
@@ -202,12 +211,12 @@ namespace BanK_Account
                             acc.RubBalance -= withd;
                             Console.WriteLine($"{acc.Name} - успешно выведено {withd} р.");
                             acc.ShowInfo();
-                            Info.start();
+                            
                         }
                         else
                         {
                             Console.WriteLine($"У {acc.Name} нет столько р. на счету для вывода");
-                            Info.start();
+                            
                         }
 
                     }
@@ -227,19 +236,19 @@ namespace BanK_Account
                             acc.UsdBalance -= withd;
                             Console.WriteLine($"{acc.Name} - успешно выведено {withd} $");
                             acc.ShowInfo();
-                            Info.start();
+                            
                         }
                         else
                         {
                             Console.WriteLine($"У {acc.Name} нет столько $ на счету для вывода");
-                            Info.start();
+                            
                         }
 
                     }
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    Info.start();
+                    
                     break;
             }
             
@@ -344,6 +353,45 @@ namespace BanK_Account
                 acc.UsdBalance -= answer;
                 Console.WriteLine($"{acc.Name} успешно конвертировал {answer} $ в рубли!");
             }
+        }
+
+        void IClientOperations.ConvertOp(AccountMethods acc)
+        {
+            Console.WriteLine();
+            Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    acc.RubConvertation(acc);
+                    Console.WriteLine();
+                    acc.ShowInfo();
+                    Info.start();
+                    break;
+                case 2:
+                    acc.UsdConvertation(acc);
+                    Console.WriteLine();
+                    acc.ShowInfo();
+                    Info.start();
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        void IClientOperations.deposit(IClientOperations acc)
+        {
+            
+        }
+
+        void IClientOperations.withdraw()
+        {
+            
+        }
+
+        void IClientOperations.trans()
+        {
+            
         }
     }
 }

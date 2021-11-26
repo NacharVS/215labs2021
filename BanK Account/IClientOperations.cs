@@ -4,10 +4,10 @@ using System.Text;
 
 namespace BanK_Account
 {
-    interface IClientOperations
+    interface IClientOperations  
     {
         void ConvertOp(AccountMethods acc);
-        void deposit();
+        void deposit(IClientOperations acc);
         void withdraw();
         void trans();
     }

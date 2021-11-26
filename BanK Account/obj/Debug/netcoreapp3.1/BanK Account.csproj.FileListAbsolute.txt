@@ -37,3 +37,17 @@ C:\Users\User\Documents\215labs2021\AAAAAAA\BanK Account\obj\Debug\netcoreapp3.1
 C:\Users\User\Documents\215labs2021\AAAAAAA\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.dll
 C:\Users\User\Documents\215labs2021\AAAAAAA\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.pdb
 C:\Users\User\Documents\215labs2021\AAAAAAA\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.genruntimeconfig.cache
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.csproj.AssemblyReference.cache
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.AssemblyInfoInputs.cache
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.AssemblyInfo.cs
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.dll
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.pdb
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.exe
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.deps.json
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.runtimeconfig.json
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.runtimeconfig.dev.json
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.dll
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\bin\Debug\netcoreapp3.1\BanK Account.pdb
+C:\Users\User\Documents\215labs2021\aasvabasb\BanK Account\obj\Debug\netcoreapp3.1\BanK Account.genruntimeconfig.cache
