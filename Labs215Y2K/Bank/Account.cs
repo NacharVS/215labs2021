@@ -1,8 +1,9 @@
-﻿using System;
-class Account
+﻿using Labs215Y2K.Bank;
+using System;
+class Account : IClientOperation
 {
-    public string name;
-    public double balance;
+    private string _name;
+    private double _balance;
     private double _dollarBalance;
     public int UserId;
 
@@ -35,67 +36,72 @@ class Account
         }
     }
 
+    public string Name { get => _name; set => _name = value; }
+    public double Balance { get => _balance; set => _balance = value; }
     public double DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
+    double IClientOperation.Balance { get => _balance; set => _balance = value; }
+    double IClientOperation.DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
 
-    public Account(string name, double balance, int dollarBalance, int UserId)
+    public Account(string Name, double Balance, int dollarBalance, int UserId)
     {
-        this.name = name;
-        this.balance = balance;
+        this._name = Name;
+        this._balance = Balance;
         this.UserId = UserId;
-        this.DollarBalance = dollarBalance;
+        this._dollarBalance = dollarBalance;
     }
 
-    public void Info(Account acc)
+    void IClientOperation.Info(IClientOperation acc)
     {
-         if (Age == 0)
-         {
-             if (acc.balance > 0)
-             {
-                    System.Console.WriteLine($"Id - {UserId}, {name} - Возраст не указан - {balance} руб. - {DollarBalance}$");
-             }
-         }
-         else
-         {
-             System.Console.WriteLine($"Id - {UserId}, {name} - {Age} лет(год) - {balance}");
-         }
+        if (Age == 0)
+        {
+            if (acc.Balance > 0)
+            {
+                System.Console.WriteLine($"Id - {UserId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
+            }
+        }
+        else
+        {
+            System.Console.WriteLine($"Id - {UserId}, {Name} - {Age} лет(год) - {Balance}");
+        }
     }
-    public void ShowInfo(Account acc)
+
+    void IClientOperation.ShowInfo(IClientOperation acc)
     {
         if (Age >= 18)
         {
             if (Age == 0)
             {
-                if (acc.balance > 0)
+                if (acc.Balance > 0)
                 {
-                    System.Console.WriteLine($"Id - {UserId}, {name} - Возраст не указан - {balance} руб. - {DollarBalance}$");
+                    System.Console.WriteLine($"Id - {UserId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
                 }
             }
             else
             {
-                System.Console.WriteLine($"Id - {UserId}, {name} - {Age} лет(год) - {balance} руб. - {DollarBalance}$ ");
+                System.Console.WriteLine($"Id - {UserId}, {Name} - {Age} лет(год) - {Balance} руб. - {DollarBalance}$ ");
             }
         }
     }
 
-    public static void ShowProfit(Account acc, int month)
+    void IClientOperation.ShowProfit(IClientOperation acc, int mountcounter)
     {
-        for (int i = 0; i < month; i++)
+        for (int i = 0; i < mountcounter; i++)
         {
-            acc.balance += acc.balance * rate;
+            acc.Balance += acc.Balance * rate;
         }
     }
 
-    public static void Deposit(Account acc)
+    void IClientOperation.Deposit(Account acc)
     {
         Console.WriteLine();
-        Console.WriteLine($"{acc.name} - {acc.balance}");
+        Console.WriteLine($"{acc.Name} - {acc.Balance}");
         while (true)
         {
             Console.WriteLine("Укажите сумму, которую вы хотите внести");
             double DepositMoney = double.Parse(Console.ReadLine());
             if (DepositMoney > 0)
             {
-                acc.balance = acc.balance + DepositMoney;
+                acc.Balance = acc.Balance + DepositMoney;
                 break;
             }
             else
@@ -106,42 +112,45 @@ class Account
         }
     }
 
-    public static void Withdraw(Account acc)
+    void IClientOperation.Withdraw(IClientOperation acc)
     {
         Console.WriteLine();
-        Console.WriteLine($"{acc.name} - {acc.balance}");
+        Console.WriteLine($"{acc.Name} - {acc.Balance}");
         Console.WriteLine("Укажите сумму, которую вы хотите вывести");
         double WithdrawMoney = double.Parse(Console.ReadLine());
-        acc.balance = acc.balance - WithdrawMoney;
-        if (acc.balance < 0)
+        acc.Balance = acc.Balance - WithdrawMoney;
+        if (acc.Balance < 0)
         {
             Console.WriteLine("На балансе недостаточно средств");
 
         }
     }
 
-    public static void Transaction(Account acc, Account accSeller, Account accGetter)
+    void IClientOperation.Transaction(IClientOperation acc, IClientOperation accSeller, IClientOperation accGetter)
     {
         Console.WriteLine();
-        Console.WriteLine($"{acc.name} - {acc.balance}");
+        Console.WriteLine($"{acc.Name} - {acc.Balance}");
         Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
         double TransactionMoney = double.Parse(Console.ReadLine());
-        accSeller.balance -= TransactionMoney;
-        accGetter.balance += TransactionMoney;
+        accSeller.Balance -= TransactionMoney;
+        accGetter.Balance += TransactionMoney;
     }
-    public static void MoneyConvert(Account acc)
+
+    void IClientOperation.MoneyConvert(IClientOperation acc)
     {
         Console.WriteLine("Введите 1, если хотите перевести рубли в доллары, 2, если хотите перевести доллары в рубли");
         int Counter = int.Parse(Console.ReadLine());
         if (Counter == 1)
         {
-            acc.DollarBalance += acc.balance / dollarcurse;
-            acc.balance = acc.balance % dollarcurse;
+            acc.DollarBalance += acc.Balance / dollarcurse;
+            acc.Balance = acc.Balance % dollarcurse;
         }
         if (Counter == 2)
         {
-            acc.balance += acc.DollarBalance * dollarcurse;
+            acc.Balance += acc.DollarBalance * dollarcurse;
             acc.DollarBalance = 0;
         }
     }
 }
+
+    

@@ -1,4 +1,5 @@
 ﻿using System;
+using Labs215Y2K.Bank;
 using System.Linq;
 using Units;
 using Action;
@@ -30,11 +31,14 @@ namespace Deletor
             //StudentsListsOperation();
 
             Console.WriteLine("Вас приветствует Банк Субботний Scam, самый надёжный банк в городе");
-            Account acc1 = new Account("Ivan", 5000, 100 ,new Random().Next(121,9521));
-            Account acc2 = new Account("Fedor", 6000, 20 ,new Random().Next(122, 9522));
-            Account acc3 = new Account("Elena", 3000, 85 ,new Random().Next(123, 9523));
-            Account acc4 = new Account("Yarik", 100, 1000 ,new Random().Next(124, 9525));
-            Account acc5 = new Account("Egorik", 1000, 1 ,new Random().Next(125, 9526));
+
+            IClientOperation acc1 = new Account("Ivan", 5000, 100, new Random().Next(121, 9521));
+            IClientOperation acc2 = new Account("Fedor", 6000, 20 ,new Random().Next(122, 9522));
+            IClientOperation acc3 = new Account("Elena", 3000, 85 ,new Random().Next(123, 9523));
+            IClientOperation acc4 = new Account("Yarik", 100, 1000 ,new Random().Next(124, 9525));
+            IClientOperation acc5 = new Account("Egorik", 1000, 1 ,new Random().Next(125, 9526));
+
+            
 
             int GetterCounter = 0;
             int SellerCounter = 0;
@@ -47,12 +51,13 @@ namespace Deletor
             UserIdMassive[2] = acc3.UserId;
             UserIdMassive[3] = acc4.UserId;
             UserIdMassive[4] = acc5.UserId;
-            Account[] UserMassive2 = new Account[5];
+            IClientOperation[] UserMassive2 = new Account[5];
             UserMassive2[0] = acc1;
             UserMassive2[1] = acc2;
             UserMassive2[2] = acc3;
             UserMassive2[3] = acc4;
             UserMassive2[4] = acc5;
+
 
             acc1.Info(acc1);
             acc2.Info(acc2);
@@ -100,11 +105,13 @@ namespace Deletor
             int mountcounter = int.Parse(Console.ReadLine());
             Console.WriteLine("Профит за " +mountcounter+ " меся(ц/ца/цев) с коэффицентом " + Account.rate);
             Console.WriteLine();
-            Account.ShowProfit(acc1, mountcounter);
-            Account.ShowProfit(acc2, mountcounter);
-            Account.ShowProfit(acc3, mountcounter);
-            Account.ShowProfit(acc4, mountcounter);
-            Account.ShowProfit(acc5, mountcounter);
+
+
+            IClientOperation.ShowProfit(acc1, mountcounter);
+            IClientOperation.ShowProfit(acc2, mountcounter);
+            IClientOperation.ShowProfit(acc3, mountcounter);
+            IClientOperation.ShowProfit(acc1,2);
+            IClientOperation.ShowProfit(acc5);
 
 
             acc1.ShowInfo(acc1);
