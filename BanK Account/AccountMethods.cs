@@ -14,6 +14,14 @@ namespace BanK_Account
         private int[] dateofbirth = new int[3];
         private int[] finalage = new int[3];
         private static double wellrate = 76;
+        private double withdrawrubmaxlimit = 30000;
+        private double withdrawrubminlimit = 100;
+        private double withdrawusdmaxlimit = 1000;
+        private double withdrawusdminlimit = 50;
+        private double depositrubminlimit = 50;
+        private double depositrubmaxlimit = 100000;
+        private double depositusdminlimit = 10;
+        private double depositusdmaxlimit = 5000;
         
         public string Name
         {
@@ -149,6 +157,7 @@ namespace BanK_Account
         public void Deposit(AccountMethods acc, int depo)
         {
             Console.WriteLine();
+            Console.WriteLine("Лимит на пополнение в рублях - 100.000 р. в долларах - 5.000 $");
             Console.WriteLine("Куда вы хотите ввести деньги? 1 - на рублевой счёт; 2 - на долларовый счёт");
             Console.Write("Введите число: ");
             int answer = int.Parse(Console.ReadLine());
@@ -161,10 +170,23 @@ namespace BanK_Account
                     {
                         Console.WriteLine("Нельзя внести отрицательное кол-во денег.");
                     }
-                    else
+                    else if (depo < depositrubmaxlimit)
                     {
-                        acc.RubBalance += depo;
-                        Console.WriteLine($"{acc.Name} - начислено {depo} р. на рублевой счёт");
+                        if (depo > depositrubminlimit)
+                        {
+                            acc.RubBalance += depo;
+                            Console.WriteLine($"{acc.Name} - начислено {depo} р. на рублевой счёт");
+                        }
+                        else if (depo < depositrubminlimit)
+                        {
+                            Console.WriteLine("Нельзя внести менее 50 рублей");
+                            break;
+                        }
+                    }
+                    else if (depo > depositrubmaxlimit)
+                    {
+                        Console.WriteLine("Нельзя внести более 100.000 р.");
+                        break;
                     }
                     break;
                 case 2:
@@ -174,10 +196,23 @@ namespace BanK_Account
                     {
                         Console.WriteLine("Нельзя внести отрицательное кол-во денег.");
                     }
-                    else
+                    else if (depo < depositusdmaxlimit)
                     {
-                        acc.UsdBalance += depo;
-                        Console.WriteLine($"{acc.Name} - начислено {depo} $");
+                        if (depo > depositusdminlimit)
+                        {
+                            acc.UsdBalance += depo;
+                            Console.WriteLine($"{acc.Name} - начислено {depo} $");
+                        }
+                        else if (depo < depositrubminlimit)
+                        {
+                            Console.WriteLine("Нельзя внести менее 10 $");
+                            break;
+                        }
+                    }
+                    else if (depo > depositusdmaxlimit)
+                    {
+                        Console.WriteLine("Нельзя внести более 5.000 $");
+                        break;
                     }
                     break;
                 default:
@@ -191,6 +226,7 @@ namespace BanK_Account
         public void Withdraw(AccountMethods acc, int withd)
         {
             Console.WriteLine();
+            Console.WriteLine("Лимит на снятие денег с рублевого счёта - 30.000 р. с долларового счёта - 1.000 $");
             Console.WriteLine("С какого счёта вы хотите вывести деньги? 1 - c рублевого счёта; 2 - c долларового счёта");
             Console.Write("Введите цифру: ");
             int answer = int.Parse(Console.ReadLine());
@@ -201,17 +237,34 @@ namespace BanK_Account
                     {
                         Console.WriteLine($"{acc.Name} не имеет денег на счету для вывода");
                     }
-                    else
+                    else if (acc.RubBalance > 0)
                     {
                         Console.WriteLine();
                         Console.Write("Введите сумму которую хотите вывести: ");
                         withd = int.Parse(Console.ReadLine());
-                        if (withd <= acc.RubBalance)
+                        if (withd > withdrawrubmaxlimit)
                         {
-                            acc.RubBalance -= withd;
-                            Console.WriteLine($"{acc.Name} - успешно выведено {withd} р.");
-                            acc.ShowInfo();
-                            
+                            Console.WriteLine("Нельзя вывести более 30.000 руб.");
+                            break;
+                        }
+                        else if (withd <= acc.RubBalance)
+                        {
+                            if (withd < withdrawrubminlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести меньше 100 руб.");
+                                break;
+                            }
+                            else if (withd < withdrawrubmaxlimit)
+                            {
+                                acc.RubBalance -= withd;
+                                Console.WriteLine($"{acc.Name} - успешно выведено {withd} р.");
+                                acc.ShowInfo();
+                            }
+                        }
+                        else if (withd < withdrawrubminlimit)
+                        {
+                            Console.WriteLine("Нельзя вывести меньше 100 руб.");
+                            break;
                         }
                         else
                         {
@@ -231,12 +284,29 @@ namespace BanK_Account
                         Console.WriteLine();
                         Console.Write("Введите сумму которую хотите вывести: ");
                         withd = int.Parse(Console.ReadLine());
-                        if (withd <= acc.UsdBalance)
+                        if (withd > withdrawusdmaxlimit)
                         {
-                            acc.UsdBalance -= withd;
-                            Console.WriteLine($"{acc.Name} - успешно выведено {withd} $");
-                            acc.ShowInfo();
-                            
+                            Console.WriteLine("Нельзя вывести более 1.000 $");
+                            break;
+                        }
+                        else if (withd <= acc.UsdBalance)
+                        {
+                            if (withd < withdrawusdminlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести меньше 50$");
+                                break;
+                            }
+                            if (withd < withdrawusdmaxlimit)
+                            {
+                                acc.UsdBalance -= withd;
+                                Console.WriteLine($"{acc.Name} - успешно выведено {withd} $");
+                                acc.ShowInfo();
+                            }
+                        }
+                        else if (answer < withdrawusdminlimit)
+                        {
+                            Console.WriteLine("Нельзя вывести меньше 50 $ .");
+                            break;
                         }
                         else
                         {
@@ -248,12 +318,9 @@ namespace BanK_Account
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    
                     break;
-            }
-            
+            } 
         }
-
         public static void Transaction(AccountMethods accSeller, AccountMethods accGetter)
         {
             Console.WriteLine("С какого счёта вы хотите совершить перевод? 1 - с рублевого счёта; 2 - с долларового счёта");
