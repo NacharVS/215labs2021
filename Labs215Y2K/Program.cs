@@ -32,13 +32,18 @@ namespace Deletor
 
             Console.WriteLine("Вас приветствует Банк Субботний Scam, самый надёжный банк в городе");
 
-            IClientOperation acc1 = new Account("Ivan", 5000, 100, new Random().Next(121, 9521));
-            IClientOperation acc2 = new Account("Fedor", 6000, 20 ,new Random().Next(122, 9522));
-            IClientOperation acc3 = new Account("Elena", 3000, 85 ,new Random().Next(123, 9523));
-            IClientOperation acc4 = new Account("Yarik", 100, 1000 ,new Random().Next(124, 9525));
-            IClientOperation acc5 = new Account("Egorik", 1000, 1 ,new Random().Next(125, 9526));
+            Account acc1 = new Account("Ivan", 5000, 100, new Random().Next(121, 9521));
+            Account acc2 = new Account("Fedor", 6000, 20, new Random().Next(122, 9522));
+            Account acc3 = new Account("Elena", 3000, 85, new Random().Next(123, 9523));
+            Account acc4 = new Account("Yarik", 100, 100000, new Random().Next(777, 778));
+            Account acc5 = new Account("Egorik", 100000, 1, new Random().Next(125, 9526));
 
-            
+            IClientOperation Cl1 = acc1;
+            IClientOperation Cl2 = acc2;
+            IClientOperation Cl3 = acc3;
+            IClientOperation Cl4 = acc4;
+            IClientOperation Cl5 = acc5;
+
 
             int GetterCounter = 0;
             int SellerCounter = 0;
@@ -46,24 +51,29 @@ namespace Deletor
             int AccWithdrawCounter = 0;
             int AccConvertCounter = 0;
             int[] UserIdMassive = new int[5];
-            UserIdMassive[0] = acc1.UserId;
-            UserIdMassive[1] = acc2.UserId;
-            UserIdMassive[2] = acc3.UserId;
-            UserIdMassive[3] = acc4.UserId;
-            UserIdMassive[4] = acc5.UserId;
-            IClientOperation[] UserMassive2 = new Account[5];
-            UserMassive2[0] = acc1;
-            UserMassive2[1] = acc2;
-            UserMassive2[2] = acc3;
-            UserMassive2[3] = acc4;
-            UserMassive2[4] = acc5;
+            UserIdMassive[0] = Cl1.UserId;
+            UserIdMassive[1] = Cl2.UserId;
+            UserIdMassive[2] = Cl3.UserId;
+            UserIdMassive[3] = Cl4.UserId;
+            UserIdMassive[4] = Cl5.UserId;
+            IClientOperation[] UserMassive2 = new IClientOperation[5];
+            UserMassive2[0] = Cl1;
+            UserMassive2[1] = Cl2;
+            UserMassive2[2] = Cl3;
+            UserMassive2[3] = Cl4;
+            UserMassive2[4] = Cl5;
+            Account[] UserMassive3 = new Account[5];
+            UserMassive3[0] = acc1;
+            UserMassive3[1] = acc2;
+            UserMassive3[2] = acc3;
+            UserMassive3[3] = acc4;
+            UserMassive3[4] = acc5;
 
-
-            acc1.Info(acc1);
-            acc2.Info(acc2);
-            acc3.Info(acc3);
-            acc4.Info(acc4);
-            acc5.Info(acc5);
+            Cl1.Info(acc1);
+            Cl2.Info(acc2);
+            Cl3.Info(acc3);
+            Cl4.Info(acc4);
+            Cl5.Info(acc5);
             Console.WriteLine();
             System.Threading.Thread.Sleep(3000); 
             Console.Clear();
@@ -94,11 +104,11 @@ namespace Deletor
             acc4.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
             acc5.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
 
-            acc1.ShowInfo(acc1);
-            acc2.ShowInfo(acc2); 
-            acc3.ShowInfo(acc3); 
-            acc4.ShowInfo(acc4); 
-            acc5.ShowInfo(acc5); 
+            Cl1.ShowInfo(acc1);
+            Cl2.ShowInfo(acc2); 
+            Cl3.ShowInfo(acc3); 
+            Cl4.ShowInfo(acc4); 
+            Cl5.ShowInfo(acc5); 
             Console.WriteLine(); 
 
             Console.WriteLine("Введите кол-во месяцев");
@@ -107,18 +117,18 @@ namespace Deletor
             Console.WriteLine();
 
 
-            IClientOperation.ShowProfit(acc1, mountcounter);
-            IClientOperation.ShowProfit(acc2, mountcounter);
-            IClientOperation.ShowProfit(acc3, mountcounter);
-            IClientOperation.ShowProfit(acc1,2);
-            IClientOperation.ShowProfit(acc5);
+            Cl1.ShowProfit(acc1, mountcounter);
+            Cl2.ShowProfit(acc2, mountcounter);
+            Cl3.ShowProfit(acc3, mountcounter);
+            Cl4.ShowProfit(acc4, mountcounter);
+            Cl5.ShowProfit(acc5, mountcounter);
 
 
-            acc1.ShowInfo(acc1);
-            acc2.ShowInfo(acc2);
-            acc3.ShowInfo(acc3);
-            acc4.ShowInfo(acc4);
-            acc5.ShowInfo(acc5);
+            Cl1.ShowInfo(acc1);
+            Cl2.ShowInfo(acc2);
+            Cl3.ShowInfo(acc3);
+            Cl4.ShowInfo(acc4);
+            Cl5.ShowInfo(acc5);
 
             Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя которому вы хотите конвертировать деньги");
@@ -131,8 +141,8 @@ namespace Deletor
                 }
             }
 
-            Account.MoneyConvert(UserMassive2[AccConvertCounter]);
-            UserMassive2[AccConvertCounter].ShowInfo(UserMassive2[AccConvertCounter]);
+            UserMassive2[AccConvertCounter].MoneyConvert(UserMassive3[AccConvertCounter]); 
+            UserMassive2[AccConvertCounter].ShowInfo(UserMassive3[AccConvertCounter]);
 
             Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя которому вы хотите добавить деньги");
@@ -145,11 +155,11 @@ namespace Deletor
                 }
             }
 
-            Account.Deposit(UserMassive2[AccDepostCounter]);
-            UserMassive2[AccDepostCounter].ShowInfo(UserMassive2[AccDepostCounter]);
+            UserMassive2[AccDepostCounter].Deposit(UserMassive3[AccDepostCounter]);
+            UserMassive2[AccDepostCounter].ShowInfo(UserMassive3[AccDepostCounter]);
 
-          
 
+            Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя у которого вы хотите отнять деньги");
             int AccWithdraw = int.Parse(Console.ReadLine());
             for (int i = 0; i < UserIdMassive.Length; i++)
@@ -159,9 +169,10 @@ namespace Deletor
                     AccWithdrawCounter = i;
                 }
             }
-            Account.Withdraw(UserMassive2[AccWithdrawCounter]);
-            UserMassive2[AccWithdrawCounter].ShowInfo(UserMassive2[AccWithdrawCounter]);
+            UserMassive2[AccWithdrawCounter].Withdraw(UserMassive3[AccWithdrawCounter]);
+            UserMassive2[AccWithdrawCounter].ShowInfo(UserMassive3[AccWithdrawCounter]);
 
+            Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
             int AccGetterId = int.Parse(Console.ReadLine());
             Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
@@ -177,9 +188,9 @@ namespace Deletor
                     SellerCounter = i;
                 }
             }
-            Account.Transaction(UserMassive2[SellerCounter], UserMassive2[SellerCounter], UserMassive2[GetterCounter]);
-            UserMassive2[SellerCounter].ShowInfo(UserMassive2[SellerCounter]);
-            UserMassive2[GetterCounter].ShowInfo(UserMassive2[GetterCounter]);
+            UserMassive2[SellerCounter].Transaction(UserMassive3[SellerCounter], UserMassive3[SellerCounter], UserMassive3[GetterCounter]);
+            UserMassive2[SellerCounter].ShowInfo(UserMassive3[SellerCounter]);
+            UserMassive2[GetterCounter].ShowInfo(UserMassive3[GetterCounter]);
             
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)

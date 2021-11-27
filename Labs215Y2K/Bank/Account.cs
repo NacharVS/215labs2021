@@ -5,7 +5,7 @@ class Account : IClientOperation
     private string _name;
     private double _balance;
     private double _dollarBalance;
-    public int UserId;
+    public int _userId;
 
     private int _birthOfYear;
     private int _age;
@@ -41,31 +41,32 @@ class Account : IClientOperation
     public double DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
     double IClientOperation.Balance { get => _balance; set => _balance = value; }
     double IClientOperation.DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
+    int IClientOperation.UserId { get => _userId; set => _userId = value; }
 
     public Account(string Name, double Balance, int dollarBalance, int UserId)
     {
         this._name = Name;
         this._balance = Balance;
-        this.UserId = UserId;
+        this._userId = UserId;
         this._dollarBalance = dollarBalance;
     }
 
-    void IClientOperation.Info(IClientOperation acc)
+    void IClientOperation.Info(Account acc)
     {
         if (Age == 0)
         {
             if (acc.Balance > 0)
             {
-                System.Console.WriteLine($"Id - {UserId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
+                System.Console.WriteLine($"Id - {_userId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
             }
         }
         else
         {
-            System.Console.WriteLine($"Id - {UserId}, {Name} - {Age} лет(год) - {Balance}");
+            System.Console.WriteLine($"Id - {_userId}, {Name} - {Age} лет(год) - {Balance}");
         }
     }
 
-    void IClientOperation.ShowInfo(IClientOperation acc)
+    void IClientOperation.ShowInfo(Account acc)
     {
         if (Age >= 18)
         {
@@ -73,17 +74,17 @@ class Account : IClientOperation
             {
                 if (acc.Balance > 0)
                 {
-                    System.Console.WriteLine($"Id - {UserId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
+                    System.Console.WriteLine($"Id - {_userId}, {Name} - Возраст не указан - {Balance} руб. - {DollarBalance}$");
                 }
             }
             else
             {
-                System.Console.WriteLine($"Id - {UserId}, {Name} - {Age} лет(год) - {Balance} руб. - {DollarBalance}$ ");
+                System.Console.WriteLine($"Id - {_userId}, {Name} - {Age} лет(год) - {Balance} руб. - {DollarBalance}$ ");
             }
         }
     }
 
-    void IClientOperation.ShowProfit(IClientOperation acc, int mountcounter)
+    void IClientOperation.ShowProfit(Account acc, int mountcounter)
     {
         for (int i = 0; i < mountcounter; i++)
         {
@@ -112,7 +113,7 @@ class Account : IClientOperation
         }
     }
 
-    void IClientOperation.Withdraw(IClientOperation acc)
+    void IClientOperation.Withdraw(Account acc)
     {
         Console.WriteLine();
         Console.WriteLine($"{acc.Name} - {acc.Balance}");
@@ -126,7 +127,7 @@ class Account : IClientOperation
         }
     }
 
-    void IClientOperation.Transaction(IClientOperation acc, IClientOperation accSeller, IClientOperation accGetter)
+    void IClientOperation.Transaction(Account acc, Account accSeller, Account accGetter)
     {
         Console.WriteLine();
         Console.WriteLine($"{acc.Name} - {acc.Balance}");
@@ -136,14 +137,16 @@ class Account : IClientOperation
         accGetter.Balance += TransactionMoney;
     }
 
-    void IClientOperation.MoneyConvert(IClientOperation acc)
+    void IClientOperation.MoneyConvert(Account acc)
     {
+        Console.WriteLine();
         Console.WriteLine("Введите 1, если хотите перевести рубли в доллары, 2, если хотите перевести доллары в рубли");
         int Counter = int.Parse(Console.ReadLine());
         if (Counter == 1)
         {
             acc.DollarBalance += acc.Balance / dollarcurse;
             acc.Balance = acc.Balance % dollarcurse;
+            acc.DollarBalance = Convert.ToInt32(acc.DollarBalance);
         }
         if (Counter == 2)
         {
