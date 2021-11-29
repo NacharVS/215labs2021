@@ -37,3 +37,5 @@ C:\Users\152008\Documents\labs215\1111\Shop\obj\Debug\netcoreapp3.1\Shop.Assembl
 C:\Users\152008\Documents\labs215\1111\Shop\obj\Debug\netcoreapp3.1\Shop.AssemblyInfo.cs
 C:\Users\152008\Documents\labs215\1111\Shop\obj\Debug\netcoreapp3.1\Shop.dll
 C:\Users\152008\Documents\labs215\1111\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
+C:\Users\User\Documents\215labs2021\aasvabasb\Shop\obj\Debug\netcoreapp3.1\Shop.dll
+C:\Users\User\Documents\215labs2021\aasvabasb\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
