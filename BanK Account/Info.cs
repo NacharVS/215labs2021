@@ -313,11 +313,11 @@ namespace BanK_Account
                         switch (answer11)
                         {
                             case 300592:
-                                AccountMethods.Transaction(acc1, acc2);
+                                acc1.Transaction(acc1, acc2);
                                 Info.start();
                                 break;
                             case 666777:
-                                AccountMethods.Transaction(acc1, acc3);
+                                acc1.Transaction(acc1, acc3);
                                 Info.start();
                                 break;
                             default:
@@ -347,11 +347,11 @@ namespace BanK_Account
                         switch (answer12)
                         {
                             case 195234:
-                                AccountMethods.Transaction(acc2, acc1);
+                                acc2.Transaction(acc2, acc1);
                                 Info.start();
                                 break;
                             case 666777:
-                                AccountMethods.Transaction(acc2, acc3);
+                                acc2.Transaction(acc2, acc3);
                                 Info.start();
                                 break;
                             default:
@@ -381,11 +381,11 @@ namespace BanK_Account
                         switch (answer13)
                         {
                             case 195234:
-                                AccountMethods.Transaction(acc3, acc1);
+                                acc3.Transaction(acc3, acc1);
                                 Info.start();
                                 break;
                             case 300592:
-                                AccountMethods.Transaction(acc3, acc2);
+                                acc3.Transaction(acc3, acc2);
                                 Info.start();
                                 break;
                             default:
@@ -416,15 +416,15 @@ namespace BanK_Account
                 switch (answer)
                 {
                     case 195234:
-                        AccountMethods.Transaction(acc, acc1);
+                        acc.Transaction(acc, acc1);
                         ClientUsing.startusing(acc);
                         break;
                     case 300592:
-                        AccountMethods.Transaction(acc, acc2);
+                        acc.Transaction(acc, acc2);
                         ClientUsing.startusing(acc);
                         break;
                     case 666777:
-                        AccountMethods.Transaction(acc, acc3);
+                        acc.Transaction(acc, acc3);
                         ClientUsing.startusing(acc);
                         break;
                     default:

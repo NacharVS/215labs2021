@@ -22,6 +22,8 @@ namespace BanK_Account
         private double depositrubmaxlimit = 100000;
         private double depositusdminlimit = 10;
         private double depositusdmaxlimit = 5000;
+        private double rubmaxtransaction = 50000;
+        private double usdmaxtransaction = 2500;
         
         public string Name
         {
@@ -321,8 +323,9 @@ namespace BanK_Account
                     break;
             } 
         }
-        public static void Transaction(AccountMethods accSeller, AccountMethods accGetter)
+        public void Transaction(AccountMethods accSeller, AccountMethods accGetter)
         {
+            Console.WriteLine($"Лимит для перевода на рублевой счёт - {rubmaxtransaction} р. долларовый счёт - {usdmaxtransaction} $ ");
             Console.WriteLine("С какого счёта вы хотите совершить перевод? 1 - с рублевого счёта; 2 - с долларового счёта");
             Console.Write("Введите цифру: ");
             int answer = int.Parse(Console.ReadLine());
@@ -343,9 +346,16 @@ namespace BanK_Account
                         }
                         else
                         {
-                            accSeller.RubBalance -= transsum;
-                            accGetter.RubBalance += transsum;
-                            Console.WriteLine($"{accGetter.Name} успешно получил {transsum} р.");
+                            if (transsum < rubmaxtransaction)
+                            {
+                                accSeller.RubBalance -= transsum;
+                                accGetter.RubBalance += transsum;
+                                Console.WriteLine($"{accGetter.Name} успешно получил {transsum} р.");
+                            }
+                            else if (transsum > rubmaxtransaction)
+                            {
+                                Console.WriteLine("Превышен лимит для перевода!");
+                            }
                         }
                     }
                     break;
@@ -364,9 +374,16 @@ namespace BanK_Account
                         }
                         else
                         {
-                            accSeller.UsdBalance -= transsum;
-                            accGetter.UsdBalance += transsum;
-                            Console.WriteLine($"{accGetter.Name} успешно получил {transsum} $");
+                            if (transsum < usdmaxtransaction)
+                            {
+                                accSeller.UsdBalance -= transsum;
+                                accGetter.UsdBalance += transsum;
+                                Console.WriteLine($"{accGetter.Name} успешно получил {transsum} $");
+                            }
+                            else if (transsum > usdmaxtransaction)
+                            {
+                                Console.WriteLine("Превышен лимит для перевода!");
+                            }
                         }
                     }
                     break;

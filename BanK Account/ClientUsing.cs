@@ -98,7 +98,6 @@ namespace BanK_Account
                             break;
                     }
                     break;
-
                 case 7:
                     Info.usingquestion();
                     break;
