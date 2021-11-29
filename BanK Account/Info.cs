@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account 
 {
-    class Info : AccountMethods , IClientOperations
+    class Info : AccountMethods , IClientOperations , IEmployeOperations
     {
         public Info(string name, double rubbalance, double usdbalance, int id)
         {
@@ -24,6 +24,14 @@ namespace BanK_Account
             acc2.ShowId();
             acc3.ShowId();
         }
+        internal static void employeelist()
+        {
+            Console.WriteLine();
+            acc1.AgeInput();
+            acc2.AgeInput();
+            acc3.AgeInput();
+            Info.list();
+        }
         internal static void usingquestion()
         {
             Console.WriteLine("Вы хотите использовать аккаунт сотрудника или клиента? 1 - сотрудник 2 - клиент 3 - завершить сеанс");
@@ -31,9 +39,13 @@ namespace BanK_Account
             switch (answer)
             {
                 case 1:
-                    Info.start();
+                    Console.WriteLine();
+                    Console.WriteLine("Добро пожаловать!");
+                    EmployeeUsing.EmployeeStart();
                     break;
                 case 2:
+                    Console.WriteLine();
+                    Console.WriteLine("Добро пожаловать!");
                     Console.WriteLine();
                     Info.Showid();
                     Console.Write("Введите id клиента, за которого хотите войти: ");
@@ -472,6 +484,46 @@ namespace BanK_Account
         void IClientOperations.trans()
         {
             
+        }
+
+        void IEmployeOperations.NameChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.RateChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.UsdWithdChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.RubWithdChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.UsdDepChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.RubDepChange()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IEmployeOperations.TransactionChange()
+        {
+            throw new NotImplementedException();
         }
     }
 }

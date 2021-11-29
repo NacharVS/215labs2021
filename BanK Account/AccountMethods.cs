@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account
 {
-    class AccountMethods : IClientOperations
+    class AccountMethods 
     {
         private  string _name;
         private  double _rubbalance;
@@ -172,7 +172,7 @@ namespace BanK_Account
                     {
                         Console.WriteLine("Нельзя внести отрицательное кол-во денег.");
                     }
-                    else if (depo < depositrubmaxlimit)
+                    else if (depo <= depositrubmaxlimit)
                     {
                         if (depo > depositrubminlimit)
                         {
@@ -198,7 +198,7 @@ namespace BanK_Account
                     {
                         Console.WriteLine("Нельзя внести отрицательное кол-во денег.");
                     }
-                    else if (depo < depositusdmaxlimit)
+                    else if (depo <= depositusdmaxlimit)
                     {
                         if (depo > depositusdminlimit)
                         {
@@ -439,43 +439,6 @@ namespace BanK_Account
             }
         }
 
-        void IClientOperations.ConvertOp(AccountMethods acc)
-        {
-            Console.WriteLine();
-            Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
-            int answer = int.Parse(Console.ReadLine());
-            switch (answer)
-            {
-                case 1:
-                    acc.RubConvertation(acc);
-                    Console.WriteLine();
-                    acc.ShowInfo();
-                    Info.start();
-                    break;
-                case 2:
-                    acc.UsdConvertation(acc);
-                    Console.WriteLine();
-                    acc.ShowInfo();
-                    Info.start();
-                    break;
-                default:
-                    break;
-            }
-        }
-
-        void IClientOperations.deposit(IClientOperations acc)
-        {
-            
-        }
-
-        void IClientOperations.withdraw()
-        {
-            
-        }
-
-        void IClientOperations.trans()
-        {
-            
-        }
+        
     }
 }

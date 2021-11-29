@@ -9,7 +9,7 @@ namespace BanK_Account
             //Info.start();
             //IClientOperations acc1 = new Info("Manunya", 300, 1, 5);
             Info.usingquestion();
-
+            
         }
     }
 }
