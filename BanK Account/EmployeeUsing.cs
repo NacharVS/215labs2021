@@ -6,7 +6,7 @@ namespace BanK_Account
 {
     class EmployeeUsing : AccountMethods ,   IEmployeOperations
     {
-
+        
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
         {
            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
@@ -44,7 +44,7 @@ namespace BanK_Account
 
         void IEmployeOperations.TransactionChange()
         {
-
+    
         }
 
         void IEmployeOperations.UsdDepChange()
@@ -80,15 +80,46 @@ namespace BanK_Account
                     EmployeeUsing.EmployeeStart();
                     break;
                 case 2:
+                    Console.WriteLine();
+                    Info.employeelist();
+                    Console.WriteLine();
                     break;
             }
 
         }
-        public static void abiba()
+        public static void namechange()
         {
             AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
-            IEmployeOperations acc = acc1;
-            acc.NameChange(acc1);
+            AccountMethods acc2 = new Info("Илья", 10000, 300, 300592);
+            AccountMethods acc3 = new Info("Александр", 15000, 750, 666777);
+            IEmployeOperations ac1 = acc1;
+            IEmployeOperations ac2 = acc2;
+            IEmployeOperations ac3 = acc3;
+            ac1.NameChange(acc1);
+            Console.Write("Напишите id клиента, которому желаете поменять имя: ");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 195234:
+                    ac1.NameChange(acc1);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                case 300592:
+                    ac2.NameChange(acc2);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                case 666777:
+                    ac3.NameChange(acc3);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                default:
+                    Console.WriteLine("Неверный ID!");
+                    EmployeeUsing.EmployeeStart();
+                    break;
+            }
         }
     }
 }
