@@ -45,6 +45,9 @@ namespace Deletor
             IClientOperation Cl5 = acc5;
 
 
+            Ipersonal Pers1 = acc1;
+
+
             int GetterCounter = 0;
             int SellerCounter = 0;
             int AccDepostCounter = 0;
@@ -109,7 +112,12 @@ namespace Deletor
             Cl3.ShowInfo(acc3); 
             Cl4.ShowInfo(acc4); 
             Cl5.ShowInfo(acc5); 
-            Console.WriteLine(); 
+            Console.WriteLine();
+
+
+            Pers1.RateChange();
+           
+
 
             Console.WriteLine("Введите кол-во месяцев");
             int mountcounter = int.Parse(Console.ReadLine());
