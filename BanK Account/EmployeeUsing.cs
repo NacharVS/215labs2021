@@ -11,20 +11,25 @@ namespace BanK_Account
         IEmployeOperations acc3 = new Info(Console.ReadLine(), 15000, 750, 666777);
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
         {
-
+            
         }
 
-        void IEmployeOperations.NameChange(AccountMethods acc)
+        void IEmployeOperations.NameChange(Info acc)
         {
-            Console.WriteLine();
-            Info.Showid();
-            Console.Write("Введите id клиента для смены имени: ");
-            int answer = int.Parse(Console.ReadLine());
-            switch (answer)
-            {
-                case 195234:
-                    
-            }
+            //Console.WriteLine();
+            //Info.Showid();
+            //Console.Write("Введите id клиента для смены имени: ");
+            //int answer = int.Parse(Console.ReadLine());
+            //switch (answer)
+            //{
+            //    case 195234:
+
+            //}
+            Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
+            Console.Write("Введите новое имя: ");
+            string answer = Console.ReadLine();
+            answer = acc.Name;
+            Console.WriteLine($"Успешно!{acc.Id} Текущее имя: {acc.Name}");
         }
 
         void IEmployeOperations.RateChange()
@@ -80,7 +85,7 @@ namespace BanK_Account
                     EmployeeUsing.EmployeeStart();
                     break;
                 case 2:
-
+                    acc1.NameChange(acc1)
                     break;
             }
 

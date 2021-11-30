@@ -486,7 +486,7 @@ namespace BanK_Account
             
         }
 
-        void IEmployeOperations.NameChange()
+        void IEmployeOperations.NameChange(AccountMethods acc)
         {
             throw new NotImplementedException();
         }

@@ -4,9 +4,10 @@ using System.Text;
 
 namespace BanK_Account
 {
-    interface IEmployeOperations
+    interface IEmployeOperations 
     {
-        void NameChange(AccountMethods acc);
+        
+        void NameChange(Info acc);
         void BirthDateChange(IEmployeOperations acc);
         void RateChange();
         void UsdWithdChange();
