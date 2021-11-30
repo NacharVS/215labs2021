@@ -1,18 +1,21 @@
 ﻿using System;
+using BanK_Account;
 
 namespace BanK_Account
 {
     class Program
     {
+        //AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
+        //IEmployeOperations acc = acc1;
         static void Main(string[] args)
         {
             //Info.start();
             //IClientOperations acc1 = new Info("Manunya", 300, 1, 5);
-            Info.usingquestion();
-            IEmployeOperations acc1 = new Info(Console.ReadLine(), 2000, 100, 195234);
-            IEmployeOperations acc2 = new Info(Console.ReadLine(), 10000, 300, 300592);
-            IEmployeOperations acc3 = new Info(Console.ReadLine(), 15000, 750, 666777);
-            acc1.NameChange(acc1)
+            //Info.usingquestion();
+            EmployeeUsing.abiba();
+            
+            
         }
+        
     }
 }

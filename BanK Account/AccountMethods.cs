@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account
 {
-    class AccountMethods 
+    class AccountMethods : IEmployeOperations
     {
         private  string _name;
         private  double _rubbalance;
@@ -24,7 +24,7 @@ namespace BanK_Account
         private double depositusdmaxlimit = 5000;
         private double rubmaxtransaction = 50000;
         private double usdmaxtransaction = 2500;
-        
+       
         public string Name
         {
             get
@@ -69,6 +69,53 @@ namespace BanK_Account
                 _usdbalance = value;
             }
         }
+
+        string IEmployeOperations.Name
+        {
+            get 
+            {
+                return _name;
+            }
+            set
+            {
+                _name = value;
+            }
+        }
+        double IEmployeOperations.Rubbalance
+        {
+            get
+            {
+                return _rubbalance;
+
+            }
+            set
+            {
+                _rubbalance = value;
+            }
+        }
+        double IEmployeOperations.Usdbalance
+        {
+            get
+            {
+                return _usdbalance;
+            }
+            set
+            {
+                _usdbalance = value;
+            }
+        }
+        int IEmployeOperations.Id
+        {
+            get
+            {
+                return _id;
+            }
+            set
+            {
+                _id = value;
+            }
+        }
+
         public void AgeInput()
         {
             for (int i = 0; i < 1; i++)
@@ -438,7 +485,48 @@ namespace BanK_Account
                 Console.WriteLine($"{acc.Name} успешно конвертировал {answer} $ в рубли!");
             }
         }
+        void IEmployeOperations.NameChange(AccountMethods acc)
+        {
+            Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
+            Console.Write("Введите новое имя: ");
+            string answer = Console.ReadLine();
+            acc.Name = answer;
+            Console.WriteLine($"Успешно! Id: {acc.Id} Текущее имя: {acc.Name}");
+        }
 
-        
+        void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
+        {
+            
+        }
+
+        void IEmployeOperations.RateChange()
+        {
+            
+        }
+
+        void IEmployeOperations.UsdWithdChange()
+        {
+            
+        }
+
+        void IEmployeOperations.RubWithdChange()
+        {
+            
+        }
+
+        void IEmployeOperations.UsdDepChange()
+        {
+            
+        }
+
+        void IEmployeOperations.RubDepChange()
+        {
+            
+        }
+
+        void IEmployeOperations.TransactionChange()
+        {
+            
+        }
     }
 }

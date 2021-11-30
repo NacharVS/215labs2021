@@ -14,10 +14,18 @@ namespace BanK_Account
             Id = id;
         }
 
-        private static AccountMethods acc1 = new Info("Альфред", 2000,100,195234);
+        private static AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
         private static AccountMethods acc2 = new Info("Илья", 10000,300,300592);
         private static AccountMethods acc3 = new Info("Александр", 15000,750,666777);
-
+        IEmployeOperations acc = acc1;
+        public void ab()
+        {
+            acc.NameChange(acc1);
+        }
+        public static void abb()
+        {
+           
+        }
         internal static void Showid()
         {
             acc1.ShowId();
@@ -488,7 +496,11 @@ namespace BanK_Account
 
         void IEmployeOperations.NameChange(AccountMethods acc)
         {
-            throw new NotImplementedException();
+            Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
+            Console.Write("Введите новое имя: ");
+            string answer = Console.ReadLine();
+            acc.Name = answer;
+            Console.WriteLine($"Успешно!{acc.Id} Текущее имя: {acc.Name}");
         }
 
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)

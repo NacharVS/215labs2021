@@ -6,15 +6,14 @@ namespace BanK_Account
 {
     class EmployeeUsing : AccountMethods ,   IEmployeOperations
     {
-        IEmployeOperations acc1 = new Info(Console.ReadLine(), 2000, 100, 195234);
-        IEmployeOperations acc2 = new Info(Console.ReadLine(), 10000, 300, 300592);
-        IEmployeOperations acc3 = new Info(Console.ReadLine(), 15000, 750, 666777);
+
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
         {
-            
+           AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
+            acc = acc1;
+            acc.NameChange(acc1);
         }
-
-        void IEmployeOperations.NameChange(Info acc)
+        void IEmployeOperations.NameChange(AccountMethods acc)
         {
             //Console.WriteLine();
             //Info.Showid();
@@ -25,11 +24,7 @@ namespace BanK_Account
             //    case 195234:
 
             //}
-            Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
-            Console.Write("Введите новое имя: ");
-            string answer = Console.ReadLine();
-            answer = acc.Name;
-            Console.WriteLine($"Успешно!{acc.Id} Текущее имя: {acc.Name}");
+            
         }
 
         void IEmployeOperations.RateChange()
@@ -85,10 +80,15 @@ namespace BanK_Account
                     EmployeeUsing.EmployeeStart();
                     break;
                 case 2:
-                    acc1.NameChange(acc1)
                     break;
             }
 
+        }
+        public static void abiba()
+        {
+            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
+            IEmployeOperations acc = acc1;
+            acc.NameChange(acc1);
         }
     }
 }

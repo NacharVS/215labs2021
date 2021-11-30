@@ -6,8 +6,11 @@ namespace BanK_Account
 {
     interface IEmployeOperations 
     {
-        
-        void NameChange(Info acc);
+        string Name { get; set; }
+        double Rubbalance { get; set; }
+        double Usdbalance { get; set; }
+        int Id { get; set; }
+        void NameChange(AccountMethods acc);
         void BirthDateChange(IEmployeOperations acc);
         void RateChange();
         void UsdWithdChange();
