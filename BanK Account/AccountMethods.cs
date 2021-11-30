@@ -6,13 +6,13 @@ namespace BanK_Account
 {
     class AccountMethods : IEmployeOperations
     {
-        private  string _name;
-        private  double _rubbalance;
+        private string _name;
+        private double _rubbalance;
         private double _usdbalance;
         private int _id;
         private static double rate = 0.09;
-        private int[] dateofbirth = new int[3];
-        private int[] finalage = new int[3];
+        private int _datebirth;
+        private int _age;
         private static double wellrate = 76;
         private double withdrawrubmaxlimit = 30000;
         private double withdrawrubminlimit = 100;
@@ -24,7 +24,29 @@ namespace BanK_Account
         private double depositusdmaxlimit = 5000;
         private double rubmaxtransaction = 50000;
         private double usdmaxtransaction = 2500;
-       
+
+        public int DateBirth
+        {
+            get
+            {
+                return _datebirth;
+            }
+            set
+            {
+                _datebirth = value;
+            }
+        }
+        public int Age
+        {
+            get
+            {
+                return _age;
+            }
+            set
+            {
+                _age = value;
+            }
+        }
         public string Name
         {
             get
@@ -72,7 +94,7 @@ namespace BanK_Account
 
         string IEmployeOperations.Name
         {
-            get 
+            get
             {
                 return _name;
             }
@@ -115,62 +137,61 @@ namespace BanK_Account
                 _id = value;
             }
         }
-
-        public void AgeInput()
+        int IEmployeOperations.Age
         {
-            for (int i = 0; i < 1; i++)
+            get
             {
-                if (dateofbirth[i] > 0)
+                return _age;
+            }
+            set
+            {
+                _age = value;
+            }
+        }
+        int IEmployeOperations.DateBirth
+        {
+            get
+            {
+                return _datebirth;
+            }
+            set
+            {
+                _datebirth = value;
+            }
+        }
+        public void AgeInput(AccountMethods acc)
+        {
+            Console.Write($"Введите дату рождения {acc.Name}: ");
+            int date = int.Parse(Console.ReadLine());
+            if (date < 1900 || date > 2021)
+            {
+                while (date < 1900 || date > 2021)
                 {
-                    break;
-                }
-                else
-                {
-                    Console.Write($"Введите год рождения {Name} : ");
-                    int date = int.Parse(Console.ReadLine());
+                    date = 0;
+                    Console.Write("Дата неверна! Введите по новой: ");
+                    date = int.Parse(Console.ReadLine());
                     if (date < 1900 || date > 2021)
                     {
-                        Console.WriteLine();
-                        while (date < 1900 || date > 2021)
-                        {
-                            date = 0;
-                            Console.Write("Неверный год рождения! Введите заново: ");
-                            date = int.Parse(Console.ReadLine());
-                            if (date > 1900 && date < 2021)
-                            {
-                                
-                                    dateofbirth[i] += date;
-                                
-                                break;
-                            }
-                            else
-                            {
-                                continue;
-                            }
-                        }
+                        continue;
                     }
-                    else
+                    else if (date > 1900 || date < 2021)
                     {
-                        
-                            dateofbirth[i] += date;
+                        acc.DateBirth += date;
+                        acc.Age += DateTime.Now.Year - acc.DateBirth;
                         break;
-                        
                     }
                 }
             }
-            
-            
-        }
+            else if (date > 1900 || date < 2021)
+            {
+                acc.DateBirth += date;
+                acc.Age += DateTime.Now.Year - acc.DateBirth;
+            }
+            Console.WriteLine($"Имя: {acc.Name} Id: {acc.Id} Дата рождения: {acc.DateBirth} Возраст: {acc.Age}");
+        }    
         public void ShowInfo()
         {
-            for (int i = 0; i < 1; i++)
-            {
-                finalage[i] = DateTime.Now.Year - dateofbirth[i];
-            }
-            for (int i = 0; i < 1; i++)
-            {
-                Console.WriteLine($"id: {Id} Имя: {Name} Возраст: {finalage[i]} Баланс в рублях = {RubBalance} р. Баланс в долларах = {UsdBalance} $");
-            }
+              Console.WriteLine($"id: {Id} Имя: {Name} Возраст: {Age} Баланс в рублях = {RubBalance} р. Баланс в долларах = {UsdBalance} $");
         }
         public void ShowId()
         {
@@ -527,6 +548,42 @@ namespace BanK_Account
         void IEmployeOperations.TransactionChange()
         {
             
+        }
+
+        void IEmployeOperations.list(IEmployeOperations acc)
+        {
+            Console.WriteLine($"Имя: {acc.Name} Id: {acc.Id} Дата рождения: {acc.DateBirth} Возраст: {acc.Age}");
+        }
+
+        void IEmployeOperations.AgeInput(AccountMethods acc)
+        {
+            Console.Write($"Введите дату рождения {acc.Name}: ");
+            int date = int.Parse(Console.ReadLine());
+            if (date < 1900 || date > 2021)
+            {
+                while (date < 1900 || date > 2021)
+                {
+                    date = 0;
+                    Console.Write("Дата неверна! Введите по новой: ");
+                    date = int.Parse(Console.ReadLine());
+                    if (date < 1900 || date > 2021)
+                    {
+                        continue;
+                    }
+                    else if (date > 1900 || date < 2021)
+                    {
+                        acc.DateBirth += date;
+                        acc.Age += DateTime.Now.Year - acc.DateBirth;
+                        break;
+                    }
+                }
+            }
+            else if (date > 1900 || date < 2021)
+            {
+                acc.DateBirth += date;
+                acc.Age += DateTime.Now.Year - acc.DateBirth;
+            }
+            Console.WriteLine($"Имя: {acc.Name} Id: {acc.Id} Дата рождения: {acc.DateBirth} Возраст: {acc.Age}");
         }
     }
 }

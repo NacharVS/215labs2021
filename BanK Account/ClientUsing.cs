@@ -28,7 +28,7 @@ namespace BanK_Account
         internal static void startusing(AccountMethods acc)
         {
             Console.WriteLine();
-            acc.AgeInput();
+            acc.AgeInput(acc);
             Console.WriteLine("Что вы хотите сделать?");
             Console.WriteLine("1 - Просмотреть информацию о себе");
             Console.WriteLine("2 - Положить деньги под процент");

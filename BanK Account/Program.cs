@@ -5,17 +5,16 @@ namespace BanK_Account
 {
     class Program
     {
-        //AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234);
-        //IEmployeOperations acc = acc1;
+
         static void Main(string[] args)
         {
-            //Info.start();
-            //IClientOperations acc1 = new Info("Manunya", 300, 1, 5);
+            //AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
+            //IEmployeOperations acc = acc1;
+            //acc.NameChange(acc1);
+            //Console.WriteLine($"{acc.Name}");
+            //acc.AgeInput(acc1);
             Info.usingquestion();
-            
-            
-            
+
         }
-        
     }
 }
