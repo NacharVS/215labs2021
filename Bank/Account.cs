@@ -103,14 +103,14 @@ namespace ConsoleApp1
         {
             Console.WriteLine($"Введите сумму, которую хотите перевести {accGetter.Name}");
             double money = double.Parse(Console.ReadLine());
-            if (accSeller.BalanceRUB >= money)
+            if (accSeller.BalanceRUB >= money & money >= 0)
             {
                 accSeller.BalanceRUB -= money;
                 accGetter.BalanceRUB += money;
                 Console.WriteLine($"Со счёта {accSeller.Name} было переведено {accGetter.Name} {money} рублей");
             }
             else
-                Console.WriteLine("Ошибка. На Вашем счету недостаточно средств.");
+                Console.WriteLine("Ошибка. На Вашем счету недостаточно средств или вы ввели отрицательное число.");
         }
 
         public void Deposit(Account account)
