@@ -16,53 +16,218 @@ namespace Labs215Y2K
             //ArrayOperations.ArrayGeneration(qqnya, 2);
             //Magazin.Ashan.catalog();
             //StudentsSort.StudentsSort.StudentSort();
-            
-            Account acc1 = new Account("Ivan", 5000, new Random().Next(100, 1000));
-            Account acc2 = new Account("Fedor", 6000, new Random().Next(100, 1000));
-            Account acc3 = new Account("Elena", 3000, new Random().Next(100, 1000));
-            Account acc4 = new Account("Yarik", 100, new Random().Next(100, 1000));
-            Account acc5 = new Account("Egorik", 100000, new Random().Next(100, 1000));
 
+            CleaningWoman Woman = new CleaningWoman("Галина", "Ивановна");
+            SecurityGuard Guard = new SecurityGuard("Данил", "Тавевский");
 
-            acc1.ShowInfo(acc1);
-            acc2.ShowInfo(acc2);
-            acc3.ShowInfo(acc3);
-            acc4.ShowInfo(acc4);
-            acc5.ShowInfo(acc5);
+            Console.WriteLine("Вас приветствует Банк Субботний Scam, самый надёжный банк в городе");
+
+            Account acc1 = new Account("Ivan", 5000, 100, new Random().Next(121, 9521));
+            Account acc2 = new Account("Fedor", 6000, 20, new Random().Next(122, 9522));
+            Account acc3 = new Account("Elena", 3000, 85, new Random().Next(123, 9523));
+            Account acc4 = new Account("Yarik", 100, 100000, new Random().Next(777, 778));
+            Account acc5 = new Account("Egorik", 100000, 1, new Random().Next(125, 9526));
+
+            IClientOperation Cl1 = acc1;
+            IClientOperation Cl2 = acc2;
+            IClientOperation Cl3 = acc3;
+            IClientOperation Cl4 = acc4;
+            IClientOperation Cl5 = acc5;
+
+            Console.WriteLine();
+            Guard.Actions();
             Console.WriteLine();
 
-            Console.WriteLine("Введите кол-во месяцев:");
-            int month = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Через {month} меся(ц/ца/цев) Ваш баланс с коэффицентом {Account.rate} будет составлять:");
-
-            Account.rate = 0.09;
-            Account.ShowProfit(acc1, month);
-            Account.ShowProfit(acc2, month);
-            Account.ShowProfit(acc3, month);
-            Account.ShowProfit(acc4, month);
-            Account.ShowProfit(acc5, month);
+            Ipersonal Pers1 = acc1;
 
 
-            acc1.ShowInfo(acc1);
-            acc2.ShowInfo(acc2);
-            acc3.ShowInfo(acc3);
-            acc4.ShowInfo(acc4);
-            acc5.ShowInfo(acc5);
+            int GetterCounter = 0;
+            int SellerCounter = 0;
+            int AccDepostCounter = 0;
+            int AccWithdrawCounter = 0;
+            int AccConvertCounter = 0;
+            int AccPersCounter = 0;
+            int[] UserIdMassive = new int[5];
+            UserIdMassive[0] = Cl1.UserId;
+            UserIdMassive[1] = Cl2.UserId;
+            UserIdMassive[2] = Cl3.UserId;
+            UserIdMassive[3] = Cl4.UserId;
+            UserIdMassive[4] = Cl5.UserId;
+            IClientOperation[] UserMassive2 = new IClientOperation[5];
+            UserMassive2[0] = Cl1;
+            UserMassive2[1] = Cl2;
+            UserMassive2[2] = Cl3;
+            UserMassive2[3] = Cl4;
+            UserMassive2[4] = Cl5;
+            Ipersonal[] UserMassive1 = new Ipersonal[1];
+            UserMassive1[0] = Pers1;
+            Account[] UserMassive3 = new Account[5];
+            UserMassive3[0] = acc1;
+            UserMassive3[1] = acc2;
+            UserMassive3[2] = acc3;
+            UserMassive3[3] = acc4;
+            UserMassive3[4] = acc5;
 
-            acc1.Deposit(acc1);
-            acc1.ShowInfo(acc1);
+            Cl1.Info(acc1);
+            Cl2.Info(acc2);
+            Cl3.Info(acc3);
+            Cl4.Info(acc4);
+            Cl5.Info(acc5);
+            Console.WriteLine();
+            System.Threading.Thread.Sleep(1000);
+            Console.Clear();
 
-            acc4.Withdraw(acc4);
-            acc4.ShowInfo(acc4);
+            //Console.WriteLine($"{acc1.name} Введите Ваш год рождения: ");
+            //acc1.BirthOfYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+
+            //Console.WriteLine($"{acc2.name} Введите Ваш год рождения: ");
+            //acc2.BirthOfYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+
+            //Console.WriteLine($"{acc3.name} Введите Ваш год рождения: ");
+            //acc3.BirthOfYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+
+            //Console.WriteLine($"{acc4.name} Введите Ваш год рождения: ");
+            //acc4.BirthOfYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+
+            //Console.WriteLine($"{acc5.name} Введите Ваш год рождения: ");
+            //acc5.BirthOfYear = int.Parse(Console.ReadLine());
+            //Console.WriteLine();
+
+            acc1.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
+            acc2.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
+            acc3.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
+            acc4.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
+            acc5.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
 
 
-            
-            
-            Account.Transaction(acc4, acc4, acc5); // не работает
+            Console.WriteLine("Введите секретный символ, чтобы заскамить всех и уехать на Мальдивы");
+            if (Console.ReadKey().Key == ConsoleKey.Q)
+            {
+                Console.WriteLine();
+                Pers1.Scam(acc5);
+                Console.WriteLine();
+                Cl5.Info(acc5);
+                Console.WriteLine();
+                Console.WriteLine("Заскамил всех и улетел");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine();
+            }
 
-            acc4.ShowInfo(acc4);
-            acc5.ShowInfo(acc5);
-         }
+            Cl1.ShowInfo(acc1);
+            Cl2.ShowInfo(acc2);
+            Cl3.ShowInfo(acc3);
+            Cl4.ShowInfo(acc4);
+            Cl5.ShowInfo(acc5);
+            Console.WriteLine();
+
+
+            Console.WriteLine("Выберите Id пользователя которому вы хотите поменять имя");
+            int AccPersId = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccPersId)
+                {
+                    AccPersCounter = i;
+                }
+            }
+            UserMassive1[0].NameChange(UserMassive3[AccPersCounter]);
+            UserMassive1[0].RateChange();
+
+
+            Console.WriteLine("Введите кол-во месяцев");
+            int mountcounter = int.Parse(Console.ReadLine());
+            Console.WriteLine("Профит за " + mountcounter + " меся(ц/ца/цев) с коэффицентом " + Account.rate);
+            Console.WriteLine();
+
+
+            Cl1.ShowProfit(acc1, mountcounter);
+            Cl2.ShowProfit(acc2, mountcounter);
+            Cl3.ShowProfit(acc3, mountcounter);
+            Cl4.ShowProfit(acc4, mountcounter);
+            Cl5.ShowProfit(acc5, mountcounter);
+
+
+            Cl1.ShowInfo(acc1);
+            Cl2.ShowInfo(acc2);
+            Cl3.ShowInfo(acc3);
+            Cl4.ShowInfo(acc4);
+            Cl5.ShowInfo(acc5);
+
+            Console.WriteLine();
+            Console.WriteLine("Выберите Id пользователя которому вы хотите конвертировать деньги");
+            int AccConvertId = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccConvertId)
+                {
+                    AccConvertCounter = i;
+                }
+            }
+
+            UserMassive2[AccConvertCounter].MoneyConvert(UserMassive3[AccConvertCounter]);
+            UserMassive2[AccConvertCounter].ShowInfo(UserMassive3[AccConvertCounter]);
+
+            Console.WriteLine();
+            Console.WriteLine("Выберите Id пользователя которому вы хотите добавить деньги");
+            int AccDeposit = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccDeposit)
+                {
+                    AccDepostCounter = i;
+                }
+            }
+
+            UserMassive2[AccDepostCounter].Deposit(UserMassive3[AccDepostCounter]);
+            UserMassive2[AccDepostCounter].ShowInfo(UserMassive3[AccDepostCounter]);
+
+
+            Console.WriteLine();
+            Console.WriteLine("Выберите Id пользователя у которого вы хотите отнять деньги");
+            int AccWithdraw = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccWithdraw)
+                {
+                    AccWithdrawCounter = i;
+                }
+            }
+            UserMassive2[AccWithdrawCounter].Withdraw(UserMassive3[AccWithdrawCounter]);
+            UserMassive2[AccWithdrawCounter].ShowInfo(UserMassive3[AccWithdrawCounter]);
+
+            Console.WriteLine();
+            Console.WriteLine("Минутка уборки, Не ходить по помытому полу!!!!!!");
+            Woman.Actions();
+            System.Threading.Thread.Sleep(5000);
+
+            Console.WriteLine();
+            Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
+            int AccGetterId = int.Parse(Console.ReadLine());
+            Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
+            int AccGetterSeller = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccGetterId)
+                {
+                    GetterCounter = i;
+                }
+                if (UserIdMassive[i] == AccGetterSeller)
+                {
+                    SellerCounter = i;
+                }
+            }
+            UserMassive2[SellerCounter].Transaction(UserMassive3[SellerCounter], UserMassive3[SellerCounter], UserMassive3[GetterCounter]);
+            UserMassive2[SellerCounter].ShowInfo(UserMassive3[SellerCounter]);
+            UserMassive2[GetterCounter].ShowInfo(UserMassive3[GetterCounter]);
+
+        }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
             int cou = 1;
