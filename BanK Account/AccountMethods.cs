@@ -14,17 +14,245 @@ namespace BanK_Account
         private int _datebirth;
         private int _age;
         private static double wellrate = 76;
-        private double withdrawrubmaxlimit = 30000;
-        private double withdrawrubminlimit = 100;
-        private double withdrawusdmaxlimit = 1000;
-        private double withdrawusdminlimit = 50;
-        private double depositrubminlimit = 50;
-        private double depositrubmaxlimit = 100000;
-        private double depositusdminlimit = 10;
-        private double depositusdmaxlimit = 5000;
-        private double rubmaxtransaction = 50000;
-        private double usdmaxtransaction = 2500;
+        private static double withdrawrubmaxlimit = 30000;
+        private static double withdrawrubminlimit = 100;
+        private static double withdrawusdmaxlimit = 1000;
+        private static double withdrawusdminlimit = 50;
+        private static double depositrubminlimit = 50;
+        private static double depositrubmaxlimit = 100000;
+        private static double depositusdminlimit = 10;
+        private static double depositusdmaxlimit = 5000;
+        private static double rubmaxtransaction = 50000;
+        private static double usdmaxtransaction = 2500;
+        
+        internal static void ratechange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущая банковская ставка = {rate}; ");
+            Console.Write($"Введите новую ставку: ");
+            double answer = double.Parse(Console.ReadLine());
+            if (rate > 0)
+            {
+                rate = 0;
+                rate += answer;
+                Console.WriteLine($"Успешно! Текущая ставка = {rate}");
+            }
+            else if (rate == 0)
+            {
+                rate += answer;
+                Console.WriteLine($"Успешно! Текущая ставка = {rate}");
+            }
+            
+        }
+        internal static void rubtransactionchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущий макс лимит на транзакцию в рублях = {rubmaxtransaction} р.");
+            Console.Write($"Введите новый мин. лимит: ");
+            double lim = double.Parse(Console.ReadLine());
+            if (rubmaxtransaction > 0)
+            {
+                rubmaxtransaction = 0;
+                rubmaxtransaction += lim;
+                Console.WriteLine($"Успешно! Текущий лимит  = {rubmaxtransaction} р.");
+            }
+            else if (rubmaxtransaction == 0)
+            {
+                rubmaxtransaction += lim;
+                Console.WriteLine($"Успешно! Текущий лимит  = {rubmaxtransaction} р.");
+            }
 
+        }
+        internal static void usdtransactionchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущий макс лимит на транзакцию в долларах = {usdmaxtransaction} $.");
+            Console.Write($"Введите новый мин. лимит: ");
+            double lim = double.Parse(Console.ReadLine());
+            if (usdmaxtransaction > 0)
+            {
+                usdmaxtransaction = 0;
+                usdmaxtransaction += lim;
+                Console.WriteLine($"Успешно! Текущий лимит  = {usdmaxtransaction} $.");
+            }
+            else if (usdmaxtransaction == 0)
+            {
+                usdmaxtransaction += lim;
+                Console.WriteLine($"Успешно! Текущий лимит  = {usdmaxtransaction} $.");
+            }
+        }
+        internal static void rubwithlimitchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущие лимиты на вывод в рублях: мин. лимит = {withdrawrubminlimit} р.  макс. лимит = {withdrawrubmaxlimit} р.");
+            Console.WriteLine("Какой лимит вы хотите поменять? 1 - мин. лимит; 2 - макс. лимит");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.Write($"Введите новый мин. лимит: ");
+                    double minlim = double.Parse(Console.ReadLine());
+                    if (withdrawrubminlimit > 0)
+                    {
+                        withdrawrubminlimit = 0;
+                        withdrawrubminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawrubminlimit} р.");
+                    }
+                    else if (withdrawrubminlimit == 0)
+                    {
+                        withdrawrubminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawrubminlimit} р.");
+                    }
+                    break;
+                case 2:
+                    Console.Write($"Введите новый макс. лимит: ");
+                    double maxlim = double.Parse(Console.ReadLine());
+                    if (withdrawrubmaxlimit > 0)
+                    {
+                        withdrawrubmaxlimit = 0;
+                        withdrawrubmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий макс. лимит  = {withdrawrubmaxlimit} р.");
+                    }
+                    else if (withdrawrubmaxlimit == 0)
+                    {
+                        withdrawrubmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawrubmaxlimit} р.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Неверное число!");
+                    break;
+            }
+        }
+        internal static void usdwithlimchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущие лимиты на вывод в долларах: мин. лимит = {withdrawusdminlimit} $.  макс. лимит = {withdrawusdmaxlimit} $.");
+            Console.WriteLine("Какой лимит вы хотите поменять? 1 - мин. лимит; 2 - макс. лимит");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.Write($"Введите новый мин. лимит: ");
+                    double minlim = double.Parse(Console.ReadLine());
+                    if (withdrawusdminlimit > 0)
+                    {
+                        withdrawusdminlimit = 0;
+                        withdrawusdminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawusdminlimit} $.");
+                    }
+                    else if (withdrawusdminlimit == 0)
+                    {
+                        withdrawusdminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawusdminlimit} $.");
+                    }
+                    break;
+                case 2:
+                    Console.Write($"Введите новый макс. лимит: ");
+                    double maxlim = double.Parse(Console.ReadLine());
+                    if (withdrawusdmaxlimit > 0)
+                    {
+                        withdrawusdmaxlimit = 0;
+                        withdrawusdmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий макс. лимит  = {withdrawusdmaxlimit} $.");
+                    }
+                    else if (withdrawusdmaxlimit == 0)
+                    {
+                        withdrawusdmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {withdrawusdmaxlimit} $.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Неверное число!");
+                    break;
+            }
+        }
+        internal static void usddepolimitchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущие лимиты на пополнение в долларах: мин. лимит = {depositusdminlimit} $.  макс. лимит = {depositusdmaxlimit} $.");
+            Console.WriteLine("Какой лимит вы хотите поменять? 1 - мин. лимит; 2 - макс. лимит");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.Write($"Введите новый мин. лимит: ");
+                    double minlim = double.Parse(Console.ReadLine());
+                    if (depositusdminlimit > 0)
+                    {
+                        depositusdminlimit = 0;
+                        depositusdminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositusdminlimit} $.");
+                    }
+                    else if (depositusdminlimit == 0)
+                    {
+                        depositusdminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositusdminlimit} $.");
+                    }
+                    break;
+                case 2:
+                    Console.Write($"Введите новый макс. лимит: ");
+                    double maxlim = double.Parse(Console.ReadLine());
+                    if (depositusdmaxlimit > 0)
+                    {
+                        depositusdmaxlimit = 0;
+                        depositusdmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий макс. лимит  = {depositusdmaxlimit} $.");
+                    }
+                    else if (depositusdmaxlimit == 0)
+                    {
+                        depositusdmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositusdmaxlimit} $.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Неверное число!");
+                    break;
+            }
+        }
+        internal static void rubdepolimitchange()
+        {
+            Console.WriteLine();
+            Console.WriteLine($"Текущие лимиты на пополнение в рублях: мин. лимит = {depositrubminlimit} р.  макс. лимит = {depositrubmaxlimit} р.");
+            Console.WriteLine("Какой лимит вы хотите поменять? 1 - мин. лимит; 2 - макс. лимит");
+            int answer = int.Parse(Console.ReadLine());
+            switch (answer)
+            {
+                case 1:
+                    Console.Write($"Введите новый мин. лимит: ");
+                    double minlim = double.Parse(Console.ReadLine());
+                    if (depositrubminlimit > 0)
+                    {
+                        depositrubminlimit = 0;
+                        depositrubminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositrubminlimit} р.");
+                    }
+                    else if (depositrubminlimit == 0)
+                    {
+                        depositrubminlimit += minlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositrubminlimit} р.");
+                    }
+                    break;
+                case 2:
+                    Console.Write($"Введите новый макс. лимит: ");
+                    double maxlim = double.Parse(Console.ReadLine());
+                    if (depositrubmaxlimit > 0)
+                    {
+                        depositrubmaxlimit = 0;
+                        depositrubmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий макс. лимит  = {depositrubmaxlimit} р.");
+                    }
+                    else if (depositrubmaxlimit == 0)
+                    {
+                        depositrubmaxlimit += maxlim;
+                        Console.WriteLine($"Успешно! Текущий мин. лимит  = {depositrubmaxlimit} р.");
+                    }
+                    break;
+                default:
+                    Console.WriteLine("Неверное число!");
+                    break;
+            }
+        }
         public int DateBirth
         {
             get
@@ -515,40 +743,6 @@ namespace BanK_Account
             Console.WriteLine($"Успешно! Id: {acc.Id} Текущее имя: {acc.Name}");
         }
 
-        void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
-        {
-            
-        }
-
-        void IEmployeOperations.RateChange()
-        {
-            
-        }
-
-        void IEmployeOperations.UsdWithdChange()
-        {
-            
-        }
-
-        void IEmployeOperations.RubWithdChange()
-        {
-            
-        }
-
-        void IEmployeOperations.UsdDepChange()
-        {
-            
-        }
-
-        void IEmployeOperations.RubDepChange()
-        {
-            
-        }
-
-        void IEmployeOperations.TransactionChange()
-        {
-            
-        }
 
         void IEmployeOperations.list(IEmployeOperations acc)
         {
@@ -565,6 +759,7 @@ namespace BanK_Account
             {
                 Console.Write($"Введите дату рождения {acc.Name}: ");
                 int date = int.Parse(Console.ReadLine());
+                
                 if (date < 1900 || date > 2021)
                 {
                     while (date < 1900 || date > 2021)

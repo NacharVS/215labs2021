@@ -4,7 +4,7 @@ using System.Text;
 
 namespace BanK_Account 
 {
-    class Info : AccountMethods , IClientOperations , IEmployeOperations
+    class Info : AccountMethods ,  IEmployeOperations
     {
         public Info(string name, double rubbalance, double usdbalance, int id, int datebirth, int age)
         {
@@ -19,6 +19,9 @@ namespace BanK_Account
         private static AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234,0,0);
         private static AccountMethods acc2 = new Info("Илья", 10000,300,300592,0,0);
         private static AccountMethods acc3 = new Info("Александр", 15000, 750, 666777,0 ,0);
+        IEmployeOperations ac1 = acc1;
+        IEmployeOperations ac2 = acc3;
+        IEmployeOperations ac3 = acc2;
         internal static void Showid()
         {
             acc1.ShowId();
@@ -33,7 +36,7 @@ namespace BanK_Account
             acc3.AgeInput(acc3);
             Info.list();
         }
-        internal static void usingquestion()
+        internal static void usingquestion(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
         {
             Console.WriteLine("Вы хотите использовать аккаунт сотрудника или клиента? 1 - сотрудник 2 - клиент 3 - завершить сеанс");
             int answer = int.Parse(Console.ReadLine());
@@ -42,29 +45,31 @@ namespace BanK_Account
                 case 1:
                     Console.WriteLine();
                     Console.WriteLine("Добро пожаловать!");
-                    EmployeeUsing.EmployeeStart();
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 2:
                     Console.WriteLine();
                     Console.WriteLine("Добро пожаловать!");
                     Console.WriteLine();
-                    Info.Showid();
+                    ac1.list(ac1);
+                    ac2.list(ac2);
+                    ac3.list(ac3);
                     Console.Write("Введите id клиента, за которого хотите войти: ");
                     int answer2 = int.Parse(Console.ReadLine());
                     switch (answer2)
                     {
                         case 195234:
-                            ClientUsing.startusing(acc1);
+                            ClientUsing.startusing(acc1, ac1, ac2, ac3, acc1, acc2, acc3);
                             break;
                         case 300592:
-                            ClientUsing.startusing(acc2);
+                            ClientUsing.startusing(acc2, ac1, ac2, ac3, acc1, acc2, acc3);
                             break;
                         case 666777:
-                            ClientUsing.startusing(acc3);
+                            ClientUsing.startusing(acc3, ac1, ac2, ac3, acc1, acc2, acc3);
                             break;
                         default:
                             Console.WriteLine("Неверный Id");
-                            Info.usingquestion();
+                            Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
                             break;
 
                     }
@@ -73,7 +78,7 @@ namespace BanK_Account
                     break;
                 default:
                     Console.WriteLine("Неверное число!");
-                    Info.usingquestion();
+                    Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
             }
         }
@@ -414,7 +419,7 @@ namespace BanK_Account
                     break;
             }
         }
-        internal static void TransactionTwo(AccountMethods acc)
+        internal static void TransactionTwo(AccountMethods acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
         {
             Console.WriteLine();
             Console.Write("Кому из клиентов вы хотите сделать транзакцию? Введите Id: ");
@@ -422,7 +427,7 @@ namespace BanK_Account
             if (answer == acc.Id)
             {
                 Console.WriteLine("Нельзя сделать перевод самому себе!");
-                ClientUsing.startusing(acc);
+                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
             }
             else
             {
@@ -430,61 +435,22 @@ namespace BanK_Account
                 {
                     case 195234:
                         acc.Transaction(acc, acc1);
-                        ClientUsing.startusing(acc);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 300592:
                         acc.Transaction(acc, acc2);
-                        ClientUsing.startusing(acc);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 666777:
                         acc.Transaction(acc, acc3);
-                        ClientUsing.startusing(acc);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     default:
                         Console.WriteLine("Неверный ID");
-                        ClientUsing.startusing(acc);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                 }
             }
-        }
-        void IClientOperations.ConvertOp(AccountMethods acc)
-        {
-            Console.WriteLine();
-            Console.WriteLine("С какого счета вы хотите произвевсти конвертацию? 1 - c рублевого; 2 - с долларового");
-            int answer = int.Parse(Console.ReadLine());
-            switch (answer)
-            {
-                case 1:
-                    acc.RubConvertation(acc);
-                    Console.WriteLine();
-                    acc.ShowInfo();
-                    Info.start();
-                    break;
-                case 2:
-                    acc.UsdConvertation(acc);
-                    Console.WriteLine();
-                    acc.ShowInfo();
-                    Info.start();
-                    break;
-                default:
-                    break;
-            }
-            
-        }
-
-        void IClientOperations.deposit(IClientOperations acc)
-        {
-
-        }
-
-        void IClientOperations.withdraw()
-        {
-            
-        }
-
-        void IClientOperations.trans()
-        {
-            
         }
 
         void IEmployeOperations.NameChange(AccountMethods acc)
@@ -496,40 +462,6 @@ namespace BanK_Account
             Console.WriteLine($"Успешно!{acc.Id} Текущее имя: {acc.Name}");
         }
 
-        void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
-        {
-            
-        }
-
-        void IEmployeOperations.RateChange()
-        {
-            
-        }
-
-        void IEmployeOperations.UsdWithdChange()
-        {
-            
-        }
-
-        void IEmployeOperations.RubWithdChange()
-        {
-            
-        }
-
-        void IEmployeOperations.UsdDepChange()
-        {
-            
-        }
-
-        void IEmployeOperations.RubDepChange()
-        {
-            
-        }
-
-        void IEmployeOperations.TransactionChange()
-        {
-            
-        }
     }
 }
 
