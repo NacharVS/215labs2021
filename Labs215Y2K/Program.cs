@@ -30,6 +30,10 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
 
+
+            CleaningWoman Woman = new CleaningWoman("Галина", "Ивановна");
+            SecurityGuard Guard = new SecurityGuard("Данил","Тавевский");
+
             Console.WriteLine("Вас приветствует Банк Субботний Scam, самый надёжный банк в городе");
 
             Account acc1 = new Account("Ivan", 5000, 100, new Random().Next(121, 9521));
@@ -44,6 +48,9 @@ namespace Deletor
             IClientOperation Cl4 = acc4;
             IClientOperation Cl5 = acc5;
 
+            Console.WriteLine();
+            Guard.Actions();
+            Console.WriteLine();
 
             Ipersonal Pers1 = acc1;
 
@@ -53,6 +60,7 @@ namespace Deletor
             int AccDepostCounter = 0;
             int AccWithdrawCounter = 0;
             int AccConvertCounter = 0;
+            int AccPersCounter = 0;
             int[] UserIdMassive = new int[5];
             UserIdMassive[0] = Cl1.UserId;
             UserIdMassive[1] = Cl2.UserId;
@@ -65,6 +73,8 @@ namespace Deletor
             UserMassive2[2] = Cl3;
             UserMassive2[3] = Cl4;
             UserMassive2[4] = Cl5;
+            Ipersonal[] UserMassive1 = new Ipersonal[1];
+            UserMassive1[0] = Pers1;
             Account[] UserMassive3 = new Account[5];
             UserMassive3[0] = acc1;
             UserMassive3[1] = acc2;
@@ -78,7 +88,7 @@ namespace Deletor
             Cl4.Info(acc4);
             Cl5.Info(acc5);
             Console.WriteLine();
-            System.Threading.Thread.Sleep(3000); 
+            System.Threading.Thread.Sleep(1000); 
             Console.Clear();
 
             //Console.WriteLine($"{acc1.name} Введите Ваш год рождения: ");
@@ -107,6 +117,23 @@ namespace Deletor
             acc4.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
             acc5.BirthOfYear = new Random().Next(1940, DateTime.Now.Year);
 
+
+            Console.WriteLine("Введите секретный символ, чтобы заскамить всех и уехать на Мальдивы");
+            if (Console.ReadKey().Key == ConsoleKey.Q)
+            {
+                Console.WriteLine();
+                Pers1.Scam(acc5);
+                Console.WriteLine();
+                Cl5.Info(acc5);
+                Console.WriteLine();
+                Console.WriteLine("Заскамил всех и улетел");
+                Console.WriteLine();
+            }
+            else
+            {
+                Console.WriteLine();
+            }
+
             Cl1.ShowInfo(acc1);
             Cl2.ShowInfo(acc2); 
             Cl3.ShowInfo(acc3); 
@@ -115,8 +142,17 @@ namespace Deletor
             Console.WriteLine();
 
 
-            Pers1.RateChange();
-           
+            Console.WriteLine("Выберите Id пользователя которому вы хотите поменять имя");
+            int AccPersId = int.Parse(Console.ReadLine());
+            for (int i = 0; i < UserIdMassive.Length; i++)
+            {
+                if (UserIdMassive[i] == AccPersId)
+                {
+                    AccPersCounter = i;
+                }
+            }
+            UserMassive1[0].NameChange(UserMassive3[AccPersCounter]);
+            UserMassive1[0].RateChange();
 
 
             Console.WriteLine("Введите кол-во месяцев");
@@ -179,6 +215,11 @@ namespace Deletor
             }
             UserMassive2[AccWithdrawCounter].Withdraw(UserMassive3[AccWithdrawCounter]);
             UserMassive2[AccWithdrawCounter].ShowInfo(UserMassive3[AccWithdrawCounter]);
+
+            Console.WriteLine();
+            Console.WriteLine("Минутка уборки, Не ходить по помытому полу!!!!!!");
+            Woman.Actions();
+            System.Threading.Thread.Sleep(5000);
 
             Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
@@ -305,7 +346,8 @@ namespace Deletor
                     }
                 }
 
-                Console.WriteLine();
+
+                
             }
         }
         //public static void UnitsCreator()

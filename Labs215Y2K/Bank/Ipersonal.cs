@@ -18,5 +18,6 @@ namespace Labs215Y2K.Bank
         void NameChange(Account acc);
         void RateChange();
         void DollarCurseChange();
+        void Scam(Account acc);
     }
 }

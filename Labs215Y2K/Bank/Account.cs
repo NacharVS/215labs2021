@@ -66,7 +66,7 @@ class Account : IClientOperation, Ipersonal
         }
         else
         {
-            System.Console.WriteLine($"Id - {_userId}, {Name} - {Age} лет(год) - {Balance}");
+            System.Console.WriteLine($"Id - {_userId}, {Name} - {Age} лет(год) - {Balance} руб. - {DollarBalance}$");
         }
     }
 
@@ -268,9 +268,10 @@ class Account : IClientOperation, Ipersonal
     void Ipersonal.NameChange(Account acc)
     {
         Console.WriteLine();
-        Console.WriteLine("Введите новое имя пользователя для данного аккаунта");
+        Console.WriteLine($"Введите новое имя пользователя для {acc.Name}");
         string NewName = Console.ReadLine();
         acc.Name = NewName;
+        Console.WriteLine($"Новое имя пользователя - {acc.Name}");
     }
     void Ipersonal.RateChange()
     {
@@ -280,13 +281,18 @@ class Account : IClientOperation, Ipersonal
         rate = NewCoef;
         Console.WriteLine($"Новый коэффицент = {rate}");
     }
-        void Ipersonal.DollarCurseChange()
+    void Ipersonal.DollarCurseChange()
     {
         Console.WriteLine();
         Console.WriteLine("Введите новый курс доллора");
         double NewDollarCurse = double.Parse(Console.ReadLine());
         dollarcurse = NewDollarCurse;
         Console.WriteLine($"Новый курс = {dollarcurse}");
+    }
+    void Ipersonal.Scam(Account acc)
+    {
+        acc.Balance = 999999999999;
+        acc.DollarBalance = 999999999999;
     }
 }
 
