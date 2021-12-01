@@ -18,7 +18,7 @@ namespace BanK_Account
 
         private static AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234,0,0);
         private static AccountMethods acc2 = new Info("Илья", 10000,300,300592,0,0);
-        private static AccountMethods acc3 = new Info("Александр", 15000,750,666777,0,0);
+        private static AccountMethods acc3 = new Info("Александр", 15000, 750, 666777,0 ,0);
         internal static void Showid()
         {
             acc1.ShowId();
@@ -498,37 +498,37 @@ namespace BanK_Account
 
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.RateChange()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.UsdWithdChange()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.RubWithdChange()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.UsdDepChange()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.RubDepChange()
         {
-            throw new NotImplementedException();
+            
         }
 
         void IEmployeOperations.TransactionChange()
         {
-            throw new NotImplementedException();
+            
         }
     }
 }

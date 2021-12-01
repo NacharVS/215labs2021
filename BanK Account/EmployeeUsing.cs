@@ -5,27 +5,18 @@ using BanK_Account;
 
 namespace BanK_Account
 {
-    class EmployeeUsing : AccountMethods ,   IEmployeOperations
+    class EmployeeUsing : AccountMethods, IEmployeOperations
     {
-        
+
         void IEmployeOperations.BirthDateChange(IEmployeOperations acc)
         {
-            
+
         }
         void IEmployeOperations.NameChange(AccountMethods acc)
         {
-            //Console.WriteLine();
-            //Info.Showid();
-            //Console.Write("Введите id клиента для смены имени: ");
-            //int answer = int.Parse(Console.ReadLine());
-            //switch (answer)
-            //{
-            //    case 195234:
 
-            //}
-            
         }
-        
+
         void IEmployeOperations.RateChange()
         {
 
@@ -43,7 +34,7 @@ namespace BanK_Account
 
         void IEmployeOperations.TransactionChange()
         {
-    
+
         }
 
         void IEmployeOperations.UsdDepChange()
@@ -55,7 +46,7 @@ namespace BanK_Account
         {
 
         }
-        void IEmployeOperations.AgeInput(AccountMethods acc)
+        void IEmployeOperations.AgeInput(AccountMethods acc )
         {
             Console.Write($"Введите дату рождения {acc.Name}: ");
             int date = int.Parse(Console.ReadLine());
@@ -89,17 +80,17 @@ namespace BanK_Account
         {
             Console.WriteLine($"Имя: {acc.Name} Id: {acc.Id} Дата рождения: {acc.DateBirth} Возраст: {acc.Age}");
         }
-        
+
         internal static void EmployeeStart()
         {
-            
-                AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
-                AccountMethods acc2 = new Info("Илья", 10000, 300, 300592, 0, 0);
-                AccountMethods acc3 = new Info("Александр", 15000, 750, 666777, 0, 0);
-                IEmployeOperations ac1 = acc1;
-                IEmployeOperations ac2 = acc2;
-                IEmployeOperations ac3 = acc3;
-            
+
+            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
+            AccountMethods acc2 = new Info("Илья", 10000, 300, 300592, 0, 0);
+            AccountMethods acc3 = new Info("Александр", 15000, 750, 666777, 0, 0);
+            IEmployeOperations ac1 = acc1;
+            IEmployeOperations ac2 = acc2;
+            IEmployeOperations ac3 = acc3;
+
             Console.WriteLine("Что вы хотите сделать?");
             Console.WriteLine("1 - Просмотреть сведения о всех клиентах");
             Console.WriteLine("2 - Изменить имя клиентов");
@@ -158,15 +149,27 @@ namespace BanK_Account
                     ac2.list(acc2);
                     ac3.list(acc3);
                     break;
+                case 3:
+                    Console.WriteLine();
+                    ac1.list(acc1);
+                    ac2.list(acc2);
+                    ac3.list(acc3);
+                    Console.WriteLine();
+                    EmployeeUsing.agechange();
+                    ac1.list(acc1);
+                    ac2.list(acc2);
+                    ac3.list(acc3);
+                    break;
+
             }
 
         }
-        
+
         public static void namechange()
         {
-            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234,0,0);
-            AccountMethods acc2 = new Info("Илья", 10000, 300, 300592,0,0);
-            AccountMethods acc3 = new Info("Александр", 15000, 750, 666777,0,0);
+            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
+            AccountMethods acc2 = new Info("Илья", 10000, 300, 300592, 0, 0);
+            AccountMethods acc3 = new Info("Александр", 15000, 750, 666777, 0, 0);
             IEmployeOperations ac1 = acc1;
             IEmployeOperations ac2 = acc2;
             IEmployeOperations ac3 = acc3;
@@ -186,6 +189,39 @@ namespace BanK_Account
                     break;
                 case 666777:
                     ac3.NameChange(acc3);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                default:
+                    Console.WriteLine("Неверный ID!");
+                    EmployeeUsing.EmployeeStart();
+                    break;
+            }
+        }
+        public static void agechange()
+        {
+            AccountMethods acc1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
+            AccountMethods acc2 = new Info("Илья", 10000, 300, 300592, 0, 0);
+            AccountMethods acc3 = new Info("Александр", 15000, 750, 666777, 0, 0);
+            IEmployeOperations ac1 = acc1;
+            IEmployeOperations ac2 = acc2;
+            IEmployeOperations ac3 = acc3;
+            Console.Write("Напишите id клиента, которому желаете поменять возраст: ");
+            int answer1 = int.Parse(Console.ReadLine());
+            switch (answer1)
+            {
+                case 195234:
+                    ac1.AgeInput(acc1);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                case 300592:
+                    ac2.AgeInput(acc2);
+                    Console.WriteLine();
+                    EmployeeUsing.EmployeeStart();
+                    break;
+                case 666777:
+                    ac3.AgeInput(acc3);
                     Console.WriteLine();
                     EmployeeUsing.EmployeeStart();
                     break;
