@@ -11,3 +11,10 @@ C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Иг�
 C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.dll
 C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.pdb
 C:\Users\152017\Desktop\Игар\Игра\Игра\obj\Debug\netcoreapp3.1\Игра.genruntimeconfig.cache
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.csproj.AssemblyReference.cache
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.AssemblyInfoInputs.cache
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.AssemblyInfo.cs
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.csproj.CoreCompileInputs.cache
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.dll
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.pdb

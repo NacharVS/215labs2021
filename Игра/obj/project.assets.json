@@ -8,25 +8,25 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\152017\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\tasev\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\152017\\Desktop\\Игар\\Игра\\Игра\\Игра.csproj",
+      "projectUniqueName": "C:\\Users\\tasev\\Desktop\\215Labs2021\\Игра\\Игра.csproj",
       "projectName": "Игра",
-      "projectPath": "C:\\Users\\152017\\Desktop\\Игар\\Игра\\Игра\\Игра.csproj",
-      "packagesPath": "C:\\Users\\152017\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\152017\\Desktop\\Игар\\Игра\\Игра\\obj\\",
+      "projectPath": "C:\\Users\\tasev\\Desktop\\215Labs2021\\Игра\\Игра.csproj",
+      "packagesPath": "C:\\Users\\tasev\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tasev\\Desktop\\215Labs2021\\Игра\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\152017\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        "C:\\Users\\tasev\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp3.1"
@@ -65,7 +65,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
       }
     }
   }
