@@ -8,22 +8,26 @@ namespace Labs215Y2K
     {
         public static void Main()
         {
-            acc1.ShowInfo id = new Random().Next(1234, 9876);
         
-            Account acc1 = new Account("Ivan", 5000);
-            Account acc2 = new Account("Fedor", 6000);
-            Account acc3 = new Account("Elena", 3000);
-            acc1.ShowInfo();
-            acc2.ShowInfo();
-            acc3.ShowInfo();
+            Account acc1 = new Account("Ivan", 5000 , new Random().Next(1234, 9876));
+            Account acc2 = new Account("Fedor", 6000, new Random().Next(1234, 9876));
+            Account acc3 = new Account("Elena", 3000, new Random().Next(1234, 9876));
+            acc1.ShowInfo(acc1);
+            acc2.ShowInfo(acc2);
+            acc3.ShowInfo(acc3);
             Console.WriteLine();
-            Account.rate = 0.09;
-            Account.ShowProfit(acc1, 1);
-            Account.ShowProfit(acc3, 1);
-            Account.ShowProfit(acc3, 1);
-            acc1.ShowInfo();
-            acc2.ShowInfo();
-            acc3.ShowInfo();
+            Account.rate = 0.06;
+            Console.WriteLine();
+            Console.WriteLine("Введите количество месяцев");
+            int mouth = int.Parse(Console.ReadLine());
+            Account.ShowProfit(acc1, mouth);
+            Account.ShowProfit(acc2, mouth);
+            Account.ShowProfit(acc3, mouth);
+            acc1.ShowInfo(acc1);
+            acc2.ShowInfo(acc2);
+            acc3.ShowInfo(acc3);
+           
+
         }
     }
 }

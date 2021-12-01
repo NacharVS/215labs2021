@@ -23,7 +23,7 @@ namespace Labs215Y2K
         {
             if (acc.balance > 0)
             {
-                System.Console.WriteLine($"Пользователь - {name} \t Баланс - {balance}   \t id - {id}");
+                Console.WriteLine($"Пользователь - {name} \t Баланс - {balance}   \t id - {id}");
             }
         }
 
@@ -78,5 +78,6 @@ namespace Labs215Y2K
                 }
             }
         }
+       
     }
 }
