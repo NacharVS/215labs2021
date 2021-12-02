@@ -88,8 +88,14 @@ namespace Deletor
             Cl4.Info(acc4);
             Cl5.Info(acc5);
             Console.WriteLine();
-            System.Threading.Thread.Sleep(1000); 
+            System.Threading.Thread.Sleep(3000); 
             Console.Clear();
+
+            acc4.NameChangeEvenet += NameChange;
+            acc4.Name = "Крутой чел";
+
+            acc1.BalanceChangeEvent += Show;
+            acc1.Balance = 3000;
 
             //Console.WriteLine($"{acc1.name} Введите Ваш год рождения: ");
             //acc1.BirthOfYear = int.Parse(Console.ReadLine());
@@ -119,11 +125,11 @@ namespace Deletor
 
 
             Console.WriteLine("Введите секретный символ, чтобы заскамить всех и уехать на Мальдивы");
-            if (Console.ReadKey().Key == ConsoleKey.Q)
+            if (Console.ReadKey().Key == ConsoleKey.Delete)
             {
                 Console.WriteLine();
                 Pers1.Scam(acc5);
-                Console.WriteLine();
+                Console.Clear();
                 Cl5.Info(acc5);
                 Console.WriteLine();
                 Console.WriteLine("Заскамил всех и улетел");
@@ -131,6 +137,8 @@ namespace Deletor
             }
             else
             {
+                Console.Clear();
+                Console.WriteLine("Оу щит, ты не угадал");
                 Console.WriteLine();
             }
 
@@ -240,7 +248,9 @@ namespace Deletor
             UserMassive2[SellerCounter].Transaction(UserMassive3[SellerCounter], UserMassive3[SellerCounter], UserMassive3[GetterCounter]);
             UserMassive2[SellerCounter].ShowInfo(UserMassive3[SellerCounter]);
             UserMassive2[GetterCounter].ShowInfo(UserMassive3[GetterCounter]);
-            
+
+            Console.WriteLine();
+            Console.WriteLine("Всё, банк закрылся");
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
@@ -493,65 +503,77 @@ namespace Deletor
 
 
         //}
-//        int ArrayRange = 0;
-//        NewAshanUpdate[] Ashan = new NewAshanUpdate[100];
-//        NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
-//        int CounterOfProducts = 0;
-//        int CounterOfFilling = 0;
-//        int CounterOfCyclices = 1;
-//        string[] catalog = new string[] { "1. Гречка", "2. Макароны", "3. Молоко", "4. Хлеб", "5. Батон", "6. Конфеты", "7. Чипсы", "8. Сухари", "9. Попкорн", "10. Семечки" };
-//        int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
-//        Ashan[CounterOfFilling] = new NewAshanUpdate();
-//            for (CounterOfFilling = 0; CounterOfFilling<catalog.Length; CounterOfFilling++)
-//            {
-//                Ashan[CounterOfFilling] = new NewAshanUpdate();
-//        Ashan[CounterOfFilling].Names = catalog[CounterOfFilling];
-//                Ashan[CounterOfFilling].Price = price[CounterOfFilling];
-//                Console.Write($"{Ashan[CounterOfFilling].Names} ");
-//                Console.WriteLine($"\t{Ashan[CounterOfFilling].Price}");
-//            }
-//    //Ashan[CounterOfFilling].Price
-//    Console.WriteLine();
-//            while (CounterOfCyclices != 2)
-//            {
-//                Korzina[CounterOfProducts] = new NewAshanUpdate();
-//    Ashan[CounterOfProducts] = new NewAshanUpdate();
-//    Console.WriteLine("Хотите приобрести товар? 1 - Да, 2 - Нет");
-//                CounterOfCyclices = int.Parse(Console.ReadLine());
-//                if (CounterOfCyclices == 1)
-//                {
-//                    ArrayRange+=1;
-//                    Console.WriteLine("Введите номер товара, который вам нужен");
-//                    int KorzinaNumber = int.Parse(Console.ReadLine()) - 1;
-//    Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
-//                    Console.WriteLine("Введите кол-во товара");
-//                    Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
-//                    if (KorzinaNumber-1 < 6)
-//                    {
-//                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price* Ashan[CounterOfProducts].Count;
-//                    }
-//Console.WriteLine();
-//if (KorzinaNumber > 5 && Ashan[CounterOfProducts].Count % 100 == 0)
-//{
-//    int check = Ashan[CounterOfProducts].Count / 100;
-//    Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * check;
-//}
-//                    //        else
-//                    //{
-//                    //    Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
-//                    //}
-//                }
-//                else
-//{
-//    break;
-//}
-//CounterOfProducts++;
-//            }
-//            for (int i = 0; i < ArrayRange; i++)
-//{
-//    Console.Write($"{Korzina[i].NumberOfProduct}");
-//    Console.Write($"\t{Korzina[i].Count} ");
-//    Console.WriteLine($"\t{Korzina[0].Price}");
-//}
+        //        int ArrayRange = 0;
+        //        NewAshanUpdate[] Ashan = new NewAshanUpdate[100];
+        //        NewAshanUpdate[] Korzina = new NewAshanUpdate[100];
+        //        int CounterOfProducts = 0;
+        //        int CounterOfFilling = 0;
+        //        int CounterOfCyclices = 1;
+        //        string[] catalog = new string[] { "1. Гречка", "2. Макароны", "3. Молоко", "4. Хлеб", "5. Батон", "6. Конфеты", "7. Чипсы", "8. Сухари", "9. Попкорн", "10. Семечки" };
+        //        int[] price = new int[] { 130, 250, 50, 30, 30, 150, 100, 50, 150, 200 };
+        //        Ashan[CounterOfFilling] = new NewAshanUpdate();
+        //            for (CounterOfFilling = 0; CounterOfFilling<catalog.Length; CounterOfFilling++)
+        //            {
+        //                Ashan[CounterOfFilling] = new NewAshanUpdate();
+        //        Ashan[CounterOfFilling].Names = catalog[CounterOfFilling];
+        //                Ashan[CounterOfFilling].Price = price[CounterOfFilling];
+        //                Console.Write($"{Ashan[CounterOfFilling].Names} ");
+        //                Console.WriteLine($"\t{Ashan[CounterOfFilling].Price}");
+        //            }
+        //    //Ashan[CounterOfFilling].Price
+        //    Console.WriteLine();
+        //            while (CounterOfCyclices != 2)
+        //            {
+        //                Korzina[CounterOfProducts] = new NewAshanUpdate();
+        //    Ashan[CounterOfProducts] = new NewAshanUpdate();
+        //    Console.WriteLine("Хотите приобрести товар? 1 - Да, 2 - Нет");
+        //                CounterOfCyclices = int.Parse(Console.ReadLine());
+        //                if (CounterOfCyclices == 1)
+        //                {
+        //                    ArrayRange+=1;
+        //                    Console.WriteLine("Введите номер товара, который вам нужен");
+        //                    int KorzinaNumber = int.Parse(Console.ReadLine()) - 1;
+        //    Korzina[CounterOfProducts].NumberOfProduct = Ashan[KorzinaNumber].Names;
+        //                    Console.WriteLine("Введите кол-во товара");
+        //                    Korzina[CounterOfProducts].Count = int.Parse(Console.ReadLine());
+        //                    if (KorzinaNumber-1 < 6)
+        //                    {
+        //                        Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price* Ashan[CounterOfProducts].Count;
+        //                    }
+        //Console.WriteLine();
+        //if (KorzinaNumber > 5 && Ashan[CounterOfProducts].Count % 100 == 0)
+        //{
+        //    int check = Ashan[CounterOfProducts].Count / 100;
+        //    Korzina[CounterOfProducts].Price += Ashan[CounterOfProducts].Price * check;
+        //}
+        //                    //        else
+        //                    //{
+        //                    //    Console.WriteLine("Кол-во товаров нужно указывать строго с шагом в 100");
+        //                    //}
+        //                }
+        //                else
+        //{
+        //    break;
+        //}
+        //CounterOfProducts++;
+        //            }
+        //            for (int i = 0; i < ArrayRange; i++)
+        //{
+        //    Console.Write($"{Korzina[i].NumberOfProduct}");
+        //    Console.Write($"\t{Korzina[i].Count} ");
+        //    Console.WriteLine($"\t{Korzina[0].Price}");
+        //}
+
+
+        static void Show(double a, double b)
+        {
+            Console.WriteLine($"Баланс изменён на {a} руб. , новый баланс = {b} руб. ");
+            Console.WriteLine();
+        }
+        static void NameChange(string OldName,string NewName)
+        {
+            Console.WriteLine($"{OldName} было измененно на {NewName} ");
+            Console.WriteLine();
+        }
     }
 }

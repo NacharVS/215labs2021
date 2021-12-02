@@ -19,6 +19,8 @@ class Account : IClientOperation, Ipersonal
 
     public delegate void BalanceValueChangeDelegate(double diff, double newvalue);
     public event BalanceValueChangeDelegate BalanceChangeEvent;
+    public delegate void NameChangeDelegate(string OldValue,string NewValue);
+    public event NameChangeDelegate NameChangeEvenet;
 
 
     public int BirthOfYear
@@ -43,7 +45,18 @@ class Account : IClientOperation, Ipersonal
         }
     }
 
-    public string Name { get => _name; set => _name = value; }
+    public string Name
+    {
+        get => _name;
+        set
+        {
+            string OldValue = _name;
+
+
+            _name = value;
+            NameChangeEvenet?.Invoke(OldValue,value);
+        }
+    }
     public double Balance
     {
         get => _balance;
