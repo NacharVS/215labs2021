@@ -20,6 +20,7 @@ namespace Labs215Y2K
             Console.WriteLine();
             Console.WriteLine("Введите количество месяцев");
             int mouth = int.Parse(Console.ReadLine());
+            Console.WriteLine($"Через {mouth} меся(ц/ца/цев) Ваш баланс с коэффицентом {Account.rate} будет составлять:");
             Account.ShowProfit(acc1, mouth);
             Account.ShowProfit(acc2, mouth);
             Account.ShowProfit(acc3, mouth);
