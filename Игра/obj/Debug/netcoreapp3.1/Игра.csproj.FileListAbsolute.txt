@@ -18,3 +18,10 @@ C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.Ass
 C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.csproj.CoreCompileInputs.cache
 C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.dll
 C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.pdb
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.exe
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.deps.json
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.runtimeconfig.json
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.runtimeconfig.dev.json
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.dll
+C:\Users\tasev\Desktop\215Labs2021\Игра\bin\Debug\netcoreapp3.1\Игра.pdb
+C:\Users\tasev\Desktop\215Labs2021\Игра\obj\Debug\netcoreapp3.1\Игра.genruntimeconfig.cache

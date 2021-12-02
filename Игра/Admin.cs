@@ -4,17 +4,15 @@ using System.Text;
 
 namespace Игра
 {
-    public class Client2
+    public class Admin
     {
         private string _name;
         private string _surname;
         private int _ID;
-        private int _BallansDollars; public static int _BallansDollarsMax = 10000;
-        private int _BallansRubles; public static int _BallansRublesMax = 750000;
+        public static int _BallansDollarsMax = 10000;
+        public static int _BallansRublesMax = 750000;
 
-        public int BallansDollars { get => _BallansDollars; set => _BallansDollars = value; }
-        public int BallansRubles { get => _BallansRubles; set => _BallansRubles = value; }
-        public void Popolnenue(int BallansDollars, int BallansRubles)
+        public void PopolnenueClient(Client guest)
         {
             string FlagPopolnenue1 = "Y";
             string FlagPopolnenue2 = "Y";
@@ -35,12 +33,12 @@ namespace Игра
                             VvodSum = int.Parse(Console.ReadLine());
                             if (VvodSum > 0)
                             {
-                                if (VvodBalut == "D" & VvodSum + BallansDollars >= _BallansDollarsMax)
+                                if (VvodBalut == "D" & VvodSum + guest.BallansDollars >= _BallansDollarsMax)
                                 {
                                     Console.WriteLine("Сумма превышает лимит счёта");
-                                    Ostatoc = VvodSum + BallansDollars - _BallansDollarsMax;
-                                    BallansDollars += VvodSum - Ostatoc;
-                                    Console.WriteLine($"Зачисление успешно, ваш балланс - { BallansDollars } / { _BallansDollarsMax }, Остаток - {Ostatoc}");
+                                    Ostatoc = VvodSum + guest.BallansDollars - _BallansDollarsMax;
+                                    guest.BallansDollars += VvodSum - Ostatoc;
+                                    Console.WriteLine($"Зачисление успешно, ваш балланс - {  guest.BallansDollars } / { _BallansDollarsMax }, Остаток - {Ostatoc}");
                                     Ostatoc = 0;
                                     Console.WriteLine("Будет ли повторная операция(Y/Любая кнопка)");
                                     string Vvod = Console.ReadLine();
@@ -50,12 +48,12 @@ namespace Игра
                                     }
                                 }
 
-                                if (VvodBalut == "R" & VvodSum + BallansRubles >= _BallansRublesMax)
+                                if (VvodBalut == "R" & VvodSum + guest.BallansRubles >= _BallansRublesMax)
                                 {
                                     Console.WriteLine("Сумма превышает лимит счёта");
-                                    Ostatoc = VvodSum + BallansRubles - _BallansRublesMax;
-                                    BallansRubles += VvodSum - Ostatoc;
-                                    Console.WriteLine($"Зачисление успешно, ваш балланс - { BallansRubles } / { _BallansRublesMax }, Остаток - {Ostatoc}");
+                                    Ostatoc = VvodSum + guest.BallansRubles - _BallansRublesMax;
+                                    guest.BallansRubles += VvodSum - Ostatoc;
+                                    Console.WriteLine($"Зачисление успешно, ваш балланс - {  guest.BallansRubles } / { _BallansRublesMax }, Остаток - {Ostatoc}");
                                     Ostatoc = 0;
                                     Console.WriteLine("Будет ли повторная операция(Y/Любая кнопка)");
                                     string Vvod = Console.ReadLine();
@@ -66,10 +64,10 @@ namespace Игра
                                 }
 
 
-                                if (VvodBalut == "D" & VvodSum + BallansDollars < _BallansDollarsMax)
+                                if (VvodBalut == "D" & VvodSum + guest.BallansDollars < _BallansDollarsMax)
                                 {
-                                    BallansDollars = VvodSum + BallansRubles;
-                                    Console.WriteLine($"Зачисление успешно, ваш балланс - { BallansDollars } / { _BallansDollarsMax }, Остаток - {Ostatoc}");
+                                    guest.BallansDollars = VvodSum + guest.BallansRubles;
+                                    Console.WriteLine($"Зачисление успешно, ваш балланс - {  guest.BallansDollars } / { _BallansDollarsMax }, Остаток - {Ostatoc}");
                                     Console.WriteLine("Будет ли повторная операция(Y/Любая кнопка)");
                                     string Vvod = Console.ReadLine();
                                     if (Vvod != "Y")
@@ -78,10 +76,10 @@ namespace Игра
                                     }
                                 }
 
-                                if (VvodBalut == "R" & VvodSum + BallansRubles < _BallansRublesMax)
+                                if (VvodBalut == "R" & VvodSum + guest.BallansRubles < _BallansRublesMax)
                                 {
-                                    BallansRubles = VvodSum + BallansRubles;
-                                    Console.WriteLine($"Зачисление успешно, ваш балланс - { BallansRubles } / {  _BallansRublesMax }, Остаток - {Ostatoc}");
+                                    guest.BallansRubles = VvodSum + guest.BallansRubles;
+                                    Console.WriteLine($"Зачисление успешно, ваш балланс - {  guest.BallansRubles } / {  _BallansRublesMax }, Остаток - {Ostatoc}");
                                     Console.WriteLine("Будет ли повторная операция(Y/Любая кнопка)");
                                     string Vvod = Console.ReadLine();
                                     if (Vvod != "Y")
@@ -108,15 +106,11 @@ namespace Игра
                     Console.WriteLine("Вы ввели не коректную валюту");
                     System.Threading.Thread.Sleep(1000);
                     Console.Clear();
+                    FlagPopolnenue1 = "N";
                 }
 
             }
         }
 
-        public void PopolnenueClient(Client2 guest, int BallansDollars, int BallansRubles)
-        {
-
-        }
     }
-
 }

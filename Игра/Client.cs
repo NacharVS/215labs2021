@@ -6,14 +6,31 @@ namespace Игра
 {
     public class Client
     {
-        private string _name;
+        private string _name = "Ваня";
         private string _surname;
         private int _ID;
         private int _BallansDollars; public static int _BallansDollarsMax = 10000;
         private int _BallansRubles; public static int _BallansRublesMax = 750000;
 
+       
+
         public int BallansDollars { get => _BallansDollars; set => _BallansDollars = value; }
         public int BallansRubles { get => _BallansRubles; set => _BallansRubles = value; }
+        public delegate void NameChange(string oldname, string newname);
+        public event NameChange NameEvent;
+        public string Name 
+
+        { get => _name;
+
+            set 
+            {
+                string OlDName = _name;
+                _name = value;
+                NameEvent?.Invoke(OlDName, value);
+
+            }
+        }
+
         public void Popolnenue(int BallansDollars, int BallansRubles)
         {
             string FlagPopolnenue1 = "Y";
@@ -107,7 +124,8 @@ namespace Игра
                 {
                     Console.WriteLine("Вы ввели не коректную валюту");
                     System.Threading.Thread.Sleep(1000);
-                    Console.Clear();
+                    Console.Clear(); 
+                    FlagPopolnenue1 = "N";
                 }
 
             }

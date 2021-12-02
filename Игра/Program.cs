@@ -1,26 +1,22 @@
 ﻿using System;
 using Игра;
+ 
 
 
 namespace Игра
 {
     class Program
     {
-        static void Start()
+        static void Show( string a, string B)
         {
-           
-            Client client = new Client();
-            while (true)
-            {
-                client.Popolnenue(client.BallansDollars, client.BallansRubles);
-                Console.WriteLine(client.BallansDollars);
-                Console.WriteLine(client.BallansRubles);
-
-            }
+            Console.WriteLine($"{a},{B}");
+            
         }
         static void Main()
         {
-            Start();
+            Client client = new Client();
+            client.NameEvent += Show;
+            client.Name = " Борис ";
         }
     }
 }
