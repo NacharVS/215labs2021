@@ -15,8 +15,12 @@ namespace BanK_Account
             IEmployeOperations ac2 = acc2;
             IEmployeOperations ac3 = acc3;
             Info.usingquestion(ac1,ac2,ac3,acc1,acc2,acc3);
+            
 
-
+        }
+        static void ShowName(AccountMethods acc, string old)
+        {
+            Console.WriteLine($"Успешно! Id: {acc.Id} Старое имя: {old} Текущее имя: {acc.Name}");
         }
     }
 }

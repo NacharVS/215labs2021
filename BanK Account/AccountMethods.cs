@@ -6,6 +6,8 @@ namespace BanK_Account
 {
     class AccountMethods : IEmployeOperations
     {
+        public delegate void NameChangeDelegate(string old);
+        public event NameChangeDelegate NameChangeevent;
         private string _name;
         private double _rubbalance;
         private double _usdbalance;
@@ -506,15 +508,18 @@ namespace BanK_Account
                 Console.WriteLine($"{acc.Name} успешно конвертировал {answer} $ в рубли!");
             }
         }
-        void IEmployeOperations.NameChange(AccountMethods acc)
+        
+
+        void IEmployeOperations.NameChange(AccountMethods acc, string old)
         {
             Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
+            acc.Name = old;
             Console.Write("Введите новое имя: ");
             string answer = Console.ReadLine();
             acc.Name = answer;
-            Console.WriteLine($"Успешно! Id: {acc.Id} Текущее имя: {acc.Name}");
+            
+            //Console.WriteLine($"Успешно! Id: {acc.Id} Старое имя: {old} Текущее имя: {acc.Name}");
         }
-
 
         void IEmployeOperations.list(IEmployeOperations acc)
         {

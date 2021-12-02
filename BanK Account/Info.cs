@@ -453,7 +453,7 @@ namespace BanK_Account
             }
         }
 
-        void IEmployeOperations.NameChange(AccountMethods acc)
+        void IEmployeOperations.NameChange(AccountMethods acc, string old)
         {
             Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
             Console.Write("Введите новое имя: ");

@@ -10,7 +10,9 @@ namespace BanK_Account
         readonly IEmployeOperations ac1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
         readonly IEmployeOperations ac2 = new Info("Илья", 10000, 300, 300592, 0, 0);
         readonly IEmployeOperations ac3 = new Info("Александр", 15000, 750, 666777, 0, 0);
-        void IEmployeOperations.NameChange(AccountMethods acc)
+        public delegate void NameChangeDelegate(string old);
+        public event NameChangeDelegate NameChangeevent;
+        void IEmployeOperations.NameChange(AccountMethods acc, string old)
         {
             Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
             Console.Write("Введите новое имя: ");
@@ -192,24 +194,25 @@ namespace BanK_Account
                     break;
             }
         }
-        public static void namechange(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        public static void namechange(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old)
         {
             Console.Write("Напишите id клиента, которому желаете поменять имя: ");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
                 case 195234:
-                    ac1.NameChange(acc1);
+                    ac1.NameChange(acc1, old);
                     Console.WriteLine();
+                    ac1
                     EmployeeUsing.EmployeeStart(ac1,  ac2,  ac3, acc1,  acc2,  acc3);
                     break;
                 case 300592:
-                    ac2.NameChange(acc2);
+                    ac2.NameChange(acc2, old);
                     Console.WriteLine();
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 666777:
-                    ac3.NameChange(acc3);
+                    ac3.NameChange(acc3, old);
                     Console.WriteLine();
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;

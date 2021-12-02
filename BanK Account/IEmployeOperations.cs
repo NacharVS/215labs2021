@@ -12,7 +12,7 @@ namespace BanK_Account
         int Id { get; set; }
         int Age { get; set; }
         int DateBirth { get; set; }
-        void NameChange(AccountMethods acc);
+        void NameChange(AccountMethods acc, string old);
         void list(IEmployeOperations acc);
         void AgeInput(AccountMethods acc);
         void RateChange(IEmployeOperations ac);
