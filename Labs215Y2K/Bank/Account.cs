@@ -2,27 +2,42 @@
 {
     class Account
     {
+        public delegate void BalanceValueChangeDelegate(double diff, double newvalue);
+        public event BalanceValueChangeDelegate BalanceChangeEvent;
+
         public string name;
-        public double balance;
+        private double balance;
 
         public static double rate = 0.09;
+
+        public double Balance 
+        { 
+            get => balance; 
+            set
+            {
+                double oldValue = balance;
+                double diff = value - oldValue;
+                balance = value;
+                BalanceChangeEvent?.Invoke(diff, value);
+            } 
+        }
 
         public Account(string name, double balance)
         {
             this.name = name;
-            this.balance = balance;
+            this.Balance = balance;
         }
 
         public void ShowInfo()
         {
-            System.Console.WriteLine($"{name} - {balance}");
+            System.Console.WriteLine($"{name} - {Balance}");
         }
 
         public static void ShowProfit(Account acc, int month)
         {
             for (int i = 0; i < month; i++)
             {
-                acc.balance += acc.balance * rate;
+                acc.Balance += acc.Balance * rate;
             }
         }
 
@@ -40,5 +55,7 @@
         {
 
         }
+
+      
     }
 }
