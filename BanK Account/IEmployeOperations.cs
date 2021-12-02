@@ -15,5 +15,12 @@ namespace BanK_Account
         void NameChange(AccountMethods acc);
         void list(IEmployeOperations acc);
         void AgeInput(AccountMethods acc);
+        void RateChange(IEmployeOperations ac);
+        void RubTransactionChange(IEmployeOperations ac);
+        void UsdDepoLimitChange(IEmployeOperations ac);
+        void RubDepoLimitChange(IEmployeOperations ac);
+        void RubWithLimitChange(IEmployeOperations ac);
+        void UsdwithLimitChange(IEmployeOperations ac);
+        void UsdTransactionChange(IEmployeOperations ac);
     }
 }

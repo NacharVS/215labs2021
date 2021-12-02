@@ -12,7 +12,11 @@ namespace BanK_Account
         readonly IEmployeOperations ac3 = new Info("Александр", 15000, 750, 666777, 0, 0);
         void IEmployeOperations.NameChange(AccountMethods acc)
         {
-
+            Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
+            Console.Write("Введите новое имя: ");
+            string answer = Console.ReadLine();
+            acc.Name = answer;
+            Console.WriteLine($"Успешно! Id: {acc.Id} Текущее имя: {acc.Name}");
         }
 
         void IEmployeOperations.AgeInput(AccountMethods acc)
@@ -113,31 +117,31 @@ namespace BanK_Account
                     ac3.list(ac3);
                     break;
                 case 4:
-                    AccountMethods.ratechange();
+                    ac1.RateChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 5:
-                    AccountMethods.rubdepolimitchange();
+                    ac1.RubDepoLimitChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 6:
-                    AccountMethods.usddepolimitchange();
+                    ac1.UsdDepoLimitChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 7:
-                    AccountMethods.rubwithlimitchange();
+                    ac1.RubWithLimitChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 8:
-                    AccountMethods.usdwithlimchange();
+                    ac1.UsdwithLimitChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 9:
-                    AccountMethods.rubtransactionchange();
+                    ac1.RubTransactionChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 10:
-                    AccountMethods.usdtransactionchange();
+                    ac1.UsdTransactionChange(ac1);
                     EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
                     break;
                 case 0:
@@ -215,5 +219,6 @@ namespace BanK_Account
                     break;
             }
         }
+        
     }
 }

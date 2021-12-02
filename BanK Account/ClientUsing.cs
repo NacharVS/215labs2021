@@ -7,10 +7,7 @@ namespace BanK_Account
     class ClientUsing : AccountMethods 
     {
 
-        internal static void startusing1(AccountMethods acc)
-        {
-            
-        }
+ 
         internal static void startusing(AccountMethods acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
         {
             if (acc.Age == 0)
