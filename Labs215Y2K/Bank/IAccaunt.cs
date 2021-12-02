@@ -6,6 +6,12 @@ namespace Labs215Y2K
 {
     interface IAccaunt
     {
+        public void ShowInfo(Account acc);
+        public void ShowProfit(Account acc, int mouths);
+        public void Withdraw(Account acc);
+        public void Transaction(Account acc, Account accSeller, Account accGetter);
+        public void Deposit(Account acc);
+        
 
     }
 }

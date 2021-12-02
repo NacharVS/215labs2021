@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class Account
+    class Account:IAccaunt
     {
         public string name;
         public double balance;
@@ -27,7 +27,7 @@ namespace Labs215Y2K
             }
         }
 
-        public static void ShowProfit(Account acc, int month)
+        public  void ShowProfit(Account acc, int month)
         {
             for (int i = 0; i < month; i++)
             {
@@ -58,7 +58,7 @@ namespace Labs215Y2K
             }
         }
 
-        public static void Transaction(Account acc, Account accSeller, Account accGetter)
+        public  void Transaction(Account acc, Account accSeller, Account accGetter)
         {
             Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");

@@ -21,13 +21,13 @@ namespace Labs215Y2K
             Console.WriteLine("Введите количество месяцев");
             int mouth = int.Parse(Console.ReadLine());
             Console.WriteLine($"Через {mouth} меся(ц/ца/цев) Ваш баланс с коэффицентом {Account.rate} будет составлять:");
-            Account.ShowProfit(acc1, mouth);
-            Account.ShowProfit(acc2, mouth);
-            Account.ShowProfit(acc3, mouth);
+            acc1.ShowProfit(acc1, mouth);
+            acc2.ShowProfit(acc2, mouth);
+            acc3.ShowProfit(acc3, mouth);
             acc1.ShowInfo(acc1);
             acc2.ShowInfo(acc2);
             acc3.ShowInfo(acc3);
-           
+            acc1.Deposit(acc1);
 
         }
     }
