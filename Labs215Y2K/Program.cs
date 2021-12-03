@@ -1,5 +1,6 @@
 ﻿using Labs215Y2K.Bank;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Labs215Y2K
@@ -9,9 +10,15 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Account acc1 = new Account("Ivan", 5000);
-            acc1.BalanceChangeEvent += Show;
-            acc1.Balance = 3000;
+            List<Account> accounts = new List<Account>();
+            accounts.Add(new Account("Ivan", 3000));
+            accounts.Add(new Account("Ruslan", 3000));
+            accounts.Add(new Account("Denis", 3000));
+            //string name = Console.ReadLine();
+            accounts.Add(new Account("Ravil", 2000));
+            Account testacc = new Account("Ivan", 3000);
+            Console.WriteLine(accounts.Contains(testacc));
+            
 
         }
 
