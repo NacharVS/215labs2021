@@ -14,7 +14,8 @@ namespace BanK_Account
             IEmployeOperations ac1 = acc1;
             IEmployeOperations ac2 = acc2;
             IEmployeOperations ac3 = acc3;
-            Info.usingquestion(ac1,ac2,ac3,acc1,acc2,acc3);
+            string old = "";
+            Info.usingquestion(ac1,ac2,ac3,acc1,acc2,acc3, old);
             
 
         }

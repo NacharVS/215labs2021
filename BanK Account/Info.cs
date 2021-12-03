@@ -36,7 +36,7 @@ namespace BanK_Account
             acc3.AgeInput(acc3);
             Info.list();
         }
-        internal static void usingquestion(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void usingquestion(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old)
         {
             Console.WriteLine("Вы хотите использовать аккаунт сотрудника или клиента? 1 - сотрудник 2 - клиент 3 - завершить сеанс");
             int answer = int.Parse(Console.ReadLine());
@@ -45,7 +45,7 @@ namespace BanK_Account
                 case 1:
                     Console.WriteLine();
                     Console.WriteLine("Добро пожаловать!");
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 2:
                     Console.WriteLine();
@@ -59,17 +59,17 @@ namespace BanK_Account
                     switch (answer2)
                     {
                         case 195234:
-                            ClientUsing.startusing(acc1, ac1, ac2, ac3, acc1, acc2, acc3);
+                            ClientUsing.startusing(acc1, ac1, ac2, ac3, acc1, acc2, acc3, old);
                             break;
                         case 300592:
-                            ClientUsing.startusing(acc2, ac1, ac2, ac3, acc1, acc2, acc3);
+                            ClientUsing.startusing(acc2, ac1, ac2, ac3, acc1, acc2, acc3, old);
                             break;
                         case 666777:
-                            ClientUsing.startusing(acc3, ac1, ac2, ac3, acc1, acc2, acc3);
+                            ClientUsing.startusing(acc3, ac1, ac2, ac3, acc1, acc2, acc3, old);
                             break;
                         default:
                             Console.WriteLine("Неверный Id");
-                            Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
+                            Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3, old);
                             break;
 
                     }
@@ -78,7 +78,7 @@ namespace BanK_Account
                     break;
                 default:
                     Console.WriteLine("Неверное число!");
-                    Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
+                    Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
             }
         }
@@ -419,7 +419,7 @@ namespace BanK_Account
                     break;
             }
         }
-        internal static void TransactionTwo(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void TransactionTwo(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old)
         {
             Console.WriteLine();
             Console.Write("Кому из клиентов вы хотите сделать транзакцию? Введите Id: ");
@@ -427,7 +427,7 @@ namespace BanK_Account
             if (answer == acc.Id)
             {
                 Console.WriteLine("Нельзя сделать перевод самому себе!");
-                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
             }
             else
             {
@@ -435,19 +435,19 @@ namespace BanK_Account
                 {
                     case 195234:
                         acc.Transaction(acc, acc1);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 300592:
                         acc.Transaction(acc, acc2);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 666777:
                         acc.Transaction(acc, acc3);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     default:
                         Console.WriteLine("Неверный ID");
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                 }
             }

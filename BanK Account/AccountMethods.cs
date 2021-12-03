@@ -6,8 +6,7 @@ namespace BanK_Account
 {
     class AccountMethods : IEmployeOperations , IClientUsing
     {
-        public delegate void NameChangeDelegate(string old);
-        public event NameChangeDelegate NameChangeevent;
+
         private string _name;
         private double _rubbalance;
         private double _usdbalance;
@@ -586,7 +585,7 @@ namespace BanK_Account
             string answer = Console.ReadLine();
             acc.Name = answer;
             
-            //Console.WriteLine($"Успешно! Id: {acc.Id} Старое имя: {old} Текущее имя: {acc.Name}");
+            Console.WriteLine($"Успешно! Id: {acc.Id} Старое имя: {old} Текущее имя: {acc.Name}");
         }
 
         void IEmployeOperations.list(IEmployeOperations acc)

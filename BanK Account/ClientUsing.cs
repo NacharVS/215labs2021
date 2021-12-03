@@ -8,7 +8,7 @@ namespace BanK_Account
     {
 
  
-        internal static void startusing(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void startusing(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old)
         {
             if (acc.Age == 0)
             {
@@ -27,7 +27,7 @@ namespace BanK_Account
                 {
                     case 1:
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 2:
                         Console.WriteLine();
@@ -36,27 +36,27 @@ namespace BanK_Account
                         Console.WriteLine();
                         acc.ShowProfit(acc, mounthcount);
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 3:
                         Console.WriteLine();
                         Console.WriteLine($"Рублевой счёт = {acc.RubBalance} р. Долларовый счёт = {acc.UsdBalance} $");
                         int withd = 0;
                         acc.Withdraw(acc, withd);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 4:
                         Console.WriteLine();
                         int depo = 0;
                         acc.Deposit(acc, depo);
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 5:
                         Console.WriteLine();
                         Info.Showid();
-                        Info.TransactionTwo(acc, ac1, ac2, ac3, acc1, acc2, acc3);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        Info.TransactionTwo(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 6:
                         Console.WriteLine();
@@ -69,26 +69,26 @@ namespace BanK_Account
                                 acc.RubConvertation(acc);
                                 Console.WriteLine();
                                 acc.ShowInfo(acc);
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                             case 2:
                                 acc.UsdConvertation(acc);
                                 Console.WriteLine();
                                 acc.ShowInfo(acc);
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                             default:
                                 Console.WriteLine("Неверная цифра!");
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                         }
                         break;
                     case 7:
-                        Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
+                        Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     default:
                         Console.WriteLine("Неверное число!");
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
 
 
@@ -111,7 +111,7 @@ namespace BanK_Account
                 {
                     case 1:
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 2:
                         Console.WriteLine();
@@ -120,27 +120,27 @@ namespace BanK_Account
                         Console.WriteLine();
                         acc.ShowProfit(acc, mounthcount);
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 3:
                         Console.WriteLine();
                         Console.WriteLine($"Рублевой счёт = {acc.RubBalance} р. Долларовый счёт = {acc.UsdBalance} $");
                         int withd = 0;
                         acc.Withdraw(acc, withd);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 4:
                         Console.WriteLine();
                         int depo = 0;
                         acc.Deposit(acc, depo);
                         acc.ShowInfo(acc);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 5:
                         Console.WriteLine();
                         Info.Showid();
-                        Info.TransactionTwo(acc, ac1, ac2, ac3, acc1, acc2, acc3);
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        Info.TransactionTwo(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     case 6:
                         Console.WriteLine();
@@ -153,26 +153,26 @@ namespace BanK_Account
                                 acc.RubConvertation(acc);
                                 Console.WriteLine();
                                 acc.ShowInfo(acc);
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                             case 2:
                                 acc.UsdConvertation(acc);
                                 Console.WriteLine();
                                 acc.ShowInfo(acc);
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                             default:
                                 Console.WriteLine("Неверная цифра!");
-                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                                ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                                 break;
                         }
                         break;
                     case 7:
-                        Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
+                        Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
                     default:
                         Console.WriteLine("Неверное число!");
-                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
+                        ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3, old);
                         break;
 
 

@@ -10,15 +10,13 @@ namespace BanK_Account
         readonly IEmployeOperations ac1 = new Info("Альфред", 2000, 100, 195234, 0, 0);
         readonly IEmployeOperations ac2 = new Info("Илья", 10000, 300, 300592, 0, 0);
         readonly IEmployeOperations ac3 = new Info("Александр", 15000, 750, 666777, 0, 0);
-        public delegate void NameChangeDelegate(string old);
-        public event NameChangeDelegate NameChangeevent;
         void IEmployeOperations.NameChange(AccountMethods acc, string old)
         {
             Console.WriteLine($"{acc.Id} Текущее имя {acc.Name}");
             Console.Write("Введите новое имя: ");
             string answer = Console.ReadLine();
             acc.Name = answer;
-            Console.WriteLine($"Успешно! Id: {acc.Id} Текущее имя: {acc.Name}");
+            Console.WriteLine($"Успешно! Id: {acc.Id} Старое имя: {old} Текущее имя: {acc.Name}");
         }
 
         void IEmployeOperations.AgeInput(AccountMethods acc)
@@ -56,7 +54,7 @@ namespace BanK_Account
             Console.WriteLine($"Имя: {acc.Name} Id: {acc.Id} Дата рождения: {acc.DateBirth} Возраст: {acc.Age}");
         }
 
-        internal static void EmployeeStart(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void EmployeeStart(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old)
         {
 
             Console.WriteLine("Что вы хотите сделать?");
@@ -94,7 +92,7 @@ namespace BanK_Account
                     ac2.list(ac2);
                     ac3.list(ac3);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 2:
                     Console.WriteLine();
@@ -102,7 +100,7 @@ namespace BanK_Account
                     ac2.list(ac2);
                     ac3.list(ac3);
                     Console.WriteLine();
-                    EmployeeUsing.namechange(ac1, ac2, ac3, acc1, acc2, acc3, );
+                    EmployeeUsing.namechange(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     ac1.list(ac1);
                     ac2.list(ac2);
                     ac3.list(ac3);
@@ -112,7 +110,7 @@ namespace BanK_Account
                     ac2.list(ac2);
                     ac3.list(ac3);
                     Console.WriteLine();
-                    EmployeeUsing.agechange(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.agechange(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     Console.WriteLine();
                     ac1.list(ac1);
                     ac2.list(ac2);
@@ -120,42 +118,42 @@ namespace BanK_Account
                     break;
                 case 4:
                     ac1.RateChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 5:
                     ac1.RubDepoLimitChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3,old);
                     break;
                 case 6:
                     ac1.UsdDepoLimitChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 7:
                     ac1.RubWithLimitChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 8:
                     ac1.UsdwithLimitChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 9:
                     ac1.RubTransactionChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 10:
                     ac1.UsdTransactionChange(ac1);
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 0:
-                    Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3);
+                    Info.usingquestion(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
             }
         }
-        public static void agechange(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        public static void agechange(IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3, string old )
         {
             Console.Write("Напишите id клиента, которому желаете поменять возраст: ");
             int answer = int.Parse(Console.ReadLine());
@@ -168,7 +166,7 @@ namespace BanK_Account
                     acc1.DateBirth = 0;
                     ac1.AgeInput(acc1);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 300592:
                     acc2.Age = 0;
@@ -177,7 +175,7 @@ namespace BanK_Account
                     acc2.DateBirth = 0;
                     ac2.AgeInput(acc2);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 666777:
                     acc3.Age = 0;
@@ -186,11 +184,11 @@ namespace BanK_Account
                     acc3.DateBirth = 0;
                     ac3.AgeInput(acc3);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 default:
                     Console.WriteLine("Неверный ID!");
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
             }
         }
@@ -203,22 +201,21 @@ namespace BanK_Account
                 case 195234:
                     ac1.NameChange(acc1, old);
                     Console.WriteLine();
-                    
-                    EmployeeUsing.EmployeeStart(ac1,  ac2,  ac3, acc1,  acc2,  acc3);
+                    EmployeeUsing.EmployeeStart(ac1,  ac2,  ac3, acc1,  acc2, acc3, old);
                     break;
                 case 300592:
                     ac2.NameChange(acc2, old);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 case 666777:
                     ac3.NameChange(acc3, old);
                     Console.WriteLine();
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
                 default:
                     Console.WriteLine("Неверный ID!");
-                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.EmployeeStart(ac1, ac2, ac3, acc1, acc2, acc3, old);
                     break;
             }
         }
