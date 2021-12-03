@@ -1,0 +1,11 @@
+C:\Users\152008\Documents\labs215\1111\Bank\obj\Debug\netcoreapp3.1\Bank.csprojAssemblyReference.cache
+C:\Users\152008\Documents\labs215\1111\Bank\obj\Debug\netcoreapp3.1\Bank.AssemblyInfoInputs.cache
+C:\Users\152008\Documents\labs215\1111\Bank\obj\Debug\netcoreapp3.1\Bank.AssemblyInfo.cs
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.exe
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.deps.json
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.runtimeconfig.json
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.runtimeconfig.dev.json
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.dll
+C:\Users\152008\Documents\labs215\1111\Bank\bin\Debug\netcoreapp3.1\Bank.pdb
+C:\Users\152008\Documents\labs215\1111\Bank\obj\Debug\netcoreapp3.1\Bank.dll
+C:\Users\152008\Documents\labs215\1111\Bank\obj\Debug\netcoreapp3.1\Bank.pdb
