@@ -419,7 +419,7 @@ namespace BanK_Account
                     break;
             }
         }
-        internal static void TransactionTwo(AccountMethods acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void TransactionTwo(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
         {
             Console.WriteLine();
             Console.Write("Кому из клиентов вы хотите сделать транзакцию? Введите Id: ");

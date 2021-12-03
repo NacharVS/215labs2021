@@ -8,7 +8,7 @@ namespace BanK_Account
     {
 
  
-        internal static void startusing(AccountMethods acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
+        internal static void startusing(IClientUsing acc, IEmployeOperations ac1, IEmployeOperations ac2, IEmployeOperations ac3, AccountMethods acc1, AccountMethods acc2, AccountMethods acc3)
         {
             if (acc.Age == 0)
             {
@@ -26,7 +26,7 @@ namespace BanK_Account
                 switch (answer)
                 {
                     case 1:
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 2:
@@ -35,7 +35,7 @@ namespace BanK_Account
                         int mounthcount = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         acc.ShowProfit(acc, mounthcount);
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 3:
@@ -49,7 +49,7 @@ namespace BanK_Account
                         Console.WriteLine();
                         int depo = 0;
                         acc.Deposit(acc, depo);
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 5:
@@ -68,13 +68,13 @@ namespace BanK_Account
                             case 1:
                                 acc.RubConvertation(acc);
                                 Console.WriteLine();
-                                acc.ShowInfo();
+                                acc.ShowInfo(acc);
                                 ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                                 break;
                             case 2:
                                 acc.UsdConvertation(acc);
                                 Console.WriteLine();
-                                acc.ShowInfo();
+                                acc.ShowInfo(acc);
                                 ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                                 break;
                             default:
@@ -110,7 +110,7 @@ namespace BanK_Account
                 switch (answer)
                 {
                     case 1:
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 2:
@@ -119,7 +119,7 @@ namespace BanK_Account
                         int mounthcount = int.Parse(Console.ReadLine());
                         Console.WriteLine();
                         acc.ShowProfit(acc, mounthcount);
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 3:
@@ -133,7 +133,7 @@ namespace BanK_Account
                         Console.WriteLine();
                         int depo = 0;
                         acc.Deposit(acc, depo);
-                        acc.ShowInfo();
+                        acc.ShowInfo(acc);
                         ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                         break;
                     case 5:
@@ -152,13 +152,13 @@ namespace BanK_Account
                             case 1:
                                 acc.RubConvertation(acc);
                                 Console.WriteLine();
-                                acc.ShowInfo();
+                                acc.ShowInfo(acc);
                                 ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                                 break;
                             case 2:
                                 acc.UsdConvertation(acc);
                                 Console.WriteLine();
-                                acc.ShowInfo();
+                                acc.ShowInfo(acc);
                                 ClientUsing.startusing(acc, ac1, ac2, ac3, acc1, acc2, acc3);
                                 break;
                             default:

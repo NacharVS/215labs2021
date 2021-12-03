@@ -102,7 +102,7 @@ namespace BanK_Account
                     ac2.list(ac2);
                     ac3.list(ac3);
                     Console.WriteLine();
-                    EmployeeUsing.namechange(ac1, ac2, ac3, acc1, acc2, acc3);
+                    EmployeeUsing.namechange(ac1, ac2, ac3, acc1, acc2, acc3, );
                     ac1.list(ac1);
                     ac2.list(ac2);
                     ac3.list(ac3);
@@ -203,7 +203,7 @@ namespace BanK_Account
                 case 195234:
                     ac1.NameChange(acc1, old);
                     Console.WriteLine();
-                    ac1
+                    
                     EmployeeUsing.EmployeeStart(ac1,  ac2,  ac3, acc1,  acc2,  acc3);
                     break;
                 case 300592:
