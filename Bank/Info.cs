@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using Bank;
 
 namespace Bank
 {
-    class Info : AccountMethods 
+    class Info : AccountMethods , IEmploye
     {
         public Info(string name, double rubbalance, double usdbalance, int id, int datebirth, int age)
         {
@@ -15,12 +16,10 @@ namespace Bank
             DateBirth = datebirth;
             Age = age;
         }
-        public static void aboba()
+        
+        public static void startbank(List<Info> accounts, List<IEmploye> accounts1)
         {
-            Program.boba();
-        }
-        public static void startbank()
-        {
+            string old = "";
             Console.WriteLine("Добро пожаловать в банк!");
             Console.WriteLine("Что вы хотите сделать?");
             Console.WriteLine("1 - Войти за сотрудника банка");
@@ -31,8 +30,10 @@ namespace Bank
             switch (answer)
             {
                 case 1:
-
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
             }
         }
+        
     }
 }
