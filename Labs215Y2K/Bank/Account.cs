@@ -7,6 +7,8 @@ class Account : IClientOperation, Ipersonal
     private double _dollarBalance;
     public int _userId;
 
+
+
     private int _birthOfYear;
     private int _age;
 
@@ -14,6 +16,13 @@ class Account : IClientOperation, Ipersonal
     public static double dollarcurse = 74.63;
 
     public int Age { get => _age; set => _age = value; }
+
+    public delegate void BalanceValueChangeDelegate(double diff, double newvalue);
+    public event BalanceValueChangeDelegate BalanceChangeEvent;
+    public delegate void NameChangeDelegate(string OldValue, string NewValue);
+    public event NameChangeDelegate NameChangeEvenet;
+
+
     public int BirthOfYear
     {
         get
@@ -36,14 +45,62 @@ class Account : IClientOperation, Ipersonal
         }
     }
 
-    public string Name { get => _name; set => _name = value; }
-    public double Balance { get => _balance; set => _balance = value; }
+    public string Name
+    {
+        get => _name;
+        set
+        {
+            string OldValue = _name;
+
+
+            _name = value;
+            NameChangeEvenet?.Invoke(OldValue, value);
+        }
+    }
+    public double Balance
+    {
+        get => _balance;
+        set
+        {
+            double oldValue = _balance;
+            double diff = value - oldValue;
+
+
+            _balance = value;
+            BalanceChangeEvent?.Invoke(diff, value);
+        }
+    }
+
     public double DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
-    double IClientOperation.Balance { get => _balance; set => _balance = value; }
+    double IClientOperation.Balance
+    {
+        get => _balance;
+        set
+        {
+            double oldValue = _balance;
+            double diff = value - oldValue;
+
+
+            _balance = value;
+            BalanceChangeEvent?.Invoke(diff, value);
+        }
+    }
     double IClientOperation.DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
     int IClientOperation.UserId { get => _userId; set => _userId = value; }
 
-    double Ipersonal.Balance { get => _balance; set => _balance = value; }
+    double Ipersonal.Balance
+    {
+        get => _balance;
+        set
+        {
+            double oldValue = _balance;
+            double diff = value - oldValue;
+
+
+            _balance = value;
+            BalanceChangeEvent?.Invoke(diff, value);
+        }
+    }
     double Ipersonal.DollarBalance { get => _dollarBalance; set => _dollarBalance = value; }
     int Ipersonal.UserId { get => _userId; set => _userId = value; }
 
@@ -294,4 +351,7 @@ class Account : IClientOperation, Ipersonal
         acc.Balance = 999999999999;
         acc.DollarBalance = 999999999999;
     }
+
+
+
 }
