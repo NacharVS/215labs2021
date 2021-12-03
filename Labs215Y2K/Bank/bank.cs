@@ -6,24 +6,40 @@ namespace Labs215Y2K
 {
     class Account:IAccaunt
     {
-        public string name;
-        public double balance;
-        public int id;
+        public delegate void NameValueChangeDelagate(string name, string Oldname);
+        public event NameValueChangeDelagate NameChangeEvent;
+
+
+        private string _name ;
+        private double _balance;
+        private int _id;
 
         public static double rate = 0.09;
 
+        public string Name 
+        { get => _name;
+            set 
+            {
+                string Oldname = _name;
+                _name = value;
+                NameChangeEvent?.Invoke(_name,Oldname);
+            }
+        }
+        public double Balance { get => _balance; set => _balance = value; }
+        public int Id { get => _id; set => _id = value; }
+
         public Account(string name, double balance, int id)
         {
-            this.name = name;
-            this.balance = balance;
-            this.id = id;
+            this.Name = name;
+            this.Balance = balance;
+            this.Id = id;
         }
 
         public void ShowInfo(Account acc)
         {
-            if (acc.balance > 0)
+            if (acc.Balance > 0)
             {
-                Console.WriteLine($"Пользователь - {name} \t Баланс - {balance}   \t id - {id}");
+                Console.WriteLine($"Пользователь - {Name} \t Баланс - {Balance}   \t _id - {Id}");
             }
         }
 
@@ -31,50 +47,51 @@ namespace Labs215Y2K
         {
             for (int i = 0; i < month; i++)
             {
-                acc.balance += acc.balance * rate;
+                acc.Balance += acc.Balance * rate;
             }
         }
 
         public void Deposit(Account acc)
         {
             Console.WriteLine();
-            Console.WriteLine($"{acc.name} - {acc.balance}");
+            Console.WriteLine($"{acc.Name} - {acc.Balance}");
             Console.WriteLine("Укажите сумму, которую вы хотите внести");
             double DepositMoney = double.Parse(Console.ReadLine());
-            acc.balance = acc.balance + DepositMoney;
+            acc.Balance = acc.Balance + DepositMoney;
         }
 
         public void Withdraw(Account acc)
         {
             Console.WriteLine();
-            Console.WriteLine($"{acc.name} - {acc.balance}");
+            Console.WriteLine($"{acc.Name} - {acc.Balance}");
             Console.WriteLine("Укажите сумму, которую вы хотите вывести");
             double WithdrawMoney = double.Parse(Console.ReadLine());
-            acc.balance = acc.balance - WithdrawMoney;
-            if (acc.balance < 0)
+            acc.Balance = acc.Balance - WithdrawMoney;
+            if (acc.Balance < 0)
             {
                 Console.WriteLine("На балансе недостаточно средств");
 
             }
         }
 
-        public  void Transaction(Account acc, Account accSeller, Account accGetter)
+        public  void Transaction(Account acc, Account accGetter)
         {
             Console.WriteLine();
             Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
             int AccGetterSeller = int.Parse(Console.ReadLine());
 
-            if (AccGetterSeller == acc.id)
+            if (AccGetterSeller == acc.Id)
             {
                 Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
                 double TransactionMoney = double.Parse(Console.ReadLine());
                 Console.WriteLine("Выберите Id пользователя которому вы хотите перевести");
                 int AccGetterId = int.Parse(Console.ReadLine());
-                if (AccGetterId == acc.id)
+                if (AccGetterId == accGetter.Id)
                 {
-                    Console.WriteLine($"{acc.name} - {acc.balance}");
-                    accSeller.balance -= TransactionMoney;
-                    accGetter.balance += TransactionMoney;
+                   
+                    acc.Balance -= TransactionMoney;
+                    Console.WriteLine($"{acc.Name} - {acc.Balance}");
+                    accGetter.Balance += TransactionMoney;
                 }
             }
         }
