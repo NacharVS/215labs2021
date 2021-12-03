@@ -15,8 +15,22 @@ namespace ConsoleApp1
 
 
         private static double _rate = 0.09;
+        public delegate void NameChangeDelegate(string oldName, string newName);
+        public event NameChangeDelegate NameChangeEvent;
 
-        public string Name { get => _name; set => _name = value; }
+        public delegate void BalanceValueChangeDelegate(double diff, double newvalue);
+        public event BalanceValueChangeDelegate BalanceChangeEvent;
+
+        public string Name
+        {
+            get => _name;
+            set
+            {
+                string oldName = _name;
+                _name = value;
+                NameChangeEvent?.Invoke(oldName, value);
+            }
+        }
         public double BalanceRUB
         {   
             get 
@@ -28,7 +42,10 @@ namespace ConsoleApp1
 
                 else 
                 {
+                    double oldValue = _balanceRUB;
+                    double diff = value - oldValue;
                     _balanceRUB = value;
+                    BalanceChangeEvent?.Invoke(diff, value);
                 }
             }           
         }
@@ -43,7 +60,10 @@ namespace ConsoleApp1
 
                 else
                 {
+                    double oldValue = _balanceUSD;
+                    double diff = value - oldValue;
                     _balanceUSD = value;
+                    BalanceChangeEvent?.Invoke(diff, value);
                 }
             }
         }
@@ -103,14 +123,14 @@ namespace ConsoleApp1
         {
             Console.WriteLine($"Введите сумму, которую хотите перевести {accGetter.Name}");
             double money = double.Parse(Console.ReadLine());
-            if (accSeller.BalanceRUB >= money & money >= 0)
+            if (accSeller.BalanceRUB >= money)
             {
                 accSeller.BalanceRUB -= money;
                 accGetter.BalanceRUB += money;
                 Console.WriteLine($"Со счёта {accSeller.Name} было переведено {accGetter.Name} {money} рублей");
             }
             else
-                Console.WriteLine("Ошибка. На Вашем счету недостаточно средств или вы ввели отрицательное число.");
+                Console.WriteLine("Ошибка. На Вашем счету недостаточно средств.");
         }
 
         public void Deposit(Account account)
