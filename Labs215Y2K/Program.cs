@@ -4,6 +4,7 @@ using Units;
 using Action;
 using Labs215Y2K.Bank;
 using System.Collections.Generic;
+using Labs215Y2K.NewBank;
 
 namespace Labs215Y2K
 {
@@ -11,19 +12,7 @@ namespace Labs215Y2K
     {
          static void Main(string[] args)
          {
-            List<BankAccounts> Accounts = new List<BankAccounts>();
-            Accounts.Add(new BankAccounts("Ivan", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 5000, 100, new Random().Next(121, 9521)));
-            Accounts.Add(new BankAccounts("Fedor", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 6000, 20, new Random().Next(122, 9522)));
-            Accounts.Add(new BankAccounts("Elena", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 3000, 85, new Random().Next(123, 9523)));
-            Accounts.Add(new BankAccounts("Yarik", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 100, 100000, new Random().Next(777, 778)));
-            Accounts.Add(new BankAccounts("Egorik", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 100000, 1, new Random().Next(125, 9526)));
-
-
-
-            foreach (var item in Accounts)
-            {
-                Console.WriteLine($"Id - {item.Id}, Имя - {item.Name}, Возраст - {item.Age}, {item.Balance} руб., {item.Dollarbalance}$");
-            }
+            NewBank();
          }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
@@ -320,6 +309,133 @@ namespace Labs215Y2K
 
             Console.WriteLine();
             Console.WriteLine("Всё, банк закрылся");
+        }
+
+        public static void NewBank()
+        {
+            Console.WriteLine("Вас приветствует Банк Субботний Scam, самый надёжный банк в городе");
+
+            List<BankAccounts> Accounts = new List<BankAccounts>();
+
+            Accounts.Add(new BankAccounts("Ivan", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 5000, 100, new Random().Next(121, 9521))); //Accounts[0]
+            Accounts.Add(new BankAccounts("Fedor", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 6000, 20, new Random().Next(122, 9522))); //Accounts[1]
+            Accounts.Add(new BankAccounts("Elena", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 3000, 85, new Random().Next(123, 9523))); //Accounts[2] 
+            Accounts.Add(new BankAccounts("Yarik", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 100, 100000, new Random().Next(777, 778))); //Accounts[3]
+            Accounts.Add(new BankAccounts("Egorik", DateTime.Now.Year - new Random().Next(1940, DateTime.Now.Year), 100000, 1, new Random().Next(125, 9526))); //Accounts[4]
+
+            foreach (var item in Accounts)
+            {
+                Console.WriteLine($"Id - {item.Id}, Имя - {item.Name}, Возраст - {item.Age}, {item.Balance} руб., {item.Dollarbalance}$");
+            }
+            if (Accounts[0].Age < 18)
+            {
+                Accounts.Remove(Accounts[0]);
+                Accounts[0].Name = ($"Заблокирован {Accounts[0].Name} Причина: Нет 18 лет");
+            }
+            //if (Accounts[1].Age < 18)
+            //{
+            //    Accounts.Remove(Accounts[1]);
+            //    Accounts[1].Name = ($"Заблокирован {Accounts[0].Name} Причина: Нет 18 лет");
+            //}
+            //if (Accounts[2].Age < 18)
+            //{
+            //    Accounts.Remove(Accounts[2]);
+            //    Accounts[2].Name = ($"Заблокирован {Accounts[0].Name} Причина: Нет 18 лет");
+            //}
+            //if (Accounts[3].Age < 18)
+            //{
+            //    Accounts.Remove(Accounts[3]);
+            //    Accounts[3].Name = ($"Заблокирован {Accounts[0].Name} Причина: Нет 18 лет");
+            //}
+            //if (Accounts[4].Age < 18)
+            //{
+            //    Accounts.Remove(Accounts[4]);
+            //    Accounts[4].Name = ($"Заблокирован {Accounts[0].Name} Причина: Нет 18 лет");
+            //}
+            Console.WriteLine("Введите кол-во месяцев");
+            int mountcounter = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+
+
+            for (int i = 0; i < mountcounter; i++)
+            {
+                Accounts[0].Balance += Accounts[0].Balance * BankAccounts.rate;
+                Accounts[1].Balance += Accounts[1].Balance * BankAccounts.rate;
+                Accounts[2].Balance += Accounts[2].Balance * BankAccounts.rate;
+                Accounts[3].Balance += Accounts[3].Balance * BankAccounts.rate;
+                Accounts[4].Balance += Accounts[4].Balance * BankAccounts.rate;
+            }
+
+            foreach (var item in Accounts)
+            {
+                Console.WriteLine($"Id - {item.Id}, Имя - {item.Name}, Возраст - {item.Age}, {item.Balance} руб., {item.Dollarbalance}$");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Введите id пользователя, которому хотите внести деньги (Иван)");
+            int ClientIdDeposit = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            if (Accounts[0].Id == ClientIdDeposit)
+            {
+                Console.WriteLine("Укажите сумму, которую вы хотите внести");
+                double DepositMoney = double.Parse(Console.ReadLine());
+                if (DepositMoney > 0)
+                {
+                    Accounts[0].Balance = Accounts[0].Balance + DepositMoney;
+                }
+                else
+                {
+                    Console.WriteLine("Вы ввели не верное значение");
+                    Console.WriteLine();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Пользователь не найден");
+                Console.WriteLine();
+            }
+
+            foreach (var item in Accounts)
+            {
+                Console.WriteLine($"Id - {item.Id}, Имя - {item.Name}, Возраст - {item.Age}, {item.Balance} руб., {item.Dollarbalance}$");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Введите id пользователя, у которого вы хотите снять деньги (Елена)");
+            int ClientIdWithdraw = int.Parse(Console.ReadLine());
+            Console.WriteLine();
+            if (Accounts[2].Id == ClientIdWithdraw)
+            {
+                if (Accounts[2].Balance > 0)
+                {
+
+                    Console.WriteLine("Укажите сумму, которую вы хотите вывести");
+                    double WithdrawMoney = double.Parse(Console.ReadLine());
+                    if (WithdrawMoney > 0)
+                    {
+                        Accounts[2].Balance = Accounts[2].Balance - WithdrawMoney;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Вы ввели не верное значение");
+                        Console.WriteLine();
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Недостаточно средств");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Пользователь не найден");
+                Console.WriteLine();
+            }
+
+            foreach (var item in Accounts)
+            {
+                Console.WriteLine($"Id - {item.Id}, Имя - {item.Name}, Возраст - {item.Age}, {item.Balance} руб., {item.Dollarbalance}$");
+            }
         }
     }
 }
