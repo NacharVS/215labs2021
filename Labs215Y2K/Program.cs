@@ -51,6 +51,7 @@ namespace Labs215Y2K
             acc1.ShowInfo(acc1);
             acc2.Transaction(acc1, acc2);
             acc2.ShowInfo(acc2);
+            acc3.ShowInfo(acc3);
 
 
         }

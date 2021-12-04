@@ -93,8 +93,10 @@ namespace Labs215Y2K
                 Console.WriteLine();
                 Console.WriteLine("Выберите Id пользователя от которого вы хотите перевести");
                 int AccGetterSeller = int.Parse(Console.ReadLine());
+            Console.WriteLine("Укажите порядковый номер  аккаунта, от которогокоторую вы хотите перевести");
 
-                if (AccGetterSeller == acc.Id)
+            
+            if (AccGetterSeller == acc.Id)
                 {
                     Console.WriteLine($"Укажите сумму, которую вы хотите перевести");
                     double TransactionMoney = double.Parse(Console.ReadLine());
