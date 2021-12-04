@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\Bank\\Bank.csproj",
-      "projectName": "Bank",
-      "projectPath": "C:\\Users\\152019\\Documents\\215\\Bank\\Bank.csproj",
+      "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj",
+      "projectName": "ListsBank",
+      "projectPath": "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj",
       "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\152019\\Documents\\215\\Bank\\obj\\",
+      "outputPath": "C:\\Users\\152019\\Documents\\215\\ListsBank\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
