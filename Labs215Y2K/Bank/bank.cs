@@ -12,7 +12,7 @@ namespace Labs215Y2K
             public delegate void IDValueChangeDelagate(int id, int OldID);
             public event IDValueChangeDelagate IDChangeEvent;
 
-        private string _name;
+            private string _name;
             private double _balance;
             private int _id;
 
