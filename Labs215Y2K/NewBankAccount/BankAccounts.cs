@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Labs215Y2K.FootballPlayers
+namespace Labs215Y2K.NewBank
 {
     class BankAccounts
     {
@@ -14,15 +14,17 @@ namespace Labs215Y2K.FootballPlayers
 
         public BankAccounts(string name, int age, double balance,double dollarbalance, int id)
         {
-            _name = name;
-            _age = age;
-            _birthOfYear = bir
-            _balance = balance;
-            _id = id;
-            _dollarbalance = dollarbalance;
+            this._name = name;
+            this._age = age;
+            this._balance = balance;
+            this._id = id;
+            this._dollarbalance = dollarbalance;
         }
 
         public string Name { get => _name; set => _name = value; }
+        public double Balance { get => _balance; set => _balance = value; }
+        public int Id { get => _id; set => _id = value; }
+        public double Dollarbalance { get => _dollarbalance; set => _dollarbalance = value; }
         public int Age
         {
             get
@@ -42,10 +44,8 @@ namespace Labs215Y2K.FootballPlayers
             }
         }
 
-        public double Balance { get => _balance; set => _balance = value; }
-        public int Id { get => _id; set => _id = value; }
-        public double Dollarbalance { get => _dollarbalance; set => _dollarbalance = value; }
-
+        public static double rate = 0.09;
+        public static double dollarcurse = 74.63;
 
     }
 }
