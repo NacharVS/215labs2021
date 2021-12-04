@@ -9,9 +9,10 @@ namespace Labs215Y2K
         {
             public delegate void NameValueChangeDelagate(string name, string Oldname);
             public event NameValueChangeDelagate NameChangeEvent;
+            public delegate void IDValueChangeDelagate(int id, int OldID);
+            public event IDValueChangeDelagate IDChangeEvent;
 
-
-            private string _name;
+        private string _name;
             private double _balance;
             private int _id;
 
@@ -28,7 +29,18 @@ namespace Labs215Y2K
                 }
             }
             public double Balance { get => _balance; set => _balance = value; }
-            public int Id { get => _id; set => _id = value; }
+            public int Id 
+
+        { 
+            get => _id;
+            set
+            {
+                int OldId = _id;
+                _id = value;
+                IDChangeEvent?.Invoke( _id, OldId);
+
+            }
+        }
 
             public Account(string name, double balance, int id)
             {
@@ -41,7 +53,7 @@ namespace Labs215Y2K
             {
                 if (acc.Balance > 0)
                 {
-                    Console.WriteLine($"Пользователь - {Name} \t Баланс - {Balance}   \t _id - {Id}");
+                    Console.WriteLine($"Пользователь - {Name} \t Баланс - {Balance}   \t id - {Id}");
                 }
             }
 

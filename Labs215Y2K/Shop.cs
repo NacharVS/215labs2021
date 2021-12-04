@@ -30,7 +30,7 @@ namespace Labs215Y2K
             numproduct[0] = int.Parse(Console.ReadLine());
             Console.WriteLine("Для продолжения введите - 1, для завершения - 0");
             int yesno = int.Parse(Console.ReadLine());
-            int counter = 0;
+           //int counter = 0;
 
         }
     }
