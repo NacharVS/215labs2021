@@ -15,7 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game 3.0", "game 3.0\game 3
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[SS ] ScamShop", "[SS ] ScamShop\[SS ] ScamShop.csproj", "{6B6F7AAF-492E-4216-98D4-84A62759169A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "Bank\Bank.csproj", "{28719858-B2BB-499B-9FE2-8B431A652BE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{28719858-B2BB-499B-9FE2-8B431A652BE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank_with_lists", "Bank_with_lists\Bank_with_lists.csproj", "{5E6F018A-4BEB-4B8B-AB89-21182F003024}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{28719858-B2BB-499B-9FE2-8B431A652BE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{28719858-B2BB-499B-9FE2-8B431A652BE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{28719858-B2BB-499B-9FE2-8B431A652BE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E6F018A-4BEB-4B8B-AB89-21182F003024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E6F018A-4BEB-4B8B-AB89-21182F003024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E6F018A-4BEB-4B8B-AB89-21182F003024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E6F018A-4BEB-4B8B-AB89-21182F003024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
