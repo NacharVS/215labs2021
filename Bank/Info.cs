@@ -32,6 +32,9 @@ namespace Bank
                 case 1:
                     EmployerUsing.EmployeStart(accounts, accounts1);
                     break;
+                case 2:
+                    ClientUsing.clientstart(accounts, accounts1);
+                    break;
             }
         }
         

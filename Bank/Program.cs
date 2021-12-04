@@ -9,13 +9,17 @@ namespace Bank
         static void Main(string[] args)
         {
             List<Info> accounts = new List<Info>();
-            accounts.Add(new Info("Альфред", 2000, 100, 195234, 0, 0));
-            accounts.Add(new Info("Илья", 10000, 300, 300592, 0, 0));
-            accounts.Add(new Info("Александр", 15000, 750, 666777, 0, 0));
+            accounts.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
+            accounts.Add(new Info("Илья", 10000, 300, 1, 0, 0));
+            accounts.Add(new Info("Александр", 15000, 750, 2, 0, 0));
             List<IEmploye> accounts1 = new List<IEmploye>();
-            accounts1.Add(new Info("Альфред", 2000, 100, 195234, 0, 0));
-            accounts1.Add(new Info("Илья", 10000, 300, 300592, 0, 0));
-            accounts1.Add(new Info("Александр", 15000, 750, 666777, 0, 0));
+            accounts1.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
+            accounts1.Add(new Info("Илья", 10000, 300, 1, 0, 0));
+            accounts1.Add(new Info("Александр", 15000, 750, 2, 0, 0));
+            List<iClient> accounts2 = new List<iClient>();
+            accounts2.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
+            accounts2.Add(new Info("Илья", 10000, 300, 1, 0, 0));
+            accounts2.Add(new Info("Александр", 15000, 750, 2, 0, 0));
             Info.startbank(accounts, accounts1);
             
         }

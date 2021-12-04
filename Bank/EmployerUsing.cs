@@ -52,12 +52,84 @@ namespace Bank
                     EmployerUsing.EmployeStart(accounts, accounts1);
                     break;
                 case 2:
-                    for (int i = 0; i < 1; i++)
+                    EmployerUsing.accountslist(accounts);
+                    Console.WriteLine();
+                    Console.Write("Введите id клиента, которому желаете поменять имя: ");
+                    for (int i = 0; i < accounts.Count; i++)
                     {
-                        i = int.Parse(Console.ReadLine()); 
                         accounts1[i].NameChange(accounts, old);
+                        break;
                     }
+                    Console.WriteLine();
+                    EmployerUsing.accountslist(accounts);
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 3:
+                    Console.WriteLine();
+                    EmployerUsing.accountslist(accounts); 
+                    EmployerUsing.agechange(accounts, accounts1);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 4:
+                    accounts1[0].RateChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 5:
+                    accounts1[0].RubDepoLimitChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 6:
+                    accounts1[0].UsdDepoLimitChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 7:
+                    accounts1[0].RubWithLimitChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 8:
+                    accounts1[0].UsdwithLimitChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 9:
+                    accounts1[0].RubTransactionChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 10:
+                    accounts1[0].UsdTransactionChange(accounts);
+                    Console.WriteLine();
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
+                case 0:
+                    Info.startbank(accounts, accounts1);
+                    break;
+                default:
+                    Console.WriteLine("Неверное число!");
+                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    break;
 
+
+
+
+            }
+        }
+        public static void agechange(List<Info> accounts, List<IEmploye> accounts1)
+        {
+            Console.Write("Введите id клиента , которому желаете поменять возраст:");
+            for (int i = 0; i < accounts1.Count;)
+            {
+                i = int.Parse(Console.ReadLine());
+                accounts[i].Age = 0;
+                accounts[i].DateBirth = 0;
+                accounts1[i].AgeInput(accounts);
+                Console.WriteLine();
+                break;
             }
         }
     }

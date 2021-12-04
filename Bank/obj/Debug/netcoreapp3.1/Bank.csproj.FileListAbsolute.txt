@@ -23,3 +23,14 @@ C:\Users\User\Documents\215labs2021\aba\Bank\obj\Debug\netcoreapp3.1\Bank.csproj
 C:\Users\User\Documents\215labs2021\aba\Bank\obj\Debug\netcoreapp3.1\Bank.dll
 C:\Users\User\Documents\215labs2021\aba\Bank\obj\Debug\netcoreapp3.1\Bank.pdb
 C:\Users\User\Documents\215labs2021\aba\Bank\obj\Debug\netcoreapp3.1\Bank.genruntimeconfig.cache
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.exe
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.deps.json
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.runtimeconfig.json
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.runtimeconfig.dev.json
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.dll
+C:\Users\152008\Documents\labs215\2222\Bank\bin\Debug\netcoreapp3.1\Bank.pdb
+C:\Users\152008\Documents\labs215\2222\Bank\obj\Debug\netcoreapp3.1\Bank.csprojAssemblyReference.cache
+C:\Users\152008\Documents\labs215\2222\Bank\obj\Debug\netcoreapp3.1\Bank.AssemblyInfoInputs.cache
+C:\Users\152008\Documents\labs215\2222\Bank\obj\Debug\netcoreapp3.1\Bank.AssemblyInfo.cs
+C:\Users\152008\Documents\labs215\2222\Bank\obj\Debug\netcoreapp3.1\Bank.dll
+C:\Users\152008\Documents\labs215\2222\Bank\obj\Debug\netcoreapp3.1\Bank.pdb

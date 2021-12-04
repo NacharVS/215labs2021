@@ -636,19 +636,19 @@ namespace BanK_Account
         void IEmployeOperations.RateChange(IEmployeOperations ac)
         {
             Console.WriteLine();
-            Console.WriteLine($"Текущая банковская ставка = {rate}; ");
+            Console.WriteLine($"Текущая банковская ставка = {rate} %; ");
             Console.Write($"Введите новую ставку: ");
             double answer = double.Parse(Console.ReadLine());
             if (rate > 0)
             {
                 rate = 0;
                 rate += answer;
-                Console.WriteLine($"Успешно! Текущая ставка = {rate}");
+                Console.WriteLine($"Успешно! Текущая ставка = {rate} % ");
             }
             else if (rate == 0)
             {
                 rate += answer;
-                Console.WriteLine($"Успешно! Текущая ставка = {rate}");
+                Console.WriteLine($"Успешно! Текущая ставка = {rate} % ");
             }
         }
 

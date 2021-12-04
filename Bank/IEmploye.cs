@@ -15,11 +15,11 @@ namespace Bank
         void NameChange(List<Info> accounts, string old);
         void AgeInput(List<Info> accounts);
         void RateChange(List<Info> accounts);
-        void RubTransactionChange(IEmploye ac);
-        void UsdDepoLimitChange(IEmploye ac);
-        void RubDepoLimitChange(IEmploye ac);
-        void RubWithLimitChange(IEmploye ac);
-        void UsdwithLimitChange(IEmploye ac);
-        void UsdTransactionChange(IEmploye ac);
+        void RubTransactionChange(List<Info> accounts);
+        void UsdDepoLimitChange(List<Info> accounts);
+        void RubDepoLimitChange(List<Info> accounts);
+        void RubWithLimitChange(List<Info> accounts);
+        void UsdwithLimitChange(List<Info> accounts);
+        void UsdTransactionChange(List<Info> accounts);
     }
 }
