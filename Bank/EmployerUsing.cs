@@ -6,7 +6,7 @@ namespace Bank
 {
     class EmployerUsing : AccountMethods
     {
-        public static void accountslist(List<Info> accounts)
+        public static void accountslist(List<iClient> accounts)
         {
             for (int i = 0; i < accounts.Count;i++)
             {
@@ -14,7 +14,7 @@ namespace Bank
             }
             
         }
-        internal static void EmployeStart(List<Info> accounts, List<IEmploye> accounts1, List<iClient> accounts2)
+        internal static void EmployeStart(List<iClient> accounts, int id, int newid)
         {
             string old = "";
             Console.WriteLine("Что вы хотите сделать?");
@@ -41,7 +41,7 @@ namespace Bank
                         {
                             for (int j = 0; j < accounts.Count; j++)
                             {
-                                accounts1[i].AgeInput(accounts);
+                                accounts[i].AgeInput(accounts,id);
                             }
                         }
                         else { }
@@ -49,7 +49,7 @@ namespace Bank
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts, id, newid);
                     break;
                 case 2:
                     EmployerUsing.accountslist(accounts);
@@ -57,61 +57,61 @@ namespace Bank
                     Console.Write("Введите id клиента, которому желаете поменять имя: ");
                     for (int i = 0; i < accounts.Count; i++)
                     {
-                        accounts1[i].NameChange(accounts, old);
+                        accounts[i].NameChange(accounts, old);
                         break;
                     }
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts);
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts, id, newid);
                     break;
                 case 3:
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts); 
-                    EmployerUsing.agechange(accounts, accounts1);
+                    EmployerUsing.agechange(accounts, id);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts, id, newid);
                     break;
                 case 4:
-                    accounts1[0].RateChange(accounts);
+                    accounts[0].RateChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts, id, newid);
                     break;
                 case 5:
-                    accounts1[0].RubDepoLimitChange(accounts);
+                    accounts[0].RubDepoLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,id, newid);
                     break;
                 case 6:
-                    accounts1[0].UsdDepoLimitChange(accounts);
+                    accounts[0].UsdDepoLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,id, newid);
                     break;
                 case 7:
-                    accounts1[0].RubWithLimitChange(accounts);
+                    accounts[0].RubWithLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts, id, newid);
                     break;
                 case 8:
-                    accounts1[0].UsdwithLimitChange(accounts);
+                    accounts[0].UsdwithLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,  id, newid);
                     break;
                 case 9:
-                    accounts1[0].RubTransactionChange(accounts);
+                    accounts[0].RubTransactionChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,  id, newid);
                     break;
                 case 10:
-                    accounts1[0].UsdTransactionChange(accounts);
+                    accounts[0].UsdTransactionChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,  id, newid);
                     break;
                 case 0:
-                    Info.startbank(accounts, accounts1, accounts2);
+                    Info.startbank(accounts,  id, newid);
                     break;
                 default:
                     Console.WriteLine("Неверное число!");
-                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
+                    EmployerUsing.EmployeStart(accounts,  id, newid);
                     break;
 
 
@@ -119,15 +119,15 @@ namespace Bank
 
             }
         }
-        public static void agechange(List<Info> accounts, List<IEmploye> accounts1)
+        public static void agechange(List<iClient> accounts,int id)
         {
             Console.Write("Введите id клиента , которому желаете поменять возраст:");
-            for (int i = 0; i < accounts1.Count;)
+            for (int i = 0; i < accounts.Count;)
             {
                 i = int.Parse(Console.ReadLine());
                 accounts[i].Age = 0;
                 accounts[i].DateBirth = 0;
-                accounts1[i].AgeInput(accounts);
+                accounts[i].AgeInput(accounts,id);
                 Console.WriteLine();
                 break;
             }

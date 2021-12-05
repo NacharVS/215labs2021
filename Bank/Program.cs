@@ -8,19 +8,13 @@ namespace Bank
     {
         static void Main(string[] args)
         {
-            List<Info> accounts = new List<Info>();
+            List<iClient> accounts = new List<iClient>();
             accounts.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
             accounts.Add(new Info("Илья", 10000, 300, 1, 0, 0));
             accounts.Add(new Info("Александр", 15000, 750, 2, 0, 0));
-            List<IEmploye> accounts1 = new List<IEmploye>();
-            accounts1.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
-            accounts1.Add(new Info("Илья", 10000, 300, 1, 0, 0));
-            accounts1.Add(new Info("Александр", 15000, 750, 2, 0, 0));
-            List<iClient> accounts2 = new List<iClient>();
-            accounts2.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
-            accounts2.Add(new Info("Илья", 10000, 300, 1, 0, 0));
-            accounts2.Add(new Info("Александр", 15000, 750, 2, 0, 0));
-            Info.startbank(accounts, accounts1, accounts2);
+            int id = 0;
+            int newid = 3;
+            Info.startbank(accounts,id,newid);
             
         }
         public static void boba()
