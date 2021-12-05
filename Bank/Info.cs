@@ -17,7 +17,7 @@ namespace Bank
             Age = age;
         }
         
-        public static void startbank(List<Info> accounts, List<IEmploye> accounts1)
+        public static void startbank(List<Info> accounts, List<IEmploye> accounts1, List<iClient> accounts2)
         {
             string old = "";
             Console.WriteLine("Добро пожаловать в банк!");
@@ -30,13 +30,19 @@ namespace Bank
             switch (answer)
             {
                 case 1:
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 2:
-                    ClientUsing.clientstart(accounts, accounts1);
+                    ClientUsing.clientstart(accounts, accounts2);
                     break;
             }
         }
-        
+        public static void ClientsList(List<Info> acccounts)
+        {
+            for (int i = 0; i < acccounts.Count; i++)
+            {
+                Console.WriteLine($"Id: {acccounts[i].Id} {acccounts[i].Name}");
+            }
+        }
     }
 }

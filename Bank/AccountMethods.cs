@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Bank
 {
-    class AccountMethods : IEmploye , iClient
+    class AccountMethods : IEmploye , iClient 
     {
         private string _name;
         private double _rubbalance;
@@ -160,7 +160,7 @@ namespace Bank
 
         void IEmploye.NameChange(List<Info> accounts, string old)
         {
-            for (int i = 0; i < accounts.Count; i++)
+            for (int i = 0; i < accounts.Count;i++)
             {
                 i = int.Parse(Console.ReadLine());
                 Console.WriteLine($"{accounts[i].Id} Текущее имя {accounts[i].Name}");
@@ -172,7 +172,7 @@ namespace Bank
                 break;
             }
             
-        }
+        } 
         void IEmploye.AgeInput(List<Info> accounts)
         {
             for (int i = 0; i < accounts.Count; i++)
@@ -498,6 +498,146 @@ namespace Bank
                 break;
             }
         }
+
+        void iClient.ShowProfit(List<Info> accounts, int month, List<iClient> accounts2)
+        {
+            foreach (var item in accounts)
+            {
+                Console.WriteLine("Какой счёт вы хотите использовать под проценты? 1 - рублевой; 2 - долларовый");
+                Console.Write("Введите цифру: ");
+                int answer = int.Parse(Console.ReadLine());
+                switch (answer)
+                {
+                    case 1:
+                        for (int i = 0; i < month; i++)
+                        {
+                            item.RubBalance += item.RubBalance * rate;
+                        }
+                        break;
+                    case 2:
+                        for (int i = 0; i < month; i++)
+                        {
+                            item.UsdBalance += item.UsdBalance * rate;
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Неверное число!");
+                        ClientUsing.clientstart(accounts, accounts2);
+                        break;
+                }
+            }
+            
+        }
+
+        void iClient.Withdraw(List<Info> accounts, int withd, List<iClient> accounts2)
+        {
+            foreach (var item in accounts)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Лимит на снятие денег с рублевого счёта - 30.000 р. с долларового счёта - 1.000 $");
+                Console.WriteLine("С какого счёта вы хотите вывести деньги? 1 - c рублевого счёта; 2 - c долларового счёта");
+                Console.Write("Введите цифру: ");
+                int answer = int.Parse(Console.ReadLine());
+                switch (answer)
+                {
+                    case 1:
+                        if (item.RubBalance <= 0)
+                        {
+                            Console.WriteLine($"{item.Name} не имеет денег на счету для вывода");
+                        }
+                        else if (item.RubBalance > 0)
+                        {
+                            Console.WriteLine();
+                            Console.Write("Введите сумму которую хотите вывести: ");
+                            withd = int.Parse(Console.ReadLine());
+                            if (withd > withdrawrubmaxlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести более 30.000 руб.");
+                                break;
+                            }
+                            else if (withd <= item.RubBalance)
+                            {
+                                if (withd < withdrawrubminlimit)
+                                {
+                                    Console.WriteLine("Нельзя вывести меньше 100 руб.");
+                                    break;
+                                }
+                                else if (withd < withdrawrubmaxlimit)
+                                {
+                                    item.RubBalance -= withd;
+                                    Console.WriteLine($"{item.Name} - успешно выведено {withd} р.");
+                                    foreach(var ite in accounts2)
+                                    {
+                                        ite.ShowInfo(accounts);
+                                    }
+                                }
+                            }
+                            else if (withd < withdrawrubminlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести меньше 100 руб.");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"У {item.Name} нет столько р. на счету для вывода");
+
+                            }
+
+                        }
+                        break;
+                    case 2:
+                        if (item.UsdBalance <= 0)
+                        {
+                            Console.WriteLine($"{item.Name} не имеет денег на счету для вывода");
+                        }
+                        else
+                        {
+                            Console.WriteLine();
+                            Console.Write("Введите сумму которую хотите вывести: ");
+                            withd = int.Parse(Console.ReadLine());
+                            if (withd > withdrawusdmaxlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести более 1.000 $");
+                                break;
+                            }
+                            else if (withd <= item.UsdBalance)
+                            {
+                                if (withd < withdrawusdminlimit)
+                                {
+                                    Console.WriteLine("Нельзя вывести меньше 50$");
+                                    break;
+                                }
+                                if (withd < withdrawusdmaxlimit)
+                                {
+                                    item.UsdBalance -= withd;
+                                    Console.WriteLine($"{item.Name} - успешно выведено {withd} $");
+                                    foreach (var ite in accounts2)
+                                    {
+                                        ite.ShowInfo(accounts);
+                                    }
+                                }
+                            }
+                            else if (answer < withdrawusdminlimit)
+                            {
+                                Console.WriteLine("Нельзя вывести меньше 50 $ .");
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine($"У {item.Name} нет столько $ на счету для вывода");
+
+                            }
+
+                        }
+                        break;
+                    default:
+                        Console.WriteLine("Неверный номер!");
+                        break;
+                }
+            }
+        }
+
+        
     }
     
 }

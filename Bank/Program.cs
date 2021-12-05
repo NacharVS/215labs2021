@@ -20,7 +20,7 @@ namespace Bank
             accounts2.Add(new Info("Альфред", 2000, 100, 0, 0, 0));
             accounts2.Add(new Info("Илья", 10000, 300, 1, 0, 0));
             accounts2.Add(new Info("Александр", 15000, 750, 2, 0, 0));
-            Info.startbank(accounts, accounts1);
+            Info.startbank(accounts, accounts1, accounts2);
             
         }
         public static void boba()

@@ -14,7 +14,7 @@ namespace Bank
             }
             
         }
-        internal static void EmployeStart(List<Info> accounts, List<IEmploye> accounts1)
+        internal static void EmployeStart(List<Info> accounts, List<IEmploye> accounts1, List<iClient> accounts2)
         {
             string old = "";
             Console.WriteLine("Что вы хотите сделать?");
@@ -49,7 +49,7 @@ namespace Bank
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 2:
                     EmployerUsing.accountslist(accounts);
@@ -62,56 +62,56 @@ namespace Bank
                     }
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts);
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 3:
                     Console.WriteLine();
                     EmployerUsing.accountslist(accounts); 
                     EmployerUsing.agechange(accounts, accounts1);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 4:
                     accounts1[0].RateChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 5:
                     accounts1[0].RubDepoLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 6:
                     accounts1[0].UsdDepoLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 7:
                     accounts1[0].RubWithLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 8:
                     accounts1[0].UsdwithLimitChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 9:
                     accounts1[0].RubTransactionChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 10:
                     accounts1[0].UsdTransactionChange(accounts);
                     Console.WriteLine();
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
                 case 0:
-                    Info.startbank(accounts, accounts1);
+                    Info.startbank(accounts, accounts1, accounts2);
                     break;
                 default:
                     Console.WriteLine("Неверное число!");
-                    EmployerUsing.EmployeStart(accounts, accounts1);
+                    EmployerUsing.EmployeStart(accounts, accounts1, accounts2);
                     break;
 
 
