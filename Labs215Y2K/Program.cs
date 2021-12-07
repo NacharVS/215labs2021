@@ -5,6 +5,7 @@ using Action;
 using Labs215Y2K.Bank;
 using System.Collections.Generic;
 using Labs215Y2K.NewBank;
+using Labs215Y2K.Character;
 
 namespace Labs215Y2K
 {
@@ -12,7 +13,9 @@ namespace Labs215Y2K
     {
          static void Main(string[] args)
          {
-            NewBank();
+            //NewBank(); - Новый банк
+
+            Characters();
          }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
@@ -576,6 +579,29 @@ namespace Labs215Y2K
             {
                 Console.WriteLine("Вы ввели неправильное значение");
             }
+        }
+
+        public static void Characters()
+        {
+            List<CharacterEditor> Characters = new List<CharacterEditor>();
+            Characters.Add(new CharacterEditor("Warrior", 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0));
+            Characters.Add(new CharacterEditor("Mage", 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0));
+            Characters.Add(new CharacterEditor("Archer", 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0));
+
+            Characters[0].Health = 2 * Characters[0].Constitution + (5 / 10 * Characters[0].Strength); //_health = 2 * Constitution + (5/10 * Strength);
+            Characters[1].Health = 2 * Characters[1].Constitution + (5 / 10 * Characters[1].Strength);
+            Characters[2].Health = 2 * Characters[2].Constitution + (5 / 10 * Characters[2].Strength); //_mana = Intelligence * 3;
+
+            Characters[0].Mana = Characters[0].Intelligence * 3; //_mana = Intelligence * 3;
+            Characters[1].Mana = Characters[1].Intelligence * 3;
+            Characters[2].Mana = Characters[2].Intelligence * 3;
+
+            foreach (var item in Characters)
+            {
+                Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Мана - {item.Mana}, Физ.Атака - {item.PhysicalAttack}, Магическая Атака - {item.MagicAttack}, ");
+            }
+
+
         }
     }
 }
