@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\(((((((((\\Characters\\Characters.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Characters\\Characters.csproj",
       "projectName": "Characters",
-      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\(((((((((\\Characters\\Characters.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Characters\\Characters.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\(((((((((\\Characters\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Characters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -55,11 +55,6 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "frameworkReferences": {
-          "Microsoft.NETCore.App": {
-            "privateAssets": "all"
-          }
-        },
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
