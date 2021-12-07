@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\215labs2021\\biba\\Bank\\Bank.csproj": {}
+    "C:\\Users\\User\\Documents\\215labs2021\\pushka\\Bank\\Bank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\215labs2021\\biba\\Bank\\Bank.csproj": {
+    "C:\\Users\\User\\Documents\\215labs2021\\pushka\\Bank\\Bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Bank\\Bank.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\Bank\\Bank.csproj",
         "projectName": "Bank",
-        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Bank\\Bank.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\Bank\\Bank.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\biba\\Bank\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\Bank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
