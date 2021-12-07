@@ -1,0 +1,14 @@
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.exe
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.deps.json
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.json
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.dev.json
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.dll
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\bin\Debug\netcoreapp3.1\Characters.pdb
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.csproj.AssemblyReference.cache
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfoInputs.cache
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfo.cs
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.csproj.CoreCompileInputs.cache
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.dll
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.pdb
+C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.genruntimeconfig.cache

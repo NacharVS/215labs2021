@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\User\\.nuget\\packages\\": {}
+    "C:\\Users\\bulat\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
+      "projectUniqueName": "C:\\Users\\bulat\\Desktop\\215labs2021\\Labs215Y2K\\215labs2021\\215labs2021\\BanK Account\\BanK Account.csproj",
       "projectName": "BanK Account",
-      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\obj\\",
+      "projectPath": "C:\\Users\\bulat\\Desktop\\215labs2021\\Labs215Y2K\\215labs2021\\215labs2021\\BanK Account\\BanK Account.csproj",
+      "packagesPath": "C:\\Users\\bulat\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\bulat\\Desktop\\215labs2021\\Labs215Y2K\\215labs2021\\215labs2021\\BanK Account\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\bulat\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -55,7 +55,12 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

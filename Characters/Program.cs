@@ -7,6 +7,10 @@ namespace Characters
         static void Main(string[] args)
         {
             Mage.startmage();
+            Console.WriteLine();
+            Warrior.startwarrior();
+            Console.WriteLine();
+            Archer.startarcher();
         }
     }
 }
