@@ -15,29 +15,15 @@ namespace Characters
         private int _manna;
 
         private double _pattack;
-        private int _pdefence;
+        private double _pdefence;
 
         private int _mattack;
         private int _mdefence;
 
-        private int _criticalchanse;
-        private int _criticaldamage;
+        private double _criticalchanse;
+        private double _criticaldamage;
 
-        public Characteristics(int strentgh, int dexterity, int intelligence, int constitutions, int health, int manna, int pattack, int pdefence, int mattack, int mdefence, int criticalchanse, int criticaldamage)
-        {
-            Strentgh = strentgh;
-            Dexterity = dexterity;
-            Intelligence = intelligence;
-            Constitutions = constitutions;
-            Health = health;
-            _manna = manna;
-            _pattack = pattack;
-            _pdefence = pdefence;
-            _mattack = mattack;
-            _mdefence = mdefence;
-            _criticalchanse = criticalchanse;
-            _criticaldamage = criticaldamage;
-        }
+        
         public int Strentgh
         {
             get
@@ -115,6 +101,60 @@ namespace Characters
                 _pattack = Strentgh * 3 + 0.5 * Dexterity;
             }
         }
-        public double 
+        public double Pdefence
+        {
+            get
+            {
+                return _pdefence;
+            }
+            set
+            {
+                _pdefence = Constitutions * 0.5 + Dexterity * 3;
+            }
+        }
+        public int Mattack
+        {
+            get
+            {
+                return _mattack;
+            }
+            set
+            {
+                _mattack = 4 * Intelligence;
+            }
+        }
+        public int Mdefence
+        {
+            get
+            {
+                return _mdefence;
+            }
+            set
+            {
+                _mdefence = Intelligence * 2;
+            }
+        }
+        public double Criticalchanse
+        {
+            get
+            {
+                return _criticalchanse;
+            }
+            set
+            {
+                _criticalchanse = 20 + Dexterity * 0.3;
+            }
+        }
+        public double Criticaldamage
+        {
+            get
+            {
+                return _criticaldamage;
+            }
+            set
+            {
+                _criticaldamage = 100 + Dexterity * 0.5;
+            }
+        }
     }
 }
