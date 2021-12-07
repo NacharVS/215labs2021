@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\152008\\Documents\\labs215\\2222\\Shop\\Shop.csproj",
-      "projectName": "Shop",
-      "projectPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\Shop\\Shop.csproj",
+      "projectUniqueName": "C:\\Users\\152008\\Documents\\labs215\\2222\\Characters\\Characters.csproj",
+      "projectName": "Characters",
+      "projectPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\Characters\\Characters.csproj",
       "packagesPath": "C:\\Users\\152008\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\Shop\\obj\\",
+      "outputPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\Characters\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
