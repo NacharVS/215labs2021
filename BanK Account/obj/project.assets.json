@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\BanK Account\\BanK Account.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
       "projectName": "BanK Account",
-      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\BanK Account\\BanK Account.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\pushka\\BanK Account\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",

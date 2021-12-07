@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BanK Account", "BanK Accoun
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{A0965246-D5BB-4AA1-982C-A1D9A027CDD3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Characters", "Characters\Characters.csproj", "{7A225156-E562-41E1-9969-89B5A5942B2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Characters", "Characters\Characters.csproj", "{7A225156-E562-41E1-9969-89B5A5942B2B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,19 +20,15 @@ Global
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{AD53A66D-0768-498D-AAAD-A3B9765FB35C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AD53A66D-0768-498D-AAAD-A3B9765FB35C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD53A66D-0768-498D-AAAD-A3B9765FB35C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD53A66D-0768-498D-AAAD-A3B9765FB35C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2376657B-9725-4265-B792-A97C32302779}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2376657B-9725-4265-B792-A97C32302779}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2376657B-9725-4265-B792-A97C32302779}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2376657B-9725-4265-B792-A97C32302779}.Release|Any CPU.Build.0 = Release|Any CPU
 		{52697151-A600-491C-8A9C-76E72C58B6B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{52697151-A600-491C-8A9C-76E72C58B6B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52697151-A600-491C-8A9C-76E72C58B6B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52697151-A600-491C-8A9C-76E72C58B6B4}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A0965246-D5BB-4AA1-982C-A1D9A027CDD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A0965246-D5BB-4AA1-982C-A1D9A027CDD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A0965246-D5BB-4AA1-982C-A1D9A027CDD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A0965246-D5BB-4AA1-982C-A1D9A027CDD3}.Release|Any CPU.Build.0 = Release|Any CPU
 		{7A225156-E562-41E1-9969-89B5A5942B2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
