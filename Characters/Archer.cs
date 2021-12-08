@@ -13,30 +13,24 @@ namespace Characters
             Intelligence = intelligence;
             Constitutions = constitutions;
             Health = health;
-            Manna = manna;
             Pattack = pattack;
             Pdefence = pdefence;
-            Mattack = mattack;
-            Mdefence = mdefence;
-            Criticalchanse = criticalchanse;
-            Criticaldamage = criticaldamage;
+            PCriticalchanse = criticalchanse;
+            PCriticaldamage = criticaldamage;
         }
         public static Archer arch = new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0);
         public static void startarcher()
         {
-            Console.WriteLine($"Archer characteristic:");
-            Console.WriteLine($"Strength = {arch.Strentgh}");
-            Console.WriteLine($"Dexterity = {arch.Dexterity}");
-            Console.WriteLine($"Intelligence = {arch.Intelligence}");
-            Console.WriteLine($"Constitutions = {arch.Constitutions}");
-            Console.WriteLine($"Health = {arch.Health}");
-            Console.WriteLine($"Manna = {arch.Manna}");
-            Console.WriteLine($"Pattack = {arch.Pattack}");
-            Console.WriteLine($"Pdefence = {arch.Pdefence}");
-            Console.WriteLine($"Mattack = {arch.Mattack}");
-            Console.WriteLine($"Mdefence = {arch.Mdefence}");
-            Console.WriteLine($"Criticalchanse = {arch.Criticalchanse}");
-            Console.WriteLine($"Criticaldamage = {arch.Criticaldamage}");
+            Console.WriteLine($"Характеристки лучника:");
+            Console.WriteLine($"Сила = {arch.Strentgh}");
+            Console.WriteLine($"Ловкость = {arch.Dexterity}");
+            Console.WriteLine($"Интелект = {arch.Intelligence}");
+            Console.WriteLine($"Телосложение = {arch.Constitutions}");
+            Console.WriteLine($"Здоровье = {arch.Health}");
+            Console.WriteLine($"Физ. атака = {arch.Pattack}");
+            Console.WriteLine($"Физ. защита = {arch.Pdefence}");
+            Console.WriteLine($"Критический шанс = {arch.PCriticalchanse}");
+            Console.WriteLine($"Критический урон = {arch.PCriticaldamage}");
         }
     }
 }

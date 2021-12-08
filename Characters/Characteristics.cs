@@ -20,8 +20,10 @@ namespace Characters
         private int _mattack;
         private int _mdefence;
 
-        private double _criticalchanse;
-        private double _criticaldamage;
+        private double _pcriticalchanse;
+        private double _pcriticaldamage;
+        private double _mcriticalchanse;
+        private double _mcriticaldamage;
 
         
         public int Strentgh
@@ -76,7 +78,7 @@ namespace Characters
             }
             set
             {
-                _health = 2 * Constitutions + 0.5 * Strentgh;
+                _health = value;
             }
         }
         public int Manna
@@ -87,7 +89,7 @@ namespace Characters
             }
             set
             {
-                _manna = Intelligence * 3;
+                _manna = value;
             }
         }
         public double Pattack
@@ -120,7 +122,7 @@ namespace Characters
             }
             set
             {
-                _mattack = 4 * Intelligence;
+                _mattack = value;
             }
         }
         public int Mdefence
@@ -131,29 +133,51 @@ namespace Characters
             }
             set
             {
-                _mdefence = Intelligence * 2;
+                _mdefence = value;
             }
         }
-        public double Criticalchanse
+        public double PCriticalchanse
         {
             get
             {
-                return _criticalchanse;
+                return _pcriticalchanse;
             }
             set
             {
-                _criticalchanse = 20 + Dexterity * 0.3;
+                _pcriticalchanse = 20 + Dexterity * 0.3;
             }
         }
-        public double Criticaldamage
+        public double PCriticaldamage
         {
             get
             {
-                return _criticaldamage;
+                return _pcriticaldamage;
             }
             set
             {
-                _criticaldamage = 100 + Dexterity * 0.5;
+                _pcriticaldamage = Pattack * (2 + Dexterity * 0.05);
+            }
+        }
+        public double MCriticalchanse
+        {
+            get
+            {
+                return _mcriticalchanse;
+            }
+            set
+            {
+                _mcriticalchanse = value;
+            }
+        }
+        public double MCriticaldamage
+        {
+            get
+            {
+                return _pcriticaldamage;
+            }
+            set
+            {
+                _pcriticaldamage = value;
             }
         }
     }

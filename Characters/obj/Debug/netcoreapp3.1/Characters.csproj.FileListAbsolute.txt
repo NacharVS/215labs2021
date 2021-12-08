@@ -12,3 +12,14 @@ C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters
 C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.dll
 C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.pdb
 C:\Users\bulat\Desktop\215labs2021\Labs215Y2K\215labs2021\215labs2021\Characters\obj\Debug\netcoreapp3.1\Characters.genruntimeconfig.cache
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.exe
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.deps.json
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.json
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.dev.json
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.dll
+C:\Users\152008\Documents\labs215\2222\Characters\bin\Debug\netcoreapp3.1\Characters.pdb
+C:\Users\152008\Documents\labs215\2222\Characters\obj\Debug\netcoreapp3.1\Characters.csprojAssemblyReference.cache
+C:\Users\152008\Documents\labs215\2222\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfoInputs.cache
+C:\Users\152008\Documents\labs215\2222\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfo.cs
+C:\Users\152008\Documents\labs215\2222\Characters\obj\Debug\netcoreapp3.1\Characters.dll
+C:\Users\152008\Documents\labs215\2222\Characters\obj\Debug\netcoreapp3.1\Characters.pdb

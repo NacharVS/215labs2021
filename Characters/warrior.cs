@@ -13,30 +13,24 @@ namespace Characters
             Intelligence = intelligence;
             Constitutions = constitutions;
             Health = health;
-            Manna = manna;
             Pattack = pattack;
             Pdefence = pdefence;
-            Mattack = mattack;
-            Mdefence = mdefence;
-            Criticalchanse = criticalchanse;
-            Criticaldamage = criticaldamage;
+            PCriticalchanse = criticalchanse;
+            PCriticaldamage = criticaldamage;
         }
         public static Warrior war = new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0);
         public static void startwarrior()
         {
-            Console.WriteLine($"Warrior characteristic:");
-            Console.WriteLine($"Strength = {war.Strentgh}");
-            Console.WriteLine($"Dexterity = {war.Dexterity}");
-            Console.WriteLine($"Intelligence = {war.Intelligence}");
-            Console.WriteLine($"Constitutions = {war.Constitutions}");
-            Console.WriteLine($"Health = {war.Health}");
-            Console.WriteLine($"Manna = {war.Manna}");
-            Console.WriteLine($"Pattack = {war.Pattack}");
-            Console.WriteLine($"Pdefence = {war.Pdefence}");
-            Console.WriteLine($"Mattack = {war.Mattack}");
-            Console.WriteLine($"Mdefence = {war.Mdefence}");
-            Console.WriteLine($"Criticalchanse = {war.Criticalchanse}");
-            Console.WriteLine($"Criticaldamage = {war.Criticaldamage}");
+            Console.WriteLine($"Характеристики воина:");
+            Console.WriteLine($"Сила = {war.Strentgh}");
+            Console.WriteLine($"Ловкость = {war.Dexterity}");
+            Console.WriteLine($"Интеллект = {war.Intelligence}");
+            Console.WriteLine($"Телосложение = {war.Constitutions}");
+            Console.WriteLine($"Здоровье = {war.Health}");
+            Console.WriteLine($"Физ. атака = {war.Pattack}");
+            Console.WriteLine($"Физ. защита = {war.Pdefence}");
+            Console.WriteLine($"Критический шанс = {war.PCriticalchanse}");
+            Console.WriteLine($"Критический урон = {war.PCriticaldamage}");
         }
     }
 }
