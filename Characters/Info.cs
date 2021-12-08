@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +6,7 @@ namespace Characters
 { 
     class Info 
     {
-        internal static void startredactor(List<Mage> mag)
+        internal static void startredactor(List<Warrior> warrior,List<Mage> mag)
         {
             Console.WriteLine("Добро пожаловать в редактор персонажей! Что вы хотите сделать?");
             Console.WriteLine("1 - Просмотреть характеристики мага");
@@ -16,7 +16,10 @@ namespace Characters
             switch (answer)
             {
                 case 1:
-                    Mage.startmage(mag);
+                    Mage.startmage(warrior,mag);
+                    break;
+                case 2:
+                    Warrior.startwarrior(warrior, mag);
                     break;
             }
         }

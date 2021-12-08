@@ -52,11 +52,11 @@ namespace Characters
         {
             get
             {
-                return _dexterity;
+                return _intelligence;
             }
             set
             {
-                _dexterity = value;
+                _intelligence = value;
             }
         }
         public int Constitutions
@@ -100,7 +100,7 @@ namespace Characters
             }
             set
             {
-                _pattack = Strentgh * 3 + 0.5 * Dexterity;
+                _pattack = value;
             }
         }
         public double Pdefence
@@ -111,7 +111,7 @@ namespace Characters
             }
             set
             {
-                _pdefence = Constitutions * 0.5 + Dexterity * 3;
+                _pdefence = value;
             }
         }
         public int Mattack
@@ -144,7 +144,7 @@ namespace Characters
             }
             set
             {
-                _pcriticalchanse = 20 + Dexterity * 0.3;
+                _pcriticalchanse = value;
             }
         }
         public double PCriticaldamage
@@ -155,7 +155,7 @@ namespace Characters
             }
             set
             {
-                _pcriticaldamage = Pattack * (2 + Dexterity * 0.05);
+                _pcriticaldamage = value;
             }
         }
         public double MCriticalchanse
