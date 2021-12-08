@@ -163,7 +163,7 @@ class Account : IClientOperation, Ipersonal
             double DepositMoney = double.Parse(Console.ReadLine());
             if (DepositMoney > 0)
             {
-                acc.Balance = acc.Balance + DepositMoney;
+                acc.Balance += DepositMoney;
                 break;
             }
             else
@@ -180,7 +180,7 @@ class Account : IClientOperation, Ipersonal
         Console.WriteLine($"{acc.Name} - {acc.Balance}");
         Console.WriteLine("Укажите сумму, которую вы хотите вывести");
         double WithdrawMoney = double.Parse(Console.ReadLine());
-        acc.Balance = acc.Balance - WithdrawMoney;
+        acc.Balance -= WithdrawMoney;
         if (acc.Balance < 0)
         {
             Console.WriteLine("На балансе недостаточно средств");
@@ -206,7 +206,7 @@ class Account : IClientOperation, Ipersonal
         if (Counter == 1)
         {
             acc.DollarBalance += acc.Balance / dollarcurse;
-            acc.Balance = acc.Balance % dollarcurse;
+            acc.Balance %= dollarcurse;
             acc.DollarBalance = Convert.ToInt32(acc.DollarBalance);
         }
         if (Counter == 2)
@@ -270,7 +270,7 @@ class Account : IClientOperation, Ipersonal
             double DepositMoney = double.Parse(Console.ReadLine());
             if (DepositMoney > 0)
             {
-                acc.Balance = acc.Balance + DepositMoney;
+                acc.Balance += DepositMoney;
                 break;
             }
             else
@@ -287,7 +287,7 @@ class Account : IClientOperation, Ipersonal
         Console.WriteLine($"{acc.Name} - {acc.Balance}");
         Console.WriteLine("Укажите сумму, которую вы хотите вывести");
         double WithdrawMoney = double.Parse(Console.ReadLine());
-        acc.Balance = acc.Balance - WithdrawMoney;
+        acc.Balance -= WithdrawMoney;
         if (acc.Balance < 0)
         {
             Console.WriteLine("На балансе недостаточно средств");
@@ -313,7 +313,7 @@ class Account : IClientOperation, Ipersonal
         if (Counter == 1)
         {
             acc.DollarBalance += acc.Balance / dollarcurse;
-            acc.Balance = acc.Balance % dollarcurse;
+            acc.Balance %= dollarcurse;
             acc.DollarBalance = Convert.ToInt32(acc.DollarBalance);
         }
         if (Counter == 2)
