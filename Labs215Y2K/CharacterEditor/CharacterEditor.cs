@@ -60,7 +60,7 @@ namespace Labs215Y2K.EditorCharacter
             }
         }
         public int PhysicalAttack { get => _physicalAttack; set => _physicalAttack = value; }
-        public int PhysicalDefence { get => _physicalDefence; set => _physicalDefence = value; }
+        public int PhysicalDefence{ get => _physicalDefence; set => _physicalDefence = value; }
         public int MagicDefence { get => _magicDefence; set => _magicDefence = value; }
         public int Health
         {

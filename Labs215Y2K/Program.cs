@@ -630,7 +630,7 @@ namespace Labs215Y2K
 
             foreach (var item in Characters)
             {
-                Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCC - {item.MagicCriticalDamage}");
+                Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCD - {item.MagicCriticalDamage}");
             }
             Console.WriteLine();
 
@@ -641,17 +641,17 @@ namespace Labs215Y2K
                 if (Characters[1].MagicCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{Characters[1].Name} наносит критический урон {Characters[0].Name}");
-                    Characters[0].Health -= (Characters[1].MagicAttack + Characters[1].MagicCriticalDamage) - Characters[0].MagicDefence;
+                    Characters[0].Health = ((Characters[1].MagicAttack + Characters[1].MagicCriticalDamage) - Characters[0].MagicDefence) - Characters[0].Health;
                 }
                 else
                 {
                     Console.WriteLine($"{Characters[1].Name} наносит урон {Characters[0].Name}");
-                    Characters[0].Health -= (Characters[1].MagicAttack - Characters[0].MagicDefence);
+                    Characters[0].Health = (Characters[1].MagicAttack - Characters[0].MagicDefence) - Characters[0].Health;
                 }
                 if (Characters[0].PhysicalCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{Characters[0].Name} наносит критический урон {Characters[1].Name}");
-                    Characters[1].Health -= (Characters[0].PhysicalAttack + Characters[0].PhysicalCriticalDamage) - Characters[1].PhysicalDefence;
+                    Characters[1].Health = ((Characters[0].PhysicalAttack + Characters[0].PhysicalCriticalDamage) - Characters[1].PhysicalDefence) - Characters[0].Health;
                 }
                 else
                 {
