@@ -1,12 +1,12 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
 namespace Labs215Y2K
 {
-    class Program
+    class Collection
     {
         static void Main(string[] args)
-        {
-            massiviUprajneniya.MaxMin();
+        { 
+             
 
         }
     }
