@@ -1,21 +1,26 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj": {}
+    "C:\\Users\\152008\\Documents\\labs215\\2222\\BanK Account\\BanK Account.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj": {
+    "C:\\Users\\152008\\Documents\\labs215\\2222\\BanK Account\\BanK Account.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
+        "projectUniqueName": "C:\\Users\\152008\\Documents\\labs215\\2222\\BanK Account\\BanK Account.csproj",
         "projectName": "BanK Account",
-        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\BanK Account.csproj",
-        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\whay\\BanK Account\\obj\\",
+        "projectPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\BanK Account\\BanK Account.csproj",
+        "packagesPath": "C:\\Users\\152008\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\152008\\Documents\\labs215\\2222\\BanK Account\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
         "configFilePaths": [
-          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\152008\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -26,7 +31,6 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
-            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -38,7 +42,6 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -54,7 +57,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

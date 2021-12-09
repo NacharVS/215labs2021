@@ -26,9 +26,15 @@ namespace Characters
             warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
             Info.startredactor(warrior,mag);
         }
-        public static void listing(List<Mage> mag)
+        public static void mageprelisting(List<Mage> mag)
         {
-            if (mag[0].Health < 152.5)
+            mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
+            mag[0].Manna = mag[0].Intelligence * 3;
+            mag[0].Mattack = mag[0].Intelligence * 4;
+            mag[0].Mdefence = mag[0].Intelligence * 2;
+            mag[0].MCriticalchanse = 20 + mag[0].Intelligence * 0.3;
+            mag[0].MCriticaldamage = mag[0].Mattack * (2 + mag[0].Intelligence * 0.15);
+            if (mag[0].Health < 76.25)
             {
                 mag[0].Strentgh -= mag[0].Strentgh * 0.1;
                 mag[0].Dexterity -= mag[0].Dexterity * 0.1;
@@ -40,6 +46,33 @@ namespace Characters
                 Console.WriteLine("Телосложение мага упало на 10%!");
             }
             else { }
+        }
+        public static void warriorprelisting(List<Warrior> warrior)
+        {
+            warrior[0].Health = 2 * warrior[0].Constitutions + 0.5 * warrior[0].Strentgh;
+            warrior[0].Pattack = warrior[0].Strentgh * 3 + 0.5 * warrior[0].Dexterity;
+            warrior[0].Pdefence = warrior[0].Constitutions * 0.5 + warrior[0].Dexterity * 3;
+            warrior[0].PCriticalchanse = 20 + warrior[0].Dexterity * 0.3;
+            warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
+            if (warrior[0].Health < 162.5)
+            {
+                warrior[0].Strentgh -= warrior[0].Strentgh * 0.1;
+                warrior[0].Dexterity -= warrior[0].Dexterity * 0.1;
+                warrior[0].Intelligence -= warrior[0].Intelligence * 0.1;
+                warrior[0].Constitutions -= warrior[0].Constitutions * 0.1;
+                Console.WriteLine("Сила воина упала на 10%!");
+                Console.WriteLine("Ловкость воина упала на 10%!");
+                Console.WriteLine("Интеллект воина упал на 10%!");
+                Console.WriteLine("Телосложение воина упало на 10%!");
+            }
+            else 
+            {
+                
+            }
+        }
+        public static void listing(List<Mage> mag)
+        {
+            
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna = mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;

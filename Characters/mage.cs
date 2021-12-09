@@ -26,6 +26,7 @@ namespace Characters
         public static void startmage(List<Warrior> warrior, List<Mage> mag)
         {
             Console.WriteLine();
+            Program.mageprelisting(mag);
             Program.listing(mag);
             Console.WriteLine();
             Console.WriteLine("Вы хотите поменять характеристики мага? 1 - Да; 2 - Нет");
@@ -54,19 +55,19 @@ namespace Characters
             {
                 case 1:
                     Console.Write("Вы хотите убавить значение силы или прибавить? 1 - Прибавить; 2 - Убавить: ");
-                    int strenth = int.Parse(Console.ReadLine());
+                    double strenth = double.Parse(Console.ReadLine());
                     switch (strenth)
                     {
                         case 1:
                             Console.Write("Введите значение силы которое хотите добавить: ");
-                            int stradd = int.Parse(Console.ReadLine());
+                            double stradd = double.Parse(Console.ReadLine());
                             if (stradd > (magemaxstrentgh - mag[0].Strentgh))
                             {
                                 while (stradd > (magemaxstrentgh - mag[0].Strentgh))
                                 {
 
                                     Console.Write($"Максимальное значение которое можно добавить = {magemaxstrentgh - mag[0].Strentgh}; Введите значение заново: ");
-                                    stradd = int.Parse(Console.ReadLine());
+                                    stradd = double.Parse(Console.ReadLine());
                                     if (stradd <= (magemaxstrentgh - mag[0].Strentgh))
                                     {
                                         mag[0].Strentgh += stradd;
@@ -84,7 +85,23 @@ namespace Characters
                                 mag[0].Strentgh += stradd;
                                 Console.WriteLine($"Успешно добавлено {stradd}; Сила мага = {mag[0].Strentgh}");
                             }
-                            Info.startredactor(warrior,mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer12 = int.Parse(Console.ReadLine());
+                            switch (answer12)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             break;
                         case 2:
                             if (mag[0].Strentgh == 15)
@@ -95,13 +112,13 @@ namespace Characters
                             else
                             {
                                 Console.Write("Введите значение силы которое хотите убавить: ");
-                                int strdell = int.Parse(Console.ReadLine());
+                                double strdell = double.Parse(Console.ReadLine());
                                 if (strdell > 30)
                                 {
                                     while (strdell > 30)
                                     {
                                         Console.Write($"Максимальное значение, которое можно убавить = {mag[0].Strentgh - 15}; Введите значение заново: ");
-                                        strdell = int.Parse(Console.ReadLine());
+                                        strdell = double.Parse(Console.ReadLine());
                                         if (strdell <= 30)
                                         {
                                             
@@ -127,7 +144,23 @@ namespace Characters
                                     }
                                 }
                             }
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer13 = int.Parse(Console.ReadLine());
+                            switch (answer13)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
@@ -137,20 +170,20 @@ namespace Characters
                     break;
                 case 2:
                     Console.Write("Вы хотите убавить значение ловкости или прибавить? 1 - Прибавить; 2 - Убавить: ");
-                    int dextr = int.Parse(Console.ReadLine());
+                    double dextr = double.Parse(Console.ReadLine());
                     switch (dextr)
                     {
                         case 1:
                             
                                 Console.Write("Введите значение ловкости которое хотите добавить: ");
-                                int dexadd = int.Parse(Console.ReadLine());
+                                double dexadd = double.Parse(Console.ReadLine());
                                 if (dexadd > (magemaxdexterity - mag[0].Dexterity))
                                 {
                                     while (dexadd > (magemaxdexterity - mag[0].Dexterity))
                                     {
 
                                         Console.Write($"Максимальное значение которое можно добавить = {magemaxdexterity - mag[0].Dexterity}; Введите значение заново: ");
-                                        dexadd = int.Parse(Console.ReadLine());
+                                        dexadd = double.Parse(Console.ReadLine());
                                         if (dexadd <= (magemaxdexterity - mag[0].Dexterity))
                                         {
                                             mag[0].Dexterity += dexadd;
@@ -168,8 +201,25 @@ namespace Characters
                                     mag[0].Dexterity += dexadd;
                                     Console.WriteLine($"Успешно добавлено {dexadd}; Ловкость мага = {mag[0].Dexterity}");
                                 }
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer12 = int.Parse(Console.ReadLine());
+                            switch (answer12)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             
-                            Info.startredactor(warrior, mag);
+
                             break;
                         case 2:
                             if (mag[0].Dexterity == 20)
@@ -180,13 +230,13 @@ namespace Characters
                             else
                             {
                                 Console.Write("Введите значение ловкости которое хотите убавить: ");
-                                int dexdell = int.Parse(Console.ReadLine());
+                                double dexdell = double.Parse(Console.ReadLine());
                                 if (dexdell > 50)
                                 {
                                     while (dexdell > 50)
                                     {
                                         Console.Write($"Максимальное значение, которое можно убавить = {mag[0].Dexterity - 20}; Введите значение заново: ");
-                                        dexdell = int.Parse(Console.ReadLine());
+                                        dexdell = double.Parse(Console.ReadLine());
                                         if (dexdell <= 50)
                                         {
 
@@ -212,7 +262,24 @@ namespace Characters
                                     }
                                 }
                             }
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer13 = int.Parse(Console.ReadLine());
+                            switch (answer13)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
+                            
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
@@ -227,14 +294,14 @@ namespace Characters
                     {
                         case 1:
                             Console.Write("Введите значение интеллекта которое хотите добавить: ");
-                            int intadd = int.Parse(Console.ReadLine());
+                            double intadd = double.Parse(Console.ReadLine());
                             if (intadd > (mageIntelligence - mag[0].Intelligence))
                             {
                                 while (intadd > (mageIntelligence - mag[0].Intelligence))
                                 {
-
+                                    
                                     Console.Write($"Максимальное значение которое можно добавить = {mageIntelligence - mag[0].Intelligence}; Введите значение заново: ");
-                                    intadd = int.Parse(Console.ReadLine());
+                                    intadd = double.Parse(Console.ReadLine());
                                     if (intadd <= (mageIntelligence - mag[0].Intelligence))
                                     {
                                         mag[0].Intelligence += intadd;
@@ -252,7 +319,23 @@ namespace Characters
                                 mag[0].Intelligence += intadd;
                                 Console.WriteLine($"Успешно добавлено {intadd}; Интеллект мага = {mag[0].Intelligence}");
                             }
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer12 = int.Parse(Console.ReadLine());
+                            switch (answer12)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             break;
                         case 2:
                             if (mag[0].Intelligence == 30)
@@ -263,13 +346,13 @@ namespace Characters
                             else
                             {
                                 Console.Write("Введите значение интеллекта которое хотите убавить: ");
-                                int intdell = int.Parse(Console.ReadLine());
+                                double intdell = double.Parse(Console.ReadLine());
                                 if (intdell > 220)
                                 {
                                     while (intdell > 220)
                                     {
                                         Console.Write($"Максимальное значение, которое можно убавить = {mag[0].Intelligence - 30}; Введите значение заново: ");
-                                        intdell = int.Parse(Console.ReadLine());
+                                        intdell = double.Parse(Console.ReadLine());
                                         if (intdell <= 220)
                                         {
 
@@ -295,7 +378,23 @@ namespace Characters
                                     }
                                 }
                             }
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer13 = int.Parse(Console.ReadLine());
+                            switch (answer13)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
@@ -311,14 +410,14 @@ namespace Characters
                     {
                         case 1:
                             Console.Write("Введите значение телосложения которое хотите добавить: ");
-                            int conadd = int.Parse(Console.ReadLine());
+                            double conadd = double.Parse(Console.ReadLine());
                             if (conadd > (magemaxConstitutions - mag[0].Constitutions))
                             {
                                 while (conadd > (magemaxConstitutions - mag[0].Constitutions))
                                 {
 
                                     Console.Write($"Максимальное значение которое можно добавить = {magemaxConstitutions - mag[0].Constitutions}; Введите значение заново: ");
-                                    conadd = int.Parse(Console.ReadLine());
+                                    conadd = double.Parse(Console.ReadLine());
                                     if (conadd <= (mageIntelligence - mag[0].Intelligence))
                                     {
                                         mag[0].Constitutions += conadd;
@@ -336,6 +435,7 @@ namespace Characters
                                 mag[0].Constitutions += conadd;
                                 Console.WriteLine($"Успешно добавлено {conadd}; Телосложение мага = {mag[0].Constitutions}");
                             }
+                            Program.mageprelisting(mag);
                             Info.startredactor(warrior, mag);
                             break;
                         case 2:
@@ -347,13 +447,13 @@ namespace Characters
                             else
                             {
                                 Console.Write("Введите значение телосложения которое хотите убавить: ");
-                                int condell = int.Parse(Console.ReadLine());
+                                double condell = double.Parse(Console.ReadLine());
                                 if (condell > 50)
                                 {
                                     while (condell > 50)
                                     {
                                         Console.Write($"Максимальное значение, которое можно убавить = {mag[0].Constitutions - 15}; Введите значение заново: ");
-                                        condell = int.Parse(Console.ReadLine());
+                                        condell = double.Parse(Console.ReadLine());
                                         if (condell <= 50)
                                         {
 
@@ -379,7 +479,23 @@ namespace Characters
                                     }
                                 }
                             }
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer12 = int.Parse(Console.ReadLine());
+                            switch (answer12)
+                            {
+                                case 1:
+                                    Mage.magequestion(warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(warrior, mag);
+                                    break;
+
+                            }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
