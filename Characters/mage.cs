@@ -10,7 +10,7 @@ namespace Characters
         private static int magemaxdexterity = 70;
         private static int mageIntelligence = 250;
         private static int magemaxConstitutions = 65;
-        public Mage(int strentgh, int dexterity, int intelligence, int constitutions, int health, int manna, int mattack, int mdefence, int criticalchanse, int criticaldamage)
+        public Mage(double strentgh, double dexterity, double intelligence, double constitutions, int health, int manna, int mattack, int mdefence, int criticalchanse, int criticaldamage)
         {
             Strentgh = strentgh;
             Dexterity = dexterity;

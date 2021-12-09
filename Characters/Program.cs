@@ -28,12 +28,25 @@ namespace Characters
         }
         public static void listing(List<Mage> mag)
         {
+            if (mag[0].Health < 152.5)
+            {
+                mag[0].Strentgh -= mag[0].Strentgh * 0.1;
+                mag[0].Dexterity -= mag[0].Dexterity * 0.1;
+                mag[0].Intelligence -= mag[0].Intelligence * 0.1;
+                mag[0].Constitutions -= mag[0].Constitutions * 0.1;
+                Console.WriteLine("Сила мага упала на 10%!");
+                Console.WriteLine("Ловкость мага упала на 10%!");
+                Console.WriteLine("Интеллект мага упал на 10%!");
+                Console.WriteLine("Телосложение мага упало на 10%!");
+            }
+            else { }
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna = mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
             mag[0].Mdefence = mag[0].Intelligence * 2;
             mag[0].MCriticalchanse = 20 + mag[0].Intelligence * 0.3;
             mag[0].MCriticaldamage = mag[0].Mattack * (2 + mag[0].Intelligence * 0.15);
+            Console.WriteLine();
             Console.WriteLine($"Характеристики мага:");
             Console.WriteLine($"Сила = {mag[0].Strentgh}");
             Console.WriteLine($"Ловкость = {mag[0].Dexterity}");

@@ -6,19 +6,19 @@ namespace Characters
 {
     class Characteristics
     {
-        private int _strentgh;
-        private int _dexterity;
-        private int _intelligence;
-        private int _constitutions;
+        private double _strentgh;
+        private double _dexterity;
+        private double _intelligence;
+        private double _constitutions;
 
         private double _health;
-        private int _manna;
+        private double _manna;
 
         private double _pattack;
         private double _pdefence;
 
-        private int _mattack;
-        private int _mdefence;
+        private double _mattack;
+        private double _mdefence;
 
         private double _pcriticalchanse;
         private double _pcriticaldamage;
@@ -26,7 +26,7 @@ namespace Characters
         private double _mcriticaldamage;
 
         
-        public int Strentgh
+        public double Strentgh
         {
             get
             {
@@ -37,7 +37,7 @@ namespace Characters
                 _strentgh = value;
             }
         }
-        public int Dexterity
+        public double Dexterity
         {
             get
             {
@@ -48,7 +48,7 @@ namespace Characters
                 _dexterity = value;
             }
         }
-        public int Intelligence
+        public double Intelligence
         {
             get
             {
@@ -59,7 +59,7 @@ namespace Characters
                 _intelligence = value;
             }
         }
-        public int Constitutions
+        public double Constitutions
         {
             get
             {
@@ -81,7 +81,7 @@ namespace Characters
                 _health = value;
             }
         }
-        public int Manna
+        public double Manna
         {
             get
             {
@@ -114,7 +114,7 @@ namespace Characters
                 _pdefence = value;
             }
         }
-        public int Mattack
+        public double Mattack
         {
             get
             {
@@ -125,7 +125,7 @@ namespace Characters
                 _mattack = value;
             }
         }
-        public int Mdefence
+        public double Mdefence
         {
             get
             {
