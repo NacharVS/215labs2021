@@ -6,6 +6,8 @@ namespace Labs215Y2K
 {
     class Characters
     {
+        public delegate void HealthValueChangeDelagate(int health, int Oldhealth);
+        public event HealthValueChangeDelagate HealthChangeEvent;
         private string _name;
         private int _strenght;
         private int _dexterity;
@@ -24,7 +26,7 @@ namespace Labs215Y2K
 
        
 
-        public Characters(string name, int strenght, int dexterity, int intelgence, int consitution, int health, int mana, int pattack, int pdefense, int mattack, int mdefense, int pcchanse, int pcdamage, int mcchanse, int mcdamage)
+        public  Characters(string name, int strenght, int dexterity, int intelgence, int consitution, int health, int mana, int pattack, int pdefense, int mattack, int mdefense, int pcchanse, int pcdamage, int mcchanse, int mcdamage)
         {
             _name = name;
             _strenght = strenght;
@@ -48,7 +50,21 @@ namespace Labs215Y2K
         public int Dexterity { get => _dexterity; set => _dexterity = value; }
         public int Intelgence { get => _intelgence; set => _intelgence = value; }
         public int Consitution { get => _consitution; set => _consitution = value; }
-        public int Health { get => _health; set => _health = value; }
+        public int Health
+        {
+            get => _health; 
+            set
+            {
+                int oldhealth = _health;
+                _health = value;
+                HealthChangeEvent?.Invoke(_health, oldhealth);
+
+
+
+            }
+                
+
+        }
         public int Mana { get => _mana; set => _mana = value; }
         public int Pattack { get => _pattack; set => _pattack = value; }
         public int Pdefense { get => _pdefense; set => _pdefense = value; }
