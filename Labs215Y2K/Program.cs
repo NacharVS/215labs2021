@@ -603,6 +603,7 @@ namespace Labs215Y2K
                 Characters[i].MagicCriticalDamage = Characters[i].MagicAttack * (2 + Characters[i].Intelligence * 15/1000);
             }
 
+
             //Characters[0].Health = 2 * Characters[0].Constitution + (5 / 10 * Characters[0].Strength); //_health = 2 * Constitution + (5/10 * Strength);
             //Characters[1].Health = 2 * Characters[1].Constitution + (5 / 10 * Characters[1].Strength);
             //Characters[2].Health = 2 * Characters[2].Constitution + (5 / 10 * Characters[2].Strength);
@@ -634,32 +635,33 @@ namespace Labs215Y2K
             }
             Console.WriteLine();
 
-            Characters[1].HealtheChangeEvent += NewHealth;
             Characters[0].HealtheChangeEvent += NewHealth;
+            Characters[1].HealtheChangeEvent += NewHealth;
             while (Characters[0].Health > 0 || Characters[1].Health > 0)
             {
                 if (Characters[1].MagicCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{Characters[1].Name} наносит критический урон {Characters[0].Name}");
-                    Characters[0].Health = ((Characters[1].MagicAttack + Characters[1].MagicCriticalDamage) - Characters[0].MagicDefence) - Characters[0].Health;
+                    Characters[0].Health -= Characters[1].MagicCriticalDamage;
                 }
                 else
                 {
                     Console.WriteLine($"{Characters[1].Name} наносит урон {Characters[0].Name}");
-                    Characters[0].Health = (Characters[1].MagicAttack - Characters[0].MagicDefence) - Characters[0].Health;
+                    Characters[0].Health -= Characters[1].MagicAttack;
                 }
                 if (Characters[0].PhysicalCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{Characters[0].Name} наносит критический урон {Characters[1].Name}");
-                    Characters[1].Health = ((Characters[0].PhysicalAttack + Characters[0].PhysicalCriticalDamage) - Characters[1].PhysicalDefence) - Characters[0].Health;
-                }
+                    Characters[1].Health -= Characters[0].PhysicalCriticalDamage;
+                }           
                 else
                 {
                     Console.WriteLine($"{Characters[0].Name} наносит урон {Characters[1].Name}");
-                    Characters[1].Health -= (Characters[0].PhysicalAttack - Characters[1].PhysicalDefence);
+                    Characters[1].Health -= Characters[0].PhysicalAttack ;
                 }
                 rounds++;
             }
+
             if (Characters[0].Health > Characters[1].Health) Console.WriteLine($"{Characters[0].Name} победил в поединке! Было сыграно раундов : {rounds}!");
             else if (Characters[0].Health < Characters[1].Health) Console.WriteLine($"{Characters[1].Name} победил в поединке! Было сыграно раундов : {rounds}!");
             else Console.WriteLine($"Ничья! Было сыграно раундов : {rounds}!");
@@ -669,8 +671,9 @@ namespace Labs215Y2K
         }
         static void NewHealth(int OldHealth, int NewHealth)
         {
-            Console.WriteLine($"{OldHealth} было измененно на {NewHealth} ");
+            Console.WriteLine($"{OldHealth}xp было измененно на {NewHealth}xp");
             Console.WriteLine();
         }
-    }
+
+    } //Урон равен p.attack*(p.attak/p.Defence)
 }
