@@ -57,7 +57,7 @@ namespace Characters
             archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
             archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
             archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
-            if (archer[0].Health < 167.5)
+            if (archer[0].Health < 83.75)
             {
                 archer[0].Strentgh -= archer[0].Strentgh * 0.1;
                 archer[0].Dexterity -= archer[0].Dexterity * 0.1;

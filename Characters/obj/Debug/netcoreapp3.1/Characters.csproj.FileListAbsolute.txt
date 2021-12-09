@@ -37,3 +37,17 @@ C:\Users\User\Documents\215labs2021\whay\Characters\bin\Debug\netcoreapp3.1\Char
 C:\Users\User\Documents\215labs2021\whay\Characters\bin\Debug\netcoreapp3.1\Characters.dll
 C:\Users\User\Documents\215labs2021\whay\Characters\bin\Debug\netcoreapp3.1\Characters.pdb
 C:\Users\User\Documents\215labs2021\whay\Characters\obj\Debug\netcoreapp3.1\Characters.genruntimeconfig.cache
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.exe
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.deps.json
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.json
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.runtimeconfig.dev.json
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.dll
+C:\Users\User\Documents\215labs2021\new\Characters\bin\Debug\netcoreapp3.1\Characters.pdb
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.csproj.AssemblyReference.cache
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfoInputs.cache
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.AssemblyInfo.cs
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.dll
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.pdb
+C:\Users\User\Documents\215labs2021\new\Characters\obj\Debug\netcoreapp3.1\Characters.genruntimeconfig.cache

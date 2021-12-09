@@ -30,7 +30,7 @@ namespace Characters
             Console.WriteLine();
             Program.archerlist(archer);
             Console.WriteLine();
-            Console.WriteLine("Вы хотите поменять характеристики воина? 1 - Да; 2 - Нет");
+            Console.WriteLine("Вы хотите поменять характеристики лучника? 1 - Да; 2 - Нет");
             int answer = int.Parse(Console.ReadLine());
             switch (answer)
             {
