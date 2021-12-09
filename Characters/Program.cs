@@ -8,10 +8,13 @@ namespace Characters
 
         static void Main(string[] args)
         {
+            //поменять int на дабл в warrior.cs
             List<Mage> mag = new List<Mage>();
             List<Warrior> warrior = new List<Warrior>();
+            List<Archer> archer = new List<Archer>();
             warrior.Add(new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0));
             mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0));
+            archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0));
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna =  mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
@@ -24,7 +27,7 @@ namespace Characters
             warrior[0].Pdefence = warrior[0].Constitutions * 0.5 + warrior[0].Dexterity * 3;
             warrior[0].PCriticalchanse = 20 + warrior[0].Dexterity * 0.3;
             warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
-            Info.startredactor(warrior,mag);
+            Info.startredactor(archer,warrior,mag);
         }
         public static void mageprelisting(List<Mage> mag)
         {
@@ -46,6 +49,47 @@ namespace Characters
                 Console.WriteLine("Телосложение мага упало на 10%!");
             }
             else { }
+        }
+        public static void archerprelisting(List<Archer> archer)
+        {
+            archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
+            archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
+            archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
+            archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
+            archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
+            if (archer[0].Health < 167.5)
+            {
+                archer[0].Strentgh -= archer[0].Strentgh * 0.1;
+                archer[0].Dexterity -= archer[0].Dexterity * 0.1;
+                archer[0].Intelligence -= archer[0].Intelligence * 0.1;
+                archer[0].Constitutions -= archer[0].Constitutions * 0.1;
+                Console.WriteLine("Сила лучника упала на 10%!");
+                Console.WriteLine("Ловкость лучника упала на 10%!");
+                Console.WriteLine("Интеллект лучника упал на 10%!");
+                Console.WriteLine("Телосложение лучника упало на 10%!");
+            }
+            else
+            {
+
+            }
+        }
+        public static void archerlist(List<Archer> archer)
+        {
+            archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
+            archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
+            archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
+            archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
+            archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
+            Console.WriteLine($"Характеристки лучника:");
+            Console.WriteLine($"Сила = {archer[0].Strentgh}");
+            Console.WriteLine($"Ловкость = {archer[0].Dexterity}");
+            Console.WriteLine($"Интелект = {archer[0].Intelligence}");
+            Console.WriteLine($"Телосложение = {archer[0].Constitutions}");
+            Console.WriteLine($"Здоровье = {archer[0].Health}");
+            Console.WriteLine($"Физ. атака = {archer[0].Pattack}");
+            Console.WriteLine($"Физ. защита = {archer[0].Pdefence}");
+            Console.WriteLine($"Критический шанс = {archer[0].PCriticalchanse}");
+            Console.WriteLine($"Критический урон = {archer[0].PCriticaldamage}");
         }
         public static void warriorprelisting(List<Warrior> warrior)
         {

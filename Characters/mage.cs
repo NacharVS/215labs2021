@@ -23,7 +23,7 @@ namespace Characters
             MCriticalchanse = criticalchanse;
             MCriticaldamage = criticaldamage;
         }
-        public static void startmage(List<Warrior> warrior, List<Mage> mag)
+        public static void startmage(List<Archer> archer,List<Warrior> warrior, List<Mage> mag)
         {
             Console.WriteLine();
             Program.mageprelisting(mag);
@@ -35,18 +35,18 @@ namespace Characters
             {
                 case 1:
                     Console.WriteLine();
-                    Mage.magequestion(warrior,mag);
+                    Mage.magequestion(archer,warrior,mag);
                     break;
                 case 2:
-                    Info.startredactor(warrior, mag);
+                    Info.startredactor(archer, warrior, mag);
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    Info.startredactor(warrior, mag);
+                    Info.startredactor(archer, warrior, mag);
                     break;
             }
         }
-        public static void magequestion(List<Warrior> warrior,List<Mage> mag)
+        public static void magequestion(List<Archer> archer, List<Warrior> warrior,List<Mage> mag)
         {
             Console.WriteLine("Какие характеристики мага вы хотите поменять?");
             Console.WriteLine("1 - Сила; 2 - Ловкость; 3 - Интеллект; 4 - Телосложение");
@@ -90,15 +90,15 @@ namespace Characters
                             switch (answer12)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -107,7 +107,7 @@ namespace Characters
                             if (mag[0].Strentgh == 15)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение силы!;");
-                                Info.startredactor(warrior, mag);
+                                Info.startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -149,22 +149,22 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(warrior, mag);
+                            Info.startredactor(archer, warrior, mag);
                             break;
                     }
                     break;
@@ -206,15 +206,15 @@ namespace Characters
                             switch (answer12)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -225,7 +225,7 @@ namespace Characters
                             if (mag[0].Dexterity == 20)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение ловкости!;");
-                                Info.startredactor(warrior, mag);
+                                Info.startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -267,15 +267,15 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -283,7 +283,7 @@ namespace Characters
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(warrior, mag);
+                            Info.startredactor(archer, warrior, mag);
                             break;
                     }
                     break;
@@ -324,15 +324,15 @@ namespace Characters
                             switch (answer12)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -341,7 +341,7 @@ namespace Characters
                             if (mag[0].Intelligence == 30)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение интеллекта!");
-                                Info.startredactor(warrior, mag);
+                                Info.startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -383,22 +383,22 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(warrior, mag);
+                            Info.startredactor(archer, warrior, mag);
                             break;
                         
                     }
@@ -435,14 +435,29 @@ namespace Characters
                                 mag[0].Constitutions += conadd;
                                 Console.WriteLine($"Успешно добавлено {conadd}; Телосложение мага = {mag[0].Constitutions}");
                             }
-                            Program.mageprelisting(mag);
-                            Info.startredactor(warrior, mag);
+                            Console.WriteLine("Вы хотите продолжить изменять характеристики? 1 - Да; 2 - Нет");
+                            int answer111 = int.Parse(Console.ReadLine());
+                            switch (answer111)
+                            {
+                                case 1:
+                                    Mage.magequestion(archer, warrior, mag);
+                                    break;
+                                case 2:
+                                    Program.mageprelisting(mag);
+                                    Info.startredactor(archer, warrior, mag);
+                                    break;
+                                default:
+                                    Console.WriteLine("Неверное число!");
+                                    Info.startredactor(archer, warrior, mag);
+                                    break;
+
+                            }
                             break;
                         case 2:
                             if (mag[0].Constitutions == 15)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение телосложения!");
-                                Info.startredactor(warrior, mag);
+                                Info.startredactor(archer,warrior, mag);
                             }
                             else
                             {
@@ -484,22 +499,22 @@ namespace Characters
                             switch (answer12)
                             {
                                 case 1:
-                                    Mage.magequestion(warrior, mag);
+                                    Mage.magequestion(archer, warrior, mag);
                                     break;
                                 case 2:
                                     Program.mageprelisting(mag);
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(warrior, mag);
+                                    Info.startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(warrior, mag);
+                            Info.startredactor(archer, warrior, mag);
                             break;
 
                     }
