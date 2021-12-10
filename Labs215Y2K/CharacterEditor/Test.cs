@@ -6,6 +6,5 @@ namespace Labs215Y2K.EditorCharacter
 {
     class Test
     {
-
     }
 }

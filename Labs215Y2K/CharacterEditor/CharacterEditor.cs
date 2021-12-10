@@ -43,10 +43,74 @@ namespace Labs215Y2K.EditorCharacter
         }
 
         public string Name { get => _name; set => _name = value; }
-        public int Strength { get => _strength; set => _strength = value; }
-        public int Dexterity { get => _dexterity; set => _dexterity = value; }
-        public int Intelligence { get => _intelligence; set => _intelligence = value; }
-        public int Constitution { get => _constitution; set => _constitution = value; }
+        public int Strength
+        {
+            get
+            {
+                return _strength;
+            }
+
+            set
+            {
+                //if (value > 45)
+                //{
+                //    value = 45;
+                //    _strength = 45;
+                //    Console.WriteLine($"Сила больше 45 быть не может");    ЭТО ТОЛЬКО ДЛЯ МАГА РАБОТАЕТ
+                //}
+                //if (value < 15)
+                //{
+                //    value = 15;
+                //    _strength = 15;
+                //    Console.WriteLine($"Сила меньше 15 быть не может");
+                //}
+                int OldStrength = _strength;
+                _strength = value;
+                StrengthChangeEvent?.Invoke(OldStrength, value);
+            }
+        }
+        public int Dexterity
+        {
+            get
+            {
+                return _dexterity;
+            }
+
+            set
+            {
+                int OldDexterity = _dexterity;
+                _dexterity = value;
+                DexterityChangeEvent?.Invoke(OldDexterity, value);
+            }
+        }
+        public int Intelligence
+        {
+            get
+            {
+                return _intelligence;
+            }
+
+            set
+            {
+                int OldIntelligence = _intelligence;
+                _intelligence = value;
+                IntelligenceChangeEvent?.Invoke(OldIntelligence, value);
+            }
+        }
+        public int Constitution
+        {
+            get
+            {
+                return _constitution;
+            }
+
+            set
+            {
+                int OldConstitution = _constitution;
+                _constitution = value;
+                ConstitutionChangeEvent?.Invoke(OldConstitution, value);
+            }
+        }
         public int Mana
         {
             get
@@ -88,55 +152,70 @@ namespace Labs215Y2K.EditorCharacter
                 }
             }
         }
-        public int PhysicalAttack
-        {
-            get => _physicalAttack;
+        //public int PhysicalAttack
+        //{
+        //    get => _physicalAttack;
 
-            set
-            {
-                //_physicalAttack = _physicalAttack * (_physicalAttack / _physicalDefence);
-                _physicalAttack = value;
-            }
-        }
-        public int MagicAttack
-        {
-            get => _magicAttack;
+        //    set
+        //    {
+        //        //_physicalAttack = _physicalAttack * (_physicalAttack / _physicalDefence);
+        //        _physicalAttack = value;
+        //    }
+        //}
+        //public int MagicAttack
+        //{
+        //    get => _magicAttack;
 
-            set
-            {
-                //_magicAttack = _magicAttack * (_magicAttack / _magicDefence);
-                _magicAttack = value;
-            }
-        }
-        public int MagicCriticalDamage
-        {
-            get => _magicCriticalDamage;
+        //    set
+        //    {
+        //        //_magicAttack = _magicAttack * (_magicAttack / _magicDefence);
+        //        _magicAttack = value;
+        //    }
+        //}
+        //public int MagicCriticalDamage
+        //{
+        //    get => _magicCriticalDamage;
 
-            set
-            {
-                //_magicCriticalDamage = _magicCriticalDamage * (_magicCriticalDamage / _magicDefence);
-                _magicCriticalDamage = value;
-            }
-        }//Урон равен p.attack*(p.attak/p.Defence)
-        public int PhysicalCriticalDamage
-        {
-            get => _physicalCriticalDamage;
+        //    set
+        //    {
+        //        //_magicCriticalDamage = _magicCriticalDamage * (_magicCriticalDamage / _magicDefence);
+        //        _magicCriticalDamage = value;
+        //    }
+        //}//Урон равен p.attack*(p.attak/p.Defence)
+        //public int PhysicalCriticalDamage
+        //{
+        //    get => _physicalCriticalDamage;
 
-            set
-            {
-                //_physicalCriticalDamage = _physicalCriticalDamage * (_physicalCriticalDamage / _physicalDefence);
-                _physicalCriticalDamage = value;
-            }
-        }
+        //    set
+        //    {
+        //        //_physicalCriticalDamage = _physicalCriticalDamage * (_physicalCriticalDamage / _physicalDefence);
+        //        _physicalCriticalDamage = value;
+        //    }
+        //}
         public int PhysicalCriticalChanse { get => _physicalCriticalChanse; set => _physicalCriticalChanse = value; }
         public int MagicCriticalChanse { get => _magicCriticalChanse; set => _magicCriticalChanse = value; }
-
-
+        public int PhysicalCriticalDamage { get => _physicalCriticalDamage; set => _physicalCriticalDamage = value; }
+        public int MagicCriticalDamage { get => _magicCriticalDamage; set => _magicCriticalDamage = value; }
+        public int MagicAttack { get => _magicAttack; set => _magicAttack = value; }
+        public int PhysicalAttack { get => _physicalAttack; set => _physicalAttack = value; }
 
         public delegate void HealthChangeDelegate(int OldHealth, int NewHealth);
         public event HealthChangeDelegate HealtheChangeEvent;
+
         public delegate void CriricalChanceDelegate(int CriticalChance, string NewValue);
         public event CriricalChanceDelegate CricticalChanceEvent;
+
+        public delegate void StrengthChangeDelegate(int OldStrength, int NewStrength);
+        public event StrengthChangeDelegate StrengthChangeEvent;
+
+        public delegate void DexterityChangeDelegate(int OldDexterity, int NewDexterity);
+        public event DexterityChangeDelegate DexterityChangeEvent;
+
+        public delegate void IntelligenceChangeDelegate(int OldIntelligence, int NewIntelligence);
+        public event IntelligenceChangeDelegate IntelligenceChangeEvent;
+
+        public delegate void ConstitutionChangeDelegate(int OldConstitution, int NewConstitution);
+        public event ConstitutionChangeDelegate ConstitutionChangeEvent;
     }
 
 }
