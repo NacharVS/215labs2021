@@ -81,6 +81,7 @@ namespace Labs215Y2K
             CharactersP.Add(new Characters("Warrior", 30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Mage", 15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Archer", 20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            
             CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
             CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
             CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
@@ -123,12 +124,58 @@ namespace Labs215Y2K
 
             foreach (var item in CharactersP)
             {
-                Console.WriteLine($"Имя - {item.Name}, сила - {item.Strenght}, ловкость - {item.Dexterity}, интелект - {item.Intelgence}, тело сложение - {item.Consitution}, хп - {item.Health}, мана - {item.Mana}, атака - {item.Pattack}, защита - {item.Pdefense}, маг.атака - {item.Mattack}, маг.защита - {item.Mdefense}, физ.шанс - {item.Pcchanse}, физ.крит - {item.Pcdamage}, маг.шанс - {item.Mcchanse}, маг.крит - {item.Mcdamage}");
+                Console.WriteLine($"Класс - {item.Name}, сила - {item.Strenght}, ловкость - {item.Dexterity}, интелект - {item.Intelgence}, тело сложение - {item.Consitution}, хп - {item.Health}, мана - {item.Mana}, атака - {item.Pattack}, защита - {item.Pdefense}, маг.атака - {item.Mattack}, маг.защита - {item.Mdefense}, физ.шанс - {item.Pcchanse}, физ.крит - {item.Pcdamage}, маг.шанс - {item.Mcchanse}, маг.крит - {item.Mcdamage}");
             }
 
-            //CharactersP.HealthChangeEvent() += Show();
+            Console.WriteLine();
+            Console.WriteLine("Выберите персонажа 1 - Войн 2 - Маг 3 - Лучник") ;
+            switch (int.Parse(Console.ReadLine()))
+            {
+                case 1:
+                    Console.WriteLine("Вы выбрали песонажа Воин");
+                    break;
+                case 2:
+                    Console.WriteLine("Вы выбрали песонажа Маг");
+                    break;
+                case 3:
+                    Console.WriteLine("Вы выбрали песонажа Лучник");
+                    break;
+                   
+            }
+            Console.WriteLine();
+            Console.WriteLine("1.Посмотреть характеристики персонажей 2.Вернуться к выбору персонажа 3.начать игру");
+            switch (int.Parse(Console.ReadLine()))
+            {
+                case 1:
+                    foreach (var item in CharactersP)
+                    {
+                        Console.WriteLine($"Имя - {item.Name}, сила - {item.Strenght}, ловкость - {item.Dexterity}, интелект - {item.Intelgence}, тело сложение - {item.Consitution}, хп - {item.Health}, мана - {item.Mana}, атака - {item.Pattack}, защита - {item.Pdefense}, маг.атака - {item.Mattack}, маг.защита - {item.Mdefense}, физ.шанс - {item.Pcchanse}, физ.крит - {item.Pcdamage}, маг.шанс - {item.Mcchanse}, маг.крит - {item.Mcdamage}");
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Выберите персонажа 1 - Войн 2 - Маг 3 - Лучник");
+                    switch (int.Parse(Console.ReadLine()))
+                    {
+                        case 1:
+                            Console.WriteLine("Вы выбрали песонажа Воин");
+                            break;
+                        case 2:
+                            Console.WriteLine("Вы выбрали песонажа Маг");
+                            break;
+                        case 3:
+                            Console.WriteLine("Вы выбрали песонажа Лучник");
+                            break;
 
-            
+                    }
+                    break;
+                case 3:
+              
+                    break;
+
+            }
+
+
+
 
 
 

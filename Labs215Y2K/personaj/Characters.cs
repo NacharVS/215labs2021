@@ -8,25 +8,25 @@ namespace Labs215Y2K
     {
         public delegate void HealthValueChangeDelagate(int health, int Oldhealth);
         public event HealthValueChangeDelagate HealthChangeEvent;
-        private string _name;
-        private int _strenght;
-        private int _dexterity;
-        private int _intelgence;
-        private int _consitution;
-        private int _health;
-        private int _mana;
-        private int _pattack;
-        private int _pdefense;
-        private int _mattack;
-        private int _mdefense;
-        private int _pcchanse;
-        private int _pcdamage;
-        private int _mcchanse;
-        private int _mcdamage;
+        private  string _name;
+        private  int _strenght;
+        private  int _dexterity;
+        private  int _intelgence;
+        private  int _consitution;
+        private  int _health;
+        private  int _mana;
+        private  int _pattack;
+        private  int _pdefense;
+        private  int _mattack;
+        private  int _mdefense;
+        private  int _pcchanse;
+        private  int _pcdamage;
+        private  int _mcchanse;
+        private  int _mcdamage;
 
        
 
-        public  Characters(string name, int strenght, int dexterity, int intelgence, int consitution, int health, int mana, int pattack, int pdefense, int mattack, int mdefense, int pcchanse, int pcdamage, int mcchanse, int mcdamage)
+        public Characters(string name, int strenght, int dexterity, int intelgence, int consitution, int health, int mana, int pattack, int pdefense, int mattack, int mdefense, int pcchanse, int pcdamage, int mcchanse, int mcdamage)
         {
             _name = name;
             _strenght = strenght;
