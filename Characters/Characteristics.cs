@@ -24,6 +24,8 @@ namespace Characters
         private double _pcriticaldamage;
         private double _mcriticalchanse;
         private double _mcriticaldamage;
+        private double _pdamage;
+        private double _mdamage;
 
         
         public double Strentgh
@@ -178,6 +180,28 @@ namespace Characters
             set
             {
                 _pcriticaldamage = value;
+            }
+        }
+        public double Pdamage
+        {
+            get
+            {
+                return _pdamage;
+            }
+            set
+            {
+                _pdamage = value;
+            }
+        }
+        public double Mdamage
+        {
+            get
+            {
+                return _mdamage;
+            }
+            set
+            {
+                _mdamage = value;
             }
         }
     }

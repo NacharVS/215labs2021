@@ -12,32 +12,52 @@ namespace Characters
             List<Mage> mag = new List<Mage>();
             List<Warrior> warrior = new List<Warrior>();
             List<Archer> archer = new List<Archer>();
-            warrior.Add(new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0));
-            mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0));
-            archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0));
+            warrior.Add(new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0,0));
+            mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0,0));
+            archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0,0));
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna =  mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
             mag[0].Mdefence = mag[0].Intelligence * 2;
             mag[0].MCriticalchanse = 20 + mag[0].Intelligence * 0.3;
-            mag[0].MCriticaldamage = mag[0].Mattack * (2 + mag[0].Intelligence * 0.15);
+            mag[0].Mdamage = mag[0].Mattack * (mag[0].Mattack / mag[0].Mdefence);
+            mag[0].MCriticaldamage = mag[0].Mdamage * (2 + mag[0].Intelligence * 0.15);
+            double newmaxhealth = 152.5;
 
             warrior[0].Health = 2 * warrior[0].Constitutions + 0.5 * warrior[0].Strentgh;
             warrior[0].Pattack = warrior[0].Strentgh * 3 + 0.5 * warrior[0].Dexterity;
             warrior[0].Pdefence = warrior[0].Constitutions * 0.5 + warrior[0].Dexterity * 3;
             warrior[0].PCriticalchanse = 20 + warrior[0].Dexterity * 0.3;
-            warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
-            Info.startredactor(archer,warrior,mag);
+            warrior[0].Pdamage = warrior[0].Pattack * (warrior[0].Pattack / warrior[0].Pdefence);
+            warrior[0].PCriticaldamage = warrior[0].Pdamage * (2 + warrior[0].Dexterity * 0.05);
+
+
+            archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
+            archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
+            archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
+            archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
+            archer[0].Pdamage = archer[0].Pattack * (archer[0].Pattack / archer[0].Pdefence);
+            archer[0].PCriticaldamage = archer[0].Pdamage * (2 + archer[0].Dexterity * 0.05);
+            
+            Info.startredactor(archer,warrior,mag, newmaxhealth);
         }
-        public static void mageprelisting(List<Mage> mag)
+        public static void mageprelisting(List<Mage> mag, double newmaxhealth)
         {
+            
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna = mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
             mag[0].Mdefence = mag[0].Intelligence * 2;
             mag[0].MCriticalchanse = 20 + mag[0].Intelligence * 0.3;
-            mag[0].MCriticaldamage = mag[0].Mattack * (2 + mag[0].Intelligence * 0.15);
-            if (mag[0].Health < 76.25)
+            mag[0].Mdamage = mag[0].Mattack * (mag[0].Mattack / mag[0].Mdefence);
+            mag[0].MCriticaldamage = mag[0].Mdamage * (2 + mag[0].Intelligence * 0.15);
+            if (mag[0].Manna < 600)
+            {
+                newmaxhealth -= newmaxhealth * 0.2;
+                Console.WriteLine("Макс. здоровье упало на 20%");
+            }
+            else { }
+            if (mag[0].Health < (newmaxhealth/2))
             {
                 mag[0].Strentgh -= mag[0].Strentgh * 0.1;
                 mag[0].Dexterity -= mag[0].Dexterity * 0.1;
@@ -55,7 +75,7 @@ namespace Characters
             archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
             archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
             archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
-            archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
+            archer[0].Pdamage = archer[0].Pattack * (archer[0].Pattack / archer[0].Pdefence);
             archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
             if (archer[0].Health < 83.75)
             {
@@ -78,8 +98,8 @@ namespace Characters
             archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
             archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
             archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
-            archer[0].PCriticalchanse = 20 + archer[0].Dexterity * 0.3;
-            archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
+            archer[0].Pdamage = archer[0].Pattack * (archer[0].Pattack / archer[0].Pdefence);
+            archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05); 
             Console.WriteLine($"Характеристки лучника:");
             Console.WriteLine($"Сила = {archer[0].Strentgh}");
             Console.WriteLine($"Ловкость = {archer[0].Dexterity}");
@@ -97,7 +117,8 @@ namespace Characters
             warrior[0].Pattack = warrior[0].Strentgh * 3 + 0.5 * warrior[0].Dexterity;
             warrior[0].Pdefence = warrior[0].Constitutions * 0.5 + warrior[0].Dexterity * 3;
             warrior[0].PCriticalchanse = 20 + warrior[0].Dexterity * 0.3;
-            warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
+            warrior[0].Pdamage = warrior[0].Pattack * (warrior[0].Pattack / warrior[0].Pdefence);
+            warrior[0].PCriticaldamage = warrior[0].Pdamage * (2 + warrior[0].Dexterity * 0.05);
             if (warrior[0].Health < 162.5)
             {
                 warrior[0].Strentgh -= warrior[0].Strentgh * 0.1;
@@ -116,13 +137,14 @@ namespace Characters
         }
         public static void listing(List<Mage> mag)
         {
-            
+
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna = mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
             mag[0].Mdefence = mag[0].Intelligence * 2;
             mag[0].MCriticalchanse = 20 + mag[0].Intelligence * 0.3;
-            mag[0].MCriticaldamage = mag[0].Mattack * (2 + mag[0].Intelligence * 0.15);
+            mag[0].Mdamage = mag[0].Mattack * (mag[0].Mattack / mag[0].Mdefence);
+            mag[0].MCriticaldamage = mag[0].Mdamage * (2 + mag[0].Intelligence * 0.15);
             Console.WriteLine();
             Console.WriteLine($"Характеристики мага:");
             Console.WriteLine($"Сила = {mag[0].Strentgh}");
@@ -142,7 +164,8 @@ namespace Characters
             warrior[0].Pattack = warrior[0].Strentgh * 3 + 0.5 * warrior[0].Dexterity;
             warrior[0].Pdefence = warrior[0].Constitutions * 0.5 + warrior[0].Dexterity * 3;
             warrior[0].PCriticalchanse = 20 + warrior[0].Dexterity * 0.3;
-            warrior[0].PCriticaldamage = warrior[0].Pattack * (2 + warrior[0].Dexterity * 0.05);
+            warrior[0].Pdamage = warrior[0].Pattack * (warrior[0].Pattack / warrior[0].Pdefence);
+            warrior[0].PCriticaldamage = warrior[0].Pdamage * (2 + warrior[0].Dexterity * 0.05);
             Console.WriteLine($"Характеристики воина:");
             Console.WriteLine($"Сила = {warrior[0].Strentgh}");
             Console.WriteLine($"Ловкость = {warrior[0].Dexterity}");
