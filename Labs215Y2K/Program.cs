@@ -709,7 +709,7 @@ namespace Labs215Y2K
                 switch (upgrade)
                 {
                     case "Сила":
-                        Characters[1].Strength += 3000;
+                        Characters[1].Strength += 50;
                         Console.WriteLine($"Сила {Characters[1].Name} улучшена на 50 очков");
                         break;
                     case "Ловкость":
