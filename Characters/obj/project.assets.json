@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\sofgood\\Characters\\Characters.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\habib\\Characters\\Characters.csproj",
       "projectName": "Characters",
-      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\sofgood\\Characters\\Characters.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\habib\\Characters\\Characters.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\sofgood\\Characters\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\habib\\Characters\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
