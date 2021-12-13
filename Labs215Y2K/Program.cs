@@ -12,9 +12,9 @@ namespace Labs215Y2K
         {
             OperatorOverload obj1 = new OperatorOverload("first", 20);
             OperatorOverload obj2 = new OperatorOverload("second", 10);
-
-            obj1 = obj1 + obj2;
-            Console.WriteLine(obj1.Name);
+            
+        
+            Console.WriteLine(obj1 < obj2);
         }
 
         static void Show(double a, double b)

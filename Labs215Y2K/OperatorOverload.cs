@@ -11,15 +11,18 @@
         public string Name { get; set; }
         public int Counter { get; set; }
 
-        public static OperatorOverload operator +(OperatorOverload objectOne, OperatorOverload object2)
+
+        public static int operator +(OperatorOverload objectOne, OperatorOverload object2)
         {
-            return new OperatorOverload("newObj", objectOne.Counter + object2.Counter);
+            return objectOne.Counter + object2.Counter;
         }
+
         public static bool operator > (OperatorOverload objectOne, OperatorOverload object2)
         {
             return objectOne.Counter > object2.Counter;
         }
-        public static bool operator < (OperatorOverload objectOne, OperatorOverload object2)
+
+        public static bool operator <(OperatorOverload objectOne, OperatorOverload object2)
         {
             return objectOne.Counter < object2.Counter;
         }
