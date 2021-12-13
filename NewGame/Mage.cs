@@ -6,7 +6,7 @@ namespace New_Game
 {
     class Mage:Unit
     {
-        public Mage(double strength, double dexterity, double intelligence, double constitution, string name)
+        public Mage(double strength, double dexterity, double intelligence, double constitution, string name) : base(strength, dexterity, intelligence, constitution, name)
         {
             Strength = strength;
             Dexterity = dexterity;

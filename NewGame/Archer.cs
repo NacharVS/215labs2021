@@ -6,7 +6,7 @@ namespace New_Game
 {
     class Archer:Unit
     {
-        public Archer(double strength, double dexterity, double intelligence, double constitution, string name)
+        public Archer(double strength, double dexterity, double intelligence, double constitution, string name): base(strength, dexterity, intelligence, constitution, name)
         {
             Strength = strength;
             Dexterity = dexterity;

@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "7pbe9IpdAJ+kDDDnp263om2Y0OTDFJnj5l3Rgb7Wf0+t7DC1oLo8sbUEdZ0hxeIkrbKu0qksZ6doHsIyxA0o/Q==",
+  "dgSpecHash": "IXgU/CwsBvlWbo+3hLai9CqwyUmb5pOIqVVxacMKyi9PJ6sLxEbMpTYWkS5kVCyGCPiBJQBLAwC6u6FEOJONAw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\152019\\Documents\\215\\Bank\\Bank.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\Documents\\na4arov\\Bank\\Bank.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.17\\microsoft.netcore.app.host.win-x64.3.1.17.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\3.1.10\\microsoft.aspnetcore.app.ref.3.1.10.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\3.1.0\\microsoft.windowsdesktop.app.ref.3.1.0.nupkg.sha512",
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.ref\\3.1.0\\microsoft.netcore.app.ref.3.1.0.nupkg.sha512"
+  ],
   "logs": []
 }

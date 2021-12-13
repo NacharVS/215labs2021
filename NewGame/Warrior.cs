@@ -6,13 +6,17 @@ namespace New_Game
 {
     class Warrior : Unit
     {
-        public Warrior(double strength, double dexterity, double intelligence, double constitution, string name)
+        public Warrior(double strength, double dexterity, double intelligence, double constitution, string name): base(strength, dexterity, intelligence, constitution, name)
         {
             Strength = strength;
             Dexterity = dexterity;
             Intelligence = intelligence;
             Constitution = constitution;
             Name = name;
+        }
+        public static Warrior operator +(Warrior objectOne, Warrior object2)
+        {
+            return new Warrior(objectOne.Strength + object2.Strength, objectOne.Dexterity, objectOne.Intelligence, objectOne.Constitution, objectOne.Name);
         }
 
         public override double Strength { get => base.Strength;

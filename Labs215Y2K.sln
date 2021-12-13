@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30104.148
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31612.314
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Labs215Y2K", "Labs215Y2K\Labs215Y2K.csproj", "{AD53A66D-0768-498D-AAAD-A3B9765FB35C}"
 EndProject
@@ -11,15 +11,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Units (Game)", "Units (Game
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperGame 2.0", "SuperGame 2.0\SuperGame 2.0.csproj", "{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "game 3.0", "game 3.0\game 3.0.csproj", "{97527B8E-55FD-4104-8AA0-0D2F21E120CF}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "[SS ] ScamShop", "[SS ] ScamShop\[SS ] ScamShop.csproj", "{6B6F7AAF-492E-4216-98D4-84A62759169A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank", "Bank\Bank.csproj", "{28719858-B2BB-499B-9FE2-8B431A652BE4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bank_with_lists", "Bank_with_lists\Bank_with_lists.csproj", "{5E6F018A-4BEB-4B8B-AB89-21182F003024}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewGame", "NewGame\NewGame.csproj", "{0079CA10-93F7-46A6-BD83-3982D2E4AB8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NewGame", "NewGame\NewGame.csproj", "{0079CA10-93F7-46A6-BD83-3982D2E4AB8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,10 +41,6 @@ Global
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{87C222B0-FA67-474B-BDD9-AB8FA30CEA7C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{97527B8E-55FD-4104-8AA0-0D2F21E120CF}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6B6F7AAF-492E-4216-98D4-84A62759169A}.Release|Any CPU.ActiveCfg = Release|Any CPU
