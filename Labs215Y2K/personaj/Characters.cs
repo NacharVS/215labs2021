@@ -59,8 +59,6 @@ namespace Labs215Y2K
                 _health = value;
                 HealthChangeEvent?.Invoke(_health, oldhealth);
 
-
-
             }
                 
 

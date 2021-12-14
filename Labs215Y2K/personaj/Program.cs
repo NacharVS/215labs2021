@@ -171,9 +171,9 @@ namespace Labs215Y2K
                 case 3:
               
                     break;
-
             }
-
+            int Show;
+            Characters.HealthChangeEvent += Show;
 
 
 
