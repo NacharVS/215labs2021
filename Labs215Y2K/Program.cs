@@ -14,12 +14,39 @@ namespace Labs215Y2K
         static void Main(string[] args)
         {
             //NewBank(); /*-Новый банк*/
-
+            int rounds = 0;
             ArcherCharacter ArcherCharacter = new ArcherCharacter();
             WarriorCharacter WarriorCharacter = new WarriorCharacter();
             MageCharacter MageCharacter = new MageCharacter();
 
             ArcherCharacter.Name = "Лучник"; WarriorCharacter.Name = "Воин"; MageCharacter.Name = "Маг";
+
+            WarriorCharacter.Strength = 30; WarriorCharacter.Dexterity = 15; WarriorCharacter.Intelligence = 10; WarriorCharacter.Constitution = 25;
+            MageCharacter.Strength = 15; MageCharacter.Dexterity = 20; MageCharacter.Intelligence = 30; MageCharacter.Constitution = 15;
+            ArcherCharacter.Strength = 20; ArcherCharacter.Dexterity = 30; ArcherCharacter.Intelligence = 15; ArcherCharacter.Constitution = 20;
+
+            Console.WriteLine(ArcherCharacter.PhysicalAttack);
+            Console.WriteLine(WarriorCharacter.PhysicalAttack);
+            Console.WriteLine(MageCharacter.MagicCriticalDamage);
+
+            while (WarriorCharacter.Health > 0 || MageCharacter.Health > 0)
+            {
+                ActionsCharacterEditor.WarriorVSMage(WarriorCharacter, MageCharacter);
+                rounds++;
+            }
+            if (WarriorCharacter.Health > MageCharacter.Health)
+            {
+                ActionsCharacterEditor.WinWarrior(WarriorCharacter);
+            }
+            else if (WarriorCharacter.Health < MageCharacter.Health)
+            {
+                ActionsCharacterEditor.WinMage(MageCharacter);
+            }
+            else
+            {
+                Console.WriteLine($"Ничья! Было сыграно раундов : !");
+            }
+            Console.WriteLine();
 
 
         }
