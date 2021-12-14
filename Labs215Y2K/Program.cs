@@ -2,12 +2,29 @@
 
 namespace Labs215Y2K
 {
-    class Collection
+    class warrior
     {
-        static void Main(string[] args)
-        { 
-             
+        public string characteristics;
+        int health=20;
 
-        }
+
+
+    }       
+    class archer
+    {
+        public string characteristics;
+        
+
+
+
     }
-}
+    class mage
+    {
+        public string characteristics;
+
+
+
+    }
+
+}   
+
