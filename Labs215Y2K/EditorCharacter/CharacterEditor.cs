@@ -5,7 +5,7 @@ using System.Text;
 namespace Labs215Y2K.EditorCharacter
 {
 
-    class CharacterEditor : Test
+    class CharacterEditor
     {
         private string _name;
         private int _health;
@@ -23,24 +23,24 @@ namespace Labs215Y2K.EditorCharacter
         private int _physicalCriticalChanse;
         private int _magicCriticalChanse;
 
-        public CharacterEditor(string name, int strength, int dexterity, int intelligence, int constitution, int health, int physicalAttack, int magicAttack, int mana, int physicalDefence, int magicDefence, int physicalCriticalDamage, int magicCriticalDamage, int physicalCriticalChanse, int magicCriticalChanse)
-        {
-            _name = name;
-            _health = health;
-            _strength = strength;
-            _physicalCriticalDamage = physicalCriticalDamage;
-            _magicCriticalDamage = magicCriticalDamage;
-            _magicAttack = magicAttack;
-            _dexterity = dexterity;
-            _intelligence = intelligence;
-            _constitution = constitution;
-            _mana = mana;
-            _physicalAttack = physicalAttack;
-            _physicalDefence = physicalDefence;
-            _magicDefence = magicDefence;
-            _physicalCriticalChanse = physicalCriticalChanse;
-            _magicCriticalChanse = magicCriticalChanse;
-        }
+        //public CharacterEditor(string name, int strength, int dexterity, int intelligence, int constitution, int health, int physicalAttack, int magicAttack, int mana, int physicalDefence, int magicDefence, int physicalCriticalDamage, int magicCriticalDamage, int physicalCriticalChanse, int magicCriticalChanse)
+        //{
+        //    _name = name;
+        //    _health = health;
+        //    _strength = strength;
+        //    _physicalCriticalDamage = physicalCriticalDamage;
+        //    _magicCriticalDamage = magicCriticalDamage;
+        //    _magicAttack = magicAttack;
+        //    _dexterity = dexterity;
+        //    _intelligence = intelligence;
+        //    _constitution = constitution;
+        //    _mana = mana;
+        //    _physicalAttack = physicalAttack;
+        //    _physicalDefence = physicalDefence;
+        //    _magicDefence = magicDefence;
+        //    _physicalCriticalChanse = physicalCriticalChanse;
+        //    _magicCriticalChanse = magicCriticalChanse;
+        //}
 
         public string Name { get => _name; set => _name = value; }
         public int Strength

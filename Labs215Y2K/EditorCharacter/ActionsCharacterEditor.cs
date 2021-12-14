@@ -4,7 +4,8 @@ using System.Text;
 
 namespace Labs215Y2K.EditorCharacter
 {
-    class Test
+    class ActionsCharacterEditor
     {
+      
     }
 }

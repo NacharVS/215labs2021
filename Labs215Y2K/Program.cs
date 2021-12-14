@@ -11,11 +11,17 @@ namespace Labs215Y2K
 {
     class Program
     {
-         static void Main(string[] args)
-         {
+        static void Main(string[] args)
+        {
             //NewBank(); /*-Новый банк*/
 
-            Characters();
+            ArcherCharacter ArcherCharacter = new ArcherCharacter();
+            WarriorCharacter WarriorCharacter = new WarriorCharacter();
+            MageCharacter MageCharacter = new MageCharacter();
+
+            ArcherCharacter.Name = "Лучник"; WarriorCharacter.Name = "Воин"; MageCharacter.Name = "Маг";
+
+
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
@@ -583,191 +589,192 @@ namespace Labs215Y2K
 
         public static void Characters()
         {
-            int rounds = 0;
-            List<CharacterEditor> Characters = new List<CharacterEditor>();
-            Characters.Add(new CharacterEditor("Warrior",30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0,0,0));
-            Characters.Add(new CharacterEditor("Mage",15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0,0, 0));
-            Characters.Add(new CharacterEditor("Archer",20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            /* int rounds = 0;
+             List<CharacterEditor> Characters = new List<CharacterEditor>();
+             Characters.Add(new CharacterEditor("Warrior",30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0,0,0));
+             Characters.Add(new CharacterEditor("Mage",15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0,0, 0));
+             Characters.Add(new CharacterEditor("Archer",20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
 
-            for (int i = 0; i < Characters.Count; i++)
-            {
-                Characters[i].Health = 2 * Characters[i].Constitution + (5 / 10 * Characters[i].Strength); //_health = 2 * Constitution + (5/10 * Strength);
-                Characters[i].Mana = Characters[i].Intelligence * 3; //_mana = Intelligence * 3;
-                Characters[i].PhysicalAttack = Characters[i].Strength * 3 + (5 / 10 * Characters[i].Dexterity); //P.attack = str * 3 + 0.5 * dex;
-                Characters[i].MagicAttack = Characters[i].Intelligence * 4; //M.attack = int *4;
-                Characters[i].PhysicalDefence = Characters[i].Constitution * 5 / 10 + Characters[i].Dexterity * 3;
-                Characters[i].MagicDefence = Characters[i].Intelligence * 2;
-                Characters[i].PhysicalCriticalChanse = 20 + Characters[i].Dexterity * 3 / 10;
-                Characters[i].MagicCriticalChanse = 20 + Characters[i].Intelligence * 1 / 10;
-                Characters[i].PhysicalCriticalDamage = Characters[i].PhysicalAttack * (2 + Characters[i].Dexterity * 5/100);
-                Characters[i].MagicCriticalDamage = Characters[i].MagicAttack * (2 + Characters[i].Intelligence * 15/1000);
-            }
-
-
-            //Characters[0].Health = 2 * Characters[0].Constitution + (5 / 10 * Characters[0].Strength); //_health = 2 * Constitution + (5/10 * Strength);
-            //Characters[1].Health = 2 * Characters[1].Constitution + (5 / 10 * Characters[1].Strength);
-            //Characters[2].Health = 2 * Characters[2].Constitution + (5 / 10 * Characters[2].Strength);
-
-            //Characters[0].Mana = Characters[0].Intelligence * 3; //_mana = Intelligence * 3;
-            //Characters[1].Mana = Characters[1].Intelligence * 3;
-            //Characters[2].Mana = Characters[2].Intelligence * 3;
-
-            //Characters[0].PhysicalAttack = Characters[0].Strength * 3 + (5 / 10 * Characters[0].Dexterity); //P.attack = str * 3 + 0.5 * dex;
-            //Characters[1].PhysicalAttack = Characters[1].Strength * 3 + (5 / 10 * Characters[1].Dexterity);
-            //Characters[2].PhysicalAttack = Characters[2].Strength * 3 + (5 / 10 * Characters[2].Dexterity);
-
-            //Characters[0].MagicAttack = Characters[0].Intelligence * 4; //M.attack = int *4;
-            //Characters[1].MagicAttack = Characters[1].Intelligence * 4;
-            //Characters[2].MagicAttack = Characters[2].Intelligence * 4;
-
-            //Characters[0].PhysicalDefence = Characters[0].Constitution * 5 / 10 + Characters[0].Dexterity * 3;
-            //Characters[1].PhysicalDefence = Characters[1].Constitution * 5 / 10 + Characters[1].Dexterity * 3;
-            //Characters[2].PhysicalDefence = Characters[2].Constitution * 5 / 10 + Characters[2].Dexterity * 3;
-
-            //Characters[0].MagicDefence = Characters[0].Intelligence * 2;
-            //Characters[1].MagicDefence = Characters[1].Intelligence * 2;
-            //Characters[2].MagicDefence = Characters[2].Intelligence * 2;
+             for (int i = 0; i < Characters.Count; i++)
+             {
+                 Characters[i].Health = 2 * Characters[i].Constitution + (5 / 10 * Characters[i].Strength); //_health = 2 * Constitution + (5/10 * Strength);
+                 Characters[i].Mana = Characters[i].Intelligence * 3; //_mana = Intelligence * 3;
+                 Characters[i].PhysicalAttack = Characters[i].Strength * 3 + (5 / 10 * Characters[i].Dexterity); //P.attack = str * 3 + 0.5 * dex;
+                 Characters[i].MagicAttack = Characters[i].Intelligence * 4; //M.attack = int *4;
+                 Characters[i].PhysicalDefence = Characters[i].Constitution * 5 / 10 + Characters[i].Dexterity * 3;
+                 Characters[i].MagicDefence = Characters[i].Intelligence * 2;
+                 Characters[i].PhysicalCriticalChanse = 20 + Characters[i].Dexterity * 3 / 10;
+                 Characters[i].MagicCriticalChanse = 20 + Characters[i].Intelligence * 1 / 10;
+                 Characters[i].PhysicalCriticalDamage = Characters[i].PhysicalAttack * (2 + Characters[i].Dexterity * 5/100);
+                 Characters[i].MagicCriticalDamage = Characters[i].MagicAttack * (2 + Characters[i].Intelligence * 15/1000);
+             }
 
 
-            foreach (var item in Characters)
-            {
-                Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCD - {item.MagicCriticalDamage}");
-            }
-            Console.WriteLine();
+             //Characters[0].Health = 2 * Characters[0].Constitution + (5 / 10 * Characters[0].Strength); //_health = 2 * Constitution + (5/10 * Strength);
+             //Characters[1].Health = 2 * Characters[1].Constitution + (5 / 10 * Characters[1].Strength);
+             //Characters[2].Health = 2 * Characters[2].Constitution + (5 / 10 * Characters[2].Strength);
 
-            Characters[0].HealtheChangeEvent += NewHealth;
-            Characters[1].HealtheChangeEvent += NewHealth;
-            while (Characters[0].Health > 0 || Characters[1].Health > 0)
-            {
-                if (Characters[1].MagicCriticalChanse >= new Random().Next(0, 100))
-                {
-                    Console.WriteLine($"{Characters[1].Name} наносит критический урон {Characters[0].Name}");
-                    Characters[0].Health -= Characters[1].MagicCriticalDamage;
-                }
-                else
-                {
-                    Console.WriteLine($"{Characters[1].Name} наносит урон {Characters[0].Name}");
-                    Characters[0].Health -= Characters[1].MagicAttack;
-                }
-                if (Characters[0].PhysicalCriticalChanse >= new Random().Next(0, 100))
-                {
-                    Console.WriteLine($"{Characters[0].Name} наносит критический урон {Characters[1].Name}");
-                    Characters[1].Health -= Characters[0].PhysicalCriticalDamage;
-                }           
-                else
-                {
-                    Console.WriteLine($"{Characters[0].Name} наносит урон {Characters[1].Name}");
-                    Characters[1].Health -= Characters[0].PhysicalAttack ;
-                }
-                rounds++;
-            }
+             //Characters[0].Mana = Characters[0].Intelligence * 3; //_mana = Intelligence * 3;
+             //Characters[1].Mana = Characters[1].Intelligence * 3;
+             //Characters[2].Mana = Characters[2].Intelligence * 3;
 
-            if (Characters[0].Health > Characters[1].Health)
-            {
-                Console.WriteLine($"{Characters[0].Name} победил в поединке! Было сыграно раундов : {rounds}!");
-                Console.WriteLine($"Теперь для {Characters[0].Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-                Console.WriteLine();
-                string upgrade = Console.ReadLine();
-                Characters[0].StrengthChangeEvent += Strength;
-                Characters[0].DexterityChangeEvent += Dexterity;
-                Characters[0].IntelligenceChangeEvent += Intelligence;
-                Characters[0].ConstitutionChangeEvent += Constitution;
-                switch (upgrade)
-                {
-                    case "Сила":
-                        Characters[0].Strength += 50;
-                        Console.WriteLine($"Сила {Characters[0].Name} улучшена на 50 очков");
-                        break;
-                    case "Ловкость":
-                        Characters[0].Dexterity += 50;
-                        Console.WriteLine($"Ловкость {Characters[0].Name} улучшена на 50 очков");
-                        break;
-                    case "Интеллект":
-                        Characters[0].Intelligence += 50;
-                        Console.WriteLine($"Интеллект {Characters[0].Name} улучшен на 50 очков");
-                        break;
-                    case "Телосложение":
-                        Characters[0].Constitution += 50;
-                        Console.WriteLine($"Телосложение {Characters[0].Name} улучшено на 50 очков");
-                        break;
-                    default:
-                        Console.WriteLine("Вы ничего не выбрали или указали неправильное значение");
-                        break;
-                }
+             //Characters[0].PhysicalAttack = Characters[0].Strength * 3 + (5 / 10 * Characters[0].Dexterity); //P.attack = str * 3 + 0.5 * dex;
+             //Characters[1].PhysicalAttack = Characters[1].Strength * 3 + (5 / 10 * Characters[1].Dexterity);
+             //Characters[2].PhysicalAttack = Characters[2].Strength * 3 + (5 / 10 * Characters[2].Dexterity);
 
-            }
-            else if (Characters[0].Health < Characters[1].Health)
-            {
-                Console.WriteLine($"{Characters[1].Name} победил в поединке! Было сыграно раундов : {rounds}!");
-                Console.WriteLine($"Теперь для {Characters[1].Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-                Console.WriteLine();
-                string upgrade = Console.ReadLine();
-                Characters[1].StrengthChangeEvent += Strength;
-                Characters[1].DexterityChangeEvent += Dexterity;
-                Characters[1].IntelligenceChangeEvent += Intelligence;
-                Characters[1].ConstitutionChangeEvent += Constitution;
-                switch (upgrade)
-                {
-                    case "Сила":
-                        Characters[1].Strength += 50;
-                        Console.WriteLine($"Сила {Characters[1].Name} улучшена на 50 очков");
-                        break;
-                    case "Ловкость":
-                        Characters[1].Dexterity += 50;
-                        Console.WriteLine($"Ловкость {Characters[1].Name} улучшена на 50 очков");
-                        break;
-                    case "Интеллект":
-                        Characters[1].Intelligence += 50;
-                        Console.WriteLine($"Интеллект {Characters[1].Name} улучшен на 50 очков");
-                        break;
-                    case "Телосложение":
-                        Characters[1].Constitution += 50;
-                        Console.WriteLine($"Телосложение {Characters[1].Name} улучшено на 50 очков");
-                        break;
-                    default:
-                        Console.WriteLine("Вы ничего не выбрали или указали неправильное значение");
-                        break;
-                }
-            }
-            else
-            {
-                Console.WriteLine($"Ничья! Было сыграно раундов : {rounds}!");
-            }
-            Console.WriteLine();
+             //Characters[0].MagicAttack = Characters[0].Intelligence * 4; //M.attack = int *4;
+             //Characters[1].MagicAttack = Characters[1].Intelligence * 4;
+             //Characters[2].MagicAttack = Characters[2].Intelligence * 4;
 
-            foreach (var item in Characters)
-            {
-                Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCD - {item.MagicCriticalDamage}");
-            }
-            Console.WriteLine();
+             //Characters[0].PhysicalDefence = Characters[0].Constitution * 5 / 10 + Characters[0].Dexterity * 3;
+             //Characters[1].PhysicalDefence = Characters[1].Constitution * 5 / 10 + Characters[1].Dexterity * 3;
+             //Characters[2].PhysicalDefence = Characters[2].Constitution * 5 / 10 + Characters[2].Dexterity * 3;
 
-        }
-        static void NewHealth(int OldHealth, int NewHealth)
-        {
-            Console.WriteLine($"{OldHealth}xp было измененно на {NewHealth}xp");
-            Console.WriteLine();
-        }
-        static void Strength(int OldStrength, int NewStrength)
-        {
-            Console.WriteLine($"{OldStrength} было измененно на {NewStrength}");
-            Console.WriteLine();
-        }
-        static void Dexterity(int OldDexterity, int NewDexterity)
-        {
-            Console.WriteLine($"{OldDexterity} было измененно на {NewDexterity}");
-            Console.WriteLine();
-        }
-        static void Intelligence(int OldIntelligence, int NewIntelligence)
-        {
-            Console.WriteLine($"{OldIntelligence} было измененно на {NewIntelligence}");
-            Console.WriteLine();
-        }
-        static void Constitution(int OldConstitution, int NewConstitution)
-        {
-            Console.WriteLine($"{OldConstitution} было измененно на {NewConstitution}");
-            Console.WriteLine();
-        }
+             //Characters[0].MagicDefence = Characters[0].Intelligence * 2;
+             //Characters[1].MagicDefence = Characters[1].Intelligence * 2;
+             //Characters[2].MagicDefence = Characters[2].Intelligence * 2;
 
 
-    } //Урон равен p.attack*(p.attak/p.Defence)
+             foreach (var item in Characters)
+             {
+                 Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCD - {item.MagicCriticalDamage}");
+             }
+             Console.WriteLine();
+
+             Characters[0].HealtheChangeEvent += NewHealth;
+             Characters[1].HealtheChangeEvent += NewHealth;
+             while (Characters[0].Health > 0 || Characters[1].Health > 0)
+             {
+                 if (Characters[1].MagicCriticalChanse >= new Random().Next(0, 100))
+                 {
+                     Console.WriteLine($"{Characters[1].Name} наносит критический урон {Characters[0].Name}");
+                     Characters[0].Health -= Characters[1].MagicCriticalDamage;
+                 }
+                 else
+                 {
+                     Console.WriteLine($"{Characters[1].Name} наносит урон {Characters[0].Name}");
+                     Characters[0].Health -= Characters[1].MagicAttack;
+                 }
+                 if (Characters[0].PhysicalCriticalChanse >= new Random().Next(0, 100))
+                 {
+                     Console.WriteLine($"{Characters[0].Name} наносит критический урон {Characters[1].Name}");
+                     Characters[1].Health -= Characters[0].PhysicalCriticalDamage;
+                 }           
+                 else
+                 {
+                     Console.WriteLine($"{Characters[0].Name} наносит урон {Characters[1].Name}");
+                     Characters[1].Health -= Characters[0].PhysicalAttack ;
+                 }
+                 rounds++;
+             }
+
+             if (Characters[0].Health > Characters[1].Health)
+             {
+                 Console.WriteLine($"{Characters[0].Name} победил в поединке! Было сыграно раундов : {rounds}!");
+                 Console.WriteLine($"Теперь для {Characters[0].Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
+                 Console.WriteLine();
+                 string upgrade = Console.ReadLine();
+                 Characters[0].StrengthChangeEvent += Strength;
+                 Characters[0].DexterityChangeEvent += Dexterity;
+                 Characters[0].IntelligenceChangeEvent += Intelligence;
+                 Characters[0].ConstitutionChangeEvent += Constitution;
+                 switch (upgrade)
+                 {
+                     case "Сила":
+                         Characters[0].Strength += 50;
+                         Console.WriteLine($"Сила {Characters[0].Name} улучшена на 50 очков");
+                         break;
+                     case "Ловкость":
+                         Characters[0].Dexterity += 50;
+                         Console.WriteLine($"Ловкость {Characters[0].Name} улучшена на 50 очков");
+                         break;
+                     case "Интеллект":
+                         Characters[0].Intelligence += 50;
+                         Console.WriteLine($"Интеллект {Characters[0].Name} улучшен на 50 очков");
+                         break;
+                     case "Телосложение":
+                         Characters[0].Constitution += 50;
+                         Console.WriteLine($"Телосложение {Characters[0].Name} улучшено на 50 очков");
+                         break;
+                     default:
+                         Console.WriteLine("Вы ничего не выбрали или указали неправильное значение");
+                         break;
+                 }
+
+             }
+             else if (Characters[0].Health < Characters[1].Health)
+             {
+                 Console.WriteLine($"{Characters[1].Name} победил в поединке! Было сыграно раундов : {rounds}!");
+                 Console.WriteLine($"Теперь для {Characters[1].Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
+                 Console.WriteLine();
+                 string upgrade = Console.ReadLine();
+                 Characters[1].StrengthChangeEvent += Strength;
+                 Characters[1].DexterityChangeEvent += Dexterity;
+                 Characters[1].IntelligenceChangeEvent += Intelligence;
+                 Characters[1].ConstitutionChangeEvent += Constitution;
+                 switch (upgrade)
+                 {
+                     case "Сила":
+                         Characters[1].Strength += 50;
+                         Console.WriteLine($"Сила {Characters[1].Name} улучшена на 50 очков");
+                         break;
+                     case "Ловкость":
+                         Characters[1].Dexterity += 50;
+                         Console.WriteLine($"Ловкость {Characters[1].Name} улучшена на 50 очков");
+                         break;
+                     case "Интеллект":
+                         Characters[1].Intelligence += 50;
+                         Console.WriteLine($"Интеллект {Characters[1].Name} улучшен на 50 очков");
+                         break;
+                     case "Телосложение":
+                         Characters[1].Constitution += 50;
+                         Console.WriteLine($"Телосложение {Characters[1].Name} улучшено на 50 очков");
+                         break;
+                     default:
+                         Console.WriteLine("Вы ничего не выбрали или указали неправильное значение");
+                         break;
+                 }
+             }
+             else
+             {
+                 Console.WriteLine($"Ничья! Было сыграно раундов : {rounds}!");
+             }
+             Console.WriteLine();
+
+             foreach (var item in Characters)
+             {
+                 Console.WriteLine($"Имя - {item.Name}, Здоровье - {item.Health}, Физ.Атака - {item.PhysicalAttack}, Маг.Атака - {item.MagicAttack}, Сила - {item.Strength}, Мана - {item.Mana}, Ловкость - {item.Dexterity}, Физ.Защита - {item.PhysicalDefence}, Маг.Защита - {item.MagicDefence} PШанс - {item.PhysicalCriticalChanse}  PCD - {item.PhysicalCriticalDamage} M Шанс - {item.MagicCriticalChanse}  MCD - {item.MagicCriticalDamage}");
+             }
+             Console.WriteLine();
+
+         }
+         static void NewHealth(int OldHealth, int NewHealth)
+         {
+             Console.WriteLine($"{OldHealth}xp было измененно на {NewHealth}xp");
+             Console.WriteLine();
+         }
+         static void Strength(int OldStrength, int NewStrength)
+         {
+             Console.WriteLine($"{OldStrength} было измененно на {NewStrength}");
+             Console.WriteLine();
+         }
+         static void Dexterity(int OldDexterity, int NewDexterity)
+         {
+             Console.WriteLine($"{OldDexterity} было измененно на {NewDexterity}");
+             Console.WriteLine();
+         }
+         static void Intelligence(int OldIntelligence, int NewIntelligence)
+         {
+             Console.WriteLine($"{OldIntelligence} было измененно на {NewIntelligence}");
+             Console.WriteLine();
+         }
+         static void Constitution(int OldConstitution, int NewConstitution)
+         {
+             Console.WriteLine($"{OldConstitution} было измененно на {NewConstitution}");
+             Console.WriteLine();
+         }
+         */
+
+        } //Урон равен p.attack*(p.attak/p.Defence)
+    }
 }
