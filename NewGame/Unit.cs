@@ -6,6 +6,10 @@ namespace New_Game
 {
     class Unit
     {
+        private bool _test = true;
+        public bool Test { get => _test; set => _test = value; }
+
+
         private double _strength;
         private double _dexterity;
         private double _intelligence;
@@ -45,7 +49,8 @@ namespace New_Game
         {
             get
             {
-                return _maxHealth;
+                 
+                return 0.5 * Strength + 2 * Constitution; 
             }
             set
             {
@@ -58,22 +63,84 @@ namespace New_Game
         }
         public double MaxMana
         {
-            get => _maxMana; set
+            get
             {
-                if (value >= 0)
-                    _maxMana = value;
-                else
-                    Console.WriteLine("Невозможно вписать отрицательное значение для максимальной маны");
+                _maxMana = Intelligence * 3;
+                return _maxMana;
+            }
+
+        }
+        public double P_Defense 
+        {   get  
+            {
+                return Constitution * 0.5 + Dexterity * 3;
+            }
+
+                
+            
+        }
+        public double P_Attack
+        { 
+            get
+            {
+                return Strength * 3 + Dexterity * 0.5;
+            }
+            private set
+            {
+                _p_Attack = value;
             }
         }
-        public double P_Defense { get => _p_Defense; set => _p_Defense = value; }
-        public double P_Attack { get => _p_Attack; set => _p_Attack = value; }
-        public double M_Defense { get => _m_Defense; set => _m_Defense = value; }
-        public double P_CritChance { get => _p_CrtitChanse; set => _p_CrtitChanse = value; }
-        public double P_CritDamage { get => _p_CritDamage; set => _p_CritDamage = value; }
-        public double M_Attack { get => _m_Attack; set => _m_Attack = value; }
-        public double M_CritChance { get => _m_CritChanse; set => _m_CritChanse = value; }
-        public double M_CritDamage { get => _m_CritDamage; set => _m_CritDamage = value; }
+        public double M_Defense 
+        
+        { 
+            get
+            {
+                return Intelligence * 2;
+            }
+        }
+        public double P_CritChance 
+        { 
+            get
+            {
+                return 20 + Dexterity * 0.3;
+            }
+            private set
+            {
+                _p_CrtitChanse = value;
+            }
+        }
+        public double P_CritDamage
+        { 
+            get
+            {
+                return P_Attack * (2 + Dexterity * 0.05);
+            }
+            private set
+            {
+                _p_CritDamage = value;
+            }
+        }
+        public double M_Attack 
+        {
+            get
+            {
+             return Intelligence * 4;
+            }
+        }
+        public double M_CritChance 
+        {
+            get
+            {
+                return 20 + Intelligence * 0.1;
+            }
+        }
+        public double M_CritDamage 
+        {
+            get
+            {
+                return M_Attack * (2 + Intelligence * 0.15);
+            }
+        }
         public double CurrencyHealth
         {
             get => _currencyHealth; set
@@ -83,8 +150,9 @@ namespace New_Game
                     if (value > 0)
                     {
                         _currencyHealth = value;
-                        if (value <= MaxHealth * 0.5 & value > 0)
+                        if (value <= MaxHealth * 0.5 & value > 0 && Test == true)
                         {
+                            Test = false;
                             Strength -= Strength * 0.1;
                             Dexterity -= Dexterity * 0.1;
                             Intelligence -= Intelligence * 0.1;
@@ -101,6 +169,7 @@ namespace New_Game
                     {
                         _currencyHealth = 0;
                         Console.WriteLine($"{Name} мёртв.");
+
                     }
                 }
                 else
@@ -137,6 +206,7 @@ namespace New_Game
         public event CritValueHealth testevent;
         public static void Buff(Unit unit)
         {
+            Console.WriteLine("С вероятностью 50/50 произойдёт бафф героя.");
             Random z = new Random();
             if (z.Next(0, 1) == 1)
             {
@@ -144,7 +214,14 @@ namespace New_Game
                 unit.Strength += z.Next(10, 30);
                 unit.Intelligence += z.Next(10, 30);
                 unit.Dexterity += z.Next(10, 30);
+                Console.WriteLine("Все характеристики были улучшены");
+                Console.WriteLine(unit.Constitution + " - Constitution");
+                Console.WriteLine(unit.Strength + " - Strength");
+                Console.WriteLine(unit.Intelligence + " - Intelligence");
+                Console.WriteLine(unit.Dexterity + " - Dexterity");
             }
+            else
+                Console.WriteLine("Баффа не произошло. Характеристики остаются прежними.");
         }
         public static void MAttack(Unit attunit, List<Unit> Chaptres)
         {
@@ -157,19 +234,32 @@ namespace New_Game
             int choice = int.Parse(Console.ReadLine());
             if (Chaptres[choice - 1].CurrencyMana - Chaptres[choice - 1].MaxMana * 0.2 >= 0)
             {
-                if (attunit.M_CritChance <= z.Next(0, 100))
+                if (attunit.M_CritChance >= z.Next(0, 100))
                 {
                     Chaptres[choice - 1].CurrencyHealth -= attunit.M_CritDamage * (attunit.M_CritDamage / Chaptres[choice - 1].M_Defense);
                     Console.WriteLine($"У {Chaptres[choice - 1].Name} осталось  {Chaptres[choice - 1].CurrencyHealth} hp после КРИТИЧЕСКОЙ атаки {attunit.Name} в размере {attunit.M_CritDamage * (attunit.M_CritDamage / Chaptres[choice - 1].M_Defense)} урона ");
-                    Chaptres[choice - 1].CurrencyMana -= Chaptres[choice - 1].MaxMana * 0.2;
-                    Console.WriteLine($"Было израсходовано 20% от максимальной маны, сейчас осталось: {Chaptres[choice - 1].CurrencyMana} маны ");
+                    attunit.CurrencyMana -= attunit.MaxMana * 0.2;
+                    Console.WriteLine($"Было израсходовано 20% от максимальной маны, сейчас осталось: {attunit.CurrencyMana} маны ");
+
+                    if (Chaptres[choice-1].CurrencyHealth <= 0)
+                    {
+                        Chaptres.Remove(Chaptres[choice-1]);
+                    }
+
+                    
                 }
                 else
                 {
                     Chaptres[choice - 1].CurrencyHealth -= attunit.M_Attack * (attunit.M_Attack / Chaptres[choice - 1].M_Defense);
                     Console.WriteLine($"У {Chaptres[choice - 1].Name} осталось  {Chaptres[choice - 1].CurrencyHealth} hp после атаки {attunit.Name} в размере {attunit.M_Attack * (attunit.M_Attack / Chaptres[choice - 1].M_Defense)} урона");
-                    Chaptres[choice - 1].CurrencyMana -= Chaptres[choice - 1].MaxMana * 0.2;
-                    Console.WriteLine($"Было израсходовано 20% от максимальной маны, сейчас осталось: {Chaptres[choice - 1].CurrencyMana} маны ");
+                    attunit.CurrencyMana -= attunit.MaxMana * 0.2;
+                    Console.WriteLine($"Было израсходовано 20% от максимальной маны, сейчас осталось: {attunit.CurrencyMana} маны ");
+
+                    if (Chaptres[choice - 1].CurrencyHealth <= 0)
+                    {
+                        Chaptres.Remove(Chaptres[choice - 1]);
+                    }
+
                 }
             }
         }
@@ -182,15 +272,23 @@ namespace New_Game
                 Console.WriteLine($"({i + 1}) {Chaptres[i].Name}");
             }
             int choice = int.Parse(Console.ReadLine());
-            if (attunit.P_CritChance <= z.Next(0, 100))
+            if (attunit.P_CritChance >= z.Next(0, 100))
             {
                 Chaptres[choice - 1].CurrencyHealth -= attunit.P_CritDamage * (attunit.P_CritDamage / Chaptres[choice - 1].P_Defense);
                 Console.WriteLine($"У {Chaptres[choice - 1].Name} осталось  {Chaptres[choice - 1].CurrencyHealth} hp после КРИТИЧЕСКОЙ атаки {attunit.Name} в размере {attunit.P_CritDamage * (attunit.P_CritDamage / Chaptres[choice - 1].P_Defense)} урона");
+                if (Chaptres[choice - 1].CurrencyHealth <= 0)
+                {
+                    Chaptres.Remove(Chaptres[choice - 1]);
+                }
             }
             else
             {
                 Chaptres[choice - 1].CurrencyHealth -= attunit.P_Attack * (attunit.P_Attack / Chaptres[choice - 1].P_Defense);
                 Console.WriteLine($"У {Chaptres[choice - 1].Name} осталось  {Chaptres[choice - 1].CurrencyHealth} hp после атаки {attunit.Name} в размере урона {attunit.P_Attack * (attunit.P_Attack / Chaptres[choice - 1].P_Defense)}");
+                if (Chaptres[choice - 1].CurrencyHealth <= 0)
+                {
+                    Chaptres.Remove(Chaptres[choice - 1]);
+                }
             }
 
         }
@@ -226,4 +324,5 @@ namespace New_Game
 
         }
     }
+    
 }

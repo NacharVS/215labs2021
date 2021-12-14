@@ -17,41 +17,46 @@ namespace New_Game
         public static void Work()
         {
 
-
-            Warrior war = new Warrior(30, 15, 10, 25, "воин1");
-            Warrior war2 = new Warrior(30, 15, 10, 25, "воин2");
+            Unit dualunit = new Unit(0, 0, 0, 0, "");
+            Warrior war = new Warrior(30, 15, 10, 85, "воин1");
+            Warrior war2 = new Warrior(50, 35, 30, 45, "воин2");
             war.testevent += Unit.DeBuff;
-            war = war + war2;
 
             List<Unit> Chaptres = new List<Unit>();
 
             Chaptres.Add(war);
+            Chaptres.Add(war2);
 
             //Расчёт характеристик
-            
+
             for (int i = 0; i < Chaptres.Count; i++)
             {
+                Chaptres[i].CurrencyHealth = Chaptres[i].MaxHealth;
+                Chaptres[i].CurrencyMana = Chaptres[i].MaxMana;
 
-                    Chaptres[i].M_Attack = Chaptres[i].Intelligence * 4;
-                    Chaptres[i].M_CritChance = 20 + Chaptres[i].Intelligence * 0.1;
-                    Chaptres[i].M_CritDamage = Chaptres[i].M_Attack * (2 + Chaptres[i].Intelligence * 0.15);
-                    Console.WriteLine($"Магический Урон - {Chaptres[i].M_Attack} - Шанс магического крит. Урона-  {Chaptres[i].M_CritChance} % Крит. урон магический - {Chaptres[i].M_CritDamage}");
-            
 
-                Chaptres[i].CurrencyHealth = Chaptres[i].MaxHealth = 0.5 * Chaptres[i].Strength + 2 * Chaptres[i].Constitution;
-                Chaptres[i].CurrencyMana = Chaptres[i].MaxMana = Chaptres[i].Intelligence * 3;
 
-                
-                Chaptres[i].P_Attack = Chaptres[i].Strength * 3 + Chaptres[i].Dexterity * 0.5;
-                Chaptres[i].P_Defense = Chaptres[i].Constitution * 0.5 + Chaptres[i].Dexterity * 3;
-                Chaptres[i].M_Defense = Chaptres[i].Intelligence * 2;
-                Chaptres[i].P_CritChance = 20 + Chaptres[i].Dexterity * 0.3;
-                Chaptres[i].P_CritDamage = Chaptres[i].P_Attack * (2 + Chaptres[i].Dexterity * 0.05);
+                //Chaptres[i].M_Attack = Chaptres[i].Intelligence * 4;
+                //Chaptres[i].M_CritChance = 20 + Chaptres[i].Intelligence * 0.1;
+                //Chaptres[i].M_CritDamage = Chaptres[i].M_Attack * (2 + Chaptres[i].Intelligence * 0.15);
+                Console.WriteLine($"Магический Урон - {Chaptres[i].M_Attack} - Шанс магического крит. Урона-  {Chaptres[i].M_CritChance} % Крит. урон магический - {Chaptres[i].M_CritDamage}");
+
 
                 
+                //Chaptres[i].CurrencyMana = Chaptres[i].MaxMana = Chaptres[i].Intelligence * 3;
+
+
+                //Chaptres[i].P_Attack = Chaptres[i].Strength * 3 + Chaptres[i].Dexterity * 0.5;
+                //Chaptres[i].P_Defense = Chaptres[i].Constitution * 0.5 + Chaptres[i].Dexterity * 3;
+                //Chaptres[i].M_Defense = Chaptres[i].Intelligence * 2;
+                //Chaptres[i].P_CritChance = 20 + Chaptres[i].Dexterity * 0.3;
+                //Chaptres[i].P_CritDamage = Chaptres[i].P_Attack * (2 + Chaptres[i].Dexterity * 0.05);
+
+
 
                 Console.WriteLine($"Характеристика вашего персонажа: ХП- {Chaptres[i].CurrencyHealth} Мана- {Chaptres[i].CurrencyMana} Физ.Дамаг- {Chaptres[i].P_Attack} Физ.Защита - {Chaptres[i].P_Defense} Шанс Крита {Chaptres[i].P_CritChance} % Крит Урон - {Chaptres[i].P_CritDamage}");
                 Console.WriteLine($"Маг.Защита - {Chaptres[i].M_Defense}");
+                
 
                 if (Chaptres[i] is Warrior)
                 {
@@ -65,7 +70,12 @@ namespace New_Game
                 {
                     Console.WriteLine("Охотник, проживший в лесу немало времени, открывает для себя дорогу авантюриста.");
                 }
-                Unit.DualAttack(Chaptres);
+                Unit.PAttack(war, Chaptres);
+                Chaptres[i].CurrencyHealth = Chaptres[i].MaxHealth = 120;
+                Unit.PAttack(war, Chaptres);
+                Console.WriteLine(war.P_Defense); 
+
+
 
             }
         
