@@ -24,7 +24,7 @@ namespace Labs215Y2K.EditorCharacter
                 {
                     value = 45;
                     _strength = 45;
-                    Console.WriteLine($"Сила больше 45 быть не может"); /*ЭТО ТОЛЬКО ДЛЯ МАГА РАБОТАЕТ*/
+                    Console.WriteLine($"Сила больше 45 быть не может");
                 }
                 if (value < 15)
                 {
@@ -79,6 +79,7 @@ namespace Labs215Y2K.EditorCharacter
                 ConstitutionChangeEvent?.Invoke(OldConstitution, value);
             }
         }
+
 
         public delegate void HealthChangeDelegate(int OldHealth, int NewHealth);
         public event HealthChangeDelegate HealtheChangeEvent;

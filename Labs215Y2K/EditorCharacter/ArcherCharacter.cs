@@ -80,6 +80,7 @@ namespace Labs215Y2K.EditorCharacter
             }
         }
 
+
         public delegate void HealthChangeDelegate(int OldHealth, int NewHealth);
         public event HealthChangeDelegate HealtheChangeEvent;
 

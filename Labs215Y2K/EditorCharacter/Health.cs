@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K.EditorCharacter
 {
-    class HealthCharacter
+    class Health
     {
 		public delegate void HealthValueChangedDelegate();
 
@@ -12,7 +12,7 @@ namespace Labs215Y2K.EditorCharacter
 		private double _maxHealth;
 		private bool _isWeaken;
 
-		public HealthCharacter(int maxHealth)
+		public Health(int maxHealth)
 		{
 			_currentHealth = maxHealth;
 			_maxHealth = maxHealth;
