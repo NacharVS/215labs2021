@@ -175,11 +175,11 @@ namespace Characters
         {
             get
             {
-                return _pcriticaldamage;
+                return _mcriticaldamage;
             }
             set
             {
-                _pcriticaldamage = value;
+                _mcriticaldamage = value;
             }
         }
         public double Pdamage

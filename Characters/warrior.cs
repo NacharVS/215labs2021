@@ -10,6 +10,9 @@ namespace Characters
         private static int warriormaxdexterity = 80;
         private static int warriormaxintelligence = 50;
         private static int warriormaxconstituion = 100;
+        public delegate void HealthChange();
+        public event HealthChange HealthChangeEvent;
+       
         public Warrior(double strentgh, double dexterity, double intelligence, double constitutions, double health, double pattack, double pdefence, double criticalchanse, double criticaldamage, double pdamage)
         {
             Strentgh = strentgh;
