@@ -18,6 +18,7 @@ namespace Labs215Y2K
                 array[i] = new Random().Next(1, 5);
                 Console.Write($"{array[i]} ");
             }
+            
         }
     }
 }

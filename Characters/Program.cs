@@ -5,7 +5,8 @@ namespace Characters
 {
     class Program : Characteristics
     {
-
+        public delegate void ArcherCheck(string message);
+        public static event ArcherCheck ArcCh;
         static void Main(string[] args)
         {
             //поменять int на дабл в warrior.cs
@@ -43,7 +44,7 @@ namespace Characters
         }
         public static void mageprelisting(List<Mage> mag, double newmaxhealth)
         {
-            
+
             mag[0].Health = 2 * mag[0].Constitutions + 0.5 * mag[0].Strentgh;
             mag[0].Manna = mag[0].Intelligence * 3;
             mag[0].Mattack = mag[0].Intelligence * 4;
@@ -55,6 +56,7 @@ namespace Characters
             {
                 newmaxhealth -= newmaxhealth * 0.2;
                 Console.WriteLine("Макс. здоровье упало на 20%");
+
             }
             else { }
             if (mag[0].Health < (newmaxhealth/2))
@@ -79,6 +81,7 @@ namespace Characters
             archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
             if (archer[0].Health < 83.75)
             {
+                ArcCh.Invoke("Сила лучника упала на 10%!");
                 archer[0].Strentgh -= archer[0].Strentgh * 0.1;
                 archer[0].Dexterity -= archer[0].Dexterity * 0.1;
                 archer[0].Intelligence -= archer[0].Intelligence * 0.1;
@@ -88,10 +91,7 @@ namespace Characters
                 Console.WriteLine("Интеллект лучника упал на 10%!");
                 Console.WriteLine("Телосложение лучника упало на 10%!");
             }
-            else
-            {
-
-            }
+            else { }
         }
         public static void archerlist(List<Archer> archer)
         {
@@ -130,10 +130,7 @@ namespace Characters
                 Console.WriteLine("Интеллект воина упал на 10%!");
                 Console.WriteLine("Телосложение воина упало на 10%!");
             }
-            else 
-            {
-                
-            }
+            else { }
         }
         public static void listing(List<Mage> mag)
         {
