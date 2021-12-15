@@ -13,3 +13,17 @@ C:\Users\User\Documents\na4arov\NewGame\bin\Debug\netcoreapp3.1\NewGame.pdb
 C:\Users\User\Documents\na4arov\NewGame\obj\Debug\netcoreapp3.1\NewGame.dll
 C:\Users\User\Documents\na4arov\NewGame\obj\Debug\netcoreapp3.1\NewGame.pdb
 C:\Users\User\Documents\na4arov\NewGame\obj\Debug\netcoreapp3.1\NewGame.genruntimeconfig.cache
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.exe
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.dll.config
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.deps.json
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.runtimeconfig.json
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.runtimeconfig.dev.json
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.dll
+C:\Users\152019\Documents\215\NewGame\bin\Debug\netcoreapp3.1\NewGame.pdb
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.csprojAssemblyReference.cache
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.csproj.CoreCompileInputs.cache
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.AssemblyInfoInputs.cache
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.AssemblyInfo.cs
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.dll
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.pdb
+C:\Users\152019\Documents\215\NewGame\obj\Debug\netcoreapp3.1\NewGame.genruntimeconfig.cache

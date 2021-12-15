@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\152019\\Documents\\215\\NewGame\\NewGame.csproj": {}
+    "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj": {}
   },
   "projects": {
-    "C:\\Users\\152019\\Documents\\215\\NewGame\\NewGame.csproj": {
+    "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\NewGame\\NewGame.csproj",
-        "projectName": "NewGame",
-        "projectPath": "C:\\Users\\152019\\Documents\\215\\NewGame\\NewGame.csproj",
+        "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj",
+        "projectName": "NewGame 2.0",
+        "projectPath": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj",
         "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\152019\\Documents\\215\\NewGame\\obj\\",
+        "outputPath": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
