@@ -10,6 +10,7 @@ namespace Labs215Y2K.EditorCharacter
         private string _name;
         private int _mana;
 
+
         public string Name { get => _name; set => _name = value; }
        
         public int Mana
@@ -24,8 +25,29 @@ namespace Labs215Y2K.EditorCharacter
                 _mana = value;
             }
         }
-   
 
+        //public int Health
+        //{
+        //    get => _currentHealth;
+        //    set
+        //    {
+        //        if (value > 0)
+        //        {
+        //            _currentHealth = value;
+        //        }
+        //        else
+        //        {
+        //            _currentHealth = 0;
+        //            Console.WriteLine();
+        //            Death();
+        //        }
+        //    }
+        //}
+
+        //private void Death()
+        //{
+        //    Console.WriteLine($"{_name} умер");
+        //}
     }
 
 }
