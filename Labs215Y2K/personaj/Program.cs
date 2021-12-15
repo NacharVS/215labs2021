@@ -74,17 +74,21 @@ namespace Labs215Y2K
 
             //    Console.WriteLine($"Новое id {a},и старое id {b}");
             //}
-
+            
 
 
             List<Characters> CharactersP = new List<Characters>();
             CharactersP.Add(new Characters("Warrior", 30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Mage", 15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Archer", 20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
-            
-            CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
-            CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
-            CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
+
+            //CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
+            //CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
+            //CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
+            Health per1 = new Health(CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght));
+            Health per2 = new Health(CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght));
+            Health per3 = new Health(CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght));
+
 
             CharactersP[0].Mana = CharactersP[0].Intelgence * 3;
             CharactersP[1].Mana = CharactersP[1].Intelgence * 3;
@@ -142,6 +146,7 @@ namespace Labs215Y2K
                     break;
                    
             }
+            
             Console.WriteLine();
             Console.WriteLine("1.Посмотреть характеристики персонажей 2.Вернуться к выбору персонажа 3.начать игру");
             switch (int.Parse(Console.ReadLine()))
@@ -172,8 +177,8 @@ namespace Labs215Y2K
               
                     break;
             }
-            int Show;
-            Characters.HealthChangeEvent += Show;
+            //int Show;
+            //int Characters.HealthChangeEvent += Show;
 
 
 

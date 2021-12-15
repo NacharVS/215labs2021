@@ -12,14 +12,17 @@ namespace Labs215Y2K
 		private double _maxHealth;
 		private bool _isWeaken;
 
+
 		public Health(int maxHealth)
 		{
+
 			_currentHealth = maxHealth;
 			_maxHealth = maxHealth;
 		}
 
 		public double MaxHealth
 		{
+			
 			get { return _maxHealth; }
 			private set
 			{
