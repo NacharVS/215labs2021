@@ -12,7 +12,7 @@ namespace Labs215Y2K
 
             //int[] priceproducts = new int[10] { 30, 8, 40, 250, 50, 70, 36, 13, 75, 150 };
             //int[] productschoose = new int[10];
-            Console.WriteLine(2);
+            
         }
     }
 }
