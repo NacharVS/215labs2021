@@ -14,7 +14,6 @@ namespace Labs215Y2K
         static void Main(string[] args)
         {
             //NewBank(); /*-Новый банк*/
-            int rounds = 0;
             ArcherCharacter ArcherCharacter = new ArcherCharacter();
             WarriorCharacter WarriorCharacter = new WarriorCharacter();
             MageCharacter MageCharacter = new MageCharacter();
@@ -30,11 +29,9 @@ namespace Labs215Y2K
             Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {MageCharacter.Health}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}");
             Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {ArcherCharacter.Health}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
             Console.WriteLine();
-            //while (WarriorCharacter.Health != 0 && MageCharacter.Health != 0)
-            //{
+
             ActionsCharacterEditor.WarriorVSMage(WarriorCharacter, MageCharacter);
-            rounds++;
-            //}
+
             if (WarriorCharacter.Health > MageCharacter.Health)
             {
                 ActionsCharacterEditor.WinWarrior(WarriorCharacter);

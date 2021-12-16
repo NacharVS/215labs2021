@@ -28,7 +28,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return _currentHealth = 2 * Constitution + (5 / 10 * Strength);
+                return _currentHealth = 10 * Constitution + (5 / 10 * Strength);
             }
             set
             {
@@ -121,6 +121,18 @@ namespace Labs215Y2K.EditorCharacter
 
             set
             {
+                if (value > 250)
+                {
+                    value = 250;
+                    _dexterity = 250;
+                    Console.WriteLine($"Ловкость больше 250 быть не может");
+                }
+                if (value < 30)
+                {
+                    value = 30;
+                    _dexterity = 30;
+                    Console.WriteLine($"Ловкость меньше 30 быть не может");
+                }
                 double OldDexterity = _dexterity;
                 _dexterity = value;
                 DexterityChangeEvent?.Invoke(OldDexterity, value);
@@ -135,6 +147,18 @@ namespace Labs215Y2K.EditorCharacter
 
             set
             {
+                if (value > 70)
+                {
+                    value = 70;
+                    _intelligence = 70;
+                    Console.WriteLine($"Интеллект больше 70 быть не может");
+                }
+                if (value < 15)
+                {
+                    value = 15;
+                    _intelligence = 15;
+                    Console.WriteLine($"Интеллект меньше 15 быть не может");
+                }
                 double OldIntelligence = _intelligence;
                 _intelligence = value;
                 IntelligenceChangeEvent?.Invoke(OldIntelligence, value);
@@ -149,6 +173,18 @@ namespace Labs215Y2K.EditorCharacter
 
             set
             {
+                if (value > 70)
+                {
+                    value = 70;
+                    _constitution = 70;
+                    Console.WriteLine($"Телосложение больше 70 быть не может");
+                }
+                if (value < 20)
+                {
+                    value = 20;
+                    _constitution = 20;
+                    Console.WriteLine($"Телосложение меньше 20 быть не может");
+                }
                 double OldConstitution = _constitution;
                 _constitution = value;
                 ConstitutionChangeEvent?.Invoke(OldConstitution, value);
