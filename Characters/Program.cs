@@ -5,8 +5,7 @@ namespace Characters
 {
     class Program : Characteristics
     {
-        public delegate void ArcherCheck(string message);
-        public static event ArcherCheck ArcCh;
+        
         static void Main(string[] args)
         {
             //поменять int на дабл в warrior.cs
@@ -74,6 +73,7 @@ namespace Characters
         }
         public static void archerprelisting(List<Archer> archer)
         {
+            
             archer[0].Health = 2 * archer[0].Constitutions + 0.5 * archer[0].Strentgh;
             archer[0].Pattack = archer[0].Strentgh * 3 + 0.5 * archer[0].Dexterity;
             archer[0].Pdefence = archer[0].Constitutions * 0.5 + archer[0].Dexterity * 3;
@@ -81,7 +81,6 @@ namespace Characters
             archer[0].PCriticaldamage = archer[0].Pattack * (2 + archer[0].Dexterity * 0.05);
             if (archer[0].Health < 83.75)
             {
-                ArcCh.Invoke("Сила лучника упала на 10%!");
                 archer[0].Strentgh -= archer[0].Strentgh * 0.1;
                 archer[0].Dexterity -= archer[0].Dexterity * 0.1;
                 archer[0].Intelligence -= archer[0].Intelligence * 0.1;

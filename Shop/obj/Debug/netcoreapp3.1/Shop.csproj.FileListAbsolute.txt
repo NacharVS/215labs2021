@@ -53,3 +53,14 @@ C:\Users\User\Documents\215labs2021\111\Shop\obj\Debug\netcoreapp3.1\Shop.csproj
 C:\Users\User\Documents\215labs2021\111\Shop\obj\Debug\netcoreapp3.1\Shop.dll
 C:\Users\User\Documents\215labs2021\111\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
 C:\Users\User\Documents\215labs2021\111\Shop\obj\Debug\netcoreapp3.1\Shop.genruntimeconfig.cache
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.exe
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.deps.json
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.runtimeconfig.json
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.runtimeconfig.dev.json
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.dll
+C:\Users\152008\Documents\labs215\2222\Shop\bin\Debug\netcoreapp3.1\Shop.pdb
+C:\Users\152008\Documents\labs215\2222\Shop\obj\Debug\netcoreapp3.1\Shop.csprojAssemblyReference.cache
+C:\Users\152008\Documents\labs215\2222\Shop\obj\Debug\netcoreapp3.1\Shop.AssemblyInfoInputs.cache
+C:\Users\152008\Documents\labs215\2222\Shop\obj\Debug\netcoreapp3.1\Shop.AssemblyInfo.cs
+C:\Users\152008\Documents\labs215\2222\Shop\obj\Debug\netcoreapp3.1\Shop.dll
+C:\Users\152008\Documents\labs215\2222\Shop\obj\Debug\netcoreapp3.1\Shop.pdb
