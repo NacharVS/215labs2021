@@ -6,9 +6,8 @@ namespace Shop
     {
         static void Main(string[] args)
         {
-            //ShopNew1.start();
-            string a = "AbibUy";
-            Console.WriteLine(a[0]);
+            ShopNew1.start();
+            
         }
     }
 }
