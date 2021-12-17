@@ -5,3 +5,10 @@ C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Base
 C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Base\obj\Debug\Base.csproj.CoreCompileInputs.cache
 C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Base\obj\Debug\Base.exe
 C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Base\obj\Debug\Base.pdb
+C:\Users\152019\Documents\215\Base\bin\Debug\Base.exe.config
+C:\Users\152019\Documents\215\Base\bin\Debug\Base.exe
+C:\Users\152019\Documents\215\Base\bin\Debug\Base.pdb
+C:\Users\152019\Documents\215\Base\obj\Debug\Base.csprojAssemblyReference.cache
+C:\Users\152019\Documents\215\Base\obj\Debug\Base.csproj.CoreCompileInputs.cache
+C:\Users\152019\Documents\215\Base\obj\Debug\Base.exe
+C:\Users\152019\Documents\215\Base\obj\Debug\Base.pdb

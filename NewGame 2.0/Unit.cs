@@ -21,7 +21,7 @@ namespace New_Game
         private string _name;
 
         
-        private double _maxMana;
+        
 
         private double _p_Defense;
         private double _p_Attack;
@@ -33,7 +33,7 @@ namespace New_Game
         private double _m_CritDamage;
 
         
-        private double _currencyMana;
+        
 
         public Unit(double strength, double dexterity, double intelligence, double constitution, string name)
         {
@@ -49,15 +49,7 @@ namespace New_Game
         public virtual double Intelligence { get => _intelligence; set => _intelligence = value; }
         public virtual double Constitution { get => _constitution; set => _constitution = value; }
         
-        public double MaxMana
-        {
-            get
-            {
-                _maxMana = Intelligence * 3;
-                return _maxMana;
-            }
-
-        }
+      
         public double P_Defense 
         {   get  
             {
@@ -130,29 +122,7 @@ namespace New_Game
             }
         }
         
-        public double CurrencyMana
-        {
-            get => _currencyMana; set
-            {
-                if (value <= MaxMana)
-                {
-
-                    if (value >= 0)
-                        _currencyMana = value;
-                    if (value <= MaxMana * 0.2)
-                    {
-                        MaxHealth -= MaxHealth * 0.2;
-                        _currencyMana = value;
-                    }
-                    if (value < 0)
-                    {
-                        _currencyMana = 0;
-                        Console.WriteLine("У вас не хватает маны для совершения действия.");
-                    }
-                }
-
-            }
-        }
+        
         public string Name { get => _name; set => _name = value; }
 
 

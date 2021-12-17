@@ -10,3 +10,4 @@ C:\Users\152019\Documents\215\NewGame 2.0\obj\Debug\netcoreapp3.1\NewGame 2.0.As
 C:\Users\152019\Documents\215\NewGame 2.0\obj\Debug\netcoreapp3.1\NewGame 2.0.dll
 C:\Users\152019\Documents\215\NewGame 2.0\obj\Debug\netcoreapp3.1\NewGame 2.0.pdb
 C:\Users\152019\Documents\215\NewGame 2.0\obj\Debug\netcoreapp3.1\NewGame 2.0.genruntimeconfig.cache
+C:\Users\152019\Documents\215\NewGame 2.0\obj\Debug\netcoreapp3.1\NewGame 2.0.csprojAssemblyReference.cache

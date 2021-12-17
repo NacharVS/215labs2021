@@ -9,7 +9,6 @@ namespace New_Game
         {
             Work();
             Console.ReadKey(); 
-            
         }
 
        
@@ -74,10 +73,6 @@ namespace New_Game
                 Unit.PAttack(war, Chaptres);
                 Chaptres[i].CurrencyHealth = Chaptres[i].MaxHealth = 120;
                 Unit.PAttack(war, Chaptres);
-
-
-
-
             }
         
              
