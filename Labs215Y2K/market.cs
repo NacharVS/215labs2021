@@ -8,116 +8,116 @@ namespace Labs215Y2K
     {
         static string a11 = "1 - Просмотреть список товаров";
         static string a22 = "2 - Перейти в корзину";
-        protected static void productcheck()
-        {
-            Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
-            Console.WriteLine(a11);
-            Console.WriteLine(a22);
-            int otvet = int.Parse(Console.ReadLine());
-            switch (otvet)
-            {
-                case 1:
-                    market.listproducts();
-                    break;
-                case 2:
-                    market.selectedProducts();
-                    break;
-                default:
-                    market.selectedProducts();
-                    break;
-            }
-        }
-        public static void selectedProducts()
-        {
-            if (_listOfProducts[0] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во хлеба - {_listOfProducts[0]}");
-            }
-            if (_listOfProducts[1] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во сотен грамм гречки - {_listOfProducts[1]}");
-            }
-            if (_listOfProducts[2] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во бутылок лимонада - {_listOfProducts[2]}");
-            }
-            if (_listOfProducts[3] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во сотен грамм вырезки - {_listOfProducts[3]}");
-            }
-            if (_listOfProducts[4] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во упаковок чая - {_listOfProducts[4]}");
-            }
-            if (_listOfProducts[5] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во сотен грамм сыра - {_listOfProducts[5]}");
-            }
-            if (_listOfProducts[6] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во пачек жевательной резинки - {_listOfProducts[6]}");
-            }
-            if (_listOfProducts[6] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во пачек жевательной резинки - {_listOfProducts[6]}");
-            }
-            if (_listOfProducts[7] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во сотен грамм апельсинов - {_listOfProducts[7]}");
-            }
-            if (_listOfProducts[8] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во сотен грамм ореха - {_listOfProducts[8]}");
-            }
-            if (_listOfProducts[9] == 0)
-            {
-                Console.Write("");
-            }
-            else
-            {
-                Console.WriteLine($"Кол-во упаковок сока - {_listOfProducts[9]}");
-            }
-        }
+        //protected static void productcheck()
+        //{
+        //    Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
+        //    Console.WriteLine(a11);
+        //    Console.WriteLine(a22);
+        //    int otvet = int.Parse(Console.ReadLine());
+        //    switch (otvet)
+        //    {
+        //        case 1:
+        //            market.listproducts();
+        //            break;
+        //        case 2:
+        //            market.selectedProducts();
+        //            break;
+        //        default:
+        //            market.selectedProducts();
+        //            break;
+        //    }
+        //}
+        //public static void selectedProducts()
+        //{
+        //    if (_listOfProducts[0] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во хлеба - {_listOfProducts[0]}");
+        //    }
+        //    if (_listOfProducts[1] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во сотен грамм гречки - {_listOfProducts[1]}");
+        //    }
+        //    if (_listOfProducts[2] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во бутылок лимонада - {_listOfProducts[2]}");
+        //    }
+        //    if (_listOfProducts[3] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во сотен грамм вырезки - {_listOfProducts[3]}");
+        //    }
+        //    if (_listOfProducts[4] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во упаковок чая - {_listOfProducts[4]}");
+        //    }
+        //    if (_listOfProducts[5] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во сотен грамм сыра - {_listOfProducts[5]}");
+        //    }
+        //    if (_listOfProducts[6] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во пачек жевательной резинки - {_listOfProducts[6]}");
+        //    }
+        //    if (_listOfProducts[6] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во пачек жевательной резинки - {_listOfProducts[6]}");
+        //    }
+        //    if (_listOfProducts[7] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во сотен грамм апельсинов - {_listOfProducts[7]}");
+        //    }
+        //    if (_listOfProducts[8] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во сотен грамм ореха - {_listOfProducts[8]}");
+        //    }
+        //    if (_listOfProducts[9] == 0)
+        //    {
+        //        Console.Write("");
+        //    }
+        //    else
+        //    {
+        //        Console.WriteLine($"Кол-во упаковок сока - {_listOfProducts[9]}");
+        //    }
+        //}
             public market(string Name1, long Quantity1, double Price1, double Discount1)
             {
                 Name = Name1;
