@@ -33,28 +33,32 @@ namespace Labs215Y2K
             {
                 Console.Write($"{item} ");
             }
+            string[] array = new string[words.Count];
             Console.WriteLine();
             for (int i = 0; i < words.Count;i++)
             {
-                if (words[i][0] == 'А' || words[i][0] == 'а')
+                for (int j = 0; j < array.Length;j++)
                 {
-                    Console.Write($"{words[i]} ");
-                    for (int j = 0; j < words.Count;j++)
+                    if (words[i][0] == 'А' || words[i][0] == 'а')
                     {
-                        if (words[j][0] == 'Б' || words[j][0] == 'б')
-                        {
-                            Console.Write($"{words[i]} ");
-                        }
-                        else
-                        {
-                            continue;
-                        }
+                        array[j] = words[i];
+                        continue;
+                    }
+                    else if (words[i][0] == 'Б' || words[i][0] == 'б')
+                    {
+                        array[i] = words[i];
+                        continue;
+                    }
+                    else
+                    {
+                        break;
                     }
                 }
-                else
-                {
-                    continue;
-                }
+                
+            }
+            for (int i = 0; i < array.Length;i++)
+            {
+                Console.Write($"{array[i]} ");
             }
         }
     }
