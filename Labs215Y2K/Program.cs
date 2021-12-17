@@ -39,16 +39,21 @@ namespace Labs215Y2K
                 if (words[i][0] == 'А' || words[i][0] == 'а')
                 {
                     Console.Write($"{words[i]} ");
-                    
-                }
-                if (words[i][0] == 'Б' || words[i][0] == 'б')
-                {
-                    Console.Write($"{words[i]} ");
-                    
+                    for (int j = 0; j < words.Count;j++)
+                    {
+                        if (words[j][0] == 'Б' || words[j][0] == 'б')
+                        {
+                            Console.Write($"{words[i]} ");
+                        }
+                        else
+                        {
+                            continue;
+                        }
+                    }
                 }
                 else
                 {
-                    Console.WriteLine("No-no-no fear, no lie Нет, нет, нет страха, нет лжи Listen my rhythm, hands up, I talk about a legalize Слушай мой ритм, руки вверх, я говорю о легалайзе If you scared, shut the f**k up, man, if you scared Если ты напуган, заткнись нахр*н, если испугался");
+                    continue;
                 }
             }
         }
