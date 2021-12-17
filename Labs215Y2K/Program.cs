@@ -30,7 +30,11 @@ namespace Labs215Y2K
             Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {ArcherCharacter.Health}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
             Console.WriteLine();
 
+            Console.WriteLine($"Бой между {WarriorCharacter.Name} и {MageCharacter.Name} начался");
+            Console.WriteLine();
+
             ActionsCharacterEditor.WarriorVSMage(WarriorCharacter, MageCharacter);
+
 
             if (WarriorCharacter.Health > MageCharacter.Health)
             {

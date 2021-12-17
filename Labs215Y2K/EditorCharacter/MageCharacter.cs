@@ -14,7 +14,7 @@ namespace Labs215Y2K.EditorCharacter
         private int _magicCriticalDamage;
         private int _physicalCriticalChanse;
         private int _magicCriticalChanse;
-        private int _health;
+        private double _health;
         private double _currentHealth;
 
         private double _strength;
@@ -26,12 +26,12 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return _currentHealth = 10 * Constitution + (0.5 * Strength);
+                return _health = 10 * Constitution + (0.5 * Strength);
             }
             set
             {
-                double OldHealth = _currentHealth;
-                _currentHealth = value;
+                double OldHealth = _health;
+                _health = value;
                 HealtheChangeEvent?.Invoke(OldHealth, value);
             }
         }
@@ -40,7 +40,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return Strength * 3 + (0.015 * Dexterity);
+                return Strength * 3 + (0.15 * Dexterity);
             }
 
         }
@@ -49,14 +49,14 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return Intelligence * 2;
+                return Intelligence * 4;
             }
         }
         public double PhysicalCriticalDamage
         {
             get
             {
-                return PhysicalAttack * (2 + Dexterity * 0.0015);
+                return PhysicalAttack * (2 + Dexterity * 0.05);
             }
             //get
             //{
@@ -71,7 +71,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return MagicAttack * (2 + Intelligence * 0.00015);
+                return MagicAttack * (2 + Intelligence * 0.015);
             }
         }
         public double PhysicalDefence

@@ -14,7 +14,7 @@ namespace Labs215Y2K.EditorCharacter
         private int _magicCriticalDamage;
         private double _physicalCriticalChanse;
         private double _magicCriticalChanse;
-        private int _health;
+        private double _health;
         private double _currentHealth;
 
 
@@ -28,12 +28,12 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return _currentHealth = 10 * Constitution + (5 / 10 * Strength);
+                return _health = 10 * Constitution + (5 / 10 * Strength);
             }
             set
             {
-                double OldHealth = _currentHealth;
-                _currentHealth = value;
+                double OldHealth = _health;
+                _health = value;
                 HealtheChangeEvent?.Invoke(OldHealth, value);
             }
         }

@@ -8,56 +8,40 @@ namespace Labs215Y2K.EditorCharacter
     {
         public static void WarriorVSMage(WarriorCharacter WarriorCharacter, MageCharacter MageCharacter)
         {
-            int rounds = 0;
-            Console.WriteLine("Сколько вы хотите провести раундов?");
-            int MyRounds = int.Parse(Console.ReadLine());
-            Console.WriteLine($"Бой между {WarriorCharacter.Name} и {MageCharacter.Name} начался");
+            MageCharacter.HealtheChangeEvent += NewHealth;
+            WarriorCharacter.HealtheChangeEvent += NewHealth;
+            if (MageCharacter.Health > 0)
+            {
+                if (MageCharacter.MagicCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
+                    WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
+                    WarriorCharacter.Health -= MageCharacter.MagicAttack;
+                }
+            }
+            if (WarriorCharacter.Health > 0)
+            {
+                if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {MageCharacter.Name}");
+                    MageCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит урон {MageCharacter.Name}");
+                    MageCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                }
+            }
+
+            //Console.WriteLine($"Начало нового раунда. Кол-во прошедших раундов: ");
+            //Console.WriteLine($"Здоровье Воина - {WarriorCharacter.Health}xp");
+            //Console.WriteLine($"Здоровье Мага - {MageCharacter.Health}xp");
             Console.WriteLine();
 
-            MageCharacter.HealtheChangeEvent += NewHealth;
-            WarriorCharacter.HealtheChangeEvent += NewHealth; // ЭТО НАДО ИСПРАВИТЬ
-
-            while (rounds != MyRounds)
-            {
-                if (MageCharacter.Health > 0)
-                {
-                    if (MageCharacter.MagicCriticalChanse >= new Random().Next(0, 100))
-                    {
-                        Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
-                        WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
-                        WarriorCharacter.Health -= MageCharacter.MagicAttack;
-                    }
-                }
-                if (WarriorCharacter.Health > 0)
-                {
-                    if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
-                    {
-                        Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {MageCharacter.Name}");
-                        MageCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
-                    }
-                    else
-                    {
-                        Console.WriteLine($"{WarriorCharacter.Name} наносит урон {MageCharacter.Name}");
-                        MageCharacter.Health -= WarriorCharacter.PhysicalAttack;
-                    }
-                }
-                if (MageCharacter.Health < 0)
-                {
-                    MageCharacter.Health = 0;
-                }
-                if (WarriorCharacter.Health < 0)
-                {
-                    WarriorCharacter.Health = 0;
-                }
-                Console.WriteLine($"Начало нового раунда. Кол-во прошедших раундов: {rounds + 1}");
-                Console.WriteLine();
-
-                rounds++;
-            }
         }
 
         public static void WinWarrior(WarriorCharacter WarriorCharacter)
