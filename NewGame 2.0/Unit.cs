@@ -4,7 +4,7 @@ using System.Text;
 
 namespace New_Game
 {
-    class Unit:Health
+    class Unit:Health_Mana
     {
         private bool _test = true;
         public bool Test { get => _test; set => _test = value; }

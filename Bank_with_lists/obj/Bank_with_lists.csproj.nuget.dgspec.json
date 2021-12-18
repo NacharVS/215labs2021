@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\152019\\Documents\\215\\Bank_with_lists\\Bank_with_lists.csproj": {}
+    "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj": {}
   },
   "projects": {
-    "C:\\Users\\152019\\Documents\\215\\Bank_with_lists\\Bank_with_lists.csproj": {
+    "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\Bank_with_lists\\Bank_with_lists.csproj",
+        "projectUniqueName": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj",
         "projectName": "Bank_with_lists",
-        "projectPath": "C:\\Users\\152019\\Documents\\215\\Bank_with_lists\\Bank_with_lists.csproj",
-        "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\152019\\Documents\\215\\Bank_with_lists\\obj\\",
+        "projectPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj",
+        "packagesPath": "C:\\Users\\152015\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"
         ],
         "configFilePaths": [
-          "C:\\Users\\152019\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\152015\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],

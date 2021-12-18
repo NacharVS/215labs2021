@@ -8,23 +8,23 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\152019\\.nuget\\packages\\": {},
+    "C:\\Users\\152015\\.nuget\\packages\\": {},
     "C:\\Microsoft\\Xamarin\\NuGet\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj",
+      "projectUniqueName": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\NewGame 2.0\\NewGame 2.0.csproj",
       "projectName": "NewGame 2.0",
-      "projectPath": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\NewGame 2.0.csproj",
-      "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\152019\\Documents\\215\\NewGame 2.0\\obj\\",
+      "projectPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\NewGame 2.0\\NewGame 2.0.csproj",
+      "packagesPath": "C:\\Users\\152015\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\NewGame 2.0\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
       ],
       "configFilePaths": [
-        "C:\\Users\\152019\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\152015\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

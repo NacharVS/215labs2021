@@ -29,7 +29,7 @@ namespace Base
                     Console.ForegroundColor = ConsoleColor.Red;
                     red++;
                 }
-                Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "АХАХАХАХ КАК СМЕШНО ПРОСТО КАПЕЦ" + "\t");
+                Console.WriteLine("\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "\t" + "АХАХАХАХ КАК СМЕШНО ПРОСТО КАПЕЦ" + "\t");
                 if (test == 0)
                 {
 
