@@ -8,12 +8,12 @@ namespace Labs215Y2K.EditorCharacter
     class CharacterEditor
     {
         private string _name;
-        private int _mana;
+        private double _mana;
 
 
         public string Name { get => _name; set => _name = value; }
        
-        public int Mana
+        public double Mana
         {
             get
             {
@@ -22,7 +22,13 @@ namespace Labs215Y2K.EditorCharacter
 
             set
             {
+                if (_mana == 0)
+                {
+                    Console.WriteLine($"Мана {Name} закончилась");
+                }
+                double OldMana = _mana;
                 _mana = value;
+                ManaChangeEvent?.Invoke(OldMana, value);
             }
         }
 
@@ -48,6 +54,9 @@ namespace Labs215Y2K.EditorCharacter
         //{
         //    Console.WriteLine($"{_name} умер");
         //}
+
+        public delegate void ManaChangeDelegate(double OldMana, double NewMana);
+        public event ManaChangeDelegate ManaChangeEvent;
     }
 
 }

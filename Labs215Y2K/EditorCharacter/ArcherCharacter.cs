@@ -32,6 +32,19 @@ namespace Labs215Y2K.EditorCharacter
             }
             set
             {
+                //if (_health < 0.5 * _health)
+                //{
+                //    Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
+                //    Strength -= Strength * 0.1;
+                //    Dexterity -= Dexterity * 0.1;
+                //    Intelligence -= Intelligence * 0.1;
+                //    Constitution -= Constitution * 0.1;
+                //    Console.WriteLine();
+                //}
+                //else if (_health == 0)
+                //{
+                //    Console.WriteLine($"Здоровье {Name} 0%");
+                //}
                 double OldHealth = _health;
                 _health = value;
                 HealtheChangeEvent?.Invoke(OldHealth, value);
@@ -74,8 +87,6 @@ namespace Labs215Y2K.EditorCharacter
             {
                 return Constitution * 5 / 10 + Dexterity * 3;
             }
-
-            //set => _physicalDefence = value;
         }
         public double MagicDefence
         {

@@ -30,6 +30,19 @@ namespace Labs215Y2K.EditorCharacter
             }
             set
             {
+                //if (Health < 0.5 * Health)
+                //{
+                //    Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
+                //    Strength -= Strength * 0.1;
+                //    Dexterity -= Dexterity * 0.1;
+                //    Intelligence -= Intelligence * 0.1;
+                //    Constitution -= Constitution * 0.1;
+                //    Console.WriteLine();
+                //}
+                //else if (Health == 0)
+                //{
+                //    Console.WriteLine($"Здоровье {Name} 0%");
+                //}
                 double OldHealth = _health;
                 _health = value;
                 HealtheChangeEvent?.Invoke(OldHealth, value);

@@ -10,6 +10,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             MageCharacter.HealtheChangeEvent += NewHealth;
             WarriorCharacter.HealtheChangeEvent += NewHealth;
+            //MageCharacter.ManaChangeEvent += NewMana;
             //Console.WriteLine("Сколько вы хотите провести раундов?");
             //int rounds = int.Parse(Console.ReadLine());
             //Console.WriteLine("Бой между Магом и Воином начался");
@@ -20,12 +21,14 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                    MageCharacter.Mana -= 20;
                 }
                 else
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
-                    WarriorCharacter.Health -= MageCharacter.MagicAttack;
+                    WarriorCharacter.Health -= MageCharacter.MagicAttack; 
+                    MageCharacter.Mana -= 10;
                 }
             }
             if (WarriorCharacter.Health > 0)
@@ -51,8 +54,8 @@ namespace Labs215Y2K.EditorCharacter
             {
                 WarriorCharacter.Health = 0;
             }
-            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health, 2)}xp");
-            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 2)}xp");
+            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health, 0)}xp, Мана Мага - {MageCharacter.Mana}");
+            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 0)}xp");
             Console.WriteLine();
             //Console.WriteLine($"Начало нового раунда. Кол-во прошедших раундов: ");
             //Console.WriteLine($"Здоровье Воина - {WarriorCharacter.Health}xp");
@@ -65,6 +68,7 @@ namespace Labs215Y2K.EditorCharacter
             MageCharacter.HealtheChangeEvent += NewHealth;
             WarriorCharacter.HealtheChangeEvent += NewHealth;
             ArcherCharacter.HealtheChangeEvent += NewHealth;
+            //MageCharacter.ManaChangeEvent += NewMana;
 
             int RandomFightOne = new Random().Next(1, 4);
             int RandomFightThree = new Random().Next(1, 5);
@@ -106,12 +110,14 @@ namespace Labs215Y2K.EditorCharacter
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
+                    MageCharacter.Mana -= 20;
                     ArcherCharacter.Health -= MageCharacter.MagicCriticalDamage;
                 }
                 else
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
+                    MageCharacter.Mana -= 10;
                     ArcherCharacter.Health -= MageCharacter.MagicAttack;
                 }
             }
@@ -122,12 +128,14 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                    MageCharacter.Mana -= 20;
                 }
                 else
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
                     WarriorCharacter.Health -= MageCharacter.MagicAttack;
+                    MageCharacter.Mana -= 10;
                 }
             }
             if (RandomFightThree == 1)
@@ -174,20 +182,38 @@ namespace Labs215Y2K.EditorCharacter
                 WarriorCharacter.Health = 0;
             }
 
-            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health,2)}xp");
-            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 2)}xp");
-            Console.WriteLine($"Здоровье Лучника - {Math.Round(ArcherCharacter.Health,2)}xp");
+            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health,0)}xp, Мана Мага - {MageCharacter.Mana}");
+            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 0)}xp");
+            Console.WriteLine($"Здоровье Лучника - {Math.Round(ArcherCharacter.Health,0)}xp");
             Console.WriteLine();
+        }
+        public static void Test(WarriorCharacter WarriorCharacter, ArcherCharacter ArcherCharacter, MageCharacter MageCharacter)
+        {
+            MageCharacter.HealtheChangeEvent += NewHealth;
+            WarriorCharacter.HealtheChangeEvent += NewHealth;
+            ArcherCharacter.HealtheChangeEvent += NewHealth;
+
+            MageCharacter.ManaChangeEvent += NewMana;
+
+            int RandomFightOne = new Random().Next(1, 4);
+            int RandomFightThree = new Random().Next(1, 5);
+            int RandomHFightTwo = new Random().Next(1, 4);
+
+
+
         }
 
         public static void WinWarrior(WarriorCharacter WarriorCharacter)
         {
             Console.WriteLine($"{WarriorCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {WarriorCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
+            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков");
+            Console.WriteLine();
+            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4"; string Five = "5";
             string Ловкость = "Ловкость";
             string Интеллект = "Интеллект";
             string Телосложение = "Телосложение";
+            string Всё = "Всё";
             string upgrade = Console.ReadLine();
             WarriorCharacter.StrengthChangeEvent += Strength;
             WarriorCharacter.DexterityChangeEvent += Dexterity;
@@ -209,6 +235,13 @@ namespace Labs215Y2K.EditorCharacter
             if (upgrade == Телосложение || upgrade == Four)
             {
                 WarriorCharacter.Constitution += 50;
+            }
+            if (upgrade == Всё || upgrade == Five)
+            {
+                WarriorCharacter.Strength += 12;
+                WarriorCharacter.Dexterity += 12;
+                WarriorCharacter.Intelligence += 12;
+                WarriorCharacter.Constitution += 12;
             }
 
             //switch (upgrade)
@@ -240,10 +273,13 @@ namespace Labs215Y2K.EditorCharacter
         {
             Console.WriteLine($"{MageCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {MageCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
+            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков");
+            Console.WriteLine();
+            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4"; string Five = "5";
             string Ловкость = "Ловкость";
             string Интеллект = "Интеллект";
             string Телосложение = "Телосложение";
+            string Всё = "Всё";
             string upgrade = Console.ReadLine();
             MageCharacter.StrengthChangeEvent += Strength;
             MageCharacter.DexterityChangeEvent += Dexterity;
@@ -265,6 +301,13 @@ namespace Labs215Y2K.EditorCharacter
             if (upgrade == Телосложение || upgrade == Four)
             {
                 MageCharacter.Constitution += 50;
+            }
+            if (upgrade == Всё || upgrade == Five)
+            {
+                MageCharacter.Strength += 12;
+                MageCharacter.Dexterity += 12;
+                MageCharacter.Intelligence += 12;
+                MageCharacter.Constitution += 12;
             }
             //else
             //{
@@ -299,10 +342,13 @@ namespace Labs215Y2K.EditorCharacter
         {
             Console.WriteLine($"{ArcherCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {ArcherCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
+            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков (5.Всё)");
+            Console.WriteLine();
+            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4"; string Five = "5";
             string Ловкость = "Ловкость";
             string Интеллект = "Интеллект";
             string Телосложение = "Телосложение";
+            string Всё = "Всё";
             string upgrade = Console.ReadLine();
             ArcherCharacter.StrengthChangeEvent += Strength;
             ArcherCharacter.DexterityChangeEvent += Dexterity;
@@ -325,6 +371,13 @@ namespace Labs215Y2K.EditorCharacter
             {
                 ArcherCharacter.Constitution += 50;
             }
+            if (upgrade == Всё || upgrade == Five)
+            {
+                ArcherCharacter.Strength += 12;
+                ArcherCharacter.Dexterity += 12;
+                ArcherCharacter.Intelligence += 12;
+                ArcherCharacter.Constitution += 12;
+            }
             //else
             //{
             //    Console.WriteLine("Вы указали неправильное значение");
@@ -337,27 +390,37 @@ namespace Labs215Y2K.EditorCharacter
             {
                 NewHealth = 0;
             }
-            Console.WriteLine($"{Math.Round(OldHealth, 2)}xp было измененно на {Math.Round(NewHealth,2)}xp");
+            Console.WriteLine($"Старое значение здоровья: {Math.Round(OldHealth, 0)}xp было измененно на новое значение: {Math.Round(NewHealth,0)}xp");
+            Console.WriteLine();
+        }
+
+        static void NewMana (double OldMana, double NewMana)
+        {
+            if (NewMana < 0)
+            {
+                NewMana = 0;
+            }
+            Console.WriteLine($"Старое значение маны: {Math.Round(OldMana, 0)} было измененно на новое значение: {Math.Round(NewMana, 0)}");
             Console.WriteLine();
         }
         static void Strength(double OldStrength, double NewStrength)
         {
-            Console.WriteLine($"Старое значение силы: {OldStrength} было измененно на новое значение: {NewStrength}");
+            Console.WriteLine($"Старое значение силы: {Math.Round(OldStrength, 0)} было измененно на новое значение: {Math.Round(NewStrength, 0)}");
             Console.WriteLine();
         }
         static void Dexterity(double OldDexterity, double NewDexterity)
         {
-            Console.WriteLine($"Старое значение ловкости: {OldDexterity} было измененно на новое значение: {NewDexterity}");
+            Console.WriteLine($"Старое значение ловкости: {Math.Round(OldDexterity, 0)} было измененно на новое значение: {Math.Round(NewDexterity, 0)}");
             Console.WriteLine();
         }
         static void Intelligence(double OldIntelligence, double NewIntelligence)
         {
-            Console.WriteLine($"Старое значение интеллекта: {OldIntelligence} было измененно на новое значение: {NewIntelligence}");
+            Console.WriteLine($"Старое значение интеллекта: {Math.Round(OldIntelligence, 0)} было измененно на новое значение: {Math.Round(NewIntelligence, 0)}");
             Console.WriteLine();
         }
         static void Constitution(double OldConstitution, double NewConstitution)
         {
-            Console.WriteLine($"Старое значение телосложения: {OldConstitution} было измененно на новое значение: {NewConstitution}");
+            Console.WriteLine($"Старое значение телосложения: {Math.Round(OldConstitution, 0)} было измененно на новое значение: {Math.Round(NewConstitution, 0)}");
             Console.WriteLine();
         }
     }

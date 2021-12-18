@@ -20,15 +20,15 @@ namespace Labs215Y2K
 
             ArcherCharacter.Name = "Лучник"; WarriorCharacter.Name = "Воин"; MageCharacter.Name = "Маг";
 
-            WarriorCharacter.Strength = 30; WarriorCharacter.Dexterity = 15; WarriorCharacter.Intelligence = 10; WarriorCharacter.Constitution = 25; WarriorCharacter.Health = 10 * WarriorCharacter.Constitution + (0.5 * WarriorCharacter.Strength);
-            MageCharacter.Strength = 15; MageCharacter.Dexterity = 20; MageCharacter.Intelligence = 30; MageCharacter.Constitution = 15; MageCharacter.Health = 10 * MageCharacter.Constitution + (0.5 * MageCharacter.Strength);
-            ArcherCharacter.Strength = 20; ArcherCharacter.Dexterity = 30; ArcherCharacter.Intelligence = 15; ArcherCharacter.Constitution = 20; ArcherCharacter.Health = 10 * ArcherCharacter.Constitution + (0.5 * ArcherCharacter.Strength);
+            WarriorCharacter.Strength = 30; WarriorCharacter.Dexterity = 15; WarriorCharacter.Intelligence = 10; WarriorCharacter.Constitution = 25; WarriorCharacter.Health = 7 * WarriorCharacter.Constitution + (0.5 * WarriorCharacter.Strength);
+            MageCharacter.Strength = 15; MageCharacter.Dexterity = 20; MageCharacter.Intelligence = 30; MageCharacter.Constitution = 15; MageCharacter.Health = 10 * MageCharacter.Constitution + (0.5 * MageCharacter.Strength); MageCharacter.Mana = MageCharacter.Intelligence * 3;
+            ArcherCharacter.Strength = 20; ArcherCharacter.Dexterity = 30; ArcherCharacter.Intelligence = 15; ArcherCharacter.Constitution = 20; ArcherCharacter.Health = 7 * ArcherCharacter.Constitution + (0.5 * ArcherCharacter.Strength);
 
 
             Console.WriteLine("Характеристики персонажей: ");
-            Console.WriteLine($"Имя - {WarriorCharacter.Name}, Здоровье - {Math.Round(WarriorCharacter.Health,2)}, Физ.Атака - {WarriorCharacter.PhysicalAttack}, Крит.Физ.Атака - {WarriorCharacter.PhysicalCriticalDamage}, Маг.Атака - {WarriorCharacter.MagicAttack}, Крит.Маг.Атака - {WarriorCharacter.MagicCriticalDamage}");
-            Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {Math.Round(MageCharacter.Health, 2)}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}");
-            Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {Math.Round(ArcherCharacter.Health, 2)}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
+            Console.WriteLine($"Имя - {WarriorCharacter.Name}, Здоровье - {Math.Round(WarriorCharacter.Health,0)}, Физ.Атака - {WarriorCharacter.PhysicalAttack}, Крит.Физ.Атака - {WarriorCharacter.PhysicalCriticalDamage}, Маг.Атака - {WarriorCharacter.MagicAttack}, Крит.Маг.Атака - {WarriorCharacter.MagicCriticalDamage}");
+            Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {Math.Round(MageCharacter.Health, 0)}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}, Мана Мага - {MageCharacter.Mana}");
+            Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {Math.Round(ArcherCharacter.Health, 0)}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
             Console.WriteLine();
 
             Console.WriteLine($"Хотите посмотреть бой между {WarriorCharacter.Name} и {MageCharacter.Name}?");
@@ -65,10 +65,13 @@ namespace Labs215Y2K
             System.Threading.Thread.Sleep(1000);
             Console.WriteLine();
 
-            Console.WriteLine($"Хотите посмотреть бой между {ArcherCharacter.Name}, {WarriorCharacter.Name} и {MageCharacter.Name}?");
+            Console.WriteLine($"Хотите посмотреть бой между {ArcherCharacter.Name}, {WarriorCharacter.Name} и {MageCharacter.Name}? (1.Да)");
+            Console.WriteLine("Или лучше посмотреть бой, который находится в разработке? (2.Тест)");
             string YesOrNo2 = Console.ReadLine();
+            string Тест = "Тест";
             string Да2 = "Да";
             string One2 = "1";
+            string Two = "2";
             if (YesOrNo2 == Да2 || YesOrNo2 == One2)
             {
                 Console.WriteLine($"Бой между {ArcherCharacter.Name}, {WarriorCharacter.Name} и {MageCharacter.Name} начался");
@@ -88,17 +91,20 @@ namespace Labs215Y2K
                     ActionsCharacterEditor.WinArcher(ArcherCharacter);
                 }
             }
+            else if (YesOrNo2 == Тест || YesOrNo2 == Two)
+            {
+
+            }
             else
             {
                 Console.WriteLine("Ну как хотите");
                 Console.WriteLine();
             }
 
-            Console.WriteLine();
             Console.WriteLine("Характеристики персонажей: ");
-            Console.WriteLine($"Имя - {WarriorCharacter.Name}, Здоровье - {WarriorCharacter.Health}, Физ.Атака - {WarriorCharacter.PhysicalAttack}, Крит.Физ.Атака - {WarriorCharacter.PhysicalCriticalDamage}, Маг.Атака - {WarriorCharacter.MagicAttack}, Крит.Маг.Атака - {WarriorCharacter.MagicCriticalDamage}");
-            Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {MageCharacter.Health}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}");
-            Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {ArcherCharacter.Health}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
+            Console.WriteLine($"Имя - {WarriorCharacter.Name}, Здоровье - {Math.Round(WarriorCharacter.Health, 0)}, Физ.Атака - {WarriorCharacter.PhysicalAttack}, Крит.Физ.Атака - {WarriorCharacter.PhysicalCriticalDamage}, Маг.Атака - {WarriorCharacter.MagicAttack}, Крит.Маг.Атака - {WarriorCharacter.MagicCriticalDamage}");
+            Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {Math.Round(MageCharacter.Health, 0)}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}, Мана Мага - {MageCharacter.Mana}");
+            Console.WriteLine($"Имя - {ArcherCharacter.Name}, Здоровье - {Math.Round(ArcherCharacter.Health, 0)}, Физ.Атака - {ArcherCharacter.PhysicalAttack}, Крит.Физ.Атака - {ArcherCharacter.PhysicalCriticalDamage}, Маг.Атака - {ArcherCharacter.MagicAttack}, Крит.Маг.Атака - {ArcherCharacter.MagicCriticalDamage}");
             Console.WriteLine();
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
