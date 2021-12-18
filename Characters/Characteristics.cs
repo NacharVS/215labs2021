@@ -6,6 +6,8 @@ namespace Characters
 {
     class Characteristics
     {
+        public delegate void HealthChange();
+        public static event HealthChange HealthCh;
         private double _strentgh;
         private double _dexterity;
         private double _intelligence;
@@ -76,133 +78,130 @@ namespace Characters
         {
             get
             {
-                return _health;
+               return 2*Constitutions + 0.5 * Strentgh;
             }
-            set
-            {
-                _health = value;
-            }
+            //set
+            //{
+            //    _health = value;
+            //}
         }
         public double Manna
         {
             get
             {
-                return _manna;
+                return 3 * Intelligence;
             }
-            set
-            {
-                _manna = value;
-            }
+            //set
+            //{
+            //    _manna = value;
+            //}
         }
         public double Pattack
         {
             get
             {
-                return _pattack;
+                return Strentgh * 3 + 0.5 * Dexterity;
             }
-            set
-            {
-                _pattack = value;
-            }
+            //set
+            //{
+            //    _pattack = value;
+            //}
         }
         public double Pdefence
         {
             get
             {
-                return _pdefence;
+                return Constitutions * 0.5 + Dexterity * 3;
             }
-            set
-            {
-                _pdefence = value;
-            }
+            //set
+            //{
+            //    _pdefence = value;
+            //}
         }
         public double Mattack
         {
             get
             {
-                return _mattack;
+                return Intelligence * 4;
             }
-            set
-            {
-                _mattack = value;
-            }
+            //set
+            //{
+            //    _mattack = value;
+            //}
         }
         public double Mdefence
         {
             get
             {
-                return _mdefence;
+                return Intelligence * 2;
             }
-            set
-            {
-                _mdefence = value;
-            }
+            
         }
         public double PCriticalchanse
         {
             get
             {
-                return _pcriticalchanse;
+                return 20 + Dexterity * 0.3;
             }
-            set
-            {
-                _pcriticalchanse = value;
-            }
+            //set
+            //{
+            //    _pcriticalchanse = value;
+            //}
         }
         public double PCriticaldamage
         {
             get
             {
-                return _pcriticaldamage;
+                return Pdamage * (2 + Dexterity * 0.05);
             }
-            set
-            {
-                _pcriticaldamage = value;
-            }
+            //set
+            //{
+            //    _pcriticaldamage = value;
+            //}
         }
         public double MCriticalchanse
         {
             get
             {
-                return _mcriticalchanse;
+                return 20 + Intelligence * 0.3;
             }
-            set
-            {
-                _mcriticalchanse = value;
-            }
+            //set
+            //{
+            //    _mcriticalchanse = value;
+            //}
         }
         public double MCriticaldamage
         {
             get
             {
-                return _mcriticaldamage;
+                return Mdamage * (2 + Intelligence * 0.15);
             }
-            set
-            {
-                _mcriticaldamage = value;
-            }
+            //set
+            //{
+            //    _mcriticaldamage = value;
+            //}
         }
         public double Pdamage
         {
             get
             {
-                return _pdamage;
+                return Pattack * (Pattack / Pdefence);
             }
-            set
-            {
-                _pdamage = value;
-            }
+            //set
+            //{
+            //    _pdamage = value;
+            //}
         }
         public double Mdamage
         {
             get
             {
-                return _mdamage;
+                return Mattack * (Mattack / Mdefence);
             }
-            set
-            {
-                _mdamage = value;
-            }
+            //set
+            //{
+            //    _mdamage = value;
+            //}
         }
     }
 }

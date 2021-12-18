@@ -16,13 +16,13 @@ namespace Characters
             Dexterity = dexterity;
             Intelligence = intelligence;
             Constitutions = constitutions;
-            Health = health;
-            Manna = manna;
-            Mattack = mattack;
-            Mdefence = mdefence;
-            MCriticalchanse = criticalchanse;
-            MCriticaldamage = criticaldamage;
-            Mdamage = mdamage;
+            health = Health;
+            manna = Manna;
+            mattack = Mattack;
+            mdefence = Mdefence;
+            criticalchanse = MCriticalchanse;
+            criticaldamage = MCriticaldamage;
+            mdamage = Mdamage;
         }
         public static void startmage(List<Archer> archer,List<Warrior> warrior, List<Mage> mag, double newmaxhealth)
         {

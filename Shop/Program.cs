@@ -7,7 +7,7 @@ namespace Shop
         static void Main(string[] args)
         {
             //ShopNew1.start();
-            string a = "BBlat";
+            string a = "BBlsuka";
             for (int i = a.Length -1;i >=0;i--)
             {
                 Console.Write($"{a[i]}");

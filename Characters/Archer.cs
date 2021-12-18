@@ -16,12 +16,12 @@ namespace Characters
             Dexterity = dexterity;
             Intelligence = intelligence;
             Constitutions = constitutions;
-            Health = health;
-            Pattack = pattack;
-            Pdefence = pdefence;
-            PCriticalchanse = criticalchanse;
-            PCriticaldamage = criticaldamage;
-            Pdamage = Pdamage;
+            health = Health;
+            pattack = Pattack;
+            pdefence = Pdefence;
+            criticalchanse = PCriticalchanse;
+            criticaldamage = PCriticaldamage;
+            pdamage = Pdamage;
         }
         
         public static void startarcher(List<Archer> archer, List<Warrior> warrior, List<Mage> mag, double newmaxhealth)
