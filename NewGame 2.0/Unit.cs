@@ -20,9 +20,6 @@ namespace New_Game
 
         private string _name;
 
-        
-        
-
         private double _p_Defense;
         private double _p_Attack;
         private double _m_Defense;
@@ -33,8 +30,6 @@ namespace New_Game
         private double _m_CritDamage;
 
         
-        
-
         public Unit(double strength, double dexterity, double intelligence, double constitution, string name)
         {
             Strength = strength;
@@ -55,9 +50,6 @@ namespace New_Game
             {
                 return Constitution * 0.5 + Dexterity * 3;
             }
-
-                
-            
         }
         public double P_Attack
         { 
@@ -121,10 +113,8 @@ namespace New_Game
                 return M_Attack * (2 + Intelligence * 0.15);
             }
         }
-        
-        
+                
         public string Name { get => _name; set => _name = value; }
-
 
         public static void Buff(Unit unit)
         {
@@ -247,7 +237,6 @@ namespace New_Game
         public static void DeBuff(string message)
         {
             Console.WriteLine(message);
-
         }
 
         public static Unit operator +(Unit objectOne, Unit object2)
@@ -291,7 +280,6 @@ namespace New_Game
                 Console.WriteLine($"Ловкость:  {deffunit.Dexterity}");
                 Console.WriteLine($"Интеллект: {deffunit.Intelligence}");
                 Console.WriteLine($"Телосложение: {deffunit.Constitution}");
-
             }
         }
         public static void EffWeak(Unit unit)
