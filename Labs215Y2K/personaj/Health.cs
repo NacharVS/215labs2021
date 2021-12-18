@@ -5,24 +5,22 @@ using System.Text;
 namespace Labs215Y2K
 {
     class Health
-    {
+	{
+		 {
 		public delegate void HealthValueChangedDelegate();
 
 		private double _currentHealth;
 		private double _maxHealth;
 		private bool _isWeaken;
 
-
 		public Health(int maxHealth)
 		{
-
 			_currentHealth = maxHealth;
 			_maxHealth = maxHealth;
 		}
 
 		public double MaxHealth
 		{
-			
 			get { return _maxHealth; }
 			private set
 			{
@@ -34,7 +32,6 @@ namespace Labs215Y2K
 					_maxHealth = value;
 			}
 		}
-
 
 		public double CurrentHealth
 		{
@@ -53,6 +50,5 @@ namespace Labs215Y2K
 		public bool IsWeaken { get => _isWeaken; }
 
 		public event HealthValueChangedDelegate HealthChangedEvent;
-
 	}
 }
