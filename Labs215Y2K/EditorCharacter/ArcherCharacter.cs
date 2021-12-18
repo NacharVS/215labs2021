@@ -28,7 +28,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return _health = 10 * Constitution + (5 / 10 * Strength);
+                return _health;
             }
             set
             {

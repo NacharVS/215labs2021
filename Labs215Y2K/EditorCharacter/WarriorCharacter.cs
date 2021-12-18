@@ -26,7 +26,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return _health = 10 * Constitution + (0.5 * Strength);
+                return _health;
             }
             set
             {
@@ -56,7 +56,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             get
             {
-                return PhysicalAttack * (2 + Dexterity * 5 / 100);
+                return PhysicalAttack * (2 + Dexterity * 2 / 100);
             }
         }
         public double MagicCriticalDamage

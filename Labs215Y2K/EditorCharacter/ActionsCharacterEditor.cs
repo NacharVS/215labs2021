@@ -10,16 +10,21 @@ namespace Labs215Y2K.EditorCharacter
         {
             MageCharacter.HealtheChangeEvent += NewHealth;
             WarriorCharacter.HealtheChangeEvent += NewHealth;
+            //Console.WriteLine("Сколько вы хотите провести раундов?");
+            //int rounds = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Бой между Магом и Воином начался");
             if (MageCharacter.Health > 0)
             {
                 if (MageCharacter.MagicCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
                 }
                 else
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
                     WarriorCharacter.Health -= MageCharacter.MagicAttack;
                 }
             }
@@ -28,25 +33,156 @@ namespace Labs215Y2K.EditorCharacter
                 if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
                 {
                     Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {MageCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
                     MageCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
                 }
                 else
                 {
                     Console.WriteLine($"{WarriorCharacter.Name} наносит урон {MageCharacter.Name}");
+                    Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
                     MageCharacter.Health -= WarriorCharacter.PhysicalAttack;
                 }
             }
-
+            if (MageCharacter.Health < 0)
+            {
+                MageCharacter.Health = 0;
+            }
+            if (WarriorCharacter.Health < 0)
+            {
+                WarriorCharacter.Health = 0;
+            }
+            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health, 2)}xp");
+            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 2)}xp");
+            Console.WriteLine();
             //Console.WriteLine($"Начало нового раунда. Кол-во прошедших раундов: ");
             //Console.WriteLine($"Здоровье Воина - {WarriorCharacter.Health}xp");
             //Console.WriteLine($"Здоровье Мага - {MageCharacter.Health}xp");
-            Console.WriteLine();
 
+        }
+
+        public static void WarriorVSMageVSArcher (WarriorCharacter WarriorCharacter, MageCharacter MageCharacter, ArcherCharacter ArcherCharacter)
+        {
+            MageCharacter.HealtheChangeEvent += NewHealth;
+            WarriorCharacter.HealtheChangeEvent += NewHealth;
+            ArcherCharacter.HealtheChangeEvent += NewHealth;
+
+            int RandomFightOne = new Random().Next(1, 4);
+            int RandomFightThree = new Random().Next(1, 5);
+            int RandomHFightTwo = new Random().Next(1, 4);
+
+            if (RandomFightOne == 1)
+            {
+                if (ArcherCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{ArcherCharacter.Name} наносит критический урон {MageCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Лучника - {ArcherCharacter.PhysicalCriticalDamage}");
+                    MageCharacter.Health -= ArcherCharacter.PhysicalCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{ArcherCharacter.Name} наносит урон {MageCharacter.Name}");
+                    Console.WriteLine($"Урон Лучника - {ArcherCharacter.PhysicalAttack}");
+                    MageCharacter.Health -= ArcherCharacter.PhysicalAttack;
+                }
+            }
+            else
+            {
+                if (ArcherCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{ArcherCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Лучника - {ArcherCharacter.PhysicalCriticalDamage}");
+                    WarriorCharacter.Health -= ArcherCharacter.PhysicalCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{ArcherCharacter.Name} наносит урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Урон Лучника - {ArcherCharacter.PhysicalAttack}");
+                    WarriorCharacter.Health -= ArcherCharacter.PhysicalAttack;
+                }
+            }
+            if (RandomHFightTwo == 1)
+            {
+                if (MageCharacter.MagicCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
+                    ArcherCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
+                    ArcherCharacter.Health -= MageCharacter.MagicAttack;
+                }
+            }
+            else
+            {
+                if (MageCharacter.MagicCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
+                    WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
+                    Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
+                    WarriorCharacter.Health -= MageCharacter.MagicAttack;
+                }
+            }
+            if (RandomFightThree == 1)
+            {
+                if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
+                    ArcherCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
+                    ArcherCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                }
+            }
+            else
+            {
+                if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
+                    ArcherCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                }
+                else
+                {
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
+                    ArcherCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                }
+            }
+
+            if (MageCharacter.Health < 0)
+            {
+                MageCharacter.Health = 0;
+            }
+            if (ArcherCharacter.Health < 0)
+            {
+                ArcherCharacter.Health = 0;
+            }
+            if (WarriorCharacter.Health < 0)
+            {
+                WarriorCharacter.Health = 0;
+            }
+
+            Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health,2)}xp");
+            Console.WriteLine($"Здоровье Воина - {Math.Round(WarriorCharacter.Health, 2)}xp");
+            Console.WriteLine($"Здоровье Лучника - {Math.Round(ArcherCharacter.Health,2)}xp");
+            Console.WriteLine();
         }
 
         public static void WinWarrior(WarriorCharacter WarriorCharacter)
         {
-            Console.WriteLine($"{WarriorCharacter.Name} победил в поединке! Было сыграно раундов : !");
+            Console.WriteLine($"{WarriorCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {WarriorCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
             string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
             string Ловкость = "Ловкость";
@@ -102,7 +238,7 @@ namespace Labs215Y2K.EditorCharacter
 
         public static void WinMage(MageCharacter MageCharacter)
         {
-            Console.WriteLine($"{MageCharacter.Name} победил в поединке! Было сыграно раундов : !");
+            Console.WriteLine($"{MageCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {MageCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
             string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
             string Ловкость = "Ловкость";
@@ -130,10 +266,10 @@ namespace Labs215Y2K.EditorCharacter
             {
                 MageCharacter.Constitution += 50;
             }
-            else
-            {
-                Console.WriteLine("Вы указали неправильное значение");
-            }
+            //else
+            //{
+            //    Console.WriteLine("Вы указали неправильное значение");
+            //}
 
             //switch (upgrade)
             //{
@@ -159,13 +295,49 @@ namespace Labs215Y2K.EditorCharacter
             //}
         }
 
+        public static void WinArcher(ArcherCharacter ArcherCharacter)
+        {
+            Console.WriteLine($"{ArcherCharacter.Name} победил в поединке!");
+            Console.WriteLine($"Теперь для {ArcherCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
+            string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4";
+            string Ловкость = "Ловкость";
+            string Интеллект = "Интеллект";
+            string Телосложение = "Телосложение";
+            string upgrade = Console.ReadLine();
+            ArcherCharacter.StrengthChangeEvent += Strength;
+            ArcherCharacter.DexterityChangeEvent += Dexterity;
+            ArcherCharacter.IntelligenceChangeEvent += Intelligence;
+            ArcherCharacter.ConstitutionChangeEvent += Constitution;
+
+            if (upgrade == Сила || upgrade == One)
+            {
+                ArcherCharacter.Strength += 50;
+            }
+            if (upgrade == Ловкость || upgrade == Two)
+            {
+                ArcherCharacter.Dexterity += 50;
+            }
+            if (upgrade == Интеллект || upgrade == Three)
+            {
+                ArcherCharacter.Intelligence += 50;
+            }
+            if (upgrade == Телосложение || upgrade == Four)
+            {
+                ArcherCharacter.Constitution += 50;
+            }
+            //else
+            //{
+            //    Console.WriteLine("Вы указали неправильное значение");
+            //}
+        }
+
         static void NewHealth(double OldHealth, double NewHealth)
         {
             if(NewHealth < 0)
             {
                 NewHealth = 0;
             }
-            Console.WriteLine($"{OldHealth}xp было измененно на {NewHealth}xp");
+            Console.WriteLine($"{Math.Round(OldHealth, 2)}xp было измененно на {Math.Round(NewHealth,2)}xp");
             Console.WriteLine();
         }
         static void Strength(double OldStrength, double NewStrength)
