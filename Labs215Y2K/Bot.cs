@@ -8,7 +8,7 @@ namespace Labs215Y2K
     { 
         public static void ex10()
         {
-            string
+            
             Console.WriteLine("Добро пожаловать!");
             Console.WriteLine("Как вас зовут?");
             string name = Console.ReadLine();

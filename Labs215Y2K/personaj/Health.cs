@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class Health
 	{
-		 {
+		 
 		public delegate void HealthValueChangedDelegate();
 
 		private double _currentHealth;
@@ -18,6 +18,7 @@ namespace Labs215Y2K
 			_currentHealth = maxHealth;
 			_maxHealth = maxHealth;
 		}
+		
 
 		public double MaxHealth
 		{

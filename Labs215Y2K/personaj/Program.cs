@@ -81,14 +81,14 @@ namespace Labs215Y2K
             CharactersP.Add(new Characters("Warrior", 30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Mage", 15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Archer", 20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
+            
 
-            //CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
-            //CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
-            //CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
+             //CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
+             //CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
+             //CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
             Health per1 = new Health(CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght));
             Health per2 = new Health(CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght));
             Health per3 = new Health(CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght));
-
 
             CharactersP[0].Mana = CharactersP[0].Intelgence * 3;
             CharactersP[1].Mana = CharactersP[1].Intelgence * 3;
@@ -177,8 +177,15 @@ namespace Labs215Y2K
               
                     break;
             }
-            //int Show;
-            //int Characters.HealthChangeEvent += Show;
+            static void NewHealth(double OldHealth, double NewHealth)
+            {
+                if (NewHealth < 0)
+                {
+                    NewHealth = 0;
+                }
+                Console.WriteLine($"{OldHealth}xp было измененно на {NewHealth}xp");
+                Console.WriteLine();
+            }
 
 
 
