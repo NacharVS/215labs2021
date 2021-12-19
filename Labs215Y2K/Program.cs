@@ -93,7 +93,7 @@ namespace Labs215Y2K
             }
             else if (YesOrNo2 == Тест || YesOrNo2 == Two)
             {
-
+                ActionsCharacterEditor.Test(WarriorCharacter,ArcherCharacter,MageCharacter);
             }
             else
             {

@@ -68,6 +68,7 @@ namespace Labs215Y2K.EditorCharacter
             MageCharacter.HealtheChangeEvent += NewHealth;
             WarriorCharacter.HealtheChangeEvent += NewHealth;
             ArcherCharacter.HealtheChangeEvent += NewHealth;
+
             //MageCharacter.ManaChangeEvent += NewMana;
 
             int RandomFightOne = new Random().Next(1, 4);
@@ -169,17 +170,20 @@ namespace Labs215Y2K.EditorCharacter
                 }
             }
 
-            if (MageCharacter.Health < 0)
+            if (MageCharacter.Health <= 0)
             {
                 MageCharacter.Health = 0;
+                MageCharacter.HealtheChangeEvent -= NewHealth;
             }
-            if (ArcherCharacter.Health < 0)
+            if (ArcherCharacter.Health <= 0)
             {
                 ArcherCharacter.Health = 0;
+                ArcherCharacter.HealtheChangeEvent -= NewHealth;
             }
-            if (WarriorCharacter.Health < 0)
+            if (WarriorCharacter.Health <= 0)
             {
                 WarriorCharacter.Health = 0;
+                WarriorCharacter.HealtheChangeEvent -= NewHealth;
             }
 
             Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health,0)}xp, Мана Мага - {MageCharacter.Mana}");
@@ -207,7 +211,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             Console.WriteLine($"{WarriorCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {WarriorCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков");
+            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков (5.Всё)");
             Console.WriteLine();
             string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4"; string Five = "5";
             string Ловкость = "Ловкость";
@@ -273,7 +277,7 @@ namespace Labs215Y2K.EditorCharacter
         {
             Console.WriteLine($"{MageCharacter.Name} победил в поединке!");
             Console.WriteLine($"Теперь для {MageCharacter.Name} доступно 50 очков улучшений. Что вы хотите ему прокачать? 1.Сила, 2.Ловкость, 3.Интеллект, 4.Телосложение");
-            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков");
+            Console.WriteLine($"Или можете прибавить ко всем характеристикам по 12 очков (5.Всё)");
             Console.WriteLine();
             string Сила = "Сила"; string One = "1"; string Two = "2"; string Three = "3"; string Four = "4"; string Five = "5";
             string Ловкость = "Ловкость";
@@ -386,12 +390,19 @@ namespace Labs215Y2K.EditorCharacter
 
         static void NewHealth(double OldHealth, double NewHealth)
         {
-            if(NewHealth < 0)
+            //if(NewHealth <= 0)
+            //{
+            //    NewHealth = 0;
+            //}
+            //if (OldHealth <= 0)
+            //{
+            //    OldHealth = 0;
+            //}
+            if (NewHealth > 0)
             {
-                NewHealth = 0;
+                Console.WriteLine($"Старое значение здоровья: {Math.Round(OldHealth, 0)}xp было измененно на новое значение: {Math.Round(NewHealth, 0)}xp");
+                Console.WriteLine();
             }
-            Console.WriteLine($"Старое значение здоровья: {Math.Round(OldHealth, 0)}xp было измененно на новое значение: {Math.Round(NewHealth,0)}xp");
-            Console.WriteLine();
         }
 
         static void NewMana (double OldMana, double NewMana)
@@ -399,6 +410,7 @@ namespace Labs215Y2K.EditorCharacter
             if (NewMana < 0)
             {
                 NewMana = 0;
+                Console.WriteLine($"Мана закончилась");
             }
             Console.WriteLine($"Старое значение маны: {Math.Round(OldMana, 0)} было измененно на новое значение: {Math.Round(NewMana, 0)}");
             Console.WriteLine();

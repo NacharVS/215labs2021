@@ -32,18 +32,18 @@ namespace Labs215Y2K.EditorCharacter
             }
             set
             {
-                //if (_health < 0.5 * _health)
+                if (_health < 0.5 * _health && _health > 0)
+                {
+                    Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
+                    Strength -= Strength * 0.1;
+                    Dexterity -= Dexterity * 0.1;
+                    Intelligence -= Intelligence * 0.1;
+                    Constitution -= Constitution * 0.1;
+                    Console.WriteLine();
+                }
+                //else if (_health <= 0)
                 //{
-                //    Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
-                //    Strength -= Strength * 0.1;
-                //    Dexterity -= Dexterity * 0.1;
-                //    Intelligence -= Intelligence * 0.1;
-                //    Constitution -= Constitution * 0.1;
-                //    Console.WriteLine();
-                //}
-                //else if (_health == 0)
-                //{
-                //    Console.WriteLine($"Здоровье {Name} 0%");
+                //    _health = 0;
                 //}
                 double OldHealth = _health;
                 _health = value;
@@ -95,8 +95,20 @@ namespace Labs215Y2K.EditorCharacter
                 return Intelligence * 2;
             }
         }
-        public double PhysicalCriticalChanse { get => _physicalCriticalChanse; set => _physicalCriticalChanse = value; }
-        public double MagicCriticalChanse { get => _magicCriticalChanse; set => _magicCriticalChanse = value; }
+        public double PhysicalCriticalChanse
+        { 
+            get
+            {
+                return 20 + Dexterity * 0.3;
+            }
+        }
+        public double MagicCriticalChanse
+        {
+            get
+            {
+                return 20 + Intelligence * 0.1;
+            }
+        }
         public double Strength
         {
             get
@@ -112,12 +124,12 @@ namespace Labs215Y2K.EditorCharacter
                     _strength = 55;
                     Console.WriteLine($"Сила больше 55 быть не может");
                 }
-                if (value < 20)
-                {
-                    value = 20;
-                    _strength = 20;
-                    Console.WriteLine($"Сила меньше 20 быть не может");
-                }
+                //if (value < 20)
+                //{
+                //    value = 20;
+                //    _strength = 20;
+                //    Console.WriteLine($"Сила меньше 20 быть не может");
+                //}
                 double OldStrength = _strength;
                 _strength = value;
                 StrengthChangeEvent?.Invoke(OldStrength, value);
@@ -138,12 +150,12 @@ namespace Labs215Y2K.EditorCharacter
                     _dexterity = 250;
                     Console.WriteLine($"Ловкость больше 250 быть не может");
                 }
-                if (value < 30)
-                {
-                    value = 30;
-                    _dexterity = 30;
-                    Console.WriteLine($"Ловкость меньше 30 быть не может");
-                }
+                //if (value < 30)
+                //{
+                //    value = 30;
+                //    _dexterity = 30;
+                //    Console.WriteLine($"Ловкость меньше 30 быть не может");
+                //}
                 double OldDexterity = _dexterity;
                 _dexterity = value;
                 DexterityChangeEvent?.Invoke(OldDexterity, value);
@@ -164,12 +176,12 @@ namespace Labs215Y2K.EditorCharacter
                     _intelligence = 70;
                     Console.WriteLine($"Интеллект больше 70 быть не может");
                 }
-                if (value < 15)
-                {
-                    value = 15;
-                    _intelligence = 15;
-                    Console.WriteLine($"Интеллект меньше 15 быть не может");
-                }
+                //if (value < 15)
+                //{
+                //    value = 15;
+                //    _intelligence = 15;
+                //    Console.WriteLine($"Интеллект меньше 15 быть не может");
+                //}
                 double OldIntelligence = _intelligence;
                 _intelligence = value;
                 IntelligenceChangeEvent?.Invoke(OldIntelligence, value);
@@ -190,12 +202,12 @@ namespace Labs215Y2K.EditorCharacter
                     _constitution = 70;
                     Console.WriteLine($"Телосложение больше 70 быть не может");
                 }
-                if (value < 20)
-                {
-                    value = 20;
-                    _constitution = 20;
-                    Console.WriteLine($"Телосложение меньше 20 быть не может");
-                }
+                //if (value < 20)
+                //{
+                //    value = 20;
+                //    _constitution = 20;
+                //    Console.WriteLine($"Телосложение меньше 20 быть не может");
+                //}
                 double OldConstitution = _constitution;
                 _constitution = value;
                 ConstitutionChangeEvent?.Invoke(OldConstitution, value);
