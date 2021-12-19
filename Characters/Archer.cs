@@ -4,30 +4,31 @@ using System.Text;
 
 namespace Characters
 {
-    class Archer : Characteristics
+    class Archer : Health
     {
         private static int archermaxstrength = 55;
         private static int archermaxdexterity = 250;
         private static int archermaxintelligence = 70;
         private static int archermaxconstituion = 70;
+        
         public Archer(double strentgh, double dexterity, double intelligence, double constitutions, double health, double pattack, double pdefence, double criticalchanse, double criticaldamage, double pdamage)
         {
             Strentgh = strentgh;
             Dexterity = dexterity;
             Intelligence = intelligence;
             Constitutions = constitutions;
-            health = Health;
-            pattack = Pattack;
-            pdefence = Pdefence;
-            criticalchanse = PCriticalchanse;
-            criticaldamage = PCriticaldamage;
-            pdamage = Pdamage;
+            Health = health;
+            Pattack = pattack;
+            Pdefence = pdefence;
+            PCriticalchanse = criticalchanse;
+            PCriticaldamage = criticaldamage;
+            Pdamage = pdamage;
         }
         
-        public static void startarcher(List<Archer> archer, List<Warrior> warrior, List<Mage> mag, double newmaxhealth)
+        public static void startarcher(List<Archer> archer, List<Warrior> warrior, List<Mage> mag)
         {
             Console.WriteLine();
-            Program.archerlist(archer);
+            Program.Archerlist(archer);
             Console.WriteLine();
             Console.WriteLine("Вы хотите поменять характеристики лучника? 1 - Да; 2 - Нет");
             int answer = int.Parse(Console.ReadLine());
@@ -35,18 +36,18 @@ namespace Characters
             {
                 case 1:
                     Console.WriteLine();
-                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                    Archer.archerquestion(archer, warrior, mag);
                     break;
                 case 2:
-                    Info.startredactor(archer,warrior, mag, newmaxhealth);
+                    Info.Startredactor(archer,warrior, mag);
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    Info.startredactor(archer,warrior, mag, newmaxhealth);
+                    Info.Startredactor(archer,warrior, mag);
                     break;
             }
         }
-        public static void archerquestion(List<Archer> archer, List<Warrior> warrior, List<Mage> mag,double newmaxhealth)
+        public static void archerquestion(List<Archer> archer, List<Warrior> warrior, List<Mage> mag)
         {
             Console.WriteLine("Какие характеристики лучника вы хотите поменять?");
             Console.WriteLine("1 - Сила; 2 - Ловкость; 3 - Интеллект; 4 - Телосложение");
@@ -90,15 +91,15 @@ namespace Characters
                             switch (answer12)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag,newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer,warrior, mag,newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer,warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag,newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -108,7 +109,7 @@ namespace Characters
                             if (archer[0].Strentgh == 20)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение силы!;");
-                                Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                Info.Startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -150,22 +151,22 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(archer, warrior, mag, newmaxhealth);
+                            Info.Startredactor(archer, warrior, mag);
                             break;
                     }
                     break;
@@ -206,15 +207,15 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -223,7 +224,7 @@ namespace Characters
                             if (archer[0].Dexterity == 30)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение ловкости!;");
-                                Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                Info.Startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -265,22 +266,22 @@ namespace Characters
                             switch (answer14)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(archer, warrior, mag, newmaxhealth);
+                            Info.Startredactor(archer, warrior, mag);
                             break;
                     }
                     break;
@@ -321,15 +322,15 @@ namespace Characters
                             switch (answer14)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -338,7 +339,7 @@ namespace Characters
                             if (archer[0].Intelligence == 15)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение интеллекта!");
-                                Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                Info.Startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -380,22 +381,22 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(archer, warrior, mag, newmaxhealth);
+                            Info.Startredactor(archer, warrior, mag);
                             break;
 
                     }
@@ -437,15 +438,15 @@ namespace Characters
                             switch (answer13)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
@@ -454,7 +455,7 @@ namespace Characters
                             if (archer[0].Constitutions == 20)
                             {
                                 Console.WriteLine("Уже установлено минимальное значение телосложения!");
-                                Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                Info.Startredactor(archer, warrior, mag);
                             }
                             else
                             {
@@ -496,29 +497,29 @@ namespace Characters
                             switch (answer14)
                             {
                                 case 1:
-                                    Archer.archerquestion(archer, warrior, mag, newmaxhealth);
+                                    Archer.archerquestion(archer, warrior, mag);
                                     break;
                                 case 2:
-                                    Program.archerprelisting(archer);
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    archer[0].ArcherHealthCheck(archer);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
                                 default:
                                     Console.WriteLine("Неверное число!");
-                                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                                    Info.Startredactor(archer, warrior, mag);
                                     break;
 
                             }
                             break;
                         default:
                             Console.WriteLine("Неверный номер!");
-                            Info.startredactor(archer, warrior, mag, newmaxhealth);
+                            Info.Startredactor(archer, warrior, mag);
                             break;
 
                     }
                     break;
                 default:
                     Console.WriteLine("Неверный номер!");
-                    Info.startredactor(archer, warrior, mag, newmaxhealth);
+                    Info.Startredactor(archer, warrior, mag);
                     break;
 
             }
