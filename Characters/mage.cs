@@ -93,7 +93,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -152,7 +152,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -209,7 +209,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -270,7 +270,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -327,7 +327,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -386,7 +386,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -443,7 +443,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -502,7 +502,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    mag[0].HealthCheck(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:

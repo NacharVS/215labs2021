@@ -5,8 +5,6 @@ namespace Characters
 {
     class Program : Characteristics
     {
-        public delegate void HealthChange();
-        public static  event HealthChange HealthCh;
         static void Main(string[] args)
         {
             List<Mage> mag = new List<Mage>();

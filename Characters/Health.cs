@@ -6,8 +6,20 @@ namespace Characters
 {
     class Health : Characteristics
     {
+        private double _newmaxhealth;
+        public double Newmaxhealth
+        {
+            get
+            {
+                return 2 * 65 + 0.5 * 45;
+            }
+            set
+            {
+                _newmaxhealth = value;
+            }
+        }
         public delegate void HealthChange();
-        new public event HealthChange HealthCh;
+        public event HealthChange HealthCh;
         static void HealthChang()
         {
             Console.WriteLine("Здоровье упало на 10%");
@@ -15,15 +27,15 @@ namespace Characters
             Console.WriteLine("Интеллект упал на 10%");
             Console.WriteLine("Телосложение упало на 10%");
         }
-        public void HealthCheck(List<Mage> mag, double newmaxhealth)
+        public void HealthCheck(List<Mage> mag)
         {
             if (mag[0].Manna < 150)
             {
-                newmaxhealth -= newmaxhealth * 0.2;
+                Newmaxhealth -= Newmaxhealth * 0.2;
                 Console.WriteLine("Макс. здоровье упало на 20%");
             }
             else { }
-            if (mag[0].Health < (newmaxhealth / 2))
+            if (mag[0].Health < (Newmaxhealth / 2))
             {
                 mag[0].Strentgh -= mag[0].Strentgh * 0.1;
                 mag[0].Dexterity -= mag[0].Dexterity * 0.1;

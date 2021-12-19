@@ -6,8 +6,6 @@ namespace Characters
 {
     class Characteristics
     {
-        public delegate void HealthChange();
-        public static event HealthChange HealthCh;
         private double _strentgh;
         private double _dexterity;
         private double _intelligence;
