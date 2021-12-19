@@ -20,7 +20,7 @@ namespace Characters
         }
         public delegate void HealthChange();
         public event HealthChange HealthCh;
-        static void HealthChang()
+        public static void HealthChang()
         {
             Console.WriteLine("Здоровье упало на 10%");
             Console.WriteLine("Ловкость упала на 10%");
@@ -35,6 +35,7 @@ namespace Characters
                 Console.WriteLine("Макс. здоровье упало на 20%");
             }
             else { }
+            mag[0].HealthCh += HealthChang;
             if (mag[0].Health < (Newmaxhealth / 2))
             {
                 mag[0].Strentgh -= mag[0].Strentgh * 0.1;
