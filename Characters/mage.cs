@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Characters
 {
-    class Mage : Characteristics
+    class Mage : Health 
     {
         private static int magemaxstrentgh = 45;
         private static int magemaxdexterity = 70;
@@ -16,13 +16,13 @@ namespace Characters
             Dexterity = dexterity;
             Intelligence = intelligence;
             Constitutions = constitutions;
-            health = Health;
-            manna = Manna;
-            mattack = Mattack;
-            mdefence = Mdefence;
-            criticalchanse = MCriticalchanse;
-            criticaldamage = MCriticaldamage;
-            mdamage = Mdamage;
+            Health = health;
+            Manna = manna;
+            Mattack = mattack;
+            Mdefence = mdefence;
+            MCriticalchanse = criticalchanse;
+            MCriticaldamage = criticaldamage;
+            Mdamage = mdamage;
         }
         public static void startmage(List<Archer> archer,List<Warrior> warrior, List<Mage> mag, double newmaxhealth)
         {
@@ -93,7 +93,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -152,7 +152,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -209,7 +209,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -270,7 +270,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -327,7 +327,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -386,7 +386,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -418,7 +418,7 @@ namespace Characters
 
                                     Console.Write($"Максимальное значение которое можно добавить = {magemaxConstitutions - mag[0].Constitutions}; Введите значение заново: ");
                                     conadd = double.Parse(Console.ReadLine());
-                                    if (conadd <= (mageIntelligence - mag[0].Intelligence))
+                                    if (conadd <= (magemaxConstitutions - mag[0].Constitutions))
                                     {
                                         mag[0].Constitutions += conadd;
                                         Console.WriteLine($"Успешно добавлено {conadd}; Телосложение мага = {mag[0].Constitutions}");
@@ -443,7 +443,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:
@@ -502,7 +502,7 @@ namespace Characters
                                     Mage.magequestion(archer, warrior, mag, newmaxhealth);
                                     break;
                                 case 2:
-                                    Program.mageprelisting(mag, newmaxhealth);
+                                    mag[0].HealthCheck(mag, newmaxhealth);
                                     Info.startredactor(archer, warrior, mag, newmaxhealth);
                                     break;
                                 default:

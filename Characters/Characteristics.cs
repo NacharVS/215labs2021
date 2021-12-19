@@ -80,10 +80,10 @@ namespace Characters
             {
                return 2*Constitutions + 0.5 * Strentgh;
             }
-            //set
-            //{
-            //    _health = value;
-            //}
+            set
+            {
+                _health = value;
+            }
         }
         public double Manna
         {
@@ -91,10 +91,10 @@ namespace Characters
             {
                 return 3 * Intelligence;
             }
-            //set
-            //{
-            //    _manna = value;
-            //}
+            set
+            {
+                _manna = value;
+            }
         }
         public double Pattack
         {
@@ -102,10 +102,10 @@ namespace Characters
             {
                 return Strentgh * 3 + 0.5 * Dexterity;
             }
-            //set
-            //{
-            //    _pattack = value;
-            //}
+            set
+            {
+                _pattack = value;
+            }
         }
         public double Pdefence
         {
@@ -113,10 +113,10 @@ namespace Characters
             {
                 return Constitutions * 0.5 + Dexterity * 3;
             }
-            //set
-            //{
-            //    _pdefence = value;
-            //}
+            set
+            {
+                _pdefence = value;
+            }
         }
         public double Mattack
         {
@@ -124,10 +124,10 @@ namespace Characters
             {
                 return Intelligence * 4;
             }
-            //set
-            //{
-            //    _mattack = value;
-            //}
+            set
+            {
+                _mattack = value;
+            }
         }
         public double Mdefence
         {
@@ -135,7 +135,10 @@ namespace Characters
             {
                 return Intelligence * 2;
             }
-            
+            set
+            {
+                _mdefence = value;
+            }
         }
         public double PCriticalchanse
         {
@@ -143,10 +146,10 @@ namespace Characters
             {
                 return 20 + Dexterity * 0.3;
             }
-            //set
-            //{
-            //    _pcriticalchanse = value;
-            //}
+            set
+            {
+                _pcriticalchanse = value;
+            }
         }
         public double PCriticaldamage
         {
@@ -154,10 +157,10 @@ namespace Characters
             {
                 return Pdamage * (2 + Dexterity * 0.05);
             }
-            //set
-            //{
-            //    _pcriticaldamage = value;
-            //}
+            set
+            {
+                _pcriticaldamage = value;
+            }
         }
         public double MCriticalchanse
         {
@@ -165,10 +168,10 @@ namespace Characters
             {
                 return 20 + Intelligence * 0.3;
             }
-            //set
-            //{
-            //    _mcriticalchanse = value;
-            //}
+            set
+            {
+                _mcriticalchanse = value;
+            }
         }
         public double MCriticaldamage
         {
@@ -176,10 +179,10 @@ namespace Characters
             {
                 return Mdamage * (2 + Intelligence * 0.15);
             }
-            //set
-            //{
-            //    _mcriticaldamage = value;
-            //}
+            set
+            {
+                _mcriticaldamage = value;
+            }
         }
         public double Pdamage
         {
@@ -187,10 +190,10 @@ namespace Characters
             {
                 return Pattack * (Pattack / Pdefence);
             }
-            //set
-            //{
-            //    _pdamage = value;
-            //}
+            set
+            {
+                _pdamage = value;
+            }
         }
         public double Mdamage
         {
@@ -198,10 +201,10 @@ namespace Characters
             {
                 return Mattack * (Mattack / Mdefence);
             }
-            //set
-            //{
-            //    _mdamage = value;
-            //}
+            set
+            {
+                _mdamage = value;
+            }
         }
     }
 }
