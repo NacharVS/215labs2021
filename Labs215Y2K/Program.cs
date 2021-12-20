@@ -18,13 +18,15 @@ namespace Labs215Y2K
             WarriorCharacter WarriorCharacter = new WarriorCharacter();
             MageCharacter MageCharacter = new MageCharacter();
 
+            
+
             ArcherCharacter.Name = "Лучник"; WarriorCharacter.Name = "Воин"; MageCharacter.Name = "Маг";
 
             WarriorCharacter.Strength = 30; WarriorCharacter.Dexterity = 15; WarriorCharacter.Intelligence = 10; WarriorCharacter.Constitution = 25; WarriorCharacter.Health = 7 * WarriorCharacter.Constitution + (0.5 * WarriorCharacter.Strength);
             MageCharacter.Strength = 15; MageCharacter.Dexterity = 20; MageCharacter.Intelligence = 30; MageCharacter.Constitution = 15; MageCharacter.Health = 10 * MageCharacter.Constitution + (0.5 * MageCharacter.Strength); MageCharacter.Mana = MageCharacter.Intelligence * 3;
             ArcherCharacter.Strength = 20; ArcherCharacter.Dexterity = 30; ArcherCharacter.Intelligence = 15; ArcherCharacter.Constitution = 20; ArcherCharacter.Health = 7 * ArcherCharacter.Constitution + (0.5 * ArcherCharacter.Strength);
 
-
+            Console.Clear();
             Console.WriteLine("Характеристики персонажей: ");
             Console.WriteLine($"Имя - {WarriorCharacter.Name}, Здоровье - {Math.Round(WarriorCharacter.Health,0)}, Физ.Атака - {WarriorCharacter.PhysicalAttack}, Крит.Физ.Атака - {WarriorCharacter.PhysicalCriticalDamage}, Маг.Атака - {WarriorCharacter.MagicAttack}, Крит.Маг.Атака - {WarriorCharacter.MagicCriticalDamage}");
             Console.WriteLine($"Имя - {MageCharacter.Name}, Здоровье - {Math.Round(MageCharacter.Health, 0)}, Физ.Атака - {MageCharacter.PhysicalAttack}, Крит.Физ.Атака - {MageCharacter.PhysicalCriticalDamage}, Маг.Атака - {MageCharacter.MagicAttack}, Крит.Маг.Атака - {MageCharacter.MagicCriticalDamage}, Мана Мага - {MageCharacter.Mana}");

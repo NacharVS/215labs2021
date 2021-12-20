@@ -20,15 +20,23 @@ namespace Labs215Y2K.EditorCharacter
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
-                    WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
                     MageCharacter.Mana -= 20;
+                    WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                    if (WarriorCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{MageCharacter.Name} наносит урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
-                    WarriorCharacter.Health -= MageCharacter.MagicAttack; 
                     MageCharacter.Mana -= 10;
+                    WarriorCharacter.Health -= MageCharacter.MagicAttack; 
+                    if (WarriorCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             if (WarriorCharacter.Health > 0)
@@ -38,12 +46,20 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {MageCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
                     MageCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{WarriorCharacter.Name} наносит урон {MageCharacter.Name}");
                     Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
                     MageCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             if (MageCharacter.Health < 0)
@@ -82,12 +98,20 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{ArcherCharacter.Name} наносит критический урон {MageCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Лучника - {ArcherCharacter.PhysicalCriticalDamage}");
                     MageCharacter.Health -= ArcherCharacter.PhysicalCriticalDamage;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{ArcherCharacter.Name} наносит урон {MageCharacter.Name}");
                     Console.WriteLine($"Урон Лучника - {ArcherCharacter.PhysicalAttack}");
                     MageCharacter.Health -= ArcherCharacter.PhysicalAttack;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             else
@@ -97,12 +121,20 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{ArcherCharacter.Name} наносит критический урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Лучника - {ArcherCharacter.PhysicalCriticalDamage}");
                     WarriorCharacter.Health -= ArcherCharacter.PhysicalCriticalDamage;
+                    if (WarriorCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{ArcherCharacter.Name} наносит урон {WarriorCharacter.Name}");
                     Console.WriteLine($"Урон Лучника - {ArcherCharacter.PhysicalAttack}");
                     WarriorCharacter.Health -= ArcherCharacter.PhysicalAttack;
+                    if (WarriorCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             if (RandomHFightTwo == 1)
@@ -113,6 +145,10 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     MageCharacter.Mana -= 20;
                     ArcherCharacter.Health -= MageCharacter.MagicCriticalDamage;
+                    if (ArcherCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
@@ -120,6 +156,10 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
                     MageCharacter.Mana -= 10;
                     ArcherCharacter.Health -= MageCharacter.MagicAttack;
+                    if (ArcherCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             else
@@ -130,6 +170,10 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
                     MageCharacter.Mana -= 20;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
@@ -137,6 +181,10 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
                     WarriorCharacter.Health -= MageCharacter.MagicAttack;
                     MageCharacter.Mana -= 10;
+                    if (MageCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             if (RandomFightThree == 1)
@@ -146,12 +194,20 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
                     ArcherCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                    if (ArcherCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{WarriorCharacter.Name} наносит урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
                     ArcherCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                    if (ArcherCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
             else
@@ -161,12 +217,20 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
                     ArcherCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                    if (ArcherCharacter.Health <=0)
+                    {
+                        Dead();
+                    }
                 }
                 else
                 {
                     Console.WriteLine($"{WarriorCharacter.Name} наносит урон {ArcherCharacter.Name}");
                     Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
                     ArcherCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                    if (ArcherCharacter.Health <= 0)
+                    {
+                        Dead();
+                    }
                 }
             }
 
@@ -390,7 +454,7 @@ namespace Labs215Y2K.EditorCharacter
 
         static void NewHealth(double OldHealth, double NewHealth)
         {
-            //if(NewHealth <= 0)
+            //if (NewHealth <= 0)
             //{
             //    NewHealth = 0;
             //}
@@ -403,6 +467,11 @@ namespace Labs215Y2K.EditorCharacter
                 Console.WriteLine($"Старое значение здоровья: {Math.Round(OldHealth, 0)}xp было измененно на новое значение: {Math.Round(NewHealth, 0)}xp");
                 Console.WriteLine();
             }
+            //else if (NewHealth == 0)
+            //{
+            //    Console.WriteLine($"Здоровье на нуле");
+            //    Console.WriteLine();
+            //}
         }
 
         static void NewMana (double OldMana, double NewMana)
@@ -433,6 +502,11 @@ namespace Labs215Y2K.EditorCharacter
         static void Constitution(double OldConstitution, double NewConstitution)
         {
             Console.WriteLine($"Старое значение телосложения: {Math.Round(OldConstitution, 0)} было измененно на новое значение: {Math.Round(NewConstitution, 0)}");
+            Console.WriteLine();
+        }
+        static void Dead()
+        {
+            Console.WriteLine("Персонаж умер");
             Console.WriteLine();
         }
     }

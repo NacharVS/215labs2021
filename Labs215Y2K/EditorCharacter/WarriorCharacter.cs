@@ -30,7 +30,7 @@ namespace Labs215Y2K.EditorCharacter
             }
             set
             {
-                if (_health < 0.5 * _health && _health > 0)
+                if (value < 0.5 * _health && value > 0)
                 {
                     Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
                     Strength -= Strength * 0.1;
@@ -38,6 +38,7 @@ namespace Labs215Y2K.EditorCharacter
                     Intelligence -= Intelligence * 0.1;
                     Constitution -= Constitution * 0.1;
                     Console.WriteLine();
+
                 }
                 //else if (_health <= 0)
                 //{
@@ -48,6 +49,14 @@ namespace Labs215Y2K.EditorCharacter
                 HealtheChangeEvent?.Invoke(OldHealth, value);
             }
         }
+
+        //public double CurrentHealth
+        //{
+        //    get
+        //    {
+        //       return 140;
+        //    }
+        //}
 
         public double PhysicalAttack
         {

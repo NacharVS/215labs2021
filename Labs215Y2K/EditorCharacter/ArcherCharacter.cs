@@ -32,7 +32,7 @@ namespace Labs215Y2K.EditorCharacter
             }
             set
             {
-                if (_health < 0.5 * _health && _health > 0)
+                if (value < 0.5 * _health && value > 0)
                 {
                     Console.WriteLine($"Здоровье {Name} меньше 50%, поэтому все характеристики снижены на 10%");
                     Strength -= Strength * 0.1;

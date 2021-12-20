@@ -10,7 +10,6 @@ namespace Labs215Y2K.EditorCharacter
         private string _name;
         private double _mana;
 
-
         public string Name { get => _name; set => _name = value; }
        
         public double Mana
@@ -54,9 +53,35 @@ namespace Labs215Y2K.EditorCharacter
         //{
         //    Console.WriteLine($"{_name} умер");
         //}
+        public virtual void ActionsCharacterEditor()
+        {
+            Console.WriteLine($"Шахтёр копает шахту");
+        }
 
         public delegate void ManaChangeDelegate(double OldMana, double NewMana);
         public event ManaChangeDelegate ManaChangeEvent;
     }
+
+    //class Builder : CharacterEditor
+    //{
+    //    public override void ActionsCharacterEditor()
+    //    {
+    //        Console.WriteLine($"Строитель строит здания");
+    //    }
+    //}
+    //class Farmer : CharacterEditor
+    //{
+    //    public override void ActionsCharacterEditor()
+    //    {
+    //        Console.WriteLine($"{Name} собирает урожай");
+    //    }
+    //}
+    //class Miner : CharacterEditor
+    //{
+    //    public override void ActionsCharacterEditor()
+    //    {
+    //        Console.WriteLine($"{Name} копает камень");
+    //    }
+    //}
 
 }
