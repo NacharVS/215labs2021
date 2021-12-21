@@ -237,17 +237,17 @@ namespace Labs215Y2K.EditorCharacter
             if (MageCharacter.Health <= 0)
             {
                 MageCharacter.Health = 0;
-                MageCharacter.HealtheChangeEvent -= NewHealth;
+                //MageCharacter.HealtheChangeEvent -= NewHealth;
             }
             if (ArcherCharacter.Health <= 0)
             {
                 ArcherCharacter.Health = 0;
-                ArcherCharacter.HealtheChangeEvent -= NewHealth;
+                //ArcherCharacter.HealtheChangeEvent -= NewHealth;
             }
             if (WarriorCharacter.Health <= 0)
             {
                 WarriorCharacter.Health = 0;
-                WarriorCharacter.HealtheChangeEvent -= NewHealth;
+                //WarriorCharacter.HealtheChangeEvent -= NewHealth;
             }
 
             Console.WriteLine($"Здоровье Мага - {Math.Round(MageCharacter.Health,0)}xp, Мана Мага - {MageCharacter.Mana}");
