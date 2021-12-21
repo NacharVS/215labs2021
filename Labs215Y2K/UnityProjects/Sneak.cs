@@ -26,7 +26,7 @@ namespace Labs215Y2K.UnityProjects
 
         public Pixel Head { get; set; }
 
-        public Queue<Pixel> Body { get; } = new();
+        public Queue<Pixel> Body { get; } = new Queue<Pixel>();
 
         public void Move(EDirection direction, bool eat = false)
         {
