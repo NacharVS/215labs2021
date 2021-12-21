@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj": {}
+    "C:\\Users\\152019\\Documents\\215labs2021\\ListsBank\\ListsBank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj": {
+    "C:\\Users\\152019\\Documents\\215labs2021\\ListsBank\\ListsBank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj",
+        "projectUniqueName": "C:\\Users\\152019\\Documents\\215labs2021\\ListsBank\\ListsBank.csproj",
         "projectName": "ListsBank",
-        "projectPath": "C:\\Users\\152019\\Documents\\215\\ListsBank\\ListsBank.csproj",
+        "projectPath": "C:\\Users\\152019\\Documents\\215labs2021\\ListsBank\\ListsBank.csproj",
         "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\152019\\Documents\\215\\ListsBank\\obj\\",
+        "outputPath": "C:\\Users\\152019\\Documents\\215labs2021\\ListsBank\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\"

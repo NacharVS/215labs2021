@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\152019\\Documents\\215labs2021\\Bank\\Bank.csproj",
-      "projectName": "Bank",
-      "projectPath": "C:\\Users\\152019\\Documents\\215labs2021\\Bank\\Bank.csproj",
+      "projectUniqueName": "C:\\Users\\152019\\Documents\\215labs2021\\Game_2\\Game_2.csproj",
+      "projectName": "Game_2",
+      "projectPath": "C:\\Users\\152019\\Documents\\215labs2021\\Game_2\\Game_2.csproj",
       "packagesPath": "C:\\Users\\152019\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\152019\\Documents\\215labs2021\\Bank\\obj\\",
+      "outputPath": "C:\\Users\\152019\\Documents\\215labs2021\\Game_2\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\"
