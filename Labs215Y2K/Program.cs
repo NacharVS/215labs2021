@@ -25,7 +25,7 @@ namespace Deletor
             //StudentsListsOperation();
             //bank(); //- банк
 
-            NewBank();
+            //NewBank();
 
 
         }
