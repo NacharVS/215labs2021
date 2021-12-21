@@ -6,7 +6,7 @@ namespace Labs215Y2K
 {
     class Arrey_1
     {
-        {
+        
         public static void ex1()
         //сумма элементов каждоый строки массива
         {
