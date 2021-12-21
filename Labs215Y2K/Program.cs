@@ -6,12 +6,36 @@ using Units;
 using Action;
 using Labs215Y2K;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Threading;
+using System.Threading.Tasks;
+using Labs215Y2K.UnityProjects;
+using static System.Console;
 
 namespace Deletor
 {
-    public class MainClass
+    public class Program
     {
-        public static void Main()
+        // Переменные
+        private const int MapWidth = 30; // Размер консоли
+        private const int MapHeight = 20; // Высота консоли
+
+        private const int ScreenWidth = MapWidth * 3; //Размер окна
+        private const int ScreenHeight = MapHeight * 3; //Высота окна
+
+        private const int FrameMs = 200; // Задержка
+
+        private const ConsoleColor BorderColor = ConsoleColor.Gray; // Цвет поля
+
+        private const ConsoleColor HeadColor = ConsoleColor.DarkBlue; // Цвет головы
+        private const ConsoleColor BodyColor = ConsoleColor.Cyan; // Цвет тела
+        private const ConsoleColor FoodColor = ConsoleColor.Green; // Цвет Еды
+
+        private static readonly Random Random = new Random();
+
+
+
+        private static async Task Main()
         {
             //MaxMin.Maxmin.ex1(); // - максимальный элемент массива
             //Multplus.MultPlus.ex2();  // - Сумма и умножение массива
@@ -26,6 +50,19 @@ namespace Deletor
             //bank(); //- банк
 
             //NewBank();
+
+
+
+            SetWindowSize(ScreenWidth, ScreenHeight);
+            SetBufferSize(ScreenWidth, ScreenHeight);
+
+            CursorVisible = false;
+
+
+            Console.WriteLine($"Метод main начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            await Menu();
+            Console.WriteLine($"Метод main законьчил свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            Console.ReadLine();
 
 
         }
@@ -707,5 +744,179 @@ namespace Deletor
 
 
         }
+        private static async Task Menu()
+        {
+            while (true)
+            {
+                Console.WriteLine("\tMenu");
+                Console.WriteLine("<================================>");
+                Console.WriteLine("Для старта музыки нажмите клавишу Escape");
+                Console.WriteLine("Для старта игры нажмите клавишу end");
+                Console.WriteLine("Для выключения игры и вызова меню нажмите клавишу home");
+                Console.WriteLine("<================================>");
+                var key = Console.ReadKey(true).Key;
+                switch (key)
+                {
+                    case ConsoleKey.Home:
+                        Console.Clear();
+                        return;
+
+                    case ConsoleKey.End:
+                        {
+                            await StartGame(CancellationToken.None);
+                            break;
+                        }
+
+                    case ConsoleKey.Escape:
+                        await PlayMusic();
+                        break;
+                }
+            }
+        }
+
+        private static async Task PlayMusic()
+        {
+            Console.WriteLine($"Метод PlayMusic начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            var cancelTokenSource = new CancellationTokenSource();
+            var token = cancelTokenSource.Token;
+            var task1 = PlayMusic(token);
+
+            Console.WriteLine("Для выключения музыки нажмите клавишу delete");
+            ConsoleKey Key = Console.ReadKey(true).Key;
+            if (Key == ConsoleKey.Delete)
+            {
+                cancelTokenSource.Cancel();
+                await Menu();
+            }
+            else
+            {
+                await Menu();
+            }
+            Console.WriteLine($"Метод PlayMusic законьчил свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            Console.ReadLine();
+            await task1;
+        }
+
+        private static async Task PlayMusic(CancellationToken token)
+        {
+            Console.WriteLine($"Метод PlayMusic1 начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            for (var i = 0; i < 20; i++)
+            {
+                await Music.SuperMario(token);
+                if (token.IsCancellationRequested)
+                {
+                    Console.WriteLine("Операция прервана токеном");
+                }
+            }
+            Console.WriteLine($"Метод PlayMusic1 законьчил свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+        }
+
+        private static EDirection ReadMovement(EDirection currentDirection, ConsoleKey key)
+        {
+            currentDirection = key switch
+            {
+                ConsoleKey.UpArrow when currentDirection != EDirection.Down => EDirection.Up,
+                ConsoleKey.DownArrow when currentDirection != EDirection.Up => EDirection.Down,
+                ConsoleKey.LeftArrow when currentDirection != EDirection.Right => EDirection.Left,
+                ConsoleKey.RightArrow when currentDirection != EDirection.Left => EDirection.Right,
+                _ => currentDirection
+            };
+
+            return currentDirection;
+        }
+
+        private static async Task DrawBorder()
+        {
+            for (int i = 0; i < MapWidth; i++)
+            {
+                new Pixel(i, 0, BorderColor).Draw();
+                new Pixel(i, MapHeight - 1, BorderColor).Draw();
+            }
+
+            for (int i = 0; i < MapHeight; i++)
+            {
+                new Pixel(0, i, BorderColor).Draw();
+                new Pixel(MapWidth - 1, i, BorderColor).Draw();
+            }
+        }
+
+        private static async Task StartGame(CancellationToken token)
+        {
+            Console.WriteLine($"Метод StartGame начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            Console.Clear();
+            await DrawBorder();
+            var currentMovement = EDirection.Right;
+            var snake = new Sneak(10, 5, HeadColor, BodyColor);
+            var score = 0;
+            var food = GetFood(snake);
+            food.Draw();
+            var sw = new Stopwatch();
+            var stopped = false;
+
+            while (!token.IsCancellationRequested && !stopped)
+            {
+                sw.Restart();
+                var oldMovement = currentMovement;
+                while (sw.ElapsedMilliseconds <= FrameMs)
+                {
+                    if (KeyAvailable)
+                    {
+                        var key = Console.ReadKey(false).Key;
+
+                        if (key == ConsoleKey.Home)
+                        {
+                            stopped = true;
+                            break;
+                        }
+                        if (currentMovement == oldMovement)
+                            currentMovement = ReadMovement(currentMovement, key);
+                    }
+                    else
+                        await Task.Delay(1, CancellationToken.None);
+                }
+
+                if (snake.Head.X == food.X && snake.Head.Y == food.Y)
+                {
+                    snake.Move(currentMovement, true);
+                    food = GetFood(snake);
+                    food.Draw();
+                    score++;
+                }
+                else
+                    snake.Move(currentMovement);
+
+                if (snake.Head.X == MapWidth - 1 || snake.Head.X == 0 || snake.Head.Y == MapHeight - 1 || snake.Head.Y == 0 || snake.Body.Any(b => b.X == snake.Head.X && b.Y == snake.Head.Y))
+                    break;
+            }
+            snake.Clear();
+
+            Console.SetCursorPosition(ScreenWidth / 3, ScreenHeight / 2);
+            Console.WriteLine($"Game Over, score:{ score}");
+            await Task.Delay(1000, CancellationToken.None);
+            Console.Clear();
+        }
+
+        private static Pixel GetFood(Sneak sneak)
+        {
+            Pixel food;
+
+            do
+            {
+                food = new Pixel(Random.Next(1, MapWidth - 2), Random.Next(1, MapHeight - 2), FoodColor);
+            } while (sneak.Head.X == food.X && sneak.Head.Y == food.Y
+            || sneak.Body.Any(b => b.X == food.X && b.Y == food.Y));
+
+            return food;
+        }
+
+
+
     }
+
 }
+
+    
+
+
+    
+

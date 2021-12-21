@@ -44,7 +44,7 @@ namespace Magazin
             int counter = 0;
             if (yesno == 1)
             {
-                Deletor.MainClass.magaz(numberofproduct, yesno, catalog, korzina, counter, cycleoperation, countofproduct, korzinakolvo, price, Sum, sumtwo, korzinaprice);
+                Deletor.Program.magaz(numberofproduct, yesno, catalog, korzina, counter, cycleoperation, countofproduct, korzinakolvo, price, Sum, sumtwo, korzinaprice);
             }
             else
             {
