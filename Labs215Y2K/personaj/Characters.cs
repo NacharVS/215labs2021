@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Labs215Y2K
 {
-    class Characters : ICharacters
+    class Characters  
     {
         public delegate void HealthValueChangeDelagate(int health, int Oldhealth);
         public event HealthValueChangeDelagate HealthChangeEvent;
@@ -58,10 +58,7 @@ namespace Labs215Y2K
                 int oldhealth = _health;
                 _health = value;
                 HealthChangeEvent?.Invoke(_health, oldhealth);
-
             }
-                
-
         }
         public int Mana { get => _mana; set => _mana = value; }
         public int Pattack { get => _pattack; set => _pattack = value; }

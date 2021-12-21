@@ -6,8 +6,8 @@ namespace Labs215Y2K
 {
     class Health
 	{
-		 
-		public delegate void HealthValueChangedDelegate();
+		public delegate void HealthValueChangedDelegate(double currentHealth, double maxHealth);
+		public event HealthValueChangedDelegate HealthChangedEvent;
 
 		private double _currentHealth;
 		private double _maxHealth;
@@ -45,11 +45,14 @@ namespace Labs215Y2K
 				}
 				else
 					_currentHealth = value;
+				if (_currentHealth<50) 
+				{
+					HealthChangedEvent?.Invoke(_currentHealth, MaxHealth);
+				}
 			}
 		}
 
 		public bool IsWeaken { get => _isWeaken; }
 
-		public event HealthValueChangedDelegate HealthChangedEvent;
 	}
 }

@@ -12,11 +12,6 @@ namespace Labs215Y2K
 {
     class Program
     {
-
-
-
-
-
         public static void Main()
         {
 
@@ -126,6 +121,9 @@ namespace Labs215Y2K
             CharactersP[1].Mcdamage = CharactersP[1].Mattack * (2 + CharactersP[1].Intelgence * (15 / 100));
             CharactersP[2].Mcdamage = CharactersP[2].Mattack * (2 + CharactersP[2].Intelgence * (15 / 100));
 
+
+            per1.HealthChangedEvent += NewHealth;
+
             foreach (var item in CharactersP)
             {
                 Console.WriteLine($"Класс - {item.Name}, сила - {item.Strenght}, ловкость - {item.Dexterity}, интелект - {item.Intelgence}, тело сложение - {item.Consitution}, хп - {item.Health}, мана - {item.Mana}, атака - {item.Pattack}, защита - {item.Pdefense}, маг.атака - {item.Mattack}, маг.защита - {item.Mdefense}, физ.шанс - {item.Pcchanse}, физ.крит - {item.Pcdamage}, маг.шанс - {item.Mcchanse}, маг.крит - {item.Mcdamage}");
@@ -179,7 +177,7 @@ namespace Labs215Y2K
             }
             static void NewHealth(double OldHealth, double NewHealth)
             {
-                if (NewHealth < 0)
+                if (NewHealth < 50)
                 {
                     NewHealth = 0;
                 }
