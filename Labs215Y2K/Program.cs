@@ -62,13 +62,15 @@ namespace Labs215Y2K
                 Console.WriteLine();
             }
 
+            Console.WriteLine();
             Console.WriteLine("Перерыв на рекламу, подождите немного");
             Console.WriteLine("Анекдот: Шёл медведь по лесу, наступил на колобка и сказал:'Вот блин'");
-            System.Threading.Thread.Sleep(1000);
+            System.Threading.Thread.Sleep(3000);
+            Console.WriteLine();
             Console.WriteLine();
 
-            Console.WriteLine($"Хотите посмотреть бой между {ArcherCharacter.Name}, {WarriorCharacter.Name} и {MageCharacter.Name}? (1.Да)");
-            Console.WriteLine("Или лучше посмотреть бой, который находится в разработке? (2.Тест)");
+            Console.WriteLine($"Хотите посмотреть бой между {ArcherCharacter.Name}, {WarriorCharacter.Name} и {MageCharacter.Name}? (1.Да) (3.Нет)");
+            //Console.WriteLine("Или лучше посмотреть бой, который находится в разработке? (2.Тест)");
             string YesOrNo2 = Console.ReadLine();
             string Тест = "Тест";
             string Да2 = "Да";

@@ -170,7 +170,7 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Крит.Урон Мага - {MageCharacter.MagicCriticalDamage}");
                     WarriorCharacter.Health -= MageCharacter.MagicCriticalDamage;
                     MageCharacter.Mana -= 20;
-                    if (MageCharacter.Health <= 0)
+                    if (WarriorCharacter.Health <= 0)
                     {
                         Dead();
                     }
@@ -181,7 +181,7 @@ namespace Labs215Y2K.EditorCharacter
                     Console.WriteLine($"Урон Мага - {MageCharacter.MagicAttack}");
                     WarriorCharacter.Health -= MageCharacter.MagicAttack;
                     MageCharacter.Mana -= 10;
-                    if (MageCharacter.Health <= 0)
+                    if (WarriorCharacter.Health <= 0)
                     {
                         Dead();
                     }
@@ -214,20 +214,20 @@ namespace Labs215Y2K.EditorCharacter
             {
                 if (WarriorCharacter.PhysicalCriticalChanse >= new Random().Next(0, 100))
                 {
-                    Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит критический урон {MageCharacter.Name}");
                     Console.WriteLine($"Крит.Урон Воина - {WarriorCharacter.PhysicalCriticalDamage}");
-                    ArcherCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
-                    if (ArcherCharacter.Health <=0)
+                    MageCharacter.Health -= WarriorCharacter.PhysicalCriticalDamage;
+                    if (MageCharacter.Health <=0)
                     {
                         Dead();
                     }
                 }
                 else
                 {
-                    Console.WriteLine($"{WarriorCharacter.Name} наносит урон {ArcherCharacter.Name}");
+                    Console.WriteLine($"{WarriorCharacter.Name} наносит урон {MageCharacter.Name}");
                     Console.WriteLine($"Урон Воина - {WarriorCharacter.PhysicalAttack}");
-                    ArcherCharacter.Health -= WarriorCharacter.PhysicalAttack;
-                    if (ArcherCharacter.Health <= 0)
+                    MageCharacter.Health -= WarriorCharacter.PhysicalAttack;
+                    if (MageCharacter.Health <= 0)
                     {
                         Dead();
                     }
@@ -267,8 +267,16 @@ namespace Labs215Y2K.EditorCharacter
             int RandomFightThree = new Random().Next(1, 5);
             int RandomHFightTwo = new Random().Next(1, 4);
 
-
-
+            Console.WriteLine($"Это тестовый режим боя, в котором учавствуют Маг, Лучник и Воин");
+            Console.WriteLine($"Вы можете купить для Мага улучшения:");
+            Console.WriteLine($"1.Удар молнией - у Мага повысится урон на 50%, но здоровье понизится на 20%");
+            Console.WriteLine($"2.Удар огненным шаром - у Мага повысится урон на 35%, но здоровье понизится на 15%");
+            Console.WriteLine($"3.Повышение шанса критического урона - у Мага повысится шанс крит.урона на 40%, но мана понилится на 60%");
+            string UpgradeMage = Console.ReadLine();
+            string One = "1"; string Two = "2"; string Three = "3";
+            string УдарМолнией = "Удар молнией";
+            string УдарОгненнымШаром = "Удар огненным шаром";
+            string ПовышениеКритическогоУрона = "Повышение шанса критического урона";
         }
 
         public static void WinWarrior(WarriorCharacter WarriorCharacter)
