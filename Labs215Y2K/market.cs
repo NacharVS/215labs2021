@@ -6,8 +6,8 @@ namespace Labs215Y2K
 {
     class market : marketnew
     {
-        static string a11 = "1 - Просмотреть список товаров";
-        static string a22 = "2 - Перейти в корзину";
+        //static string a11 = "1 - Просмотреть список товаров";
+        //static string a22 = "2 - Перейти в корзину";
         //protected static void productcheck()
         //{
         //    Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
