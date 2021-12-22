@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Characters.Новая_папка;
 
 namespace Characters
 {
@@ -9,13 +10,14 @@ namespace Characters
         static void Main(string[] args)
         {
 
-            List<Mage> mag = new List<Mage>();
-            List<Warrior> warrior = new List<Warrior>();
-            List<Archer> archer = new List<Archer>();
-            warrior.Add(new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0, 0));
-            mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0));
-            archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0, 0));
-            Info.Startredactor(archer, warrior, mag);
+            //List<Mage> mag = new List<Mage>();
+            //List<Warrior> warrior = new List<Warrior>();
+            //List<Archer> archer = new List<Archer>();
+            //warrior.Add(new Warrior(30, 15, 10, 25, 0, 0, 0, 0, 0, 0));
+            //mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0));
+            //archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0, 0));
+            //Info.Startredactor(archer, warrior, mag);
+            Class1.ex5();
         }
 
         public static void Archerlist(List<Archer> archer)
