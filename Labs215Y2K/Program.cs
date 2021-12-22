@@ -15,12 +15,22 @@ namespace Labs215Y2K
         {
             //NewBank(); /*-Новый банк*/
 
-            int[] array = new int[10];
-            for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = new Random().Next(0, 100);
-                Console.Write($"{array[i]} ");
-            }
+            //Console.WriteLine("Напишите 'a'");
+            //int a = int.Parse(Console.ReadLine());
+            //Console.WriteLine("Напишите 'b'");
+            //int b = int.Parse(Console.ReadLine());
+
+            //int num = a;
+            //for (int i = 1; i < b; i++)
+            //{
+            //    a = num * a;
+            //}
+
+            //Console.WriteLine();
+            //Console.WriteLine(a);
+
+
+
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
