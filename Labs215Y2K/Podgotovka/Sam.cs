@@ -158,25 +158,66 @@ namespace Labs215Y2K.Podgotovka
             //    Console.Write($" {array2[i]} ");
             //}
 
-            int[,] array = new int[10, 10];
-            int sum = 0;
-            for( int i = 0; i < array.GetLength(0); i++)
-            {
-                for(int j = 0; j < array.GetLength(1); j++)
-                {
-                    array[i, j] = new Random().Next(-10, 10);
-                    Console.Write($" {array[i,j]} ");
-                    if (array[i, j] > 0)
-                    {
-                        sum++;
-                    }
-                }
-                
-                Console.WriteLine();
-            }
-            Console.WriteLine($" Cумма элементов, которые больше нуля: {sum}");
+            //int[,] array = new int[10, 10];
+            //int sum = 0;
+            //for( int i = 0; i < array.GetLength(0); i++)
+            //{
+            //    for(int j = 0; j < array.GetLength(1); j++)
+            //    {
+            //        array[i, j] = new Random().Next(-10, 10);
+            //        Console.Write($" {array[i,j]} ");
+            //        if (array[i, j] > 0)
+            //        {
+            //            sum++;
+            //        }
+            //    }
+
+            //    Console.WriteLine();
+            //}
+            //Console.WriteLine($" Cумма элементов, которые больше нуля: {sum}");
+
+
+
+            //int[] array = new int[10];
+            //int min = array[0];
+            //int max = array[0];
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    array[i] = new Random().Next(-10, 10);
+            //    Console.Write($" {array[i] } ");
+            //    if (array[i] > max)
+            //    {
+            //        max = array[i];
+
+            //    }
+            //    else if (array[i] < min)
+            //    {
+            //        min = array[i];
+            //    }
+
+            //}
+            //int sum = min * max;
+            //Console.WriteLine();
+            //Console.WriteLine($" {max} Макс элемент  ");
+            //Console.WriteLine($" {min} Мин элемент  ");
+            //Console.WriteLine($" {sum} Произведение  ");
+
+
+            //int[] array = new int[10];
+            //int sum = 0;
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    array[i] = new Random().Next(1, 10);
+            //    Console.Write($" {array[i] } ");
+            //    if(array[i] % 2 == 0)
+            //    {
+            //        sum++;
+            //    }
+            //}
+            //Console.WriteLine();
+            //Console.WriteLine($"{sum}");
         }
-        
+
     }
 }
 
