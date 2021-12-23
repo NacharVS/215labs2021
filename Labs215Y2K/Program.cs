@@ -29,6 +29,23 @@ namespace Labs215Y2K
             //Console.WriteLine();
             //Console.WriteLine(a);
 
+
+
+            //Console.WriteLine("Напишите число");
+            //int num = int.Parse(Console.ReadLine());
+            //int sum = 0;
+            //while (num > 0)
+            //{
+            //    sum = sum + num % 10;
+            //    num /= 10;
+            //}
+            //Console.WriteLine(sum);
+
+
+            Console.WriteLine("Напишите число");
+            int num = int.Parse(Console.ReadLine());
+            int replay = 0;
+
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {
