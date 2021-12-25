@@ -246,8 +246,63 @@ namespace Labs215Y2K.Podgotovka
             //Mama();
             //Mama();
 
-        }
 
+            //    Console.WriteLine("Введите имя человека");
+            //    string name = Console.ReadLine();
+            //    Console.WriteLine("Введите возраст человека");
+            //    int age = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("Введите сумму человека");
+            //    int money = int.Parse(Console.ReadLine());
+
+            //}
+            //public class BankAccount
+            //{
+            //    public string Name
+            //    {
+            //        get
+            //        {
+            //            return Name;
+            //        }
+            //        set
+            //        {
+            //            Name = value;
+            //        }
+            //    }
+            //    public int Age
+            //    {
+            //        get
+            //        {
+            //            return Age;
+            //        }
+            //        set
+            //        {
+            //            Age = value;
+            //        }
+            //    }
+            //    public int Money
+            //    {
+            //        get
+            //        {
+            //            return Money;
+            //        }
+            //        set
+            //        {
+            //            Money = value;
+            //        }
+
+            //    }
+
+
+            List <string> Name= new List<string>();
+            Name.Add("Максим");
+            Name.Add("Мамура 223");
+            foreach(string item in Name)
+            {
+                Console.WriteLine(item);
+            }
+
+        }
+        
     }
 }
 
