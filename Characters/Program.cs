@@ -17,7 +17,7 @@ namespace Characters
             //mag.Add(new Mage(15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0));
             //archer.Add(new Archer(20, 30, 15, 20, 0, 0, 0, 0, 0, 0));
             //Info.Startredactor(archer, warrior, mag);
-            Class1.ex5();
+            Class1.ex11();
         }
 
         public static void Archerlist(List<Archer> archer)

@@ -179,6 +179,70 @@ namespace Characters.Новая_папка
         public static void ex11()
         {
 
+            //а) количество цифр в нем;
+            //б) сумму его цифр;
+            //в) произведение его цифр;
+            //г) среднее арифметическое его цифр;
+            //д) сумму квадратов его цифр;
+            //е) сумму кубов его цифр;
+            //ж) его первую цифру;
+            //з) сумму его первой и последней цифр.
+            Console.Write("Введите число: ");
+            int number = int.Parse(Console.ReadLine());
+            double b = 0;
+            int number2 = number;
+            int number3 = number;
+            double numbersum = 0;
+            while (number2 > 0)
+            {
+                b++;
+                number2 /= 10;
+            }
+            Console.WriteLine($"Количество цифр в числе: {b}");
+            while (number3 > 0)
+            {
+                numbersum += number3 % 10;
+                number3 /= 10;
+            }
+            number3 = number;
+            int numberproizv = 1;
+            Console.WriteLine($"Сумма цифр числа: {numbersum}");
+            while (number3 > 0)
+            {
+                numberproizv *= number3 % 10;
+                number3 /= 10;
+            }
+            number3 = number;
+            double sumround = 0;
+            Console.WriteLine($"Произведение цифр числа: {numberproizv}");
+            Console.WriteLine($"Ср. арифмитеское цифр числа: {numbersum / b}");
+            while (number3 > 0)
+            {
+                sumround += Math.Pow(number3 % 10, 2);
+                number3 /= 10;
+            }
+            number3 = number;
+            Console.WriteLine($"Сумма квадратов цифр числа: {sumround}");
+            double sumround2 = 0;
+            while (number3 > 0)
+            {
+                sumround2 += Math.Pow(number3 % 10, 3);
+                number3 /= 10;
+            }
+            number3 = number;
+            Console.WriteLine($"Сумма кубов цифр числа: {sumround2}");
+            int firstint = 0;
+            while (number3 > 0)
+            {
+                firstint = number3 % 10;
+                number3 /= 10;
+            }
+            number3 = number;
+            Console.WriteLine($"Первая цифра числа: {firstint}");
+            int lastint = 0;
+            lastint = number3 % 10;
+            Console.WriteLine($"Сумма первой и последней цифры числа: {lastint + firstint}");
+
         }
     }
 }
