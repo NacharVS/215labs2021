@@ -66,58 +66,51 @@ namespace Labs215Y2K
 
             //    Console.WriteLine($"Новое id {a},и старое id {b}");
             //}
-            
+
 
 
             List<Characters> CharactersP = new List<Characters>();
             CharactersP.Add(new Characters("Warrior", 30, 15, 10, 25, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Mage", 15, 20, 30, 15, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
             CharactersP.Add(new Characters("Archer", 20, 30, 15, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0));
-            
-
-             //CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
-             //CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
-             //CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
             Health per1 = new Health(CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght));
             Health per2 = new Health(CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght));
             Health per3 = new Health(CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght));
+            for (int i = 0; i < 3; i++)
+            {
 
-            CharactersP[0].Mana = CharactersP[0].Intelgence * 3;
-            CharactersP[1].Mana = CharactersP[1].Intelgence * 3;
-            CharactersP[2].Mana = CharactersP[2].Intelgence * 3;
+            
+            //CharactersP[0].Health = 2 * CharactersP[0].Consitution + (5 / 10 * CharactersP[0].Strenght);
+            //CharactersP[1].Health = 2 * CharactersP[1].Consitution + (5 / 10 * CharactersP[1].Strenght);
+            //CharactersP[2].Health = 2 * CharactersP[2].Consitution + (5 / 10 * CharactersP[2].Strenght);
+            
 
-            CharactersP[0].Pattack = CharactersP[0].Strenght * 3 + (5 / 10 * CharactersP[0].Dexterity);
-            CharactersP[1].Pattack = CharactersP[1].Strenght * 3 + (5 / 10 * CharactersP[1].Dexterity);
-            CharactersP[2].Pattack = CharactersP[2].Strenght * 3 + (5 / 10 * CharactersP[2].Dexterity);
+            CharactersP[i].Mana = CharactersP[0].Intelgence * 3;
+           
 
-            CharactersP[0].Pdefense = CharactersP[0].Consitution * (5 / 10) + CharactersP[0].Dexterity * 3;
-            CharactersP[1].Pdefense = CharactersP[1].Consitution * (5 / 10) + CharactersP[1].Dexterity * 3;
-            CharactersP[2].Pdefense = CharactersP[2].Consitution * (5 / 10) + CharactersP[2].Dexterity * 3;
+            CharactersP[i].Pattack = CharactersP[0].Strenght * 3 + (5 / 10 * CharactersP[0].Dexterity);
+           
 
-            CharactersP[0].Mattack = CharactersP[0].Intelgence * 4;
-            CharactersP[1].Mattack = CharactersP[1].Intelgence * 4;
-            CharactersP[2].Mattack = CharactersP[2].Intelgence * 4;
+            CharactersP[i].Pdefense = CharactersP[0].Consitution * (5 / 10) + CharactersP[0].Dexterity * 3;
+          
 
-            CharactersP[0].Mdefense = CharactersP[0].Intelgence * 2;
-            CharactersP[1].Mdefense = CharactersP[1].Intelgence * 2;
-            CharactersP[2].Mdefense = CharactersP[2].Intelgence * 2;
+            CharactersP[i].Mattack = CharactersP[0].Intelgence * 4;
+            
+            CharactersP[i].Mdefense = CharactersP[0].Intelgence * 2;
+           
 
-            CharactersP[0].Pcchanse = 20 + CharactersP[0].Dexterity * 3;
-            CharactersP[1].Pcchanse = 20 + CharactersP[1].Dexterity * 3;
-            CharactersP[2].Pcchanse = 20 + CharactersP[2].Dexterity * 3;
+            CharactersP[i].Pcchanse = 20 + CharactersP[0].Dexterity * 3;
+           
 
-            CharactersP[0].Mcchanse = 20 + CharactersP[0].Intelgence * (1 / 10);
-            CharactersP[1].Mcchanse = 20 + CharactersP[1].Intelgence * (1 / 10);
-            CharactersP[2].Mcchanse = 20 + CharactersP[2].Intelgence * (1 / 10);
+            CharactersP[i].Mcchanse = 20 + CharactersP[0].Intelgence * (1 / 10);
+            
 
-            CharactersP[0].Pcdamage = CharactersP[0].Pattack * (2 + CharactersP[0].Dexterity * (5 / 100));
-            CharactersP[1].Pcdamage = CharactersP[1].Pattack * (2 + CharactersP[1].Dexterity * (5 / 100));
-            CharactersP[2].Pcdamage = CharactersP[2].Pattack * (2 + CharactersP[2].Dexterity * (5 / 100));
+            CharactersP[i].Pcdamage = CharactersP[0].Pattack * (2 + CharactersP[0].Dexterity * (5 / 100));
+            
 
-            CharactersP[0].Mcdamage = CharactersP[0].Mattack * (2 + CharactersP[0].Intelgence * (15 / 100));
-            CharactersP[1].Mcdamage = CharactersP[1].Mattack * (2 + CharactersP[1].Intelgence * (15 / 100));
-            CharactersP[2].Mcdamage = CharactersP[2].Mattack * (2 + CharactersP[2].Intelgence * (15 / 100));
-
+            CharactersP[i].Mcdamage = CharactersP[0].Mattack * (2 + CharactersP[0].Intelgence * (15 / 100));
+            
+        }
 
             per1.HealthChangedEvent += NewHealth;
 
@@ -202,7 +195,7 @@ namespace Labs215Y2K
 
 
 
-    } 
+    }
     
 
     
