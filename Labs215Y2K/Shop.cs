@@ -6,12 +6,10 @@ namespace Labs215Y2K
 {
     class Shop
     {
-        static string a11 = "1 - Просмотреть список товаров";
-        static string a22 = "2 - Перейти в корзину";
-        
-        
         public static void catalog(int[] productschoose, int[] priceproducts)
         {
+            string a11 = "1 - Просмотреть список товаров";
+            string a22 = "2 - Перейти в корзину";
             Console.WriteLine("Добро пожаловать в магазин. Что вы хотите сделать?");
             Console.WriteLine(a11);
             Console.WriteLine(a22);
@@ -36,7 +34,7 @@ namespace Labs215Y2K
 
         }
 
-        public static void catalog1(int[] productschoose, int[] priceproducts)
+        public static void catalog1(int []productschoose, int[] priceproducts)
         {
             string[] a = new string[10];
             for (int j = 0; j < 10; j++)
@@ -495,6 +493,32 @@ namespace Labs215Y2K
                 Console.WriteLine("Вы хотите изменить количество или удалить продукт (Да/Нет)");
 
                 answer = Console.ReadLine();
+                switch(answer)
+                {
+                    case "Да":
+                        Console.WriteLine("Вы хотите изменить количество или удалить продукт? 1- Изменить, 2- Удалить");
+                        int answer1 = int.Parse(Console.ReadLine());
+                        switch(answer1)
+                        {
+                            case 1:
+                                Shop.chooseproducts(priceproducts, productschoose);
+                                break;
+                            case 2:
+                                Shop.Delete(priceproducts, productschoose);
+                                break;
+                            default:
+                                Console.WriteLine("Вы ввели неправильное число");
+                                break;
+                        }
+                        break;
+                    case "Нет":
+                        Shop.cheque(priceproducts, productschoose);
+                        break;
+                    default:
+                        Console.WriteLine("Вы ввели неправильное число");
+                        break;
+                        
+                }
             }
         }
         public static void cheque2(int[] priceproducts, int[] productschoose)

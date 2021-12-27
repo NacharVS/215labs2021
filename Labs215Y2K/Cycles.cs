@@ -8,14 +8,7 @@ namespace Labs215Y2K
     {
         static void StepenChisla()
         {
-            Console.WriteLine("Hello World!");
-            Console.WriteLine();
-            Console.WriteLine();
-        }
 
-        static void OdinakoviyCifer()
-        {
-            Console.WriteLine(";oreighposdihgd");
         }
 
     }

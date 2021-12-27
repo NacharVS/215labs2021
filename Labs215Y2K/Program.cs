@@ -61,7 +61,13 @@ namespace Labs215Y2K
             //{
             //    Console.Write($"{array[i]} ");
             //}
-            Sam.mama();
+            //int[] a = new int[10];
+            //int[] b = new int[10];
+            //Shop.catalog(a, b);
+
+
+            MyItem item = new MyItem(1, 2, 4);
+            
         }
     }
 }

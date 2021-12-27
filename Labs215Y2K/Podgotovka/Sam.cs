@@ -293,16 +293,30 @@ namespace Labs215Y2K.Podgotovka
             //    }
 
 
-            List <string> Name= new List<string>();
-            Name.Add("Максим");
-            Name.Add("Мамура 223");
-            foreach(string item in Name)
-            {
-                Console.WriteLine(item);
-            }
+            //List <string> Name= new List<string>();
+            //Name.Add("Максим");
+            //Name.Add("Мамура 223");
+            //foreach(string item in Name)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
+        }
+    }
+    class MyItem
+    {
+        private int _Penal;
+        private int _Ruchka;
+        private int _Karandash;
+
+        public MyItem(int Penal, int Ruchka, int Karandash)
+        {
+            this._Penal = Penal;
+            this._Ruchka = Ruchka;
+            this._Karandash = Karandash;
         }
         
     }
+   
 }
 
