@@ -275,13 +275,7 @@ namespace Characters.Новая_папка
             }
             Console.WriteLine();
         }
-        public static void exe()
-        {
-            for (; ; )
-            {
-                Console.WriteLine("Чапман блэк вишня абоба");
-            }
-        }
+        
         
     }
 }
