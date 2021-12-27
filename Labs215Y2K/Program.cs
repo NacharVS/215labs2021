@@ -16,9 +16,14 @@ namespace Labs215Y2K
             int[,] newidarray = new int[10, 10];
             int sum = 0;
             int a = 0;
-            //Arrays14oc.arraygeneration(integersarray,sum,a,integersarray2);
-            //Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
-            Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
+            Start.StartProgramm();
         }
     }
+            //Arrays14oc.arraygeneration(integersarray,sum,a,integersarray2);
+            //Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
+            //Arrays14oc.arraygeneration(integersarray, sum, a, integersarray2, newidarray);
+            
+            
+        
+    
 }
