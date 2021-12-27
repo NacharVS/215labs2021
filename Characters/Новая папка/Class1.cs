@@ -224,7 +224,7 @@ namespace Characters.Новая_папка
             number3 = number;
             Console.WriteLine($"Сумма квадратов цифр числа: {sumround}");
             double sumround2 = 0;
-            while (number3 > 0)
+            while (number3 > 0) 
             {
                 sumround2 += Math.Pow(number3 % 10, 3);
                 number3 /= 10;
@@ -239,10 +239,49 @@ namespace Characters.Новая_папка
             }
             number3 = number;
             Console.WriteLine($"Первая цифра числа: {firstint}");
-            int lastint = 0;
+            int lastint;
             lastint = number3 % 10;
             Console.WriteLine($"Сумма первой и последней цифры числа: {lastint + firstint}");
 
         }
+        public static void ex22()
+        {
+            int[] array = new int[10];
+            for (int i = 0; i < array.Length;i++)
+            {
+                array[i] = new Random().Next(-10, 10);
+                Console.Write($"{array[i]} ");
+            }
+            Console.WriteLine();
+            int temp;
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                for (int j = i + 1; j < array.Length;j++)
+                {
+                    if (array[i] > array[j])
+                    {
+                        temp = array[i];
+                        array[i] = array[j];
+                        array[j] = temp;
+                    }
+                    
+                }
+            }
+            Console.WriteLine("Отсортированный массив");
+            for (int i = 0; i < array.Length; i++)
+            {
+                
+                Console.Write($"{array[i]} ");
+            }
+            Console.WriteLine();
+        }
+        public static void exe()
+        {
+            for (; ; )
+            {
+                Console.WriteLine("Чапман блэк вишня абоба");
+            }
+        }
+        
     }
 }
