@@ -220,7 +220,7 @@ namespace ConsoleApp1
             Console.WriteLine($"{acc.Name} возраст: {acc.Age}  [{acc.Id} ID] - {acc.BalanceRUB} рублей");
         }
 
-        public void ShowProfit(Account acc, int months)
+        public static void ShowProfit(Account acc, int months)
         {
             for (int i = 0; i < months; i++)
             {

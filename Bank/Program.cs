@@ -20,6 +20,8 @@ namespace ConsoleApp1
             acc1.NameChangeEvent += Show;
             acc1.BalanceChangeEvent += ShowRUB;
             user1.Showinfo(acc1);
+            Account.ShowInfo= 100;
+           
 
 
 

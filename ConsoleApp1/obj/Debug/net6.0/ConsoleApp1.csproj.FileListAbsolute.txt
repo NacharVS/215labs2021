@@ -1,0 +1,16 @@
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.exe
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.deps.json
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.runtimeconfig.json
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.dll
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ref\ConsoleApp1.dll
+C:\Users\User\Documents\na4arov\ConsoleApp1\bin\Debug\net6.0\ConsoleApp1.pdb
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.csproj.AssemblyReference.cache
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.AssemblyInfoInputs.cache
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.AssemblyInfo.cs
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.ImplicitNamespaceImports.cs
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.dll
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.pdb
+C:\Users\User\Documents\na4arov\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.genruntimeconfig.cache

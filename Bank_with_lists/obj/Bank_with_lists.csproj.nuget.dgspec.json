@@ -1,25 +1,21 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj": {}
+    "C:\\Users\\User\\Documents\\na4arov\\Bank_with_lists\\Bank_with_lists.csproj": {}
   },
   "projects": {
-    "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj": {
+    "C:\\Users\\User\\Documents\\na4arov\\Bank_with_lists\\Bank_with_lists.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\na4arov\\Bank_with_lists\\Bank_with_lists.csproj",
         "projectName": "Bank_with_lists",
-        "projectPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\Bank_with_lists.csproj",
-        "packagesPath": "C:\\Users\\152015\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\152015\\Documents\\Visual Studio 2019\\215labs2021\\Bank_with_lists\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\na4arov\\Bank_with_lists\\Bank_with_lists.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\na4arov\\Bank_with_lists\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Microsoft\\Xamarin\\NuGet\\"
-        ],
         "configFilePaths": [
-          "C:\\Users\\152015\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
           "netcoreapp3.1"
@@ -30,6 +26,7 @@
         },
         "frameworks": {
           "netcoreapp3.1": {
+            "targetAlias": "netcoreapp3.1",
             "projectReferences": {}
           }
         },
@@ -41,6 +38,7 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
           "imports": [
             "net461",
             "net462",
@@ -51,12 +49,30 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.1.10, 3.1.10]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[3.1.17, 3.1.17]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[3.1.0, 3.1.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-preview.7.21379.14\\RuntimeIdentifierGraph.json"
         }
       }
     }
