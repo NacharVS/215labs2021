@@ -2,15 +2,13 @@
 using Labs215Y2K.Bank;
 using Labs215Y2K.NewBank;
 using System.Linq;
-using Units;
-using Action;
-using Labs215Y2K;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using System.Threading.Tasks;
 using Labs215Y2K.UnityProjects;
 using static System.Console;
+using Labs215Y2K.MongoExamples;
 
 namespace Deletor
 {
@@ -48,21 +46,71 @@ namespace Deletor
             //Labs215Y2K.SummId.SummIdSort();
             //StudentsListsOperation();
             //bank(); //- банк
-
             //NewBank();
 
+            //SetWindowSize(ScreenWidth, ScreenHeight);
+            //SetBufferSize(ScreenWidth, ScreenHeight);
 
+            //CursorVisible = false;
 
-            SetWindowSize(ScreenWidth, ScreenHeight);
-            SetBufferSize(ScreenWidth, ScreenHeight);
+            //Console.WriteLine($"Метод main начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            //await Menu();
+            //Console.WriteLine($"Метод main законьчил свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
+            //Console.ReadLine();
+            Console.WriteLine("Начало: ");
+            int processing = 0;
+            int number = 1;
+            while (processing != 1)
+            {
+                Console.WriteLine("Введите Фамилию");
+                string surname = Console.ReadLine();
 
-            CursorVisible = false;
+                Console.WriteLine("Введите Имя");
+                string name = Console.ReadLine();
 
+                Console.WriteLine("Введите Отчество");
+                string patronymic = Console.ReadLine();
 
-            Console.WriteLine($"Метод main начал свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
-            await Menu();
-            Console.WriteLine($"Метод main законьчил свою работу в потоке  - {Thread.CurrentThread.ManagedThreadId}");
-            Console.ReadLine();
+                Console.WriteLine("Введите Гендер");
+                string gender = Console.ReadLine();
+
+                Console.WriteLine("Введите год рождения");
+                int yearOfBirth = int.Parse(Console.ReadLine());
+
+                int age = DateTime.Now.Year - yearOfBirth;
+
+                Console.WriteLine("Есть у вас работа? (Есть/Нет)");
+                string work = Console.ReadLine();
+
+                Console.WriteLine("Играете ли вы в видео игры? (Да/Нет)");
+                string playGames = Console.ReadLine();
+
+                Console.WriteLine("Как вы относитесь к Apex Legends? (Да/Нет)");
+                string attention = Console.ReadLine();
+
+                //if (playGames == "Да")
+                //{
+                //    Console.WriteLine("Как вы относитесь к Apex Legends? (Да/Нет)");
+                //    string attention = Console.ReadLine();
+                //}
+                //else
+                //{
+                //    string attention = "Не играет в видео игры";
+                //}
+
+                Console.WriteLine("");
+
+                Extensions.AddToDataBase(number, surname, name, patronymic, gender, yearOfBirth, age, work, playGames, attention);
+                Console.WriteLine("Напишите (Стоп), если хотите закончить");
+                Console.WriteLine("Нажмите (Enter), чтобы продолжить");
+                string input = Console.ReadLine();
+                input.ToUpper();
+                number++;
+                if (input == "Стоп")
+                {
+                    processing = 1;
+                }
+            }
 
 
         }
