@@ -60,58 +60,52 @@ namespace Deletor
             Console.WriteLine("Начало: ");
             int processing = 0;
             int number = 1;
-            while (processing != 1)
-            {
-                Console.WriteLine("Введите Фамилию");
-                string surname = Console.ReadLine();
+            string work;
+            string workyes = "g";
+            //while (processing != 1)
+            //{
+            //    Console.WriteLine("Введите Фамилию");
+            //    string surname = Console.ReadLine();
 
-                Console.WriteLine("Введите Имя");
-                string name = Console.ReadLine();
+            //    Console.WriteLine("Введите Имя");
+            //    string name = Console.ReadLine();
 
-                Console.WriteLine("Введите Отчество");
-                string patronymic = Console.ReadLine();
+            //    Console.WriteLine("Введите Отчество");
+            //    string patronymic = Console.ReadLine();
 
-                Console.WriteLine("Введите Гендер");
-                string gender = Console.ReadLine();
+            //    Console.WriteLine("Введите Гендер (Муж/Жен)");
+            //    string gender = Console.ReadLine();
 
-                Console.WriteLine("Введите год рождения");
-                int yearOfBirth = int.Parse(Console.ReadLine());
+            //    Console.WriteLine("Введите год рождения");
+            //    int yearOfBirth = int.Parse(Console.ReadLine());
 
-                int age = DateTime.Now.Year - yearOfBirth;
+            //    int age = DateTime.Now.Year - yearOfBirth;
 
-                Console.WriteLine("Есть у вас работа? (Есть/Нет)");
-                string work = Console.ReadLine();
+            //    Console.WriteLine("Есть у Вас работа? (Есть/Нет)");
+            //    work = Console.ReadLine();
 
-                Console.WriteLine("Играете ли вы в видео игры? (Да/Нет)");
-                string playGames = Console.ReadLine();
+            //    if (work == "Есть")
+            //    {
+            //        Console.WriteLine("Кем вы работаете?");
+            //        workyes = Console.ReadLine();
+            //    }
 
-                Console.WriteLine("Как вы относитесь к Apex Legends? (Да/Нет)");
-                string attention = Console.ReadLine();
+            //    Console.WriteLine("Есть ли у Вас хобби? (Да/Нет)");
+            //    string playGames = Console.ReadLine();
 
-                //if (playGames == "Да")
-                //{
-                //    Console.WriteLine("Как вы относитесь к Apex Legends? (Да/Нет)");
-                //    string attention = Console.ReadLine();
-                //}
-                //else
-                //{
-                //    string attention = "Не играет в видео игры";
-                //}
-
-                Console.WriteLine("");
-
-                Extensions.AddToDataBase(number, surname, name, patronymic, gender, yearOfBirth, age, work, playGames, attention);
-                Console.WriteLine("Напишите (Стоп), если хотите закончить");
-                Console.WriteLine("Нажмите (Enter), чтобы продолжить");
-                string input = Console.ReadLine();
-                input.ToUpper();
-                number++;
-                if (input == "Стоп")
-                {
-                    processing = 1;
-                }
-            }
-
+            //    Console.WriteLine();
+            //    Extensions.AddToDataBase(number, surname, name, patronymic, gender, yearOfBirth, age, work, workyes, playGames);
+            //    Console.WriteLine("Напишите (Стоп), если хотите закончить");
+            //    Console.WriteLine("Нажмите (Enter), чтобы продолжить");
+            //    string input = Console.ReadLine();
+            //    input.ToUpper();
+            //    number++;
+            //    if (input == "Стоп")
+            //    {
+            //        processing = 1;
+            //    }
+            //}
+            Extensions.GetAllFromDataBase();
 
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)

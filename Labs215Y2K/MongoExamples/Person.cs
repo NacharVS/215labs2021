@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Labs215Y2K.MongoExamples
 {
     class Person
     {
+        public ObjectId _id;
         public int number;
         public string surname;
         public string name;
@@ -14,11 +16,12 @@ namespace Labs215Y2K.MongoExamples
         public int yearOfBirth;
         public int age;
         public string work;
+        public string workyes;
         public string playGames;
-        public string attention;
+       
        
 
-        public Person(int number, string surname, string name, string patronymic, string gender, int yearOfBirth,int age, string work, string playGames, string attention)
+        public Person(int number, string surname, string name, string patronymic, string gender, int yearOfBirth,int age, string work,string workyes, string playGames)
         {
             this.number = number;
             this.surname = surname;
@@ -27,9 +30,10 @@ namespace Labs215Y2K.MongoExamples
             this.gender = gender;
             this.yearOfBirth = yearOfBirth;
             this.age = age;
-            this.work = work;
+            this.work = work;    
+            this.workyes = workyes;
             this.playGames = playGames;
-            this.attention = attention;
+
         }
     }
 }
