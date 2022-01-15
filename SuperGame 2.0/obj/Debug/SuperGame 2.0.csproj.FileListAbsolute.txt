@@ -1,7 +1,0 @@
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\bin\Debug\SuperGame 2.0.exe.config
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\bin\Debug\SuperGame 2.0.exe
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\bin\Debug\SuperGame 2.0.pdb
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\obj\Debug\SuperGame 2.0.csprojAssemblyReference.cache
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\obj\Debug\SuperGame 2.0.csproj.CoreCompileInputs.cache
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\obj\Debug\SuperGame 2.0.exe
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\SuperGame 2.0\obj\Debug\SuperGame 2.0.pdb

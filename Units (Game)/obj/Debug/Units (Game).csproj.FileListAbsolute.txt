@@ -1,7 +1,0 @@
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\bin\Debug\Units (Game).exe.config
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\bin\Debug\Units (Game).exe
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\bin\Debug\Units (Game).pdb
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\obj\Debug\Units (Game).csprojAssemblyReference.cache
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\obj\Debug\Units (Game).csproj.CoreCompileInputs.cache
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\obj\Debug\Units (Game).exe
-C:\Users\student.MCK-KTITS\Documents\320\215labs2021\Labs215Y2K\215labs2021\Units (Game)\obj\Debug\Units (Game).pdb
