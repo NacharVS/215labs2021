@@ -11,7 +11,8 @@ namespace Labs215Y2K
         {
 
             Examples.Start();
-            
+            int age = 21;
+            Examples.GetDataBaseInfoFirstCourse(age);
         }
     }
 }

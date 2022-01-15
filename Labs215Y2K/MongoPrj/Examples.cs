@@ -40,6 +40,17 @@ namespace Labs215Y2K.MongoPrj
             var collection = database.GetCollection<Student>("Students Four Course");
             collection.InsertOne(new Student(name, surname, otchestvo, age, gender, year, progress, course, group, specialization));
         }
+        public static void GetDataBaseInfoFirstCourse(int age)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students First Course");
+            List<Student> list = collection.Find(x => x.Age < age).ToList();
+            foreach (var item in list)
+            {
+                Console.WriteLine($"Имя: {item.Name} Возраст: {item.Age} Отчество: {item.LastName} Пол: {item.Gender} Группа: {item.Group} Курс: {item.Course}");
+            }
+        }
         public static void firstcourselist()
         {
             for (int i = 0; i < firstcourse.Length; i++)

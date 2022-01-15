@@ -16,6 +16,7 @@ namespace Labs215Y2K.MongoPrj
         private int _course;
         private int _group;
         private string _specialization;
+        public MongoDB.Bson.ObjectId _id;
 
 
         public Student(string name, string surname, string otchestvo, int age, string gender, int year, string progress, int course, int group, string specialization)
