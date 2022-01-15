@@ -11,7 +11,8 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Extensions.AddToDataBase("Ivan", 33);
+            Extensions.GetSingleFromDataBase(100);
+           
         }
 
         static void Show(double a, double b)
