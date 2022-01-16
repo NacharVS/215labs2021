@@ -10,9 +10,7 @@ namespace Labs215Y2K
         static void Main(string[] args)
         {
 
-            Examples.Start();
-            int age = 21;
-            Examples.GetDataBaseInfoFirstCourse(age);
+            StartClass.Start();
         }
     }
 }
