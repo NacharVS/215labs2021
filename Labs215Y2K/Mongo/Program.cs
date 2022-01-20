@@ -10,60 +10,87 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            //int n = 0;
-            //while (n != 1)
-            //{
-            //    Console.WriteLine("Введите имя");
-            //    string name = Console.ReadLine();
+            int n = 0;
+            while (n != 1)
+            {
+                Console.WriteLine("Введите имя");
+                string name = Console.ReadLine();
 
-            //    Console.WriteLine("Введите фамилию");
-            //    string surname = Console.ReadLine();
+                Console.WriteLine("Введите фамилию");
+                string surname = Console.ReadLine();
 
-            //    Console.WriteLine("Введите возраст");
-            //    int age = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите возраст");
+                int age = int.Parse(Console.ReadLine());
 
-            //    Console.WriteLine("Введите отчество");
-            //    string pobatyushke = Console.ReadLine();
+                Console.WriteLine("Введите отчество");
+                string pobatyushke = Console.ReadLine();
 
-            //    Console.WriteLine("Введите гендер");
-            //    string gender = Console.ReadLine();
+                Console.WriteLine("Введите гендер");
+                string gender = Console.ReadLine();
 
-            //    Console.WriteLine("Введите дату рождения");
-            //    string databirth = Console.ReadLine();
+                Console.WriteLine("Введите дату рождения");
+                string databirth = Console.ReadLine();
 
-            //    Console.WriteLine("Введите знак зодиак");
-            //    string zodiak = Console.ReadLine();
+                Console.WriteLine("Введите знак зодиак");
+                string zodiak = Console.ReadLine();
 
-            //    Console.WriteLine("Введите цвет кожи");
-            //    string sceencolor = Console.ReadLine();
+                Console.WriteLine("Введите цвет кожи");
+                string sceencolor = Console.ReadLine();
 
-            //    Console.WriteLine("Введите цвет волос");
-            //    string haircolor = Console.ReadLine();
+                Console.WriteLine("Введите цвет волос");
+                string haircolor = Console.ReadLine();
 
-            //    Console.WriteLine("Введите рост (в см)");
-            //    int rost = int.Parse(Console.ReadLine());
+                Console.WriteLine("Введите рост (в см)");
+                int rost = int.Parse(Console.ReadLine());
 
-
-
-            //    Console.WriteLine("Введите (Стоп), если хотите закончить");
-            //    Console.WriteLine("(Enter), чтобы продолжить");
-            //    string input = Console.ReadLine();
-            //    if (input == "Стоп")
-            //    {
-            //        n = 1;
-            //    }
-            //Extensions.AddToDataBase(name, surname, age,  pobatyushke,  gender,  databirth,  zodiak,  sceencolor,  haircolor,  rost);
+                Console.WriteLine("Введите номер водительского удостоверения");
+                string card = Console.ReadLine();
 
 
-            // Выводит список людей ростом ниже 170 см
-
-            //Extensions.GetAllFromDataBase(170);
-
-            // Выводит одного первого челвека с нужным параметром
-
-            //Extensions.GetSingleFromDataBase(170);
 
 
+                Console.WriteLine("Введите (Стоп), если хотите закончить");
+                Console.WriteLine("(Enter), чтобы продолжить");
+                string input = Console.ReadLine();
+                if (input == "Стоп")
+                {
+                    n = 1;
+                }
+                Extensions.AddToDataBase(name, surname, age, pobatyushke, gender, databirth, zodiak, sceencolor, haircolor, rost, card);
+
+
+                //    // Выводит список людей ростом ниже 170 см
+
+                //    //Extensions.GetAllFromDataBase(170);
+
+                //    // Выводит одного первого челвека с нужным параметром
+
+                //    //Extensions.GetSingleFromDataBase(170);
+
+
+                //}
+
+                //    int n = 0;
+                //while (n != 1)
+                //{
+                //    Console.WriteLine("Введите имя");
+                //    string name = Console.ReadLine();
+
+                //    Console.WriteLine("Введите фамилию");
+                //    string surname = Console.ReadLine();
+
+                //    Console.WriteLine("Введите возраст");
+                //    int age = int.Parse(Console.ReadLine());
+                //    Console.WriteLine("Введите (Стоп), если хотите закончить");
+                //    Console.WriteLine("(Enter), чтобы продолжить");
+                //    string input = Console.ReadLine();
+                //    if (input == "Стоп")
+                //    {
+                //        n = 1;
+                //    }
+                //    Extensions.AddToDataBase(name, surname, age);
+                //}
+            }
         }
     }
 }
