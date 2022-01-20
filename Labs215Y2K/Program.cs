@@ -95,6 +95,7 @@ namespace Deletor
 
             //    Console.WriteLine();
             //    Extensions.AddToDataBase(number, surname, name, patronymic, gender, yearOfBirth, age, work, workyes, playGames);
+
             //    Console.WriteLine("Напишите (Стоп), если хотите закончить");
             //    Console.WriteLine("Нажмите (Enter), чтобы продолжить");
             //    string input = Console.ReadLine();
@@ -105,8 +106,41 @@ namespace Deletor
             //        processing = 1;
             //    }
             //}
-            Extensions.GetAllFromDataBase();
+            //Extensions.GetAllFromDataBase();
 
+            //while (processing != 1)
+            //{
+            //    Console.WriteLine("Введите Фамилию");
+            //    string surname = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Имя");
+            //    string name = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Отчество");
+            //    string patronymic = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Гендер (Муж/Жен)");
+            //    string gender = Console.ReadLine();
+
+            //    Console.WriteLine("Введите год рождения");
+            //    int yearOfBirth = int.Parse(Console.ReadLine());
+
+            //    int age = DateTime.Now.Year - yearOfBirth;
+            //    Console.WriteLine();
+
+            //    Extensions.AddToDataBase(surname, name, patronymic, gender, yearOfBirth, age);
+            //    Console.WriteLine("Напишите (Стоп), если хотите закончить");
+            //    Console.WriteLine("Нажмите (Enter), чтобы продолжить");
+            //    string input = Console.ReadLine();
+            //    input.ToUpper();
+            //    number++;
+            //    if (input == "Стоп")
+            //    {
+            //        processing = 1;
+            //    }
+            //}
+
+            Extensions.EditDocument("Егор", new Person(2004, "Абоба"));
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
         {

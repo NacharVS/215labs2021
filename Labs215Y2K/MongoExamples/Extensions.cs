@@ -14,7 +14,20 @@ namespace Labs215Y2K.MongoExamples
             var collection = database.GetCollection<Person>("Persons");
             collection.InsertOne(new Person(number, surname, name, patronymic, gender, yearOfBirth, age, work, workyes, playGames));
         }
-
+        public static void AddToDataBase(string surname, string name, string patronymic, string gender, int yearOfBirth, int age)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("SubbotAboba");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.InsertOne(new Person(surname, name, patronymic, gender, yearOfBirth, age));
+        }
+        public static void AddToDataBase(int yearOfBirth, string workyes)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("SubbotAboba");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.InsertOne(new Person(yearOfBirth, workyes));
+        }
         public static void GetAllFromDataBase()
         {
             var client = new MongoClient("mongodb://localhost");
@@ -92,6 +105,15 @@ namespace Labs215Y2K.MongoExamples
 
             Console.WriteLine($"Id \t Фамилия \t Имя \t \t Отчество \t Год рождения \t Возраст \t Гендер \t Работа \t Хобби");
             Console.WriteLine($"{person.number} \t {person.surname}  \t {person.name}   \t {person.patronymic} \t {person.yearOfBirth} \t \t {person.age} \t \t {person.gender} \t \t {person.workyes} \t {person.playGames}");
+        }
+
+        public static void EditDocument(string searchName, Person person)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("SubbotAboba");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.ReplaceOne(x => x.name == searchName, person);
+
         }
     }
 }
