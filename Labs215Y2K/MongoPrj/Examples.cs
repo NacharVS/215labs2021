@@ -19,7 +19,7 @@ namespace Labs215Y2K.MongoPrj
             var database = client.GetDatabase("StudentsDateBaseInfo");
             var collection = database.GetCollection<Student>("Students First Course");
             collection.InsertOne(new Student(name, surname, otchestvo, age, gender, year, progress, course, group, specialization));
-           
+
         }
         public static void AddToDataBaseSecondCourse(string name, string surname, string otchestvo, int age, string gender, int year, string progress, int course, int group, string specialization)
         {
@@ -42,7 +42,7 @@ namespace Labs215Y2K.MongoPrj
             var collection = database.GetCollection<Student>("Students Four Course");
             collection.InsertOne(new Student(name, surname, otchestvo, age, gender, year, progress, course, group, specialization));
         }
-        
+
         //поиск студентов по имени
 
         public static void NameSearchFirstCourse(string name)
@@ -52,7 +52,7 @@ namespace Labs215Y2K.MongoPrj
             var collection = database.GetCollection<Student>("Students First Course");
             List<Student> list = collection.Find(x => x.Name == name).ToList();
             int chet = 3;
-            for (int i = 0; i < list.Count;i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (name == list[i].Name)
                 {
@@ -75,8 +75,8 @@ namespace Labs215Y2K.MongoPrj
             {
                 Console.WriteLine("Нет студента с таким именем!");
             }
-            
-            
+
+
         }
         public static void NameSearchSecondCourse(string name)
         {
@@ -181,7 +181,7 @@ namespace Labs215Y2K.MongoPrj
             var collection = database.GetCollection<Student>("Students First Course");
             List<Student> list = collection.Find(x => x.Age < age).ToList();
             int chet = 3;
-            for (int i = 0;i < list.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
                 if (list[i].Age < age)
                 {
@@ -298,9 +298,9 @@ namespace Labs215Y2K.MongoPrj
                 Console.WriteLine("Нет студентов меньше данного возраста!");
             }
         }
-        
+
         //поиск студентов по возрасту больше 
-        
+
         public static void FindAgeMoreFirstCourse(int age)
         {
             var client = new MongoClient("mongodb://localhost");
@@ -726,6 +726,36 @@ namespace Labs215Y2K.MongoPrj
                 Console.WriteLine($"Имя: {item.Name} Фамилия {item.Surname} Возраст: {item.Age}  Группа: {item.Group} Специальность: {item.Specialization}");
             }
         }
+
+
+
+
+        //
+
+        public static void rebase(string searchName , Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students Four Course");
+            collection.ReplaceOne(x => x.Name == searchName, student);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
