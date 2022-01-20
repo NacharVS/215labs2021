@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Characters\\Characters.csproj": {}
+    "C:\\Users\\User\\Documents\\215labs2021\\newew\\Characters\\Characters.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Characters\\Characters.csproj": {
+    "C:\\Users\\User\\Documents\\215labs2021\\newew\\Characters\\Characters.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Characters\\Characters.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Characters\\Characters.csproj",
         "projectName": "Characters",
-        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Characters\\Characters.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Characters\\Characters.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Characters\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Characters\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -39,6 +39,16 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
+          "dependencies": {
+            "MongoDB.Bson": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            },
+            "MongoDB.Driver": {
+              "target": "Package",
+              "version": "[2.14.1, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -54,7 +64,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

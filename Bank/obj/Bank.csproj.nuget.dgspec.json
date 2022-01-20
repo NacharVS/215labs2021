@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Bank\\Bank.csproj": {}
+    "C:\\Users\\User\\Documents\\215labs2021\\newew\\Bank\\Bank.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Bank\\Bank.csproj": {
+    "C:\\Users\\User\\Documents\\215labs2021\\newew\\Bank\\Bank.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Bank\\Bank.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Bank\\Bank.csproj",
         "projectName": "Bank",
-        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Bank\\Bank.csproj",
+        "projectPath": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Bank\\Bank.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\1111111111111111\\Bank\\obj\\",
+        "outputPath": "C:\\Users\\User\\Documents\\215labs2021\\newew\\Bank\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -54,7 +54,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }
