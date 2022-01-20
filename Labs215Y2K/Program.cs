@@ -11,8 +11,8 @@ namespace Labs215Y2K
         
         static void Main(string[] args)
         {
-            Extensions.GetSingleFromDataBase(100);
-           
+
+            Extensions.EditDocument("Ivan", new Person("Ivan", 99, "9687698476"));
         }
 
         static void Show(double a, double b)

@@ -14,6 +14,13 @@ namespace Labs215Y2K.MongoExamples
             var collection = database.GetCollection<Person>("Persons");
             collection.InsertOne(new Person(name, age));
         }
+        public static void AddToDataBase(string name, int age, string card)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("PetrovBigOriginal");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.InsertOne(new Person(name, age, card));
+        }
 
         public static void GetAllFromDataBase()
         {
@@ -51,5 +58,16 @@ namespace Labs215Y2K.MongoExamples
                 Console.WriteLine($"Name: {person.name} Age: {person.age}");
             
         }
+        public static void EditDocument(string searchName, Person person)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("PetrovBigOriginal");
+            var collection = database.GetCollection<Person>("Persons");
+            collection.ReplaceOne(x => x.name == searchName, person);
+
+        }
+
+
+
     }
 }
