@@ -13,6 +13,7 @@ namespace ForDataBase.Data_Base
         {
 
             Extensions.AddToDataBase();
+            //Extensions.EditDocument();
             //Extensions.GetAllFromDataBase();
             //Extensions.SexSort(null);
             Console.ReadKey();
