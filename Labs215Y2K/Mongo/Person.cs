@@ -1,4 +1,5 @@
 ﻿using System;
+using MongoDB.Bson;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace Labs215Y2K
 {
     class Person
     {
+        public ObjectId _id;
         public string name;
         public string surname;
         public int age;
