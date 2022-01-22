@@ -74,6 +74,8 @@ namespace Labs215Y2K.MongoPrj
             else
             {
                 Console.WriteLine("Нет студента с таким именем!");
+                StartClass.Start();
+
             }
 
 
@@ -107,6 +109,7 @@ namespace Labs215Y2K.MongoPrj
             else
             {
                 Console.WriteLine("Нет студента с таким именем!");
+                StartClass.Start();
             }
         }
         public static void NameSearchThirdCourse(string name)
@@ -138,6 +141,7 @@ namespace Labs215Y2K.MongoPrj
             else
             {
                 Console.WriteLine("Нет студента с таким именем!");
+                StartClass.Start();
             }
         }
         public static void NameSearchFourCourse(string name)
@@ -169,6 +173,7 @@ namespace Labs215Y2K.MongoPrj
             else
             {
                 Console.WriteLine("Нет студента с таким именем!");
+                StartClass.Start();
             }
         }
 
@@ -730,15 +735,72 @@ namespace Labs215Y2K.MongoPrj
 
 
 
-        //
+        // поиск по имени 
 
-        public static void rebase(string searchName , Student student)
+
+
+
+
+        public static void NameThirdCourseRebase(string searchName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students Third Course");
+            collection.ReplaceOne(x => x.Name == searchName, student);
+        }
+        public static void SecondnameThirdCourseRebase(string searchSecondName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students  Course");
+            collection.ReplaceOne(x => x.Surname == searchSecondName, student);
+        }
+        public static void NameSecondCourseRebase(string searchName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students Second Course");
+            collection.ReplaceOne(x => x.Name == searchName, student);
+        }
+        public static void SecondnameSecondCourseRebase(string searchSecondName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students Second Course");
+            collection.ReplaceOne(x => x.Surname == searchSecondName, student);
+        }
+        public static void NameFirstCourseRebase(string searchName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students First Course");
+            collection.ReplaceOne(x => x.Name == searchName, student);
+        }
+        public static void SecondnameFirstCourseRebase(string searchSecondName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students First Course");
+            collection.ReplaceOne(x => x.Surname == searchSecondName, student);
+        }
+
+
+
+        public static void NameFourCourseRebase(string searchName , Student student)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("StudentsDateBaseInfo");
             var collection = database.GetCollection<Student>("Students Four Course");
             collection.ReplaceOne(x => x.Name == searchName, student);
         }
+        public static void SecondnameFourCourseRebase(string searchSecondName, Student student)
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("StudentsDateBaseInfo");
+            var collection = database.GetCollection<Student>("Students Four Course");
+            collection.ReplaceOne(x => x.Surname == searchSecondName, student);
+        }
+
 
 
 

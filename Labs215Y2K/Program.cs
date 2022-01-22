@@ -10,8 +10,9 @@ namespace Labs215Y2K
         static void Main(string[] args)
         {
 
-            //StartClass.Start();
-            Examples.rebase("мамf", new Student("мамfjfdjdfj", "Фидаильев"));
+            StartClass.Start();
+            
+
         }
     }
 }

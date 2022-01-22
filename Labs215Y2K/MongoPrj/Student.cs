@@ -55,7 +55,66 @@ namespace Labs215Y2K.MongoPrj
         {
             Name = name;
             Surname = surname;
+            LastName = otche;
         }
+        public Student(string name, string surname, string otche, int age)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+        }
+        public Student(string name, string surname, string otche, int age, string gender)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+            Gender = gender;
+        }
+        public Student(string name, string surname, string otche, int age, string gender, int year)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+            Gender = gender;
+            YearOfAdmission = year;
+        }
+        public Student(string name, string surname, string otche, int age, string gender, int year, string progress)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+            Gender = gender;
+            YearOfAdmission = year;
+            StudyProgress = progress;
+        }
+        public Student(string name, string surname, string otche, int age, string gender, int year, string progress, int course)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+            Gender = gender;
+            YearOfAdmission = year;
+            StudyProgress = progress;
+            Course = course;
+        }
+        public Student(string name, string surname, string otche, int age, string gender, int year, string progress, int course, int group)
+        {
+            Name = name;
+            Surname = surname;
+            LastName = otche;
+            Age = age;
+            Gender = gender;
+            YearOfAdmission = year;
+            StudyProgress = progress;
+            Course = course;
+            Group = group;
+        }
+
 
         public string Name { get => _name; set => _name = value; }
         public string Surname { get => _surname; set => _surname = value; }
