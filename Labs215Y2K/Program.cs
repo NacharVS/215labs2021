@@ -1,4 +1,7 @@
-﻿using System;
+﻿using MongoDB.Driver;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace Labs215Y2K
 {
@@ -6,7 +9,7 @@ namespace Labs215Y2K
     {
         static void Main(string[] args)
         {
-            RPG.RPG1();
+            
         }
     }
 }
