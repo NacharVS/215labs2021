@@ -35,26 +35,26 @@ namespace Labs215Y2K
             }
         }
 
-        public static void GetListFromDataBase(int rost)
+        //public static void GetSingleFromDataBase(int rost)
+        //{
+        //    var client = new MongoClient("mongodb://localhost");
+        //    var database = client.GetDatabase("PetrovBigOriginal");
+        //    var collection = database.GetCollection<Person>("Persons");
+        //    List<Person> list = collection.Find(x => x.rost < rost).ToList();
+
+        //    foreach (var item in list)
+        //    {
+        //        Console.WriteLine($"Name: {item.name} Rost: {item.rost}");
+        //    }
+
+        //}
+
+        public static void GetAllFromDataBase(int rost) // Вывводит список людей с заданным ростом
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("PetrovBigOriginal");
             var collection = database.GetCollection<Person>("Persons");
-            List<Person> list = collection.Find(x => x.rost < rost).ToList();
-
-            foreach (var item in list)
-            {
-                Console.WriteLine($"Name: {item.rost} Rost: {item.rost}");
-            }
-
-        }
-
-        public static void GetAllFromDataBase(int rost) // Вывводит список людей с ростом ниже 170см
-        {
-            var client = new MongoClient("mongodb://localhost");
-            var database = client.GetDatabase("PetrovBigOriginal");
-            var collection = database.GetCollection<Person>("Persons");
-            var list = collection.Find(x => x.rost < rost).ToList();
+            var list = collection.Find(x => x.rost == rost).ToList();
 
             foreach (var item in list)
             {
@@ -62,5 +62,34 @@ namespace Labs215Y2K
             }
 
         }
+
+        public static void GetListFromDataBase(int age) // Вывводит список людей с заданным возрастом
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("PetrovBigOriginal");
+            var collection = database.GetCollection<Person>("Persons");
+            var list = collection.Find(x => x.age > age).ToList();
+
+            foreach (var item in list)
+            {
+                Console.WriteLine($"Name: {item.name} Surname: {item.surname} Age: {item.age} Rost {item.rost}");
+            }
+
+        }
+
+        public static void GetListFromDataBase(string zodiak) // Вывводит всех в списке с заданным знаком зодиака
+        {
+            var client = new MongoClient("mongodb://localhost");
+            var database = client.GetDatabase("PetrovBigOriginal");
+            var collection = database.GetCollection<Person>("Persons");
+            var list = collection.Find(x => x.zodiak == zodiak).ToList();
+
+            foreach (var item in list)
+            {
+                Console.WriteLine($"Name: {item.name} Surname: {item.surname} Age: {item.age} Rost {item.rost}");
+            }
+
+        }
+
     }
 }
