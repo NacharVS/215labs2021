@@ -1,11 +1,11 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using Units;
-using Action;
 using Labs215Y2K.Bank;
 using System.Collections.Generic;
 using Labs215Y2K.NewBank;
 using Labs215Y2K.EditorCharacter;
+using Labs215Y2K.MongoExamples;
 
 namespace Labs215Y2K
 {
@@ -15,36 +15,130 @@ namespace Labs215Y2K
         {
             //NewBank(); /*-Новый банк*/
 
-            //Console.WriteLine("Напишите 'a'");
-            //int a = int.Parse(Console.ReadLine());
-            //Console.WriteLine("Напишите 'b'");
-            //int b = int.Parse(Console.ReadLine());
+            Console.WriteLine("Начало: ");
+            int processing = 0;
+            int number = 1;
+            string work;
+            string workyes = "g";
 
-            //int num = a;
-            //for (int i = 1; i < b; i++)
+            Console.WriteLine("Что вы хотитие сделать?");
+            Console.WriteLine("1 - добавить новых людей в базу данных");
+            Console.WriteLine("2 - найти всех в базе данных");
+            Console.WriteLine("3 - найти человека по имени");
+            Console.WriteLine("4 - найти человека по имени и поменять его работу");
+            Console.WriteLine();
+            int NumBD = int.Parse(Console.ReadLine());
+            switch (NumBD)
+            {
+                case 1:
+                    Console.WriteLine("Добавление новых людей в базу данных");
+                    Console.WriteLine();
+                    while (processing != 1)
+                    {
+                        Console.WriteLine("Введите Фамилию");
+                        string surname = Console.ReadLine();
+
+                        Console.WriteLine("Введите Имя");
+                        string name = Console.ReadLine();
+
+                        Console.WriteLine("Введите Отчество");
+                        string patronymic = Console.ReadLine();
+
+                        Console.WriteLine("Введите Гендер (Муж/Жен)");
+                        string gender = Console.ReadLine();
+
+                        Console.WriteLine("Введите год рождения");
+                        int yearOfBirth = int.Parse(Console.ReadLine());
+
+                        int age = DateTime.Now.Year - yearOfBirth;
+
+                        Console.WriteLine("Есть у Вас работа? (Есть/Нет)");
+                        work = Console.ReadLine();
+
+                        if (work == "Есть")
+                        {
+                            Console.WriteLine("Кем вы работаете?");
+                            workyes = Console.ReadLine();
+                        }
+
+                        Console.WriteLine("Есть ли у Вас хобби? (Да/Нет)");
+                        string playGames = Console.ReadLine();
+
+                        Console.WriteLine();
+                        Extensions.AddToDataBase(number, surname, name, patronymic, gender, yearOfBirth, age, work, workyes, playGames);
+
+                        Console.WriteLine("Напишите (Стоп), если хотите закончить");
+                        Console.WriteLine("Нажмите (Enter), чтобы продолжить");
+                        string input = Console.ReadLine();
+                        input.ToUpper();
+                        number++;
+                        if (input == "Стоп")
+                        {
+                            processing = 1;
+                        }
+                    }
+                    break;
+                case 2:
+                    Console.WriteLine("Нахождение всех в базе данных");
+                    Console.WriteLine();
+                    Extensions.GetAllFromDataBase();
+                    break;
+                case 3:
+                    Console.WriteLine("Нахождение одного человека в базе данных по имени");
+                    Console.WriteLine();
+                    Console.WriteLine("Введите имя: ");
+                    string NameBD = Console.ReadLine();
+                    Extensions.GetSingleFromDataBaseName(NameBD);
+                    break;
+                case 4:
+                    Console.WriteLine("Нахождение одного человека в базе данных по имени и замена его работы и возраста");
+                    Console.WriteLine();
+                    Console.WriteLine("Введите имя: ");
+                    string NameBD2 = Console.ReadLine();
+                    Console.WriteLine("Введите работу: ");
+                    string WorkBD = Console.ReadLine();
+                    Console.WriteLine("Введите год рождения: ");
+                    int AgeBD = int.Parse(Console.ReadLine());
+                    Extensions.EditDocument(NameBD2, new Person(AgeBD, WorkBD));
+                    break;
+                default:
+                    break;
+            }
+            
+
+            //while (processing != 1)
             //{
-            //    a = num * a;
+            //    Console.WriteLine("Введите Фамилию");
+            //    string surname = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Имя");
+            //    string name = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Отчество");
+            //    string patronymic = Console.ReadLine();
+
+            //    Console.WriteLine("Введите Гендер (Муж/Жен)");
+            //    string gender = Console.ReadLine();
+
+            //    Console.WriteLine("Введите год рождения");
+            //    int yearOfBirth = int.Parse(Console.ReadLine());
+
+            //    int age = DateTime.Now.Year - yearOfBirth;
+            //    Console.WriteLine();
+
+            //    Extensions.AddToDataBase(surname, name, patronymic, gender, yearOfBirth, age);
+            //    Console.WriteLine("Напишите (Стоп), если хотите закончить");
+            //    Console.WriteLine("Нажмите (Enter), чтобы продолжить");
+            //    string input = Console.ReadLine();
+            //    input.ToUpper();
+            //    number++;
+            //    if (input == "Стоп")
+            //    {
+            //        processing = 1;
+            //    }
             //}
 
-            //Console.WriteLine();
-            //Console.WriteLine(a);
-
-
-
-            //Console.WriteLine("Напишите число");
-            //int num = int.Parse(Console.ReadLine());
-            //int sum = 0;
-            //while (num > 0)
-            //{
-            //    sum = sum + num % 10;
-            //    num /= 10;
-            //}
-            //Console.WriteLine(sum);
-
-
-            Console.WriteLine("Напишите число");
-            int num = int.Parse(Console.ReadLine());
-            int replay = 0;
+            
 
         }
         public static void magaz(int[] numberofproduct, int yesno, string[] catalog, string[] korzina, int counter, int cycleoperation, int[] countofproduct, int[] korzinakolvo, int[] price, int[] Sum, int[] sumtwo, int[] korzinaprice)
