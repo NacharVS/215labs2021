@@ -88,6 +88,7 @@ namespace Labs215Y2K
                     Console.WriteLine();
                     Console.WriteLine("Введите имя: ");
                     string NameBD = Console.ReadLine();
+                    Console.WriteLine();
                     Extensions.GetSingleFromDataBaseName(NameBD);
                     break;
                 case 4:
@@ -99,6 +100,7 @@ namespace Labs215Y2K
                     string WorkBD = Console.ReadLine();
                     Console.WriteLine("Введите год рождения: ");
                     int AgeBD = int.Parse(Console.ReadLine());
+                    Console.WriteLine();
                     Extensions.EditDocument(NameBD2, new Person(AgeBD, WorkBD));
                     break;
                 default:
