@@ -1,0 +1,30 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid x:Name="btnequal">
+        <Label x:Name="lbl1" Content="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="43" Width="800" Margin="0,2,0,0" FontSize="24" FontFamily="Arial Black"/>
+        <Button x:Name="btn1" HorizontalAlignment="Left" Height="74" Margin="0,45,0,0" VerticalAlignment="Top" Width="96" Content="1" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn1_Click"/>
+        <Button x:Name="btn4" HorizontalAlignment="Left" Height="74" Margin="0,119,0,0" VerticalAlignment="Top" Width="96" Content="4" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn4_Click"/>
+        <Button x:Name="btn5" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="96" Content="5" FontSize="24" RenderTransformOrigin="0.499,0.139" Margin="96,119,0,0" Click="btn5_Click"/>
+        <Button x:Name="btn2" HorizontalAlignment="Left" Height="74" Margin="96,45,0,0" VerticalAlignment="Top" Width="96" Content="2" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn2_Click"/>
+        <Button x:Name="btn3" HorizontalAlignment="Left" Height="74" Margin="192,45,0,0" VerticalAlignment="Top" Width="96" Content="3" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn3_Click"/>
+        <Button x:Name="btn6" HorizontalAlignment="Left" Height="74" Margin="192,119,0,0" VerticalAlignment="Top" Width="96" Content="6" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn6_Click"/>
+        <Button x:Name="btn7" HorizontalAlignment="Left" Height="74" VerticalAlignment="Top" Width="96" Content="7" FontSize="24" RenderTransformOrigin="0.499,0.139" Margin="0,193,0,0" Click="btn7_Click"/>
+        <Button x:Name="btn8" HorizontalAlignment="Left" Height="74" Margin="96,193,0,0" VerticalAlignment="Top" Width="96" Content="8" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn8_Click"/>
+        <Button x:Name="btn9" HorizontalAlignment="Left" Height="74" Margin="192,193,0,0" VerticalAlignment="Top" Width="96" Content="9" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn9_Click"/>
+        <Button x:Name="divide" HorizontalAlignment="Left" Height="74" Margin="288,45,0,0" VerticalAlignment="Top" Width="96" Content="/" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="divide_Click"/>
+        <Button x:Name="mult" HorizontalAlignment="Left" Height="74" Margin="288,119,0,0" VerticalAlignment="Top" Width="96" Content="*" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="mult_Click"/>
+        <Button x:Name="minus" HorizontalAlignment="Left" Height="74" Margin="288,193,0,0" VerticalAlignment="Top" Width="96" Content="-" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="minus_Click"/>
+        <Button x:Name="plus" HorizontalAlignment="Left" Height="74" Margin="288,267,0,0" VerticalAlignment="Top" Width="96" Content="+" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="plus_Click"/>
+        <Button x:Name="btn_point" HorizontalAlignment="Left" Height="74" Margin="0,267,0,0" VerticalAlignment="Top" Width="96" Content="," FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn_point_Click"/>
+        <Button x:Name="btn0" HorizontalAlignment="Left" Height="74" Margin="96,267,0,0" VerticalAlignment="Top" Width="96" Content="0" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="btn0_Click"/>
+        <Button x:Name="dellall" HorizontalAlignment="Left" Height="74" Margin="192,267,0,0" VerticalAlignment="Top" Width="96" Content="AC" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="dellall_Click"/>
+        <Button x:Name="dellsymbol" HorizontalAlignment="Left" Height="74" Margin="384,45,0,0" VerticalAlignment="Top" Width="96" Content="C" FontSize="24" RenderTransformOrigin="0.499,0.139" Click="dellsymbol_Click"/>
+
+    </Grid>
+</Window>
