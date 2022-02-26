@@ -1,0 +1,59 @@
+﻿<Window x:Class="ForDataBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForDataBase"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Регистрация" Height="700" Width="850">
+    <Grid Background="Indigo">
+        <Border MinWidth="400" Margin="5,65,25,0" Background="White" VerticalAlignment="Top" Padding="20" MaxWidth="600" CornerRadius="24" MinHeight="500" MaxHeight="700">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Color="Black" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Окно регистрации" FontSize="30" FontWeight="Bold" Margin="0 0 0 10"></TextBlock>
+                <Grid Margin="0 0 0 20">
+                    <Button  Style="{StaticResource MaterialDesignOutlinedLightButton}" HorizontalAlignment="Left" Background="Moccasin" FontSize="14" Foreground="MidnightBlue" BorderBrush="Thistle"  Cursor="Hand"  Click="ButtonToLogWindow" Margin="488,0,0,0" Height="32" VerticalAlignment="Bottom" ToolTip="Нажмите, чтобы войти в существующий аккаунт">
+                        <Button.Effect>
+                            <DropShadowEffect Color ="LightGray" />
+                        </Button.Effect>
+
+                        Войти
+
+                    </Button>
+
+                </Grid>
+                <TextBox x:Name="txtname" materialDesign:HintAssist.Hint="Введите имя" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </TextBox>
+                <TextBox x:Name="txtsurname" materialDesign:HintAssist.Hint="Введите фамилию" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </TextBox>
+                <TextBox x:Name="txtemail" materialDesign:HintAssist.Hint="Введите e-mail (логин)" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </TextBox>
+                <TextBox x:Name="txtnumber" materialDesign:HintAssist.Hint="Введите номер телефона" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </TextBox>
+                <PasswordBox x:Name="txtpass" materialDesign:HintAssist.Hint="Задайте пароль" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"   Margin="0 0 0 5" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </PasswordBox>
+                <PasswordBox x:Name="txtrepass" materialDesign:HintAssist.Hint="Повторите пароль" Style="{StaticResource MaterialDesignOutlinedPasswordBox}" Margin="0 0 0 20" Background="#FFFBFBFB" BorderBrush="Indigo" Cursor="IBeam">
+                </PasswordBox>
+
+
+
+                <Grid Margin="0 0 0 20">
+                    <Button x:Name="ButtonRegistration1"  Style="{StaticResource MaterialDesignOutlinedLightButton}" HorizontalAlignment="Stretch" Background="Moccasin" FontSize="14" Foreground="MidnightBlue" BorderBrush="Thistle"  Cursor="Hand" Click="ButtonRegistration" >
+                        <Button.Effect>
+                            <DropShadowEffect Color ="LightGray" />
+                        </Button.Effect>
+                        Зарегистрироваться
+
+                    </Button>
+
+                </Grid>
+            </StackPanel>
+        </Border>
+
+
+
+    </Grid>
+</Window>

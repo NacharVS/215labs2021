@@ -1,0 +1,66 @@
+﻿<Window x:Class="ForDataBase.PersonalAccountWin"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ForDataBase"
+        mc:Ignorable="d"
+xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+Title="Кабинет пользователя" Height="600" Width="800
+        ">
+    <Grid Background="Indigo">
+        <Border MinWidth="500" Margin="5,65,25,0" Background="Lavender" VerticalAlignment="Top" Padding="20"  MaxWidth="650" CornerRadius="24" MinHeight="350" MaxHeight="600">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="15" Color="Black" ShadowDepth="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock x:Name="hellotextblock" Text="" HorizontalAlignment ="Center" VerticalAlignment ="Center" FontSize="30" FontWeight="Bold" Margin="10 0 0 10" Foreground="Black"></TextBlock>
+                
+                <Grid Margin="0 10 0 20">
+                    <Button HorizontalAlignment="Left"  Foreground="Moccasin"  Cursor="Hand"  Margin="488,0,0,0" Style="{StaticResource MaterialDesignOutlinedLightButton}" VerticalAlignment="Bottom" ToolTip="Нажмите, чтобы просмотреть свою корзину" Background="MidnightBlue">
+                        <Button.Effect>
+                            <DropShadowEffect Color ="LightGray" />
+                        </Button.Effect>
+                        Моя корзина
+                    </Button>
+                    <Button HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedLightButton}" ToolTip="Нажмите, чтобы просмотреть список актуальных товаров"  Foreground="Moccasin"   Background="MidnightBlue" BorderBrush="#FF6DCAAF" Cursor="Hand">
+                        <Button.Effect>
+                            <DropShadowEffect Color ="LightGray" />
+                        </Button.Effect>
+
+                        Список товаров
+
+                    </Button>
+                    <Button x:Name="logoutbtn" HorizontalAlignment="Left"  ToolTip="Нажмите, чтобы выйти из личного кабинета." Style="{StaticResource MaterialDesignFlatSecondaryButton}" BorderBrush="#FF252F09" Foreground="MidnightBlue" Click="logoutbtn_Click">
+                        <Button.Effect>
+                            <DropShadowEffect Color ="LightGray" />
+                        </Button.Effect>
+                        Выйти
+                    </Button>
+
+                </Grid>
+
+                <TextBlock Text="Твои данные:" HorizontalAlignment ="Left" VerticalAlignment ="Center" FontSize="22" FontWeight="Bold" Margin="10 20 0 10" Foreground="Black"></TextBlock>
+                <TextBox x:Name="fornametxt" materialDesign:HintAssist.Hint="Имя" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="Lavender" BorderBrush="MidnightBlue" Cursor="IBeam"  ToolTip="Не трогайте поле, если данные корректны." SelectionBrush="MidnightBlue">
+                </TextBox>
+                <TextBox x:Name="forsurnametxt" materialDesign:HintAssist.Hint="Фамилия" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="Lavender" BorderBrush="MidnightBlue" Cursor="IBeam" ToolTip="Не трогайте поле, если данные корректны." SelectionBrush="MidnightBlue">
+                </TextBox>
+                <TextBox x:Name="fornumbertxt" materialDesign:HintAssist.Hint="Номер телефона" Style="{StaticResource MaterialDesignOutlinedTextBox}"   Margin="0 0 0 5" Background="Lavender" BorderBrush="MidnightBlue" Cursor="IBeam" ToolTip="Не трогайте поле, если данные корректны." SelectionBrush="MidnightBlue">
+                </TextBox>
+                <PasswordBox x:Name="forpasstxt" materialDesign:HintAssist.Hint="Действующий пароль:" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"   Margin="0 0 0 5" Background="Lavender" BorderBrush="MidnightBlue" Cursor="IBeam" ToolTip="Введите действующий пароль, если хотите изменить данные о себе." SelectionBrush="MidnightBlue">
+                </PasswordBox>
+          
+                <Button x:Name="btnchangeinfo" Content="Изменить данные" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Cursor="Hand" Background="MidnightBlue" Foreground="Lavender" Margin="0 25 0 0" Click="btnchangeinfo_Click">
+                    <Button.Effect>
+                        <DropShadowEffect Color ="LightGray" />
+                    </Button.Effect>
+                </Button>
+
+            </StackPanel>
+        </Border>
+
+
+
+    </Grid>
+</Window>
+
