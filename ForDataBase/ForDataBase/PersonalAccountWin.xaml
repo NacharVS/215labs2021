@@ -8,7 +8,7 @@
 xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
 Title="Кабинет пользователя" Height="600" Width="800
         ">
-    <Grid Background="Indigo">
+    <Grid Background="#FF7729B0">
         <Border MinWidth="500" Margin="5,65,25,0" Background="Lavender" VerticalAlignment="Top" Padding="20"  MaxWidth="650" CornerRadius="24" MinHeight="350" MaxHeight="600">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="15" Color="Black" ShadowDepth="0"></DropShadowEffect>
@@ -50,7 +50,7 @@ Title="Кабинет пользователя" Height="600" Width="800
                 <PasswordBox x:Name="forpasstxt" materialDesign:HintAssist.Hint="Действующий пароль:" Style="{StaticResource MaterialDesignOutlinedPasswordBox}"   Margin="0 0 0 5" Background="Lavender" BorderBrush="MidnightBlue" Cursor="IBeam" ToolTip="Введите действующий пароль, если хотите изменить данные о себе." SelectionBrush="MidnightBlue">
                 </PasswordBox>
           
-                <Button x:Name="btnchangeinfo" Content="Изменить данные" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Cursor="Hand" Background="MidnightBlue" Foreground="Lavender" Margin="0 25 0 0" Click="btnchangeinfo_Click">
+                <Button x:Name="btnchangeinfo" Content="Изменить данные" Style="{StaticResource MaterialDesignFlatSecondaryButton}" Cursor="Hand" Background="MidnightBlue" Foreground="Lavender" Margin="0 5 0 0" Click="btnchangeinfo_Click">
                     <Button.Effect>
                         <DropShadowEffect Color ="LightGray" />
                     </Button.Effect>
