@@ -23,7 +23,7 @@ Title="Кабинет пользователя" Height="600" Width="800
                         </Button.Effect>
                         Моя корзина
                     </Button>
-                    <Button HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedLightButton}" ToolTip="Нажмите, чтобы просмотреть список актуальных товаров"  Foreground="Moccasin"   Background="MidnightBlue" BorderBrush="#FF6DCAAF" Cursor="Hand">
+                    <Button x:Name="ToListbtn" HorizontalAlignment="Center"  Style="{StaticResource MaterialDesignOutlinedLightButton}" ToolTip="Нажмите, чтобы просмотреть список актуальных товаров"  Foreground="Moccasin"   Background="MidnightBlue" BorderBrush="#FF6DCAAF" Cursor="Hand" Click="ToListbtn_Click">
                         <Button.Effect>
                             <DropShadowEffect Color ="LightGray" />
                         </Button.Effect>

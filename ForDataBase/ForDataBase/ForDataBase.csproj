@@ -140,12 +140,19 @@
     <Compile Include="AuthWindow.xaml.cs">
       <DependentUpon>AuthWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListWithProdWindows.xaml.cs">
+      <DependentUpon>ListWithProdWindows.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PersonalAccountWin.xaml.cs">
       <DependentUpon>PersonalAccountWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="User.cs" />
     <Page Include="AuthWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListWithProdWindows.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

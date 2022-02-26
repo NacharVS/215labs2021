@@ -110,6 +110,12 @@ namespace ForDataBase
 
             }
         }
-           
+
+        private void ToListbtn_Click(object sender, RoutedEventArgs e)
+        {
+            ListWithProdWindows win = new ListWithProdWindows();
+            win.Show();
+            Hide();
+        }
     }
 }
