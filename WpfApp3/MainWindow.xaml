@@ -1,0 +1,40 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="Duffle Bag" Height="600" Width="1000">
+    <Grid Background="#00AE68">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="141*"/>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="122*"/>
+            <ColumnDefinition Width="108*"/>
+            <ColumnDefinition Width="317*"/>
+            <ColumnDefinition Width="38*"/>
+        </Grid.ColumnDefinitions>
+        <Border MinWidth ="400" Margin ="15,98,15,99" Background="white" VerticalAlignment ="Center " Padding ="30" MaxWidth ="620" CornerRadius ="20" Grid.ColumnSpan="6">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius ="60" Color="#006363	" ShadowDepth ="0"></DropShadowEffect>
+            </Border.Effect>
+            <StackPanel>
+                <TextBlock Text="Давайте начнём!" FontSize="30" FontWeight ="Bold" Margin =" 0 0 0 20"></TextBlock>
+                <Grid Margin ="0 0 0 20">
+                    <Button x:Name="btreg" HorizontalAlignment ="Left" Content ="Регистрация" Background="#21825B"  ></Button>
+                    <Button x:Name="btAu"  HorizontalAlignment ="Right" Content ="Авторизация" Style ="{StaticResource MaterialDesignFlatButton}" Foreground="#FF00CC00" Click="btAu_Click"></Button>
+                </Grid>
+                <TextBox x:Name="tblogin" materialDesign:HintAssist.Hint="Введите Логин" Style ="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="Black" FontFamily="Britannic Bold"></TextBox>
+                <PasswordBox x:Name="tbpass" materialDesign:HintAssist.Hint="Введите Пароль" Style ="{StaticResource MaterialDesignFloatingHintPasswordBox}" Foreground="Black" FontFamily="Britannic Bold"></PasswordBox>
+                <PasswordBox x:Name="tbpass2" materialDesign:HintAssist.Hint="Повторите Пароль" Style ="{StaticResource MaterialDesignFloatingHintPasswordBox}" Foreground="Black" FontFamily="Britannic Bold"></PasswordBox>
+                <TextBox x:Name="tbmail" materialDesign:HintAssist.Hint="Введите E-mail" Style ="{StaticResource MaterialDesignFloatingHintTextBox}" Foreground="Black" FontFamily="Britannic Bold"></TextBox>
+                <Button x:Name="btregnew" Content ="Регистрация" Background="#21825B" Click="btregnew_Click" Margin ="0 20" ></Button>
+
+            </StackPanel>
+        </Border>
+
+    </Grid>
+
+</Window>
