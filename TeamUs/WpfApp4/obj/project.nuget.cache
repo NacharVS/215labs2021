@@ -1,0 +1,21 @@
+{
+  "version": 2,
+  "dgSpecHash": "M2Qi6cHZZN6iDLbeyTq/UcX2oOJ/AKo39TwqAzJPnTLNorCM6w55bBa+ZcizwsnYJKxAzV42MILLfVSbAZvgqQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\huigo\\source\\repos\\WpfApp4\\WpfApp4\\WpfApp4.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\huigo\\.nuget\\packages\\dnsclient\\1.6.0\\dnsclient.1.6.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\microsoft.win32.registry\\5.0.0\\microsoft.win32.registry.5.0.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\mongodb.bson\\2.15.0\\mongodb.bson.2.15.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\mongodb.driver\\2.15.0\\mongodb.driver.2.15.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\mongodb.driver.core\\2.15.0\\mongodb.driver.core.2.15.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\mongodb.libmongocrypt\\1.3.0\\mongodb.libmongocrypt.1.3.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\sharpcompress\\0.30.1\\sharpcompress.0.30.1.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\huigo\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}

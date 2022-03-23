@@ -1,0 +1,28 @@
+﻿<Window x:Class="WpfApp4.MainWindow" 
+  xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+  xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+  xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+  xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+  
+  mc:Ignorable="d" 
+  Title="MainWindow" Height="700" Width="1000">
+    <Grid Margin="5,4,-5,-4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="856*"/>
+            <ColumnDefinition Width="69*"/>
+            <ColumnDefinition Width="75*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="txtlogin" HorizontalAlignment="Left" Height="32" Margin="50,352,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" ToolTip="Введите логин"/>
+        <TextBox x:Name="txtname" HorizontalAlignment="Left" Height="32" Margin="50,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" ToolTip="Введите имя"/>
+        <TextBox x:Name="txtsurname" HorizontalAlignment="Left" Height="32" Margin="50,464,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" ToolTip="Введите фамилию"/>
+        <TextBox x:Name="txtemail" HorizontalAlignment="Left" Height="32" Margin="50,530,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" ToolTip="Введите емайл"/>
+        <Button x:Name="btnreg" Content="Регистрация" HorizontalAlignment="Left" Height="44" Margin="264,353,0,0" VerticalAlignment="Top" Width="164" Click="btnreg_Click" />
+        <ListBox x:Name="listfrombd" Margin="13,28,589,376" MouseDoubleClick="listfrombd_MouseDoubleClick"/>
+        <ListBox x:Name="forteamslist" Margin="559,22,46,402" Grid.ColumnSpan="2"/>
+        <Button x:Name="btncustom" Content="Добавить измениние" HorizontalAlignment="Left" Margin="550,346,0,0" VerticalAlignment="Top" Height="41" Width="108" Click="btncustom_Click" RenderTransformOrigin="0.486,0.696"/>
+        <Button x:Name="btnrandom" Content="Добавить рандом" HorizontalAlignment="Left" Margin="24,347,0,0" VerticalAlignment="Top" Height="41" Width="108" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnClear" Content="Очистить" HorizontalAlignment="Left" Margin="722,413,0,0" VerticalAlignment="Top" Height="41" Width="109"/>
+        <TextBox x:Name="txtteamname" HorizontalAlignment="Left" Height="50" Margin="714,340,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" ToolTip="введите название команды" Grid.ColumnSpan="2"/>
+        <ListBox x:Name="forcreatelist" Margin="295,30,311,383" MouseDoubleClick="forcreatelist_MouseDoubleClick" />
+    </Grid>
+</Window>
